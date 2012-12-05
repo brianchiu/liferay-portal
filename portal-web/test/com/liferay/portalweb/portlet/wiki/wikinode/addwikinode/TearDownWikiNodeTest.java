@@ -70,8 +70,10 @@ public class TearDownWikiNodeTest extends BaseTestCase {
 				selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Move to the Recycle Bin')]",
 					RuntimeVariables.replace("Move to the Recycle Bin"));
 				selenium.waitForPageToLoad("30000");
-				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
+				assertEquals(RuntimeVariables.replace(
+						"The selected item was moved to the Recycle Bin. Undo"),
+					selenium.getText(
+						"//div[@class='portlet-msg-success taglib-trash-undo']"));
 
 				boolean wikiNode2Present = selenium.isElementPresent(
 						"xPath=(//span[@title='Actions']/ul/li/strong/a/span)[2]");
@@ -95,8 +97,10 @@ public class TearDownWikiNodeTest extends BaseTestCase {
 				selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Move to the Recycle Bin')]",
 					RuntimeVariables.replace("Move to the Recycle Bin"));
 				selenium.waitForPageToLoad("30000");
-				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
+				assertEquals(RuntimeVariables.replace(
+						"The selected item was moved to the Recycle Bin. Undo"),
+					selenium.getText(
+						"//div[@class='portlet-msg-success taglib-trash-undo']"));
 
 				boolean wikiNode3Present = selenium.isElementPresent(
 						"xPath=(//span[@title='Actions']/ul/li/strong/a/span)[2]");
@@ -120,8 +124,10 @@ public class TearDownWikiNodeTest extends BaseTestCase {
 				selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Move to the Recycle Bin')]",
 					RuntimeVariables.replace("Move to the Recycle Bin"));
 				selenium.waitForPageToLoad("30000");
-				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
+				assertEquals(RuntimeVariables.replace(
+						"The selected item was moved to the Recycle Bin. Undo"),
+					selenium.getText(
+						"//div[@class='portlet-msg-success taglib-trash-undo']"));
 
 				boolean wikiNode4Present = selenium.isElementPresent(
 						"xPath=(//span[@title='Actions']/ul/li/strong/a/span)[2]");
@@ -145,8 +151,10 @@ public class TearDownWikiNodeTest extends BaseTestCase {
 				selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Move to the Recycle Bin')]",
 					RuntimeVariables.replace("Move to the Recycle Bin"));
 				selenium.waitForPageToLoad("30000");
-				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
+				assertEquals(RuntimeVariables.replace(
+						"The selected item was moved to the Recycle Bin. Undo"),
+					selenium.getText(
+						"//div[@class='portlet-msg-success taglib-trash-undo']"));
 
 				boolean wikiNode5Present = selenium.isElementPresent(
 						"xPath=(//span[@title='Actions']/ul/li/strong/a/span)[2]");
@@ -170,8 +178,10 @@ public class TearDownWikiNodeTest extends BaseTestCase {
 				selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Move to the Recycle Bin')]",
 					RuntimeVariables.replace("Move to the Recycle Bin"));
 				selenium.waitForPageToLoad("30000");
-				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
+				assertEquals(RuntimeVariables.replace(
+						"The selected item was moved to the Recycle Bin. Undo"),
+					selenium.getText(
+						"//div[@class='portlet-msg-success taglib-trash-undo']"));
 
 			case 2:
 			case 3:
