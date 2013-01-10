@@ -63,8 +63,6 @@ public class ViewDMFolderImageMGTest extends BaseTestCase {
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Move to the Recycle Bin']"));
 		assertTrue(selenium.isVisible(
-				"//span[@class='aui-image-gallery-paginator-thumb']"));
-		assertTrue(selenium.isVisible(
 				"//span[@class='aui-image-gallery-player-content']/span/span/button[@id='play']"));
 		assertTrue(selenium.isVisible(
 				"//span[@class='aui-image-gallery-player-content']/span/span/button[@id='pause']"));

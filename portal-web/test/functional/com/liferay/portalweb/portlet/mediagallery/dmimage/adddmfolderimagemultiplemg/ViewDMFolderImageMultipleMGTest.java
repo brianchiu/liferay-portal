@@ -53,7 +53,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Image 1 of 3"),
 			selenium.getText("//div[@class='aui-image-viewer-info']"));
 		assertTrue(selenium.isVisible(
-				"//div[@class='lfr-image-gallery-actions']/div/div/span[1]/a/img[@alt='Download (12.9k)']"));
+				"//div[@class='lfr-image-gallery-actions']/div/div/span[1]/a/img[@alt='Download (13k)']"));
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[2]/a/img[@alt='View']"));
 		assertTrue(selenium.isVisible(
@@ -61,9 +61,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[4]/a/img[@alt='Permissions']"));
 		assertTrue(selenium.isVisible(
-				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Delete']"));
-		assertTrue(selenium.isVisible(
-				"//span[@class='aui-image-gallery-paginator-thumb']"));
+				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Move to the Recycle Bin']"));
 		assertTrue(selenium.isVisible(
 				"//span[@class='aui-image-gallery-player-content']/span/span/button[@id='play']"));
 		assertTrue(selenium.isVisible(
@@ -91,7 +89,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Image 2 of 3"),
 			selenium.getText("//div[@class='aui-image-viewer-info']"));
 		assertTrue(selenium.isVisible(
-				"//div[@class='lfr-image-gallery-actions']/div/div/span[1]/a/img[@alt='Download (29.9k)']"));
+				"//div[@class='lfr-image-gallery-actions']/div/div/span[1]/a/img[@alt='Download (30k)']"));
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[2]/a/img[@alt='View']"));
 		assertTrue(selenium.isVisible(
@@ -99,9 +97,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[4]/a/img[@alt='Permissions']"));
 		assertTrue(selenium.isVisible(
-				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Delete']"));
-		assertTrue(selenium.isVisible(
-				"//span[@class='aui-image-gallery-paginator-thumb']"));
+				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Move to the Recycle Bin']"));
 		assertTrue(selenium.isVisible(
 				"//span[@class='aui-image-gallery-player-content']/span/span/button[@id='play']"));
 		assertTrue(selenium.isVisible(
@@ -129,7 +125,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Image 3 of 3"),
 			selenium.getText("//div[@class='aui-image-viewer-info']"));
 		assertTrue(selenium.isVisible(
-				"//div[@class='lfr-image-gallery-actions']/div/div/span[1]/a/img[@alt='Download (16.1k)']"));
+				"//div[@class='lfr-image-gallery-actions']/div/div/span[1]/a/img[@alt='Download (16k)']"));
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[2]/a/img[@alt='View']"));
 		assertTrue(selenium.isVisible(
@@ -137,9 +133,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-image-gallery-actions']/div/div/span[4]/a/img[@alt='Permissions']"));
 		assertTrue(selenium.isVisible(
-				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Delete']"));
-		assertTrue(selenium.isVisible(
-				"//span[@class='aui-image-gallery-paginator-thumb']"));
+				"//div[@class='lfr-image-gallery-actions']/div/div/span[5]/a/img[@alt='Move to the Recycle Bin']"));
 		assertTrue(selenium.isVisible(
 				"//span[@class='aui-image-gallery-player-content']/span/span/button[@id='play']"));
 		assertTrue(selenium.isVisible(

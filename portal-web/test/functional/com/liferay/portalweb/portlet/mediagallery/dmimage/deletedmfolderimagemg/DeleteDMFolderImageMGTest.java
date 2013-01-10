@@ -44,15 +44,14 @@ public class DeleteDMFolderImageMGTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace(
 				"DM Folder Image Title - DM Folder Image Description"),
 			selenium.getText("//div[contains(@class,'image-viewer-caption')]"));
-		selenium.clickAt("//img[@alt='Delete']",
+		selenium.clickAt("//img[@alt='Move to the Recycle Bin']",
 			RuntimeVariables.replace("Delete"));
-		selenium.waitForConfirmation(
-			"Are you sure you want to delete this? It will be deleted immediately.");
-		selenium.waitForText("//div[@class='portlet-msg-success']",
-			"Your request completed successfully.");
+		selenium.waitForText("//div[@class='portlet-msg-success taglib-trash-undo']",
+			"The selected item was moved to the Recycle Bin. Undo");
 		assertEquals(RuntimeVariables.replace(
-				"Your request completed successfully."),
-			selenium.getText("//div[@class='portlet-msg-success']"));
+				"The selected item was moved to the Recycle Bin. Undo"),
+			selenium.getText(
+				"//div[@class='portlet-msg-success taglib-trash-undo']"));
 		assertEquals(RuntimeVariables.replace("DM Folder Name"),
 			selenium.getText("//h1[@class='header-title']/span"));
 		assertEquals(RuntimeVariables.replace(
