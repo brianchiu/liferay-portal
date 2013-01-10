@@ -117,9 +117,9 @@ public class CopyPagePageTest extends BaseTestCase {
 				assertEquals(RuntimeVariables.replace("Manage Pages Test Page"),
 					selenium.getText("//nav[@id='breadcrumbs']/ul/li/span/a"));
 				assertEquals(RuntimeVariables.replace("Sign In"),
-					selenium.getText("//section[@id='portlet_58']/header/h1"));
+					selenium.getText("//h1[contains(.,'Sign In')]/span[2]"));
 				assertEquals(RuntimeVariables.replace("Hello World"),
-					selenium.getText("//section[@id='portlet_47']/header/h1"));
+					selenium.getText("//h1[contains(.,'Hello World')]/span[2]"));
 
 			case 100:
 				label = -1;

@@ -86,10 +86,10 @@ public class CopyPageChildPageTest extends BaseTestCase {
 					selenium.getText(
 						"//a[@id='layoutsTree_layout_manage-pages-test-page']"));
 
-				boolean childTestPage = selenium.isElementPresent(
+				boolean childPagePresent = selenium.isElementPresent(
 						"//a[@id='layoutsTree_layout_child-test-page']");
 
-				if (childTestPage) {
+				if (childPagePresent) {
 					label = 3;
 
 					continue;

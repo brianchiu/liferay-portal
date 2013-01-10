@@ -102,7 +102,7 @@ public class SavePageTypePanelTest extends BaseTestCase {
 					selenium.getText(
 						"//tr[contains(.,'Manage Pages Test Page')]/td[2]/div"));
 				assertEquals(RuntimeVariables.replace("Liferay"),
-					selenium.getText("//footer[@id='footer']/p/a"));
+					selenium.getText("//p[@class='powered-by']/a"));
 
 			case 100:
 				label = -1;
