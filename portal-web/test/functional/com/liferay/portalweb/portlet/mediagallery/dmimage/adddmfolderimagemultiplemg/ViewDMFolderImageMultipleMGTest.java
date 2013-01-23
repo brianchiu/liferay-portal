@@ -45,7 +45,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 			selenium.getText("//span[@class='image-title']"));
 		selenium.clickAt("//span[@class='image-title']",
 			RuntimeVariables.replace("DM Folder Image1 Title"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible("//img[@class='aui-image-viewer-image']");
 		assertEquals(RuntimeVariables.replace(
 				"DM Folder Image1 Title - DM Folder Image1 Description"),
@@ -81,7 +81,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 			selenium.getText("xPath=(//span[@class='image-title'])[2]"));
 		selenium.clickAt("xPath=(//span[@class='image-title'])[2]",
 			RuntimeVariables.replace("DM Folder Image2 Title"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible("//img[@class='aui-image-viewer-image']");
 		assertEquals(RuntimeVariables.replace(
 				"DM Folder Image2 Title - DM Folder Image2 Description"),
@@ -117,7 +117,7 @@ public class ViewDMFolderImageMultipleMGTest extends BaseTestCase {
 			selenium.getText("xPath=(//span[@class='image-title'])[3]"));
 		selenium.clickAt("xPath=(//span[@class='image-title'])[3]",
 			RuntimeVariables.replace("DM Folder Image3 Title"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible("//img[@class='aui-image-viewer-image']");
 		assertEquals(RuntimeVariables.replace(
 				"DM Folder Image3 Title - DM Folder Image3 Description"),
