@@ -32,14 +32,20 @@ public class ViewConfigurePortletTableDMImageAPTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Title"),
 			selenium.getText("//th[1]"));
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
-			selenium.getText("//td[1]/a"));
-		selenium.clickAt("//td[1]/a",
+			selenium.getText("//tr[2]/td/a"));
+		selenium.clickAt("//tr[2]/td/a",
 			RuntimeVariables.replace("DM Folder Image Title"));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText("//h1[@class='header-title']/span"));
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-preview-file-image-container']/img"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-twitter']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-facebook']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-plusone']"));
 		assertEquals(RuntimeVariables.replace("View in Context \u00bb"),
 			selenium.getText("//div[@class='asset-more']/a"));
 		selenium.clickAt("//div[@class='asset-more']/a",

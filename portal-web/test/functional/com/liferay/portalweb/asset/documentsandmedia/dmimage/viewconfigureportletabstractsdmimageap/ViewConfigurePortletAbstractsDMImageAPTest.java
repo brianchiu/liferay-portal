@@ -29,17 +29,17 @@ public class ViewConfigurePortletAbstractsDMImageAPTest extends BaseTestCase {
 		selenium.clickAt("link=Asset Publisher Test Page",
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
+		Thread.sleep(1000);
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
 		assertEquals(RuntimeVariables.replace(
 				"Read More About DM Folder Image Title \u00bb"),
-			selenium.getText("//div[@class='asset-more']/a"));
-		assertTrue(selenium.isVisible(
-				"//div[@class='asset-resource-info']/div/img"));
+			selenium.getText("//div[2]/div[2][@class='asset-more']/a"));
+		assertTrue(selenium.isVisible("//div[4]/h3[@class='asset-title']/a/img"));
 		assertEquals(RuntimeVariables.replace(
 				"Read More About DM Folder Image Title \u00bb"),
-			selenium.getText("//div[@class='asset-more']/a"));
-		selenium.clickAt("//div[@class='asset-more']/a",
+			selenium.getText("//div[2]/div[2][@class='asset-more']/a"));
+		selenium.clickAt("//div[2]/div[2][@class='asset-more']/a",
 			RuntimeVariables.replace(
 				"Read More About DM Folder Image Title \u00bb"));
 		selenium.waitForPageToLoad("30000");
@@ -47,6 +47,12 @@ public class ViewConfigurePortletAbstractsDMImageAPTest extends BaseTestCase {
 			selenium.getText("//h1[@class='header-title']/span"));
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-preview-file-image-container']/img"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-twitter']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-facebook']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-plusone']"));
 		assertEquals(RuntimeVariables.replace("View in Context \u00bb"),
 			selenium.getText("//div[@class='asset-more']/a"));
 		selenium.clickAt("//div[@class='asset-more']/a",

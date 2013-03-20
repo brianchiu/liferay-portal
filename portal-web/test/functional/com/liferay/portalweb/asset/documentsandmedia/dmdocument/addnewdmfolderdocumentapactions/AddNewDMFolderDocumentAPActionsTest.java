@@ -28,7 +28,7 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 		selenium.clickAt("link=Asset Publisher Test Page",
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		assertEquals(RuntimeVariables.replace("Add New"),
 			selenium.getText("//span[@title='Add New']/ul/li/strong/a"));
 		selenium.clickAt("//span[@title='Add New']/ul/li/strong/a",
@@ -47,7 +47,7 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 		selenium.waitForVisible("//input[@value='Select']");
 		selenium.clickAt("//input[@value='Select']",
 			RuntimeVariables.replace("Select"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.selectWindow("title=Documents and Media");
 		selenium.waitForVisible("//input[@value='Choose']");
 		selenium.click("//input[@value='Choose']");
@@ -71,13 +71,9 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 		selenium.clickAt("link=Asset Publisher Test Page",
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
-		selenium.waitForText("//h3[@class='asset-title']/a",
+		selenium.waitForText("xPath=(//h3[@class='asset-title']/a)",
 			"DM Folder Document Title");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
-			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "Download"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "(0k)"));
+			selenium.getText("xPath=(//h3[@class='asset-title']/a)"));
 	}
 }

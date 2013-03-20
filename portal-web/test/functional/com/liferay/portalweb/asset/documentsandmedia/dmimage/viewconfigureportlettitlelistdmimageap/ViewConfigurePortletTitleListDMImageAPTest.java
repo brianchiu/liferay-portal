@@ -31,14 +31,20 @@ public class ViewConfigurePortletTitleListDMImageAPTest extends BaseTestCase {
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
-			selenium.getText("//ul[@class='title-list']/li/span/a/span"));
-		selenium.clickAt("//ul[@class='title-list']/li/span/a/span",
+			selenium.getText("//li[@class='title-list document']/span/a/span"));
+		selenium.clickAt("//li[@class='title-list document']/span/a/span",
 			RuntimeVariables.replace("DM Folder Image Title"));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText("//h1[@class='header-title']/span"));
 		assertTrue(selenium.isVisible(
 				"//div[@class='lfr-preview-file-image-container']/img"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-twitter']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-facebook']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-plusone']"));
 		assertEquals(RuntimeVariables.replace("View in Context \u00bb"),
 			selenium.getText("//div[@class='asset-more']/a"));
 		selenium.clickAt("//div[@class='asset-more']/a",

@@ -30,17 +30,16 @@ public class ViewDMFolderImageAPTest extends BaseTestCase {
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isVisible(
-				"//div[@class='asset-resource-info']/div/img"));
+		assertTrue(selenium.isVisible("//h3/a/img"));
 		selenium.open("/web/guest/home/");
 		selenium.clickAt("link=Documents and Media Test Page",
 			RuntimeVariables.replace("Documents and Media Test Page"));
 		selenium.waitForPageToLoad("30000");
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible("//button[@title='Icon View']");
 		selenium.clickAt("//button[@title='Icon View']",
 			RuntimeVariables.replace("Icon View"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible(
 			"//button[contains(@class,'aui-state-active') and @title='Icon View']");
 		assertTrue(selenium.isVisible(
@@ -68,10 +67,16 @@ public class ViewDMFolderImageAPTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Download (13k)"),
 			selenium.getText("//span[1]/span/a/span"));
 		assertTrue(selenium.isPartialText(
-				"//div[2]/div[2]/div/div[1]/div[2]/div[1]", "image/jpeg"));
-		assertTrue(selenium.isPartialText("//div[2]/div/div[1]/div[2]/div[2]",
+				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Content Type')]",
+				"image/jpeg"));
+		assertTrue(selenium.isPartialText(
+				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Bits Per Sample')]",
 				"8"));
-		assertTrue(selenium.isPartialText("//div[2]/div/div/div[2]/div[3]", "92"));
-		assertTrue(selenium.isPartialText("//div[2]/div[4]", "394"));
+		assertTrue(selenium.isPartialText(
+				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Image Length')]",
+				"92"));
+		assertTrue(selenium.isPartialText(
+				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Image Width')]",
+				"394"));
 	}
 }

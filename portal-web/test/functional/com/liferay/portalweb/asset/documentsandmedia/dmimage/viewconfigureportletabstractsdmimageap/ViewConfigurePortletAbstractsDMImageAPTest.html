@@ -19,28 +19,33 @@
 	<td>Asset Publisher Test Page</td>
 </tr>
 <tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>assertText</td>
 	<td>//h3[@class='asset-title']/a</td>
 	<td>DM Folder Image Title</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[@class='asset-more']/a</td>
+	<td>//div[2]/div[2][@class='asset-more']/a</td>
 	<td>Read More About DM Folder Image Title »</td>
 </tr>
 <tr>
 	<td>assertVisible</td>
-	<td>//div[@class='asset-resource-info']/div/img</td>
+	<td>//div[4]/h3[@class='asset-title']/a/img</td>
 	<td>DM Folder Image Title</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[@class='asset-more']/a</td>
+	<td>//div[2]/div[2][@class='asset-more']/a</td>
 	<td>Read More About DM Folder Image Title »</td>
 </tr>
 <tr>
 	<td>clickAtAndWait</td>
-	<td>//div[@class='asset-more']/a</td>
+	<td>//div[2]/div[2][@class='asset-more']/a</td>
 	<td>Read More About DM Folder Image Title »</td>
 </tr>
 <tr>
@@ -52,6 +57,21 @@
 	<td>assertVisible</td>
 	<td>//div[@class='lfr-preview-file-image-container']/img</td>
 	<td>DM Folder Image Title</td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>//li[@class='taglib-social-bookmark-twitter']</td>
+	<td>Twitter</td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>//li[@class='taglib-social-bookmark-facebook']</td>
+	<td>Facebook</td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>//li[@class='taglib-social-bookmark-plusone']</td>
+	<td>Google Plus</td>
 </tr>
 <tr>
 	<td>assertText</td>

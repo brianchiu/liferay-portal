@@ -31,9 +31,5 @@ public class ViewConfigurePortletCurrentDMDocumentAPTest extends BaseTestCase {
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "Download"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "(0k)"));
 	}
 }

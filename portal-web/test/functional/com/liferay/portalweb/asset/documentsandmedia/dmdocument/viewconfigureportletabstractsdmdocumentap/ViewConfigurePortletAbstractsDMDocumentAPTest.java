@@ -31,19 +31,21 @@ public class ViewConfigurePortletAbstractsDMDocumentAPTest extends BaseTestCase 
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "Download"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "(0k)"));
 		assertEquals(RuntimeVariables.replace(
 				"Read More About DM Folder Document Title \u00bb"),
-			selenium.getText("//div[@class='asset-more']/a"));
-		selenium.clickAt("//div[@class='asset-more']/a",
+			selenium.getText("//div[2]/div[2][@class='asset-more']/a"));
+		selenium.clickAt("//div[2]/div[2][@class='asset-more']/a",
 			RuntimeVariables.replace(
 				"Read More About DM Folder Document Title \u00bb"));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
 			selenium.getText("//h1[@class='header-title']/span"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-twitter']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-facebook']"));
+		assertTrue(selenium.isVisible(
+				"//li[@class='taglib-social-bookmark-plusone']"));
 		assertEquals(RuntimeVariables.replace("View in Context \u00bb"),
 			selenium.getText("//div[@class='asset-more']/a"));
 		selenium.clickAt("//div[@class='asset-more']/a",

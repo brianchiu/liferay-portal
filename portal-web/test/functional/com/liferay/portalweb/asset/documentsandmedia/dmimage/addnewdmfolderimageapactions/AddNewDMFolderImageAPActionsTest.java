@@ -28,7 +28,7 @@ public class AddNewDMFolderImageAPActionsTest extends BaseTestCase {
 		selenium.clickAt("link=Asset Publisher Test Page",
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		assertEquals(RuntimeVariables.replace("Add New"),
 			selenium.getText("//span[@title='Add New']/ul/li/strong/a"));
 		selenium.clickAt("//span[@title='Add New']/ul/li/strong/a",
@@ -47,7 +47,7 @@ public class AddNewDMFolderImageAPActionsTest extends BaseTestCase {
 		selenium.waitForVisible("//input[@value='Select']");
 		selenium.clickAt("//input[@value='Select']",
 			RuntimeVariables.replace("Select"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.selectWindow("title=Documents and Media");
 		selenium.waitForVisible("//input[@value='Choose']");
 		selenium.click("//input[@value='Choose']");
@@ -76,7 +76,6 @@ public class AddNewDMFolderImageAPActionsTest extends BaseTestCase {
 			"DM Folder Image Title");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isVisible(
-				"//div[@class='asset-resource-info']/div/img"));
+		assertTrue(selenium.isVisible("//h3/a/img"));
 	}
 }

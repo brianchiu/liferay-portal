@@ -31,7 +31,6 @@ public class ViewConfigurePortletCurrentDMImageAPTest extends BaseTestCase {
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isVisible(
-				"//div[@class='asset-resource-info']/div/img"));
+		assertTrue(selenium.isVisible("//h3[@class='asset-title']/a/img"));
 	}
 }

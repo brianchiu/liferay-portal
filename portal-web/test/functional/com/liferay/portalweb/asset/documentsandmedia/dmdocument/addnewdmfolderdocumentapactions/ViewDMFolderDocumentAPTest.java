@@ -32,19 +32,15 @@ public class ViewDMFolderDocumentAPTest extends BaseTestCase {
 			"DM Folder Document Title");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
 			selenium.getText("//h3[@class='asset-title']/a"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "Download"));
-		assertTrue(selenium.isPartialText(
-				"//div[@class='asset-resource-info']/span/a/span", "(0k)"));
 		selenium.open("/web/guest/home/");
 		selenium.clickAt("link=Documents and Media Test Page",
 			RuntimeVariables.replace("Documents and Media Test Page"));
 		selenium.waitForPageToLoad("30000");
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible("//button[@title='Icon View']");
 		selenium.clickAt("//button[@title='Icon View']",
 			RuntimeVariables.replace("Icon View"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		selenium.waitForVisible(
 			"//button[@title='Icon View' and contains(@class,'aui-state-active')]");
 		assertTrue(selenium.isVisible(
@@ -70,10 +66,12 @@ public class ViewDMFolderDocumentAPTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Status: Approved"),
 			selenium.getText("//span[@class='workflow-status']"));
 		assertEquals(RuntimeVariables.replace("Download (0k)"),
-			selenium.getText("//span[1]/span/a/span"));
+			selenium.getText("//span[@class='download-document']/span/a/span"));
 		assertTrue(selenium.isPartialText(
-				"//div[2]/div[2]/div/div[1]/div[2]/div[1]", "ISO-8859-1"));
-		assertTrue(selenium.isPartialText("//div[2]/div/div[1]/div[2]/div[2]",
+				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Content Encoding')]",
+				"ISO-8859-1"));
+		assertTrue(selenium.isPartialText(
+				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Content Type')]",
 				"text/plain"));
 		assertEquals(RuntimeVariables.replace("1.0"),
 			selenium.getText("//tr[3]/td[2]"));
