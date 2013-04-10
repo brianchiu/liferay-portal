@@ -30,7 +30,6 @@ public class TearDownEventTest extends BaseTestCase {
 				selenium.selectWindow("null");
 				selenium.selectFrame("relative=top");
 				selenium.open("/web/guest/home/");
-				selenium.waitForElementPresent("link=Calendar Test Page");
 				selenium.clickAt("link=Calendar Test Page",
 					RuntimeVariables.replace(""));
 				selenium.waitForPageToLoad("30000");
@@ -60,7 +59,7 @@ public class TearDownEventTest extends BaseTestCase {
 						"//div[@class='lfr-component lfr-menu-list']/ul/li[4]/a"));
 				selenium.waitForPageToLoad("30000");
 				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S]$"));
+								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
 
 			case 2:
 				selenium.waitForElementPresent("//span/input");
@@ -86,7 +85,7 @@ public class TearDownEventTest extends BaseTestCase {
 						"//div[@class='lfr-component lfr-menu-list']/ul/li[4]/a"));
 				selenium.waitForPageToLoad("30000");
 				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S]$"));
+								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
 
 			case 3:
 				selenium.waitForElementPresent("//span/input");
@@ -112,7 +111,7 @@ public class TearDownEventTest extends BaseTestCase {
 						"//div[@class='lfr-component lfr-menu-list']/ul/li[4]/a"));
 				selenium.waitForPageToLoad("30000");
 				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S]$"));
+								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
 
 			case 4:
 				selenium.waitForElementPresent("//span/input");
@@ -138,7 +137,7 @@ public class TearDownEventTest extends BaseTestCase {
 						"//div[@class='lfr-component lfr-menu-list']/ul/li[4]/a"));
 				selenium.waitForPageToLoad("30000");
 				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S]$"));
+								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
 
 			case 5:
 				selenium.waitForElementPresent("//span/input");
@@ -164,7 +163,7 @@ public class TearDownEventTest extends BaseTestCase {
 						"//div[@class='lfr-component lfr-menu-list']/ul/li[4]/a"));
 				selenium.waitForPageToLoad("30000");
 				assertTrue(selenium.getConfirmation()
-								   .matches("^Are you sure you want to delete this[\\s\\S]$"));
+								   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
 
 			case 6:
 			case 100:

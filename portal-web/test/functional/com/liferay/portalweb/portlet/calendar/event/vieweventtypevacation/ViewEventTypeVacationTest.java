@@ -25,26 +25,22 @@ public class ViewEventTypeVacationTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.waitForElementPresent("link=Calendar Test Page");
 		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("link=Day", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		selenium.select("//select", RuntimeVariables.replace("label=Vacation"));
-		selenium.waitForPageToLoad("30000");
+		selenium.select("//select", RuntimeVariables.replace("vacation"));
 		assertEquals(RuntimeVariables.replace("Off to Yosemite."),
 			selenium.getText("//div[@class='event-title']"));
 		selenium.clickAt("link=Week", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		selenium.select("//select", RuntimeVariables.replace("label=Vacation"));
-		selenium.waitForPageToLoad("30000");
+		selenium.select("//select", RuntimeVariables.replace("vacation"));
 		assertEquals(RuntimeVariables.replace("Off to Yosemite."),
 			selenium.getText(
 				"//tr[@class='portlet-section-alternate results-row alt']/td[1]/a"));
 		selenium.clickAt("link=Month", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		selenium.select("//select", RuntimeVariables.replace("label=Vacation"));
-		selenium.waitForPageToLoad("30000");
+		selenium.select("//select", RuntimeVariables.replace("vacation"));
 		assertEquals(RuntimeVariables.replace("Off to Yosemite."),
 			selenium.getText(
 				"//tr[@class='portlet-section-alternate results-row alt']/td[1]/a"));

@@ -25,13 +25,12 @@ public class AddEventTitleNullTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.waitForElementPresent("link=Calendar Test Page");
 		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
-			RuntimeVariables.replace(""));
+			RuntimeVariables.replace("Add Event"));
 		selenium.waitForPageToLoad("30000");
-		selenium.type("_8_title", RuntimeVariables.replace(""));
+		selenium.type("//input[@id='_8_title']", RuntimeVariables.replace(""));
 		selenium.clickAt("//input[@value='Save']", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
 		assertTrue(selenium.isTextPresent("Your request failed to complete."));

@@ -14,11 +14,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Calendar Test Page</td>
-	<td></td>
-</tr>
-<tr>
 	<td>clickAtAndWait</td>
 	<td>link=Calendar Test Page</td>
 	<td></td>
@@ -50,30 +45,39 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>_8_title</td>
+	<td>//input[@id='_8_title']</td>
 	<td>Test Event Edited</td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>_8_description</td>
+	<td>waitForVisible</td>
+	<td>//a[contains(@class,'cke_button cke_button__cut') and contains(@class,'cke_button_disabled')]</td>
+	<td>Cut Button Disabled</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//iframe[contains(@title,'Rich Text Editor')]</td>
+	<td>CK Editor</td>
+</tr>
+<tr>
+	<td>typeFrame</td>
+	<td>//iframe[contains(@title,'Rich Text Editor')]</td>
 	<td>This is a Test Event. Edited.</td>
 </tr>
 <tr>
 	<td>clickAtAndWait</td>
 	<td>//input[@value='Save']</td>
-	<td></td>
+	<td>Save</td>
 </tr>
 <tr>
-	<td>assertTextPresent</td>
+	<td>assertText</td>
+	<td>//div[@class='portlet-msg-success']</td>
 	<td>Your request completed successfully.</td>
-	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2]/a</td>
 	<td>Test Event Edited</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

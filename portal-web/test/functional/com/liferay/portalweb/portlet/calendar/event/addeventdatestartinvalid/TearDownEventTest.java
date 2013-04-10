@@ -30,7 +30,6 @@ public class TearDownEventTest extends BaseTestCase {
 				selenium.selectWindow("null");
 				selenium.selectFrame("relative=top");
 				selenium.open("/web/guest/home/");
-				selenium.waitForElementPresent("link=Calendar Test Page");
 				selenium.clickAt("link=Calendar Test Page",
 					RuntimeVariables.replace(""));
 				selenium.waitForPageToLoad("30000");

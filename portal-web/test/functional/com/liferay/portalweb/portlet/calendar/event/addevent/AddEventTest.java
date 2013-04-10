@@ -29,11 +29,14 @@ public class AddEventTest extends BaseTestCase {
 		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
-			RuntimeVariables.replace(""));
+			RuntimeVariables.replace("Add Event"));
 		selenium.waitForPageToLoad("30000");
-		Thread.sleep(5000);
-		selenium.type("_8_title", RuntimeVariables.replace("Test Event"));
-		selenium.type("_8_description",
+		selenium.type("//input[@id='_8_title']",
+			RuntimeVariables.replace("Test Event"));
+		selenium.waitForVisible(
+			"//a[contains(@class,'cke_button cke_button__cut') and contains(@class,'cke_button_disabled')]");
+		selenium.waitForVisible("//iframe[contains(@title,'Rich Text Editor')]");
+		selenium.typeFrame("//iframe[contains(@title,'Rich Text Editor')]",
 			RuntimeVariables.replace("This is a Test Event."));
 		selenium.clickAt("//input[@value='Save']", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");

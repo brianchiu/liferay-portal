@@ -25,7 +25,6 @@ public class DeleteEventTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.waitForElementPresent("link=Calendar Test Page");
 		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("Test Event"),
@@ -40,9 +39,10 @@ public class DeleteEventTest extends BaseTestCase {
 				"//div[@class='lfr-component lfr-menu-list']/ul/li[4]/a"));
 		selenium.waitForPageToLoad("30000");
 		assertTrue(selenium.getConfirmation()
-						   .matches("^Are you sure you want to delete this[\\s\\S]$"));
-		assertTrue(selenium.isTextPresent(
-				"Your request completed successfully."));
+						   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));
+		assertEquals(RuntimeVariables.replace(
+				"Your request completed successfully."),
+			selenium.getText("//div[@class='portlet-msg-success']"));
 		assertTrue(selenium.isElementNotPresent("link=Test Event"));
 	}
 }

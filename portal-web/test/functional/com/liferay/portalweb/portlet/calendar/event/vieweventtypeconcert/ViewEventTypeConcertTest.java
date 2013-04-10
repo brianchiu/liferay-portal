@@ -25,32 +25,31 @@ public class ViewEventTypeConcertTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.waitForElementPresent("link=Calendar Test Page");
 		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("link=Day", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		selenium.select("//select", RuntimeVariables.replace("label=Concert"));
+		selenium.select("//select", RuntimeVariables.replace("concert"));
 		selenium.waitForPageToLoad("30000");
-		assertEquals(RuntimeVariables.replace("Caedmon's Call Concert."),
+		assertEquals(RuntimeVariables.replace("Caedmons Call Concert."),
 			selenium.getText("//div[@class='event-title']"));
 		selenium.clickAt("link=Week", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		selenium.select("//select", RuntimeVariables.replace("label=Concert"));
+		selenium.select("//select", RuntimeVariables.replace("concert"));
 		selenium.waitForPageToLoad("30000");
-		assertEquals(RuntimeVariables.replace("Caedmon's Call Concert."),
+		assertEquals(RuntimeVariables.replace("Caedmons Call Concert."),
 			selenium.getText(
 				"//tr[@class='portlet-section-alternate results-row alt']/td[1]/a"));
 		selenium.clickAt("link=Month", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		selenium.select("//select", RuntimeVariables.replace("label=Concert"));
+		selenium.select("//select", RuntimeVariables.replace("concert"));
 		selenium.waitForPageToLoad("30000");
-		assertEquals(RuntimeVariables.replace("Caedmon's Call Concert."),
+		assertEquals(RuntimeVariables.replace("Caedmons Call Concert."),
 			selenium.getText(
 				"//tr[@class='portlet-section-alternate results-row alt']/td[1]/a"));
 		selenium.clickAt("link=Events", RuntimeVariables.replace(""));
 		selenium.waitForPageToLoad("30000");
-		assertEquals(RuntimeVariables.replace("Caedmon's Call Concert."),
+		assertEquals(RuntimeVariables.replace("Caedmons Call Concert."),
 			selenium.getText(
 				"//tr[@class='portlet-section-body results-row last']/td[3]/a"));
 	}
