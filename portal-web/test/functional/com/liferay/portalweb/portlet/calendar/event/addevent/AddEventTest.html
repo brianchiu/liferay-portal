@@ -14,14 +14,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>link=Calendar Test Page</td>
-	<td></td>
-</tr>
-<tr>
 	<td>clickAtAndWait</td>
 	<td>link=Calendar Test Page</td>
-	<td></td>
+	<td>Calendar Test Page</td>
 </tr>
 <tr>
 	<td>clickAtAndWait</td>
@@ -51,26 +46,26 @@
 <tr>
 	<td>clickAtAndWait</td>
 	<td>//input[@value='Save']</td>
-	<td></td>
+	<td>Save</td>
 </tr>
 <tr>
-	<td>assertTextPresent</td>
+	<td>assertText</td>
+	<td>//div[@class='portlet-msg-success']</td>
 	<td>Your request completed successfully.</td>
-	<td></td>
 </tr>
 <tr>
-	<td>assertElementPresent</td>
-	<td>//div[1]/table/tbody/tr[3]/td[1]/a</td>
+	<td>assertVisible</td>
+	<td>//tr[contains(.,'Test Event')]/td[1]/a</td>
 	<td>Time</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[1]/table/tbody/tr[3]/td[2]/a</td>
+	<td>//tr[contains(.,'Test Event')]/td[2]/a</td>
 	<td>Test Event</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[1]/table/tbody/tr[3]/td[3]/a</td>
+	<td>//tr[contains(.,'Test Event')]/td[3]/a</td>
 	<td>Anniversary</td>
 </tr>
 </tbody></table>

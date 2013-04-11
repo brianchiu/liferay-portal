@@ -25,12 +25,14 @@ public class AddEventTypeAppointmentTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
+		selenium.clickAt("link=Calendar Test Page",
+			RuntimeVariables.replace("Calendar Test Page"));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
 			RuntimeVariables.replace("Add Event"));
 		selenium.waitForPageToLoad("30000");
-		selenium.type("_8_title", RuntimeVariables.replace("Test Event"));
+		selenium.type("//input[@id='_8_title']",
+			RuntimeVariables.replace("Test Event"));
 		selenium.waitForVisible(
 			"//a[contains(@class,'cke_button cke_button__cut') and contains(@class,'cke_button_disabled')]");
 		selenium.waitForVisible("//iframe[contains(@title,'Rich Text Editor')]");
@@ -47,7 +49,8 @@ public class AddEventTypeAppointmentTest extends BaseTestCase {
 				"Your request completed successfully."),
 			selenium.getText("//div[@class='portlet-msg-success']"));
 		assertEquals(RuntimeVariables.replace("Test Event"),
-			selenium.getText(
-				"//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2]/a"));
+			selenium.getText("//tr[contains(.,'Test Event')]/td[2]/a"));
+		assertEquals(RuntimeVariables.replace("Appointment"),
+			selenium.getText("//tr[contains(.,'Test Event')]/td[3]/a"));
 	}
 }

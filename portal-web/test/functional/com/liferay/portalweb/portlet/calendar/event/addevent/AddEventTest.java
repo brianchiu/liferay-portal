@@ -25,8 +25,8 @@ public class AddEventTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.waitForElementPresent("link=Calendar Test Page");
-		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
+		selenium.clickAt("link=Calendar Test Page",
+			RuntimeVariables.replace("Calendar Test Page"));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
 			RuntimeVariables.replace("Add Event"));
@@ -38,15 +38,16 @@ public class AddEventTest extends BaseTestCase {
 		selenium.waitForVisible("//iframe[contains(@title,'Rich Text Editor')]");
 		selenium.typeFrame("//iframe[contains(@title,'Rich Text Editor')]",
 			RuntimeVariables.replace("This is a Test Event."));
-		selenium.clickAt("//input[@value='Save']", RuntimeVariables.replace(""));
+		selenium.clickAt("//input[@value='Save']",
+			RuntimeVariables.replace("Save"));
 		selenium.waitForPageToLoad("30000");
-		assertTrue(selenium.isTextPresent(
-				"Your request completed successfully."));
-		assertTrue(selenium.isElementPresent(
-				"//div[1]/table/tbody/tr[3]/td[1]/a"));
+		assertEquals(RuntimeVariables.replace(
+				"Your request completed successfully."),
+			selenium.getText("//div[@class='portlet-msg-success']"));
+		assertTrue(selenium.isVisible("//tr[contains(.,'Test Event')]/td[1]/a"));
 		assertEquals(RuntimeVariables.replace("Test Event"),
-			selenium.getText("//div[1]/table/tbody/tr[3]/td[2]/a"));
+			selenium.getText("//tr[contains(.,'Test Event')]/td[2]/a"));
 		assertEquals(RuntimeVariables.replace("Anniversary"),
-			selenium.getText("//div[1]/table/tbody/tr[3]/td[3]/a"));
+			selenium.getText("//tr[contains(.,'Test Event')]/td[3]/a"));
 	}
 }

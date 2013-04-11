@@ -16,7 +16,7 @@
 <tr>
 	<td>clickAtAndWait</td>
 	<td>link=Calendar Test Page</td>
-	<td></td>
+	<td>Calendar Test Page</td>
 </tr>
 <tr>
 	<td>clickAtAndWait</td>
@@ -65,8 +65,13 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2]/a</td>
+	<td>//tr[contains(.,'Test Event')]/td[2]/a</td>
 	<td>Test Event</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[contains(.,'Test Event')]/td[3]/a</td>
+	<td>Appointment</td>
 </tr>
 </tbody></table>
 </body>

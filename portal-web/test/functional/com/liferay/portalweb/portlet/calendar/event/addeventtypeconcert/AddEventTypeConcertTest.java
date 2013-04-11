@@ -25,7 +25,8 @@ public class AddEventTypeConcertTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
+		selenium.clickAt("link=Calendar Test Page",
+			RuntimeVariables.replace("Calendar Test Page"));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
 			RuntimeVariables.replace("Add Event"));
@@ -51,5 +52,8 @@ public class AddEventTypeConcertTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Caedmon's Call Concert."),
 			selenium.getText(
 				"//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2]/a"));
+		assertEquals(RuntimeVariables.replace("Concert"),
+			selenium.getText(
+				"//table[@class='taglib-search-iterator']/tbody/tr[3]/td[3]/a"));
 	}
 }

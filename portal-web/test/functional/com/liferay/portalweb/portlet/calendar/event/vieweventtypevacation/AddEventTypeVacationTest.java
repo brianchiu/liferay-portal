@@ -25,7 +25,8 @@ public class AddEventTypeVacationTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
+		selenium.clickAt("link=Calendar Test Page",
+			RuntimeVariables.replace("Calendar Test Page"));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
 			RuntimeVariables.replace("Add Event"));
@@ -49,5 +50,7 @@ public class AddEventTypeVacationTest extends BaseTestCase {
 			selenium.getText("//div[@class='portlet-msg-success']"));
 		assertEquals(RuntimeVariables.replace("Off to Yosemite."),
 			selenium.getText("//tr[contains(.,'Off to Yosemite.')]/td[2]/a"));
+		assertEquals(RuntimeVariables.replace("Vacation"),
+			selenium.getText("//tr[contains(.,'Off to Yosemite.')]/td[3]/a"));
 	}
 }

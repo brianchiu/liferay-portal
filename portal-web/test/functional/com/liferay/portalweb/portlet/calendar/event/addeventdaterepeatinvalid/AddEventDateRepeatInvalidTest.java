@@ -25,7 +25,8 @@ public class AddEventDateRepeatInvalidTest extends BaseTestCase {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
-		selenium.clickAt("link=Calendar Test Page", RuntimeVariables.replace(""));
+		selenium.clickAt("link=Calendar Test Page",
+			RuntimeVariables.replace("Calendar Test Page"));
 		selenium.waitForPageToLoad("30000");
 		selenium.clickAt("//input[@value='Add Event']",
 			RuntimeVariables.replace("Add Event"));
@@ -48,6 +49,9 @@ public class AddEventDateRepeatInvalidTest extends BaseTestCase {
 		selenium.clickAt("//input[@value='Save']	",
 			RuntimeVariables.replace("Save"));
 		selenium.waitForPageToLoad("30000");
+		assertEquals(RuntimeVariables.replace(
+				"Your request failed to complete."),
+			selenium.getText("xPath=(//div[@class='portlet-msg-error'])[1]	"));
 		assertEquals(RuntimeVariables.replace("Please enter a valid end date."),
 			selenium.getText("xPath=(//div[@class='portlet-msg-error'])[2]	"));
 	}

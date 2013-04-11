@@ -31,7 +31,7 @@ public class AddEventRepeatingWeeklyTest extends BaseTestCase {
 				selenium.selectFrame("relative=top");
 				selenium.open("/web/guest/home/");
 				selenium.clickAt("link=Calendar Test Page",
-					RuntimeVariables.replace(""));
+					RuntimeVariables.replace("Calendar Test Page"));
 				selenium.waitForPageToLoad("30000");
 				selenium.clickAt("//input[@value='Add Event']",
 					RuntimeVariables.replace("Add Event"));
@@ -159,12 +159,13 @@ public class AddEventRepeatingWeeklyTest extends BaseTestCase {
 					selenium.getText("//div[@class='portlet-msg-success']"));
 				selenium.open("/web/guest/home/");
 				selenium.clickAt("link=Calendar Test Page",
-					RuntimeVariables.replace(""));
+					RuntimeVariables.replace("Calendar Test Page"));
 				selenium.waitForPageToLoad("30000");
-				selenium.clickAt("link=Events", RuntimeVariables.replace(""));
+				selenium.clickAt("link=Events",
+					RuntimeVariables.replace("Events"));
 				selenium.waitForPageToLoad("30000");
 				selenium.clickAt("link=Weekly Repeating Event",
-					RuntimeVariables.replace(""));
+					RuntimeVariables.replace("Weekly Repeating Event"));
 				selenium.waitForPageToLoad("30000");
 				assertEquals(RuntimeVariables.replace("Weekly Repeating Event"),
 					selenium.getText("//div[1]/h1/span"));
@@ -174,17 +175,23 @@ public class AddEventRepeatingWeeklyTest extends BaseTestCase {
 					selenium.getText("//dl[@class='property-list']/dd[2]"));
 				selenium.open("/web/guest/home/");
 				selenium.clickAt("link=Calendar Test Page",
-					RuntimeVariables.replace(""));
+					RuntimeVariables.replace("Calendar Test Page"));
 				selenium.waitForPageToLoad("30000");
-				selenium.clickAt("link=Events", RuntimeVariables.replace(""));
+				selenium.clickAt("link=Events",
+					RuntimeVariables.replace("Events"));
 				selenium.waitForPageToLoad("30000");
-				Thread.sleep(5000);
-				selenium.clickAt("//td[6]/span/ul/li/strong/a",
-					RuntimeVariables.replace(""));
-				selenium.waitForElementPresent(
-					"//div[@class='lfr-component lfr-menu-list']/ul/li[1]/a");
-				selenium.click(RuntimeVariables.replace(
-						"//div[@class='lfr-component lfr-menu-list']/ul/li[1]/a"));
+				Thread.sleep(1000);
+				selenium.waitForVisible(
+					"//span[@title='Actions']/ul/li/strong/a/span");
+				selenium.clickAt("//span[@title='Actions']/ul/li/strong/a/span",
+					RuntimeVariables.replace("Actions"));
+				selenium.waitForVisible(
+					"//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Edit')]");
+				assertEquals(RuntimeVariables.replace("Edit"),
+					selenium.getText(
+						"//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Edit')]"));
+				selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Edit')]",
+					RuntimeVariables.replace("Edit"));
 				selenium.waitForPageToLoad("30000");
 				assertEquals("January",
 					selenium.getSelectedLabel(
@@ -214,7 +221,7 @@ public class AddEventRepeatingWeeklyTest extends BaseTestCase {
 					selenium.getSelectedLabel("//select[@id='_8_enddateyear']"));
 				selenium.open("/web/guest/home/");
 				selenium.clickAt("link=Calendar Test Page",
-					RuntimeVariables.replace(""));
+					RuntimeVariables.replace("Calendar Test Page"));
 				selenium.waitForPageToLoad("30000");
 				selenium.clickAt("link=Year", RuntimeVariables.replace("Year"));
 				selenium.waitForPageToLoad("30000");
