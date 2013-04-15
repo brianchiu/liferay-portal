@@ -1,0 +1,138 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ViewPaginationSitesDirectoryTest</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ViewPaginationSitesDirectoryTest</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/user/joebloggs/so/dashboard/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//li[contains(@class, 'selected')]/a/span</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//li[contains(@class, 'selected')]/a/span</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=View All (12)</td>
+	<td>View All (12)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=View All (12)</td>
+	<td>View All (12)</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>link=View All (12)</td>
+	<td>View All (12)</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xPath=(//h1[@class='header-title']/span)[1]</td>
+	<td>Directory</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//h1[@class='header-title']/span)[1]</td>
+	<td>Directory</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)</td>
+	<td>Liferay, Inc.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[2]</td>
+	<td>Liferay</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[3]</td>
+	<td>Open Site1 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[4]</td>
+	<td>Open Site10 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[5]</td>
+	<td>Open Site2 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[6]</td>
+	<td>Open Site3 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[7]</td>
+	<td>Open Site4 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[8]</td>
+	<td>Open Site5 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[9]</td>
+	<td>Open Site6 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[10]</td>
+	<td>Open Site7 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[3]/div/span[@class='page-indicator']</td>
+	<td>Page 1 of 2</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>//span[2]/span/input</td>
+	<td>Next</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)</td>
+	<td>Open Site8 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//span[4]/a)[2]</td>
+	<td>Open Site9 Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[3]/div/span[@class='page-indicator']</td>
+	<td>Page 2 of 2</td>
+</tr>
+</tbody></table>
+</body>
+</html>
