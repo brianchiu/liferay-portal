@@ -17,6 +17,7 @@ package com.liferay.portalweb.socialofficehome.sites.site;
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialofficehome.sites.site.addsitesdefaultpagenone.AddSitesDefaultPageNoneTests;
 import com.liferay.portalweb.socialofficehome.sites.site.addsitessite.AddSitesSiteTests;
+import com.liferay.portalweb.socialofficehome.sites.site.addsitessites.AddSitesSitesTests;
 import com.liferay.portalweb.socialofficehome.sites.site.addsiteviewccuser.AddSiteViewCCUserTests;
 import com.liferay.portalweb.socialofficehome.sites.site.deletesite.DeleteSiteTests;
 import com.liferay.portalweb.socialofficehome.sites.site.searchdeletesite.SearchDeleteSiteTests;
@@ -46,6 +47,7 @@ public class SiteTestPlan extends BaseTestSuite {
 
 		testSuite.addTest(AddSitesDefaultPageNoneTests.suite());
 		testSuite.addTest(AddSitesSiteTests.suite());
+		testSuite.addTest(AddSitesSitesTests.suite());
 		testSuite.addTest(AddSiteViewCCUserTests.suite());
 		testSuite.addTest(DeleteSiteTests.suite());
 		testSuite.addTest(SearchDeleteSiteTests.suite());
