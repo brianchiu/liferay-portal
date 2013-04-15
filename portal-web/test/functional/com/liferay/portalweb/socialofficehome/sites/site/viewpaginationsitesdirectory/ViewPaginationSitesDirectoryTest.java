@@ -28,45 +28,95 @@ public class ViewPaginationSitesDirectoryTest extends BaseTestCase {
 		selenium.waitForVisible("//li[contains(@class, 'selected')]/a/span");
 		assertEquals(RuntimeVariables.replace("Dashboard"),
 			selenium.getText("//li[contains(@class, 'selected')]/a/span"));
-		selenium.waitForVisible("link=View All (12)");
+		selenium.waitForVisible("//li[@class='more']/a");
 		assertEquals(RuntimeVariables.replace("View All (12)"),
-			selenium.getText("link=View All (12)"));
-		selenium.clickAt("link=View All (12)",
+			selenium.getText("//li[@class='more']/a"));
+		selenium.clickAt("//li[@class='more']/a",
 			RuntimeVariables.replace("View All (12)"));
 		Thread.sleep(1000);
-		selenium.waitForVisible("xPath=(//h1[@class='header-title']/span)[1]");
+		selenium.waitForVisible("//h1[@class='header-title']/span");
 		assertEquals(RuntimeVariables.replace("Directory"),
-			selenium.getText("xPath=(//h1[@class='header-title']/span)[1]"));
+			selenium.getText("//h1[@class='header-title']/span"));
 		assertEquals(RuntimeVariables.replace("Liferay, Inc."),
-			selenium.getText("xPath=(//span[4]/a)"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Liferay, Inc.')]"));
 		assertEquals(RuntimeVariables.replace("Liferay"),
-			selenium.getText("xPath=(//span[4]/a)[2]"));
+			selenium.getText("xPath=(//span[@class='name']/a)[.='Liferay']"));
 		assertEquals(RuntimeVariables.replace("Open Site1 Name"),
-			selenium.getText("xPath=(//span[4]/a)[3]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site1 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site10 Name"),
-			selenium.getText("xPath=(//span[4]/a)[4]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site10 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site2 Name"),
-			selenium.getText("xPath=(//span[4]/a)[5]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site2 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site3 Name"),
-			selenium.getText("xPath=(//span[4]/a)[6]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site3 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site4 Name"),
-			selenium.getText("xPath=(//span[4]/a)[7]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site4 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site5 Name"),
-			selenium.getText("xPath=(//span[4]/a)[8]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site5 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site6 Name"),
-			selenium.getText("xPath=(//span[4]/a)[9]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site6 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site7 Name"),
-			selenium.getText("xPath=(//span[4]/a)[10]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site7 Name')]"));
 		assertEquals(RuntimeVariables.replace("Page 1 of 2"),
-			selenium.getText("//div[3]/div/span[@class='page-indicator']"));
-		selenium.clickAt("//span[2]/span/input",
+			selenium.getText("//span[@class='page-indicator']"));
+		assertEquals("Next", selenium.getValue("//input[@value='Next']"));
+		selenium.clickAt("//input[@value='Next']",
 			RuntimeVariables.replace("Next"));
-		Thread.sleep(1000);
+		selenium.waitForVisible(
+			"xPath=(//span[@class='name']/a)[contains(.,'Open Site8 Name')]");
 		assertEquals(RuntimeVariables.replace("Open Site8 Name"),
-			selenium.getText("xPath=(//span[4]/a)"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site8 Name')]"));
 		assertEquals(RuntimeVariables.replace("Open Site9 Name"),
-			selenium.getText("xPath=(//span[4]/a)[2]"));
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site9 Name')]"));
 		assertEquals(RuntimeVariables.replace("Page 2 of 2"),
-			selenium.getText("//div[3]/div/span[@class='page-indicator']"));
+			selenium.getText("//span[@class='page-indicator']"));
+		assertEquals("Previous", selenium.getValue("//input[@value='Previous']"));
+		selenium.clickAt("//input[@value='Previous']",
+			RuntimeVariables.replace("Previous"));
+		selenium.waitForVisible(
+			"xPath=(//span[@class='name']/a)[contains(.,'Liferay, Inc.')]");
+		assertEquals(RuntimeVariables.replace("Liferay, Inc."),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Liferay, Inc.')]"));
+		assertEquals(RuntimeVariables.replace("Liferay"),
+			selenium.getText("xPath=(//span[@class='name']/a)[.='Liferay']"));
+		assertEquals(RuntimeVariables.replace("Open Site1 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site1 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site10 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site10 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site2 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site2 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site3 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site3 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site4 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site4 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site5 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site5 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site6 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site6 Name')]"));
+		assertEquals(RuntimeVariables.replace("Open Site7 Name"),
+			selenium.getText(
+				"xPath=(//span[@class='name']/a)[contains(.,'Open Site7 Name')]"));
+		assertEquals(RuntimeVariables.replace("Page 1 of 2"),
+			selenium.getText("//span[@class='page-indicator']"));
+		assertEquals("Next", selenium.getValue("//input[@value='Next']"));
 	}
 }

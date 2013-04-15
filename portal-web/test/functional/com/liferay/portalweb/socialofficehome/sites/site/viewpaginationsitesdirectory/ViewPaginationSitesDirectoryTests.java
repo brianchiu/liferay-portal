@@ -46,6 +46,7 @@ public class ViewPaginationSitesDirectoryTests extends BaseTestSuite {
 		testSuite.addTestSuite(AddSitesSite8Test.class);
 		testSuite.addTestSuite(AddSitesSite9Test.class);
 		testSuite.addTestSuite(AddSitesSite10Test.class);
+		testSuite.addTestSuite(ViewPaginationSitesDirectoryTest.class);
 		testSuite.addTestSuite(TearDownSOSitesTest.class);
 		testSuite.addTestSuite(TearDownSOSitesTest.class);
 
