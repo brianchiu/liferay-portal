@@ -59,8 +59,8 @@ public class SelectExistingDMFolderDocumentAPActionsTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Document"),
 			selenium.getText(
 				"//div[@class='lfr-component lfr-menu-list']/ul/li[8]/a[contains(.,'Document')]"));
-		selenium.click(RuntimeVariables.replace(
-				"//div[@class='lfr-component lfr-menu-list']/ul/li[8]/a[contains(.,'Document')]"));
+		selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li[8]/a[contains(.,'Document')]",
+			RuntimeVariables.replace("Document"));
 		selenium.waitForPageToLoad("30000");
 		selenium.selectFrame("relative=top");
 		selenium.waitForElementPresent("//iframe[contains(@id,'selectAsset')]");
@@ -80,14 +80,10 @@ public class SelectExistingDMFolderDocumentAPActionsTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace(
 				"You have successfully updated the setup."),
 			selenium.getText("//div[@class='portlet-msg-success']"));
-		selenium.waitForVisible(
-			"//fieldset[3]/div/div/div/div/table/tbody/tr[3]/td[2]");
-		assertEquals(RuntimeVariables.replace("Document"),
-			selenium.getText(
-				"//fieldset[3]/div/div/div/div/table/tbody/tr[3]/td[2]"));
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
-			selenium.getText(
-				"//fieldset[3]/div/div/div/div/table/tbody/tr[3]/td"));
+			selenium.getText("xPath=(//table/tbody/tr[2]/td)[4]"));
+		assertEquals(RuntimeVariables.replace("Document"),
+			selenium.getText("xPath=(//table/tbody/tr[2]/td[2])[2]"));
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
 		selenium.clickAt("link=Asset Publisher Test Page",

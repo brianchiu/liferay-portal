@@ -47,11 +47,14 @@ public class AddNewDMFolderImageAPActionsTest extends BaseTestCase {
 		selenium.waitForVisible("//input[@value='Select']");
 		selenium.clickAt("//input[@value='Select']",
 			RuntimeVariables.replace("Select"));
-		Thread.sleep(1000);
-		selenium.selectWindow("title=Documents and Media");
+		selenium.selectFrame("relative=top");
+		selenium.waitForVisible("//iframe[@name='_20_selectFolder']");
+		selenium.selectFrame("//iframe[@name='_20_selectFolder']");
+		selenium.waitForElementPresent(
+			"//script[contains(@src,'/liferay/search_container.js')]");
 		selenium.waitForVisible("//input[@value='Choose']");
-		selenium.click("//input[@value='Choose']");
-		selenium.selectWindow("null");
+		selenium.clickAt("//input[@value='Choose']",
+			RuntimeVariables.replace("Choose"));
 		selenium.selectFrame("relative=top");
 		selenium.waitForVisible("//iframe[contains(@id,'editAsset')]");
 		selenium.selectFrame("//iframe[contains(@id,'editAsset')]");

@@ -47,11 +47,15 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 		selenium.waitForVisible("//input[@value='Select']");
 		selenium.clickAt("//input[@value='Select']",
 			RuntimeVariables.replace("Select"));
-		Thread.sleep(1000);
-		selenium.selectWindow("title=Documents and Media");
+		selenium.selectFrame("relative=top");
+		selenium.waitForVisible("//iframe[@name='_20_selectFolder']");
+		selenium.selectFrame("//iframe[@name='_20_selectFolder']");
+		selenium.waitForElementPresent(
+			"//script[contains(@src,'/liferay/search_container.js')]");
 		selenium.waitForVisible("//input[@value='Choose']");
-		selenium.click("//input[@value='Choose']");
-		selenium.selectWindow("null");
+		selenium.clickAt("//input[@value='Choose']",
+			RuntimeVariables.replace("Choose"));
+		selenium.selectFrame("relative=top");
 		selenium.waitForVisible("//iframe[contains(@id,'editAsset')]");
 		selenium.selectFrame("//iframe[contains(@id,'editAsset')]");
 		selenium.waitForElementPresent(
@@ -71,9 +75,9 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 		selenium.clickAt("link=Asset Publisher Test Page",
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
-		selenium.waitForText("xPath=(//h3[@class='asset-title']/a)",
+		selenium.waitForText("//h3[@class='asset-title']/a",
 			"DM Folder Document Title");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
-			selenium.getText("xPath=(//h3[@class='asset-title']/a)"));
+			selenium.getText("//h3[@class='asset-title']/a"));
 	}
 }

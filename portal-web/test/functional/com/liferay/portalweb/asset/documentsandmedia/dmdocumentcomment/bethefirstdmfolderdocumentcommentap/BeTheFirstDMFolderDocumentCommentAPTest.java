@@ -48,8 +48,8 @@ public class BeTheFirstDMFolderDocumentCommentAPTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Joe Bloggs"),
 			selenium.getText("//span[@class='user-name']"));
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
-			selenium.getText("//div[3]/h1[@class='header-title']/span"));
+			selenium.getText("//h1[@class='header-title']/span"));
 		assertEquals(RuntimeVariables.replace("DM Folder Document Comment Body"),
-			selenium.getText("//div/div[3]/div/div[1]"));
+			selenium.getText("//div[@class='lfr-discussion-message']"));
 	}
 }

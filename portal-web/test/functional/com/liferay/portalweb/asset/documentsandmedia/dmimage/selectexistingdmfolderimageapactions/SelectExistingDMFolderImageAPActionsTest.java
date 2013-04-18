@@ -48,11 +48,11 @@ public class SelectExistingDMFolderImageAPActionsTest extends BaseTestCase {
 		selenium.waitForElementPresent(
 			"//script[contains(@src,'/liferay/navigation_interaction.js')]");
 		selenium.waitForVisible(
-			"//div[3]/div/span[@title='Select']/ul/li/strong/a/span");
+			"xPath=(//span[@title='Select']/ul/li/strong/a/span)[2]");
 		assertEquals(RuntimeVariables.replace("Select"),
 			selenium.getText(
-				"//div[3]/div/span[@title='Select']/ul/li/strong/a/span"));
-		selenium.clickAt("//div[3]/div/span[@title='Select']/ul/li/strong/a/span",
+				"xPath=(//span[@title='Select']/ul/li/strong/a/span)[2]"));
+		selenium.clickAt("xPath=(//span[@title='Select']/ul/li/strong/a/span)[2]",
 			RuntimeVariables.replace("Select"));
 		selenium.waitForVisible(
 			"//div[@class='lfr-component lfr-menu-list']/ul/li[8]/a[contains(.,'Document')]");
@@ -80,14 +80,10 @@ public class SelectExistingDMFolderImageAPActionsTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace(
 				"You have successfully updated the setup."),
 			selenium.getText("//div[@class='portlet-msg-success']"));
-		selenium.waitForVisible(
-			"//fieldset[3]/div/div/div/div/table/tbody/tr[3]/td[2]");
-		assertEquals(RuntimeVariables.replace("Document"),
-			selenium.getText(
-				"//fieldset[3]/div/div/div/div/table/tbody/tr[3]/td[2]"));
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
-			selenium.getText(
-				"//fieldset[3]/div/div/div/div/table/tbody/tr[3]/td"));
+			selenium.getText("xPath=(//table/tbody/tr[2]/td)[4]"));
+		assertEquals(RuntimeVariables.replace("Document"),
+			selenium.getText("xPath=(//table/tbody/tr[2]/td[2])[2]"));
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
 		selenium.clickAt("link=Asset Publisher Test Page",

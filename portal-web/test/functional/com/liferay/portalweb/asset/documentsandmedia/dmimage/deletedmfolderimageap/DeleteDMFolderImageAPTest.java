@@ -54,8 +54,8 @@ public class DeleteDMFolderImageAPTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
 			selenium.getText(
 				"//td[@id='_86_ocerSearchContainer_col-title_row-1']"));
-		selenium.click(RuntimeVariables.replace(
-				"xpath=(//img[@alt='Delete'])[2]"));
+		selenium.clickAt("xPath=(//img[@alt='Delete'])[2]",
+			RuntimeVariables.replace("Delete"));
 		selenium.waitForPageToLoad("30000");
 		assertTrue(selenium.getConfirmation()
 						   .matches("^Are you sure you want to delete this[\\s\\S] It will be deleted immediately.$"));

@@ -65,18 +65,23 @@
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>xPath=(//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2])[2]</td>
+	<td>xPath=(//table/tbody/tr[2]/td[2])[2]</td>
 	<td>Document</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>xPath=(//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2])[2]</td>
-	<td>Document</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>xPath=(//table[@class='taglib-search-iterator']/tbody/tr[3]/td)[4]</td>
+	<td>xPath=(//table/tbody/tr[2]/td)[4]</td>
 	<td>DM Folder Document Title</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xPath=(//table/tbody/tr[2]/td[2])[2]</td>
+	<td>Document</td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>//td[4]/span/a/img[@alt='Delete']</td>
+	<td>Delete</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>

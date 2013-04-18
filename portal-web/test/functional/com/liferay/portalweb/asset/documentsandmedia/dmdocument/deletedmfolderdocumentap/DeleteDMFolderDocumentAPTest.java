@@ -46,14 +46,12 @@ public class DeleteDMFolderDocumentAPTest extends BaseTestCase {
 			"//iframe[contains(@id,'configurationIframeDialog')]");
 		selenium.waitForElementPresent(
 			"//script[contains(@src,'/liferay/navigation_interaction.js')]");
-		selenium.waitForVisible(
-			"xPath=(//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2])[2]");
-		assertEquals(RuntimeVariables.replace("Document"),
-			selenium.getText(
-				"xPath=(//table[@class='taglib-search-iterator']/tbody/tr[3]/td[2])[2]"));
+		selenium.waitForVisible("xPath=(//table/tbody/tr[2]/td[2])[2]");
 		assertEquals(RuntimeVariables.replace("DM Folder Document Title"),
-			selenium.getText(
-				"xPath=(//table[@class='taglib-search-iterator']/tbody/tr[3]/td)[4]"));
+			selenium.getText("xPath=(//table/tbody/tr[2]/td)[4]"));
+		assertEquals(RuntimeVariables.replace("Document"),
+			selenium.getText("xPath=(//table/tbody/tr[2]/td[2])[2]"));
+		assertTrue(selenium.isVisible("//td[4]/span/a/img[@alt='Delete']"));
 		selenium.click(RuntimeVariables.replace(
 				"//td[4]/span/a/img[@alt='Delete']"));
 		selenium.waitForPageToLoad("30000");
