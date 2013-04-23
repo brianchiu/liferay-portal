@@ -12,10 +12,10 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficesite.home.homelar;
+package com.liferay.portalweb.socialofficesite.home.rss;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
-import com.liferay.portalweb.socialofficesite.home.homelar.importrsssitelar.ImportRSSSiteLARTests;
+import com.liferay.portalweb.socialofficesite.home.rss.addrssfeedsite.AddRSSFeedSiteTests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -23,13 +23,12 @@ import junit.framework.TestSuite;
 /**
  * @author Brian Wing Shun Chan
  */
-public class HomeLARTestPlan extends BaseTestSuite {
+public class RSSTestPlan extends BaseTestSuite {
 
 	public static Test suite() {
 		TestSuite testSuite = new TestSuite();
 
-		//testSuite.addTest(ImportBookmarksSiteLARTests.suite());
-		testSuite.addTest(ImportRSSSiteLARTests.suite());
+		testSuite.addTest(AddRSSFeedSiteTests.suite());
 
 		return testSuite;
 	}
