@@ -16,6 +16,7 @@ package com.liferay.portalweb.socialofficehome.activities;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialofficehome.activities.activitiesblockedsouser.ActivitiesBlockedSOUserTestPlan;
+import com.liferay.portalweb.socialofficehome.activities.activitiesprofileimage.ViewActivitiesProfileImageMeTests;
 import com.liferay.portalweb.socialofficehome.activities.activitiessites.ActivitiesSitesTestPlan;
 import com.liferay.portalweb.socialofficehome.activities.dashboardactivity.DashboardActivityTestPlan;
 import com.liferay.portalweb.socialofficehome.activities.mbentryactivity.MBEntryActivityTestPlan;
@@ -33,6 +34,7 @@ public class ActivitiesTestPlan extends BaseTestSuite {
 
 		testSuite.addTest(ActivitiesBlockedSOUserTestPlan.suite());
 		testSuite.addTest(ActivitiesSitesTestPlan.suite());
+		testSuite.addTest(ViewActivitiesProfileImageMeTests.suite());
 		testSuite.addTest(DashboardActivityTestPlan.suite());
 		testSuite.addTest(MBEntryActivityTestPlan.suite());
 
