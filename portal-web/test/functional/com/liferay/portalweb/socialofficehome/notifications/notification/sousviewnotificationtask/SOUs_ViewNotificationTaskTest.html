@@ -1,12 +1,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SOUs_ViewNotificationsTaskAssignedToConnectionTest</title>
+<title>SOUs_ViewNotificationTaskTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">SOUs_ViewNotificationsTaskAssignedToConnectionTest</td></tr>
+<tr><td rowspan="1" colspan="3">SOUs_ViewNotificationTaskTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -45,18 +45,23 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[@class='notification-entry']/div</td>
+	<td>//div[@class='notification-entry']/div[@class='title']</td>
 	<td>Joe Bloggs assigned you a task.</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[@class='notification-entry']/div[2]</td>
+	<td>//div[@class='notification-entry']/div[@class='body']</td>
 	<td>Task Description</td>
 </tr>
 <tr>
+	<td>assertVisible</td>
+	<td>//div[@class='notification-entry']/div[@class='datetime']</td>
+	<td>Date and Time</td>
+</tr>
+<tr>
 	<td>clickAtAndWait</td>
-	<td>//div[@class='title']/a</td>
-	<td>Joe Bloggs</td>
+	<td>//div[@class='notification-entry']/div[@class='title']</td>
+	<td>Joe Bloggs assigned you a task.</td>
 </tr>
 <tr>
 	<td>assertText</td>

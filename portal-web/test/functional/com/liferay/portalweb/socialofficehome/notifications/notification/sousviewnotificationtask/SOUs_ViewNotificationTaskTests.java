@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationstaskassignedtoconnectiontest;
+package com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationtask;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialoffice.users.user.addsouser.AddSOUserTest;
@@ -34,8 +34,7 @@ import junit.framework.TestSuite;
 /**
  * @author Brian Wing Shun Chan
  */
-public class SOUs_ViewNotificationsTaskAssignedToConnectionTests
-	extends BaseTestSuite {
+public class SOUs_ViewNotificationTaskTests extends BaseTestSuite {
 	public static Test suite() {
 		TestSuite testSuite = new TestSuite();
 		testSuite.addTestSuite(AddSOUserTest.class);
@@ -50,7 +49,7 @@ public class SOUs_ViewNotificationsTaskAssignedToConnectionTests
 		testSuite.addTestSuite(AddTasksTaskAssignedToConnectionTest.class);
 		testSuite.addTestSuite(SignOutSOTest.class);
 		testSuite.addTestSuite(SOUs_SignInSOTest.class);
-		testSuite.addTestSuite(SOUs_ViewNotificationsTaskAssignedToConnectionTest.class);
+		testSuite.addTestSuite(SOUs_ViewNotificationTaskTest.class);
 		testSuite.addTestSuite(SOUs_SignOutSOTest.class);
 		testSuite.addTestSuite(SignInSOTest.class);
 		testSuite.addTestSuite(TearDownTasksTaskTest.class);

@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationstaskassignedtoconnectiontest;
+package com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationtask;
 
 import com.liferay.portalweb.portal.BaseTestCase;
 import com.liferay.portalweb.portal.util.RuntimeVariables;
@@ -20,10 +20,8 @@ import com.liferay.portalweb.portal.util.RuntimeVariables;
 /**
  * @author Brian Wing Shun Chan
  */
-public class SOUs_ViewNotificationsTaskAssignedToConnectionTest
-	extends BaseTestCase {
-	public void testSOUs_ViewNotificationsTaskAssignedToConnection()
-		throws Exception {
+public class SOUs_ViewNotificationTaskTest extends BaseTestCase {
+	public void testSOUs_ViewNotificationTask() throws Exception {
 		selenium.selectWindow("null");
 		selenium.selectFrame("relative=top");
 		selenium.open("/user/socialoffice01/so/dashboard/");
@@ -38,11 +36,15 @@ public class SOUs_ViewNotificationsTaskAssignedToConnectionTest
 		selenium.mouseOver("//li[@id='_145_notificationsMenu']");
 		selenium.waitForVisible("//div[@class='notification-entry']");
 		assertEquals(RuntimeVariables.replace("Joe Bloggs assigned you a task."),
-			selenium.getText("//div[@class='notification-entry']/div"));
+			selenium.getText(
+				"//div[@class='notification-entry']/div[@class='title']"));
 		assertEquals(RuntimeVariables.replace("Task Description"),
-			selenium.getText("//div[@class='notification-entry']/div[2]"));
-		selenium.clickAt("//div[@class='title']/a",
-			RuntimeVariables.replace("Joe Bloggs"));
+			selenium.getText(
+				"//div[@class='notification-entry']/div[@class='body']"));
+		assertTrue(selenium.isVisible(
+				"//div[@class='notification-entry']/div[@class='datetime']"));
+		selenium.clickAt("//div[@class='notification-entry']/div[@class='title']",
+			RuntimeVariables.replace("Joe Bloggs assigned you a task."));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("Assigned to Me"),
 			selenium.getText("link=Assigned to Me"));

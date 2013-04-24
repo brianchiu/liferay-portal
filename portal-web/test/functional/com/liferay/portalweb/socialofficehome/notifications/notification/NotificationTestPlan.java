@@ -22,7 +22,7 @@ import com.liferay.portalweb.socialofficehome.notifications.notification.souscon
 import com.liferay.portalweb.socialofficehome.notifications.notification.sousconfirmnotificationjoinpubrstrsite.SOUs_ConfirmNotificationJoinPubRstrSiteTests;
 import com.liferay.portalweb.socialofficehome.notifications.notification.sousconfirmnotificationjoinsite.SOUs_ConfirmNotificationJoinSiteTests;
 import com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationannouncementsite.SOUs_ViewNotificationAnnouncementSiteTests;
-import com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationstaskassignedtoconnectiontest.SOUs_ViewNotificationsTaskAssignedToConnectionTests;
+import com.liferay.portalweb.socialofficehome.notifications.notification.sousviewnotificationtask.SOUs_ViewNotificationTaskTests;
 import com.liferay.portalweb.socialofficehome.notifications.notification.viewnotificationspaginated.ViewNotificationsPaginatedTests;
 
 import junit.framework.Test;
@@ -44,8 +44,7 @@ public class NotificationTestPlan extends BaseTestSuite {
 		testSuite.addTest(SOUs_ConfirmNotificationJoinPubRstrSiteTests.suite());
 		testSuite.addTest(SOUs_ConfirmNotificationJoinSiteTests.suite());
 		testSuite.addTest(SOUs_ViewNotificationAnnouncementSiteTests.suite());
-		testSuite.addTest(
-			SOUs_ViewNotificationsTaskAssignedToConnectionTests.suite());
+		testSuite.addTest(SOUs_ViewNotificationTaskTests.suite());
 		testSuite.addTest(ViewNotificationsPaginatedTests.suite());
 
 		return testSuite;
