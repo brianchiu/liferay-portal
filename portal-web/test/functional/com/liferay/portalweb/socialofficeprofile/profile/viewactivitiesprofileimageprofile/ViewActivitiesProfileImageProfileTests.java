@@ -65,7 +65,7 @@ public class ViewActivitiesProfileImageProfileTests extends BaseTestSuite {
 		testSuite.addTestSuite(SOUs_ReplyMicroblogsContentProfileTest.class);
 		testSuite.addTestSuite(SOUs_ReplyMBThreadMessageReplySiteTest.class);
 		testSuite.addTestSuite(SOUs_AddBlogsEntryCommentSiteTest.class);
-		testSuite.addTestSuite(SOUs_ViewActivitiesMeProfileTest.class);
+		testSuite.addTestSuite(SOUs_ViewActivitiesProfileImageProfileTest.class);
 		testSuite.addTestSuite(SOUs_SignOutSOTest.class);
 		testSuite.addTestSuite(SignInSOTest.class);
 		testSuite.addTestSuite(ViewActivitiesProfileImageProfileTest.class);

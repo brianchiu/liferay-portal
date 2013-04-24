@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficehome.activities.activitiesprofileimage;
+package com.liferay.portalweb.socialofficehome.activities.activitiesprofileimage.viewactivitiesprofileimageme;
 
 import com.liferay.portalweb.portal.BaseTestCase;
 import com.liferay.portalweb.portal.util.RuntimeVariables;

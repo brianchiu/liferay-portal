@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficehome.activities.activitiesprofileimage;
+package com.liferay.portalweb.socialofficehome.activities.activitiesprofileimage.viewactivitiesprofileimageme;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialoffice.users.user.addsouser.AddSOUserTest;
@@ -65,7 +65,7 @@ public class ViewActivitiesProfileImageMeTests extends BaseTestSuite {
 		testSuite.addTestSuite(SOUs_ReplyMicroblogsContentProfileTest.class);
 		testSuite.addTestSuite(SOUs_ReplyMBThreadMessageReplySiteTest.class);
 		testSuite.addTestSuite(SOUs_AddBlogsEntryCommentSiteTest.class);
-		testSuite.addTestSuite(SOUs_ViewActivitiesMeProfileTest.class);
+		testSuite.addTestSuite(SOUs_ViewActivitiesProfileImageMeTest.class);
 		testSuite.addTestSuite(SOUs_SignOutSOTest.class);
 		testSuite.addTestSuite(SignInSOTest.class);
 		testSuite.addTestSuite(ViewActivitiesProfileImageMeTest.class);
