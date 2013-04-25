@@ -65,10 +65,12 @@ public class SelectExistingDMFolderImageAPActionsTest extends BaseTestCase {
 		selenium.selectFrame("relative=top");
 		selenium.waitForElementPresent("//iframe[contains(@id,'selectAsset')]");
 		selenium.selectFrame("//iframe[contains(@id,'selectAsset')]");
-		selenium.waitForVisible("//td[1]/a");
+		selenium.waitForVisible(
+			"//tr[contains(.,'DM Folder Image Title')]/td[1]/a");
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
-			selenium.getText("//td[1]/a"));
-		selenium.clickAt("//td[1]/a",
+			selenium.getText(
+				"//tr[contains(.,'DM Folder Image Title')]/td[1]/a"));
+		selenium.clickAt("//tr[contains(.,'DM Folder Image Title')]/td[1]/a",
 			RuntimeVariables.replace("DM Folder Image Title"));
 		selenium.waitForPageToLoad("30000");
 		selenium.selectFrame("relative=top");
@@ -81,9 +83,9 @@ public class SelectExistingDMFolderImageAPActionsTest extends BaseTestCase {
 				"You have successfully updated the setup."),
 			selenium.getText("//div[@class='portlet-msg-success']"));
 		assertEquals(RuntimeVariables.replace("DM Folder Image Title"),
-			selenium.getText("xPath=(//table/tbody/tr[2]/td)[4]"));
+			selenium.getText("//tr[contains(.,'DM Folder Image Title')]/td"));
 		assertEquals(RuntimeVariables.replace("Document"),
-			selenium.getText("xPath=(//table/tbody/tr[2]/td[2])[2]"));
+			selenium.getText("//tr[contains(.,'DM Folder Image Title')]/td[2]"));
 		selenium.selectFrame("relative=top");
 		selenium.open("/web/guest/home/");
 		selenium.clickAt("link=Asset Publisher Test Page",

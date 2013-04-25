@@ -63,6 +63,7 @@ public class ConfigurePortletShowMetadataViewCountTest extends BaseTestCase {
 			"View Count");
 		assertTrue(selenium.isPartialText(
 				"//select[@id='_86_currentMetadataFields']", "View Count"));
+		Thread.sleep(1000);
 		selenium.clickAt("//input[@value='Save']",
 			RuntimeVariables.replace("Save"));
 		selenium.waitForPageToLoad("30000");

@@ -67,6 +67,7 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 			RuntimeVariables.replace("Document_1.txt"));
 		selenium.type("//input[@id='_20_title']",
 			RuntimeVariables.replace("DM Folder Document Title"));
+		selenium.waitForVisible("//input[@value='Publish']");
 		selenium.clickAt("//input[@value='Publish']",
 			RuntimeVariables.replace("Publish"));
 		selenium.waitForPageToLoad("30000");

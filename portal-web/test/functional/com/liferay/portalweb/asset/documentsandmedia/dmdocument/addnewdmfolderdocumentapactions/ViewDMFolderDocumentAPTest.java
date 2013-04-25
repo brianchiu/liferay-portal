@@ -123,9 +123,9 @@ public class ViewDMFolderDocumentAPTest extends BaseTestCase {
 				"//div[@id='documentLibraryAssetMetadataPanel']/div/div/div[contains(.,'Content Type')]",
 				"text/plain"));
 		assertEquals(RuntimeVariables.replace("1.0"),
-			selenium.getText("//tr[3]/td[2]"));
-		assertTrue(selenium.isVisible("//tr[3]/td[3]"));
+			selenium.getText("//tr[2]/td[2]"));
+		assertTrue(selenium.isVisible("//tr[2]/td[3]"));
 		assertEquals(RuntimeVariables.replace("0k"),
-			selenium.getText("//tr[3]/td[4]"));
+			selenium.getText("//tr[2]/td[4]"));
 	}
 }
