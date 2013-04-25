@@ -16,6 +16,7 @@ package com.liferay.portalweb.socialofficehome.tasks.task;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtoconnection.AddTasksTaskAssignedToConnectionTests;
+import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtofollower.AddTasksTaskAssignedToFollowerTests;
 import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtome.AddTasksTaskAssignedToMeTests;
 import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtomecomment.AddTasksTaskAssignedToMeCommentTests;
 import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtomeduedate.AddTasksTaskAssignedToMeDueDateTests;
@@ -48,6 +49,7 @@ public class TaskTestPlan extends BaseTestSuite {
 		TestSuite testSuite = new TestSuite();
 
 		testSuite.addTest(AddTasksTaskAssignedToConnectionTests.suite());
+		testSuite.addTest(AddTasksTaskAssignedToFollowerTests.suite());
 		testSuite.addTest(AddTasksTaskAssignedToMeTests.suite());
 		testSuite.addTest(AddTasksTaskAssignedToMeCommentTests.suite());
 		testSuite.addTest(AddTasksTaskAssignedToMeDueDateTests.suite());
