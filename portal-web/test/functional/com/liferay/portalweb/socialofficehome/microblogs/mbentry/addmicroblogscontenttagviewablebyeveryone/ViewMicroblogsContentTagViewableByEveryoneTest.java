@@ -51,7 +51,7 @@ public class ViewMicroblogsContentTagViewableByEveryoneTest extends BaseTestCase
 			selenium.getText("//div[@class='content']"));
 		assertEquals(RuntimeVariables.replace("Microblogs"),
 			selenium.getText("//div[@class='content']/span/a"));
-		selenium.clickAt("//a[@class='aui-tab-label']/strong",
+		selenium.clickAt("//ul[contains(@class,'tabview-list')]/li[contains(.,'Microblogs')]/span/a",
 			RuntimeVariables.replace("Microblogs"));
 		selenium.waitForPageToLoad("30000");
 		assertEquals(RuntimeVariables.replace("Microblogs"),
