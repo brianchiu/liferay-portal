@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -37,25 +37,32 @@ public class SOUs_AddMicroblogsContentViewableByEveryoneTest
 		selenium.waitForElementPresent("//textarea");
 		selenium.clickAt("//textarea", RuntimeVariables.replace("Text area"));
 		selenium.sendKeys("//textarea",
-			RuntimeVariables.replace("SO User Microblogs Post"));
-		selenium.waitForText("//span[@class='microblogs-countdown']", "127");
-		assertEquals(RuntimeVariables.replace("127"),
+			RuntimeVariables.replace("Microblogs Post"));
+		selenium.waitForText("//span[@class='microblogs-countdown']", "135");
+		assertEquals(RuntimeVariables.replace("135"),
 			selenium.getText("//span[@class='microblogs-countdown']"));
 		selenium.select("//select[@id='_1_WAR_microblogsportlet_socialRelationType']",
 			RuntimeVariables.replace("Everyone"));
 		selenium.clickAt("//input[@value='Post']",
 			RuntimeVariables.replace("Post"));
 		Thread.sleep(1000);
-		selenium.waitForVisible("xpath=(//div[@class='user-name']/span/a)");
+		selenium.waitForText("xpath=(//div[@class='user-name']/span/a)[1]",
+			"Social01 Office01 User01");
 		assertEquals(RuntimeVariables.replace("Social01 Office01 User01"),
-			selenium.getText("xpath=(//div[@class='user-name']/span/a)"));
-		assertEquals(RuntimeVariables.replace("SO User Microblogs Post"),
-			selenium.getText("xpath=(//div[@class='content'])"));
+			selenium.getText("xpath=(//div[@class='user-name']/span/a)[1]"));
+		assertEquals(RuntimeVariables.replace("Microblogs Post"),
+			selenium.getText("xpath=(//div[@class='content'])[1]"));
 		assertEquals(RuntimeVariables.replace("Comment"),
-			selenium.getText("xpath=(//span[@class='action comment']/a)"));
+			selenium.getText("xpath=(//span[@class='action comment']/a)[1]"));
 		assertEquals(RuntimeVariables.replace("Edit"),
-			selenium.getText("xpath=(//span[@class='action edit']/a)"));
+			selenium.getText("xpath=(//span[@class='action edit']/a)[1]"));
 		assertEquals(RuntimeVariables.replace("Delete"),
-			selenium.getText("xpath=(//span[@class='action delete']/a)"));
+			selenium.getText("xpath=(//span[@class='action delete']/a)[1]"));
+		assertEquals(RuntimeVariables.replace("Joe Bloggs"),
+			selenium.getText("xpath=(//div[@class='user-name']/span/a)[2]"));
+		assertEquals(RuntimeVariables.replace("Social01 Office01 User01"),
+			selenium.getText("xpath=(//div[@class='content'])[2]"));
+		assertEquals(RuntimeVariables.replace("1 Comment"),
+			selenium.getText("xpath=(//span[@class='action comment']/a)[2]"));
 	}
 }

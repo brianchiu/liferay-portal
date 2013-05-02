@@ -41,17 +41,17 @@
 <tr>
 	<td>sendKeys</td>
 	<td>//textarea</td>
-	<td>SO User Microblogs Post</td>
+	<td>Microblogs Post</td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>//span[@class='microblogs-countdown']</td>
-	<td>127</td>
+	<td>135</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>//span[@class='microblogs-countdown']</td>
-	<td>127</td>
+	<td>135</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -69,34 +69,49 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForVisible</td>
-	<td>xpath=(//div[@class='user-name']/span/a)</td>
+	<td>waitForText</td>
+	<td>xpath=(//div[@class='user-name']/span/a)[1]</td>
 	<td>Social01 Office01 User01</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>xpath=(//div[@class='user-name']/span/a)</td>
+	<td>xpath=(//div[@class='user-name']/span/a)[1]</td>
 	<td>Social01 Office01 User01</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>xpath=(//div[@class='content'])</td>
-	<td>SO User Microblogs Post</td>
+	<td>xpath=(//div[@class='content'])[1]</td>
+	<td>Microblogs Post</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>xpath=(//span[@class='action comment']/a)</td>
+	<td>xpath=(//span[@class='action comment']/a)[1]</td>
 	<td>Comment</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>xpath=(//span[@class='action edit']/a)</td>
+	<td>xpath=(//span[@class='action edit']/a)[1]</td>
 	<td>Edit</td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>xpath=(//span[@class='action delete']/a)</td>
+	<td>xpath=(//span[@class='action delete']/a)[1]</td>
 	<td>Delete</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@class='user-name']/span/a)[2]</td>
+	<td>Joe Bloggs</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//div[@class='content'])[2]</td>
+	<td>Social01 Office01 User01</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//span[@class='action comment']/a)[2]</td>
+	<td>1 Comment</td>
 </tr>
 </tbody></table>
 </body>

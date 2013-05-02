@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -43,10 +43,10 @@ public class SOUs_ReplyMicroblogsContentMentionsTest extends BaseTestCase {
 		selenium.clickAt("//textarea",
 			RuntimeVariables.replace("Leave a comment..."));
 		selenium.sendKeys("//textarea",
-			RuntimeVariables.replace("#Microblogs Post Comment"));
+			RuntimeVariables.replace("Microblogs Post Comment"));
 		selenium.waitForText("xPath=(//span[@class='microblogs-countdown'])[2]",
-			"126");
-		assertEquals(RuntimeVariables.replace("126"),
+			"127");
+		assertEquals(RuntimeVariables.replace("127"),
 			selenium.getText("xPath=(//span[@class='microblogs-countdown'])[2]"));
 		selenium.clickAt("xPath=(//input[@value='Post'])[2]",
 			RuntimeVariables.replace("Post"));
