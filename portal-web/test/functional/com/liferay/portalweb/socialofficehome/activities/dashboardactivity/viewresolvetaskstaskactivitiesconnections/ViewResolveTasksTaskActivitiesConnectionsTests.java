@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficehome.activities.dashboardactivity.viewresolvetasksactivitiesconnections;
+package com.liferay.portalweb.socialofficehome.activities.dashboardactivity.viewresolvetaskstaskactivitiesconnections;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialoffice.users.user.addsouser.AddSOUserTest;
@@ -36,7 +36,8 @@ import junit.framework.TestSuite;
 /**
  * @author Brian Wing Shun Chan
  */
-public class ViewRevolveTasksActivitiesConnectionsTests extends BaseTestSuite {
+public class ViewResolveTasksTaskActivitiesConnectionsTests
+	extends BaseTestSuite {
 	public static Test suite() {
 		TestSuite testSuite = new TestSuite();
 		testSuite.addTestSuite(AddSOUserTest.class);
@@ -55,7 +56,7 @@ public class ViewRevolveTasksActivitiesConnectionsTests extends BaseTestSuite {
 		testSuite.addTestSuite(SOUs_ViewResolveTasksTaskActivitiesMeTest.class);
 		testSuite.addTestSuite(SOUs_SignOutSOTest.class);
 		testSuite.addTestSuite(SignInSOTest.class);
-		testSuite.addTestSuite(ViewRevolveTasksActivitiesConnectionsTest.class);
+		testSuite.addTestSuite(ViewResolveTasksTaskActivitiesConnectionsTest.class);
 		testSuite.addTestSuite(TearDownTasksTaskTest.class);
 		testSuite.addTestSuite(TearDownSOUserTest.class);
 		testSuite.addTestSuite(TearDownNotificationsTest.class);

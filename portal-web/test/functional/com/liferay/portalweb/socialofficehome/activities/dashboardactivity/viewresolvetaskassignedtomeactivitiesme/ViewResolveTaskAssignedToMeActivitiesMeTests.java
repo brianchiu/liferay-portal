@@ -12,13 +12,12 @@
  * details.
  */
 
-package com.liferay.portalweb.socialofficehome.activities.dashboardactivity.viewresolvetaskassignedtomeactiviesme;
+package com.liferay.portalweb.socialofficehome.activities.dashboardactivity.viewresolvetaskassignedtomeactivitiesme;
 
 import com.liferay.portalweb.portal.BaseTestSuite;
 import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtome.AddTasksTaskAssignedToMeTest;
 import com.liferay.portalweb.socialofficehome.tasks.task.addtaskstaskassignedtome.TearDownTasksTaskTest;
 import com.liferay.portalweb.socialofficehome.tasks.task.resolvetaskstaskassignedtome.ResolveTasksTaskAssignedToMeTest;
-import com.liferay.portalweb.socialofficehome.tasks.task.resolvetaskstaskassignedtome.ViewResolveTasksTaskAssignedToMeTest;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -26,13 +25,12 @@ import junit.framework.TestSuite;
 /**
  * @author Brian Wing Shun Chan
  */
-public class ViewResolveTaskAssignedToMeActiviesMeTests extends BaseTestSuite {
+public class ViewResolveTaskAssignedToMeActivitiesMeTests extends BaseTestSuite {
 	public static Test suite() {
 		TestSuite testSuite = new TestSuite();
 		testSuite.addTestSuite(AddTasksTaskAssignedToMeTest.class);
 		testSuite.addTestSuite(ResolveTasksTaskAssignedToMeTest.class);
-		testSuite.addTestSuite(ViewResolveTasksTaskAssignedToMeTest.class);
-		testSuite.addTestSuite(ViewResolveTaskAssignedToMeActiviesMeTest.class);
+		testSuite.addTestSuite(ViewResolveTaskAssignedToMeActivitiesMeTest.class);
 		testSuite.addTestSuite(TearDownTasksTaskTest.class);
 
 		return testSuite;

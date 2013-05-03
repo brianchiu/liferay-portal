@@ -1,12 +1,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ViewResolveTaskAssignedToMeActiviesMeTest</title>
+<title>ViewResolveTasksTaskActivitiesConnectionsTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">ViewResolveTaskAssignedToMeActiviesMeTest</td></tr>
+<tr><td rowspan="1" colspan="3">ViewResolveTasksTaskActivitiesConnectionsTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -20,32 +20,22 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>link=Me</td>
-	<td>Me</td>
+	<td>link=Connections</td>
+	<td>Connections</td>
 </tr>
 <tr>
 	<td>clickAtAndWait</td>
-	<td>link=Me</td>
-	<td>Me</td>
+	<td>link=Connections</td>
+	<td>Connections</td>
 </tr>
 <tr>
 	<td>assertText</td>
 	<td>xPath=(//div[@class='activity-title'])[1]</td>
-	<td>Joe resolved a task.</td>
+	<td>Social01 Office01 User01 resolved a task.</td>
 </tr>
 <tr>
 	<td>assertPartialText</td>
 	<td>xPath=(//div[@class='activity-body'])[1]</td>
-	<td>Task Description</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>xPath=(//div[@class='activity-title'])[2]</td>
-	<td>Joe added a new task.</td>
-</tr>
-<tr>
-	<td>assertPartialText</td>
-	<td>xPath=(//div[@class='activity-body'])[2]</td>
 	<td>Task Description</td>
 </tr>
 </tbody></table>
