@@ -47,6 +47,7 @@ public class ViewWikiPageAssignedToMeTest extends BaseTestCase {
 		assertEquals(RuntimeVariables.replace("Pending (Review)"),
 			selenium.getText("//span[@class='workflow-status']/strong"));
 		selenium.open("/web/guest/home/");
+		selenium.waitForVisible("//li[@id='_145_mySites']/a/span");
 		assertEquals(RuntimeVariables.replace("Go to"),
 			selenium.getText("//li[@id='_145_mySites']/a/span"));
 		selenium.mouseOver("//li[@id='_145_mySites']/a/span");

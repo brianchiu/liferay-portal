@@ -40,7 +40,7 @@ public class Guest_ViewWikiPageAssignedToMyRolesTest extends BaseTestCase {
 			selenium.getText("//div/div/h2"));
 		assertEquals(RuntimeVariables.replace(
 				"There are no pages submitted by you pending approval."),
-			selenium.getText("xPath=(//div[@class='portlet-msg-info'])[2]"));
+			selenium.getText("xPath=(//div[@class='portlet-msg-info'])[3]"));
 		assertFalse(selenium.isTextPresent("Wiki Page Title"));
 	}
 }
