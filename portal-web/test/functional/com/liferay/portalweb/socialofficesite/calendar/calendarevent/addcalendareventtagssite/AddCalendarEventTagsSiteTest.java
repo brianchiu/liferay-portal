@@ -91,8 +91,8 @@ public class AddCalendarEventTagsSiteTest extends BaseTestCase {
 
 				assertEquals(RuntimeVariables.replace("Categorization"),
 					selenium.getText(
-						"//div[@id='calendarEventCateogrizationPanel']/div/div/span"));
-				selenium.clickAt("//div[@id='calendarEventCateogrizationPanel']/div/div/span",
+						"//div[@id='calendarEventCategorizationPanel']/div/div/span"));
+				selenium.clickAt("//div[@id='calendarEventCategorizationPanel']/div/div/span",
 					RuntimeVariables.replace("Categorization"));
 				selenium.waitForVisible("//input[@title='Add Tags']");
 
