@@ -29,23 +29,24 @@ public class AddNewDMFolderDocumentAPActionsTest extends BaseTestCase {
 			RuntimeVariables.replace("Asset Publisher Test Page"));
 		selenium.waitForPageToLoad("30000");
 		Thread.sleep(1000);
-		assertEquals(RuntimeVariables.replace("Add New"),
-			selenium.getText("//span[@title='Add New']/ul/li/strong/a"));
-		selenium.clickAt("//span[@title='Add New']/ul/li/strong/a",
-			RuntimeVariables.replace("Add New"));
+		assertEquals(RuntimeVariables.replace("Add"),
+			selenium.getText(
+				"//div[@class='lfr-meta-actions add-asset-selector']/div/div/div/ul/li/a"));
+		selenium.click(
+			"//div[@class='lfr-meta-actions add-asset-selector']/div/div/div/ul/li/a");
 		selenium.waitForVisible(
-			"//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Basic Document')]");
+			"//ul[@class='dropdown-menu']/li/a[contains(.,'Basic Document')]");
 		assertEquals(RuntimeVariables.replace("Basic Document"),
 			selenium.getText(
-				"//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Basic Document')]"));
-		selenium.clickAt("//div[@class='lfr-component lfr-menu-list']/ul/li/a[contains(.,'Basic Document')]",
+				"//ul[@class='dropdown-menu']/li/a[contains(.,'Basic Document')]"));
+		selenium.clickAt("//ul[@class='dropdown-menu']/li/a[contains(.,'Basic Document')]",
 			RuntimeVariables.replace("Basic Document"));
 		selenium.waitForVisible("//iframe[contains(@id,'editAsset')]");
 		selenium.selectFrame("//iframe[contains(@id,'editAsset')]");
 		selenium.waitForElementPresent(
 			"//script[contains(@src,'/liferay/search_container.js')]");
-		selenium.waitForVisible("//input[@value='Select']");
-		selenium.clickAt("//input[@value='Select']",
+		selenium.waitForVisible("//button[contains(@id,'selectFolderButton')]");
+		selenium.clickAt("//button[contains(@id,'selectFolderButton')]",
 			RuntimeVariables.replace("Select"));
 		selenium.selectFrame("relative=top");
 		selenium.waitForVisible("//iframe[@name='_20_selectFolder']");
