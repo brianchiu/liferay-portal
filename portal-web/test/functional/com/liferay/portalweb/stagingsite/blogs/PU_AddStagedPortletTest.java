@@ -65,7 +65,7 @@ public class PU_AddStagedPortletTest extends BaseTestCase {
 				selenium.clickAt("//li[contains(@class,'add-application')]/a",
 					RuntimeVariables.replace("Content and Applications"));
 				selenium.waitForElementPresent(
-					"//script[contains(@src,'/aui/aui-live-search/aui-live-search-min.js')]");
+					"//script[contains(@src,'/autocomplete-filters/autocomplete-filters-min.js')]");
 
 				boolean searchApplicationsNotVisible = selenium.isVisible(
 						"//input[@id='layout_configuration_content']");
@@ -83,16 +83,12 @@ public class PU_AddStagedPortletTest extends BaseTestCase {
 					RuntimeVariables.replace("Applications"));
 
 			case 2:
-				selenium.waitForVisible(
-					"//input[@id='layout_configuration_content']");
-				selenium.type("//input[@id='layout_configuration_content']",
+				selenium.waitForVisible("//input[@id='_145_searchApplication']");
+				selenium.sendKeys("//input[@id='_145_searchApplication']",
 					RuntimeVariables.replace("b"));
-				selenium.keyDown("//input[@id='layout_configuration_content']",
-					RuntimeVariables.replace("\\13"));
-				selenium.keyUp("//input[@id='layout_configuration_content']",
-					RuntimeVariables.replace("\\13"));
-				selenium.waitForVisible("//li[@title='Blogs']/p/a");
-				selenium.clickAt("//li[@title='Blogs']/p/a",
+				selenium.waitForElementPresent("//span[@data-title='Blogs']");
+				selenium.makeVisible("//span[@data-title='Blogs']");
+				selenium.clickAt("//span[@data-title='Blogs']",
 					RuntimeVariables.replace("Add"));
 				selenium.waitForVisible("//section");
 				assertTrue(selenium.isVisible("//section"));
