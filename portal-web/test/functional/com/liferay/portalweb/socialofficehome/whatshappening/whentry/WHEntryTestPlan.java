@@ -38,7 +38,8 @@ public class WHEntryTestPlan extends BaseTestSuite {
 		testSuite.addTest(AddWHEntryContentViewableByConnectionsTests.suite());
 		testSuite.addTest(AddWHEntryContentViewableByEveryoneTests.suite());
 		testSuite.addTest(AddWHEntryContentViewableByFollowersTests.suite());
-		testSuite.addTest(SOUs_ViewWHEntryContentViewableByEveryoneTests.suite());
+		testSuite.addTest(
+			SOUs_ViewWHEntryContentViewableByEveryoneTests.suite());
 
 		return testSuite;
 	}
