@@ -17,6 +17,7 @@ package com.liferay.portal.kernel.lar;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.DateRange;
 import com.liferay.portal.kernel.util.KeyValuePair;
 import com.liferay.portal.kernel.xml.Element;
 import com.liferay.portal.kernel.zip.ZipReader;
@@ -262,6 +263,8 @@ public interface PortletDataContext extends Serializable {
 
 	public String getDataStrategy();
 
+	public DateRange getDateRange();
+
 	public Set<StagedModelType> getDeletionSystemEventStagedModelTypes();
 
 	public Date getEndDate();
@@ -491,6 +494,8 @@ public interface PortletDataContext extends Serializable {
 
 	public boolean isDataStrategyMirrorWithOverwriting();
 
+	public boolean isModelCounted(String className, long classPK);
+
 	public boolean isPathExportedInScope(String path);
 
 	public boolean isPathNotExportedInScope(String path);
@@ -502,6 +507,8 @@ public interface PortletDataContext extends Serializable {
 	public boolean isPerformDirectBinaryImport();
 
 	public boolean isPrivateLayout();
+
+	public boolean isStagedModelCounted(StagedModel stagedModel);
 
 	public boolean isWithinDateRange(Date modifiedDate);
 

@@ -34,6 +34,7 @@ import com.liferay.portal.kernel.lar.UserIdStrategy;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ArrayUtil;
+import com.liferay.portal.kernel.util.DateRange;
 import com.liferay.portal.kernel.util.KeyValuePair;
 import com.liferay.portal.kernel.util.ListUtil;
 import com.liferay.portal.kernel.util.MapUtil;
@@ -925,6 +926,17 @@ public class PortletDataContextImpl implements PortletDataContext {
 	}
 
 	@Override
+	public DateRange getDateRange() {
+		DateRange dateRange = null;
+
+		if (hasDateRange()) {
+			dateRange = new DateRange(_startDate, _endDate);
+		}
+
+		return dateRange;
+	}
+
+	@Override
 	public Set<StagedModelType> getDeletionSystemEventStagedModelTypes() {
 		return _deletionSystemEventModelTypes;
 	}
@@ -1792,6 +1804,14 @@ public class PortletDataContextImpl implements PortletDataContext {
 	}
 
 	@Override
+	public boolean isModelCounted(String className, long classPK) {
+		String modelCountedPrimaryKey = className.concat(
+			StringPool.POUND).concat(String.valueOf(classPK));
+
+		return addPrimaryKey(String.class, modelCountedPrimaryKey);
+	}
+
+	@Override
 	public boolean isPathExportedInScope(String path) {
 		return addScopedPrimaryKey(String.class, path);
 	}
@@ -1822,6 +1842,15 @@ public class PortletDataContextImpl implements PortletDataContext {
 	@Override
 	public boolean isPrivateLayout() {
 		return _privateLayout;
+	}
+
+	@Override
+	public boolean isStagedModelCounted(StagedModel stagedModel) {
+		StagedModelType stagedModelType = stagedModel.getStagedModelType();
+
+		return isModelCounted(
+			stagedModelType.getClassName(),
+			(Long)stagedModel.getPrimaryKeyObj());
 	}
 
 	/**

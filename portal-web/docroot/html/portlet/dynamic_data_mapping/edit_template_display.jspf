@@ -42,6 +42,9 @@ if (Validator.isNotNull(scriptContent)) {
 							Map<String, TemplateVariableGroup> templateVariableGroups = TemplateContextHelper.getTemplateVariableGroups(templateHandlerClassNameId, classPK, language, locale);
 
 							for (TemplateVariableGroup templateVariableGroup : templateVariableGroups.values()) {
+								if (templateVariableGroup.isEmpty()) {
+									continue;
+								}
 							%>
 
 								<div class="palette-section">
@@ -556,7 +559,7 @@ private String _getPaletteItemTitle(PageContext pageContext, String label, Class
 	String javadocURL = null;
 
 	if (className.startsWith("com.liferay")) {
-		javadocURL = "http://docs.liferay.com/portal/6.1/javadocs/";
+		javadocURL = "http://docs.liferay.com/portal/6.2/javadocs/";
 	}
 
 	if (Validator.isNotNull(javadocURL)) {
