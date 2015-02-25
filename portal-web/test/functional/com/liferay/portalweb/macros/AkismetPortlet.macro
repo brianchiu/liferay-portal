@@ -37,4 +37,18 @@
 		<execute function="Type" locator1="CPAkismet#CHECK_THRESHOLD_FIELD" value1="50" />
 		<execute function="AssertClick" locator1="CPAkismet#SAVE_BUTTON" value1="Save" />
 	</command>
+
+	<command name="test">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Akismet" />
+		</execute>
+
+		<execute function="Uncheck" locator1="CPAkismet#ENABLED_FOR_MESSAGE_BOARDS_CHECKBOX" />
+		<execute function="Uncheck" locator1="CPAkismet#ENABLED_FOR_DISCUSSIONS_CHECKBOX" />
+		<execute function="Uncheck" locator1="CPAkismet#ENABLED_FOR_WIKI_CHECKBOX" />
+		<execute function="Type" locator1="CPAkismet#API_KEY_FIELD" value1="" />
+		<execute function="Type" locator1="CPAkismet#REPORTABLE_TIME_FIELD" value1="30" />
+		<execute function="Type" locator1="CPAkismet#CHECK_THRESHOLD_FIELD" value1="50" />
+		<execute function="AssertClick" locator1="CPAkismet#SAVE_BUTTON" value1="Save" />
+	</command>
 </definition>
