@@ -2505,7 +2505,7 @@
 
 		<execute macro="Page#viewCustomLogoPG" />
 
-		<execute macro="Staging#publishToLiveNow">
+		<execute macro="Staging#publishToLive">
 			<var name="uncheckLogo" value="true" />
 		</execute>
 
