@@ -1033,9 +1033,7 @@ public class LiferaySeleniumHelper {
 				".*The web application \\[\\] created a ThreadLocal with key " +
 					"of type.*")) {
 
-			if (line.contains(
-					"[org.jruby.embed.internal.LocalContext]")) {
-
+			if (line.contains("[org.jruby.embed.internal.LocalContext]")) {
 				return true;
 			}
 		}
