@@ -1019,6 +1019,17 @@ public class LiferaySeleniumHelper {
 			}
 		}
 
+		// LPS-54207
+
+		if (line.matches(
+				".*The web application \\[\\] created a ThreadLocal with key " +
+					"of type.*")) {
+
+			if (line.contains("[org.jruby.embed.internal.LocalContext]")) {
+				return true;
+			}
+		}
+
 		// WCM-202
 
 		if (line.contains("No score point assigners available")) {
