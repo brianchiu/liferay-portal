@@ -1019,6 +1019,15 @@ public class LiferaySeleniumHelper {
 			}
 		}
 
+		// LPS-54334
+
+		if (line.contains(
+				"org.eclipse.equinox.http.servlet.internal.servlet." +
+					"HttpSessionAdaptor")) {
+
+			return true;
+		}
+
 		// WCM-202
 
 		if (line.contains("No score point assigners available")) {
