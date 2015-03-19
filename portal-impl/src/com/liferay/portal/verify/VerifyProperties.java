@@ -466,6 +466,42 @@ public class VerifyProperties extends VerifyProcess {
 			"com.liferay.currency.converter.web"
 		},
 
+		// Facebook Connect
+
+		new String[] {
+			"facebook.connect.auth.enabled", "enabled",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.app.id", "app.id",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.app.secret", "app.secret",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.graph.url", "graph.url",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.oauth.auth.url", "oauth.auth.url",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.oauth.redirect.url", "oauth.redirect.url",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.oauth.token.url", "oauth.token.url",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+		new String[] {
+			"facebook.connect.verified.account.required",
+			"verified.account.required",
+			"com.liferay.portal.sso.facebook.connect"
+		},
+
 		// FreeMarker Engine
 
 		new String[] {
@@ -923,8 +959,9 @@ public class VerifyProperties extends VerifyProcess {
 		"jpa.database.platform", "jpa.database.type", "jpa.load.time.weaver",
 		"jpa.provider", "jpa.provider.property.eclipselink.allow-zero-id",
 		"jpa.provider.property.eclipselink.logging.level",
-		"jpa.provider.property.eclipselink.logging.timestamp", "layout.types",
-		"lucene.analyzer", "lucene.store.jdbc.auto.clean.up",
+		"jpa.provider.property.eclipselink.logging.timestamp",
+		"layout.reset.portlet.ids", "layout.types", "lucene.analyzer",
+		"lucene.store.jdbc.auto.clean.up",
 		"lucene.store.jdbc.auto.clean.up.enabled",
 		"lucene.store.jdbc.auto.clean.up.interval",
 		"lucene.store.jdbc.dialect.db2", "lucene.store.jdbc.dialect.derby",

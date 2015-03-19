@@ -12,14 +12,22 @@
  * details.
  */
 
-package com.liferay.portal.util;
+package com.liferay.portal.sso.facebook.connect.constants;
 
 /**
- * @author     Brian Wing Shun Chan
- * @deprecated As of 6.1.0, replaced by {@link
- *             com.liferay.portal.kernel.facebook.FacebookConnectUtil}
+ * @author Michael C. Han
  */
-@Deprecated
-public class FacebookConnectUtil
-	extends com.liferay.portal.kernel.facebook.FacebookConnectUtil {
+public interface FacebookConnectWebKeys {
+
+	public static final String FACEBOOK_ACCESS_TOKEN = "FACEBOOK_ACCESS_TOKEN";
+
+	public static final String FACEBOOK_APP_ID = "FACEBOOK_APP_ID";
+
+	public static final String FACEBOOK_AUTH_REDIRECT_URL =
+		"FACEBOOK_AUTH_REDIRECT_URL";
+
+	public static final String FACEBOOK_AUTH_URL = "FACEBOOK_AUTH_URL";
+
+	public static final String FACEBOOK_USER_ID = "FACEBOOK_USER_ID";
+
 }
