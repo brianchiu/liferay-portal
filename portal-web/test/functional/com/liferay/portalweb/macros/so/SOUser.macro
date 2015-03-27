@@ -43,9 +43,9 @@
 				<condition function="IsElementPresent" locator1="Setupwizard#PORTAL_PORTAL_NAME_FIELD" />
 			</and>
 			<then>
-				<execute macro="SetupWizard#configureDefaultPG">
-					<var name="setupWizardAddSampleData" value="true" />
-				</execute>
+				<execute macro="SetupWizard#configureDefaultPG" />
+
+				<execute macro="SetupWizard#finishConfiguration" />
 			</then>
 			<elseif>
 				<and>
