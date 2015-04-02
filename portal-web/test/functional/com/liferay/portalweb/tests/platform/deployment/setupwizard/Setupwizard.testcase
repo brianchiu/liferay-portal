@@ -2,11 +2,185 @@
 	<property name="setup.wizard.enabled" value="true" />
 	<property name="testray.main.component.name" value="Setup Wizard" />
 
-	<command name="SetupWizardDefaultConfigurationWithoutSampleData" priority="5">
+	<command name="ConfigureDB2WithSampleData" priority="5">
+		<execute macro="SetupWizard#changeDatabase" />
+
+		<execute macro="SetupWizard#selectDatabase">
+			<var name="databaseType" value="DB2" />
+		</execute>
+
+		<execute macro="SetupWizard#populateDatabaseConfiguration">
+			<var name="jdbcDriverClassName" property-value="database.db2.driver" />
+			<var name="jdbcURL" property-value="database.db2.url"  />
+			<var name="password" property-value="database.db2.password" />
+			<var name="userName" property-value="database.db2.username"  />
+		</execute>
+
+		<execute macro="SetupWizard#finishConfiguration" />
+
+		<execute macro="SetupWizard#viewConfiguredDatabaseInConsole">
+			<var name="databaseType" value="DB2" />
+		</execute>
+
+		<execute macro="SetupWizard#viewSampleDataAddedInConsole" />
+
+		<execute function="AssertTextEquals" locator1="Home#BREADCRUMB_1" value1="Welcome" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGSignin#PORTLET_TITLE" value1="Sign In" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGSignin#PORTLET_CONTENT" value1="You are signed in as" />
+		<execute function="AssertTextEquals" locator1="PGSignin#PORTLET_CONTENT_USER_NAME" value1="Joe Bloggs" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGHelloworld#PORTLET_TITLE" value1="Hello World" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHelloworld#PORTLET_CONTENT" value1="Welcome to Liferay Portal" />
+
+		<execute macro="Smoke#runSmoke" />
+	</command>
+
+	<command name="ConfigureMySQLWithSampleData" priority="5">
+		<execute macro="SetupWizard#changeDatabase" />
+
+		<execute macro="SetupWizard#selectDatabase">
+			<var name="databaseType" value="MySQL" />
+		</execute>
+
+		<execute macro="SetupWizard#populateDatabaseConfiguration">
+			<var name="jdbcDriverClassName" property-value="database.mysql.driver" />
+			<var name="jdbcURL" property-value="database.mysql.url"  />
+			<var name="password" property-value="database.mysql.password" />
+			<var name="userName" property-value="database.mysql.username"  />
+		</execute>
+
+		<execute macro="SetupWizard#finishConfiguration" />
+
+		<execute macro="SetupWizard#viewConfiguredDatabaseInConsole">
+			<var name="databaseType" value="MySQL" />
+		</execute>
+
+		<execute macro="SetupWizard#viewSampleDataAddedInConsole" />
+
+		<execute function="AssertTextEquals" locator1="Home#BREADCRUMB_1" value1="Welcome" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGSignin#PORTLET_TITLE" value1="Sign In" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGSignin#PORTLET_CONTENT" value1="You are signed in as" />
+		<execute function="AssertTextEquals" locator1="PGSignin#PORTLET_CONTENT_USER_NAME" value1="Joe Bloggs" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGHelloworld#PORTLET_TITLE" value1="Hello World" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHelloworld#PORTLET_CONTENT" value1="Welcome to Liferay Portal" />
+
+		<execute macro="Smoke#runSmoke" />
+	</command>
+
+	<command name="ConfigureOracleWithSampleData" priority="5">
+		<execute macro="SetupWizard#changeDatabase" />
+
+		<execute macro="SetupWizard#selectDatabase">
+			<var name="databaseType" value="Oracle" />
+		</execute>
+
+		<execute macro="SetupWizard#populateDatabaseConfiguration">
+			<var name="jdbcDriverClassName" property-value="database.oracle.driver" />
+			<var name="jdbcURL" property-value="database.oracle.url"  />
+			<var name="password" property-value="database.oracle.password" />
+			<var name="userName" property-value="database.oracle.username"  />
+		</execute>
+
+		<execute macro="SetupWizard#finishConfiguration" />
+
+		<execute macro="SetupWizard#viewConfiguredDatabaseInConsole">
+			<var name="databaseType" value="Oracle" />
+		</execute>
+
+		<execute macro="SetupWizard#viewSampleDataAddedInConsole" />
+
+		<execute function="AssertTextEquals" locator1="Home#BREADCRUMB_1" value1="Welcome" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGSignin#PORTLET_TITLE" value1="Sign In" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGSignin#PORTLET_CONTENT" value1="You are signed in as" />
+		<execute function="AssertTextEquals" locator1="PGSignin#PORTLET_CONTENT_USER_NAME" value1="Joe Bloggs" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGHelloworld#PORTLET_TITLE" value1="Hello World" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHelloworld#PORTLET_CONTENT" value1="Welcome to Liferay Portal" />
+
+		<execute macro="Smoke#runSmoke" />
+	</command>
+
+	<command name="ConfigurePostgreSQLWithSampleData" priority="5">
+		<execute macro="SetupWizard#changeDatabase" />
+
+		<execute macro="SetupWizard#selectDatabase">
+			<var name="databaseType" value="PostgreSQL" />
+		</execute>
+
+		<execute macro="SetupWizard#populateDatabaseConfiguration">
+			<var name="jdbcDriverClassName" property-value="database.postgresql.driver" />
+			<var name="jdbcURL" property-value="database.postgresql.url"  />
+			<var name="password" property-value="database.postgresql.password" />
+			<var name="userName" property-value="database.postgresql.username"  />
+		</execute>
+
+		<execute macro="SetupWizard#finishConfiguration" />
+
+		<execute macro="SetupWizard#viewConfiguredDatabaseInConsole">
+			<var name="databaseType" value="PostgreSQL" />
+		</execute>
+
+		<execute macro="SetupWizard#viewSampleDataAddedInConsole" />
+
+		<execute function="AssertTextEquals" locator1="Home#BREADCRUMB_1" value1="Welcome" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGSignin#PORTLET_TITLE" value1="Sign In" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGSignin#PORTLET_CONTENT" value1="You are signed in as" />
+		<execute function="AssertTextEquals" locator1="PGSignin#PORTLET_CONTENT_USER_NAME" value1="Joe Bloggs" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGHelloworld#PORTLET_TITLE" value1="Hello World" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHelloworld#PORTLET_CONTENT" value1="Welcome to Liferay Portal" />
+
+		<execute macro="Smoke#runSmoke" />
+	</command>
+
+	<command name="ConfigureSybaseWithSampleData" priority="5">
+		<execute macro="SetupWizard#changeDatabase" />
+
+		<execute macro="SetupWizard#selectDatabase">
+			<var name="databaseType" value="Sybase" />
+		</execute>
+
+		<execute macro="SetupWizard#populateDatabaseConfiguration">
+			<var name="jdbcDriverClassName" property-value="database.sybase.driver" />
+			<var name="jdbcURL" property-value="database.sybase.url"  />
+			<var name="password" property-value="database.sybase.password" />
+			<var name="userName" property-value="database.sybase.username"  />
+		</execute>
+
+		<execute macro="SetupWizard#finishConfiguration" />
+
+		<execute macro="SetupWizard#viewConfiguredDatabaseInConsole">
+			<var name="databaseType" value="Sybase" />
+		</execute>
+
+		<execute macro="SetupWizard#viewSampleDataAddedInConsole" />
+
+		<execute function="AssertTextEquals" locator1="Home#BREADCRUMB_1" value1="Welcome" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGSignin#PORTLET_TITLE" value1="Sign In" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGSignin#PORTLET_CONTENT" value1="You are signed in as" />
+		<execute function="AssertTextEquals" locator1="PGSignin#PORTLET_CONTENT_USER_NAME" value1="Joe Bloggs" />
+
+		<execute function="AssertTextEquals#assertText" locator1="PGHelloworld#PORTLET_TITLE" value1="Hello World" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGHelloworld#PORTLET_CONTENT" value1="Welcome to Liferay Portal" />
+
+		<execute macro="Smoke#runSmoke" />
+	</command>
+
+	<command name="DefaultConfigurationWithoutSampleData" priority="5">
 		<var name="administratorFirstName" value="Test" />
 		<var name="administratorLastName" value="Test" />
 
 		<execute macro="SetupWizard#configureDefaultPG">
+			<var name="setupWizardAddSampleData" value="false" />
+		</execute>
+
+		<execute macro="SetupWizard#finishConfiguration">
 			<var name="setupWizardAddSampleData" value="false" />
 		</execute>
 
@@ -22,11 +196,13 @@
 		<execute macro="Smoke#runSmoke" />
 	</command>
 
-	<command name="SetupWizardDefaultConfigurationWithSampleData" priority="5">
+	<command name="DefaultConfigurationWithSampleData" priority="5">
 		<var name="administratorFirstName" value="Test" />
 		<var name="administratorLastName" value="Test" />
 
 		<execute macro="SetupWizard#configureDefaultPG" />
+
+		<execute macro="SetupWizard#finishConfiguration" />
 
 		<execute function="AssertTextEquals" locator1="Home#BREADCRUMB_1" value1="Welcome" />
 
