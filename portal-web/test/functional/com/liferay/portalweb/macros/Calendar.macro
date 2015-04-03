@@ -32,7 +32,13 @@
 			<elseif>
 				<equals arg1="${calendarType}" arg2="Other Calendars" />
 				<then>
-					<execute function="Type" locator1="PGCalendar#OTHER_CALENDARS_SEARCH" value1="${calendarName}" />
+					<execute macro="Calendar#searchOtherCalendars">
+						<var name="searchValue" value="${calendarName}" />
+					</execute>
+
+					<execute macro="Calendar#viewOtherCalendarsSearchResults">
+						<var name="calendarName" value="${calendarName}" />
+					</execute>
 
 					<var name="key_calendarName" value="${calendarName}" />
 
@@ -489,6 +495,10 @@
 		<execute function="SelectFrame" value1="relative=top" />
 	</command>
 
+	<command name="searchOtherCalendars">
+		<execute function="Type" locator1="PGCalendar#OTHER_CALENDARS_SEARCH" value1="${searchValue}" />
+	</command>
+
 	<command name="tearDownColorPG">
 		<execute macro="CalendarEvent#changeViewPG">
 			<var name="viewType" value="Week" />
@@ -569,6 +579,12 @@
 		<execute function="AssertElementNotPresent" locator1="PGCalendar#MY_CALENDARS_CALENDAR_ADDITIONAL_GENERIC" />
 		<execute function="AssertElementNotPresent" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_ADDITIONAL_GENERIC" />
 		<execute function="AssertElementNotPresent" locator1="PGCalendar#OTHER_CALENDARS_CALENDAR_GENERIC" />
+	</command>
+
+	<command name="viewOtherCalendarsSearchResults">
+		<var name="key_calendarName" value="${calendarName}" />
+
+		<execute function="AssertTextEquals" locator1="PGCalendar#OTHER_CALENDARS_SEARCH_LIST_RESULT" value1="${calendarName}" />
 	</command>
 
 	<command name="viewPG">
