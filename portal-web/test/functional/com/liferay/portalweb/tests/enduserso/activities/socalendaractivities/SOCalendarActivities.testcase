@@ -97,7 +97,7 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="CalendarEvent#viewEventDetailsPG">
+		<execute macro="CalendarEvent#viewEventDetailsCmd">
 			<var name="calendarName" value="${siteName}" />
 			<var name="eventTitle" value="${eventTitle}" />
 			<var name="user" value="${adminName}" />
@@ -509,7 +509,7 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="CalendarEvent#viewEventDetailsPG">
+		<execute macro="CalendarEvent#viewEventDetailsCmd">
 			<var name="calendarName" value="${siteName}" />
 			<var name="eventTitle" value="${eventTitle}" />
 			<var name="user" value="${adminName}" />
@@ -606,7 +606,7 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="CalendarEvent#viewEventDetailsPG">
+		<execute macro="CalendarEvent#viewEventDetailsCmd">
 			<var name="calendarName" value="${siteName}" />
 			<var name="eventTitle" value="${eventTitle}" />
 			<var name="user" value="${adminName}" />
