@@ -953,6 +953,10 @@
 		<execute function="AssertElementPresent#assertVisible" locator1="PGCalendarAddevent#END_DATE_TIME" />
 	</command>
 
+	<command name="gotoRepeatConfiguration">
+		<execute function="Check" locator1="PGCalendarAddevent#REPEAT_CHECKBOX" />
+	</command>
+
 	<command name="inviteResource">
 		<if>
 			<condition function="IsElementPresent" locator1="PGCalendarAddevent#INVITATIONS_PANEL_COLLAPSED" />
@@ -1094,6 +1098,11 @@
 		</if>
 	</command>
 
+	<command name="selectRepeatFrequency">
+		<execute function="Select" locator1="PGCalendarAddevent#REPEAT_REPEATS_DROPDOWN" value1="${frequency}" />
+		<execute function="AssertSelectedLabel" locator1="PGCalendarAddevent#REPEAT_REPEATS_DROPDOWN" value1="${frequency}" />
+	</command>
+
 	<command name="setAllDay">
 		<execute function="Check" locator1="PGCalendarAddevent#ALL_DAY_CHECKBOX" />
 		<execute function="AssertElementNotPresent#assertNotVisible" locator1="PGCalendarAddevent#START_DATE_TIME" />
@@ -1108,9 +1117,12 @@
 	</command>
 
 	<command name="setRepeating">
-		<execute function="Check" locator1="PGCalendarAddevent#REPEAT_CHECKBOX" />
-		<execute function="Select" locator1="PGCalendarAddevent#REPEAT_REPEATS_DROPDOWN" value1="${frequency}" />
-		<execute function="AssertSelectedLabel" locator1="PGCalendarAddevent#REPEAT_REPEATS_DROPDOWN" value1="${frequency}" />
+		<execute macro="CalendarEvent#gotoRepeatConfiguration" />
+
+		<execute macro="CalendarEvent#selectRepeatFrequency">
+			<var name="frequency" value="${frequency}" />
+		</execute>
+
 		<execute function="AssertSelectedLabel" locator1="PGCalendarAddevent#REPEAT_REPEAT_EVERY_DROPDOWN" value1="1" />
 
 		<if>
@@ -1493,17 +1505,28 @@
 		<while>
 			<condition function="IsElementPresent" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[${i}]" />
 			<then>
-				<execute function="AssertElementPresent" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[${i}]" />
-				<execute function="AssertTextEquals" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[${i}]" value1="${eventTitle}" />
-				<var name="i" value="${i?increment()}" />
+				<if>
+					<condition function="IsElementPresent#isVisible" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[${i}]" />
+					<then>
+						<execute function="AssertTextEquals" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[${i}]" value1="${eventTitle}" />
+						<var name="i" value="${i?increment()}" />
+					</then>
+					<elseif>
+						<condition function="IsElementNotPresent#isNotVisible" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[2]" />
+						<then>
+							<execute function="Click" locator1="PGCalendar#VIEW_NEXT_BUTTON"  />
+							<execute function="AssertTextEquals" locator1="xpath=(//div[contains(@class,'scheduler-view-table scheduler-view-month')]//div[contains(@class,'calendar-portlet-event')]/div[contains(.,'${key_eventTitle}')])[1]" value1="${eventTitle}" />
+						</then>
+					</elseif>
+				</if>
 			</then>
 		</while>
-
-		<var name="key_eventNumber" value="${eventNumber}" />
 
 		<if>
 			<isset var="eventNumber" />
 			<then>
+				<var name="key_eventNumber" value="${eventNumber}" />
+
 				<if>
 					<condition function="IsElementPresent" locator1="PGCalendarMonthView#SCHEDULER_EVENT_MONTH_VIEW_SHOW_MORE_LINK" />
 					<then>
@@ -1596,6 +1619,10 @@
 		<execute function="AssertElementNotPresent" locator1="PGCalendarVieweventdetails#AVERAGE_STAR_EMPTY_5" />
 
 		<execute function="SelectFrame" value1="relative=top" />
+	</command>
+
+	<command name="viewRepeatWeekStartDay">
+		<execute function="AssertTextEquals" locator1="PGCalendarAddevent#REPEAT_REPEAT_ON_DAY_OF_THE_WEEK_WEEKDAY_WEEK_START_DAY" value1="${weekStartDay}" />
 	</command>
 
 	<command name="viewUnavailableCalendarsNotPresent">

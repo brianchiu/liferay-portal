@@ -41,6 +41,8 @@
 
 		<execute macro="CalendarResource#tearDownPG" />
 
+		<execute macro="CalendarConfiguration#tearDown" />
+
 		<execute macro="Page#tearDownPG" />
 
 		<execute macro="User#tearDownCP" />
@@ -67,7 +69,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitle}" />
 		</execute>
 	</command>
@@ -167,7 +168,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitle}" />
 		</execute>
 	</command>
@@ -415,7 +415,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitle}" />
 		</execute>
 	</command>
@@ -748,7 +747,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitle}" />
 		</execute>
 	</command>
@@ -1487,7 +1485,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitleEdit}" />
 		</execute>
 	</command>
@@ -1594,7 +1591,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitleEdit}" />
 		</execute>
 	</command>
@@ -1705,7 +1701,6 @@
 		</execute>
 
 		<execute macro="CalendarEvent#viewPG">
-			<var name="eventNumber" value="${eventNumber}" />
 			<var name="eventTitle" value="${eventTitleEdit}" />
 		</execute>
 	</command>
@@ -2712,6 +2707,92 @@
 
 		<execute macro="Calendar#viewCurrentSiteCalendarName">
 			<var name="site" value="Site Name Edit - Site Name" />
+		</execute>
+	</command>
+
+	<command name="ViewWeekStartMonday" priority="5">
+		<description message="This is a use case for 51127." />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="Calendar#gotoConfiguration" />
+
+		<execute macro="CalendarConfiguration#selectWeekStartsOn">
+			<var name="weekStartDay" value="Monday" />
+		</execute>
+
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="Calendar#viewWeekStartDayViaWeekView">
+			<var name="weekStartDay" value="Mon" />
+		</execute>
+
+		<execute macro="Calendar#viewWeekStartDayViaMonthView">
+			<var name="weekStartDay" value="Mon" />
+		</execute>
+
+		<execute macro="Calendar#viewWeekStartDayViaSmallCalendar">
+			<var name="weekStartDay" value="Mo" />
+		</execute>
+
+		<execute macro="CalendarEvent#gotoAdd" />
+		<execute macro="CalendarEvent#gotoRepeatConfiguration" />
+
+		<execute macro="CalendarEvent#selectRepeatFrequency">
+			<var name="frequency" value="Weekly" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewRepeatWeekStartDay">
+			<var name="weekStartDay" value="MO" />
+		</execute>
+	</command>
+
+	<command name="ViewWeekStartSaturday" priority="5">
+		<description message="This is a use case for 51127." />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="Calendar#gotoConfiguration" />
+
+		<execute macro="CalendarConfiguration#selectWeekStartsOn">
+			<var name="weekStartDay" value="Saturday" />
+		</execute>
+
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="Calendar#viewWeekStartDayViaWeekView">
+			<var name="weekStartDay" value="Sat" />
+		</execute>
+
+		<execute macro="Calendar#viewWeekStartDayViaMonthView">
+			<var name="weekStartDay" value="Sat" />
+		</execute>
+
+		<execute macro="Calendar#viewWeekStartDayViaSmallCalendar">
+			<var name="weekStartDay" value="Sa" />
+		</execute>
+
+		<execute macro="CalendarEvent#gotoAdd" />
+		<execute macro="CalendarEvent#gotoRepeatConfiguration" />
+
+		<execute macro="CalendarEvent#selectRepeatFrequency">
+			<var name="frequency" value="Weekly" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewRepeatWeekStartDay">
+			<var name="weekStartDay" value="SA" />
 		</execute>
 	</command>
 </definition>
