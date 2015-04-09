@@ -1051,6 +1051,17 @@ public class LiferaySeleniumHelper {
 			}
 		}
 
+		// LPS-54597, temporary workaround until Adolfo Perez fixes it
+
+		if (line.contains(
+				"Could not load de.schlichtherle.io." +
+					"ArchiveControllers$ControllerEnumeration")) {
+
+			if (line.contains("TrueZIP ArchiveController Shutdown Hook")) {
+				return true;
+			}
+		}
+
 		// LPS-54680
 
 		if (line.contains(
