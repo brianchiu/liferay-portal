@@ -1,2 +1,2 @@
-PGKnowledgebasesearch#SEARCH_FIELD|KBSearch#SEARCH_FIELD
+PGKnowledgebasesearch#SEARCH_FIELD|KnowledgeBaseSearch#SEARCH_FIELD
 PGKnowledgebasesearch#SEARCH_BUTTON|Button#SEARCH

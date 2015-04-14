@@ -1,6 +1,6 @@
 CPKnowledgebaseadminAddfolder#INFO_MESSAGE|Message#INFO
 CPKnowledgebaseadminAddfolder#BACK_BUTTON|Button#BACK
-CPKnowledgebaseadminAddfolder#HEADER_TITLE|KB#HEADER
+CPKnowledgebaseadminAddfolder#HEADER_TITLE|KnowledgeBase#HEADER
 CPKnowledgebaseadminAddfolder#TITLE_FIELD|InputField#TITLE
 CPKnowledgebaseadminAddfolder#DESCRIPTION_FIELD|InputField#DESCRIPTION
 CPKnowledgebaseadminAddfolder#SAVE_BUTTON|Button#SAVE
