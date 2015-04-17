@@ -479,7 +479,7 @@
 </tr>
 <tr>
 	<td>OTHER_CALENDARS_CALENDAR_MENULIST_RSS</td>
-	<td>//div[not(contains(@class,'simple-menu-hidden hide'))]/ul/li[@class='simple-menu-item calendar-subscribe-link' and @data-id='subscribe']</td>
+	<td>//div[not(contains(@class,'simple-menu-hidden hide'))]/ul/li[@class='simple-menu-item' and @data-id='subscribe']</td>
 	<td></td>
 </tr>
 <tr>
