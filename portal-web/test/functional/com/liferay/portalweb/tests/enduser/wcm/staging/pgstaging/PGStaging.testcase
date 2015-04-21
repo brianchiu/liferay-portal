@@ -81,7 +81,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -120,7 +120,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -142,7 +142,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -152,7 +152,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -209,7 +209,7 @@
 	<command name="ActivateStaging" priority="5">
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -235,7 +235,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -276,7 +276,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -304,7 +304,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -339,7 +339,7 @@
 	<command name="AddPageWithPageVersioningEnabled" priority="5">
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -366,7 +366,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -423,7 +423,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -444,7 +444,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -524,7 +524,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -545,7 +545,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -741,7 +741,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="Organization Name" />
+			<var name="siteScopeName" value="Organization Name" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -751,7 +751,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Workflow Configuration" />
-			<var name="siteName" value="Organization Name" />
+			<var name="siteScopeName" value="Organization Name" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -933,7 +933,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -941,7 +941,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -969,7 +969,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -1071,7 +1071,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -1079,7 +1079,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
@@ -1358,7 +1358,7 @@
 
 		<execute macro="Page#gotoConfigurationCP">
 			<var name="portletName" value="Site Settings" />
-			<var name="siteName" value="${siteName}" />
+			<var name="siteScopeName" value="${siteName}" />
 			<var name="siteURL" value="true" />
 		</execute>
 
