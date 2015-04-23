@@ -2358,7 +2358,6 @@
 		<var name="userFirstName" value="userfn" />
 		<var name="userLastName" value="userln" />
 		<var name="userScreenName" value="usersn" />
-		<var name="usersList" value="userfn userln, Test Test" />
 
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Users and Organizations" />
@@ -2396,7 +2395,7 @@
 		<execute macro="CalendarEvent#viewUsers">
 			<var name="eventTitle" value="${eventTitle}" />
 			<var name="eventType" value="${eventType}" />
-			<var name="usersList" value="${usersList}" />
+			<var name="usersList" value="${resourceNameList}" />
 		</execute>
 	</command>
 
