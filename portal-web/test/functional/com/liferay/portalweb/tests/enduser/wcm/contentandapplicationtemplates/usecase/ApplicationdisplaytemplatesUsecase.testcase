@@ -137,6 +137,37 @@
 		</execute>
 	</command>
 
+	<command name="ADTBreadcrumb" priority="3">
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="ADT Test Page" />
+			<var name="siteName" value="Test Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Breadcrumb#viewADTApplied">
+			<var name="breadcrumbADTType" value="horizontal" />
+		</execute>
+
+		<execute macro="Portlet#gotoPortletOptions">
+			<var name="portletNameBorderless" value="Breadcrumb" />
+			<var name="portletOption" value="Configuration" />
+		</execute>
+
+		<execute macro="Breadcrumb#configureBreadcrumb">
+			<var name="selectADTType" value="Arrows" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="ADT Test Page" />
+			<var name="siteName" value="Test Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Breadcrumb#viewADTApplied">
+			<var name="breadcrumbADTType" value="arrows" />
+		</execute>
+	</command>
+
 	<command name="ADTCategoriesNavigation" priority="3">
 		<var name="siteName" value="${siteName}" />
 
