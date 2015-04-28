@@ -1060,6 +1060,14 @@ public class LiferaySeleniumHelper {
 			return true;
 		}
 
+		// LPS-55154, temporary workaround until Joan Kim fixes it
+
+		if (line.contains("Unable to process message")) {
+			if (line.contains("MessageListenerException:")) {
+				return true;
+			}
+		}
+
 		// LRQA-14442, temporary workaround until Kiyoshi Lee fixes it
 
 		if (line.contains("Framework Event Dispatcher: Equinox Container:")) {
