@@ -1210,7 +1210,7 @@
 
 		<var name="key_itemsPerPage" value="${itemsPerPage}" />
 
-		<execute function="AssertClick" locator1="Menulist#ITEMS_PER_PAGE" value1="${itemsPerPage}" />
+		<execute function="AssertClick" locator1="MenuItem#ITEMS_PER_PAGE" value1="${itemsPerPage}" />
 	</command>
 
 	<command name="previewCPwithStructureTemplateXSL">
