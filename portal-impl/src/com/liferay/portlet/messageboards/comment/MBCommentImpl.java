@@ -195,7 +195,7 @@ public class MBCommentImpl implements Comment, WorkflowableComment {
 	}
 
 	@Override
-	public User getUser() throws PortalException {
+	public User getUser() {
 		return UserLocalServiceUtil.fetchUser(getUserId());
 	}
 

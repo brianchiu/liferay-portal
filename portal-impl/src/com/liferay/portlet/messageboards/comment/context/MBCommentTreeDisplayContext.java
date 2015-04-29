@@ -48,7 +48,7 @@ public class MBCommentTreeDisplayContext implements CommentTreeDisplayContext {
 	}
 
 	@Override
-	public String getPublishButtonLabel(Locale locale) throws PortalException {
+	public String getPublishButtonLabel(Locale locale) {
 		String publishButtonLabel = LanguageUtil.get(
 			_discussionRequestHelper.getRequest(), "publish");
 
