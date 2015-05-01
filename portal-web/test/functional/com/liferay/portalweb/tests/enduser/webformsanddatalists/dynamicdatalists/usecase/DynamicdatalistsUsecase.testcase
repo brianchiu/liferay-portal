@@ -564,7 +564,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LIFERAYQA-12730" name="AssertGuestCannotEditRecord" priority="4">
+	<command name="AssertGuestCannotEditRecord" priority="4">
 		<var name="ddlDataDefinitionDescription" value="Data Definition Description" />
 		<var name="ddlDataDefinitionName" value="Data Definition" />
 		<var name="ddlListDescription" value="List Description" />
