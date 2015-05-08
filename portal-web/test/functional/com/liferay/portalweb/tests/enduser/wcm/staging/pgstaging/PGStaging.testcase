@@ -463,7 +463,7 @@
 		</execute>
 	</command>
 
-	<command name="AssertNoEditLink" priority="4">
+	<command known-issues="LPS-51696" name="AssertNoEditLink" priority="4">
 		<var name="entryContent" value="Blogs Entry Content" />
 		<var name="entryTitle" value="Blogs Entry Title" />
 		<var name="siteName" value="${siteName}" />
@@ -565,7 +565,7 @@
 		</execute>
 	</command>
 
-	<command name="BlogsOrganizationWorkflowStaging" priority="4">
+	<command known-issues="LPS-54712" name="BlogsOrganizationWorkflowStaging" priority="4">
 		<property name="web.plugins.includes" value="kaleo-web" />
 
 		<execute macro="Page#gotoCP">

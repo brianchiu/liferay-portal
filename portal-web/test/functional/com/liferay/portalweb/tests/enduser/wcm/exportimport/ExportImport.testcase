@@ -70,7 +70,7 @@
 		</execute>
 	</command>
 
-	<command name="EditExportTemplate" priority="4">
+	<command known-issues="LPS-51696" name="EditExportTemplate" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Blogs" />
 		</execute>
