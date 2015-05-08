@@ -100,7 +100,6 @@
 
 		<execute macro="WebContent#viewPGViaWCD">
 			<var name="webContentContent" value="${webContentContent}" />
-			<var name="webContentTitle" value="${webContentTitle}" />
 		</execute>
 	</command>
 

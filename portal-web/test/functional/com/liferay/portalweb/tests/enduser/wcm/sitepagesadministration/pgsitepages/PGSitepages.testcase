@@ -57,6 +57,8 @@
 			<var name="fieldName" value="${fieldName}" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoEditPGViaWCD" />
+
 		<execute macro="WebContent#editPGViaWCD">
 			<var name="embeddedPortletTitle" value="Currency Converter" />
 			<var name="webContentContentEdit" value="${webContentContentEdit}" />
