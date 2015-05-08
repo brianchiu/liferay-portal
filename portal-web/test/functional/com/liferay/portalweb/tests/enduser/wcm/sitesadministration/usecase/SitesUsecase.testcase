@@ -103,24 +103,14 @@
 	</command>
 
 	<command name="AddWebContentWithGlobalScopeViaCPToLiferayAP" priority="4">
-		<var name="globalSiteType" value="Global" />
-		<var name="pageName" value="Test Page 1" />
-		<var name="portletName" value="Asset Publisher" />
-		<var name="removeSiteScopeName" value="Liferay" />
-		<var name="removeSiteScopeType" value="Current Site" />
-		<var name="webContentContent" value="WC WebContent Content" />
-		<var name="webContentContentEdit" value="WC WebContent Content Edit" />
-		<var name="webContentTitle" value="WC WebContent Title" />
-		<var name="webContentTitleEdit" value="WC WebContent Title Edit" />
-
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 			<var name="siteScopeName" value="${globalSiteName}" />
 		</execute>
 
 		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="${webContentContent}" />
-			<var name="webContentTitle" value="${webContentTitle}" />
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="Page#gotoContentCP">
@@ -129,40 +119,40 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
-			<var name="webContentContent" value="${webContentContent}" />
-			<var name="webContentTitle" value="${webContentTitle}" />
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="Page#addPG">
-			<var name="pageName" value="${pageName}" />
+			<var name="pageName" value="Test Page 1" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
-			<var name="portletName" value="${portletName}" />
+			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
 		<execute macro="AssetPublisherPortlet#configureSiteScopePG">
 			<var name="siteName" value="${globalSiteName}" />
-			<var name="siteScopeType" value="${globalSiteType}" />
+			<var name="siteScopeType" value="Global" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
-			<var name="pageName" value="${pageName}" />
+			<var name="pageName" value="Test Page 1" />
 		</execute>
 
 		<execute macro="AssetPublisherPortlet#configureSiteScopeRemoveSitePG">
-			<var name="siteName" value="${removeSiteScopeName}" />
-			<var name="siteScopeType" value="${removeSiteScopeType}" />
+			<var name="siteName" value="Liferay" />
+			<var name="siteScopeType" value="Current Site" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
-			<var name="pageName" value="${pageName}" />
+			<var name="pageName" value="Test Page 1" />
 		</execute>
 
-		<var name="key_assetTitle" value="${webContentTitle}" />
+		<var name="key_assetTitle" value="WC WebContent Title" />
 
-		<execute function="AssertTextEquals" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="${webContentTitle}" />
-		<execute function="AssertTextEquals#assertPartialText" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="${webContentContent}" />
+		<execute function="AssertTextEquals" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="WC WebContent Title" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="WC WebContent Content" />
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
@@ -170,23 +160,23 @@
 		</execute>
 
 		<execute macro="WebContent#gotoEditCP">
-			<var name="webContentTitle" value="${webContentTitle}" />
+			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="WebContent#editCP">
-			<var name="webContentContentEdit" value="${webContentContentEdit}" />
-			<var name="webContentTitle" value="${webContentTitle}" />
-			<var name="webContentTitleEdit" value="${webContentTitleEdit}" />
+			<var name="webContentContentEdit" value="WC WebContent Content Edit" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+			<var name="webContentTitleEdit" value="WC WebContent Title Edit" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
-			<var name="pageName" value="${pageName}" />
+			<var name="pageName" value="Test Page 1" />
 		</execute>
 
-		<var name="key_assetTitle" value="${webContentTitleEdit}" />
+		<var name="key_assetTitle" value="WC WebContent Title Edit" />
 
-		<execute function="AssertTextEquals" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="${webContentTitleEdit}" />
-		<execute function="AssertTextEquals#assertPartialText" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="${webContentContentEdit}" />
+		<execute function="AssertTextEquals" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="WC WebContent Title Edit" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="WC WebContent Content Edit" />
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
@@ -195,19 +185,19 @@
 
 		<execute macro="WebContent#deleteCP" >
 			<var name="siteScopeName" value="${globalSiteName}" />
-			<var name="webContentTitle" value="${webContentTitleEdit}" />
+			<var name="webContentTitle" value="WC WebContent Title Edit" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
-			<var name="pageName" value="${pageName}" />
+			<var name="pageName" value="Test Page 1" />
 		</execute>
 
-		<var name="key_assetTitle" value="${webContentTitle}" />
+		<var name="key_assetTitle" value="WC WebContent Title" />
 
-		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="${webContentTitle}" />
-		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="${webContentTitleEdit}" />
-		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="${webContentContent}" />
-		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="${webContentContentEdit}" />
+		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="WC WebContent Title" />
+		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_TITLE" value1="WC WebContent Title Edit" />
+		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="WC WebContent Content" />
+		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_DESCRIPTION" value1="WC WebContent Content Edit" />
 		<execute function="AssertTextNotPresent" locator1="PGAssetpublisher#ASSET_ABSTRACT_READ_MORE" value1="Read More" />
 	</command>
 
