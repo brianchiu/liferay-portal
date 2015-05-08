@@ -3355,7 +3355,7 @@
 		</execute>
 	</command>
 
-	<command name="StagingRemoteDocumentSubtypeViaAP" priority="5">
+	<command known-issues="LPS-55450" name="StagingRemoteDocumentSubtypeViaAP" priority="5">
 		<property name="custom.properties" value="tunneling.servlet.shared.secret=1234567890123456${line.separator}auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=" />
 
 		<execute macro="Staging#remoteStagingSetUp">
