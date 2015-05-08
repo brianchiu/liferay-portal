@@ -931,7 +931,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LIFERAYQA-13031" name="ClusteringWithContentTargeting" priority="5">
+	<command name="ClusteringWithContentTargeting" priority="5">
 		<property name="app.server.bundles.size" value="1" />
 		<property name="cluster.enabled" value="true" />
 
