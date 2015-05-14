@@ -77,6 +77,8 @@
 			<var name="portletName" value="Web Content" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
 		<execute macro="WebContent#addDraftCP">
 			<var name="webContentContent" value="${webContentContent}" />
 			<var name="webContentTitle" value="${webContentTitle}" />
@@ -118,6 +120,8 @@
 			<var name="portletName" value="Web Content" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="${webContentContent}" />
 			<var name="webContentTitle" value="${webContentTitle}" />
@@ -156,6 +160,8 @@
 			<var name="folderName" value="WC Folder Name" />
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC Folder WebContent Content" />
@@ -283,6 +289,10 @@
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoAddWithStructureCP">
+			<var name="structureName" value="WC Structure Name" />
+		</execute>
+
 		<execute macro="WebContent#addWithStructureAndWorkflowCP">
 			<var name="structureName" value="WC Structure Name" />
 			<var name="templateName" value="WC Template Name" />
@@ -304,6 +314,8 @@
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC Folder WebContent Content" />
 			<var name="webContentTitle" value="WC Folder WebContent Title" />
@@ -316,6 +328,10 @@
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddWithStructureCP">
+			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
 		<execute macro="WebContent#addWithStructureCP">
@@ -394,6 +410,8 @@
 			<var name="workflowDefinition" value="Single Approver (Version 1)" />
 			<var name="workflowRestriction" value="Default Workflow" />
 		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
@@ -692,6 +710,8 @@
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC Folder WebContent Content" />
 			<var name="webContentTitle" value="WC Folder WebContent Title" />
@@ -828,6 +848,8 @@
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
 
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC Folder WebContent Content" />
 			<var name="webContentTitle" value="WC Folder WebContent Title" />
@@ -838,9 +860,11 @@
 			<var name="webContentTitle" value="WC Folder WebContent Title" />
 		</execute>
 
-		<execute macro="WebContent#addWithStructureAndWorkflowCP">
+		<execute macro="WebContentNavigator#gotoAddWithStructureCP">
 			<var name="structureName" value="WC Structure Name" />
-			<var name="templateName" value="WC Template Name" />
+		</execute>
+
+		<execute macro="WebContent#addWithStructureAndWorkflowCP">
 			<var name="webContentText" value="WC Folder WebContent Structure Text" />
 			<var name="webContentTitle" value="WC Folder WebContent Structure Title" />
 		</execute>
@@ -852,6 +876,10 @@
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddWithStructureCP">
+			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
 		<execute macro="WebContent#addWithStructureCP">
@@ -939,6 +967,8 @@
 			<var name="workflowDefinition" value="Single Approver (Version 1)" />
 			<var name="workflowRestriction" value="Default Workflow" />
 		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
