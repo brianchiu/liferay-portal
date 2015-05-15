@@ -8,8 +8,6 @@
 <tr><td rowspan="1" colspan="3">AdvancedSearch</td></tr>
 </thead>
 <tbody>
-
-<!--ADVANCED_SEARCH-->
 <tr>
 	<td>ADVANCED_SEARCH_MATCH_SELECT</td>
 	<td>//select[contains(@id,'Operator')]</td>
