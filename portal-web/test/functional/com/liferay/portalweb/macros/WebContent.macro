@@ -1127,6 +1127,7 @@
 	</command>
 
 	<command name="previewCPwithStructureTemplateXSL">
+		<var name="key_fieldName" value="${webContentText}" />
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
