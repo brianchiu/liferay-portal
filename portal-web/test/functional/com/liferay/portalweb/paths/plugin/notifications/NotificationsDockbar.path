@@ -79,11 +79,6 @@
 	<td>//div[@class='user-notifications']/div[@class='message']</td>
 	<td></td>
 </tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
 </tbody>
 </table>
 </body>

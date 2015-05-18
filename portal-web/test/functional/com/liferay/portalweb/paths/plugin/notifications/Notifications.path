@@ -31,7 +31,7 @@
 </tr>
 <tr>
 	<td>NAVIGATION_REQUESTS</td>
-	<td>//div[contains(@class,'user-notifications-sidebar')]//a/span[contains(.,'All Requests')]</td>
+	<td>//div[contains(@class,'user-notifications-sidebar')]//a/span[contains(.,'Requests')]</td>
 	<td></td>
 </tr>
 <tr>
