@@ -1252,12 +1252,11 @@
 				<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_LIST_WORKFLOW_STATUS" value1="Approved" />
 			</then>
 			<else>
-				<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />
-				<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_DESCRIPTIVE" value1="Descriptive" />
-				<execute function="AssertElementPresent#pauseAssertVisible" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_THUMBNAIL" />
-				<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_WORKFLOW_STATUS" value1="${webContentStatus}" />
-				<execute function="AssertClick" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
-
+				<execute macro="WebContentNavigator#gotoViewStatus">
+					<var name="webContentStatus" value="${webContentStatus}" />
+					<var name="webContentTitle" value="${webContentTitle}" />
+				</execute>
+				
 				<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 				<execute function="SelectFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" />
 				<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#BODY_FIELD" value1="${webContentContent}" />
@@ -1318,13 +1317,12 @@
 	</command>
 
 	<command name="viewDraftCP">
-		<var name="key_webContentTitle" value="${webContentTitle}" />
+		<execute macro="WebContentNavigator#gotoViewStatus">
+			<var name="webContentStatus" value="Draft" />
+			<var name="webContentTitle" value="${webContentTitle}" />
+		</execute>
 
-		<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />
-		<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_DESCRIPTIVE" value1="Descriptive" />
-		<execute function="AssertElementPresent#pauseAssertVisible" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_THUMBNAIL" />
-		<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_WORKFLOW_STATUS" value1="Draft" />
-		<execute function="AssertClick" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
+		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#WORKFLOW_STATUS" value1="Draft" />
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
@@ -1514,13 +1512,10 @@
 	</command>
 
 	<command name="viewStructureWithWorkflowCP">
-		<var name="key_webContentTitle" value="${webContentTitle}" />
-
-		<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />
-		<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_DESCRIPTIVE" value1="Descriptive" />
-		<execute function="AssertElementPresent#pauseAssertVisible" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_THUMBNAIL" />
-		<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_WORKFLOW_STATUS" value1="Pending" />
-		<execute function="AssertClick" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
+		<execute macro="WebContentNavigator#gotoViewStatus">
+			<var name="webContentStatus" value="Pending" />
+			<var name="webContentTitle" value="${webContentTitle}" />
+		</execute>
 
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#WORKFLOW_STATUS" value1="Pending (${workflowTask})" />
 		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
@@ -1633,13 +1628,10 @@
 	</command>
 
 	<command name="viewWithWorkflowCP">
-		<var name="key_webContentTitle" value="${webContentTitle}" />
-
-		<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />
-		<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_DESCRIPTIVE" value1="Descriptive" />
-		<execute function="AssertElementPresent#pauseAssertVisible" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_THUMBNAIL" />
-		<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_WORKFLOW_STATUS" value1="Pending" />
-		<execute function="AssertClick" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
+		<execute macro="WebContentNavigator#gotoViewStatus">
+			<var name="webContentStatus" value="Pending" />
+			<var name="webContentTitle" value="${webContentTitle}" />
+		</execute>
 
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#WORKFLOW_STATUS" value1="Pending (${workflowTask})" />
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
