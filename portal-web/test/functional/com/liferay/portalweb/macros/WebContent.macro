@@ -1193,24 +1193,6 @@
 		</if>
 
 		<if>
-			<equals arg1="${expireContent}" arg2="true" />
-			<then>
-				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="Expired" />
-				<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#VIEW_HISTORY_BUTTON" value1="View History" />
-
-				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentViewhistory#VERSIONS_TABLE_TITLE" value1="${webContentTitle}" />
-				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentViewhistory#VERSIONS_TABLE_STATUS_EXPIRED" value1="Expired" />
-
-				<if>
-					<isset var="webContentTitleEdit" />
-					<then>
-						<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentViewhistory#VERSIONS_TABLE_VERSION_1.1" value1="1.1" />
-					</then>
-				</if>
-			</then>
-		</if>
-
-		<if>
 			<isset var="localizedLanguage" />
 			<then>
 				<execute macro="WebContent#viewTranslationCmdCP">
@@ -1219,6 +1201,21 @@
 					<var name="localizedTitle" value="${localizedTitle}" />
 					<var name="webContentTitle" value="${webContentTitle}" />
 				</execute>
+			</then>
+		</if>
+	</command>
+
+	<command name="viewExpiredContent">
+		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="Expired" />
+		<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#VIEW_HISTORY_BUTTON" value1="View History" />
+
+		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentViewhistory#VERSIONS_TABLE_TITLE" value1="${webContentTitle}" />
+		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentViewhistory#VERSIONS_TABLE_STATUS_EXPIRED" value1="Expired" />
+
+		<if>
+			<isset var="webContentTitleEdit" />
+			<then>
+				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentViewhistory#VERSIONS_TABLE_VERSION_1.1" value1="1.1" />
 			</then>
 		</if>
 	</command>
@@ -1287,21 +1284,6 @@
 		<execute function="AssertTextEquals#assertPartialText" locator1="PGAssetpublisherAddnewwebcontentDisplaypage#PUBLIC_DISPLAY_PAGE_ITEM" value1="${displayPageSelection}" />
 
 		<execute function="SelectFrame" value1="relative=top" />
-	</command>
-
-	<command name="viewDraftCP">
-		<execute macro="WebContentNavigator#gotoViewStatus">
-			<var name="webContentStatus" value="Draft" />
-			<var name="webContentTitle" value="${webContentTitle}" />
-		</execute>
-
-		<var name="key_webContentTitle" value="${webContentTitle}" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#WORKFLOW_STATUS" value1="Draft" />
-		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
-		<execute function="SelectFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" />
-		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#BODY_FIELD" value1="${webContentContent}" />
-		<execute function="SelectFrameTop" />
 	</command>
 
 	<command name="viewEditWCViaWCD">

@@ -571,7 +571,7 @@
 
 		<execute macro="WebContent#addExpirationDateCP">
 			<var name="expirationDate" value="01/02/3000" />
-		</command>
+		</execute>
 
 		<execute macro="WebContent#publish" />
 
@@ -1072,8 +1072,11 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
-			<var name="expireContent" value="true" />
 			<var name="webContentContent" value="WC WebContent Content Edit" />
+			<var name="webContentTitle" value="WC WebContent Title Edit" />
+		</execute>
+
+		<execute macro="WebContent#viewExpiredContent">
 			<var name="webContentTitle" value="WC WebContent Title Edit" />
 		</execute>
 	</command>
@@ -1103,8 +1106,11 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
-			<var name="expireContent" value="true" />
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#viewExpiredContent">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 	</command>
@@ -1365,8 +1371,11 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
-			<var name="expireContent" value="true" />
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#viewExpiredContent">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
