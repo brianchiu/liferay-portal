@@ -21,18 +21,6 @@
 	</command>
 
 	<command name="addCP">
-		<if>
-			<isset var="expirationDate" />
-			<then>
-				<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#MENU_SCHEDULE" value1="Schedule" />
-
-				<execute function="AssertChecked" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_NEVER_EXPIRE_CHECKBOX" value1="Never Expire" />
-				<execute function="Uncheck" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_NEVER_EXPIRE_CHECKBOX" value1="Never Expire" />
-				<execute function="Type#clickAtSendKeys" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_FIELD" value1="${expirationDate}" />
-				<execute function="AssertClick#assertPartialTextClickAt" locator1="CPWebcontentEditwebcontentSchedule#MENU_CONTENT" value1="Content" />
-			</then>
-		</if>
-
 		<execute function="Type#mouseOverFocusType" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 		<execute function="Type#typeFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" value1="${webContentContent}" />
 
@@ -116,6 +104,14 @@
 		<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#PUBLISH_BUTTON" value1="Publish" />
 
 		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+	</command>
+
+	<command name="addExpirationDateCP">
+		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#MENU_SCHEDULE" value1="Schedule" />
+		<execute function="AssertChecked" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_NEVER_EXPIRE_CHECKBOX" value1="Never Expire" />
+		<execute function="Uncheck" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_NEVER_EXPIRE_CHECKBOX" value1="Never Expire" />
+		<execute function="Type#clickAtSendKeys" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_FIELD" value1="${expirationDate}" />
+		<execute function="AssertClick#assertPartialTextClickAt" locator1="CPWebcontentEditwebcontentSchedule#MENU_CONTENT" value1="Content" />
 	</command>
 
 	<command name="addFailWithoutRequiredCategoryAssetTypeCP">
@@ -1231,17 +1227,6 @@
 		</if>
 
 		<if>
-			<isset var="expirationDate" />
-			<then>
-				<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#MENU_SCHEDULE" value1="Schedule" />
-
-				<execute function="AssertNotChecked" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_NEVER_EXPIRE_CHECKBOX" value1="Never Expire" />
-				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_FIELD" value1="${expirationDate}" />
-				<execute function="AssertClick" locator1="CPWebcontentEditwebcontentSchedule#MENU_CONTENT" value1="Content" />
-			</then>
-		</if>
-
-		<if>
 			<equals arg1="${expireContent}" arg2="true" />
 			<then>
 				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="Expired" />
@@ -1409,6 +1394,13 @@
 				<execute function="AssertElementNotPresent" locator1="CPWebcontentConfiguration#NAVIGATION_WEB_CONTENT_REQUESTED_EMAIL" />
 			</else>
 		</if>
+	</command>
+
+	<command name="viewExpirationDateCP">
+		<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#MENU_SCHEDULE" value1="Schedule" />
+		<execute function="AssertNotChecked" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_NEVER_EXPIRE_CHECKBOX" value1="Never Expire" />
+		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontentSchedule#SCHEDULE_EXPIRATION_DATE_FIELD" value1="${expirationDate}" />
+		<execute function="AssertClick" locator1="CPWebcontentEditwebcontentSchedule#MENU_CONTENT" value1="Content" />
 	</command>
 
 	<command name="viewLinkedAssetPGViaAP">

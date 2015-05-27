@@ -556,11 +556,16 @@
 
 		<execute macro="WebContentNavigator#gotoAddCP" />
 
-		<execute macro="WebContent#addCP">
-			<var name="expirationDate" value="01/02/3000" />
+		<execute macro="WebContent#addBasic">
 			<var name="webContentContent" value="WC WebContent Content" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
+
+		<execute macro="WebContent#addExpirationDateCP">
+			<var name="expirationDate" value="01/02/3000" />
+		</command>
+
+		<execute macro="WebContent#publish" />
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
@@ -571,9 +576,12 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
-			<var name="expirationDate" value="01/02/3000" />
 			<var name="webContentContent" value="WC WebContent Content" />
 			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#viewExpirationDateCP">
+			<var name="expirationDate" value="01/02/3000" />
 		</execute>
 	</command>
 
