@@ -290,10 +290,13 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#viewNestedField">
 			<var name="fieldName" value="Text" />
 			<var name="nestedField" value="Integer" />
 			<var name="nestedFieldData" value="123" />
-			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="WebContentNavigator#gotoManageStructures" />

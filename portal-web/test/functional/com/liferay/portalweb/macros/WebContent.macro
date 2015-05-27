@@ -1193,16 +1193,6 @@
 		</if>
 
 		<if>
-			<isset var="nestedField" />
-			<then>
-				<var name="key_fieldName" value="${fieldName}" />
-				<var name="key_nestedFieldName" value="${nestedField}" />
-
-				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#NESTED_FIELD" value1="${nestedFieldData}" />
-			</then>
-		</if>
-
-		<if>
 			<equals arg1="${expireContent}" arg2="true" />
 			<then>
 				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="Expired" />
@@ -1231,6 +1221,13 @@
 				</execute>
 			</then>
 		</if>
+	</command>
+
+	<command name="viewNestedField">
+		<var name="key_fieldName" value="${fieldName}" />
+		<var name="key_nestedFieldName" value="${nestedField}" />
+
+		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#NESTED_FIELD" value1="${nestedFieldData}" />
 	</command>
 
 	<command name="viewStatus">
