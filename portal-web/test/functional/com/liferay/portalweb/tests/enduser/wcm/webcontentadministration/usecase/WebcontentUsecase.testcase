@@ -65,11 +65,14 @@
 
 		<execute macro="WebContentNavigator#gotoAddCP" />
 
-		<execute macro="WebContent#addCP">
-			<var name="uploadAudio" value="true" />
+		<execute macro="WebContent#addBasic">
 			<var name="webContentContent" value="WC WebContent Content" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
+
+		<execute macro="WebContent#uploadAudio" />
+
+		<execute macro="WebContent#publish" />
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
