@@ -1066,6 +1066,24 @@ public class LiferaySeleniumHelper {
 			return true;
 		}
 
+		if (line.matches("Current URL")) {
+			if (line.matches(".*add_panel generates exception:.*")) {
+				return true;
+			}
+
+			if (line.matches(".*exception occurred processing JSP page.*")) {
+				return true;
+			}
+
+			if (line.matches(".*boolean hasAddPortletURLs = false;.*")) {
+				return true;
+			}
+
+			if (line.matches(".*long[] availableClassNameIds.*")) {
+				return true;
+			}
+		}
+
 		// LRQA-14442, temporary workaround until Kiyoshi Lee fixes it
 
 		if (line.contains("Framework Event Dispatcher: Equinox Container:")) {
