@@ -1191,18 +1191,6 @@
 				<execute function="SelectFrame" value1="relative=top" />
 			</else>
 		</if>
-
-		<if>
-			<isset var="localizedLanguage" />
-			<then>
-				<execute macro="WebContent#viewTranslationCmdCP">
-					<var name="localizedContent" value="${localizedContent}" />
-					<var name="localizedLanguage" value="${localizedLanguage}" />
-					<var name="localizedTitle" value="${localizedTitle}" />
-					<var name="webContentTitle" value="${webContentTitle}" />
-				</execute>
-			</then>
-		</if>
 	</command>
 
 	<command name="viewExpiredContent">
@@ -1485,7 +1473,7 @@
 		<execute function="AssertTextEquals#assertPartialText" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
 	</command>
 
-	<command name="viewTranslationCmdCP">
+	<command name="viewTranslation">
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#TITLE_FIELD" value1="${webContentTitle}" />

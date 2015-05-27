@@ -990,9 +990,14 @@
 		</execute>
 
 		<execute macro="WebContent#viewCP">
-			<var name="localizedContent" value="WC Contenido de la web Contenido" />
-			<var name="localizedTitle" value="WC Contenido de la web Titulo" />
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#viewTranslation">
+			<var name="localizedContent" value="WC Contenido de la web Contenido" />
+			<var name="localizedLanguage" value="Spanish (Spain)" />
+			<var name="localizedTitle" value="WC Contenido de la web Titulo" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 	</command>
