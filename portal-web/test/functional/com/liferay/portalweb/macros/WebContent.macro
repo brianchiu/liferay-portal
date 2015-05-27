@@ -23,28 +23,6 @@
 	<command name="addCP">
 		<execute function="Type#mouseOverFocusType" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 		<execute function="Type#typeFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" value1="${webContentContent}" />
-
-		<if>
-			<equals arg1="${linkContent}" arg2="true" />
-			<then>
-				<execute function="Click" locator1="CKEditor#TOOLBAR_LINK_BUTTON" />
-				<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#BROWSE_SERVER_BUTTON" value1="Browse Server" />
-				<execute function="Pause" locator1="10000" />
-				<execute function="SelectFrame" locator1="CPWebcontentAddwebcontent#BROWSE_IFRAME" />
-				<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#CHOOSE_BUTTON" value1="Choose" />
-				<execute function="SelectFrame" value1="relative=top" />
-				<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#OK_BUTTON" value1="OK" />
-			</then>
-		</if>
-
-		<if>
-			<isset var="abstractSummary" />
-			<then>
-				<execute function="Type" locator1="CPWebcontentAddwebcontent#SUMMARY_FIELD" value1="${abstractSummary}" />
-				<execute function="AssertClick#assertPartialTextClickAt" locator1="CPWebcontentAddwebcontent#MENU_CONTENT" value1="Content" />
-			</then>
-		</if>
-
 		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
 
 		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
@@ -55,6 +33,11 @@
 		<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_DESCRIPTIVE" value1="Descriptive" />
 		<execute function="AssertElementPresent#pauseAssertVisible" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_THUMBNAIL" />
 		<execute function="AssertTextEquals#assertPartialText" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
+	</command>
+
+	<command name="addAbstractSummary">
+		<execute function="Type" locator1="CPWebcontentAddwebcontent#SUMMARY_FIELD" value1="${abstractSummary}" />
+		<execute function="AssertClick#assertPartialTextClickAt" locator1="CPWebcontentAddwebcontent#MENU_CONTENT" value1="Content" />
 	</command>
 
 	<command name="addDraftCP">
