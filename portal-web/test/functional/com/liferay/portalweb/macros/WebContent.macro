@@ -23,9 +23,8 @@
 	<command name="addCP">
 		<execute function="Type#mouseOverFocusType" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 		<execute function="Type#typeFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" value1="${webContentContent}" />
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		
+		<execute macro="WebContent#publish" />
 
 		<execute macro="WebContent#viewTitleCmd">
 			<var name="webContentTitle" value="${webContentTitle}" />
@@ -68,9 +67,7 @@
 		<execute function="AssertTextEquals" locator1="CPWebcontentRelatedassets#RELATED_ASSETS_TABLE_SCOPE" value1="${siteName}" />
 		<execute function="AssertElementPresent" locator1="CPWebcontentRelatedassets#RELATED_ASSETS_TABLE_REMOVE_LINK" />
 
-		<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="WebContent#publish" />
 	</command>
 
 	<command name="addExpirationDateCP">
@@ -389,9 +386,7 @@
 		<execute function="Click" locator1="CPWebcontentCategorization#CATEGORIES_WINDOW_CLOSE_BUTTON" />
 		<execute function="AssertTextEquals" locator1="CPWebcontentCategorization#CATEGORY" value1="${categoryName}" />
 
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="WebContent#publish" />
 
 		<execute macro="WebContent#viewTitleCmd">
 			<var name="webContentTitle" value="${webContentTitle}" />
@@ -457,9 +452,8 @@
 		</for>
 
 		<execute function="Click" locator1="CPWebcontentCategorization#CATEGORIES_WINDOW_CLOSE_BUTTON" />
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		
+		<execute macro="WebContent#publish" />
 	</command>
 
 	<command name="addWithStructureAndWorkflowCP">
@@ -610,9 +604,7 @@
 			</then>
 		</if>
 
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="WebContent#publish" />
 
 		<execute macro="WebContent#viewTitleCmd">
 			<var name="webContentTitle" value="${webContentTitle}" />
@@ -631,9 +623,7 @@
 
 		<execute function="Click" locator1="CPWebcontentCategorization#TAGS_ADD_BUTTON" />
 
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="WebContent#publish" />
 
 		<execute macro="WebContent#viewTitleCmd">
 			<var name="webContentTitle" value="${webContentTitle}" />
@@ -748,9 +738,7 @@
 				<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="Draft" />
 			</then>
 			<else>
-				<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-				<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+				<execute macro="WebContent#publish" />
 
 				<var name="key_webContentTitle" value="${webContentTitleEdit}" />
 
@@ -777,9 +765,8 @@
 
 		<execute function="SelectFrame" value1="relative=top" />
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#DISPLAY_PAGE_SELECTION" value1="Public Pages > ${pageName}" />
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		
+		<execute macro="WebContent#publish" />
 	</command>
 
 	<command name="editDisplayPagePGViaAP">
@@ -1046,9 +1033,7 @@
 		<execute function="AssertClickNoError" locator1="CPWebcontentSelecttemplate#TEMPLATE_TABLE_CHOOSE" value1="Choose" />
 		<execute function="Confirm" value1="Selecting a new template deletes all unsaved content. Do you want to proceed?" />
 
-		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="WebContent#publish" />
 	</command>
 
 	<command name="tearDownCP">
