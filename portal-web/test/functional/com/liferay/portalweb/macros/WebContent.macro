@@ -1233,12 +1233,7 @@
 		</if>
 	</command>
 
-	<command name="viewCPStatus">
-		<execute macro="WebContentNavigator#gotoViewStatus">
-			<var name="webContentStatus" value="${webContentStatus}" />
-			<var name="webContentTitle" value="${webContentTitle}" />
-		</execute>
-		
+	<command name="viewStatus">
 		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="${webContentStatus}" />
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 		<execute function="SelectFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" />
