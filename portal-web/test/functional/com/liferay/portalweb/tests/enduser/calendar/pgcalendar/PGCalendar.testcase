@@ -2129,9 +2129,7 @@
 
 		<var method="selenium#getLocation()" name="rssURL" />
 
-		<execute macro="CalendarNavigator#gotoPageWindow">
-			<var name="pageName" value="${pageName}" />
-		</execute>
+		<execute macro="Navigator#closeWindow" />
 
 		<execute macro="CalendarNavigator#gotoConfiguration" />
 
@@ -4033,9 +4031,7 @@
 			<var name="eventTitle" value="Future Day Event" />
 		</execute>
 
-		<execute macro="CalendarNavigator#gotoPageWindow">
-			<var name="pageName" value="${pageName}" />
-		</execute>
+		<execute macro="Navigator#closeWindow" />
 	</command>
 
 	<command name="ViewSiteNameUpdate" priority="5">
