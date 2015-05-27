@@ -1322,9 +1322,7 @@
 			<var name="portletName" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContent#viewCPStatus">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentStatus" value="Approved" />
+		<execute macro="WebContent#viewApprovedStatus">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 	</command>
@@ -1386,9 +1384,7 @@
 			<var name="portletName" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContent#viewCPStatus">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentStatus" value="Approved" />
+		<execute macro="WebContent#viewApprovedStatus">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 	</command>

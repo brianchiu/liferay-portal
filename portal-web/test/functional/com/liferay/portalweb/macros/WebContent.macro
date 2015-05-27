@@ -1086,6 +1086,14 @@
 		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#OK_BUTTON" value1="OK" />
 	</command>
 
+	<command name="viewApprovedStatus">
+		<var name="key_webContentTitle" value="${webContentTitle}" />
+
+		<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />
+		<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_LIST" value1="List" />
+		<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_LIST_WORKFLOW_STATUS" value1="Approved" />
+	</command>
+
 	<command name="viewAudioViaWCD">
 		<execute function="AssertElementPresent" locator1="PGWebcontentdisplay#WEB_CONTENT_AUDIO" />
 	</command>
@@ -1242,28 +1250,17 @@
 	</command>
 
 	<command name="viewCPStatus">
-		<var name="key_webContentTitle" value="${webContentTitle}" />
+		<execute macro="WebContentNavigator#gotoViewStatus">
+			<var name="webContentStatus" value="${webContentStatus}" />
+			<var name="webContentTitle" value="${webContentTitle}" />
+		</execute>
+		
+		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#STATUS_LABEL" value1="${webContentStatus}" />
+		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
+		<execute function="SelectFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" />
+		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#BODY_FIELD" value1="${webContentContent}" />
 
-		<if>
-			<equals arg1="${webContentStatus}" arg2="Approved" />
-			<then>
-				<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />
-				<execute function="AssertClick" locator1="CPWebcontent#DISPLAY_STYLE_MENULIST_LIST" value1="List" />
-				<execute function="AssertTextEquals" locator1="CPWebcontent#ENTRY_LIST_WORKFLOW_STATUS" value1="Approved" />
-			</then>
-			<else>
-				<execute macro="WebContentNavigator#gotoViewStatus">
-					<var name="webContentStatus" value="${webContentStatus}" />
-					<var name="webContentTitle" value="${webContentTitle}" />
-				</execute>
-				
-				<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
-				<execute function="SelectFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" />
-				<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#BODY_FIELD" value1="${webContentContent}" />
-
-				<execute function="SelectFrameTop" />
-			</else>
-		</if>
+		<execute function="SelectFrameTop" />
 	</command>
 
 	<command name="viewCPUserEdit">
