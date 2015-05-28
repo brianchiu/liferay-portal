@@ -12,20 +12,13 @@
  * details.
  */
 
-package com.liferay.portal.kernel.editor;
-
-import javax.servlet.http.HttpServletRequest;
+package com.liferay.journal.web.constants;
 
 /**
- * @author Roberto Díaz
+ * @author Brian Wing Shun Chan
  */
+public class JournalWebKeys {
 
-public interface Editor {
-
-	public String getJspPath(HttpServletRequest request);
-
-	public String getName();
-
-	public void setItemSelectorAttribute(HttpServletRequest request);
+	public static final String ITEM_SELECTOR = "ITEM_SELECTOR";
 
 }
