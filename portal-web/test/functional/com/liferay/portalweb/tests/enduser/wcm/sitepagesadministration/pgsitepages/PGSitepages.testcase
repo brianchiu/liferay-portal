@@ -12,6 +12,10 @@
 	</tear-down>
 
 	<command known-issues="LPS-53993" name="AddEmbeddedPortlet" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Embedded Portlet Page" />
 		</execute>
@@ -108,6 +112,10 @@
 	<command known-issues="LPS-54029" name="AddPageFromExistingPage" priority="4">
 		<execute macro="Page#openURL" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page" />
 		</execute>
@@ -135,6 +143,10 @@
 
 	<command name="EditSitePage" priority="4">
 		<execute macro="Page#openURL" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page" />

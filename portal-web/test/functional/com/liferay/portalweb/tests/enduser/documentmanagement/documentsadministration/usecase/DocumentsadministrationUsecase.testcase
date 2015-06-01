@@ -24,6 +24,10 @@
 	</tear-down>
 
 	<command name="AddAndRemoveMetadataSets" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
@@ -181,6 +185,10 @@
 			<var name="userFirstName" value="userfn" />
 			<var name="userLastName" value="userln" />
 			<var name="userScreenName" value="usersn" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -374,6 +382,10 @@
 			<var name="dmDocumentTitle" value="Zero Document File" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -486,6 +498,10 @@
 
 		<execute macro="ServerAdministration#configureExternalServices">
 			<var name="enableXuggler" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -613,6 +629,10 @@
 	</command>
 
 	<command name="RemoveCurrentDisplayStyleViews" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
@@ -636,6 +656,10 @@
 
 	<command name="SelectMultipleDocumentsAndDeleteViaActionsButton" priority="5">
 		<var name="dmDocumentCounterList" value="1,2,3" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
@@ -686,6 +710,10 @@
 		<var name="dmDocumentTitle" value="Document Title" />
 		<var name="pageName" value="Documents and Media Page" />
 		<var name="tagNameList" value="tag1,tag2" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
@@ -749,6 +777,10 @@
 	</command>
 
 	<command name="ViewPortletAfterRenamingDocumentWithDuplicateTitlePG" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>

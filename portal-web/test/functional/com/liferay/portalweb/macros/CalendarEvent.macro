@@ -1128,6 +1128,10 @@
 		<if>
 			<equals arg1="${marketplace}" arg2="true" />
 			<then>
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 				<execute macro="Page#addPG">
 					<var name="pageName" value="Marketplace Calendar Testing" />
 				</execute>

@@ -49,6 +49,10 @@
 
 		<execute macro="Page#openURL" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Polls Page" />
 		</execute>
@@ -154,6 +158,10 @@
 			<var name="userAction" value="${userAction4}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Social Activity Page" />
 		</execute>
@@ -169,6 +177,10 @@
 		<var name="key_portletName" value="User Statistics" />
 
 		<execute function="AssertTextEquals" locator1="PGUserstatistics#PORTLET_BODY" value1="There are no active users for this period." />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blogs Page" />
@@ -316,6 +328,10 @@
 	</command>
 
 	<command name="Localization" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Social Activity Page" />
 		</execute>
@@ -410,6 +426,10 @@
 		<execute function="AssertTextEquals" locator1="CPPolls#POLLS_TABLE_TITLE" value1="${pollsQuestionTitle}" />
 
 		<execute macro="Page#openURL" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Polls Page" />

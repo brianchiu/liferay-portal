@@ -19,6 +19,10 @@
 			<var name="nodePort" value="8080" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page1" />
 		</execute>
@@ -189,6 +193,10 @@
 
 		<execute macro="Page#assertnodePortPG">
 			<var name="nodePort" value="8080" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">

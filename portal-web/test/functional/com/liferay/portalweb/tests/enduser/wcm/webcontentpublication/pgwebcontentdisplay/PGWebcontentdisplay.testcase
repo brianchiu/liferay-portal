@@ -7,6 +7,10 @@
 	<set-up>
 		<execute macro="User#firstLoginPG" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
 		</execute>
@@ -46,6 +50,10 @@
 	</command>
 
 	<command name="AddNewWebContentViaAddContentPanel" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Page" />
 		</execute>
@@ -115,6 +123,10 @@
 	</command>
 
 	<command name="AddWebContentPortalScopeCurrentPage" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page1" />
 		</execute>
@@ -135,6 +147,10 @@
 			<var name="scopeSelection" value="Web Content Display Page1" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page2" />
 		</execute>
@@ -153,6 +169,10 @@
 
 		<execute macro="WebContentDisplayPortlet#viewConfigureScopePG">
 			<var name="scopeSelection" value="Web Content Display Page1" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">

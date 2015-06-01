@@ -824,6 +824,10 @@
 			<var name="userEmailAddress" value="test@liferay.com" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page Name" />
 		</execute>

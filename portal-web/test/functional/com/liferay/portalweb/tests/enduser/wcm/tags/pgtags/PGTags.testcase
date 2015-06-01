@@ -282,6 +282,10 @@
 	</command>
 
 	<command known-issues="LPS-54823" name="DisplayDocumentTagViaAP" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>
@@ -343,6 +347,10 @@
 	</command>
 
 	<command known-issues="LPS-55859" name="DisplayTagCloud" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>
@@ -430,6 +438,10 @@
 	</command>
 
 	<command known-issues="LPS-55859" name="DisplayTagUsageStatistics" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>
@@ -515,6 +527,10 @@
 	</command>
 
 	<command name="DisplayUnusedTags" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>
@@ -555,6 +571,10 @@
 	</command>
 
 	<command known-issues="LPS-51687" name="DisplayWebContentTagViaAP" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>
@@ -616,6 +636,10 @@
 	</command>
 
 	<command known-issues="LPS-55859" name="FilterTagsByNameAP" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>
@@ -926,6 +950,10 @@
 	</command>
 
 	<command name="ViewTagCloudDisplayConfiguration" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tag Cloud Page" />
 		</execute>
@@ -948,6 +976,10 @@
 	</command>
 
 	<command known-issues="LPS-54823" name="ViewTagCloudIncrease" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
 		</execute>

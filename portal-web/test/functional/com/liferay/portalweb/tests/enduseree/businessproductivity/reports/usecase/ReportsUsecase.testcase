@@ -53,6 +53,10 @@
 			<var name="reportsDefinitionName" value="Reports Definition Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Reports Page" />
 		</execute>
@@ -258,6 +262,10 @@ Thanks,<br/>
 			<var name="emailRecipientAddress" value="test@liferay.com" />
 			<var name="reportFormat" value="csv" />
 			<var name="reportsDefinitionName" value="Reports Definition Name" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">

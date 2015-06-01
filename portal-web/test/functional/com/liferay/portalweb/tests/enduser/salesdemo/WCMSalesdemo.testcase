@@ -102,6 +102,10 @@
 			<var name="userLoginFullName" value="Test Test" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Sales Page" />
 		</execute>

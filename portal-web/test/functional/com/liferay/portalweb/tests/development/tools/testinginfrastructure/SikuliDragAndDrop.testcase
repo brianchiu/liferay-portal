@@ -10,6 +10,10 @@
 	</set-up>
 
 	<command name="SikuliDragAndDrop" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>

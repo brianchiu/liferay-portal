@@ -12,6 +12,10 @@
 	</tear-down>
 
 	<command name="AvailableSiteLocalesSubsetOfAvailablePortalLocales" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Language Test Page" />
 		</execute>
@@ -68,6 +72,10 @@
 		<var name="pageName" value="Language Test Page" />
 		<var name="portletName" value="Language" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -113,6 +121,10 @@
 		<var name="pageName" value="Language Test Page" />
 		<var name="portletName" value="Language" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -157,6 +169,10 @@
 
 		<var name="pageName" value="Language Test Page" />
 		<var name="portletName" value="Language" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />

@@ -6,6 +6,10 @@
 	<set-up>
 		<execute macro="User#firstLoginPG" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Asset Publisher Page" />
 		</execute>
@@ -64,6 +68,10 @@
 	</command>
 
 	<command name="AddBookmarkViaAP" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
 		</execute>
@@ -106,6 +114,10 @@
 	</command>
 
 	<command name="AddCustomTitleViaAP" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page" />
 		</execute>
@@ -780,6 +792,10 @@
 	<command name="ConfigureAPPortletDisplaytemplateFullContentWithBookmarks" priority="4">
 		<var name="bookmarkURL" value="http://www.liferay.com" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
 		</execute>
@@ -834,6 +850,10 @@
 
 	<command name="ConfigureAPPortletDisplaytemplateTableWithBookmarks" priority="4">
 		<var name="bookmarkURL" value="http://www.liferay.com" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
@@ -891,6 +911,10 @@
 
 	<command name="ConfigureAPPortletDisplaytemplateTitlelistWithBookmarks" priority="4">
 		<var name="bookmarkURL" value="http://www.liferay.com" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
@@ -1109,6 +1133,10 @@
 
 	<command name="ConfigureAPPortletWithSelectedBookmarksEntry" priority="4">
 		<var name="bookmarkURL" value="http://www.liferay.com" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
