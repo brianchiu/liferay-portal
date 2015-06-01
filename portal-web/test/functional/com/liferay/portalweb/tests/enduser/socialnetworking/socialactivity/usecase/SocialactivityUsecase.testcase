@@ -55,7 +55,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Polls Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -165,7 +165,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Social Activity Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -186,7 +186,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blogs Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -337,7 +337,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Social Activity Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -437,7 +437,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Polls Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

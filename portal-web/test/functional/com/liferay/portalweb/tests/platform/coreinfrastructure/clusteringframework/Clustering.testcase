@@ -25,7 +25,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page1" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -82,7 +82,7 @@
 		<execute macro="Page#addPG">
 			<var name="nodePort" value="9080" />
 			<var name="pageName" value="Test Page2" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -207,7 +207,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

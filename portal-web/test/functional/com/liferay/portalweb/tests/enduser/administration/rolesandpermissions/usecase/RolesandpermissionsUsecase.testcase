@@ -307,7 +307,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -922,7 +922,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1239,7 +1239,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -2054,7 +2054,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -2259,7 +2259,7 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="USA Ice Hockey Team Blog" />
 			<var name="pageTemplateName" value="Blog" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

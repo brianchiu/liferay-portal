@@ -104,7 +104,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Dockbar Test Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute function="Click#clickAtSidebarClickAt" locator1="Dockbar#EDIT" />
@@ -129,7 +129,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Dockbar Test Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute function="Click#clickAtSidebarClickAt" locator1="Dockbar#EDIT" />

@@ -20,7 +20,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -88,7 +88,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute function="Open" locator1="http://localhost:8080/html/common/forward_jsp.jsp?FORWARD_URL=http://localhost:8080/web/guest/test" />
@@ -107,7 +107,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="External Webapps Test Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

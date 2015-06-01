@@ -13,7 +13,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -75,7 +75,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Asset Publisher Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -238,7 +238,7 @@
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 			<var name="virtualHostsURL" value="www.able.com:8080" />
 		</execute>
 
@@ -657,7 +657,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName2}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -756,7 +756,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Recent Bloggers Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -792,7 +792,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName2}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -881,7 +881,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName2}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -980,7 +980,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

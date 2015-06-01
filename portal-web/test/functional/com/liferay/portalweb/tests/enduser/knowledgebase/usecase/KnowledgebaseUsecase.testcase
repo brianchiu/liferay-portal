@@ -26,7 +26,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -107,7 +107,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -175,7 +175,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -192,7 +192,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Article Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -209,7 +209,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -226,7 +226,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Section Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -421,7 +421,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -522,7 +522,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -539,7 +539,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -621,7 +621,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -720,7 +720,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -812,7 +812,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -845,7 +845,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -910,7 +910,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -950,7 +950,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1020,7 +1020,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1080,7 +1080,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1144,7 +1144,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1197,7 +1197,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1274,7 +1274,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="KB Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1305,7 +1305,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1372,7 +1372,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1501,7 +1501,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page 1" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1528,7 +1528,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page 2" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1601,7 +1601,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1661,7 +1661,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1774,7 +1774,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1926,7 +1926,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoCP">
@@ -2097,7 +2097,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -2264,7 +2264,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -2381,7 +2381,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -2631,7 +2631,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

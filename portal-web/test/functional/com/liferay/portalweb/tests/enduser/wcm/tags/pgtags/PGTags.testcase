@@ -288,7 +288,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -354,7 +354,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -446,7 +446,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -536,7 +536,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -581,7 +581,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -647,7 +647,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -962,7 +962,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tag Cloud Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -989,7 +989,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tags Navigation Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

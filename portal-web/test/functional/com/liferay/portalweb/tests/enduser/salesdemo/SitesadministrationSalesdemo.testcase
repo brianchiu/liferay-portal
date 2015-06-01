@@ -141,7 +141,7 @@
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Video" />
 			<var name="pageType" value="2 Columns (70/30)" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

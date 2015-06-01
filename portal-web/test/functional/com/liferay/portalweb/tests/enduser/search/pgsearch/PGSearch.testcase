@@ -13,7 +13,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -353,7 +353,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blogs Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -785,7 +785,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Message Boards Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1148,7 +1148,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Wiki Test Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

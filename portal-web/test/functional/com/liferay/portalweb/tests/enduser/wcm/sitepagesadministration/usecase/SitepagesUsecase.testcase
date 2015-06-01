@@ -37,7 +37,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 1" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoCP">
@@ -46,7 +46,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 2" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoCP">
@@ -55,7 +55,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${sitePage3Name}" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -192,7 +192,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Page Name" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -228,14 +228,14 @@
 		<var name="pageNameList" value="Page1 Name,Page2 Name,Page3 Name,Page4 Name" />
 
 		<for list="${pageNameList}" param="pageName">
-		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Sites" />
-		</execute>
+			<execute macro="Page#gotoCP">
+				<var name="portletName" value="Sites" />
+			</execute>
 
 			<execute macro="Page#addPG">
 				<var name="pageName" value="${pageName}" />
-				<var name="siteScopeSelected" value="true"/>
-		</execute>
+				<var name="siteScopeSelected" value="true" />
+			</execute>
 		</for>
 
 		<execute macro="Page#gotoPagesCP">
@@ -298,7 +298,7 @@
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Page Name" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute function="Open" locator1="http://localhost:8080/web/usersn/page-name?p_p_id=130&amp;p_p_state=maximized" />
@@ -516,7 +516,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blog and Message Board Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -750,7 +750,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blog and Message Board Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1001,7 +1001,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blog and Message Board Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1170,7 +1170,7 @@
 			<var name="pageName" value="Panel Test Page" />
 			<var name="pageType" value="Panel" />
 			<var name="portletNameList" value="Blogs,Message Boards" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

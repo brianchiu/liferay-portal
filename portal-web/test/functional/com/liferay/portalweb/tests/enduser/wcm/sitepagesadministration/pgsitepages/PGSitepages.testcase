@@ -18,7 +18,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Embedded Portlet Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -119,7 +119,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -134,7 +134,7 @@
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Site Page Name" />
 			<var name="pageType" value="Content Display Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -157,7 +157,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

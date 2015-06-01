@@ -59,7 +59,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Reports Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -275,7 +275,7 @@ Thanks,<br/>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Reports Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">

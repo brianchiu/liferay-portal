@@ -10,7 +10,7 @@
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="IFrame Page" />
-			<var name="siteScopeSelected" value="true"/>
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
