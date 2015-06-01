@@ -651,11 +651,9 @@
 			<var name="portletName" value="Tags Navigation" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="ADT Test Page" />
-			<var name="pageStaging" value="true" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="${siteName}" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">

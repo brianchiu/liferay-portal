@@ -66,6 +66,11 @@
 			<var name="userScreenName" value="${userScreenName}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="test" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Friends Request Page" />
 			<var name="siteName" value="test" />

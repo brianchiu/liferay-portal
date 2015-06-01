@@ -291,9 +291,14 @@
 
 		<execute macro="Page#gotoMyProfile" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Page Name" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute function="Open" locator1="http://localhost:8080/web/usersn/page-name?p_p_id=130&amp;p_p_state=maximized" />
@@ -1156,11 +1161,20 @@
 	</command>
 
 	<command known-issues="LPS-51696" name="WebContentAdministrationSitesPagesPanel" priority="3">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="componentName" value="Collaboration" />
 			<var name="pageName" value="Panel Test Page" />
 			<var name="pageType" value="Panel" />
 			<var name="portletNameList" value="Blogs,Message Boards" />
+			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Panel Test Page" />
 		</execute>
 
 		<execute macro="Page#viewPanelPortletListPG">
