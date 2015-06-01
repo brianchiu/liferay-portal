@@ -74,6 +74,10 @@
 			<var name="entryTitle" value="Blogs Entry1 Title" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="nodePort" value="9080" />
 			<var name="pageName" value="Test Page2" />
@@ -283,6 +287,10 @@
 			<var name="pageName" value="${pageName}" />
 			<var name="pageStaging" value="true" />
 			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">

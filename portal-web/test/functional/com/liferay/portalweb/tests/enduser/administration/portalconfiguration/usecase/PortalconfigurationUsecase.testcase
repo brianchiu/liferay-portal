@@ -200,6 +200,10 @@
 			<var name="pageName" value="Language Page" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Web Content Page" />

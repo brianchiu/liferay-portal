@@ -441,16 +441,31 @@
 	</command>
 
 	<command known-issues="LPS-51696" name="AssertNoEditLink" priority="4">
-		<execute macro="Page#addPG">
-			<var name="pageName" value="Blogs Test Page" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blogs Test Page" />
 			<var name="siteName" value="Site Name" />
 			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Page#addPG">
+			<var name="pageName" value="Blogs Test Page" />
+			<var name="siteName" value="Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -1231,6 +1246,11 @@
 		<execute macro="Staging#changeSitePageVariationPG">
 			<var name="sitePagesVariationMenulistName" value="Test Site Pages Variation" />
 			<var name="sitePagesVariationName" value="Main Variation" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">

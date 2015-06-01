@@ -616,6 +616,11 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Organization Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
 			<var name="siteName" value="Organization Name" />
@@ -2241,6 +2246,11 @@
 		</execute>
 
 		<execute function="AssertTextEquals" locator1="CPSiteteams#INFO_MESSAGE" value1="No teams were found." />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="USA Ice Hockey Team Blog" />

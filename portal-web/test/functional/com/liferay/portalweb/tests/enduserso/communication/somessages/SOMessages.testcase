@@ -1522,7 +1522,18 @@
 			<var name="userLoginFullName" value="${userName}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageAccess" value="Private" />
+			<var name="pageName" value="${pageName}" />
+			<var name="siteName" value="${userScreenName}" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageAccess" value="Private" />
 			<var name="pageName" value="${pageName}" />
 			<var name="siteName" value="${userScreenName}" />
@@ -1651,7 +1662,18 @@
 			<var name="userLoginFullName" value="${userName1}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageAccess" value="Private" />
+			<var name="pageName" value="${pageName}" />
+			<var name="siteName" value="${userScreenName1}" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageAccess" value="Private" />
 			<var name="pageName" value="${pageName}" />
 			<var name="siteName" value="${userScreenName1}" />
@@ -1671,7 +1693,18 @@
 			<var name="userLoginFullName" value="${userName2}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageAccess" value="Private" />
+			<var name="pageName" value="${pageName}" />
+			<var name="siteName" value="${userScreenName2}" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageAccess" value="Private" />
 			<var name="pageName" value="${pageName}" />
 			<var name="siteName" value="${userScreenName2}" />
@@ -2344,7 +2377,18 @@
 			<var name="userLoginFullName" value="${userName}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageAccess" value="Private" />
+			<var name="pageName" value="${pageName}" />
+			<var name="siteName" value="${userScreenName}" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageAccess" value="Private" />
 			<var name="pageName" value="${pageName}" />
 			<var name="siteName" value="${userScreenName}" />

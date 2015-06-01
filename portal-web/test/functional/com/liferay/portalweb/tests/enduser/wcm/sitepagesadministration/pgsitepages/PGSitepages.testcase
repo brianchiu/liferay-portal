@@ -124,6 +124,10 @@
 			<var name="pageName" value="Site Page" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Site Page Name" />

@@ -286,6 +286,10 @@
 
 		<execute macro="Page#gotoMyProfile" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Page Name" />
@@ -1148,11 +1152,19 @@
 	</command>
 
 	<command known-issues="LPS-51696" name="WebContentAdministrationSitesPagesPanel" priority="3">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="componentName" value="Collaboration" />
 			<var name="pageName" value="Panel Test Page" />
 			<var name="pageType" value="Panel" />
 			<var name="portletNameList" value="Blogs,Message Boards" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Panel Test Page" />
 		</execute>
 
 		<execute macro="Page#viewPanelPortletListPG">
