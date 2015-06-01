@@ -21,8 +21,13 @@
 	</tear-down>
 
 	<command name="CopyAndPasteTextInCKEditor" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Message Boards Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -67,8 +72,13 @@
 	</command>
 
 	<command name="SearchMessageBoardsAttachment" priority="3">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -114,8 +124,13 @@
 		<var name="threadSplitSubject" value="MB Thread Split Subject" />
 		<var name="threadSubject" value="MB Thread Message Subject" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -180,8 +195,13 @@
 	</command>
 
 	<command name="ViewCategoriesAndThreadsOnTwoScopes" priority="3">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -192,8 +212,13 @@
 			<var name="portletName" value="${portletName}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Message Boards Page 2" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -216,8 +241,13 @@
 			<var name="portletName" value="${portletName} (Message Boards Page 2)" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Message Boards Page 3" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -856,8 +886,13 @@
 	</command>
 
 	<command name="ViewMessageBoardsBannedUsers" priority="3">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1023,8 +1058,13 @@
 		<var name="threadSubject2" value="MB Thread2 Message Subject" />
 		<var name="threadSubjectEdit" value="MB Thread1 Message Subject Edit" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1130,8 +1170,13 @@
 		<var name="threadBody" value="[img]asd[font= onerror=alert(/This is an XSS Message/.source)//]FF[/font][/img]" />
 		<var name="threadSubject" value="MB Thread Message Subject" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1165,8 +1210,13 @@
 		<var name="threadBody" value="MB Thread Message Body" />
 		<var name="threadSubject" value="MB Thread Message Subject" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1250,8 +1300,13 @@
 	</command>
 
 	<command name="ViewQuestionOnSplitThread" priority="3">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">

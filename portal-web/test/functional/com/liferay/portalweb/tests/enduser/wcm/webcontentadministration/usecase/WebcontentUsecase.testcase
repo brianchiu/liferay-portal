@@ -71,8 +71,13 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -254,8 +259,13 @@
 			<var name="roleName" value="Guest" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="WCD Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -335,8 +345,13 @@
 			<var name="templateName" value="Local WC Template Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -580,8 +595,13 @@
 			<var name="templateName" value="Global WC Template Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -717,8 +737,13 @@
 			<var name="templateName" value="Global WC Template Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1125,8 +1150,13 @@
 	</command>
 
 	<command known-issues="LPS-55977" name="WebContentAdministrationLocalization" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1352,8 +1382,13 @@
 			<var name="siteName" value="Liferay" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -1374,8 +1409,13 @@
 	</command>
 
 	<command known-issues="LRQA-15498" name="WebcontentAdministrationTemplateValidation" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">

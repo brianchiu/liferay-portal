@@ -7,8 +7,13 @@
 	<set-up>
 		<execute macro="User#firstLoginPG" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -342,8 +347,13 @@
 	</command>
 
 	<command name="SearchBlogsEntryQuotes" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blogs Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -769,8 +779,13 @@
 	</command>
 
 	<command name="SearchMessageBoardsThread" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Message Boards Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1127,8 +1142,13 @@
 		<var name="wikiPageContent" value="Wiki Page Content" />
 		<var name="wikiPageTitle" value="Wiki Page Title" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Wiki Test Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">

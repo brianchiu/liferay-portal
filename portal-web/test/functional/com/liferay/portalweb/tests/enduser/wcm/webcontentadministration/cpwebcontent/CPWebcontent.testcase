@@ -1201,8 +1201,13 @@
 	</command>
 
 	<command known-issues="LPS-55977" name="ImportLARLinkToPageValidation" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoContentCP">

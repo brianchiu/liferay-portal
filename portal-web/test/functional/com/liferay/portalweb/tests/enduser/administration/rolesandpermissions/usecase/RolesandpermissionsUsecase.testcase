@@ -301,8 +301,13 @@
 			<var name="siteNameScope" value="Liferay" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -906,8 +911,13 @@
 			<var name="userScreenName" value="usersn2" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -1218,8 +1228,13 @@
 			<var name="userScreenName" value="usersn2" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -2028,8 +2043,13 @@
 			<var name="roleName" value="Roles Siterole Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Bookmarks Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">

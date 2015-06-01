@@ -129,8 +129,13 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page 1" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -403,8 +408,13 @@
 
 		<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#TEXT_FIELD" value1="WC WebContent Text" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page 1" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">

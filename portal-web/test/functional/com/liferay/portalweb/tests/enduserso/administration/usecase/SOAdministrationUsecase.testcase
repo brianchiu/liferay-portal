@@ -1143,8 +1143,13 @@
 
 		<execute function="AssertTextNotPresent" value1="${eventTitle2}" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Calendar Test Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">

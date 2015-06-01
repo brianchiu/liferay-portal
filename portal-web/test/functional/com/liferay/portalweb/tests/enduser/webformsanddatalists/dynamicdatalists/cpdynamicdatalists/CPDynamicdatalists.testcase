@@ -1398,8 +1398,13 @@
 		<var name="fieldFieldLabel" value="Link to Page" />
 		<var name="fieldName" value="Link_to_Page" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${ddlRecordFieldData}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoContentCP">

@@ -427,8 +427,13 @@
 	</command>
 
 	<command name="DeleteFeedFromRSS" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Page Name" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -651,8 +656,13 @@
 	</command>
 
 	<command name="RemoveRSSPortlet" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Page Name" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">

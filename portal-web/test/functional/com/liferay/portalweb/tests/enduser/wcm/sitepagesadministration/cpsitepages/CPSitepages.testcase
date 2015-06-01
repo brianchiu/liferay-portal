@@ -15,16 +15,31 @@
 	<command name="AddPageMultiplePagesToSite" priority="4">
 		<execute macro="Page#openURL" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 1" />
+			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 2" />
+			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 3" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="SitePage#deleteSitepagesPG" />
@@ -284,8 +299,13 @@
 	</command>
 
 	<command name="ChangePageLayout" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="site Page Name" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">

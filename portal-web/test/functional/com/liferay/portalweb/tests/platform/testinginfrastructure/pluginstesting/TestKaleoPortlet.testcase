@@ -12,8 +12,13 @@
 	</tear-down>
 
 	<command known-issues="LPS-45103" name="ViewKaleo" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Kaleo Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Portlet#addPG">

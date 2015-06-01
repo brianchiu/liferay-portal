@@ -98,8 +98,13 @@
 	</command>
 
 	<command name="ViewEditPageFields" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Dockbar Test Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute function="Click#clickAtSidebarClickAt" locator1="Dockbar#EDIT" />
@@ -118,8 +123,13 @@
 	</command>
 
 	<command name="ViewEditPageFieldsEditable" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Dockbar Test Page" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute function="Click#clickAtSidebarClickAt" locator1="Dockbar#EDIT" />

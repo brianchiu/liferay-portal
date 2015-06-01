@@ -166,8 +166,13 @@
 	<command name="ViewLookAndFeelNoXSS" priority="4">
 		<var name="pageName"><![CDATA[<script>alert(123)</script>]]></var>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
+			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
 		<execute macro="Page#gotoPG">
