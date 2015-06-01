@@ -1504,6 +1504,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Knowledge Base Display Page 1" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Knowledge Base Display" />
 		</execute>
@@ -1525,6 +1529,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page 2" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Knowledge Base Display Page 2" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -1767,6 +1775,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Knowledge Base Display Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

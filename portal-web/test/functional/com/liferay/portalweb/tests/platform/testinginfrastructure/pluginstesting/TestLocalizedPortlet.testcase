@@ -20,6 +20,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Localized Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Test Localized Portlet" />
 		</execute>
@@ -37,6 +41,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Localized Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Localized Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -60,6 +68,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Localized Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Test Localized Portlet" />
 		</execute>
@@ -77,6 +89,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Localized Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Localized Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

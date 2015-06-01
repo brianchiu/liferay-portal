@@ -421,6 +421,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Message Boards" />
 		</execute>
@@ -432,6 +436,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Search Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Search Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

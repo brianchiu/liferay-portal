@@ -1109,6 +1109,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Tasks Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="Tasks Page" />
 			<var name="portletName" value="Tasks" />
@@ -1165,6 +1169,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Tasks Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Tasks Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

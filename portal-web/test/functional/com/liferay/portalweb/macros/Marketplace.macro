@@ -150,6 +150,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName1}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName1}" />
 			<var name="portletName" value="Blogs" />
@@ -239,6 +243,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName2}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName2}" />
 			<var name="portletName" value="Documents and Media" />
@@ -326,6 +334,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName3}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName3}" />
 			<var name="portletName" value="Message Boards" />
@@ -381,6 +393,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName4}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName4}" />
 			<var name="portletName" value="Wiki" />
@@ -430,6 +446,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName5}" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName5}" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -498,6 +518,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName6}" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName6}" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

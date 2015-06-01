@@ -134,6 +134,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Web Content Display Page1" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Web Content Display" />
 		</execute>
@@ -159,6 +163,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Web Content Display Page2" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Web Content Display" />
 		</execute>
@@ -182,6 +190,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page3" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Web Content Display Page3" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

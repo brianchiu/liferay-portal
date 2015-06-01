@@ -119,6 +119,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -237,6 +241,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -417,6 +425,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -647,6 +659,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -830,6 +846,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -1030,6 +1050,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -1237,6 +1261,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -1415,6 +1443,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -1560,6 +1592,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -1826,6 +1862,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -2190,6 +2230,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -2492,6 +2536,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -2633,6 +2681,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -3046,6 +3098,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -3242,6 +3298,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -3409,6 +3469,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -3563,6 +3627,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -3752,6 +3820,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -3917,6 +3989,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -4149,6 +4225,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -4281,6 +4361,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -4404,6 +4488,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -4619,6 +4707,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -4794,6 +4886,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -4980,6 +5076,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -5192,6 +5292,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -5368,6 +5472,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -5517,6 +5625,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -5662,6 +5774,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -5905,6 +6021,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -6082,6 +6202,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -6347,6 +6471,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -6591,6 +6719,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -6759,6 +6891,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -6983,6 +7119,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -7122,6 +7262,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -7295,6 +7439,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -7462,6 +7610,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -7584,6 +7736,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -7716,6 +7872,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -7893,6 +8053,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -8064,6 +8228,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -8407,6 +8575,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -8579,6 +8751,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
@@ -8801,6 +8977,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -8983,6 +9163,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -9115,6 +9299,10 @@
 			<var name="siteScopeSelected" value="true"/>
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Kaleo Forms" />
 		</execute>
@@ -9233,6 +9421,10 @@
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Kaleo Forms Page" />
 			<var name="siteScopeSelected" value="true"/>
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Kaleo Forms Page" />
 		</execute>
 
 		<execute macro="Portlet#addPG">
