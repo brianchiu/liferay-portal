@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+
+<project name="portal-test-db" basedir="." default="mysql" xmlns:antelope="antlib:ise.antelope.tasks">
+	<import file="build-test.xml" />
+
+	<target name="hashi">
+		<error />
+	</target>
+
+	<target name="rebuild-db">
+		<delete dir="${liferay.home}/data" />
+		<delete dir="${liferay.home}/deploy" />
+		<delete dir="${liferay.home}/logs" />
+
+		<if>
+			<isset property="v" />
+			<then>
+				<property name="sql.dir" value="sql\legacy\${v}\create-bare\" />
+			</then>
+			<else>
+				<property name="sql.dir" value="sql\create-bare\" />
+			</else>
+		</if>
+
+		<if>
+			<or>
+				<equals arg1="postgresql-8.4" arg2="${db}" />
+				<equals arg1="postgresql-9.0" arg2="${db}" />
+			</or>
+			<then>
+				<property name="sql.file" value="create-bare-postgresql.sql" />
+			</then>
+			<elseif>
+				<or>
+					<equals arg1="db2" arg2="${db}" />
+					<equals arg1="db2-10.1" arg2="${db}" />
+				</or>
+				<then>
+					<property name="sql.file" value="create-bare-db2.sql" />
+				</then>
+			</elseif>
+			<elseif>
+				<or>
+					<equals arg1="sql-server-2005" arg2="${db}" />
+					<equals arg1="sql-server-2008" arg2="${db}" />
+					<equals arg1="sql-server-2012" arg2="${db}" />
+				</or>
+				<then>
+					<property name="sql.file" value="create-bare-sql-server.sql" />
+				</then>
+			</elseif>
+			<elseif>
+				<or>
+					<equals arg1="oracle-10" arg2="${db}" />
+					<equals arg1="oracle-11" arg2="${db}" />
+				</or>
+				<then>
+					<property name="sql.file" value="create-bare-oracle.sql" />
+				</then>
+			</elseif>
+			<else>
+				<property name="sql.file" value="create-bare-${db}.sql" />
+			</else>
+		</if>
+
+		<echo>Rebuilding from.. ${sql.dir}${sql.file}</echo>
+
+		<if>
+			<isset property="shard" />
+			<then>
+				<echo file="create-shard.sql">drop database lportal if exists lportal;;
+drop database lportal1 if exists lportal1;
+drop database lportal2 if exists lportal2;
+create database lportal character set utf8;
+create database lportal1 character set utf8;
+create database lportal2 character set utf8;</echo>
+
+				<antcall target="rebuild-database" inheritAll="false">
+					<param name="database.type" value="${db}" />
+					<param name="sql.dir" value="" />
+					<param name="sql.file" value="create-shard.sql" />
+				</antcall>
+			</then>
+			<else>
+				<antcall target="rebuild-database" inheritAll="false">
+					<param name="database.type" value="${db}" />
+					<param name="sql.dir" value="${sql.dir}" />
+					<param name="sql.file" value="${sql.file}" />
+				</antcall>
+			</else>
+		</if>
+
+		<replace
+			file="${app.server.classes.portal.dir}/portal-ext.properties"
+			token="$${user.home}/liferay"
+			value="${liferay.home}"
+		/>
+	</target>
+
+	<target name="prepare-db">
+		<echo file="test.${user.name}.properties">database=${db}</echo>
+
+		<if>
+			<not>
+				<isset property="b" />
+			</not>
+			<then>
+				<property name="b" value="chrome" />
+			</then>
+		</if>
+
+		<if>
+			<isset property="v" />
+			<then>
+				<antcall target="prepare-portal-ext-properties" inheritAll="false">
+					<param name="database.type" value="${db}" />
+					<param name="sql.version" value="${v}" />
+					<param name="include.upgrade.process" value="true" />
+				</antcall>
+			</then>
+			<else>
+				<antcall target="prepare-portal-ext-properties" inheritAll="false">
+					<param name="database.type" value="${db}" />
+					<param name="include.upgrade.process" value="true" />
+				</antcall>
+			</else>
+		</if>
+
+		<if>
+			<isset property="shard" />
+			<then>
+				<ant antfile="build-test-db-sharding.xml" target="prepare-sharding-properties" />
+			</then>
+		</if>
+
+		<copy file="portal-impl/src/portal-ext.properties" tofile="${app.server.tomcat.classes.portal.dir}/portal-ext.properties" />
+
+		<delete file="test.${user.name}.properties" />
+	</target>
+
+	<target name="db2">
+		<antcall target="prepare-db">
+			<param name="db" value="db2" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="db2" />
+		</antcall>
+	</target>
+
+	<target name="db2-10.1">
+		<antcall target="prepare-db">
+			<param name="db" value="db2-10.1" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="db2-10.1" />
+		</antcall>
+	</target>
+
+	<target name="hsql">
+		<antcall target="prepare-db">
+			<param name="db" value="hsql" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="hsql" />
+		</antcall>
+	</target>
+
+	<target name="mysql">
+		<antcall target="prepare-db">
+			<param name="db" value="mysql" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="mysql" />
+		</antcall>
+	</target>
+
+	<target name="oracle-10">
+		<antcall target="prepare-db">
+			<param name="db" value="oracle-10" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="oracle-10" />
+		</antcall>
+	</target>
+
+	<target name="oracle-11">
+		<antcall target="prepare-db">
+			<param name="db" value="oracle-11" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="oracle-11" />
+		</antcall>
+	</target>
+
+	<target name="postgresql-8.4">
+		<antcall target="prepare-db">
+			<param name="db" value="postgresql-8.4" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="postgresql-8.4" />
+		</antcall>
+	</target>
+
+	<target name="postgresql-9.0">
+		<antcall target="prepare-db">
+			<param name="db" value="postgresql-9.0" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="postgresql-9.0" />
+		</antcall>
+	</target>
+
+	<target name="sql-server-2005">
+		<antcall target="prepare-db">
+			<param name="db" value="sql-server-2005" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="sql-server-2005" />
+		</antcall>
+	</target>
+
+	<target name="sql-server-2008">
+		<antcall target="prepare-db">
+			<param name="db" value="sql-server-2008" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="sql-server-2008" />
+		</antcall>
+	</target>
+
+	<target name="sql-server-2012">
+		<antcall target="prepare-db">
+			<param name="db" value="sql-server-2012" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="sql-server-2012" />
+		</antcall>
+	</target>
+
+	<target name="sybase">
+		<antcall target="prepare-db">
+			<param name="db" value="sybase" />
+		</antcall>
+
+		<antcall target="rebuild-db">
+			<param name="db" value="sybase" />
+		</antcall>
+	</target>
+
+	<target name="require-properties">
+		<for list="${required.properties}" param="required.property">
+			<sequential>
+				<if>
+					<not>
+						<isset property="@{required.property}" />
+					</not>
+					<then>
+						<fail>
+.
+
+Please set the property "@{required.property}". You can do that from the command
+line by passing it in as "-D@{required.property}=xxx" or by modifying
+build.${user.name}.properties</fail>
+					</then>
+				</if>
+			</sequential>
+		</for>
+	</target>
+</project>

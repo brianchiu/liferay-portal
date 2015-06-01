@@ -1151,6 +1151,10 @@
 			<var name="pageName" value="Calendar Test Page" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Calendar Test Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="Calendar Test Page" />
 			<var name="portletName" value="Calendar" />

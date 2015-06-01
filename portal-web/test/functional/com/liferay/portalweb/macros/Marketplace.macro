@@ -149,6 +149,10 @@
 			<var name="pageName" value="${pageName1}" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName1}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName1}" />
 			<var name="portletName" value="Blogs" />
@@ -234,6 +238,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="${pageName2}" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName2}" />
 		</execute>
 
@@ -323,6 +331,10 @@
 			<var name="pageName" value="${pageName3}" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName3}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName3}" />
 			<var name="portletName" value="Message Boards" />
@@ -377,6 +389,10 @@
 			<var name="pageName" value="${pageName4}" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName4}" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="${pageName4}" />
 			<var name="portletName" value="Wiki" />
@@ -424,6 +440,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="${pageName5}" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName5}" />
 		</execute>
 
@@ -491,6 +511,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="${pageName6}" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName6}" />
 		</execute>
 

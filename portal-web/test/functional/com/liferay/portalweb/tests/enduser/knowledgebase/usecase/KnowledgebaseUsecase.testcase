@@ -1481,6 +1481,10 @@
 			<var name="pageName" value="Knowledge Base Display Page 1" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Knowledge Base Display Page 1" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Knowledge Base Display" />
 		</execute>
@@ -1500,6 +1504,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Knowledge Base Display Page 2" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Knowledge Base Display Page 2" />
 		</execute>
 
@@ -1739,6 +1747,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Knowledge Base Display Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Knowledge Base Display Page" />
 		</execute>
 

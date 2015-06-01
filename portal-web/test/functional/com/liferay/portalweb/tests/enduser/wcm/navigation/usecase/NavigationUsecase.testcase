@@ -34,6 +34,10 @@
 			<var name="pageName" value="Navigation Display Test Page" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Navigation Display Test Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Navigation Menu" />
 		</execute>
@@ -51,6 +55,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Navigation Display Test Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Navigation Display Test Page" />
 		</execute>
 
@@ -170,6 +178,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Navigation Display Test Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Navigation Display Test Page" />
 		</execute>
 

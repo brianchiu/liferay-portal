@@ -20,6 +20,10 @@
 			<var name="pageName" value="Test Kaleo Page" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Kaleo Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Test Kaleo" />
 		</execute>

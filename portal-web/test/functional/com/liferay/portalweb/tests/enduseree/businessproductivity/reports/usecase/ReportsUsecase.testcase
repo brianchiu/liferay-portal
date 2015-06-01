@@ -61,6 +61,10 @@
 			<var name="pageName" value="Reports Page" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Reports Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Reports Display" />
 		</execute>
@@ -269,6 +273,10 @@ Thanks,<br/>
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Reports Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Reports Page" />
 		</execute>
 

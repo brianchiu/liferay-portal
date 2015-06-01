@@ -101,6 +101,10 @@
 			<var name="pageName" value="WC Page" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="WC Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="WC Page" />
 			<var name="portletName" value="Web Content Display" />
@@ -121,6 +125,10 @@
 		</execute>
 
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Drools Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Drools Page" />
 		</execute>
 
