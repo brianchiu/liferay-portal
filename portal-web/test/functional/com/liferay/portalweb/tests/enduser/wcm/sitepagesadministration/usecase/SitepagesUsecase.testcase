@@ -224,9 +224,9 @@
 		<var name="pageNameList" value="Page1 Name,Page2 Name,Page3 Name,Page4 Name" />
 
 		<for list="${pageNameList}" param="pageName">
-		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Sites" />
-		</execute>
+			<execute macro="Page#gotoCP">
+				<var name="portletName" value="Sites" />
+			</execute>
 
 			<execute macro="Page#addPG">
 				<var name="pageName" value="${pageName}" />

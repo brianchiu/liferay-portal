@@ -13,7 +13,7 @@
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Sites" />
 		</execute>
-		
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="IFrame Page" />
 			<var name="pageType" value="1 Column" />
