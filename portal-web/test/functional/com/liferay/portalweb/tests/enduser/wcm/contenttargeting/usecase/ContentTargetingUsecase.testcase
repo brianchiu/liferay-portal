@@ -948,6 +948,16 @@
 		<property name="app.server.bundles.size" value="1" />
 		<property name="cluster.enabled" value="true" />
 
+		<execute macro="Page#openURL" />
+
+		<execute macro="Page#addPG">
+			<var name="pageName" value="Test Page Name" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Page Name" />
+		</execute>
+
 		<execute macro="Page#assertnodePortPG">
 			<var name="nodePort" value="8080" />
 		</execute>
