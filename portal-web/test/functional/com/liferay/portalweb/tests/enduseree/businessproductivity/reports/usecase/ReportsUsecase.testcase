@@ -53,7 +53,15 @@
 			<var name="reportsDefinitionName" value="Reports Definition Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Reports Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Reports Page" />
 		</execute>
 
@@ -260,7 +268,15 @@ Thanks,<br/>
 			<var name="reportsDefinitionName" value="Reports Definition Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Reports Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Reports Page" />
 		</execute>
 

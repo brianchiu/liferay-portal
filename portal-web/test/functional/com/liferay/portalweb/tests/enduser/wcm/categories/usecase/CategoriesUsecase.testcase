@@ -97,6 +97,10 @@
 			<var name="userScreenName" value="usersn" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Category Page Name" />
 		</execute>
@@ -1025,7 +1029,15 @@
 			<var name="vocabularyName" value="Topic" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Search Page" />
 		</execute>
 

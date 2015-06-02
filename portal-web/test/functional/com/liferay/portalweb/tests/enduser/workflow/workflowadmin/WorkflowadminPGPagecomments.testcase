@@ -18,6 +18,10 @@
 			<var name="workflowResourceKey" value="RESOURCE_TABLE_COMMENTS_SELECT" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>

@@ -127,6 +127,10 @@
 
 		<execute macro="DDLRecord#publishCP" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -399,6 +403,10 @@
 		<var name="pageName" value="Dynamic Data List Display Page" />
 		<var name="portletName" value="Dynamic Data List Display" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -460,6 +468,10 @@
 		<var name="fieldName" value="Decimal" />
 		<var name="pageName" value="Dynamic Data List Display Page" />
 		<var name="portletName" value="Dynamic Data List Display" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
@@ -619,6 +631,10 @@
 			<var name="roleList" value="Guest" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -760,6 +776,10 @@
 		<var name="pageName" value="Dynamic Data List Display Page" />
 		<var name="portletName" value="Dynamic Data List Display" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
@@ -828,6 +848,10 @@
 		<var name="fieldName" value="Number" />
 		<var name="pageName" value="Dynamic Data List Display Page" />
 		<var name="portletName" value="Dynamic Data List Display" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />
@@ -925,7 +949,15 @@
 
 		<execute macro="DDLDataDefinition#saveCP" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Data Definition Page Name" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Data Definition Page Name" />
 		</execute>
 
@@ -1023,6 +1055,10 @@
 		<property name="web.plugins.includes" value="kaleo-web" />
 
 		<var name="workflowAssetTitle" value="DDL List" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Dynamic Data List Display Page" />
@@ -1279,6 +1315,10 @@
 		<var name="ddlListName" value="Employees" />
 		<var name="pageName" value="Dynamic Data Lists Page" />
 		<var name="portletName" value="Dynamic Data List Display" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="${pageName}" />

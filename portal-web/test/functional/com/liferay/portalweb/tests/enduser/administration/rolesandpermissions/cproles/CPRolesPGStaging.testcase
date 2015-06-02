@@ -348,6 +348,11 @@
 			<var name="userLoginFullName" value="userfnpu userlnpu" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="${siteName}" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="PageName" value="${pageName}" />
 			<var name="pageStaging" value="true" />

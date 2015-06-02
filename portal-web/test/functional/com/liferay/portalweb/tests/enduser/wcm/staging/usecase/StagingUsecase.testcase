@@ -197,11 +197,9 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
-			<var name="pageStaging" value="true" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -268,6 +266,11 @@
 		<execute macro="BlogsEntry#addPG">
 			<var name="entryContent" value="Blogs Entry Content" />
 			<var name="entryTitle" value="Blogs Entry Title" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -450,6 +453,11 @@
 		<execute macro="Staging#addSitePagesVariationPG">
 			<var name="copySitePagesVariationName" value="Main Variation" />
 			<var name="sitePagesVariationName" value="Test Site Pages Variation" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -756,14 +764,19 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Page#addPG">
+			<var name="pageName" value="Blogs Page 1" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Site Name" />
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="Page#addPG">
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Blogs Page 1" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Site Name" />
@@ -796,7 +809,19 @@
 			<var name="portletName" value="Recent Bloggers" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Blogs Page 2" />
+			<var name="pageStaging" value="true" />
+			<var name="siteName" value="Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Blogs Page 2" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Site Name" />
@@ -1553,7 +1578,19 @@
 			<var name="pageName" value="Wiki" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Community Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Test Page Name" />
+			<var name="pageStaging" value="true" />
+			<var name="siteName" value="Community Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Test Page Name" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Community Site Name" />
@@ -1645,7 +1682,19 @@
 			<var name="sitePagesVariationName" value="Empty Variation" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Community Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Empty Page Name" />
+			<var name="pageStaging" value="true" />
+			<var name="siteName" value="Community Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Empty Page Name" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Community Site Name" />
@@ -1858,15 +1907,20 @@
 
 		<execute function="AssertTextNotPresent" locator1="Home#PAGE_2" value1="Wiki" />
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Home" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Community Site Name" />
+		</execute>
+
+		<execute macro="Page#addPG">
+			<var name="pageName" value="New Page Name" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Community Site Name" />
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="Page#addPG">
-			<var name="pageName" value="New Page Name" />
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Home" />
 			<var name="pageStaging" value="true" />
 			<var name="siteName" value="Community Site Name" />
 			<var name="siteURL" value="true" />
@@ -1897,6 +1951,11 @@
 	<command name="StagingKaleoPageRevision" priority="5">
 		<property name="web.plugins.includes" value="kaleo-web" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Community Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page Name 1" />
 			<var name="siteName" value="Community Site Name" />
@@ -1913,6 +1972,11 @@
 			<var name="portletName" value="Message Boards" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Community Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Test Page Name 2" />
 			<var name="siteName" value="Community Site Name" />
@@ -1927,6 +1991,11 @@
 
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Wiki" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Community Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -2642,10 +2711,9 @@
 	<command name="StagingOnlyApprovedPublishToLive" priority="5">
 		<property name="web.plugins.includes" value="kaleo-web" />
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -2990,10 +3058,9 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -3003,11 +3070,9 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
-			<var name="pageStaging" value="true" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -3017,11 +3082,9 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
-			<var name="pageStaging" value="true" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -3571,11 +3634,9 @@
 			<var name="sitePagesVariationName" value="Site Pages Variation Name" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Staging Test Page" />
-			<var name="pageStaging" value="true" />
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 			<var name="siteName" value="Site Name" />
-			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="Page#addPG">
@@ -4070,6 +4131,11 @@
 		<execute macro="User#logoutAndLoginPG">
 			<var name="userLoginEmailAddress" value="userea@liferay.com" />
 			<var name="userLoginFullName" value="userfn userln" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">

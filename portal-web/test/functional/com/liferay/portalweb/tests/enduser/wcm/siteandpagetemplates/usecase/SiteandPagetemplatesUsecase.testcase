@@ -134,7 +134,16 @@
 			<var name="siteTemplateName" value="Site Template Name" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="defaultURL" value="false" />
+			<var name="pageName" value="Page1 Name" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Page1 Name" />
 		</execute>
@@ -145,6 +154,10 @@
 		</execute>
 
 		<execute function="Refresh" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
@@ -535,6 +548,11 @@
 
 		<execute macro="SitePage#viewOnlyAddOptionViaSiteAdminCP" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page Name" />
 			<var name="siteName" value="Site Name" />
@@ -595,6 +613,10 @@
 		</execute>
 
 		<execute function="Refresh" />
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />

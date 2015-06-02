@@ -93,7 +93,15 @@
 			<var name="webContentTitle" value="${webContentTitle}" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="WC Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="WC Page" />
 		</execute>
 
@@ -112,7 +120,15 @@
 			<var name="tagName" value="european" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Drools Page" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Drools Page" />
 		</execute>
 

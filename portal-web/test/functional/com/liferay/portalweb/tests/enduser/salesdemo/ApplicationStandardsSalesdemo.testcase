@@ -10,6 +10,10 @@
 	</tear-down>
 
 	<command known-issues="sales-demo" name="IFrameDemo" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="IFrame Page" />
 			<var name="pageType" value="1 Column" />
@@ -39,6 +43,10 @@
 	</command>
 
 	<command known-issues="sales-demo" name="WebProxyDemo" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Proxy Page" />
 			<var name="pageType" value="1 Column" />
