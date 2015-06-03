@@ -11,7 +11,16 @@
 	</tear-down>
 
 	<command name="ViewHTTPClient" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Test HTTP Client Page" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Test HTTP Client Page" />
 		</execute>
 

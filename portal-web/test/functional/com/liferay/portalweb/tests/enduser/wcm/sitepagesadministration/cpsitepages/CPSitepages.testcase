@@ -15,16 +15,31 @@
 	<command name="AddPageMultiplePagesToSite" priority="4">
 		<execute macro="Page#openURL" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 1" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 2" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
 		</execute>
 
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page 3" />
+			<var name="siteScopeSelected" value="true" />
 		</execute>
 
 		<execute macro="SitePage#deleteSitepagesPG" />
@@ -162,7 +177,18 @@
 			<var name="sitePagePrivacy" value="Private" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageAccess" value="Private" />
+			<var name="pageName" value="Blogs Page" />
+			<var name="siteName" value="Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageAccess" value="Private" />
 			<var name="pageName" value="Blogs Page" />
 			<var name="siteName" value="Site Name" />
@@ -266,6 +292,11 @@
 			<var name="sitePagePrivacy" value="Public" />
 		</execute>
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Blogs Page" />
 			<var name="siteName" value="Site Name" />
@@ -284,7 +315,16 @@
 	</command>
 
 	<command name="ChangePageLayout" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="site Page Name" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="site Page Name" />
 		</execute>
 
@@ -322,6 +362,11 @@
 			<var name="siteName" value="Site Name" />
 			<var name="sitePageName" value="Site Page" />
 			<var name="sitePagePrivacy" value="Public" />
+		</execute>
+
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="Page#addPG">

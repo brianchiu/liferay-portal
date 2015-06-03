@@ -11,7 +11,16 @@
 	</tear-down>
 
 	<command name="ViewLocalizedChinese" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Test Localized Page" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Test Localized Page" />
 		</execute>
 
@@ -25,7 +34,16 @@
 	</command>
 
 	<command name="ViewLocalizedEnglish" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Test Localized Page" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Test Localized Page" />
 		</execute>
 
@@ -41,7 +59,16 @@
 	</command>
 
 	<command name="ViewLocalizedFrench" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Test Localized Page" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Test Localized Page" />
 		</execute>
 
@@ -55,7 +82,16 @@
 	</command>
 
 	<command name="ViewLocalizedSpanish" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
+			<var name="pageName" value="Test Localized Page" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Test Localized Page" />
 		</execute>
 

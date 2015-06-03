@@ -133,10 +133,20 @@
 
 		<execute function="Refresh" />
 
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="defaultURL" value="false" />
 			<var name="pageName" value="Video" />
 			<var name="pageType" value="2 Columns (70/30)" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="defaultURL" value="false" />
+			<var name="pageName" value="Video" />
 		</execute>
 
 		<execute macro="Portlet#addPG">

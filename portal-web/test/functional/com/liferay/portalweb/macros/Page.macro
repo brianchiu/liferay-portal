@@ -39,63 +39,12 @@
 	</command>
 
 	<command name="addPG" summary="Add a page named '${pageName}'">
-		<if>
-			<isset var="nodePort" />
-			<then>
-				<execute function="Open" locator1="http://localhost:${nodePort}" />
-			</then>
-			<elseif>
-				<not>
-					<and>
-						<isset var="defaultURL" />
-						<equals arg1="${defaultURL}" arg2="false" />
-					</and>
-				</not>
-				<then>
-					<execute macro="Page#openURL" />
-				</then>
-			</elseif>
-		</if>
-
-		<execute function="Click#clickAtSidebarClickAtWaitForScript" locator1="Dockbar#ADD_ICON" value1="Add" />
-
-		<execute function="AssertClick" locator1="DockbarAddpanelpage#PAGE_TAB" value1="Page" />
-		<execute function="Type#mouseOverFocusType" locator1="DockbarAddpanelpage#NAME_FIELD" value1="${pageName}" />
-
-		<if>
-			<isset var="pageType" />
-			<then>
-				<execute macro="Page#selectPageTypeRadioPG">
-					<var name="pageType" value="${pageType}" />
-				</execute>
-			</then>
-		</if>
-
-		<if>
-			<isset var="pageTemplateName" />
-			<then>
-				<var name="key_pageType" value="${pageTemplateName}" />
-
-				<execute function="AssertTextEquals" locator1="CPSitepagesAddpage#PAGE_TYPE_LABEL" value1="${pageTemplateName}" />
-				<execute function="Click" locator1="CPSitepagesAddpage#PAGE_TYPE_RADIO" />
-				<execute function="AssertTextEquals" locator1="CPSitepagesAddpage#PAGE_TYPE_TEMPLATE_AUTOMATICALLY_APPLY_CHANGES_LABEL"  value1="Automatically apply changes done to the page template." />
-				<execute function="Check" locator1="CPSitepagesAddpage#PAGE_TYPE_TEMPLATE_AUTOMATICALLY_APPLY_CHANGES_CHECKBOX" />
-			</then>
-		</if>
-
-		<execute function="AssertClick#pauseAssertTextClickAt" locator1="DockbarAddpanelpage#ADD_PAGE_BUTTON" value1="Add Page" />
-
-		<var name="key_pageName" value="${pageName}" />
-
-		<if>
-			<contains string="${pageName}" substring="&apos;" />
-			<then>
-				<execute function="AssertClick" locator1="Home#PAGE_WITH_QUOTES" value1="${pageName}" />
-			</then>
-			<else>
-				<execute function="AssertClick" locator1="Home#PAGE" value1="${pageName}" />
-			</else>
-		</if>
+		<execute macro="SitePage#addCP">
+			<var name="pageTemplateName" value="${pageTemplateName}" />
+			<var name="siteName" value="${siteName}" />
+			<var name="sitePagePrivacy" value="${sitePagePrivacy}" />
+			<var name="sitePageType" value="${sitePageType}" />
+		</execute>
 	</command>
 
 	<command name="addWithWorkflowPG">

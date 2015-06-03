@@ -2739,6 +2739,11 @@
 	</command>
 
 	<command name="UserSegmentAddMultipleViaUserContentDisplayPortletPG" priority="5">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Site Page Name" />
 			<var name="siteName" value="Site Name" />
