@@ -263,8 +263,6 @@
 	</command>
 
 	<command name="gotoSitepageCP">
-		<execute macro="SitePage#addCmd" />
-
 		<execute macro="SitePage#expandRootCP" />
 
 		<var name="key_sitePageName" value="${sitePageName}" />
