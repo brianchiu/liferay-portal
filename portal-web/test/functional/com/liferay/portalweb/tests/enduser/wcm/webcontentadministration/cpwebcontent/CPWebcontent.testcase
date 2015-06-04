@@ -1165,7 +1165,9 @@
 			<var name="webContentTitle" value="WC WebContent Title Edit" />
 		</execute>
 
-		<execute macro="WebContent#viewExpiredContent">
+		<execute macro="WebContent#viewStatus">
+			<var name="webContentContent" value="WC WebContent Content Edit" />
+			<var name="webContentStatus" value="Expired" />
 			<var name="webContentTitle" value="WC WebContent Title Edit" />
 		</execute>
 	</command>
@@ -1205,7 +1207,9 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
-		<execute macro="WebContent#viewExpiredContent">
+		<execute macro="WebContent#viewStatus">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentStatus" value="Expired" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 	</command>
@@ -1488,7 +1492,9 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
-		<execute macro="WebContent#viewExpiredContent">
+		<execute macro="WebContent#viewStatus">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentStatus" value="Expired" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
