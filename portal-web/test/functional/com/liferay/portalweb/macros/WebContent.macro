@@ -23,17 +23,6 @@
 	<command name="addCP">
 		<execute function="Type#mouseOverFocusType" locator1="CPWebcontentAddwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 		<execute function="Type#typeFrame" locator1="CPWebcontentAddwebcontent#CONTENT_FIELD" value1="${webContentContent}" />
-		
-		<execute macro="WebContent#publish" />
-
-		<execute macro="WebContent#viewTitleCmd">
-			<var name="webContentTitle" value="${webContentTitle}" />
-		</execute>
-	</command>
-
-	<command name="addAbstractSummary">
-		<execute function="Type" locator1="CPWebcontentAddwebcontent#SUMMARY_FIELD" value1="${abstractSummary}" />
-		<execute function="AssertClick#assertPartialTextClickAt" locator1="CPWebcontentAddwebcontent#MENU_CONTENT" value1="Content" />
 	</command>
 
 	<command name="addDraftCP">
@@ -388,7 +377,7 @@
 
 		<execute macro="WebContent#publish" />
 
-		<execute macro="WebContent#viewTitleCmd">
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="${webContentTitle}" />
 		</execute>
 
@@ -471,10 +460,6 @@
 		<execute function="AssertClick" locator1="CPWebcontentAddwebcontent#SUBMIT_FOR_PUBLICATION_BUTTON" value1="Submit for Publication" />
 
 		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
-
-		<execute macro="WebContent#viewTitleCmd">
-			<var name="webContentTitle" value="${webContentTitle}" />
-		</execute>
 	</command>
 
 	<command name="addWithStructureCP">
@@ -603,12 +588,6 @@
 				<execute function="AssertTextEquals" locator1="CPWebcontentAddwebcontent#STATUS_LABEL" value1="Draft" />
 			</then>
 		</if>
-
-		<execute macro="WebContent#publish" />
-
-		<execute macro="WebContent#viewTitleCmd">
-			<var name="webContentTitle" value="${webContentTitle}" />
-		</execute>
 	</command>
 
 	<command name="addWithTagCP">
@@ -625,7 +604,7 @@
 
 		<execute macro="WebContent#publish" />
 
-		<execute macro="WebContent#viewTitleCmd">
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="${webContentTitle}" />
 		</execute>
 
@@ -692,7 +671,7 @@
 		<execute function="AssertClick" locator1="CPWebcontentCopy#COPY_BUTTON" value1="Copy" />
 		<execute function="AssertTextEquals" locator1="CPWebcontent#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 		
-		<execute macro="WebContent#viewTitleCmd">
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="${webContentTitle}" />
 		</execute>
 
@@ -913,7 +892,7 @@
 	</command>
 
 	<command name="moveToRecycleBinCP">
-		<execute macro="WebContent#viewTitleCmd">
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="${webContentTitle}" />
 		</execute>
 
@@ -925,10 +904,6 @@
 	</command>
 
 	<command name="paginateRelatedAssets">
-		<execute macro="WebContent#viewTitleCmd">
-			<var name="webContentTitle" value="${webContentTitle}" />
-		</execute>
-
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="Click" locator1="CPWebcontent#ENTRY_DESCRIPTIVE_MENULIST_ARROW" />
@@ -1449,7 +1424,7 @@
 		<execute function="AssertTextEquals" locator1="CPWebcontentEditwebcontent#TITLE_FIELD" value1="${webContentTitle}" />
 	</command>
 
-	<command name="viewTitleCmd">
+	<command name="viewTitle">
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="Click" locator1="CPWebcontent#TOOLBAR_DISPLAY_STYLE_BUTTON" />

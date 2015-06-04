@@ -281,6 +281,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -373,6 +379,12 @@
 			<var name="templateName" value="WC Template Name" />
 			<var name="webContentText" value="Text" />
 			<var name="webContentTextBox" value="Text Box" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
@@ -515,6 +527,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -605,6 +623,12 @@
 			<var name="webContentTitle" value="WC WebContent Title 1" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -616,6 +640,12 @@
 			<var name="webContentTitle" value="WC WebContent Title 2" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -624,6 +654,12 @@
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content 3" />
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title 3" />
 		</execute>
 
@@ -676,6 +712,12 @@
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle"><![CDATA[<!-- -->]]></var>
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle"><![CDATA[<!-- -->]]></var>
 		</execute>
 
@@ -738,6 +780,12 @@
 			<var name="webContentText" value="WC WebContent Text" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
 	</command>
 
 	<command name="AddWebContentWithTemplateXSL" priority="5">
@@ -784,6 +832,12 @@
 			<var name="structureName" value="WC Structure Name" />
 			<var name="templateName" value="WC Template Name" />
 			<var name="webContentText" value="WC WebContent Text" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
@@ -864,6 +918,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -885,6 +945,12 @@
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle"><![CDATA[<!-- -->]]></var>
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle"><![CDATA[<!-- -->]]></var>
 		</execute>
 
@@ -968,6 +1034,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="WebContentNavigator#gotoEditCP">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
@@ -1014,6 +1086,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1047,6 +1125,12 @@
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
@@ -1095,6 +1179,12 @@
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
@@ -1163,6 +1253,12 @@
 			<var name="structureName" value="WC Structure Name" />
 			<var name="templateName" value="WC Template Name" />
 			<var name="webContentText" value="WC WebContent Text" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
@@ -1277,6 +1373,12 @@
 			<var name="webContentTitle" value="WC Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC Title" />
+		</execute>
+
 		<execute macro="LAR#exportPortlet">
 			<var name="larFileName" value="Web_Content.portlet.lar" />
 		</execute>
@@ -1363,6 +1465,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1433,6 +1541,12 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1466,6 +1580,12 @@
 
 		<execute macro="WebContent#addCP">
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#publish" />
+
+		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
@@ -1572,7 +1692,11 @@
 			<var name="webContentTitleEdit" value="WC WebContent Title Edit" />
 		</execute>
 
-		<execute macro="WebContent#viewCPUserEdit">
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title Edit" />
+		</execute>
+
+		<execute macro="WebContent#viewUserEditCP">
 			<var name="userFirstLast" value="userfn userln" />
 			<var name="webContentContent" value="WC WebContent Content Edit" />
 			<var name="webContentTitle" value="WC WebContent Title Edit" />
