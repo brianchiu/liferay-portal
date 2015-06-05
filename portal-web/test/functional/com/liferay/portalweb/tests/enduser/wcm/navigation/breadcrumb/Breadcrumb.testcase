@@ -30,10 +30,6 @@
 			<var name="sitePagePrivacy" value="Public" />
 		</execute>
 
-		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Sites" />
-		</execute>
-
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Page Name" />
 			<var name="siteName" value="Site Name" />
@@ -129,12 +125,8 @@
 		</execute>
 
 		<execute macro="Breadcrumb#viewPG">
-			<var name="breadcrumbListVisible" value="Site Name,Page Name" />
-			<var name="pathLocator" value="EMBEDDED" />
-		</execute>
-
-		<execute macro="Breadcrumb#viewPG">
 			<var name="breadcrumbListNotVisible" value="MB Category Name,MB Subcategory Name,MB Subcategory Subcategory Name" />
+			<var name="breadcrumbListVisible" value="Site Name,Page Name" />
 			<var name="pathLocator" value="EMBEDDED" />
 		</execute>
 
@@ -248,12 +240,8 @@
 		</execute>
 
 		<execute macro="Breadcrumb#viewPG">
-			<var name="breadcrumbListVisible" value="Parent Page Name,Child Page Name" />
-			<var name="pathLocator" value="PAGE" />
-		</execute>
-
-		<execute macro="Breadcrumb#viewPG">
 			<var name="breadcrumbListNotVisible" value="Site Name" />
+			<var name="breadcrumbListVisible" value="Parent Page Name,Child Page Name" />
 			<var name="pathLocator" value="PAGE" />
 		</execute>
 
@@ -337,12 +325,8 @@
 		</execute>
 
 		<execute macro="Breadcrumb#viewPG">
-			<var name="breadcrumbListVisible" value="Liferay" />
-			<var name="pathLocator" value="PAGE" />
-		</execute>
-
-		<execute macro="Breadcrumb#viewPG">
 			<var name="breadcrumbListNotVisible" value="Welcome,Child Page Name" />
+			<var name="breadcrumbListVisible" value="Liferay" />
 			<var name="pathLocator" value="PAGE" />
 		</execute>
 	</command>
@@ -433,12 +417,8 @@
 		</execute>
 
 		<execute macro="Breadcrumb#viewPG">
-			<var name="breadcrumbListVisible" value="Child SiteName,Parent Page Name,Child Page Name" />
-			<var name="pathLocator" value="PAGE" />
-		</execute>
-
-		<execute macro="Breadcrumb#viewPG">
 			<var name="breadcrumbListNotVisible" value="Site Name" />
+			<var name="breadcrumbListVisible" value="Child SiteName,Parent Page Name,Child Page Name" />
 			<var name="pathLocator" value="PAGE" />
 		</execute>
 	</command>
