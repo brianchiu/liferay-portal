@@ -1520,7 +1520,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-54712" name="ViewAuthorChangeViaAP" priority="3">
+	<command name="ViewAuthorChangeViaAP" priority="3">
 		<execute macro="AssetPublisherPortlet#configureShowMetadataFieldsPG">
 			<var name="addMetadata" value="true" />
 			<var name="metadataField" value="Author" />
