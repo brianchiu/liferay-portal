@@ -1419,7 +1419,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-54712" name="UserEditWebContent" priority="4">
+	<command name="UserEditWebContent" priority="4">
 		<var name="roleType" value="Regular" />
 
 		<execute macro="Page#gotoContentCP">

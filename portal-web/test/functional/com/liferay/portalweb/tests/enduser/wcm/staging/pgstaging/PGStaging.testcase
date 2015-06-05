@@ -544,7 +544,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-54712" name="BlogsOrganizationWorkflowStaging" priority="4">
+	<command name="BlogsOrganizationWorkflowStaging" priority="4">
 		<property name="web.plugins.includes" value="kaleo-web" />
 
 		<execute macro="Page#gotoCP">
