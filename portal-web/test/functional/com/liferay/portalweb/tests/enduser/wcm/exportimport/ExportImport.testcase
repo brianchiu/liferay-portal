@@ -20,7 +20,7 @@
 
 	<command name="DeleteExportTemplate" priority="4">
 		<execute macro="Page#gotoConfigurationCP">
-			<var name = "portletCategoryName" value = "Configuration" />
+			<var name="portletCategoryName" value="Configuration" />
 			<var name="portletName" value="Export/Import" />
 		</execute>
 
@@ -60,7 +60,7 @@
 		</execute>
 
 		<execute macro="Page#gotoConfigurationCP">
-			<var name = "portletCategoryName" value = "Configuration" />
+			<var name="portletCategoryName" value="Configuration" />
 			<var name="portletName" value="Export/Import" />
 		</execute>
 
@@ -94,7 +94,7 @@
 		</execute>
 
 		<execute macro="Page#gotoConfigurationCP">
-			<var name = "portletCategoryName" value = "Configuration" />
+			<var name="portletCategoryName" value="Configuration" />
 			<var name="portletName" value="Export/Import" />
 		</execute>
 
@@ -161,7 +161,7 @@
 		</execute>
 
 		<execute macro="Page#gotoConfigurationCP">
-			<var name = "portletCategoryName" value = "Configuration" />
+			<var name="portletCategoryName" value="Configuration" />
 			<var name="portletName" value="Export/Import" />
 		</execute>
 

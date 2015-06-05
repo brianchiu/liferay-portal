@@ -1120,9 +1120,8 @@
 			<var name="pageNameList" value="Accomodations,Maps" />
 		</execute>
 
-		<execute macro="LAR#configureExportSiteCP" >
-			<var name="portletName" value="Site Pages" />
-			<var name="siteName" value="World Cup - Russia 2018" />
+		<execute macro="LAR#gotoExportSite">
+			<var name="siteScopeName" value="World Cup - Russia 2018" />
 		</execute>
 
 		<execute function="AssertClick" locator1="CPSitepagesExport#EXPORT_BUTTON" value1="Export" />

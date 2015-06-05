@@ -299,7 +299,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="import file name ${larFileName}" />
 
@@ -308,7 +308,9 @@
 	</command>
 
 	<command name="exportSiteCP">
-		<execute macro="LAR#gotoExportSiteCmd" />
+		<execute macro="LAR#gotoExportSiteCmd">
+			<var name="siteScopeName" value="${siteScopeName}" />
+		</execute>
 
 		<execute macro="LAR#exportSiteCmd">
 			<var name="larFileName" value="${larFileName}" />
@@ -330,15 +332,19 @@
 	</command>
 
 	<command name="gotoExportSite">
-		<execute function="AssertClick" locator1="CPSitepages#TOOLBAR_EXPORT" value1="Export" />
+		<execute macro="LAR#gotoExportSiteCmd" />
+
+		<execute function="SelectFrameTop" value1="relative=top" />
+		<execute function="SelectFrame" locator1="BasePortletExport#EXPORT_IMPORT_IFRAME" />
 
 		<execute function="Pause" locator1="5000" />
 	</command>
 
 	<command name="gotoExportSiteCmd">
 		<execute macro="Page#gotoConfigurationCP">
-			<var name = "portletCategoryName" value = "Configuration" />
+			<var name="portletCategoryName" value="Configuration" />
 			<var name="portletName" value="Export/Import" />
+			<var name="siteScopeName" value="${siteScopeName}" />
 		</execute>
 
 		<execute function="AssertClick" locator1="CPSitepages#TOOLBAR_EXPORT" value1="Export" />

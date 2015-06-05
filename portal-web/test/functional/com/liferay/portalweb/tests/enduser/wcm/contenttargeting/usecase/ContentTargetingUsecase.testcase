@@ -1072,12 +1072,9 @@
 
 		<execute macro="ContentTargetingCampaign#saveCP" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
+		<execute macro="LAR#gotoExportSite">
 			<var name="siteScopeName" value="Site Name" />
 		</execute>
-
-		<execute macro="LAR#gotoExportSite" />
 
 		<execute function="AssertClick" locator1="CPSitepagesExport#EXPORT_BUTTON" value1="Export" />
 
@@ -1089,7 +1086,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1124,13 +1121,8 @@
 
 		<execute macro="ContentTargetingCampaign#deleteAllCP" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1148,7 +1140,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1190,12 +1182,9 @@
 	<command name="ExportImportSmoke" priority="5">
 		<execute macro="LAR#setupContentTargeting" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
+		<execute macro="LAR#gotoExportSite">
 			<var name="siteScopeName" value="Site Name" />
 		</execute>
-
-		<execute macro="LAR#gotoExportSite" />
 
 		<execute function="AssertClick" locator1="CPSitepagesExport#EXPORT_BUTTON" value1="Export" />
 
@@ -1207,7 +1196,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1311,13 +1300,8 @@
 
 		<execute macro="ContentTargetingCampaign#saveCP" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1346,7 +1330,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1400,13 +1384,8 @@
 	<command name="ExportImportUncheckAppCTRefAllAndContentAll" priority="4">
 		<execute macro="LAR#setupContentTargeting" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1437,7 +1416,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1463,13 +1442,8 @@
 	<command name="ExportImportUncheckAppCTRefAllAndContentAT" priority="4">
 		<execute macro="LAR#setupContentTargeting" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1496,7 +1470,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1522,13 +1496,8 @@
 	<command name="ExportImportUncheckAppCTRefAllAndContentWC" priority="4">
 		<execute macro="LAR#setupContentTargeting" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1555,7 +1524,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1643,13 +1612,8 @@
 
 		<execute macro="ContentTargetingCampaign#saveCP" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1670,7 +1634,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
@@ -1759,13 +1723,8 @@
 			<var name="webContentTitle" value="WC Title Unreferenced" />
 		</execute>
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
-			<var name="siteScopeName" value="Site Name" />
-		</execute>
-
 		<execute macro="LAR#gotoExportSite">
-			<var name="siteName" value="Site Name" />
+			<var name="siteScopeName" value="Site Name" />
 		</execute>
 
 		<execute macro="LAR#configureExportSiteOptions">
@@ -1782,7 +1741,7 @@
 
 		<echo message="value name ${valueName}" />
 
-		<var group="1" input="${valueName}"  name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
+		<var group="1" input="${valueName}" name="larFileName" pattern="([a-zA-z0-9_.-]*)[(0-9k)]*" />
 
 		<echo message="lar file name ${larFileName}" />
 
