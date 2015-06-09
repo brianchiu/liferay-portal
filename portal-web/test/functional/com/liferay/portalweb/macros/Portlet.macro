@@ -329,9 +329,19 @@
 	</command>
 
 	<command name="viewPG">
-		<execute macro="Portlet#viewTitle">
-			<var name="portletName" value="${portletName}" />
-		</execute>
+		<if>
+			<isset var="portletNameBorderless" />
+			<then>
+				<execute macro="Portlet#viewTitleBorderless">
+					<var name="portletNameBorderless" value="${portletNameBorderless}" />
+				</execute>
+			</then>
+			<else>
+				<execute macro="Portlet#viewTitle">
+					<var name="portletName" value="${portletName}" />
+				</execute>
+			</else>
+		</if>
 
 		<if>
 			<isset var="portletBody" />
@@ -352,5 +362,11 @@
 
 	<command name="viewTitle" summary="Assert that the ${portletName} portlet title has the text '${portletName}'">
 		<execute function="AssertTextEquals" locator1="BasePortlet#TITLE" value1="${portletName}" />
+	</command>
+
+	<command name="viewTitleBorderless" summary="Assert that the ${portletNameBorderless} portlet title has the text '${portletNameBorderless}'">
+		<var name="key_portletNameBorderless" value="${portletNameBorderless}" />
+
+		<execute function="AssertTextEquals" locator1="BasePortlet#TITLE_BORDERLESS" value1="${portletNameBorderless}" />
 	</command>
 </definition>

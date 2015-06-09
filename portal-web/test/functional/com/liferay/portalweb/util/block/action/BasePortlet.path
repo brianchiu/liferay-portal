@@ -19,6 +19,11 @@
 	<td>Portlet Header</td>
 </tr>
 <tr>
+	<td>TITLE_BORDERLESS</td>
+	<td>//div[contains(@class,'portlet-borderless')]//span[contains(.,'key_portletNameBorderless')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>TITLE_1</td>
 	<td>xpath=(//h1[@class='portlet-title']/span)[1]</td>
 	<td></td>
