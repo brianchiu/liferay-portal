@@ -399,7 +399,7 @@
 
 	<command name="tearDownPortalWorkflow">
 		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Workflow" />
+			<var name="portletName" value="Workflow Definition" />
 		</execute>
 
 		<var name="noWorkflow" value="No Workflow" />
@@ -447,7 +447,7 @@
 
 	<command name="tearDownSpecificWorkflowDefinition">
 		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Workflow" />
+			<var name="portletName" value="Workflow Definition" />
 		</execute>
 
 		<var name="key_workflowDefinitionTitle" value="${workflowDefinitionTitle}" />
@@ -484,7 +484,7 @@
 
 	<command name="tearDownWorkflowDefinitionsViaWorkflowCP">
 		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Workflow" />
+			<var name="portletName" value="Workflow Definition" />
 		</execute>
 
 		<while>
