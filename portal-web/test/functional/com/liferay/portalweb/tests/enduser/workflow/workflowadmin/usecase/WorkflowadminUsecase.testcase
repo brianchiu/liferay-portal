@@ -36,7 +36,7 @@
 
 	<command known-issues="LRQA-12687" name="AddBlogsEntriesWithPortalScopeWorkflowAndAssertWorkflowScope" priority="5">
 		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Workflow Definition" />
+			<var name="portletName" value="Workflow Configuration" />
 		</execute>
 
 		<execute macro="Workflow#configurePortalWorkflow">

@@ -399,7 +399,7 @@
 
 	<command name="tearDownPortalWorkflow">
 		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Workflow Definition" />
+			<var name="portletName" value="Workflow Configuration" />
 		</execute>
 
 		<var name="noWorkflow" value="No Workflow" />
