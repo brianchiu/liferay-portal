@@ -144,14 +144,14 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureDisplaySettingsPG">
+		<execute macro="BlogsConfiguration#configureDisplaySettingsPG">
 			<var name="enableDisplaySettingsComments" value="false" />
 			<var name="enableDisplaySettingsRelatedAssets" value="false" />
 			<var name="enableDisplaySettingsSocialBookmarks" value="false" />
 			<var name="maximumItemsToDisplay" value="75" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureRSSPG">
+		<execute macro="BlogsConfiguration#configureRSSPG">
 			<var name="enableRSSSubscriptionCheckbox" value="false" />
 		</execute>
 
@@ -165,9 +165,9 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
-		<execute macro="BlogsPortlet#viewDefaultConfiguration" />
+		<execute macro="BlogsConfiguration#viewDefaultConfiguration" />
 
-		<execute macro="BlogsPortlet#viewDefaultConfigurationRSS" />
+		<execute macro="BlogsConfiguration#viewDefaultConfigurationRSS" />
 	</command>
 
 	<command name="DemoTrackbackURL" priority="5">
@@ -772,7 +772,7 @@
 			<var name="portletName" value="${portletName}" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureScopePG">
+		<execute macro="BlogsConfiguration#configureScopePG">
 			<var name="scopeSelection" value="${pageName2}" />
 		</execute>
 
@@ -793,7 +793,7 @@
 			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureScopeCP">
+		<execute macro="BlogsConfiguration#configureScopeCP">
 			<var name="contentScopeName" value="${pageName2}" />
 		</execute>
 
@@ -810,7 +810,7 @@
 			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
 
-		<execute macro="BlogsPortlet#viewScopePG">
+		<execute macro="BlogsConfiguration#viewScopePG">
 			<var name="scopeSelection" value="${scopeSelection}" />
 		</execute>
 
@@ -818,7 +818,7 @@
 			<var name="pageName" value="${pageName}" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureScopePG">
+		<execute macro="BlogsConfiguration#configureScopePG">
 			<var name="scopeSelection" value="${pageName2}" />
 		</execute>
 

@@ -799,7 +799,7 @@
 
 		<execute macro="SOUserBar#showEditControls" />
 
-		<execute macro="BlogsPortlet#configureScopePG">
+		<execute macro="BlogsConfiguration#configureScopePG">
 			<var name="portletName" value="${portletName}" />
 			<var name="scopeSelection" value="${pageName2}" />
 			<var name="soPage" value="false" />
@@ -859,7 +859,7 @@
 
 		<execute macro="SOUserBar#showEditControls" />
 
-		<execute macro="BlogsPortlet#configureScopePG">
+		<execute macro="BlogsConfiguration#configureScopePG">
 			<var name="portletName" value="${portletName}" />
 			<var name="scopeSelection" value="${siteName}" />
 			<var name="soPage" value="false" />
@@ -2514,7 +2514,7 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureDisplaySettingsPG">
+		<execute macro="BlogsConfiguration#configureDisplaySettingsPG">
 			<var name="maximumItemsToDisplay" value="${maximumItemsToDisplay}" />
 		</execute>
 
@@ -2997,7 +2997,7 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureDisplaySettingsPG">
+		<execute macro="BlogsConfiguration#configureDisplaySettingsPG">
 			<var name="displayTemplate" value="${displayTemplate}" />
 		</execute>
 
@@ -3032,7 +3032,7 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureDisplaySettingsPG">
+		<execute macro="BlogsConfiguration#configureDisplaySettingsPG">
 			<var name="displayTemplate" value="${displayTemplate}" />
 		</execute>
 
@@ -3066,7 +3066,7 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
-		<execute macro="BlogsPortlet#configureDisplaySettingsPG">
+		<execute macro="BlogsConfiguration#configureDisplaySettingsPG">
 			<var name="displayTemplate" value="${displayTemplate}" />
 		</execute>
 
