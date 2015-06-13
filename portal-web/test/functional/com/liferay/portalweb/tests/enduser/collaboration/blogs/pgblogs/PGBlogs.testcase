@@ -1567,10 +1567,13 @@
 			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
 
-		<execute macro="BlogsEntry#addAbstractDescriptionPG">
+		<execute macro="BlogsNavigator#gotoSettingsTab" />
+
+		<execute macro="BlogsEntry#addCustomAbstract">
 			<var name="entryAbstractDescription" value="${entryAbstractDescription}" />
-			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
+
+		<execute macro="BlogsEntry#publish" />
 
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName}" />
@@ -1581,16 +1584,20 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
+		<execute macro="BlogsConfiguration#selectConfigurationIFrame" />
+
 		<execute macro="BlogsConfiguration#selectDisplayTemplate">
 			<var name="displayTemplate" value="Abstract" />
 		</execute>
+
+		<execute macro="BlogsConfiguration#saveConfigurationIFrame" />
 
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName}" />
 		</execute>
 
 		<execute macro="BlogsEntry#viewWithAbstractDisplayTemplatePG">
-			<var name="entryAbstractDescription" value="${entryAbstractDescription}" />
+			<var name="entryAbstract" value="${entryAbstractDescription}" />
 			<var name="entryContent" value="${entryContent}" />
 			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
@@ -1666,9 +1673,13 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
+		<execute macro="BlogsConfiguration#selectConfigurationIFrame" />
+
 		<execute macro="BlogsConfiguration#selectDisplayTemplate">
 			<var name="displayTemplate" value="Full Content" />
 		</execute>
+
+		<execute macro="BlogsConfiguration#saveConfigurationIFrame" />
 
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName}" />
@@ -1761,9 +1772,13 @@
 			<var name="portletOption" value="Configuration" />
 		</execute>
 
+		<execute macro="BlogsConfiguration#selectConfigurationIFrame" />
+
 		<execute macro="BlogsConfiguration#selectDisplayTemplate">
 			<var name="displayTemplate" value="Title" />
 		</execute>
+
+		<execute macro="BlogsConfiguration#saveConfigurationIFrame" />
 
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="${pageName}" />
