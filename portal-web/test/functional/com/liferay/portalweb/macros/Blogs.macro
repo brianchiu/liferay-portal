@@ -307,9 +307,7 @@
 			<var name="pageName" value="${pageName}" />
 		</execute>
 
-		<execute macro="BlogsNavigator#gotoConfigurationSetupPG">
-			<var name="soPage" value="${soPage}" />
-		</execute>
+		<execute macro="BlogsNavigator#gotoConfigurationSetupPG" />
 
 		<execute macro="BlogsConfiguration#selectDisplayTemplate">
 			<var name="displayTemplate" value="Abstract" />
@@ -325,7 +323,6 @@
 
 		<execute macro="BlogsNavigator#gotoConfigurationSetupPG">
 			<var name="portletNameBorderless" value="Blogs" />
-			<var name="soPage" value="${soPage}" />
 		</execute>
 
 		<execute macro="BlogsNavigator#gotoConfigurationScopePG" />

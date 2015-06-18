@@ -222,18 +222,6 @@
 			<var name="siteURL" value="${siteURLTemp}" />
 		</execute>
 
-		<if>
-			<condition function="IsElementPresent" locator1="SOUserBar#USER_BAR" />
-			<then>
-				<if>
-					<condition function="IsElementNotPresent" locator1="SOUserBar#VISIBLE_PAGE_CONTROLS" />
-					<then>
-						<execute function="Click" locator1="SOUserBar#TOGGLE_DOCKBAR" />
-					</then>
-				</if>
-			</then>
-		</if>
-
 		<execute function="Click#clickAtSidebarClickAt" locator1="Dockbar#EDIT" />
 
 		<execute function="Click" locator1="DockbarEditpanel#TOOLBAR_PERMISSIONS" />

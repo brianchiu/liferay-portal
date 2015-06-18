@@ -265,43 +265,4 @@
 			</then>
 		</if>
 	</command>
-
-	<command name="viewSocialOfficeMessageMail">
-		<execute function="AssertClick#assertPartialTextClickAt" locator1="Gmail#GMAIL_HTML_MODE_MAIL_TABLE_MESSAGE_TITLE_SOCIAL_OFFICE_MESSAGE" value1="${senderName} sent you a message on Liferay" />
-		<execute function="Pause" locator1="3000" />
-
-		<execute function="AssertTextEquals#assertPartialText" locator1="Gmail#GMAIL_HTML_MODE_MESSAGE_BODY_SOCIAL_OFFICE_MESSAGE_SUMMARY" value1="${senderName} sent you a message." />
-		<execute function="AssertTextEquals#assertPartialText" locator1="Gmail#GMAIL_HTML_MODE_MESSAGE_BODY_SOCIAL_OFFICE_MESSAGE_SUBJECT" value1="${messageSubject}" />
-		<execute function="AssertTextEquals#assertPartialText" locator1="Gmail#GMAIL_HTML_MODE_MESSAGE_BODY_SOCIAL_OFFICE_MESSAGE_BODY" value1="${messageBody}" />
-		<execute function="Click" locator1="Gmail#GMAIL_HTML_MODE_MESSAGE_BODY_SOCIAL_OFFICE_MESSAGE_LINK" />
-
-		<execute function="SelectWindow" locator1="SOMessages#MESSAGES_POP_UP_WINDOW" />
-
-		<if>
-			<isset var="partialMessageBody" />
-			<then>
-				<var name="key_messageBody" value="${partialMessageBody}" />
-			</then>
-			<else>
-				<var name="key_messageBody" value="${messageBody}" />
-			</else>
-		</if>
-
-		<execute function="AssertTextEquals" locator1="SOMessagesMessage#PRIVATE_MESSAGE_SUBJECT" value1="${messageSubject}" />
-
-		<execute macro="SOMessages#viewMessageConnectionDetailsView" />
-
-		<execute function="AssertTextEquals" locator1="SOMessagesMessage#PRIVATE_MESSAGE_SENDER" value1="${senderName}" />
-		<execute function="AssertTextEquals#assertPartialText" locator1="SOMessagesMessage#PRIVATE_MESSAGE_BODY" value1="${messageBody}" />
-
-		<if>
-			<isset var="messageAttachmentFile" />
-			<then>
-				<execute function="AssertElementPresent" locator1="SOMessagesMessage#PRIVATE_MESSAGE_ATTACHMENT" />
-				<execute function="AssertTextEquals#assertPartialText" locator1="SOMessagesMessage#PRIVATE_MESSAGE_ATTACHMENT_LINK" value1="${messageAttachmentFile}" />
-			</then>
-		</if>
-
-		<execute function="Close#closeWindow" locator1="SOMessages#MESSAGES_POP_UP_WINDOW" />
-	</command>
 </definition>

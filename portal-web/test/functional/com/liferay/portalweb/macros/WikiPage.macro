@@ -616,17 +616,9 @@
 
 		<var name="key_commentBody" value="${commentBody}" />
 
-		<if>
-			<equals arg1="${soPage}" arg2="true" />
-			<then>
-				<execute function="AssertClickNoError" locator1="PGWiki#COMMENTS_COMMENT_DELETE" value1="Delete" />
-				<execute function="Confirm" value1="Are you sure you want to delete the selected comment?" />
-			</then>
-			<else>
-				<execute function="AssertClickNoError" locator1="PGWiki#COMMENTS_COMMENT_DELETE" value1="Delete" />
-				<execute function="Confirm" value1="Are you sure you want to delete this? It will be deleted immediately." />
-			</else>
-		</if>
+		<execute function="AssertClickNoError" locator1="PGWiki#COMMENTS_COMMENT_DELETE" value1="Delete" />
+
+		<execute function="Confirm" value1="Are you sure you want to delete this? It will be deleted immediately." />
 
 		<execute function="AssertTextEquals" locator1="PGWiki#COMMENTS_SUCCESS" value1="Your request processed successfully." />
 	</command>

@@ -17,8 +17,6 @@
 	</tear-down>
 
 	<command name="MarkNotificationAsReadAndAcceptRequest" priority="5">
-		<property name="portlet.plugins.includes" value="contacts-portlet,microblogs-portlet,notifications-portlet,private-messaging-portlet,so-portlet" />
-
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Users and Organizations" />
 		</execute>
@@ -112,14 +110,6 @@
 			<var name="pageName" value="Invite Members Page" />
 			<var name="siteName" value="Community Site Name" />
 			<var name="siteURL" value="true" />
-		</execute>
-
-		<execute macro="SOMembersPortlet#inviteMember">
-			<var name="userEmailAddress" value="userea@liferay.com" />
-			<var name="userFirstName" value="userfn" />
-			<var name="userLastName" value="userln" />
-			<var name="userMiddleName" value="" />
-			<var name="userName" value="userfn userln" />
 		</execute>
 
 		<execute macro="User#logoutPG" />

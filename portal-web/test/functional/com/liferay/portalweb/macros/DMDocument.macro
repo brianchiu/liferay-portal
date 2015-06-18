@@ -1379,15 +1379,7 @@
 
 		<execute function="Click" locator1="PGDocumentsandmedia#ENTRY_ICON_DOCUMENT_THUMBNAIL" />
 
-		<if>
-			<equals arg1="${soDocument}" arg2="true" />
-			<then>
-				<execute function="SikuliClick" locator1="PGDocumentsandmediaDocument#SOCIAL_OFFICE_AVERAGE_RATING_STAR_ICON_PNG" />
-			</then>
-			<else>
-				<execute function="SikuliClick" locator1="PGDocumentsandmediaDocument#AVERAGE_RATING_STAR_ICON_PNG" />
-			</else>
-		</if>
+		<execute function="SikuliClick" locator1="PGDocumentsandmediaDocument#AVERAGE_RATING_STAR_ICON_PNG" />
 
 		<execute function="SikuliClick" locator1="PGDocumentsandmediaDocument#DOCUMENT_DETAILS_WORKFLOW_PNG" />
 	</command>
@@ -1547,15 +1539,7 @@
 			<var name="dmDocumentTitle" value="${dmDocumentTitle}" />
 		</execute>
 
-		<if>
-			<condition function="IsElementPresent" locator1="SODocuments#DOCUMENT_BREADCRUMBS" />
-			<then>
-				<execute function="AssertElementPresent" locator1="SODocuments#DOCUMENT_BREADCRUMBS" />
-			</then>
-			<else>
-				<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#BACK_BUTTON" value1="Back" />
-			</else>
-		</if>
+		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#BACK_BUTTON" value1="Back" />
 
 		<execute macro="DMDocument#viewDocumentToolbarCmdPG" />
 
@@ -1914,18 +1898,6 @@
 		<execute function="AssertElementPresent" locator1="PGDocumentsandmediaDocument#DOCUMENT_INFO_THUMBNAIL" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#DOCUMENT_INFO_UPLOADED_BY" value1="${dmDocumentUploader}" />
 		<execute function="AssertElementPresent" locator1="PGDocumentsandmediaDocument#DOCUMENT_INFO_RATING" value1="Ratings" />
-
-		<if>
-			<condition function="IsElementPresent" locator1="SODocuments#VERSION_HISTORY_TITLE" />
-			<then>
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_TITLE" value1="Version History" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_NUMBER" value1="Version ${dmDocumentVersionNumberEdit}" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_UPLOADER_NAME" value1="By: ${dmDocumentUploader}" />
-				<execute function="AssertElementPresent" locator1="SODocuments#VERSION_HISTORY_DATE" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_SIZE" value1="Size: ${dmDocumentSizeSO}" />
-			</then>
-		</if>
-
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#COMMENTS_SUBSCRIBE_TO_COMMENTS" value1="Subscribe to Comments" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#DOCUMENT_DETAILS_VERSION" value1="Version ${dmDocumentVersionNumberEdit}" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#DOCUMENT_DETAILS_UPLOADER" value1="Last Updated by ${dmDocumentUploader}" />
@@ -2062,19 +2034,6 @@
 		<execute function="AssertElementPresent" locator1="PGDocumentsandmediaDocument#DOCUMENT_INFO_THUMBNAIL" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#DOCUMENT_INFO_UPLOADED_BY" value1="${dmDocumentUploader}" />
 		<execute function="AssertElementPresent" locator1="PGDocumentsandmediaDocument#DOCUMENT_INFO_RATING" value1="Ratings" />
-
-		<if>
-			<condition function="IsElementPresent" locator1="SODocuments#VERSION_HISTORY_TITLE" />
-			<then>
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_TITLE" value1="Version History" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_NUMBER" value1="Version ${dmDocumentVersionNumber}" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_UPLOADER_NAME" value1="By: ${dmDocumentUploader}" />
-				<execute function="AssertElementPresent" locator1="SODocuments#VERSION_HISTORY_DATE" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_SIZE" value1="Size: ${dmDocumentSizeSO}" />
-				<execute function="AssertTextEquals" locator1="SODocuments#VERSION_HISTORY_CHANGE_LOG" value1="${changeLog}" />
-			</then>
-		</if>
-
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#COMMENTS_SUBSCRIBE_TO_COMMENTS" value1="Subscribe to Comments" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#DOCUMENT_DETAILS_VERSION" value1="Version ${dmDocumentVersionNumber}" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#DOCUMENT_DETAILS_UPLOADER" value1="Last Updated by ${dmDocumentUploader}" />
@@ -2102,16 +2061,7 @@
 			<var name="dmDocumentTitle" value="${dmDocumentTitle}" />
 		</execute>
 
-		<if>
-			<condition function="IsElementPresent" locator1="SODocuments#DOCUMENT_BREADCRUMBS" />
-			<then>
-				<execute function="AssertElementPresent" locator1="SODocuments#DOCUMENT_BREADCRUMBS" />
-			</then>
-			<else>
-				<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#BACK_BUTTON" value1="Back" />
-			</else>
-		</if>
-
+		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#BACK_BUTTON" value1="Back" />
 		<execute function="AssertTextEquals" locator1="PGDocumentsandmediaDocument#TOOLBAR_DOWNLOAD_BUTTON" value1="Download" />
 
 		<execute macro="DMDocument#viewDocumentAuthorCmdPG">
