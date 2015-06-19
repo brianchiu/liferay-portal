@@ -1,4 +1,4 @@
-s<definition component-name="portal-security">
+<definition component-name="portal-security">
 	<property name="hook.plugins.includes" value="antisamy-hook" />
 	<property name="testray.main.component.name" value="Antisamy Hook" />
 

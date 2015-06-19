@@ -1,4 +1,4 @@
-w<definition component-name="portal-search">
+<definition component-name="portal-search">
 	<property name="testray.main.component.name" value="Search" />
 
 	<var name="searchPageName" value="Search Page" />

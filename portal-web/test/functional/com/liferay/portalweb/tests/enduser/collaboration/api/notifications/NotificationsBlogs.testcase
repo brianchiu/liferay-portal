@@ -1,4 +1,4 @@
-s<definition component-name="portal-collaboration">
+<definition component-name="portal-collaboration">
 	<property name="portlet.plugins.includes" value="notifications-portlet" />
 	<property name="testray.main.component.name" value="Notifications" />
 

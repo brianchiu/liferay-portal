@@ -1,4 +1,4 @@
-w<definition component-name="portal-collaboration">
+<definition component-name="portal-collaboration">
 	<property name="testray.main.component.name" value="Wiki" />
 
 	<var name="pageName" value="Wiki Display Test Page" />
