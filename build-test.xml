@@ -2486,11 +2486,20 @@ go]]></replacevalue>
 				<equals arg1="${delete.liferay.home}" arg2="false" />
 			</not>
 			<then>
-				<delete dir="${liferay.home}/data" />
-				<delete dir="${liferay.home}/logs" />
-				<delete dir="${liferay.home}/osgi/state" />
+				<if>
+					<not>
+						<isset property="test.app.server.liferay.home" />
+					</not>
+					<then>
+						<set-app-server-properties />
+					</then>
+				</if>
 
-				<delete file="${liferay.home}/portal-setup-wizard.properties" />
+				<delete dir="${test.app.server.liferay.home}/data" />
+				<delete dir="${test.app.server.liferay.home}/logs" />
+				<delete dir="${test.app.server.liferay.home}/osgi/state" />
+
+				<delete file="${test.app.server.liferay.home}/portal-setup-wizard.properties" />
 			</then>
 		</if>
 	</target>
