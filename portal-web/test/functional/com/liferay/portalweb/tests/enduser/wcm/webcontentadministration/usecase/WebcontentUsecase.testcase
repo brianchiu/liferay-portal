@@ -1460,7 +1460,7 @@
 		</execute>
 
 		<execute macro="WebContentNavigator#gotoEditCP">
-			<var name="webContentTitle" value="Web Content 3 Title" />
+			<var name="webContentTitle" value="WC WebContent 3 Title" />
 		</execute>
 
 		<execute macro="WebContent#addExistingRelatedAssetCP">
