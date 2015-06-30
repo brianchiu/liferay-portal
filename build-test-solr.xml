@@ -42,13 +42,13 @@
 		</sequential>
 	</macrodef>
 
-	<target name="delete-elasticseach-osgi-bundle">
-		<delete file="${liferay.home}/osgi/com.liferay.portal.search.elasticsearch.jar" failonerror="false" />
-	</target>
-
 	<target name="configure-solr-osgi-bundle-properties">
 		<echo file="${liferay.home}/osgi/portal/com.liferay.portal.search.solr.configuration.SolrConfiguration.cfg">readURL=http://localhost:8983/solr/liferay
 writeURL=http://localhost:8983/solr/liferay</echo>
+	</target>
+
+	<target name="delete-elasticseach-osgi-bundle">
+		<delete file="${liferay.home}/osgi/com.liferay.portal.search.elasticsearch.jar" failonerror="false" />
 	</target>
 
 	<target name="start-solr">
