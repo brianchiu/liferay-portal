@@ -239,7 +239,7 @@
 				<var name="siteName" value="Site Name" />
 				<var name="siteURL" value="true" />
 			</execute>
-		
+
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="${tagName}" />
 			</execute>
@@ -2015,7 +2015,7 @@
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Tags" />
 			</execute>
-		
+
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="${tagName}" />
 			</execute>
