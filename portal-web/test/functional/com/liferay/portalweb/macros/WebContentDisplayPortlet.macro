@@ -185,13 +185,13 @@
 		<if>
 			<isset var="webContentSearchValue" />
 			<then>
-				<execute function="AssertClick" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select Web Content" />
+				<execute function="AssertClick" locator1="WCDConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select" />
 				<execute function="SelectFrame" value1="relative=top" />
 				<execute function="SelectFrame" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_IFRAME" />
 				<execute function="Type" locator1="PGWebcontentdisplayConfiguration#SEARCH_FIELD" value1="${webContentSearchValue}" />
 			</then>
 			<else>
-				<execute function="AssertClick" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select Web Content" />
+				<execute function="AssertClick" locator1="WCDConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select" />
 				<execute function="SelectFrame" value1="relative=top" />
 				<execute function="SelectFrame" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_IFRAME" />
 				<execute function="Type" locator1="PGWebcontentdisplayConfiguration#SEARCH_FIELD" value1="${webContentTitle}" />
@@ -227,7 +227,7 @@
 		</execute>
 
 		<execute function="SelectFrame" locator1="PGWebcontentdisplayConfiguration#CONFIGURATION_IFRAME" />
-		<execute function="AssertClick" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select Web Content" />
+		<execute function="AssertClick" locator1="WCDConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select" />
 		<execute function="SelectFrame" value1="relative=top" />
 		<execute function="SelectFrame" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_IFRAME" />
 
