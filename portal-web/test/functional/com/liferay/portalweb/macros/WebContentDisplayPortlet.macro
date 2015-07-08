@@ -249,7 +249,7 @@
 
 		<execute function="SelectFrame" locator1="PGWebcontentdisplayConfiguration#CONFIGURATION_IFRAME" />
 
-		<execute function="AssertClick" locator1="WCDConfiguration#CHANGE_WEB_CONTENT_BUTTON" value1="Change" />
+		<execute function="AssertClick" locator1="WCDConfiguration#SELECT_WEB_CONTENT_BUTTON" value1="Select" />
 
 		<execute function="SelectFrame" value1="relative=top" />
 		<execute function="SelectFrame" locator1="PGWebcontentdisplayConfiguration#SELECT_WEB_CONTENT_IFRAME" />
