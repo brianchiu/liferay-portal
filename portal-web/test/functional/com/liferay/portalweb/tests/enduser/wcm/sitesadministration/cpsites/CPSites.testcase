@@ -352,7 +352,7 @@
 		</execute>
 	</command>
 
-	<command name="EditSiteFriendlyURLInvalid" priority="4">
+	<command known-issues="LPS-51074" name="EditSiteFriendlyURLInvalid" priority="4">
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Sites" />
 		</execute>
