@@ -115,6 +115,10 @@
 	</command>
 
 	<command name="AddWebContentPortalScopeCurrentPage" priority="4">
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Web Content Display Page" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Web Content Display Page1" />
 		</execute>
