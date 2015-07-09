@@ -22,7 +22,7 @@
 		<execute macro="Page#tearDownPG" />
 	</tear-down>
 
-	<command name="AddCategorywithLocalization" priority="4">
+	<command known-issues="LPS-56879" name="AddCategorywithLocalization" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Categories" />
 		</execute>
@@ -907,7 +907,7 @@
 		</execute>
 	</command>
 
-	<command name="SearchCategory" priority="4">
+	<command known-issues="LPS-56879" name="SearchCategory" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Categories" />
 		</execute>
@@ -1013,7 +1013,7 @@
 		</execute>
 	</command>
 
-	<command name="SearchEditedCategory" priority="4">
+	<command known-issues="LPS-56879" name="SearchEditedCategory" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Categories" />
 		</execute>
