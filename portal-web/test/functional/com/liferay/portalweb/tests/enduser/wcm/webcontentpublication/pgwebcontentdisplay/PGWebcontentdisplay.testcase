@@ -710,7 +710,7 @@
 		</execute>
 	</command>
 
-	<command name="ViewArticleWithGuestViewPermission" priority="4">
+	<command known-issues="LPS-56722" name="ViewArticleWithGuestViewPermission" priority="4">
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Web Content Display Page" />
 		</execute>
