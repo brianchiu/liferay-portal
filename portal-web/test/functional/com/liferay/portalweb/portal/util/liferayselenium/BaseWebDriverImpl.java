@@ -448,6 +448,13 @@ public abstract class BaseWebDriverImpl
 	}
 
 	@Override
+	public boolean isEditable(String locator) {
+		WebElement webElement = getWebElement(locator);
+
+		return webElement.isEnabled();
+	}
+
+	@Override
 	public boolean isElementNotPresent(String locator) {
 		return LiferaySeleniumHelper.isElementNotPresent(this, locator);
 	}
