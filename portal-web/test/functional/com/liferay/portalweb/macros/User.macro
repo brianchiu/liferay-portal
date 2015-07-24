@@ -1398,6 +1398,10 @@
 		</if>
 	</command>
 
+	<command name="gotoBack">
+		<execute function="Click" locator1="UsersAndOrganizations#BACK" />
+	</command>
+
 	<command name="impersonateCP">
 		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
 
