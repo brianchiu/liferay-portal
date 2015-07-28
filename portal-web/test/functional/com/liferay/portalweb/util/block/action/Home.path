@@ -203,7 +203,7 @@
 <!--PAGE-->
 <tr>
 	<td>PAGE</td>
-	<td>//nav[contains(@class,'site-navigation')]/ul/li/a[contains(.,'${key_pageName}')]</td>
+	<td>//nav[contains(@id,'navigation')]/ul/li/a/span[contains(.,'${key_pageName}')]</td>
 	<td>Page</td>
 </tr>
 <tr>
@@ -526,7 +526,7 @@
 </tr>
 <tr>
 	<td>CONTROL_PANEL_NAVIGATION</td>
-	<td>//a[contains(.,'${key_portletName}') and contains(@id,'_190_controlPanelPortletLink')]</td>
+	<td>//a[contains(.,'${key_portletName}') and contains(@role,'menuitem')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -567,12 +567,12 @@
 </tr>
 <tr>
 	<td>SITE_ADMINISTRATION_NAVIGATION</td>
-	<td>//ul[contains(@class,'category-portlets')]/li[contains(.,'${key_portletName}')]/span/a</td>
+	<td>//ul[contains(@class,'category-portlets')]/li[contains(.,'${key_portletName}')]/a</td>
 	<td>Site Administration Navigation</td>
 </tr>
 <tr>
 	<td>SITE_ADMINISTRATION_PORTLET_TITLE</td>
-	<td>//h2[@id='cpPortletTitle']/span[@class='portlet-title-text']</td>
+	<td>//span[@class='header-toolbar-title']</td>
 	<td></td>
 </tr>
 <tr>
