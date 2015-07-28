@@ -149,6 +149,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>CLOSE_SIDE_NAVIGATION</td>
+	<td>//span[contains(@class,'sidenav-close')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>COMPARE_VERSIONS</td>
 	<td>//button[contains(@id,'compare')]</td>
 	<td></td>
@@ -421,6 +426,11 @@
 <tr>
 	<td>SIGN_IN_PNG</td>
 	<td>portal/buttons/sign_in_button.png</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SIGN_OUT</td>
+	<td>//a[contains(@class,'signout')]</td>
 	<td></td>
 </tr>
 <tr>
