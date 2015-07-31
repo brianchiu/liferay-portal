@@ -931,6 +931,7 @@
 		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userFirstName}" />
+
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_BUTTON" value1="Search" />
 
 		<if>
@@ -939,8 +940,11 @@
 				<var name="key_userScreenName" value="${userScreenName}" />
 
 				<execute function="Click" locator1="CPUsersandorganizationsViewusers#USER_TABLE_ACTIONS" />
+
 				<execute function="AssertClickNoError" locator1="CPUsersandorganizationsViewusers#USER_MENULIST_DEACTIVATE" value1="Deactivate" />
+
 				<execute function="Confirm" value1="Are you sure you want to deactivate this?" />
+
 				<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 			</then>
 			<elseif>
@@ -949,8 +953,11 @@
 					<var name="key_userScreenName" value="${userScreenName}" />
 
 					<execute function="Check" locator1="CPUsersandorganizationsViewusers#USER_TABLE_ALL_CHECKBOX" />
+
 					<execute function="AssertClickNoError" locator1="CPUsersandorganizationsViewusers#DEACTIVATE" value1="Deactivate" />
+
 					<execute function="Confirm" value1="Are you sure you want to deactivate the selected users?" />
+
 					<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 				</then>
 			</elseif>
@@ -958,8 +965,11 @@
 				<condition function="IsElementPresent" locator1="CPUsersandorganizationsViewusers#USER_TABLE_ALL_CHECKBOX" />
 				<then>
 					<execute function="Check" locator1="CPUsersandorganizationsViewusers#USER_TABLE_ALL_CHECKBOX" />
+
 					<execute function="AssertClickNoError" locator1="CPUsersandorganizationsViewusers#DEACTIVATE" value1="Deactivate" />
+
 					<execute function="Confirm" value1="Are you sure you want to deactivate the selected users?" />
+
 					<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 				</then>
 			</elseif>
