@@ -3,7 +3,7 @@
 	<var name="userEmailAddress" value="test@liferay.com" />
 
 	<command name="activateCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Click" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_ADVANCED" />
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#ADVANCED_SEARCH_FIRST_NAME_FIELD" value1="${userFirstName}" />
@@ -17,7 +17,7 @@
 		<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 		<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#INFO_MESSAGE" value1="No users were found." />
 
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#USER_TABLE_FIRST_NAME" value1="${userFirstName}" />
 		<execute function="AssertTextEquals" locator1="CPUsersandorganizationsViewusers#USER_TABLE_LAST_NAME" value1="${userLastName}" />
@@ -230,7 +230,7 @@
 	</command>
 
 	<command name="addPersonalSiteCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -396,7 +396,7 @@
 	</command>
 
 	<command name="advancedSearchCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_ADVANCED" />
 
 		<if>
@@ -715,7 +715,7 @@
 	</command>
 
 	<command name="assignOrgRoleCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_BUTTON" value1="Search" />
@@ -740,7 +740,7 @@
 	</command>
 
 	<command name="assignRegularRoleCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_BUTTON" value1="Search" />
@@ -765,7 +765,7 @@
 	</command>
 
 	<command name="assignSiteRoleCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_BUTTON" value1="Search" />
@@ -790,7 +790,7 @@
 	</command>
 
 	<command name="attemptImpersonateCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_BUTTON" value1="Search" />
@@ -928,7 +928,7 @@
 	</command>
 
 	<command name="deactivateCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userFirstName}" />
 
@@ -980,7 +980,7 @@
 	</command>
 
 	<command name="deleteCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Select" locator1="Select#USER_STATUS" value1="Inactive" />
 
@@ -1077,7 +1077,7 @@
 	</command>
 
 	<command name="editDisplaySettingsCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
 		<execute function="AssertClick" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_BUTTON" value1="Search" />
@@ -1103,7 +1103,7 @@
 	</command>
 
 	<command name="editPasswordCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1151,7 +1151,7 @@
 	</command>
 
 	<command name="editPasswordInvalidCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1200,7 +1200,7 @@
 	<!-- The time zone option should change automatically because of Daylight Savings Time (DST). Since Los Angeles switches between Pacific Daylight Time (PDT), (UTC -07:00) and Pacific Standard Time (PST), (UTC -08:00), this macro will have to be updated accordingly. -->
 
 	<command name="editUserDisplaySettingsCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1241,7 +1241,7 @@
 	</command>
 
 	<command name="editUserGenderCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1257,7 +1257,7 @@
 	</command>
 
 	<command name="editUserMiddleNameCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1273,7 +1273,7 @@
 	</command>
 
 	<command name="editUserOrganizationCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1302,7 +1302,7 @@
 	</command>
 
 	<command name="editUserSiteCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1413,7 +1413,7 @@
 	</command>
 
 	<command name="gotoEditCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute macro="User#searchCP">
 			<var name="searchToken" value="${userScreenName}" />
@@ -1425,7 +1425,7 @@
 	</command>
 
 	<command name="impersonateCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Pause" locator1="1000" />
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
@@ -1731,7 +1731,7 @@
 	</command>
 
 	<command name="unassignRegularRoleCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<execute function="Pause" locator1="1000" />
 		<execute function="Type" locator1="CPUsersandorganizationsViewusers#BASIC_SEARCH_FIELD" value1="${userScreenName}" />
@@ -1753,7 +1753,7 @@
 	</command>
 
 	<command name="unlockUserAccount">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<var name="key_userScreenName" value="${userScreenName}" />
 
@@ -1770,7 +1770,7 @@
 	</command>
 
 	<command name="viewCP">
-		<execute function="AssertClick" locator1="CPUsersandorganizations#SEARCH_ALL_USERS" value1="All Users" />
+		<execute function="AssertClick" locator1="NavTab#ALL_USERS" value1="All Users" />
 
 		<if>
 			<equals arg1="${userEmailAddressVariation}" arg2="At" />
