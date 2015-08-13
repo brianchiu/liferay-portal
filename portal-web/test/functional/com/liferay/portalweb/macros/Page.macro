@@ -75,7 +75,7 @@
 
 		<execute function="AssertClick" locator1="SitePages#TOOLBAR_ADD_PAGE" value1="Add Page" />
 
-		<execute function="Type#mouseOverFocusType" locator1="TextInput#NAME" value1="${pageName}" />
+		<execute function="Type#typeClickAt" locator1="TextInput#NAME" value1="${pageName}" />
 
 		<var name="key_pageType" value="${pageTemplateName}" />
 
