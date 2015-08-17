@@ -25,7 +25,7 @@
 				<execute function="AssertClick" locator1="CPMyworkflowtasksTask#COMMENTS_BE_THE_FIRST" value1="Be the first." />
 			</then>
 			<else>
-				<execute function="AssertClick" locator1="CPMyworkflowtasksTask#COMMENTS_ADD_COMMENT" value1="Add Comment" />
+				<execute function="Click" locator1="CPMyworkflowtasksTask#COMMENTS_ADD_FIELD" />
 			</else>
 		</if>
 
