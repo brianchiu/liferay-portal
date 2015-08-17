@@ -25,14 +25,14 @@
 				<execute function="AssertClick" locator1="CPMyworkflowtasksTask#COMMENTS_BE_THE_FIRST" value1="Be the first." />
 			</then>
 			<else>
-				<execute function="Click" locator1="CPMyworkflowtasksTask#COMMENTS_ADD_FIELD" />
+				<execute function="Click" locator1="Comments#COMMENT_FIELD" />
 			</else>
 		</if>
 
-		<execute function="Type" locator1="CPMyworkflowtasksTask#COMMENTS_ADD_FIELD" value1="${workflowComment}" />
+		<execute function="Type" locator1="Comments#COMMENT_FIELD" value1="${workflowComment}" />
 		<execute function="AssertClick" locator1="CPMyworkflowtasksTask#COMMENTS_REPLY_BUTTON" value1="Reply" />
 		<execute function="AssertTextEquals" locator1="CPMyworkflowtasksTask#COMMENTS_SUCCESS_MESSAGE" value1="Your request processed successfully." />
-		<execute function="AssertTextEquals" locator1="CPMyworkflowtasksTask#COMMENTS_COMMENT" value1="${workflowComment}" />
+		<execute function="AssertTextEquals" locator1="Comments#COMMENT_BODY" value1="${workflowComment}" />
 	</command>
 
 	<command name="viewCP">
@@ -51,6 +51,6 @@
 			</else>
 		</if>
 
-		<execute function="AssertTextEquals" locator1="CPMyworkflowtasksTask#COMMENTS_COMMENT" value1="${workflowComment}" />
+		<execute function="AssertTextEquals" locator1="Comments#COMMENT_BODY" value1="${workflowComment}" />
 	</command>
 </definition>
