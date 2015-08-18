@@ -31,7 +31,7 @@
 
 		<execute function="Type" locator1="Comments#COMMENT_FIELD" value1="${workflowComment}" />
 		<execute function="AssertClick" locator1="CPMyworkflowtasksTask#COMMENTS_REPLY_BUTTON" value1="Reply" />
-		<execute function="AssertTextEquals" locator1="CPMyworkflowtasksTask#COMMENTS_SUCCESS_MESSAGE" value1="Your request processed successfully." />
+		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request processed successfully." />
 		<execute function="AssertTextEquals" locator1="Comments#COMMENT_BODY" value1="${workflowComment}" />
 	</command>
 
