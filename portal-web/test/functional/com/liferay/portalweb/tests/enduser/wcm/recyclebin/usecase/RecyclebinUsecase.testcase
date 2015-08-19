@@ -43,6 +43,12 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Page" />
+			<var name="siteName" value="Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
 		<execute macro="BlogsEntry#moveToRecycleBinPG">
 			<var name="assetType" value="Blogs Entry" />
 			<var name="entryContent" value="Blogs Entry Content" />
@@ -494,6 +500,12 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Page" />
+			<var name="siteName" value="Site Name" />
+			<var name="siteURL" value="true" />
+		</execute>
+
 		<execute macro="BlogsEntry#moveToRecycleBinPG">
 			<var name="assetType" value="Blogs Entry" />
 			<var name="entryContent" value="Blogs Entry Content" />
@@ -557,6 +569,12 @@
 		<execute macro="Blogs#addEntry">
 			<var name="entryContent" value="Blogs Entry Content 3" />
 			<var name="entryTitle" value="Blogs Entry Title 3" />
+		</execute>
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Test Page" />
+			<var name="siteName" value="Site Name" />
+			<var name="siteURL" value="true" />
 		</execute>
 
 		<execute macro="BlogsEntry#moveToRecycleBinPG">

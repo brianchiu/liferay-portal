@@ -2013,6 +2013,10 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
 		<execute macro="Page#addPG">
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>

@@ -1135,6 +1135,10 @@
 			<var name="entryTitle" value="Blog Post 1" />
 		</execute>
 
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="Panel Test Page" />
+		</execute>
+
 		<execute macro="BlogsEntry#gotoPG">
 			<var name="entryContent" value="This is Blog Post 1 Content" />
 			<var name="entryTitle" value="Blog Post 1" />
