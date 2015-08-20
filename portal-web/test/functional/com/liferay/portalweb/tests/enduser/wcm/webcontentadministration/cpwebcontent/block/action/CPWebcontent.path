@@ -314,7 +314,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>ENTRY_ICON_MENULIST_ARROW</td>
+	<td>ENTRY_ICON_MENULIST_ICON</td>
 	<td>//div[@data-title='${key_webContentTitle}']//span[contains(@class,'entry-action') and contains(@class,'overlay')]/div/a/i[@class='caret']</td>
 	<td></td>
 </tr>
@@ -350,7 +350,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>ENTRY_DESCRIPTIVE_MENULIST_ARROW</td>
+	<td>ENTRY_DESCRIPTIVE_MENULIST_ICON</td>
 	<td>//div[@data-title='${key_webContentTitle}']//span[contains(@class,'entry-action') and contains(@class,'overlay')]/div/a/i[contains(@class,'caret')]</td>
 	<td></td>
 </tr>
