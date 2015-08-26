@@ -151,14 +151,14 @@
 		<execute function="AssertClick" locator1="MenuItem#PERMISSIONS" value1="Permissions" />
 	</command>
 
-	<command name="_save">
+	<command name="save">
 		<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME_1" />
 
 		<execute function="AssertClick" locator1="DDMEditStructure#SAVE_BUTTON" value1="Save" />
 	</command>
 
 	<command name="saveCP">
-		<execute macro="DDLDataDefinition#_save" />
+		<execute macro="DDLDataDefinition#save" />
 
 		<execute macro="Alert#viewSuccess" />
 
@@ -166,7 +166,7 @@
 	</command>
 
 	<command name="saveViaDDLDisplayPG">
-		<execute macro="DDLDataDefinition#_save" />
+		<execute macro="DDLDataDefinition#save" />
 
 		<execute macro="Alert#viewSuccess" />
 
