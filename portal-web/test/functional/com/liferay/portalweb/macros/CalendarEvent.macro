@@ -1225,7 +1225,6 @@
 			<else>
 				<var name="key_tagText" value="${tagText}" />
 
-				<execute function="AssertClick" locator1="CalendarEditEvent#CATEGORIZATION_TAG_FIELD" />
 				<execute function="Type#typePause" locator1="CalendarEditEvent#CATEGORIZATION_TAG_FIELD" value1="${tagText}" />
 				<execute function="AssertClick" locator1="CalendarEditEvent#CATEGORIZATION_ADD_TAGS_BUTTON" value1="Add" />
 				<execute function="AssertTextEquals" locator1="CalendarEditEvent#CATEGORIZATION_TAG_SPECIFIC" value1="${tagText}" />
