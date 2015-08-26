@@ -861,6 +861,9 @@
 
 	<command name="expirePGViaWCD">
 		<execute function="Pause" locator1="5000" />
+		
+		<var name="key_webContentTitle" value="${webContentTitle}" />
+
 		<execute function="AssertClick" locator1="Button#VIEW_HISTORY" value1="View History" />
 
 		<var name="key_historyStatus" value="Expired" />
