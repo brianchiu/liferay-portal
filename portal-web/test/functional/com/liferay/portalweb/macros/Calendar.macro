@@ -993,7 +993,7 @@
 		<execute function="SelectFrame" value1="relative=top" />
 		<execute function="Pause" locator1="3000" />
 
-		<var name="key_weekNumber" value="${weekNumber?increment()}" />
+		<var method="MathUtil#sum('${weekNumber}', '1')" name="key_weekNumber" />
 
 		<execute function="AssertElementNotPresent" locator1="PGCalendar#SCHEDULER_VIEW_MONTH_WEEK_NUMBER" />
 	</command>
