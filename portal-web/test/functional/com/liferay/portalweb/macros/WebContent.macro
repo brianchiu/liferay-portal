@@ -27,7 +27,7 @@
 
 	<command name="addDraftCP">
 		<execute function="Type" locator1="TextInput#TITLE" value1="${webContentTitle}" />
-		<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+		<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 		<execute function="AssertClick" locator1="Button#SAVE_AS_DRAFT" value1="Save as Draft" />
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
@@ -69,7 +69,7 @@
 
 	<command name="addFailWithoutRequiredCategoryAssetTypeCP">
 		<execute function="Type" locator1="TextInput#TITLE" value1="Web Content Title" />
-		<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="Web Content Content" />
+		<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="Web Content Content" />
 		<execute function="AssertClick" locator1="Button#PUBLISH" value1="Publish" />
 
 		<execute function="AssertTextEquals#assertPartialText" locator1="AssetCategorization#VOCABULARY" value1="${vocabularyName} Required" />
@@ -82,7 +82,7 @@
 		<if>
 			<isset var="webContentContent" />
 			<then>
-				<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+				<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 			</then>
 		</if>
 
@@ -93,7 +93,7 @@
 		<if>
 			<isset var="webContentContent" />
 			<then>
-				<execute function="AssertTextEquals#assertCKEditorText" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+				<execute function="AssertTextEquals#assertCKEditorText" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 			</then>
 		</if>
 	</command>
@@ -361,7 +361,7 @@
 
 	<command name="addWithCategoryCP">
 		<execute function="Type" locator1="TextInput#TITLE" value1="${webContentTitle}" />
-		<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+		<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 		<execute function="AssertClick" locator1="WCEditWebContent#MENU_CATEGORIZATION" value1="Categorization" />
 
 		<if>
@@ -436,7 +436,7 @@
 
 	<command name="addWithMultipleCategories">
 		<execute function="Type" locator1="TextInput#TITLE" value1="${webContentTitle}" />
-		<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+		<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 		<execute function="AssertClick" locator1="WCEditWebContent#MENU_CATEGORIZATION" value1="Categorization" />
 
 		<var name="key_vocabularyName" value="${vocabularyName}" />
@@ -601,7 +601,7 @@
 
 	<command name="addWithTagCP">
 		<execute function="Type" locator1="TextInput#TITLE" value1="${webContentTitle}" />
-		<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+		<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 		<execute function="AssertClick" locator1="WCEditWebContent#MENU_CATEGORIZATION" value1="Categorization" />
 
 		<for list="${tagNameList}" param="tagName">
@@ -789,7 +789,7 @@
 		<if>
 			<isset var="webContentContent" />
 			<then>
-				<execute function="Type#typeCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContent}" />
+				<execute function="Type#typeCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
 			</then>
 		</if>
 
@@ -806,7 +806,7 @@
 
 		<execute function="Type#typeWaitForCKEditor" locator1="TextInput#TITLE" value1="${webContentTitleEdit}" />
 
-		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContentEdit}" />
+		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContentEdit}" />
 
 		<execute function="Click" locator1="Button#PUBLISH" value1="Publish" />
 	</command>
@@ -818,7 +818,7 @@
 
 		<execute function="SelectFrame" locator1="IFrame#EDIT_ASSET" />
 		<execute function="Type#typeWaitForCKEditor" locator1="TextInput#TITLE" value1="${webContentTitleEdit}" />
-		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#IFRAME" value1="${webContentContentEdit}" />
+		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#BODY_FIELD" value1="${webContentContentEdit}" />
 		<execute function="Click" locator1="Button#PUBLISH" value1="Publish" />
 	</command>
 
@@ -1473,7 +1473,7 @@
 				<if>
 					<isset var="localizedContent" />
 					<then>
-						<execute function="AssertTextEquals" locator1="CKEditor#IFRAME" value1="${localizedContent}" />
+						<execute function="AssertTextEquals" locator1="CKEditor#BODY_FIELD" value1="${localizedContent}" />
 					</then>
 				</if>
 
