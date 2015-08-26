@@ -1001,11 +1001,11 @@
 	<command name="viewWeekStartDayViaAddEventMiniCalendar">
 		<execute function="Click" locator1="CalendarEditEvent#START_DATE" />
 
-		<execute function="AssertTextEquals" locator1="PGCalendarAddevent#MINI_CALENDAR_WEEK_START_DAY" value1="${weekStartDay}" />
+		<execute function="AssertTextEquals" locator1="PGCalendarAddevent#MINI_CALENDAR_WEEK_START_DAY_START_DATE" value1="${weekStartDay}" />
 
 		<execute function="Click" locator1="CalendarEditEvent#END_DATE" />
 
-		<execute function="AssertTextEquals" locator1="PGCalendarAddevent#MINI_CALENDAR_WEEK_START_DAY" value1="${weekStartDay}" />
+		<execute function="AssertTextEquals" locator1="PGCalendarAddevent#MINI_CALENDAR_WEEK_START_DAY_END_DATE" value1="${weekStartDay}" />
 	</command>
 
 	<command name="viewWeekStartDayViaMonthView">
