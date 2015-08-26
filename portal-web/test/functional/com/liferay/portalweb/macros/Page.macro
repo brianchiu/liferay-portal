@@ -740,6 +740,25 @@
 		</if>
 	</command>
 
+	<command name="gotoPublishingtools">
+		<description message="Navigate to Site Administration > Publishing tools > ${portletName}." />
+
+		<execute macro="Page#gotoCmdCP">
+			<var name="friendlyURL" value="${friendlyURL}" />
+			<var name="nodePort" value="${nodePort}" />
+			<var name="pageAccess" value="${pageAccess}" />
+			<var name="pageStaging" value="${pageStaging}" />
+			<var name="portletCategoryName" value="Publishing tools" />
+			<var name="portletName" value="${portletName}" />
+			<var name="siteName" value="${siteName}" />
+			<var name="siteNameURL" value="${siteNameURL}" />
+			<var name="siteScopeName" value="${siteScopeName}" />
+			<var name="siteURL" value="${siteURL}" />
+			<var name="specificURL" value="${specificURL}" />
+			<var name="virtualHostsURL" value="${virtualHostsURL}" />
+		</execute>
+	</command>
+
 	<command name="gotoSALocalizedCP">
 		<execute macro="Page#openURL">
 			<var name="friendlyURL" value="${friendlyURL}" />
