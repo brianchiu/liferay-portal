@@ -346,6 +346,7 @@
 	<command name="addTranslationPGViaWCD">
 		<execute function="AssertClick#assertTextClickAtCKEditor" locator1="Translation#ADD" value1="Add Translation" />
 
+		<var name="key_localizedLanguage" value="${webContentTranslationLanguage}" />
 		<var name="key_webContentTranslationLanguage" value="${webContentTranslationLanguage}" />
 
 		<execute function="AssertClick#assertTextClickAtCKEditor" locator1="MenuItem#WEB_CONTENT_LANGUAGE" value1="${webContentTranslationLanguage}" />
@@ -861,7 +862,7 @@
 
 	<command name="expirePGViaWCD">
 		<execute function="Pause" locator1="5000" />
-		
+
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="AssertClick" locator1="Button#VIEW_HISTORY" value1="View History" />
