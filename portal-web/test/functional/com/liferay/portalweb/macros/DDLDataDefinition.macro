@@ -155,17 +155,22 @@
 		<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME_1" />
 
 		<execute function="AssertClick" locator1="DDMEditStructure#SAVE_BUTTON" value1="Save" />
-		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
-
-		<execute function="SelectFrame" value1="relative=top" />
 	</command>
 
 	<command name="saveCP">
 		<execute macro="DDLDataDefinition#_save" />
+
+		<execute macro="Alert#viewSuccess" />
+
+		<execute function="SelectFrame" value1="relative=top" />
 	</command>
 
 	<command name="saveViaDDLDisplayPG">
 		<execute macro="DDLDataDefinition#_save" />
+
+		<execute macro="Alert#viewSuccess" />
+
+		<execute function="SelectFrame" value1="relative=top" />
 	</command>
 
 	<command name="_select">
