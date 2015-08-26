@@ -13,7 +13,7 @@
 	<command name="addCmd">
 		<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME_1" />
 		<execute function="AssertClick" locator1="DDMSelectStructure#TOOLBAR_ADD" value1="Add" />
-		<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${ddlDataDefinitionName}" />
+		<execute function="Type#clickAtSendKeys" locator1="DDMEditStructure#NAME_FIELD" value1="${ddlDataDefinitionName}" />
 
 		<execute macro="DDLDataDefinition#_showDetails" />
 
