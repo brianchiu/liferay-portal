@@ -144,7 +144,7 @@
 					</then>
 				</if>
 
-				<execute macro="CalendarEvent#save" />
+				<execute macro="CalendarEvent#publish" />
 
 				<execute macro="Page#gotoPG">
 					<var name="defaultURL" value="${defaultURL}" />
@@ -204,7 +204,7 @@
 						</then>
 					</if>
 
-					<execute macro="CalendarEvent#save" />
+					<execute macro="CalendarEvent#publish" />
 
 					<execute macro="Page#gotoPG">
 						<var name="defaultURL" value="${defaultURL}" />
@@ -274,7 +274,7 @@
 						</then>
 					</if>
 
-					<execute macro="CalendarEvent#save" />
+					<execute macro="CalendarEvent#publish" />
 
 					<execute macro="Page#gotoPG">
 						<var name="defaultURL" value="${defaultURL}" />
@@ -447,7 +447,7 @@
 					</then>
 				</if>
 
-				<execute macro="CalendarEvent#save" />
+				<execute macro="CalendarEvent#publish" />
 
 				<execute macro="Page#gotoPG">
 					<var name="defaultURL" value="${defaultURL}" />
@@ -493,8 +493,8 @@
 						<var name="calendarName" value="${calendarName}" />
 					</execute>
 
-					<execute function="Click" locator1="Button#SAVE" />
-					<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
+					<execute macro="CalendarEvent#publish" />
+
 					<execute function="SelectFrame" value1="relative=top" />
 
 					<execute macro="Page#gotoPG">
@@ -873,7 +873,7 @@
 					<execute function="Pause" value1="1000" />
 					<execute function="AssertChecked" locator1="CalendarEditEvent#REPEAT_CHECKBOX" />
 					<execute function="AssertTextEquals" locator1="CalendarEditEvent#REPEAT_SUMMARY" value1="Daily, 1 Times" />
-					<execute function="Click" locator1="Button#SAVE" />
+					<execute function="Click" locator1="Button#PUBLISH" />
 
 					<if>
 						<condition function="IsElementPresent" locator1="CalendarEditEvent#ALL_EVENTS_IN_THE_SERIES_BUTTON" />
@@ -895,7 +895,7 @@
 			</elseif>
 		</if>
 
-		<execute function="Click" locator1="Button#SAVE" />
+		<execute function="Click" locator1="Button#PUBLISH" />
 
 		<if>
 			<equals arg1="${optionSetValue}" arg2="inviteResource" />
@@ -1007,9 +1007,9 @@
 		<execute function="Type" locator1="CalendarEditEvent#END_DATE_TIME" value1="${endDateTime}" />
 		<execute function="Click" locator1="CalendarEditEvent#END_DATE_TIME" />
 		<execute function="Pause" value1="1000" />
-		<execute function="Click" locator1="Button#SAVE" />
 
-		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
+		<execute macro="CalendarEvent#publish" />
+
 		<execute function="SelectFrame" value1="relative=top" />
 
 		<execute macro="Page#gotoPG">
