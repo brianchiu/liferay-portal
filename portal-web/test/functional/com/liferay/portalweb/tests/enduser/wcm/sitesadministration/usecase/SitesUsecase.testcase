@@ -602,7 +602,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51156" name="WebContentAdministrationSitesTemplatePermissionPersistence" priority="4">
+	<command name="WebContentAdministrationSitesTemplatePermissionPersistence" priority="4">
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Sites" />
 		</execute>
