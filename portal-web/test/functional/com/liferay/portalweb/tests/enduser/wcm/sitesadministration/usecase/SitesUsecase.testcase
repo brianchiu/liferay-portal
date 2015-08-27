@@ -213,7 +213,7 @@
 		<execute function="AssertTextNotPresent" locator1="Link#READ_MORE" value1="Read More" />
 	</command>
 
-	<command known-issues="LPS-51687" name="AddWebContentWithGlobalScopeViaCPToSiteAP" priority="4">
+	<command name="AddWebContentWithGlobalScopeViaCPToSiteAP" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 			<var name="siteScopeName" value="Global" />

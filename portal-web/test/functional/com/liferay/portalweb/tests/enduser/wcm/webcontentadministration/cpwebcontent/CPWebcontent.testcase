@@ -519,7 +519,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="AddWebContent" priority="5">
+	<command name="AddWebContent" priority="5">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -551,7 +551,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="AddWebContentDraft" priority="4">
+	<command name="AddWebContentDraft" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -579,7 +579,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="AddWebContentExpirationDate" priority="4">
+	<command name="AddWebContentExpirationDate" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -615,7 +615,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="AddWebContentMultiple" priority="4">
+	<command name="AddWebContentMultiple" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -707,7 +707,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="AddWebContentTitleEscapeCharacter" priority="4">
+	<command name="AddWebContentTitleEscapeCharacter" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1030,7 +1030,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="EditWCAddLocalization" priority="4">
+	<command name="EditWCAddLocalization" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1082,7 +1082,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687,LPS-56754" name="EditWebContent" priority="5">
+	<command known-issues="LPS-56754" name="EditWebContent" priority="5">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1124,7 +1124,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="ExpireEditWebContent" priority="4">
+	<command name="ExpireEditWebContent" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1180,7 +1180,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="ExpireWebContent" priority="4">
+	<command name="ExpireWebContent" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1420,7 +1420,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="PublishDraftWebContent" priority="4">
+	<command name="PublishDraftWebContent" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -1469,7 +1469,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-51687" name="PublishExpireWebContent" priority="4">
+	<command name="PublishExpireWebContent" priority="4">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
