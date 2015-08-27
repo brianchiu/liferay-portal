@@ -62,6 +62,10 @@
 		<execute function="Click" locator1="UserGroups#USER_GROUP_TABLE_ACTIONS" />
 		<execute function="AssertClick" locator1="MenuItem#MANAGE_SITE_PAGES" value1="Manage Site Pages" />
 
+		<execute function="Pause" locator1="5000" />
+
+		<execute function="SelectFrame" locator1="IFrame#MANAGE_SITE_PAGES" />
+
 		<if>
 			<equals arg1="${sitePagePrivacy}" arg2="Private" />
 			<then>
