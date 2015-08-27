@@ -93,7 +93,7 @@
 		<if>
 			<isset var="webContentContent" />
 			<then>
-				<execute function="AssertTextEquals#assertCKEditorText" locator1="CKEditor#BODY_FIELD" value1="${webContentContent}" />
+				<execute function="AssertTextEquals#assertCKEditorText" locator1="CKEditor#BODY_FIELD_IFRAME" value1="${webContentContent}" />
 			</then>
 		</if>
 	</command>
