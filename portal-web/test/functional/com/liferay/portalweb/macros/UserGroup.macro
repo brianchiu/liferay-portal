@@ -65,12 +65,12 @@
 		<if>
 			<equals arg1="${sitePagePrivacy}" arg2="Private" />
 			<then>
-				<execute function="AssertClick" locator1="CPUsergroupsSitepages#NAVIGATION_PRIVATE_PAGES" value1="Private Pages" />
+				<execute function="AssertClick" locator1="SitePages#NAVIGATION_PRIVATE_PAGES" value1="Private Pages" />
 			</then>
 			<elseif>
 				<equals arg1="${sitePagePrivacy}" arg2="Public" />
 				<then>
-					<execute function="AssertClick" locator1="CPUsergroupsSitepages#NAVIGATION_PUBLIC_PAGES" value1="Public Pages" />
+					<execute function="AssertClick" locator1="SitePages#NAVIGATION_PUBLIC_PAGES" value1="Public Pages" />
 				</then>
 			</elseif>
 			<else>
@@ -78,14 +78,17 @@
 			</else>
 		</if>
 
-		<execute function="AssertClick" locator1="CPUsergroupsSitepages#TOOLBAR_ADD_PAGE" value1="Add Page" />
-		<execute function="Type#mouseOverFocusType" locator1="CPUsergroupsSitepages#ADD_PAGE_NAME_FIELD" value1="${sitePageName}" />
-		<execute function="AssertClick" locator1="CPUsergroupsSitepages#ADD_PAGE_BUTTON" value1="Add Page" />
-		<execute function="AssertTextEquals" locator1="CPUsergroupsSitepages#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute function="AssertClick" locator1="SitePages#TOOLBAR_ADD_PAGE" value1="Add Page" />
+
+		<execute function="Type#mouseOverFocusType" locator1="TextInput#PAGE_NAME_FIELD" value1="${sitePageName}" />
+
+		<execute function="AssertClick" locator1="Button#ADD_PAGE" value1="Add Page" />
+
+		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 
 		<execute macro="UserGroup#expandRootCP" />
 
-		<execute function="AssertTextEquals" locator1="CPUsergroupsSitepages#PAGE_TREE_PAGE_LINK_1" value1="${sitePageName}" />
+		<execute function="AssertTextEquals" locator1="SitePages#PAGE_TREE_PAGE_LINK_1" value1="${sitePageName}" />
 	</command>
 
 	<command name="addSiteCP">
