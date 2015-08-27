@@ -300,7 +300,7 @@
 	<command name="viewAssignMemberCP">
 		<var name="key_userGroupName" value="${userGroupName}" />
 
-		<execute function="Type" locator1="TextInput#KEYWORDS" value1="$${userGroupName}" />
+		<execute function="Type" locator1="TextInput#KEYWORDS" value1="${userGroupName}" />
 		<execute function="AssertClick" locator1="Button#SEARCH" value1="Search" />
 		<execute function="AssertTextEquals" locator1="UserGroups#USER_GROUP_TABLE_NAME" value1="${userGroupName}" />
 		<execute function="Click" locator1="UserGroups#USER_GROUP_TABLE_ACTIONS" />
