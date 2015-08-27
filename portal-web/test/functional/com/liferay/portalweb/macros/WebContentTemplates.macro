@@ -172,7 +172,7 @@
 		<if>
 			<isset var="templateDescription" />
 			<then>
-				<execute function="Type" locator1="TextArea#DESCRIPTION" value1="${templateDescription}" />
+				<execute function="Type" locator1="TextInput#DESCRIPTION" value1="${templateDescription}" />
 			</then>
 		</if>
 
