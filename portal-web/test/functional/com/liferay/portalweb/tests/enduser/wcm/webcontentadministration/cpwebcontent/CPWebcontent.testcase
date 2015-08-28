@@ -942,10 +942,6 @@
 	</command>
 
 	<command name="DeleteWebContentTitleEscapeCharacter" priority="4">
-		<var name="webContentContent" value="WC WebContent Content" />
-		<var name="webContentTitle"><![CDATA[<!-- -->]]></var>
-		<var name="webContentTitleEscapeCharacter"><![CDATA[&lt;!-- --&gt;]]></var>
-
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
