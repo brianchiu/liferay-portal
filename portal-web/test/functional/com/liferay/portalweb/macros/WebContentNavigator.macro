@@ -12,7 +12,15 @@
 	</command>
 
 	<command name="gotoEditCP">
-		<var name="key_webContentTitle" value="${webContentTitle}" />
+		<if>
+			<isset var="webContentTitleEscapeCharacter" />
+			<then>
+				<var name="key_webContentTitle" value="${webContentTitleEscapeCharacter}" />
+			</then>
+			<else>
+				<var name="key_webContentTitle" value="${webContentTitle}" />
+			</else>
+		</if>
 
 		<execute function="Click" locator1="Toolbar#DISPLAY_STYLE_BUTTON" />
 
