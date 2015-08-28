@@ -701,8 +701,8 @@
 		<execute function="Click" locator1="Wiki#ALL_PAGES_TABLE_ACTIONS_DROPDOWN" />
 		<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
 
-		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#IFRAME" value1="${wikiPageContentEdit}" />
-		<execute function="AssertClick#assertTextClickAtAndWaitCKEditor" locator1="Button@PUBLISH" value1="Publish" />
+		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#BODY_FIELD" value1="${wikiPageContentEdit}" />
+		<execute function="AssertClick#assertTextClickAtAndWaitCKEditor" locator1="Button#PUBLISH" value1="Publish" />
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
 
@@ -712,7 +712,7 @@
 		<execute function="Click" locator1="Wiki#ALL_PAGES_TABLE_ACTIONS_DROPDOWN" />
 		<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
 
-		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#IFRAME" value1="${wikiPageContentEdit}" />
+		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#BODY_FIELD" value1="${wikiPageContentEdit}" />
 
 		<if>
 			<equals arg1="${minorEdit}" arg2="true" />
@@ -924,7 +924,7 @@
 		<execute function="AssertClick" locator1="Wiki#LINK_EDIT" value1="Edit" />
 
 		<execute function="Select" locator1="Wiki#ADD_PAGE_FORMAT_DROPDOWN" value1="Creole" />
-		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#IFRAME" value1="${wikiPage2Link}" />
+		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#BODY_FIELD" value1="${wikiPage2Link}" />
 		<execute function="AssertClick#assertTextClickAtAndWaitCKEditor" locator1="Button#PUBLISH" value1="Publish" />
 
 		<execute function="AssertTextEquals#assertPartialText" locator1="PGWikiWikipage#SUCCESS_MESSAGE" value1="Your request completed successfully." />
@@ -986,7 +986,7 @@
 		<execute function="AssertTextEquals" locator1="PGWikiWikipageRedirect#INFO_MESSAGE" value1="This page is currently redirected to ${wikiPageTitleRename}." />
 		<execute function="AssertClick" locator1="Button#REMOVE_REDIRECT" value1="Remove Redirect" />
 
-		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#IFRAME" value1="${wikiPage2Content}" />
+		<execute function="Type#typeCKEditorWaitForCKEditor" locator1="CKEditor#BODY_FIELD" value1="${wikiPage2Content}" />
 		<execute function="AssertClick#assertTextClickAtAndWaitCKEditor" locator1="Button#PUBLISH" value1="Publish" />
 
 		<execute function="AssertTextEquals#assertPartialText" locator1="PGWikiWikipage#SUCCESS_MESSAGE" value1="Your request completed successfully." />
