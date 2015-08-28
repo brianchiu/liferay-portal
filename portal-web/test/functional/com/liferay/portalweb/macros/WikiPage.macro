@@ -773,6 +773,10 @@
 		<execute function="AssertClick" locator1="Wiki#ALL_PAGES_TABLE_PAGE_NAME" value1="${wikiPageTitle}" />
 	</command>
 
+	<command name="gotoDetails">
+		<execute function="AssertClick" locator1="Link#DETAILS" value1="Details" />
+	</command>
+
 	<command name="gotoDraftPagesPG">
 		<execute function="AssertClick" locator1="Wiki#NAVIGATION_DRAFT_PAGES" value1="Draft Pages" />
 	</command>
@@ -1539,6 +1543,18 @@
 
 	<command name="viewRedirectLinkPG">
 		<execute function="AssertTextEquals" locator1="Wiki#LINK_REDIRECT" value1="${wikiPageRedirectLink}" />
+	</command>
+
+	<command name="viewRSS">
+		<execute function="AssertClick" locator1="Link#RSS" value1="RSS" />
+
+		<execute function="SelectWindow" locator1="title=${wikiPageTitle}" />
+
+		<execute function="AssertTextEquals" locator1="WikiRSS#FEED_TITLE" value1="${wikiPageTitle}" />
+		<execute function="AssertTextEquals" locator1="WikiRSS#FEED_SUBTITLE" value1="${wikiPageTitle}" />
+		<execute function="AssertTextEquals" locator1="WikiRSS#ENTRY_CONTENT" value1="${wikiPageContent}" />
+
+		<execute function="AssertClick" locator1="WikiRSS#ENTRY_TITLE" value1="${wikiPageTitle} ${version}" />
 	</command>
 
 	<command name="viewSaveAsDraftFrontPagePG">
