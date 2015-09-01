@@ -1,5 +1,5 @@
 <definition>
-	<command name="gotoCPLocalized">
+	<command name="gotoControlPanelLocalized">
 		<description message="Navigate to Control Panel > ${portletName}." />
 
 		<if>

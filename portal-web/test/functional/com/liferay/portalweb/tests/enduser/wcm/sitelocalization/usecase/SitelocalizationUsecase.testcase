@@ -430,7 +430,7 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="ProductMenuNavigator#gotoCPLocalized">
+		<execute macro="ProductMenuNavigator#gotoControlPanelLocalized">
 			<var name="controlPanelTranslation" value="Panel de control" />
 			<var name="portletCategoryName" value="Configuración" />
 			<var name="portletName" value="Configuración del Portal" />
