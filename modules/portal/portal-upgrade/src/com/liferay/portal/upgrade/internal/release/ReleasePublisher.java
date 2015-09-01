@@ -69,7 +69,7 @@ public final class ReleasePublisher {
 
 		_bundleContext = bundleContext;
 
-		_logger  = new Logger(bundleContext);
+		_log = new Logger(bundleContext);
 
 		List<Release> releases = _releaseLocalService.getReleases(
 			QueryUtil.ALL_POS, QueryUtil.ALL_POS);
@@ -81,7 +81,8 @@ public final class ReleasePublisher {
 
 	@Deactivate
 	protected void deactivate() {
-		for (ServiceRegistration<Release> serviceRegistration :
+		for (
+			ServiceRegistration<Release> serviceRegistration :
 				_serviceConfiguratorRegistrations.values()) {
 
 			serviceRegistration.unregister();
@@ -96,7 +97,7 @@ public final class ReleasePublisher {
 	}
 
 	private BundleContext _bundleContext;
-	private Logger _logger ;
+	private Logger _log;
 	private ReleaseLocalService _releaseLocalService;
 	private final Map<String, ServiceRegistration<Release>>
 		_serviceConfiguratorRegistrations = new HashMap<>();
