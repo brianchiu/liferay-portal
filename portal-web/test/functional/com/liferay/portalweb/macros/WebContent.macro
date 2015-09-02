@@ -986,7 +986,7 @@
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${webContentTitle}" />
-		<execute function="AssertClick" locator1="NavBar#BASIC_SEARCH_BUTTON" value1="Search" />
+		<execute function="KeyPress" locator1="NavBar#BASIC_SEARCH_FIELD" value1="\RETURN" />
 		<execute function="AssertTextEquals" locator1="WC#SEARCH_TITLE" value1="${webContentTitle}" />
 		<execute function="AssertTextEquals" locator1="WC#SEARCH_FOLDER" value1="${webContentFolder}" />
 	</command>
@@ -996,7 +996,7 @@
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${searchQuery}" />
-		<execute function="AssertClick" locator1="NavBar#BASIC_SEARCH_BUTTON" value1="Search" />
+		<execute function="KeyPress" locator1="NavBar#BASIC_SEARCH_FIELD" value1="\RETURN" />
 		<execute function="AssertTextEquals" locator1="Message#INFO" value1="No web content was found that matched the keywords: ${searchQuery}." />
 		<execute function="AssertTextNotPresent" locator1="WC#SEARCH_TITLE" value1="${webContentTitle}" />
 		<execute function="AssertTextNotPresent" locator1="WC#SEARCH_BODY" value1="${webContentContent}" />
