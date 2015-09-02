@@ -247,14 +247,7 @@
 	</command>
 
 	<command name="saveCP">
-		<execute function="SelectFrame" value1="relative=top" />
-		<execute function="SelectFrame" locator1="DDMEditStructure#IFRAME" />
-
-		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
-		<execute function="SelectFrame" />
-
-		<execute function="SelectFrame" locator1="DDMEditStructure#IFRAME" />
-		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
+		<execute macro="DDLDataDefinition#saveCP" />
 
 		<if>
 			<isset var="addRoleViewPermissions" />
@@ -311,6 +304,7 @@
 	</command>
 
 	<command name="viewCP">
+		<var name="key_ddlDataDefinitionName" value="${structureName}" />
 		<var name="key_structureName" value="${structureName}" />
 
 		<if>
@@ -328,6 +322,9 @@
 		</if>
 
 		<execute function="AssertClick" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_NAME" value1="${structureName}" />
+
+		<execute function="SelectFrameTop" />
+		<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME" />
 
 		<execute macro="CPWebcontentStructuresAddstructure#showDetails" />
 
