@@ -570,7 +570,7 @@
 </tr>
 <tr>
 	<td>STRUCTURES</td>
-	<td>//a[@role='menuitem']//span[contains(.,'Structures')] | //a[@role='menuitem' and contains(.,'Structures')]</td>
+	<td>//a[@role='menuitem']//span[contains(.,'Structures')] | //a[@role='menuitem' and .='Structures']</td>
 	<td></td>
 </tr>
 <tr>
@@ -590,7 +590,7 @@
 </tr>
 <tr>
 	<td>TEMPLATES</td>
-	<td>//a[@role='menuitem']//span[contains(.,'Templates')] | //a[@role='menuitem' and contains(.,'Templates')]</td>
+	<td>//a[@role='menuitem']//span[contains(.,'Templates')] | //a[@role='menuitem' and .='Templates']</td>
 	<td></td>
 </tr>
 <tr>
