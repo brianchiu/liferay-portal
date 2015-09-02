@@ -737,6 +737,7 @@
 
 		<execute macro="WebContent#viewCP">
 			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle"><![CDATA[<!-- -->]]></var>
 			<var name="webContentTitleEscapeCharacter"><![CDATA[&lt;!-- --&gt;]]></var>
 		</execute>
 	</command>
