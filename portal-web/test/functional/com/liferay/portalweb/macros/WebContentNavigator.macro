@@ -40,7 +40,7 @@
 	</command>
 
 	<command name="gotoManageStructures">
-		<execute function="Click" locator1="Icon#VERTICAL_ELLIPSIS" />
+		<execute function="Click" locator1="Icon#HEADER_VERTICAL_ELLIPSIS" />
 		<execute function="AssertClick" locator1="MenuItem#STRUCTURES" value1="Structures" />
 
 		<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME" />
