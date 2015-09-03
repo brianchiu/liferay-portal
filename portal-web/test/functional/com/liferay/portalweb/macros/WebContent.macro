@@ -856,8 +856,7 @@
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
 		<execute function="Check" locator1="WC#ENTRY_DESCRIPTIVE_CHECKBOX" />
-		<execute function="AssertClick" locator1="Toolbar#ACTIONS" value1="Actions" />
-		<execute function="AssertClick" locator1="MenuItem#EXPIRE" value1="Expire" />
+		<execute function="Click" locator1="Icon#EXPIRE" />
 	</command>
 
 	<command name="expirePGViaWCD">
@@ -1028,8 +1027,7 @@
 			<condition function="IsElementPresent#pauseIsElementPresent" locator1="WC#ENTRY_DESCRIPTIVE_THUMBNAIL_GENERIC" />
 			<then>
 				<execute function="Check" locator1="Checkbox#SELECT_ALL" />
-				<execute function="AssertClick" locator1="Toolbar#ACTIONS" value1="Actions" />
-				<execute function="AssertClick" locator1="MenuItem#MOVE_TO_THE_RECYCLE_BIN" value1="Move to the Recycle Bin" />
+				<execute function="Click" locator1="Icon#DELETE" />
 				<execute function="AssertTextEquals#assertPartialText" locator1="Message#SUCCESS_RECYCLE_BIN" value1="moved to the Recycle Bin. Undo" />
 			</then>
 		</while>
