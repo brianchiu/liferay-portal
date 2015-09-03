@@ -206,6 +206,7 @@
 	</command>
 
 	<command name="editSubstructureDefaultValuesCP">
+		<var name="key_ddlDataDefinitionName" value="${substructureName}" />
 		<var name="key_structureName" value="${substructureName}" />
 
 		<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${substructureName}" />
