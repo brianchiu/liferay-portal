@@ -270,7 +270,7 @@
 </tr>
 <tr>
 	<td>FOLDER_WCM</td>
-	<td>//ul[contains(@class,'dropdown-menu')]/li/a[.='Folder']</td>			
+	<td>//ul[contains(@class,'dropdown-menu')]/li/a[.='Folder']</td>
 	<td></td>
 </tr>
 <tr>
