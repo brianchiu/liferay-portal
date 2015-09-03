@@ -24,6 +24,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>BASIC_SEARCH</td>
+	<td>//button[contains(@type,'submit')]/span[@class='icon-search']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>BODY_VERTICAL_ELLIPSIS</td>
 	<td>//div[contains(@class,'portlet-content-container')]//span[contains(@class,'icon-ellipsis-vertical')]</td>
 	<td></td>
