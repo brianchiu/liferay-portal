@@ -43,7 +43,7 @@
 
 				<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME" />
 
-				<var name="key_structureName" value="${parentStructureName}" />
+				<var name="key_ddlDataDefinitionName" value="${parentStructureName}" />
 
 				<execute function="AssertClick" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_CHOOSE_BUTTON" value1="Choose" />
 				<execute function="SelectFrame" value1="relative=top" />
@@ -98,7 +98,7 @@
 		<execute function="SelectFrame" locator1="DDMEditStructure#IFRAME" />
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 
-		<var name="key_structureName" value="${structureName}" />
+		<var name="key_ddlDataDefinitionName" value="${structureName}" />
 
 		<execute function="AssertClickNoError" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_CHOOSE_BUTTON" value1="Choose" />
 		<execute function="Confirm" value1="Selecting a new structure changes the available input fields and available templates. Do you want to proceed?" />
@@ -110,7 +110,6 @@
 
 	<command name="advancedSearchCP">
 		<var name="key_ddlDataDefinitionName" value="${structureName}" />
-		<var name="key_structureName" value="${structureName}" />
 
 		<execute function="AssertTextEquals" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_NAME" value1="${structureName}" />
 		<execute function="Click" locator1="Icon#ADVANCED_SEARCH" />
@@ -207,7 +206,6 @@
 
 	<command name="editSubstructureDefaultValuesCP">
 		<var name="key_ddlDataDefinitionName" value="${substructureName}" />
-		<var name="key_structureName" value="${substructureName}" />
 
 		<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${substructureName}" />
 		<execute function="AssertClick" locator1="NavBar#BASIC_SEARCH_BUTTON" value1="Search" />
@@ -307,7 +305,6 @@
 
 	<command name="viewCP">
 		<var name="key_ddlDataDefinitionName" value="${structureName}" />
-		<var name="key_structureName" value="${structureName}" />
 
 		<if>
 			<isset var="structureName" />

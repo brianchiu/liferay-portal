@@ -63,7 +63,7 @@
 
 					<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME" />
 
-					<var name="key_structureName" value="${structureName}" />
+					<var name="key_ddlDataDefinitionName" value="${structureName}" />
 
 					<execute function="AssertClick" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_CHOOSE_BUTTON" value1="Choose" />
 
