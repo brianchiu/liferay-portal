@@ -238,7 +238,7 @@
 		</execute>
 
 		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Dynamic Data List" />
+			<var name="portletName" value="Dynamic Data Lists" />
 			<var name="siteScopeName" value="Global" />
 		</execute>
 
@@ -256,7 +256,7 @@
 		<execute macro="DDLDataDefinition#saveCP" />
 
 		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Dynamic Data List" />
+			<var name="portletName" value="Dynamic Data Lists" />
 			<var name="siteScopeName" value="Global" />
 		</execute>
 
