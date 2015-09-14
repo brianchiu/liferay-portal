@@ -1,0 +1,98 @@
+<definition>
+	<command name="gotoControlPanelLocalized">
+		<description message="Navigate to Control Panel > ${portletName}." />
+
+		<if>
+			<condition function="IsElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_SIDEBAR_OPEN" />
+			<then>
+				<execute function="Click" locator1="ProductMenu#CONTROL_PANEL_SIDE_NAVIGATION_TOGGLE" />
+			</then>
+		</if>
+
+		<var name="key_controlPanelTranslation" value="${controlPanelTranslation}" />
+
+		<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_TRANSLATION_CONTROL_PANEL_NAVIGATION" value1="${controlPanelTranslation}" />
+
+		<var name="key_portletName" value="${portletName}" />
+
+		<if>
+			<condition function="IsElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_PANEL_MENU_ITEM" />
+			<then>
+				<var name="key_portletCategoryName" value="${portletCategoryName}" />
+
+				<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_CONTROL_PANEL_PANEL_TITLE" value1="${portletCategoryName}" />
+			</then>
+		</if>
+
+		<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_MENU_ITEM" value1="${portletName}" />
+	</command>
+
+	<command name="gotoMyAccount">
+		<description message="Navigate to My Account > ${portletName}." />
+
+		<if>
+			<condition function="IsElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_SIDEBAR_OPEN" />
+			<then>
+				<execute function="Click" locator1="ProductMenu#CONTROL_PANEL_SIDE_NAVIGATION_TOGGLE" />
+			</then>
+		</if>
+
+		<var name="key_mySpaceTranslation" value="${mySpaceTranslation}" />
+
+		<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_TRANSLATION_MY_SPACE_NAVIGATION" value1="${mySpaceTranslation}" />
+
+		<var name="key_portletName" value="${portletName}" />
+
+		<if>
+			<condition function="IsElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_PANEL_MENU_ITEM" />
+			<then>
+				<var name="key_portletCategoryName" value="${myAccountTranslation}" />
+
+				<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_MY_SPACE_PANEL_TITLE" value1="${myAccountTranslation}" />
+			</then>
+		</if>
+
+		<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_MENU_ITEM" value1="${portletName}" />
+	</command>
+
+	<command name="gotoSites">
+		<description message="Navigate to Sites > ${portletName}." />
+
+		<var name="key_portletCategoryName" value="${portletCategoryName}" />
+
+		<if>
+			<isset var="portletCategoryName" />
+			<then>
+				<if>
+					<condition function="IsElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_SIDEBAR_OPEN" />
+					<then>
+						<execute function="Click" locator1="ProductMenu#CONTROL_PANEL_SIDE_NAVIGATION_TOGGLE" />
+					</then>
+				</if>
+
+				<execute function="Click" locator1="ProductMenu#PRODUCT_MENU_PANEL_SITE_SELECTOR" />
+
+				<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_ALL_SITES_PANEL_TITLE" value1="${portletCategoryName}" />
+			</then>
+			<else>
+				<if>
+					<condition function="IsElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_SIDEBAR_OPEN" />
+					<then>
+						<execute function="Click" locator1="ProductMenu#CONTROL_PANEL_SIDE_NAVIGATION_TOGGLE" />
+					</then>
+				</if>
+
+				<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_CONTROL_PANEL_PANEL_TITLE" value1="${portletCategoryName}" />
+			</else>
+		</if>
+
+		<if>
+			<isset var="portletName" />
+			<then>
+				<var name="key_portletName" value="${portletName}" />
+
+				<execute function="AssertClick" locator1="ProductMenu#PRODUCT_MENU_PANEL_MENU_ITEM" value1="${portletName}" />
+			</then>
+		</if>
+	</command>
+</definition>
