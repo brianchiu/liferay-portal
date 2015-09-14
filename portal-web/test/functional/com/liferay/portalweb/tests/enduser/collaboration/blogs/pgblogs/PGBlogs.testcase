@@ -1547,7 +1547,7 @@
 		</execute>
 	</command>
 
-	<command known-issues="LPS-56822" name="ViewBlogsEntryRSS" priority="4">
+	<command name="ViewBlogsEntryRSS" priority="4">
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Blogs Page" />
 		</execute>
