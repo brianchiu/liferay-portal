@@ -7,7 +7,7 @@
 		<execute function="Click" locator1="Button#PLUS" />
 		<execute function="AssertClick" locator1="MenuItem#BASIC_WEB_CONTENT" value1="Basic Web Content" />
 
-		<execute function="Pause" locator1="3000" />
+		<execute function="Pause" locator1="30000" />
 	</command>
 
 	<command name="gotoAddWithStructureCP">
