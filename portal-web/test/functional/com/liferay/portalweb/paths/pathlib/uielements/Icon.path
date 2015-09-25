@@ -135,7 +135,7 @@
 </tr>
 <tr>
 	<td>LIST_VERTICAL_ELLIPSIS</td>
-	<td>//tr[td[contains(.,'${key_assetEntry}')]]//span[contains(@class,'icon-ellipsis-vertical')]</td>
+	<td>//tr[td[contains(.,'${key_listEntry}')]]//span[contains(@class,'icon-ellipsis-vertical')]</td>
 	<td></td>
 </tr>
 <tr>
