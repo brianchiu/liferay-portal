@@ -301,20 +301,21 @@
 	<command name="removeTagViaBlogsPG">
 		<var name="key_entryTitle" value="${entryTitle}" />
 
-		<execute function="AssertClick" locator1="PGBlogs#ENTRY_EDIT" value1="Edit" />
+		<execute macro="BlogsNavigator#gotoEditPG">
+			<var name="entryTitle" value="${entryTitle}" />
+		</execute>
 
-		<execute function="Click" locator1="BlogsEditEntry#SETTINGS_TAB" />
-
-		<var name="key_tagName" value="${tagName1}" />
-
-		<execute function="Click" locator1="PGBlogsEdit#CATEGORIZATION_TAG_REMOVE" />
-		<execute function="AssertClick" locator1="PGBlogsEdit#PUBLISH_BUTTON" value1="Publish" />
-
-		<execute function="AssertTextEquals" locator1="PGBlogs#SUCCESS_MESSAGE" value1="Your request completed successfully." />
+		<execute macro="BlogsNavigator#gotoSettings" />
 
 		<var name="key_tagName" value="${tagName1}" />
 
-		<execute function="AssertTextNotPresent" locator1="PGBlogs#TAG" value1="${tagName1}" />
+		<execute macro="AssetCategorization#removeTag">
+			<var name="tagName" value="${tagName}" />
+		</execute>
+
+		<execute macro="Button#clickPublish" />
+
+		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
 
 	<command name="searchTagCP">
