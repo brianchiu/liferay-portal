@@ -35,12 +35,12 @@
 </tr>
 <tr>
 	<td>BODY_VERTICAL_ELLIPSIS</td>
-	<td>//div[contains(@class,'portlet-content-container')]//span[contains(@class,'icon-ellipsis-vertical')]</td>
+	<td>//div[contains(@class,'portlet') and contains(@class,'container')]//span[contains(@class,'icon-ellipsis-vertical')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>BODY_VERTICAL_ELLIPSIS_2</td>
-	<td>xpath=(//div[contains(@class,'portlet-content-container')]//span[contains(@class,'icon-ellipsis-vertical')])[2]</td>
+	<td>xpath=(//div[contains(@class,'portlet') and contains(@class,'container')]//span[contains(@class,'icon-ellipsis-vertical')])[2]</td>
 	<td></td>
 </tr>
 <tr>
