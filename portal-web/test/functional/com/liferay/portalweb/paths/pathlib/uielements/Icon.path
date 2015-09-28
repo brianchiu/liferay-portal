@@ -144,6 +144,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>MERGE</td>
+	<td>//a[contains(@id,'merge')]//span[contains(@class,'icon-random')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>MOVE</td>
 	<td>//a[contains(@href,'editEntry')]/span[contains(@class,'icon-move')]</td>
 	<td></td>
