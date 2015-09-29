@@ -727,6 +727,7 @@
 
 	<command name="deleteCP">
 		<execute macro="WebContent#moveToRecycleBinCP">
+			<var name="assetType" value="Web Content Article" />
 			<var name="webContentTitle" value="${webContentTitle}" />
 			<var name="webContentTitleEscapeCharacter" value="${webContentTitleEscapeCharacter}" />
 		</execute>
