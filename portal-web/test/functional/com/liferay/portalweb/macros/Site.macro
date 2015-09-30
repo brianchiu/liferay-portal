@@ -321,7 +321,7 @@
 		<execute function="Type" locator1="TextInput#KEYWORDS" value1="${userScreenName}" />
 		<execute function="AssertClick" locator1="Button#SEARCH" value1="Search" />
 		<execute function="AssertTextEquals" locator1="SiteMembershipsAssignUserRoles#USER_TABLE_SCREEN_NAME" value1="${userScreenName}" />
-		<execute function="Check" locator1="SiteMembershipsAssignUserRoles#USER_TABLE_USER_NAME" />
+		<execute function="Check" locator1="SiteMembershipsAssignUserRoles#USER_TABLE_CHECKBOX" />
 		<execute function="AssertClick" locator1="Button#UPDATE_ASSOCIATIONS" value1="Update Associations" />
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 
