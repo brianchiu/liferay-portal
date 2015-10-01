@@ -4,7 +4,7 @@
 		<execute function="AssertClick" locator1="MenuItem#TEMPLATES" value1="Templates" />
 
 		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
-		<execute function="AssertClick" locator1="DDMSelectTemplate#TOOLBAR_ADD_TEMPLATE" value1="Add" />
+		<execute function="Click" locator1="Button#PLUS" />
 		<execute function="SelectFrame" />
 
 		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
