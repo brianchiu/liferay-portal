@@ -903,8 +903,9 @@
 
 		<var name="key_childChildSiteName" value="${childChildSiteName}" />
 		<var name="key_childSiteName" value="${childSiteName}" />
+		<var method="StringUtil#upperCase('${childSiteName}')" name="childSiteNameUppercase" />
 
-		<execute function="AssertTextEquals" locator1="SitesChildSiteChildSite#SITE_NAME" value1="${childSiteName}" />
+		<execute function="AssertTextEquals" locator1="SitesChildSiteChildSite#SITE_NAME" value1="${childSiteNameUppercase}" />
 		<execute function="AssertTextEquals" locator1="SitesChildSiteChildSite#SITE_TABLE_NAME" value1="${childChildSiteName}" />
 		<execute function="AssertTextEquals" locator1="SitesChildSiteChildSite#SITE_TABLE_TYPE" value1="${siteType}" />
 		<execute function="AssertTextEquals" locator1="SitesChildSiteChildSite#SITE_TABLE_MEMBERS_USERS" value1="1 User" />
@@ -927,8 +928,9 @@
 
 		<var name="key_childSiteName" value="${childSiteName}" />
 		<var name="key_siteName" value="${siteName}" />
+		<var method="StringUtil#upperCase('${siteName}')" name="siteNameUppercase" />
 
-		<execute function="AssertTextEquals" locator1="SitesChildSite#SITE_NAME" value1="${siteName}" />
+		<execute function="AssertTextEquals" locator1="SitesChildSite#SITE_NAME" value1="${siteNameUppercase}" />
 		<execute function="AssertTextEquals" locator1="SitesChildSite#SITE_TABLE_NAME" value1="${childSiteName}" />
 		<execute function="AssertTextEquals" locator1="SitesChildSite#SITE_TABLE_TYPE" value1="${siteType}" />
 		<execute function="AssertTextEquals" locator1="SitesChildSite#SITE_TABLE_MEMBERS_USERS" value1="1 User" />
