@@ -134,6 +134,7 @@
 	</command>
 
 	<command name="deleteCP">
+		<var name="key_ddlDataDefinitionName" value="${structureName}" />
 		<var name="key_structureName" value="${structureName}" />
 
 		<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${structureName}" />
