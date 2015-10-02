@@ -574,6 +574,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>UNDO</td>
+	<td>//a[contains(.,'Undo')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>UNLOCK</td>
 	<td>//button[contains(.,'Unlock')]</td>
 	<td></td>
