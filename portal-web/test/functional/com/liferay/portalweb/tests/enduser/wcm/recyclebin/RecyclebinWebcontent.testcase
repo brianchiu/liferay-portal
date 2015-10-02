@@ -284,7 +284,7 @@
 		</execute>
 	</command>
 
-	<command name="UndoMoveToRecycleBin">
+	<command name="UndoMoveToRecycleBin" priority="3">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
@@ -464,7 +464,7 @@
 		</execute>
 	</command>
 
-	<command name="ViewRecycleBinEntry" priority="4">
+	<command name="ViewRecycleBinEntryViaSuccessMessageLink" priority="3">
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 		</execute>
