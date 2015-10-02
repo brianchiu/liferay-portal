@@ -1052,7 +1052,7 @@
 	<command name="selectTemplateCP">
 		<execute function="AssertClick" locator1="CPWebcontentEditwebcontent#SELECT_TEMPLATE" value1="Select" />
 
-		<var name="key_templateName" value="${templateName}" />
+		<var name="key_ddlTemplateName" value="${templateName}" />
 
 		<execute function="SelectFrame" locator1="CPWebcontentSelecttemplate#TEMPLATES_IFRAME" />
 		<execute function="AssertClickNoError" locator1="DDMSelectTemplate#TEMPLATE_TABLE_CHOOSE_BUTTON" value1="Choose" />

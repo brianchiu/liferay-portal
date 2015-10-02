@@ -50,7 +50,7 @@
 </tr>
 <tr>
 	<td>DATA_DEFINITION</td>
-	<td>//div[label[contains(.,'Data Definition')]]//input[@type='text']</td>
+	<td>//div[label[contains(@for,'DDMPortlet_structure')]]/input[@type='text']</td>
 	<td></td>
 </tr>
 <tr>
