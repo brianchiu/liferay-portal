@@ -114,7 +114,7 @@
 		<if>
 			<isset var="addRoleViewPermissions" />
 			<then>
-				<var name="key_templateName" value="${templateName}" />
+				<var name="key_ddlTemplateName" value="${templateName}" />
 
 				<execute function="Click" locator1="DDMSelectTemplate#TEMPLATE_TABLE_ELLIPSIS" />
 				<execute function="AssertClick" locator1="MenuItem#PERMISSIONS" value1="Permissions" />
@@ -187,7 +187,7 @@
 		<execute function="Click" locator1="Icon#HEADER_VERTICAL_ELLIPSIS" />
 		<execute function="AssertClick" locator1="MenuItem#TEMPLATES" value1="Templates" />
 
-		<var name="key_templateName" value="${templateName}" />
+		<var name="key_ddlTemplateName" value="${templateName}" />
 
 		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
 		<execute function="Type" locator1="DDMSelectTemplate#TOOLBAR_SEARCH_FIELD" value1="${templateName}" />
@@ -253,7 +253,7 @@
 
 		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
 
-		<var name="key_templateName" value="${templateName}" />
+		<var name="key_ddlTemplateName" value="${templateName}" />
 
 		<execute function="AssertTextEquals" locator1="DDMSelectTemplate#TEMPLATE_TABLE_NAME" value1="${templateName}" />
 		<execute function="AssertTextEquals" locator1="DDMSelectTemplate#TEMPLATE_TABLE_DESCRIPTION" value1="${templateDescription}" />

@@ -453,7 +453,7 @@
 			</var>
 		</execute>
 
-		<var name="key_templateName" value="Advertisement Template Name" />
+		<var name="key_ddlTemplateName" value="Advertisement Template Name" />
 
 		<execute function="Click" locator1="DDMSelectTemplate#TEMPLATE_TABLE_ELLIPSIS" />
 		<execute function="Click" locator1="MenuItem#PERMISSIONS" />
@@ -486,7 +486,7 @@
 			</var>
 		</execute>
 
-		<var name="key_templateName" value="Press Release Template Name" />
+		<var name="key_ddlTemplateName" value="Press Release Template Name" />
 
 		<execute function="Click" locator1="DDMSelectTemplate#TEMPLATE_TABLE_ELLIPSIS" />
 		<execute function="Click" locator1="MenuItem#PERMISSIONS" />
@@ -672,7 +672,7 @@
 
 		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
 
-		<var name="key_templateName" value="Press Release Template Name" />
+		<var name="key_ddlTemplateName" value="Press Release Template Name" />
 
 		<execute function="AssertElementNotPresent" locator1="DDMSelectTemplate#TEMPLATE_TABLE_NAME" />
 
@@ -751,7 +751,7 @@
 
 		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
 
-		<var name="key_templateName" value="Advertisement Template Name" />
+		<var name="key_ddlTemplateName" value="Advertisement Template Name" />
 
 		<execute function="AssertElementNotPresent" locator1="DDMSelectTemplate#TEMPLATE_TABLE_NAME" />
 
