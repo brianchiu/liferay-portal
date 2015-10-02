@@ -464,6 +464,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>SAVE_ATTACHMENT</td>
+	<td>//div[contains(@id,'selectedFileName')]//button[contains(.,'Save')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>SAVE</td>
 	<td>//button[contains(.,'Save')] | //div[@class='button-holder ']/button[contains(.,'Save')]</td>
 	<td></td>
