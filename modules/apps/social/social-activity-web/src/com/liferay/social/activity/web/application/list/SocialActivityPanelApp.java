@@ -17,7 +17,7 @@ package com.liferay.social.activity.web.application.list;
 import com.liferay.application.list.BaseControlPanelEntryPanelApp;
 import com.liferay.application.list.PanelApp;
 import com.liferay.application.list.constants.PanelCategoryKeys;
-import com.liferay.portal.model.Portlet;
+import com.liferay.portal.service.PortletLocalService;
 import com.liferay.social.activity.web.constants.SocialActivityPortletKeys;
 
 import org.osgi.service.component.annotations.Component;
@@ -41,12 +41,11 @@ public class SocialActivityPanelApp extends BaseControlPanelEntryPanelApp {
 		return SocialActivityPortletKeys.SOCIAL_ACTIVITY;
 	}
 
-	@Reference(
-		target = "(javax.portlet.name=" + SocialActivityPortletKeys.SOCIAL_ACTIVITY + ")",
-		unbind = "-"
-	)
-	protected void setPortlet(Portlet portlet) {
-		super.setPortlet(portlet);
+	@Reference(unbind = "-")
+	protected void setPortletLocalService(
+		PortletLocalService portletLocalService) {
+
+		this.portletLocalService = portletLocalService;
 	}
 
 }

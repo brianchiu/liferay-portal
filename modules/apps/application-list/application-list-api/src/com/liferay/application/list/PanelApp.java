@@ -15,7 +15,6 @@
 package com.liferay.application.list;
 
 import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.model.Portlet;
 
 import javax.portlet.PortletURL;
 
@@ -25,8 +24,6 @@ import javax.servlet.http.HttpServletRequest;
  * @author Adolfo Pérez
  */
 public interface PanelApp extends PanelEntry {
-
-	public Portlet getPortlet();
 
 	public String getPortletId();
 

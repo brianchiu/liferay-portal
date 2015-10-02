@@ -18,7 +18,7 @@ import com.liferay.application.list.BaseControlPanelEntryPanelApp;
 import com.liferay.application.list.PanelApp;
 import com.liferay.application.list.constants.PanelCategoryKeys;
 import com.liferay.polls.constants.PollsPortletKeys;
-import com.liferay.portal.model.Portlet;
+import com.liferay.portal.service.PortletLocalService;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -41,12 +41,11 @@ public class PollsPanelApp extends BaseControlPanelEntryPanelApp {
 		return PollsPortletKeys.POLLS;
 	}
 
-	@Reference(
-		target = "(javax.portlet.name=" + PollsPortletKeys.POLLS + ")",
-		unbind = "-"
-	)
-	protected void setPortlet(Portlet portlet) {
-		super.setPortlet(portlet);
+	@Reference(unbind = "-")
+	protected void setPortletLocalService(
+		PortletLocalService portletLocalService) {
+
+		this.portletLocalService = portletLocalService;
 	}
 
 }

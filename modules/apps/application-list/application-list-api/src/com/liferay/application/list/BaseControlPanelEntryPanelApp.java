@@ -52,16 +52,6 @@ public abstract class BaseControlPanelEntryPanelApp implements PanelApp {
 				getPortletId());
 	}
 
-	public Portlet getPortlet() {
-		if (_portlet != null) {
-			return _portlet;
-		}
-
-		_portlet = portletLocalService.getPortletById(getPortletId());
-
-		return _portlet;
-	}
-
 	@Override
 	public PortletURL getPortletURL(HttpServletRequest request)
 		throws PortalException {
@@ -108,12 +98,10 @@ public abstract class BaseControlPanelEntryPanelApp implements PanelApp {
 		return null;
 	}
 
-	protected void setPortlet(Portlet portlet) {
-		_portlet = portlet;
+	protected Portlet getPortlet() {
+		return portletLocalService.getPortletById(getPortletId());
 	}
 
 	protected PortletLocalService portletLocalService;
-
-	private Portlet _portlet;
 
 }

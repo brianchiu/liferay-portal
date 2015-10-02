@@ -17,7 +17,7 @@ package com.liferay.workflow.definition.link.web.application.list;
 import com.liferay.application.list.BaseControlPanelEntryPanelApp;
 import com.liferay.application.list.PanelApp;
 import com.liferay.application.list.constants.PanelCategoryKeys;
-import com.liferay.portal.model.Portlet;
+import com.liferay.portal.service.PortletLocalService;
 import com.liferay.workflow.definition.link.web.portlet.constants.WorkflowDefinitionLinkPortletKeys;
 
 import org.osgi.service.component.annotations.Component;
@@ -43,12 +43,11 @@ public class WorkflowDefinitionLinkPanelApp
 			WORKFLOW_DEFINITION_LINK_CONTROL_PANEL;
 	}
 
-	@Reference(
-		target = "(javax.portlet.name=" + WorkflowDefinitionLinkPortletKeys.WORKFLOW_DEFINITION_LINK_CONTROL_PANEL + ")",
-		unbind = "-"
-	)
-	protected void setPortlet(Portlet portlet) {
-		super.setPortlet(portlet);
+	@Reference(unbind = "-")
+	protected void setPortletLocalService(
+		PortletLocalService portletLocalService) {
+
+		this.portletLocalService = portletLocalService;
 	}
 
 }

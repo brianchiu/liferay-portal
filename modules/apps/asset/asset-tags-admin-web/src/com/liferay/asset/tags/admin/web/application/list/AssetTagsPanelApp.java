@@ -18,7 +18,7 @@ import com.liferay.application.list.BaseControlPanelEntryPanelApp;
 import com.liferay.application.list.PanelApp;
 import com.liferay.application.list.constants.PanelCategoryKeys;
 import com.liferay.asset.tags.admin.web.constants.AssetTagsAdminPortletKeys;
-import com.liferay.portal.model.Portlet;
+import com.liferay.portal.service.PortletLocalService;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -41,12 +41,11 @@ public class AssetTagsPanelApp extends BaseControlPanelEntryPanelApp {
 		return AssetTagsAdminPortletKeys.ASSET_TAGS_ADMIN;
 	}
 
-	@Reference(
-		target = "(javax.portlet.name=" + AssetTagsAdminPortletKeys.ASSET_TAGS_ADMIN + ")",
-		unbind = "-"
-	)
-	protected void setPortlet(Portlet portlet) {
-		super.setPortlet(portlet);
+	@Reference(unbind = "-")
+	protected void setPortletLocalService(
+		PortletLocalService portletLocalService) {
+
+		this.portletLocalService = portletLocalService;
 	}
 
 }

@@ -18,7 +18,7 @@ import com.liferay.application.list.BaseControlPanelEntryPanelApp;
 import com.liferay.application.list.PanelApp;
 import com.liferay.application.list.constants.PanelCategoryKeys;
 import com.liferay.configuration.admin.web.constants.ConfigurationAdminPortletKeys;
-import com.liferay.portal.model.Portlet;
+import com.liferay.portal.service.PortletLocalService;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -41,12 +41,11 @@ public class ConfigurationAdminPanelApp extends BaseControlPanelEntryPanelApp {
 		return ConfigurationAdminPortletKeys.CONFIGURATION_ADMIN;
 	}
 
-	@Reference(
-		target = "(javax.portlet.name=" + ConfigurationAdminPortletKeys.CONFIGURATION_ADMIN + ")",
-		unbind = "-"
-	)
-	protected void setPortlet(Portlet portlet) {
-		super.setPortlet(portlet);
+	@Reference(unbind = "-")
+	protected void setPortletLocalService(
+		PortletLocalService portletLocalService) {
+
+		this.portletLocalService = portletLocalService;
 	}
 
 }
