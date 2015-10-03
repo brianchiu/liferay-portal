@@ -184,8 +184,13 @@
 	<td></td>
 </tr>
 <tr>
+	<td>GOOGLE_APPS_API_KEY</td>
+	<td>//input[contains(@id,'googleAppsAPIKey')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>GOOGLE_CLIENT_ID</td>
-	<td>//input[contains(@id,'google-client-id')]</td>
+	<td>//input[contains(@id,'google-client-id')] | //input[contains(@id,'googleClientId')]</td>
 	<td></td>
 </tr>
 <tr>
