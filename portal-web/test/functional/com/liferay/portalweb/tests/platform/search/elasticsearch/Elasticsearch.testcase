@@ -31,14 +31,6 @@
 			<var name="pageName" value="Elasticsearch Page" />
 		</execute>
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="Elasticsearch Page" />
-		</execute>
-
-		<execute macro="Portlet#addPG">
-			<var name="portletName" value="Search" />
-		</execute>
-
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Message Boards" />
 		</execute>
