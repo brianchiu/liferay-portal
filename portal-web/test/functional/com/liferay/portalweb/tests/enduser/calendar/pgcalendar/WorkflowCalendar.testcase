@@ -27,10 +27,6 @@
 	</set-up>
 
 	<tear-down>
-		<execute macro="User#firstLoginPG" />
-
-		<execute macro="User#tearDownCP" />
-
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Calendar Page" />
 		</execute>
@@ -44,25 +40,9 @@
 
 		<execute macro="Calendar#tearDown" />
 
-		<execute macro="Calendar#tearDownColor" />
-
-		<execute macro="CalendarResource#tearDown" />
-
-		<execute macro="CalendarConfiguration#tearDown" />
-
 		<execute macro="Page#tearDownPG" />
 
-		<execute macro="Workflow#tearDownPortalWorkflow" />
-
 		<execute macro="Workflow#tearDownSiteWorkflow" />
-
-		<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
-			<var name="workflowDefinitionTitle" value="Single Approver Edited" />
-		</execute>
-
-		<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
-
-		<execute macro="Site#tearDownCP" />
 	</tear-down>
 
 	<command name="ApproveEventWithInvitedUser" priority="5">
