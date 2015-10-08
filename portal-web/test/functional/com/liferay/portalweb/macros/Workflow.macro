@@ -222,13 +222,13 @@
 	</command>
 
 	<command name="configurePortalWorkflow">
-		<execute function="Select" locator1="CPPortalWorkflowconfigurationDefaultconfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
+		<execute function="Select" locator1="WorkflowConfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
 		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
 
 	<command name="configureSiteWorkflow">
-		<execute function="Select" locator1="CPSiteWorkflowconfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
+		<execute function="Select" locator1="WorkflowConfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
 		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
@@ -464,9 +464,9 @@
 		<var name="defaultWorkflow" value="No Workflow" />
 
 		<if>
-			<condition function="IsElementPresent" locator1="CPSiteWorkflowconfiguration#RESOURCE_TABLE_KNOWLEDGE_BASE_ARTICLE_SELECT" />
+			<condition function="IsElementPresent" locator1="WorkflowConfiguration#RESOURCE_TABLE_KNOWLEDGE_BASE_ARTICLE_SELECT" />
 			<then>
-				<execute function="Select" locator1="CPSiteWorkflowconfiguration#RESOURCE_TABLE_KNOWLEDGE_BASE_ARTICLE_SELECT" value1="${defaultWorkflow}" />
+				<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_KNOWLEDGE_BASE_ARTICLE_SELECT" value1="${defaultWorkflow}" />
 			</then>
 		</if>
 
