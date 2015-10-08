@@ -439,8 +439,9 @@
 			<var name="portletName" value="Workflow Configuration" />
 		</execute>
 
-		<var name="noWorkflow" value="No Workflow" />
+		<var name="noWorkflow" value="Default: No Workflow" />
 
+		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_CALENDAR_EVENT_SELECT" value1="${defaultWorkflow}" />
 		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_PAGE_REVISION_SELECT" value1="${noWorkflow}" />
 		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_USER_SELECT" value1="${noWorkflow}" />
 		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_BLOGS_ENTRY_SELECT" value1="${noWorkflow}" />
@@ -455,7 +456,7 @@
 			<var name="portletName" value="Workflow Configuration" />
 		</execute>
 
-		<var name="defaultWorkflow" value="No Workflow" />
+		<var name="defaultWorkflow" value="Default: No Workflow" />
 
 		<if>
 			<condition function="IsElementPresent" locator1="WorkflowConfiguration#RESOURCE_TABLE_KNOWLEDGE_BASE_ARTICLE_SELECT" />
@@ -464,6 +465,7 @@
 			</then>
 		</if>
 
+		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_CALENDAR_EVENT_SELECT" value1="${defaultWorkflow}" />
 		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_PAGE_REVISION_SELECT" value1="${defaultWorkflow}" />
 		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_BLOGS_ENTRY_SELECT" value1="${defaultWorkflow}" />
 		<execute function="Select" locator1="WorkflowConfiguration#RESOURCE_TABLE_COMMENTS_SELECT" value1="${defaultWorkflow}" />
