@@ -138,7 +138,7 @@
 		<execute macro="Page#gotoPG">
 			<var name="pageName" value="Calendar Page" />
 		</execute>
-		
+
 		<execute macro="CalendarEvent#viewSiteRSVPWithUnapprovedWorkflow">
 			<var name="eventTitle" value="Calendar Event Title" />
 			<var name="siteCalendarName" value="Liferay" />
