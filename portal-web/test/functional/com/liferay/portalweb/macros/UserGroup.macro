@@ -95,12 +95,10 @@
 		<execute function="AssertTextEquals" locator1="SitePages#PAGE_TREE_PAGE_LINK_1" value1="${sitePageName}" />
 	</command>
 
-	<command name="addSiteCP">
+	<command name="addSiteCP">	
 		<execute macro="UserGroup#gotoActionsCmd">
 			<var name="userGroupName" value="${userGroupName}" />
 		</execute>
-
-		<var name="key_userGroupName" value="${userGroupName}" />
 
 		<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
 
@@ -226,6 +224,8 @@
 	</command>
 
 	<command name="gotoActionsCmd">
+		<var name="key_userGroupName" value="${userGroupName}" />
+
 		<execute function="Type" locator1="TextInput#KEYWORDS" value1="${userGroupName}" />
 		<execute function="AssertClick" locator1="Button#SEARCH" value1="Search" />
 
