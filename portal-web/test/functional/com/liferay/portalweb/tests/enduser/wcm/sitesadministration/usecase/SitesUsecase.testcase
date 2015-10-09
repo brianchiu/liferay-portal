@@ -98,27 +98,7 @@
 		</execute>
 	</command>
 
-	<command name="ViewDefaultGlobalScopeLandingPage" priority="4">
-		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Sites" />
-		</execute>
-
-		<execute macro="Site#addBlankCP">
-			<var name="siteName" value="Site Name" />
-		</execute>
-
-		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Web Content" />
-			<var name="siteScopeName" value="Global" />
-		</execute>
-
-		<execute macro="Site#viewGlobalLandingDefault">
-			<var name="portletName" value="Web Content" />
-			<var name="siteName" value="Global" />
-		</execute>
-	</command>
-
-	<command name="WebContentAdministrationSitesTemplatePermissionPersistence" priority="3">
+	<command name="SitesTemplatePermissionPersistence" priority="3">
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Sites" />
 		</execute>
@@ -318,5 +298,25 @@
 
 		<execute function="AssertTextEquals" locator1="PGPollsdisplay#ERROR_MESSAGE_1_COLUMN_1" value1="You do not have the roles required to access this portlet." />
 		<execute function="AssertTextEquals" locator1="PGPollsdisplay#ERROR_MESSAGE_1_COLUMN_2" value1="You do not have the roles required to access this portlet." />
+	</command>
+
+	<command name="ViewDefaultGlobalScopeLandingPage" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Sites" />
+		</execute>
+
+		<execute macro="Site#addBlankCP">
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+			<var name="siteScopeName" value="Global" />
+		</execute>
+
+		<execute macro="Site#viewGlobalLandingDefault">
+			<var name="portletName" value="Web Content" />
+			<var name="siteName" value="Global" />
+		</execute>
 	</command>
 </definition>
