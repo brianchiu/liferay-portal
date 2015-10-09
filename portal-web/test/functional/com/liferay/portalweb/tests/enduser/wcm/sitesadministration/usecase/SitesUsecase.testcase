@@ -27,7 +27,7 @@
 		</execute>
 	</tear-down>
 
-	<command name="AddPageAndChildPageTranslations" priority="4">
+	<command name="AddPageAndChildPageTranslations" priority="3">
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Sites" />
 		</execute>
@@ -118,7 +118,7 @@
 		</execute>
 	</command>
 
-	<command name="WebContentAdministrationSitesTemplatePermissionPersistence" priority="4">
+	<command name="WebContentAdministrationSitesTemplatePermissionPersistence" priority="3">
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Sites" />
 		</execute>
