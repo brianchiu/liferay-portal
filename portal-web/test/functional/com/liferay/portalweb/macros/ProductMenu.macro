@@ -115,6 +115,10 @@
 		</execute>
 	</command>
 
+	<command name="gotoPersonalSite" summary="Navigate to Product Menu > Profile" >
+		<execute function="Click" locator1="ProductMenu#USER_PROFILE" />
+	</command>
+
 	<command name="gotoSite" summary="Navigate to Product Menu > Sites > Back Arrow > ${site}">
 		<execute macro="ProductMenuHelper#gotoSites" />
 
@@ -139,6 +143,14 @@
 
 		<execute macro="ProductMenuHelper#gotoPortlet">
 			<var name="portlet" value="${portlet}" />
+		</execute>
+	</command>
+
+	<command name="gotoSitesConfigurationOnly" summary="Navigate to Product Menu > Sites > Configuration">
+		<execute macro="ProductMenuHelper#gotoSites" />
+
+		<execute macro="ProductMenuHelper#expandCategory">
+			<var name="category" value="Configuration" />
 		</execute>
 	</command>
 
@@ -188,17 +200,5 @@
 		<execute macro="ProductMenuHelper#gotoPortlet">
 			<var name="portlet" value="${portlet}" />
 		</execute>
-	</command>
-
-	<command name="gotoSitesConfigurationOnly" summary="Navigate to Product Menu > Sites > Configuration">
-		<execute macro="ProductMenuHelper#gotoSites" />
-
-		<execute macro="ProductMenuHelper#expandCategory">
-			<var name="category" value="Configuration" />
-		</execute>
-	</command>
-
-	<command name="gotoPersonalSite" summary="Navigate to Product Menu > Profile" >
-		<execute function="Click" locator1="ProductMenu#USER_PROFILE" />
 	</command>
 </definition>
