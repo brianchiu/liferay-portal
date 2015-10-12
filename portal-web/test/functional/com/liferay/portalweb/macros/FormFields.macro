@@ -39,8 +39,10 @@
 		<execute function="Check" locator1="FormFields#CHECKBOX" />
 	</command>
 
-	<command name="enableRepeatableField">
-		<execute function="Click" locator1="FormFields#REPEATABLE_TOGGLE" />
+	<command name="enableSwitcher">
+		<var name="key_fieldName" value="${fieldName}" />
+
+		<execute function="Click" locator1="FormFields#SWITCHER" />
 	</command>
 
 	<command name="save">

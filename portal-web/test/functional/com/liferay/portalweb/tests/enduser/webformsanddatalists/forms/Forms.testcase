@@ -641,7 +641,9 @@
 
 		<execute macro="FormFields#enableAdvancedOptions" />
 
-		<execute macro="FormFields#enableRepeatableField" />
+		<execute macro="FormFields#enableSwitcher">
+			<var name="fieldName" value="repeatable" />
+		</execute>
 
 		<execute macro="FormFields#save" />
 
