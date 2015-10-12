@@ -97,22 +97,11 @@
 	</command>
 
 	<command name="CannotViewSiteSettingsInUserPersonalSite" priority="4">
-		<execute macro="Page#gotoConfigurationCP">
-			<var name="siteScopeName" value="Test Test" />
-		</execute>
+		<execute macro="ProductMenu#gotoPersonalSite" />
+		
+		<execute macro="ProductMenu#gotoSitesConfigurationOnly" />
 
-		<execute function="AssertElementNotPresent" locator1="Home#SITE_ADMINISTRATION_CONFIGURATION_SITE_SETTINGS" value1="Site Settings" />
-
-		<execute macro="Page#gotoConfigurationCP">
-			<var name="portletName" value="Site Settings" />
-		</execute>
-
-		<execute function="Click" locator1="Home#SCOPE_SELECTOR" />
-
-		<var name="key_siteScopeName" value="Test Test" />
-
-		<execute function="Click" locator1="Home#SCOPE_SELECTOR_MENULIST_ITEM" />
-		<execute function="AssertElementNotPresent" locator1="Home#SITE_ADMINISTRATION_CONFIGURATION_SITE_SETTINGS" value1="Site Settings" />
+		<execute function="AssertElementNotPresent" locator1="ProductMenu#PRODUCT_MENU_PANEL_MENU_ITEM" value1="Site Settings" />
 	</command>
 
 	<command name="ImpersonatingAdministratorandOwner" priority="4">
