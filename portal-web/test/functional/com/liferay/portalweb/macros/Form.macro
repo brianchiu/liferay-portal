@@ -8,6 +8,8 @@
 		<var name="key_columnLineNumber" value="${columnLineNumber}" />
 		<var name="key_rowNumber" value="${rowNumber}" />
 
+		<execute function="MouseOver#mouseOverNotVisible" locator1="Form#ADD_COLUMN_RIGHT" />
+
 		<execute function="DragAndDrop#dragAndDropToObjectNotVisible" locator1="Form#ADD_COLUMN_RIGHT" locator2="Form#ADD_COLUMN_LINE" value1="" />
 	</command>
 
