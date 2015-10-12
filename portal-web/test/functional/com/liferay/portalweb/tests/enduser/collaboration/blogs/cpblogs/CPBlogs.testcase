@@ -20,7 +20,7 @@
 		<var name="entryTitle2" value="Blogs Entry2 Title" />
 		<var name="entryTitle3" value="Blogs Entry3 Title" />
 
-		<task summary="Add a blogs entry called '${entryTitle1}' with content '${entryContent1}'.">
+		<task summary="Add a blogs entry called '${entryTitle1}' with content '${entryContent1}'">
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Blogs" />
 			</execute>
@@ -31,7 +31,7 @@
 			</execute>
 		</task>
 
-		<task summary="Add a blogs entry called '${entryTitle2}' with content '${entryContent2}'.">
+		<task summary="Add a blogs entry called '${entryTitle2}' with content '${entryContent2}'">
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Blogs" />
 			</execute>
@@ -42,7 +42,7 @@
 			</execute>
 		</task>
 
-		<task summary="Add a blogs entry called '${entryTitle3}' with content '${entryContent3}'.">
+		<task summary="Add a blogs entry called '${entryTitle3}' with content '${entryContent3}'">
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Blogs" />
 			</execute>
@@ -53,7 +53,7 @@
 			</execute>
 		</task>
 
-		<task summary="Ensure blogs entry '${entryTitle1}' with content '${entryContent1}' can be found.">
+		<task summary="Ensure blogs entry '${entryTitle1}' with content '${entryContent1}' can be found">
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Blogs" />
 			</execute>
@@ -68,7 +68,7 @@
 			</execute>
 		</task>
 
-		<task summary="Ensure blogs entry '${entryTitle2}' with content '${entryContent2}' can be found.">
+		<task summary="Ensure blogs entry '${entryTitle2}' with content '${entryContent2}' can be found">
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Blogs" />
 			</execute>
@@ -83,7 +83,7 @@
 			</execute>
 		</task>
 
-		<task summary="Ensure blogs entry '${entryTitle3}' with content '${entryContent3}' can be found.">
+		<task summary="Ensure blogs entry '${entryTitle3}' with content '${entryContent3}' can be found">
 			<execute macro="Page#gotoContentCP">
 				<var name="portletName" value="Blogs" />
 			</execute>
