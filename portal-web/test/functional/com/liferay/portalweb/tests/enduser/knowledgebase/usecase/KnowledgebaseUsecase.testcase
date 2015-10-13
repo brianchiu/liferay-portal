@@ -1737,8 +1737,8 @@
 			<var method="TestPropsUtil#get('email.password.1')" name="userPassword" />
 		</execute>
 
-		<execute macro="Page#gotoCP">
-			<var name="portletName" value="Portal Instances" />
+		<execute macro="ProductMenu#gotoControlPanelSystem">
+			<var name="portlet" value="Portal Instances" />
 		</execute>
 
 		<execute macro="PortalInstances#editCP">
