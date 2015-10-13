@@ -21,7 +21,7 @@
 	<command name="addCP">
 		<var name="key_adtType" value="${adtType}" />
 
-		<execute function="AssertTextEquals" locator1="Message#INFO" value1="There are no templates." />
+		<execute function="AssertTextEquals" locator1="Message#EMPTY" value1="There are no templates." />
 		<execute function="Click" locator1="Button#PLUS" />
 		<execute function="AssertClick" locator1="MenuItem#ADT_TEMPLATE" value1="${adtType} Template" />
 
@@ -150,7 +150,7 @@
 			</then>
 		</if>
 
-		<execute function="AssertTextEquals" locator1="Message#INFO" value1="There are no templates." />
+		<execute function="AssertTextEquals" locator1="Message#EMPTY" value1="There are no templates." />
 	</command>
 
 	<command name="viewADTviaPortletPG">
