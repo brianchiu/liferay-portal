@@ -95,7 +95,7 @@
 		<execute function="AssertTextEquals" locator1="SitePages#PAGE_TREE_PAGE_LINK_1" value1="${sitePageName}" />
 	</command>
 
-	<command name="addSiteCP">	
+	<command name="addSiteCP">
 		<execute macro="UserGroup#gotoActionsCmd">
 			<var name="userGroupName" value="${userGroupName}" />
 		</execute>
