@@ -925,7 +925,7 @@
 		<execute function="Click" locator1="PasswordPolicies#DEFAULT_PASSWORD_POLICY_TABLE_ACTIONS_BUTTON" />
 		<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
 
-		<execute function="Check" locator1="Checkbox#SYNTAX_CHECKING_ENABLED" />
+		<execute function="Check" locator1="Checkbox#ENABLE_SYNTAX_CHECKING" />
 		<execute function="Uncheck" locator1="Checkbox#ALLOW_DICTIONARY_WORDS" />
 		<execute function="Type" locator1="TextInput#MINIMUM_ALPHA_NUMERIC" value1="0" />
 		<execute function="Type" locator1="TextInput#MINIMUM_LENGTH" value1="0" />
