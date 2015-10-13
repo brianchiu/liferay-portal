@@ -123,45 +123,6 @@
 		</execute>
 	</command>
 
-	<command name="AddBlogsEntryComment" priority="4">
-		<var name="entryComment" value="Blogs Entry Comment Body" />
-		<var name="entryContent" value="Blogs Entry Content" />
-		<var name="entryTitle" value="Blogs Entry Title" />
-
-		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Blogs" />
-		</execute>
-
-		<execute macro="Blogs#addEntry">
-			<var name="entryContent" value="${entryContent}" />
-			<var name="entryTitle" value="${entryTitle}" />
-		</execute>
-
-		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Blogs" />
-		</execute>
-
-		<execute macro="BlogsNavigator#gotoEntryCP">
-			<var name="entryContent" value="${entryContent}" />
-			<var name="entryTitle" value="${entryTitle}" />
-		</execute>
-
-		<execute macro="BlogsEntryComment#add">
-			<var name="entryComment" value="${entryComment}" />
-		</execute>
-
-		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Blogs" />
-		</execute>
-
-		<execute macro="BlogsEntryComment#viewCP">
-			<var name="commentCount" value="1" />
-			<var name="entryComment" value="${entryComment}" />
-			<var name="entryContent" value="${entryContent}" />
-			<var name="entryTitle" value="${entryTitle}" />
-		</execute>
-	</command>
-
 	<command name="AddBlogsEntryContentNull" priority="4">
 		<var name="entryContent" value="" />
 		<var name="entryTitle" value="Blogs Entry Title" />
@@ -259,7 +220,7 @@
 		</execute>
 	</command>
 
-	<command name="DeleteBlogsEntries" priority="4">
+	<command name="DeleteBlogsEntries" priority="5">
 		<var name="blogsEntryCounterList" value="1,2,3" />
 
 		<for list="${blogsEntryCounterList}" param="entryCount" >
@@ -311,7 +272,7 @@
 		</for>
 	</command>
 
-	<command name="DeleteBlogsEntryComment" priority="4">
+	<command name="DeleteBlogsEntryComment" priority="5">
 		<var name="entryComment" value="Blogs Entry Comment Body" />
 		<var name="entryContent" value="Blogs Entry Content" />
 		<var name="entryTitle" value="Blogs Entry Title" />
@@ -365,7 +326,7 @@
 		</execute>
 	</command>
 
-	<command name="EditBlogsEntryComment" priority="4">
+	<command name="EditBlogsEntryComment" priority="5">
 		<var name="entryComment" value="Blogs Entry Comment Body" />
 		<var name="entryCommentEdit" value="Blogs Entry Comment Body Edit" />
 		<var name="entryContent" value="Blogs Entry Content" />
@@ -420,7 +381,7 @@
 		</execute>
 	</command>
 
-	<command name="EditBlogsEntryContent" priority="4">
+	<command name="EditBlogsEntryContent" priority="5">
 		<var name="entryContent" value="Blogs Entry Content" />
 		<var name="entryContentEdit" value="Blogs Entry Content Edit" />
 		<var name="entryTitle" value="Blogs Entry Title" />
@@ -464,7 +425,7 @@
 		</execute>
 	</command>
 
-	<command name="EditBlogsEntryTitle" priority="4">
+	<command name="EditBlogsEntryTitle" priority="5">
 		<var name="entryContent" value="Blogs Entry Content" />
 		<var name="entryTitle" value="Blogs Entry Title" />
 		<var name="entryTitleEdit" value="Blogs Entry Title Edit" />
@@ -761,33 +722,6 @@
 			<var name="entrySubtitle" value="Blogs Entry Subtitle" />
 			<var name="entryTitle" value="Blogs Entry Title" />
 			<var name="uploadFileName" value="Document_1.jpg" />
-		</execute>
-	</command>
-
-	<command name="ViewBlogsEntryViewCount" priority="4">
-		<var name="entryContent" value="Blogs Entry Content" />
-		<var name="entryTitle" value="Blogs Entry Title" />
-
-		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Blogs" />
-		</execute>
-
-		<execute macro="Blogs#addEntry">
-			<var name="entryContent" value="${entryContent}" />
-			<var name="entryTitle" value="${entryTitle}" />
-		</execute>
-
-		<execute macro="Page#gotoContentCP">
-			<var name="portletName" value="Blogs" />
-		</execute>
-
-		<execute macro="BlogsEntry#viewViewCountCP">
-			<var name="entryTitle" value="${entryTitle}" />
-			<var name="entryViewCount" value="0" />
-		</execute>
-
-		<execute macro="BlogsEntry#viewViewCountCP">
-			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
 	</command>
 
