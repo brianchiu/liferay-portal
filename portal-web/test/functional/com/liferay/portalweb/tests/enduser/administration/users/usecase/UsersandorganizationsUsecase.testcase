@@ -959,6 +959,7 @@
 
 		<execute macro="User#editPasswordCP">
 			<var name="newPassword" value="tryingHARD" />
+			<var name="resetPassword" value="tryingHARDER" />
 			<var name="syntaxCheckingEnabled" value="true" />
 			<var name="userEmailAddress" value="test1@liferay.com" />
 			<var name="userScreenName" value="test1" />
@@ -985,6 +986,7 @@
 
 		<execute macro="User#editPasswordCP">
 			<var name="newPassword" value="abcABC" />
+			<var name="resetPassword" value="abcdABCD" />
 			<var name="syntaxCheckingEnabled" value="true" />
 			<var name="userEmailAddress" value="test1@liferay.com" />
 			<var name="userScreenName" value="test1" />
@@ -996,6 +998,7 @@
 
 		<execute macro="User#editPasswordCP">
 			<var name="newPassword" value="123ABC" />
+			<var name="resetPassword" value="1234ABCD" />
 			<var name="syntaxCheckingEnabled" value="true" />
 			<var name="userEmailAddress" value="test1@liferay.com" />
 			<var name="userScreenName" value="test1" />
@@ -1048,6 +1051,7 @@
 
 		<execute macro="User#editPasswordCP">
 			<var name="newPassword" value="12ABcd" />
+			<var name="resetPassword" value="123ABcd" />
 			<var name="syntaxCheckingEnabled" value="true" />
 			<var name="userEmailAddress" value="test1@liferay.com" />
 			<var name="userScreenName" value="test1" />
