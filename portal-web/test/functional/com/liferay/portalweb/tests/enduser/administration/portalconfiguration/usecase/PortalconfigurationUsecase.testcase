@@ -231,10 +231,6 @@
 			<var name="portlet" value="Portal Instances" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoControlPanelSystem">
-			<var name="portlet" value="Portal Instances" />
-		</execute>
-
 		<execute macro="PortalInstances#deactivatePortalInstance">
 			<var name="virtualHost" value="www.able.com" />
 		</execute>
