@@ -3,7 +3,7 @@
 		<if>
 			<condition function="IsElementPresent" locator1="ControlMenu#USER_AVATAR_IMAGE" />
 			<then>
-				<execute function="Click" locator1="ControlMenu#USER_NAME" />
+				<execute function="Click" locator1="ControlMenu#USER_AVATAR_IMAGE" />
 
 				<execute function="Click" locator1="ControlMenu#USER_SIGN_OUT" />
 			</then>
@@ -14,6 +14,29 @@
 		<execute macro="Navigator#openURL" />
 
 		<execute macro="SignOut#_signOut" />
+	</command>
+
+	<command name="signOutOfPortalInstance">
+		<execute macro="SignOut#signOutOfSpecificURL">
+			<var name="url" value="http://localhost:8080" />
+		</execute>
+
+		<execute macro="SignIn#signInSpecificURL">
+			<var name="url" value="http://localhost:8080" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSystem">
+			<var name="portlet" value="Portal Instances" />
+		</execute>
+
+		<var name="portalURL" property-value="portal.url" />
+
+		<var method="StringUtil#replace('${portalURL}', 'http://', '')" name="portalURL" />
+		<var method="StringUtil#replace('${portalURL}', ':8080', '')" name="portalURL" />
+
+		<execute macro="PortalInstances#deleteCP">
+			<var name="virtualHost" value="${portalURL}" />
+		</execute>
 	</command>
 
 	<command name="signOutOfSite">
