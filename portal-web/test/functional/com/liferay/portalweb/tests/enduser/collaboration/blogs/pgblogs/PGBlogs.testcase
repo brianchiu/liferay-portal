@@ -518,6 +518,7 @@
 
 	<command name="DeleteBlogsEntries" priority="4">
 		<var name="blogsEntryCounterList" value="1,2,3" />
+		<var name="blogsEntryCounterList2" value="3,2,1" />
 
 		<for list="${blogsEntryCounterList}" param="entryCount" >
 			<execute macro="Page#gotoPG">
@@ -546,17 +547,12 @@
 			</execute>
 		</for>
 
-		<for list="${blogsEntryCounterList}" param="entryCount" >
+		<for list="${blogsEntryCounterList2}" param="entryCount">
 			<execute macro="Page#gotoPG">
 				<var name="pageName" value="Blogs Page" />
 			</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
-			</execute>
-
-			<execute macro="BlogsNavigator#moveToRecycleBinPG">
+			<execute macro="BlogsEntry#moveToRecycleBinPG">
 				<var name="assetType" value="Blogs Entry" />
 				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
 				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
@@ -595,7 +591,7 @@
 		</execute>
 
 		<execute macro="BlogsEntryComment#add">
-			<var name="entryContent" value="${entryContent}" />
+			<var name="entryComment" value="${entryComment}" />
 		</execute>
 
 		<execute macro="Page#gotoPG">
@@ -822,24 +818,10 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<execute macro="BlogsNavigator#moveToRecycleBinPG">
+		<execute macro="BlogsEntry#moveToRecycleBinPG">
 			<var name="assetType" value="Blogs Entry" />
 			<var name="entryContent" value="Blogs Entry Content" />
 			<var name="entryTitle" value="Blogs Entry Title" />
-		</execute>
-	</command>
-
-	<command name="PreviewBlogsEntry" priority="4">
-		<var name="entryContent" value="Blogs Entry Content" />
-		<var name="entryTitle" value="Blogs Entry Title" />
-
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="${pageName}" />
-		</execute>
-
-		<execute macro="BlogsEntry#previewPG">
-			<var name="entryContent" value="${entryContent}" />
-			<var name="entryTitle" value="${entryTitle}" />
 		</execute>
 	</command>
 
@@ -903,10 +885,11 @@
 		</execute>
 
 		<execute macro="BlogsNavigator#gotoEntryCP">
+			<var name="entryStatus" value="Draft" />
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<execute macro="BlogsEntry#viewDraft">
+		<execute macro="BlogsEntry#viewEntry">
 			<var name="entryContent" value="Blogs Entry Content" />
 			<var name="entrySubtitle" value="Blogs Entry Subtitle" />
 			<var name="entryTitle" value="Blogs Entry Title" />
@@ -929,10 +912,11 @@
 		</execute>
 
 		<execute macro="BlogsNavigator#gotoEntryCP">
+			<var name="entryStatus" value="Draft" />
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<execute macro="BlogsEntry#viewDraft">
+		<execute macro="BlogsEntry#viewEntry">
 			<var name="entryContent" value="Blogs Entry Content" />
 			<var name="entrySubtitle" value="Blogs Entry Subtitle" />
 			<var name="entryTitle" value="Blogs Entry Title" />
