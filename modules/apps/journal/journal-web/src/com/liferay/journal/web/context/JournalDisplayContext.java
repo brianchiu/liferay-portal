@@ -128,6 +128,12 @@ public class JournalDisplayContext {
 			portletURL.setParameter("ddmStructureKey", ddmStructureKey);
 		}
 
+		String deltaEntry = ParamUtil.getString(_request, "deltaEntry");
+
+		if (Validator.isNotNull(deltaEntry)) {
+			portletURL.setParameter("deltaEntry", deltaEntry);
+		}
+
 		String displayStyle = ParamUtil.getString(_request, "displayStyle");
 
 		if (Validator.isNotNull(displayStyle)) {
