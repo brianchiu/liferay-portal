@@ -128,6 +128,12 @@ public class JournalDisplayContext {
 			portletURL.setParameter("ddmStructureKey", ddmStructureKey);
 		}
 
+		String deltaEntry = ParamUtil.getString(_request, "deltaEntry");
+
+		if (Validator.isNotNull(deltaEntry)) {
+			portletURL.setParameter("deltaEntry", deltaEntry);
+		}
+
 		String displayStyle = ParamUtil.getString(_request, "displayStyle");
 
 		if (Validator.isNotNull(displayStyle)) {
@@ -219,6 +225,9 @@ public class JournalDisplayContext {
 			if (ArrayUtil.contains(displayViews, displayStyle)) {
 				portalPreferences.setValue(
 					JournalPortletKeys.JOURNAL, "display-style", displayStyle);
+
+				request.setAttribute(
+					WebKeys.SINGLE_PAGE_APPLICATION_CLEAR_CACHE, Boolean.TRUE);
 			}
 		}
 

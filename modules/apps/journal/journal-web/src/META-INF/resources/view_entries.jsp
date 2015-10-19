@@ -304,16 +304,10 @@ String displayStyle = journalDisplayContext.getDisplayStyle();
 							User userDisplay = UserLocalServiceUtil.fetchUserById(curArticle.getUserId());
 							%>
 
-							<liferay-util:buffer var="statusHtml">
-								<aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= curArticle.getStatus() %>" />
-							</liferay-util:buffer>
-
-							<liferay-frontend:card
+							<liferay-frontend:vertical-card
 								actionJsp='<%= journalDisplayContext.isShowEditActions() ? "/article_action.jsp" : null %>'
 								actionJspServletContext="<%= application %>"
 								cssClass="entry-display-style"
-								footer="<%= statusHtml %>"
-								header='<%= LanguageUtil.format(request, "x-ago-by-x", new String[] {LanguageUtil.getTimeDescription(locale, System.currentTimeMillis() - curArticle.getModifiedDate().getTime(), true), HtmlUtil.escape(curArticle.getUserName())}, false) %>'
 								imageUrl='<%= Validator.isNotNull(articleImageURL) ? articleImageURL : themeDisplay.getPathThemeImages() + "/file_system/large/article.png" %>'
 								resultRow="<%= row %>"
 								rowChecker="<%= entriesChecker %>"
@@ -321,7 +315,15 @@ String displayStyle = journalDisplayContext.getDisplayStyle();
 								smallImageUrl="<%= userDisplay != null ? userDisplay.getPortraitURL(themeDisplay) : UserConstants.getPortraitURL(themeDisplay.getPathImage(), true, 0, null) %>"
 								title="<%= HtmlUtil.escape(curArticle.getTitle(locale)) %>"
 								url="<%= rowURL != null ? rowURL.toString() : null %>"
-							/>
+							>
+								<liferay-frontend:vertical-card-header>
+									<%= LanguageUtil.format(request, "x-ago-by-x", new String[] {LanguageUtil.getTimeDescription(locale, System.currentTimeMillis() - curArticle.getModifiedDate().getTime(), true), HtmlUtil.escape(curArticle.getUserName())}, false) %>
+								</liferay-frontend:vertical-card-header>
+
+								<liferay-frontend:vertical-card-footer>
+									<aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= curArticle.getStatus() %>" />
+								</liferay-frontend:vertical-card-footer>
+							</liferay-frontend:vertical-card>
 						</liferay-ui:search-container-column-text>
 					</c:when>
 					<c:otherwise>
@@ -436,15 +438,14 @@ String displayStyle = journalDisplayContext.getDisplayStyle();
 						%>
 
 						<liferay-ui:search-container-column-text colspan="<%= 2 %>">
-							<liferay-frontend:card
+							<liferay-frontend:horizontal-card
 								actionJsp='<%= journalDisplayContext.isShowEditActions() ? "/folder_action.jsp" : null %>'
 								actionJspServletContext="<%= application %>"
-								horizontal="<%= true %>"
+								icon="icon-folder-close-alt"
 								imageCSSClass="icon-monospaced"
-								imageUrl="icon-folder-close-alt"
 								resultRow="<%= row %>"
 								rowChecker="<%= entriesChecker %>"
-								title="<%= HtmlUtil.escape(curFolder.getName()) %>"
+								text="<%= HtmlUtil.escape(curFolder.getName()) %>"
 								url="<%= rowURL.toString() %>"
 							/>
 						</liferay-ui:search-container-column-text>
@@ -500,5 +501,5 @@ String displayStyle = journalDisplayContext.getDisplayStyle();
 		</c:choose>
 	</liferay-ui:search-container-row>
 
-	<liferay-ui:search-iterator displayStyle="<%= displayStyle %>" markupView="lexicon" searchContainer="<%= articleSearchContainer %>" />
+	<liferay-ui:search-iterator displayStyle="<%= displayStyle %>" markupView="lexicon" resultRowSplitter="<%= new JournalResultRowSplitter() %>" searchContainer="<%= articleSearchContainer %>" />
 </liferay-ui:search-container>
