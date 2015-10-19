@@ -26,7 +26,6 @@ import com.liferay.portal.kernel.repository.model.FileEntry;
 import com.liferay.portal.kernel.repository.model.FileVersion;
 import com.liferay.portal.kernel.repository.model.Folder;
 import com.liferay.portal.kernel.util.ContentTypes;
-import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.kernel.util.ListUtil;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.MimeTypesUtil;
@@ -201,12 +200,10 @@ public class DLServiceVerifyProcess extends VerifyProcess {
 
 			});
 		actionableDynamicQuery.setPerformActionMethod(
-			new ActionableDynamicQuery.PerformActionMethod() {
+			new ActionableDynamicQuery.PerformActionMethod<DLFileVersion>() {
 
 				@Override
-				public void performAction(Object object) {
-					DLFileVersion dlFileVersion = (DLFileVersion)object;
-
+				public void performAction(DLFileVersion dlFileVersion) {
 					InputStream inputStream = null;
 
 					try {
@@ -331,12 +328,10 @@ public class DLServiceVerifyProcess extends VerifyProcess {
 			DLFileEntryLocalServiceUtil.getActionableDynamicQuery();
 
 		actionableDynamicQuery.setPerformActionMethod(
-			new ActionableDynamicQuery.PerformActionMethod() {
+			new ActionableDynamicQuery.PerformActionMethod<DLFileEntry>() {
 
 				@Override
-				public void performAction(Object object) {
-					DLFileEntry dlFileEntry = (DLFileEntry)object;
-
+				public void performAction(DLFileEntry dlFileEntry) {
 					if (dlFileEntry.isInTrash()) {
 						return;
 					}
@@ -517,49 +512,12 @@ public class DLServiceVerifyProcess extends VerifyProcess {
 	protected void renameDuplicateTitle(DLFileEntry dlFileEntry)
 		throws PortalException {
 
-		String title = dlFileEntry.getTitle();
-		String titleExtension = StringPool.BLANK;
-		String titleWithoutExtension = dlFileEntry.getTitle();
+		String uniqueTitle = DLFileEntryLocalServiceUtil.getUniqueTitle(
+			dlFileEntry.getGroupId(), dlFileEntry.getFolderId(),
+			dlFileEntry.getFileEntryId(), dlFileEntry.getTitle(),
+			dlFileEntry.getExtension());
 
-		if (title.endsWith(
-				StringPool.PERIOD.concat(dlFileEntry.getExtension()))) {
-
-			titleExtension = dlFileEntry.getExtension();
-			titleWithoutExtension = FileUtil.stripExtension(title);
-		}
-
-		for (int i = 1;;) {
-			String uniqueTitle =
-				titleWithoutExtension + StringPool.UNDERLINE +
-					String.valueOf(i);
-
-			if (Validator.isNotNull(titleExtension)) {
-				uniqueTitle = uniqueTitle.concat(
-					StringPool.PERIOD.concat(titleExtension));
-			}
-
-			String uniqueFileName = DLUtil.getSanitizedFileName(
-				uniqueTitle, dlFileEntry.getExtension());
-
-			try {
-				DLFileEntryLocalServiceUtil.validateFile(
-					dlFileEntry.getGroupId(), dlFileEntry.getFolderId(),
-					dlFileEntry.getFileEntryId(), uniqueFileName, uniqueTitle);
-
-				renameTitle(dlFileEntry, uniqueTitle);
-
-				return;
-			}
-			catch (PortalException pe) {
-				if (!(pe instanceof DuplicateFolderNameException) &&
-					 !(pe instanceof DuplicateFileException)) {
-
-					throw pe;
-				}
-
-				i++;
-			}
-		}
+		renameTitle(dlFileEntry, uniqueTitle);
 	}
 
 	protected DLFileEntry renameTitle(DLFileEntry dlFileEntry, String newTitle)

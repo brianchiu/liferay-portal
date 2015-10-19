@@ -72,7 +72,10 @@ if (translating) {
 	redirect = currentURL;
 }
 
-if (ddlDisplayContext.isAdminPortlet()) {
+if (recordSet != null) {
+	renderResponse.setTitle(recordSet.getName(locale));
+}
+else if (ddlDisplayContext.isAdminPortlet()) {
 	portletDisplay.setShowBackIcon(true);
 	portletDisplay.setURLBack(redirect);
 

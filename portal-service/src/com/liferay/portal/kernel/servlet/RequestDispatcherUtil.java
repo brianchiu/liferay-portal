@@ -39,6 +39,18 @@ public class RequestDispatcherUtil {
 			new HttpServletRequestWrapper(request) {
 
 				@Override
+				public String getHeader(String name) {
+					if (name.equals(HttpHeaders.IF_MODIFIED_SINCE) ||
+						name.equals(HttpHeaders.IF_NONE_MATCH) ||
+						name.equals(HttpHeaders.LAST_MODIFIED)) {
+
+						return null;
+					}
+
+					return super.getHeader(name);
+				}
+
+				@Override
 				public String getMethod() {
 					return HttpMethods.GET;
 				}
