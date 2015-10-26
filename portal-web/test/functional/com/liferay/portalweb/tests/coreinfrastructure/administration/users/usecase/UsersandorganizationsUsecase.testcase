@@ -465,19 +465,13 @@
 
 		<execute function="AssertTextEquals" locator1="Sites#SITE_TABLE_NAME" value1="Organization Name 2" />
 
-		<execute macro="Page#gotoPagesCP">
-			<var name="portletName" value="Site Pages" />
+		<execute macro="ProductMenu#viewNoSite">
+			<var name="site" value="Organization Name 1" />
 		</execute>
 
-		<execute function="Click" locator1="Home#SCOPE_SELECTOR" />
-
-		<var name="key_siteScopeName" value="Organization Name 1" />
-
-		<execute function="AssertTextNotPresent" locator1="Home#SCOPE_SELECTOR_MENULIST_ITEM" value1="${siteScopeName}" />
-
-		<var name="key_siteScopeName" value="Organization Name 2" />
-
-		<execute function="AssertTextEquals" locator1="Home#SCOPE_SELECTOR_MENULIST_ITEM" value1="Organization Name 2" />
+		<execute macro="ProductMenu#viewNoSite">
+			<var name="site" value="Organization Name 2" />
+		</execute>
 
 		<execute macro="Page#openURL" />
 
