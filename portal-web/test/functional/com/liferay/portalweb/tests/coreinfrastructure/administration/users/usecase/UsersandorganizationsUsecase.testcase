@@ -389,9 +389,7 @@
 			<var name="orgType" value="Regular Organization" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoControlPanelUsers">
-			<var name="portlet" value="Users and Organizations" />
-		</execute>
+		<execute macro="Navigator#gotoBack" />
 
 		<execute macro="Organization#viewCP">
 			<var name="orgName" value="Organization Name 2" />
