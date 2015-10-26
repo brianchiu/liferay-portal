@@ -268,6 +268,7 @@ AUI.add(
 						firstReminder: calendarBooking.firstReminder,
 						firstReminderType: calendarBooking.firstReminderType,
 						hasChildCalendarBookings: calendarBooking.hasChildCalendarBookings,
+						hasWorkflowInstanceLink: calendarBooking.hasWorkflowInstanceLink,
 						instanceIndex: calendarBooking.instanceIndex,
 						location: calendarBooking.location,
 						parentCalendarBookingId: calendarBooking.parentCalendarBookingId,
@@ -770,10 +771,10 @@ AUI.add(
 							recurrence: schedulerEvent.get('recurrence'),
 							secondReminder: schedulerEvent.get('secondReminder'),
 							secondReminderType: schedulerEvent.get('secondReminderType'),
-							titleMap: instance.getLocalizationMap(LString.unescapeHTML(schedulerEvent.get('content'))),
 							serviceContext: {
 								languageId: themeDisplay.getLanguageId()
-							}
+							},
+							titleMap: instance.getLocalizationMap(LString.unescapeHTML(schedulerEvent.get('content')))
 						}
 					},
 					{
@@ -830,16 +831,16 @@ AUI.add(
 							recurrence: schedulerEvent.get('recurrence'),
 							secondReminder: schedulerEvent.get('secondReminder'),
 							secondReminderType: schedulerEvent.get('secondReminderType'),
+							serviceContext: {
+								languageId: themeDisplay.getLanguageId()
+							},
 							startTimeDay: startDate.getDate(),
 							startTimeHour: startDate.getHours(),
 							startTimeMinute: startDate.getMinutes(),
 							startTimeMonth: startDate.getMonth(),
 							startTimeYear: startDate.getFullYear(),
 							timeZoneId: instance.USER_TIME_ZONE,
-							titleMap: instance.getLocalizationMap(LString.unescapeHTML(schedulerEvent.get('content'))),
-							serviceContext: {
-								languageId: themeDisplay.getLanguageId()
-							}
+							titleMap: instance.getLocalizationMap(LString.unescapeHTML(schedulerEvent.get('content')))
 						}
 					},
 					{
@@ -964,6 +965,11 @@ AUI.add(
 					},
 
 					hasChildCalendarBookings: {
+						validator: isBoolean,
+						value: false
+					},
+
+					hasWorkflowInstanceLink: {
 						validator: isBoolean,
 						value: false
 					},
@@ -1858,6 +1864,7 @@ AUI.add(
 								declineLinkEnabled: instance._hasWorkflowStatusPermission(schedulerEvent, CalendarWorkflow.STATUS_DENIED),
 								editing: editing,
 								endTime: templateData.endDate,
+								hasWorkflowInstanceLink:  schedulerEvent.get('hasWorkflowInstanceLink'),
 								instanceIndex: schedulerEvent.get('instanceIndex'),
 								maybeLinkEnabled: instance._hasWorkflowStatusPermission(schedulerEvent, CalendarWorkflow.STATUS_MAYBE),
 								permissions: permissions,
@@ -1910,10 +1917,12 @@ AUI.add(
 									render: true
 								}
 							],
-							'header'
+							'body'
 						);
 
-						instance.popover.headerNode.toggleClass('hide', !templateData.permissions.VIEW_BOOKING_DETAILS);
+						if (instance.popover.headerNode) {
+							instance.popover.headerNode.toggleClass('hide', !templateData.permissions.VIEW_BOOKING_DETAILS);
+						}
 
 						instance._showResources();
 					},

@@ -2336,6 +2336,13 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
+			<description>Whether to mark the date input as required</description>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
 			<description>A variable name to refer to the year of the component</description>
 			<name>yearParam</name>
 			<required>false</required>
@@ -2599,6 +2606,7 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
 	</tag>
 	<tag>
 		<name>input-localized</name>
@@ -3066,6 +3074,11 @@
 		<attribute>
 			<description>A name for the time input</description>
 			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>timeFormat</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>

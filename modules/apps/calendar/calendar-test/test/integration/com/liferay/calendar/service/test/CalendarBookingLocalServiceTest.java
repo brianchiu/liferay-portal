@@ -28,7 +28,6 @@ import com.liferay.calendar.service.CalendarBookingLocalServiceUtil;
 import com.liferay.calendar.service.CalendarLocalServiceUtil;
 import com.liferay.calendar.util.CalendarResourceUtil;
 import com.liferay.calendar.workflow.CalendarBookingWorkflowConstants;
-import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.test.rule.AggregateTestRule;
 import com.liferay.portal.kernel.test.rule.DeleteAfterTestRun;
 import com.liferay.portal.kernel.test.rule.Sync;
@@ -77,7 +76,7 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
-	public void testAddCalendarBooking() throws PortalException {
+	public void testAddCalendarBooking() throws Exception {
 		ServiceContext serviceContext = createServiceContext();
 
 		CalendarResource calendarResource =
@@ -107,7 +106,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testDeleteLastCalendarBookingInstanceDeletesCalendarBooking()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -157,7 +156,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testInviteToDraftCalendarBookingResultsInMasterPendingChild()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -199,7 +198,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testInviteToPublishedCalendarBookingResultsInPendingChild()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -240,7 +239,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testMoveToTrashCalendarBookingShouldMoveItsChildrenToTrash()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -287,7 +286,7 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
-	public void testPublishCalendarBooking() throws PortalException {
+	public void testPublishCalendarBooking() throws Exception {
 		ServiceContext serviceContext = createServiceContext();
 
 		CalendarResource calendarResource =
@@ -318,7 +317,7 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
-	public void testPublishDraftCalendarBooking() throws PortalException {
+	public void testPublishDraftCalendarBooking() throws Exception {
 		ServiceContext serviceContext = createServiceContext();
 
 		CalendarResource calendarResource =
@@ -361,7 +360,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testPublishDraftCalendarBookingResultsInPendingChild()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -420,7 +419,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testRestoredFromTrashEventResultsInRestoredFromTrashChildren()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -475,7 +474,7 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
-	public void testSaveAsDraftCalendarBooking() throws PortalException {
+	public void testSaveAsDraftCalendarBooking() throws Exception {
 		ServiceContext serviceContext = createServiceContext();
 
 		CalendarResource calendarResource =
@@ -506,7 +505,7 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
-	public void testSaveAsDraftDraftCalendarBooking() throws PortalException {
+	public void testSaveAsDraftDraftCalendarBooking() throws Exception {
 		ServiceContext serviceContext = createServiceContext();
 
 		CalendarResource calendarResource =
@@ -548,9 +547,7 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
-	public void testSaveAsDraftPublishedCalendarBooking()
-		throws PortalException {
-
+	public void testSaveAsDraftPublishedCalendarBooking() throws Exception {
 		ServiceContext serviceContext = createServiceContext();
 
 		CalendarResource calendarResource =
@@ -591,7 +588,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test(expected = CalendarBookingRecurrenceException.class)
 	public void testStartDateBeforeUntilDateThrowsRecurrenceException()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -627,8 +624,91 @@ public class CalendarBookingLocalServiceTest {
 	}
 
 	@Test
+	public void testUpdateCalendarBookingPreservesChildStatus()
+		throws Exception {
+
+		ServiceContext serviceContext = createServiceContext();
+
+		CalendarResource calendarResource =
+			CalendarResourceUtil.getUserCalendarResource(
+				_user.getUserId(), serviceContext);
+
+		Calendar calendar = calendarResource.getDefaultCalendar();
+
+		Calendar invitedCalendar = CalendarLocalServiceUtil.addCalendar(
+			_user.getUserId(), _user.getGroupId(),
+			calendarResource.getCalendarResourceId(),
+			RandomTestUtil.randomLocaleStringMap(),
+			RandomTestUtil.randomLocaleStringMap(),
+			calendarResource.getTimeZoneId(), RandomTestUtil.randomInt(), false,
+			false, false, serviceContext);
+
+		long startTime = System.currentTimeMillis();
+
+		serviceContext.setWorkflowAction(WorkflowConstants.ACTION_PUBLISH);
+
+		CalendarBooking calendarBooking =
+			CalendarBookingLocalServiceUtil.addCalendarBooking(
+				_user.getUserId(), calendar.getCalendarId(),
+				new long[] { invitedCalendar.getCalendarId() },
+				CalendarBookingConstants.PARENT_CALENDAR_BOOKING_ID_DEFAULT,
+				RandomTestUtil.randomLocaleStringMap(),
+				RandomTestUtil.randomLocaleStringMap(),
+				RandomTestUtil.randomString(), startTime, startTime + 36000000,
+				false, null, 0, null, 0, null, serviceContext);
+
+		CalendarBooking childCalendarBooking = getChildCalendarBooking(
+			calendarBooking);
+
+		Assert.assertEquals(
+			WorkflowConstants.STATUS_PENDING, childCalendarBooking.getStatus());
+
+		childCalendarBooking = CalendarBookingLocalServiceUtil.updateStatus(
+			_user.getUserId(), childCalendarBooking,
+			CalendarBookingWorkflowConstants.STATUS_MAYBE, serviceContext);
+
+		calendarBooking = CalendarBookingLocalServiceUtil.updateCalendarBooking(
+			_user.getUserId(), calendarBooking.getCalendarBookingId(),
+			calendarBooking.getCalendarId(),
+			new long[] { invitedCalendar.getCalendarId() },
+			RandomTestUtil.randomLocaleStringMap(),
+			RandomTestUtil.randomLocaleStringMap(),
+			RandomTestUtil.randomString(), startTime, startTime + 36000000,
+			calendarBooking.getAllDay(), calendarBooking.getRecurrence(),
+			calendarBooking.getFirstReminder(),
+			calendarBooking.getFirstReminderType(),
+			calendarBooking.getSecondReminder(),
+			calendarBooking.getSecondReminderType(), serviceContext);
+
+		childCalendarBooking = getChildCalendarBooking(calendarBooking);
+
+		Assert.assertEquals(
+			CalendarBookingWorkflowConstants.STATUS_MAYBE,
+			childCalendarBooking.getStatus());
+
+		calendarBooking = CalendarBookingLocalServiceUtil.updateCalendarBooking(
+			_user.getUserId(), calendarBooking.getCalendarBookingId(),
+			calendarBooking.getCalendarId(),
+			new long[] { invitedCalendar.getCalendarId() },
+			RandomTestUtil.randomLocaleStringMap(),
+			RandomTestUtil.randomLocaleStringMap(),
+			RandomTestUtil.randomString(), startTime, startTime + 37000000,
+			calendarBooking.getAllDay(), calendarBooking.getRecurrence(),
+			calendarBooking.getFirstReminder(),
+			calendarBooking.getFirstReminderType(),
+			calendarBooking.getSecondReminder(),
+			calendarBooking.getSecondReminderType(), serviceContext);
+
+		childCalendarBooking = getChildCalendarBooking(calendarBooking);
+
+		Assert.assertNotEquals(
+			CalendarBookingWorkflowConstants.STATUS_MAYBE,
+			childCalendarBooking.getStatus());
+	}
+
+	@Test
 	public void testUpdateCalendarBookingPreservesDescriptionTranslations()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
@@ -691,7 +771,7 @@ public class CalendarBookingLocalServiceTest {
 
 	@Test
 	public void testUpdateCalendarBookingPreservesTitleTranslations()
-		throws PortalException {
+		throws Exception {
 
 		ServiceContext serviceContext = createServiceContext();
 
