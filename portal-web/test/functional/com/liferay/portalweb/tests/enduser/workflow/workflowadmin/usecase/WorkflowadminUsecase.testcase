@@ -449,6 +449,177 @@
 		</execute>
 	</command>
 
+	<command name="AddWebContentWithCategorySpecificDefinition" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Workflow Definition" />
+		</execute>
+
+		<execute macro="Workflow#uploadDefinition">
+			<var name="workflowDefinitionFile" value="workflow_definition_category_specific.xml" />
+			<var name="workflowDefinitionTitle" value="Category Specific" />
+		</execute>
+
+		<execute macro="Workflow#viewDefinition">
+			<var name="workflowDefinitionName" value="Category Specific Approval" />
+			<var name="workflowDefinitionTitle" value="Category Specific" />
+			<var name="workflowDefinitionVersionNumber" value="1" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Categories" />
+		</execute>
+
+		<execute macro="Vocabulary#addCP">
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="legal" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Categories" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="other" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="Workflow#configureWebContentWorkflow">
+			<var name="workflowDefinition" value="Category Specific Approval (Version 1)" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="legal category" />
+			<var name="webContentTitle" value="WC With Legal Category" />
+		</execute>
+
+		<execute macro="WebContent#selectCategory">
+			<var name="categoryName" value="legal" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Button#clickSubmitForPublication" />
+
+		<execute macro="Alert#viewSuccess" />
+
+		<execute macro="WebContent#viewWithWorkflowCP">
+			<var name="webContentContent" value="legal category" />
+			<var name="webContentTitle" value="WC With Legal Category" />
+			<var name="workflowTask" value="legal-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="both categories" />
+			<var name="webContentTitle" value="WC With Multiple Categories" />
+		</execute>
+
+		<execute macro="WebContent#selectCategory">
+			<var name="categoryName" value="legal" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="WebContent#selectCategory">
+			<var name="categoryName" value="other" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Button#clickSubmitForPublication" />
+
+		<execute macro="Alert#viewSuccess" />
+
+		<execute macro="WebContent#viewWithWorkflowCP">
+			<var name="webContentContent" value="legal category" />
+			<var name="webContentTitle" value="WC With Legal Category" />
+			<var name="workflowTask" value="legal-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="other category" />
+			<var name="webContentTitle" value="WC With Other Category" />
+		</execute>
+
+		<execute macro="WebContent#selectCategory">
+			<var name="categoryName" value="other" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Button#clickSubmitForPublication" />
+
+		<execute macro="Alert#viewSuccess" />
+
+		<execute macro="WebContent#viewWithWorkflowCP">
+			<var name="webContentContent" value="other category" />
+			<var name="webContentTitle" value="WC With Other Category" />
+			<var name="workflowTask" value="content-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addWithWorkflowCP">
+			<var name="webContentContent" value="no category" />
+			<var name="webContentTitle" value="WC With No Category" />
+		</execute>
+
+		<execute macro="WebContent#viewWithWorkflowCP">
+			<var name="webContentContent" value="no category" />
+			<var name="webContentTitle" value="WC With No Category" />
+			<var name="workflowTask" value="content-review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC With Legal Category" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="legal-review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC With Multiple Categories" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="legal-review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC With Other Category" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="content-review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC With No Category" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="content-review" />
+		</execute>
+	</command>
+
 	<command name="AddWikiPageAsSiteUser" priority="4">
 		<var name="pageName" value="Wiki Page" />
 		<var name="portletName" value="Wiki" />
