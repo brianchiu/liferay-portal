@@ -287,6 +287,168 @@
 		</execute>
 	</command>
 
+	<command name="AddDDLRecordWithDoubleApproverDefinition" priority="4">
+		<execute macro="Page#gotoCP">
+			<var name="portletName" value="Workflow Definition" />
+		</execute>
+
+		<execute macro="Workflow#uploadDefinition">
+			<var name="workflowDefinitionFile" value="workflow_definition_legal_marketing.xml" />
+			<var name="workflowDefinitionTitle" value="Double Approver Definition" />
+		</execute>
+
+		<execute macro="Workflow#viewDefinition">
+			<var name="workflowDefinitionName" value="Legal and Marketing Approval" />
+			<var name="workflowDefinitionTitle" value="Double Approver Definition" />
+			<var name="workflowDefinitionVersionNumber" value="1" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLDataDefinition#addCP" />
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var name="fieldName" value="Boolean" />
+		</execute>
+
+		<execute macro="DDLDataDefinition#saveCP" />
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLList#addCP">
+			<var name="workflowDefinition" value="Legal and Marketing Approval (Version 1)" />
+		</execute>
+
+		<execute macro="DDLDataDefinition#selectCP" />
+
+		<execute macro="DDLList#saveCP" />
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLRecord#addCP" />
+
+		<execute macro="DDLRecord#populateFieldBoolean">
+			<var name="ddlRecordFieldData" value="Yes" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var name="fieldName" value="Boolean" />
+		</execute>
+
+		<execute macro="DDLRecord#publishCP">
+			<var name="workflowDefinition" value="Legal and Marketing Approval (Version 1)" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#assignToMeTaskByActions">
+			<var name="ddlDataDefinitionName" value="Data Definition Name" />
+			<var name="workflowAssetTitle" value="List Name" />
+			<var name="workflowAssetType" value="Dynamic Data Lists Record" />
+			<var name="workflowTask" value="marketing-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLRecord#viewCP" />
+
+		<execute macro="DDLRecord#viewFirstFieldCP">
+			<var name="ddlRecordFieldData" value="Yes" />
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var name="fieldName" value="Boolean" />
+			<var name="workflowStatus" value="marketing-review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#approveTaskByActions">
+			<var name="ddlDataDefinitionName" value="Data Definition Name" />
+			<var name="workflowAssetTitle" value="List Name" />
+			<var name="workflowAssetType" value="Dynamic Data Lists Record" />
+			<var name="workflowDefinitionTask" value="Marketing Approved" />
+			<var name="workflowTask" value="marketing-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLRecord#viewCP" />
+
+		<execute macro="DDLRecord#viewFirstFieldCP">
+			<var name="ddlRecordFieldData" value="Yes" />
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var name="fieldName" value="Boolean" />
+			<var name="workflowStatus" value="legal-review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#assignToMeTaskByActions">
+			<var name="ddlDataDefinitionName" value="Data Definition Name" />
+			<var name="workflowAssetTitle" value="List Name" />
+			<var name="workflowAssetType" value="Dynamic Data Lists Record" />
+			<var name="workflowTask" value="legal-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLRecord#viewCP" />
+
+		<execute macro="DDLRecord#viewFirstFieldCP">
+			<var name="ddlRecordFieldData" value="Yes" />
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var name="fieldName" value="Boolean" />
+			<var name="workflowStatus" value="legal-review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#approveTaskByActions">
+			<var name="ddlDataDefinitionName" value="Data Definition Name" />
+			<var name="workflowAssetTitle" value="List Name" />
+			<var name="workflowAssetType" value="Dynamic Data Lists Record" />
+			<var name="workflowDefinitionTask" value="Legal Approval" />
+			<var name="workflowTask" value="legal-review" />
+		</execute>
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Dynamic Data Lists" />
+		</execute>
+
+		<execute macro="DDLRecord#viewCP">
+			<var name="ddlListName" value="${ddlListName}" />
+		</execute>
+
+		<execute macro="DDLRecord#viewFirstFieldCP">
+			<var name="ddlRecordFieldData" value="Yes" />
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var name="fieldName" value="Boolean" />
+		</execute>
+	</command>
+
 	<command name="AddWikiPageAsSiteUser" priority="4">
 		<var name="pageName" value="Wiki Page" />
 		<var name="portletName" value="Wiki" />
