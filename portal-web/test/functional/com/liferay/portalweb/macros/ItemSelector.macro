@@ -8,7 +8,7 @@
 
 		<execute function="AssertElementPresent" locator1="ItemSelector#URL_LABEL" />
 
-		<execute function="Type" locator1="TextInput#URL" />
+		<execute function="Type#typeAceEditor" locator1="TextInput#URL" value1="${imageSourceURL}" />
 
 		<execute function="AssertClick" locator1="Button#ENTER" value1="Enter" />
 
