@@ -53,29 +53,29 @@
 	</command>
 
 	<command name="AddWikiFrontPageWithImageViaURL" priority="4">
-		<execute macro="Page#addPG">
-			<var name="pageName" value="${pageName}" />
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
 		</execute>
 
-		<execute macro="Portlet#addPG">
-			<var name="portletName" value="Wiki" />
-		</execute>
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-		<execute macro="Page#gotoPG">
-			<var name="pageName" value="${pageName}" />
-		</execute>
-
-		<execute function="AssertClick" locator1="Wiki#FRONTPAGE_DEFAULT_MESSAGE" value1="This page is empty. Edit it to add some text." />
+		<execute function="Type#mouseOverFocusType" locator1="TextInput#TITLE" value1="Web Content Title" />
 
 		<execute function="Click#pauseClickAt" locator1="CKEditor#CONTENT_IMAGE_LINK" />
-		<execute function="Type" locator1="CKEditor#CONTENT_IMAGE_LINK_URL_FIELD" value1="https://raw.githubusercontent.com/liferay/liferay-portal/master/portal-web/test/functional/com/liferay/portalweb/dependencies/Document_1.jpg" />
-		<execute function="AssertClick" locator1="CKEditor#CONTENT_IMAGE_LINK_OK_BUTTON" value1="OK" />
 
-		<execute function="AssertClick#assertTextClickAtAndWaitCKEditor" locator1="Button#PUBLISH" value1="Publish" />
+		<execute macro="ItemSelector#addFromURL">
+			<var name="imageSourceURL" value="https://raw.githubusercontent.com/liferay/liferay-portal/master/portal-web/test/functional/com/liferay/portalweb/dependencies/Document_1.jpg" />
+		</execute>
 
-		<var name="key_htmlTags" value="p/img[contains(@src,'Document_1.jpg')]" />
+		<execute macro="WebContent#publish" />
 
-		<execute function="AssertElementPresent" locator1="Wiki#HTML_BODY" />
+		<execute macro="WebContentNavigator#gotoPreviewCP">
+			<var name="webContentTitle" value="Web Content Title" />
+		</execute>
+
+		<execute function="SelectFrame" locator1="IFrame#DIALOG" />
+
+		<execute function="AssertElementPresent" locator1="//img[contains(@src,'Document_1.jpg')]" />
 	</command>
 
 	<command name="ViewCKEditorsInheritanceNo" priority="4">
