@@ -49,7 +49,7 @@
 	<command name="gotoEditPGViaWCD">
 		<execute function="Click" locator1="WCD#EDIT_WEB_CONTENT" />
 
-		<execute function="SelectFrame" locator1="PGWebcontentdisplayEditwebcontent#WEB_CONTENT_IFRAME" />
+		<execute function="SelectFrame" locator1="IFrame#EDIT_ASSET" />
 	</command>
 
 	<command name="gotoManageStructures">
