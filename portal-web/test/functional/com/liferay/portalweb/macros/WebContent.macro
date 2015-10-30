@@ -984,6 +984,8 @@
 
 		<execute function="Click" locator1="Icon#DELETE" />
 
+		<var name="key_assetType" value="Web Content Article" />
+
 		<execute function="AssertTextEquals#assertPartialText" locator1="Message#RECYCLE_BIN_SUCCESS" value1="moved to the Recycle Bin. Undo" />
 	</command>
 
