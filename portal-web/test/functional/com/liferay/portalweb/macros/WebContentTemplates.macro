@@ -6,26 +6,6 @@
 
 		<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${templateName}" />
 
-		<if>
-			<isset var="localization1NameKey" />
-			<then>
-				<var name="key_localizationName" value="${localization1NameKey}" />
-
-				<execute function="Click" locator1="Translation#LOCALIZATION_NAME" />
-				<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${localization1Name}" />
-
-				<if>
-					<isset var="localization2NameKey" />
-					<then>
-						<var name="key_localizationName" value="${localization2NameKey}" />
-
-						<execute function="Click" locator1="Translation#LOCALIZATION_NAME" />
-						<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${localization2Name}" />
-					</then>
-				</if>
-			</then>
-		</if>
-
 		<execute macro="WebContentNavigator#showTemplateDetails" />
 
 		<if>
@@ -102,10 +82,7 @@
 			</then>
 		</if>
 
-		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
-		<execute function="SelectFrame" />
-		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
-		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
+		<execute macro="WebContentTemplates#save" />
 	</command>
 
 	<command name="addField">
@@ -190,6 +167,47 @@
 				<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 			</else>
 		</if>
+	</command>
+
+	<command name="localizeTemplateName">
+		<var name="key_localizationName" value="${localization1NameKey}" />
+
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoManageTemplates" />
+
+		<execute function="AssertTextEquals" locator1="DDMSelectTemplate#TEMPLATE_TABLE_NAME" value1="${templateName}" />
+
+		<execute function="AssertClick" locator1="DDMSelectTemplate#TEMPLATE_TABLE_NAME" value1="${templateName}" />
+		<execute function="SelectFrame" />
+
+		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
+		<execute function="AssertTextEquals" locator1="TextInput#NAME" value1="${templateName}" />
+
+		<execute function="Click" locator1="Translation#LOCALIZATION_NAME" />
+		<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${localization1Name}" />
+
+		<if>
+			<isset var="localization2NameKey" />
+			<then>
+				<var name="key_localizationName" value="${localization2NameKey}" />
+
+				<execute function="Click" locator1="Translation#LOCALIZATION_NAME" />
+				<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${localization2Name}" />
+			</then>
+		</if>
+	</command>
+
+	<command name="save">
+		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
+
+		<execute function="SelectFrame" />
+		
+		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
+		
+		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
 
 	<command name="tearDownCP">
