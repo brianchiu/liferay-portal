@@ -375,6 +375,11 @@
 			<var name="templateName" value="Template Name" />
 		</execute>
 
+		<execute macro="WebContentTemplates#addRoleViewPermissions">
+			<var name="roles" value="Power User" />
+			<var name="templateName" value="Template Name" />
+		</execute>
+
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
 			<var name="siteScopeName" value="Global" />
