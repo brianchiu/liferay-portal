@@ -1210,16 +1210,22 @@
 		</execute>
 
 		<execute macro="WebContentTemplates#addCP">
-			<var name="localization1Name" value="nom de la template de wc" />
-			<var name="localization1NameKey" value="fr_FR" />
-			<var name="localization2Name" value="wc 模板名称" />
-			<var name="localization2NameKey" value="zh_CN" />
 			<var name="structureName" value="WC Structure Name" />
 			<var name="templateDescription" value="WC Template Description" />
 			<var name="templateFieldNames" value="Text" />
 			<var name="templateLanguage" value="ftl" />
 			<var name="templateName" value="WC Template Name" />
 		</execute>
+
+		<execute macro="WebContentTemplates#localizeTemplateName">
+			<var name="localization1Name" value="nom de la template de wc" />
+			<var name="localization1NameKey" value="fr_FR" />
+			<var name="localization2Name" value="wc 模板名称" />
+			<var name="localization2NameKey" value="zh_CN" />
+			<var name="templateName" value="WC Template Name" />
+		</execute>
+
+		<execute macro="WebContentTemplates#save" />
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
