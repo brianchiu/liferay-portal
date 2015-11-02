@@ -16,43 +16,6 @@
 		</if>
 
 		<if>
-			<isset var="structureName" />
-			<then>
-				<execute function="AssertClick" locator1="DDMEditTemplate#DETAILS_SELECT_STRUCTURE" value1="Select" />
-
-				<execute function="SelectFrameTop" />
-				<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME" />
-
-				<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${structureName}" />
-
-				<execute function="Click" locator1="Icon#BASIC_SEARCH" />
-
-				<var name="key_ddlDatadefinitionName" value="${structureName}" />
-
-				<execute function="AssertTextEquals" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_NAME_1" value1="${structureName}" />
-				<execute function="AssertClickNoError" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_CHOOSE_BUTTON_1" value1="Choose" />
-				<execute function="Confirm" value1="Selecting a new structure changes the available input fields and available templates. Do you want to proceed?" />
-
-				<execute function="SelectFrameTop" />
-				<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
-
-				<execute function="AssertTextEquals#assertValue" locator1="TextInput#STRUCTURE" value1="${structureName}" />
-
-				<if>
-					<equals arg1="${templateLanguage}" arg2="ftl" />
-					<then>
-						<for list="${templateFieldNames}" param="templateFieldName">
-							<execute macro="WebContentTemplates#addField">
-								<var name="fieldName" value="${templateFieldName}" />
-								<var name="fieldNameLabel" value="${fieldNameLabel}" />
-							</execute>
-						</for>
-					</then>
-				</if>
-			</then>
-		</if>
-
-		<if>
 			<equals arg1="${templateLanguage}" arg2="ftl" />
 			<then>
 				<execute function="Select" locator1="DDMEditTemplate#DETAILS_LANGUAGE_SELECT" value1="FreeMarker (.ftl)" />
@@ -117,6 +80,40 @@
 		</execute>
 
 		<execute function="SelectFrameTop" />
+	</command>
+
+	<command name="addStructure">
+		<execute function="AssertClick" locator1="DDMEditTemplate#DETAILS_SELECT_STRUCTURE" value1="Select" />
+
+		<execute function="SelectFrameTop" />
+		<execute function="SelectFrame" locator1="DDMSelectStructure#DDM_STRUCTURES_IFRAME" />
+
+		<execute function="Type" locator1="NavBar#BASIC_SEARCH_FIELD" value1="${structureName}" />
+
+		<execute function="Click" locator1="Icon#BASIC_SEARCH" />
+
+		<var name="key_ddlDatadefinitionName" value="${structureName}" />
+
+		<execute function="AssertTextEquals" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_NAME_1" value1="${structureName}" />
+		<execute function="AssertClickNoError" locator1="DDMSelectStructure#DDM_STRUCTURE_TABLE_CHOOSE_BUTTON_1" value1="Choose" />
+		<execute function="Confirm" value1="Selecting a new structure changes the available input fields and available templates. Do you want to proceed?" />
+
+		<execute function="SelectFrameTop" />
+		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
+
+		<execute function="AssertTextEquals#assertValue" locator1="TextInput#STRUCTURE" value1="${structureName}" />
+
+		<if>
+			<equals arg1="${templateLanguage}" arg2="ftl" />
+			<then>
+				<for list="${templateFieldNames}" param="templateFieldName">
+					<execute macro="WebContentTemplates#addField">
+						<var name="fieldName" value="${templateFieldName}" />
+						<var name="fieldNameLabel" value="${fieldNameLabel}" />
+					</execute>
+				</for>
+			</then>
+		</if>
 	</command>
 
 	<command name="advancedSearchCP">
