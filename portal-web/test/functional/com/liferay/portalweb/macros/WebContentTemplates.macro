@@ -44,8 +44,6 @@
 				<execute function="Type#typeAceEditor" locator1="DDMEditTemplate#SCRIPT_CONTENT_FIELD" value1="${templateScript}" />
 			</then>
 		</if>
-
-		<execute macro="WebContentTemplates#save" />
 	</command>
 
 	<command name="addField">
