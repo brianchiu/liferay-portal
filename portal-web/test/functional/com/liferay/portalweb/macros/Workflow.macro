@@ -107,12 +107,6 @@
 		<execute function="AssertTextEquals#assertText" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 	</command>
 
-	<command name="viewSubmissionNotPresent">
-		<var name="key_workflowAssetTitle" value="${workflowAssetTitle}" />
-
-		<execute function="AssertElementNotPresent" locator1="WorkflowSubmissions#PENDING_TABLE_ASSET_TITLE" value1="${workflowAssetTitle}" />
-	</command>
-
 	<command name="assignToMeTaskByActions">
 		<execute macro="Workflow#viewTaskAssignedToMyRoles">
 			<var name="ddlDataDefinitionName" value="${ddlDataDefinitionName}" />
@@ -736,6 +730,12 @@
 		<execute function="AssertTextEquals" locator1="MyWorkflowTasks#ASSIGNED_TO_ME_TABLE_ASSET_TYPE" value1="${workflowAssetType}" />
 		<execute function="AssertElementPresent" locator1="MyWorkflowTasks#ASSIGNED_TO_ME_TABLE_LAST_ACTIVITY_DATE" />
 		<execute function="AssertElementPresent" locator1="MyWorkflowTasks#ASSIGNED_TO_ME_TABLE_DUE_DATE" />
+	</command>
+
+	<command name="viewSubmissionNotPresent">
+		<var name="key_workflowAssetTitle" value="${workflowAssetTitle}" />
+
+		<execute function="AssertElementNotPresent" locator1="WorkflowSubmissions#PENDING_TABLE_ASSET_TITLE" value1="${workflowAssetTitle}" />
 	</command>
 
 	<command name="viewTaskAssignedToMe">
