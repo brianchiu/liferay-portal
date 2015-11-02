@@ -861,7 +861,7 @@
 			<var name="workflowTask" value="Review" />
 		</execute>
 
-		<execute macro="Workflow#assertCannotViewOtherSiteMemberSubmissions">
+		<execute macro="Workflow#viewSubmissionNotPresent">
 			<var name="workflowAssetTitle" value="User 2 Blog Title Pending" />
 		</execute>
 
@@ -871,7 +871,7 @@
 			<var name="workflowTask" value="Single Approver" />
 		</execute>
 
-		<execute macro="Workflow#assertCannotViewOtherSiteMemberSubmissions">
+		<execute macro="Workflow#viewSubmissionNotPresent">
 			<var name="workflowAssetTitle" value="User 2 Blog Title Approved" />
 		</execute>
 
@@ -891,7 +891,7 @@
 			<var name="workflowTask" value="Review" />
 		</execute>
 
-		<execute macro="Workflow#assertCannotViewOtherSiteMemberSubmissions">
+		<execute macro="Workflow#viewSubmissionNotPresent">
 			<var name="workflowAssetTitle" value="User 1 Blog Title Pending" />
 		</execute>
 
@@ -901,7 +901,7 @@
 			<var name="workflowTask" value="Single Approver" />
 		</execute>
 
-		<execute macro="Workflow#assertCannotViewOtherSiteMemberSubmissions">
+		<execute macro="Workflow#viewSubmissionNotPresent">
 			<var name="workflowAssetTitle" value="User 1 Blog Title Approved" />
 		</execute>
 	</command>
