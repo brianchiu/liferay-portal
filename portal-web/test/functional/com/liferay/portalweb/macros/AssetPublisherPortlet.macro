@@ -528,7 +528,7 @@
 
 		<execute function="Click" locator1="APConfiguration#ASSET_SELECTION_MANUAL" />
 
-		<execute function="AssertClick" locator1="Button#SAVE_BUTTON" value1="Save" />
+		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 		<execute function="AssertClick" locator1="Configuration#ARCHIVE_RESTORE" value1="Archive/Restore Setup" />
 
 		<execute function="AssertTextEquals" locator1="Message#INFO" value1="There are no archived setups." />
