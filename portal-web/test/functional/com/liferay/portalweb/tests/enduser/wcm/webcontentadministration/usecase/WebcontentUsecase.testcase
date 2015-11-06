@@ -1266,6 +1266,8 @@
 			<var name="templateName" value="WC Template Name" />
 		</execute>
 
+		<execute macro="WebContentTemplates#save" />
+
 		<execute macro="WebContentTemplates#localizeTemplateName">
 			<var name="localization1Name" value="nom de la template de wc" />
 			<var name="localization1NameKey" value="fr_FR" />
