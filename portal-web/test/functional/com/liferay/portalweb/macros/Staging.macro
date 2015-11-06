@@ -770,12 +770,10 @@
 	</command>
 
 	<command name="submitForPublicationPageRevision">
-		<execute function="AssertElementNotPresent" locator1="Button#PUBLISH_TO_LIVE" value1="Publish to Live" />
 		<execute function="AssertTextEquals" locator1="Message#STATUS" value1="Draft" />
 
 		<execute function="AssertClick" locator1="Staging#STAGING_MENU_SUBMIT_FOR_PUBLICATION" value1="Submit for Publication" />
 
-		<execute function="AssertElementNotPresent" locator1="Button#PUBLISH_TO_LIVE" />
 		<execute function="AssertElementNotPresent" locator1="Staging#STAGING_MENU_SUBMIT_FOR_PUBLICATION" />
 
 		<if>
