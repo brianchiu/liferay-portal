@@ -171,6 +171,7 @@
 
 	<command name="localizeTemplateName">
 		<var name="key_localizationName" value="${localization1NameKey}" />
+		<var name="key_ddlTemplateName" value="${templateName}" />
 
 		<execute macro="Page#gotoContentCP">
 			<var name="portletName" value="Web Content" />
