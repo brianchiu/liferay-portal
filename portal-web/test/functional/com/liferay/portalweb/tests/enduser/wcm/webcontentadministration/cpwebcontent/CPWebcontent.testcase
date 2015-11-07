@@ -761,6 +761,12 @@
 			<var name="templateName" value="WC Template Name" />
 		</execute>
 
+		<execute macro="WebContentTemplates#save" />
+
+		<execute macro="WebContentNavigator#gotoViewTemplate">
+			<var name="templateName" value="WC Template Name" />
+		</execute>
+
 		<execute macro="WebContentTemplates#addStructure">
 			<var name="structureName" value="WC Structure Name" />
 			<var name="templateFieldNames" value="Text" />
@@ -795,6 +801,7 @@
 		</execute>
 
 		<execute macro="WebContent#previewCPwithStructureTemplateXSL">
+			<var name="fieldName" value="Text" />
 			<var name="webContentText" value="WC WebContent Text" />
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
