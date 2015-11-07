@@ -253,6 +253,10 @@
 			<var name="nestedFieldData" value="123" />
 		</execute>
 
+		<execute macro="Page#gotoContentCP">
+			<var name="portletName" value="Web Content" />
+		</execute>
+
 		<execute macro="WebContentNavigator#gotoManageStructures" />
 
 		<execute macro="WebContentStructures#viewCP">
