@@ -1575,7 +1575,7 @@
 
 		<var name="key_fieldName" value="TextBox" />
 
-		<execute function="AssertTextEquals" locator1="DDMField#TEXT_BOX" value1="${localizedTextBox}" />
+		<execute function="AssertTextEquals" locator1="DDMField#TEXT_BOX" value1="${webContentTextBox}" />
 
 		<var name="key_translationLocale" value="es_ES" />
 

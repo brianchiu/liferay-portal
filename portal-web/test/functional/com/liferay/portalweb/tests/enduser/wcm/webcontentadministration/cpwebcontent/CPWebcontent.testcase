@@ -369,7 +369,7 @@
 		<execute macro="WebContent#viewUnlocalizableTextBox">
 			<var name="editLocalizedTextBox" value="Text Box Unlocalized" />
 			<var name="localizedText" value="Text Spanish" />
-			<var name="localizedTextBox" value="Text Box Spanish" />
+			<var name="localizedTextBox" value="Text Box" />
 			<var name="localizedTitle" value="Title Spanish" />
 			<var name="webContentTextBox" value="Text Box" />
 			<var name="webContentTitle" value="WC WebContent Title" />
