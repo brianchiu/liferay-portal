@@ -251,6 +251,8 @@
 	</command>
 
 	<command name="WithdrawWorkflowSubmissionFromRemovedUser" priority="2">
+		<description message="This is a use case for LPS-58754" />
+
 		<execute macro="Page#gotoCP">
 			<var name="portletName" value="Users and Organizations" />
 		</execute>
