@@ -17,10 +17,11 @@
 <%@ include file="/card/init.jsp" %>
 
 <%
-boolean backgroundImage = GetterUtil.getBoolean(request.getAttribute("liferay-frontend:card:backgroundImage"));
+String colorCssClass = (String)request.getAttribute("liferay-frontend:card:colorCssClass");
 String footer = (String)request.getAttribute("liferay-frontend:card:footer");
 String header = (String)request.getAttribute("liferay-frontend:card:header");
-String stickerBottom = GetterUtil.getString(request.getAttribute("liferay-frontend:card:stickerBottom"));
 String subtitle = (String)request.getAttribute("liferay-frontend:card:subtitle");
 String title = (String)request.getAttribute("liferay-frontend:card:title");
+String portraitURL = (String)request.getAttribute("liferay-frontend:card:portraitURL");
+String userInitials = (String)request.getAttribute("liferay-frontend:card:userInitials");
 %>
