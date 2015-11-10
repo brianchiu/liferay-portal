@@ -358,5 +358,7 @@
 			<var name="workflowDefinition" value="Single Approver" />
 			<var name="workflowTask" value="Update" />
 		</execute>
+
+		<execute macro="Workflow#viewDefaultMySubmissionsCP" />
 	</command>
 </definition>
