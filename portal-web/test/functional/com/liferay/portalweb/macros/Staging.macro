@@ -208,7 +208,12 @@
 	</command>
 
 	<command name="configurePublishToLive">
-		<execute function="AssertClick#assertPartialTextClickAt" locator1="StagingPublishtolivenow#SWITCH_TO_ADVANCED" value1="Switch to Advanced Publication" />
+		<if>
+			<condition function="IsElementPresent" locator1="StagingPublishtolivenow#SWITCH_TO_ADVANCED" />
+			<then>
+				<execute function="AssertClick#assertPartialTextClickAt" locator1="StagingPublishtolivenow#SWITCH_TO_ADVANCED" value1="Switch to Advanced Publication" />
+			</then>
+		</if>
 
 		<if>
 			<equals arg1="${deleteMissingPages}" arg2="true" />
