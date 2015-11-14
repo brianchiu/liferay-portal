@@ -4238,7 +4238,9 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="Staging#viewHistoryVersionPG" />
+		<execute macro="Staging#viewHistoryVersionPG" >
+			<var name="historyVersion" value="${historyVersion}" />
+		<execute>
 	</command>
 
 	<command name="ViewPageOrderWithStaging" priority="4">
