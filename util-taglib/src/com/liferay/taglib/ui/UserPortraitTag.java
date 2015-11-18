@@ -70,15 +70,14 @@ public class UserPortraitTag extends IncludeTag {
 	}
 
 	protected String getUserInitials(User user) {
+		if (Validator.isNull(_userName) && (user != null)) {
+			return user.getInitials();
+		}
+
 		String userName = _userName;
 
 		if (Validator.isNull(userName)) {
-			if (user != null) {
-				userName = user.getFullName();
-			}
-			else {
-				userName = LanguageUtil.get(request, "user");
-			}
+			userName = LanguageUtil.get(request, "user");
 		}
 
 		String[] userNames = StringUtil.split(userName, StringPool.SPACE);
