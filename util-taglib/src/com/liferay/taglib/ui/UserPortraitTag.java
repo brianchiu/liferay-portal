@@ -27,6 +27,7 @@ import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.taglib.util.IncludeTag;
+import com.liferay.taglib.util.LexiconUtil;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -57,19 +58,6 @@ public class UserPortraitTag extends IncludeTag {
 		_imageCssClass = StringPool.BLANK;
 		_userId = 0;
 		_userName = StringPool.BLANK;
-	}
-
-	protected String getColorCssClass() {
-		String colorCssClass = "user-icon-defaul";
-
-		User user = getUser();
-
-		if (user != null) {
-			colorCssClass =
-				"user-icon-color-" + (Math.abs(user.getUserId()) % 10);
-		}
-
-		return colorCssClass;
 	}
 
 	@Override
@@ -113,7 +101,8 @@ public class UserPortraitTag extends IncludeTag {
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
 		request.setAttribute(
-			"liferay-ui:user-portrait:colorCssClass", getColorCssClass());
+			"liferay-ui:user-portrait:colorCssClass",
+			LexiconUtil.getUserColorCssClass(getUser()));
 		request.setAttribute("liferay-ui:user-portrait:cssClass", _cssClass);
 		request.setAttribute(
 			"liferay-ui:user-portrait:imageCssClass", _imageCssClass);
