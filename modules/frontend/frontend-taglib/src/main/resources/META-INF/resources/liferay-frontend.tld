@@ -52,7 +52,7 @@
 		</attribute>
 	</tag>
 	<tag>
-		<description>Creates a lexicon-based card component. It can be a vertical or horizontal card.</description>
+		<description>Creates a lexicon-based card component.</description>
 		<name>horizontal-card</name>
 		<tag-class>com.liferay.frontend.taglib.servlet.taglib.HorizontalCardTag</tag-class>
 		<body-content>JSP</body-content>
@@ -237,12 +237,6 @@
 		<attribute>
 			<description>Miscellaneous data to be stored via a map. This data is not shared with the browser. The map holds key value pairs of type <![CDATA[<code>&lt;String, Object&gt;</code>]]>.</description>
 			<name>data</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-		<attribute>
-			<description>Whether the card type is horizontal. The default value is <![CDATA[<code>false</code>]]>.</description>
-			<name>horizontal</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -485,12 +479,6 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<attribute>
-			<description>Whether the card type is horizontal. The default value is <![CDATA[<code>false</code>]]>.</description>
-			<name>horizontal</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-		<attribute>
 			<description>If you pass in a <![CDATA[<code>rowChecker</code>]]> value, a result row is mandatory. A result row is of type <![CDATA[<code>com.liferay.portal.kernel.dao.search.ResultRow</code>]]>.</description>
 			<name>resultRow</name>
 			<required>false</required>
@@ -527,7 +515,7 @@
 		</attribute>
 	</tag>
 	<tag>
-		<description>Creates a lexicon-based card component. It can be a vertical or horizontal card.</description>
+		<description>Creates a lexicon-based card component.</description>
 		<name>vertical-card</name>
 		<tag-class>com.liferay.frontend.taglib.servlet.taglib.VerticalCardTag</tag-class>
 		<body-content>JSP</body-content>
@@ -600,12 +588,6 @@
 		<attribute>
 			<description>Miscellaneous data to be stored via a map. This data is not shared with the browser. The map holds key value pairs of type <![CDATA[<code>&lt;String, Object&gt;</code>]]>.</description>
 			<name>data</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-		<attribute>
-			<description>Whether the card type is horizontal. The default value is <![CDATA[<code>false</code>]]>.</description>
-			<name>horizontal</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
