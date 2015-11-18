@@ -15,7 +15,7 @@
 </tr>
 <tr>
 	<td>ADD</td>
-	<td>//ul[contains(@id,'toolbarContainer')]/li/a[@title='Add']</td>
+	<td>//menu[contains(@id,'DLPortlet')]/div/a[contains(@role,'button')]</td>
 	<td></td>
 </tr>
 <tr>
