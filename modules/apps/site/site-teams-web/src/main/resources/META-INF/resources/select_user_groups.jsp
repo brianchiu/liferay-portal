@@ -140,17 +140,17 @@ RowChecker rowChecker = new UserGroupTeamChecker(renderResponse, team);
 				A.Array.removeItem(<portlet:namespace />userGroupIds, target.value);
 			}
 
-			var event = {};
+			var values = {};
 
 			if (<portlet:namespace />userGroupIds.length > 0) {
-				event = {
+				values = {
 					data: {
 						value: <portlet:namespace />userGroupIds.join(',')
 					}
 				};
 			}
 
-			Liferay.Util.getOpener().Liferay.fire('<%= HtmlUtil.escapeJS(eventName) %>', event);
+			Liferay.Util.getOpener().Liferay.fire('<%= HtmlUtil.escapeJS(eventName) %>', values);
 		}
 	);
 </aui:script>
