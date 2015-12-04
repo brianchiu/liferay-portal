@@ -33,6 +33,16 @@
 		</if>
 	</command>
 
+	<command name="gotoEditPage">
+		<var name="key_page" value="${page}" />
+
+		<execute function="Click" locator1="ProductMenu#EDIT_PAGE" value1="${page}" />
+	</command>
+
+	<command name="gotoEditPublicPages">
+		<execute function="Click" locator1="ProductMenu#EDIT_PUBLIC_PAGES" />
+	</command>
+
 	<command name="gotoPortlet">
 		<var name="key_portlet" value="${portlet}" />
 
