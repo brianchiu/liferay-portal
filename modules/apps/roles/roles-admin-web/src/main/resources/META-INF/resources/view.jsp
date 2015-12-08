@@ -217,24 +217,25 @@ portletURL.setParameter("keywords", keywords);
 	</liferay-ui:search-container>
 </aui:form>
 
-<aui:script>
-	$('#<portlet:namespace />deleteRoles').on(
-		'click',
-		function() {
-			<portlet:namespace />doDeleteRoles(
-				Liferay.Util.listCheckedExcept(document.<portlet:namespace />fm, '<portlet:namespace />allRowIds')
-			);
-		}
-	);
-
-	function <portlet:namespace />doDeleteRoles(deleteRoleIds) {
-		var form = AUI.$(document.<portlet:namespace />fm);
+<aui:script sandbox="<%= true %>">
+	var deleteRoles = function(deleteRoleIds) {
+		var form = $(document.<portlet:namespace />fm);
 
 		form.attr('method', 'post');
+
 		form.fm('deleteRoleIds').val(deleteRoleIds);
 
 		if (confirm('<%= UnicodeLanguageUtil.get(request, "are-you-sure-you-want-to-delete-this") %>')) {
 			submitForm(form, '<portlet:actionURL name="deleteRoles"><portlet:param name="redirect" value="<%= portletURL.toString() %>" /></portlet:actionURL>');
 		}
-	}
+	};
+
+	$('#<portlet:namespace />deleteRoles').on(
+		'click',
+		function() {
+			deleteRoles(
+				Liferay.Util.listCheckedExcept(document.<portlet:namespace />fm, '<portlet:namespace />allRowIds')
+			);
+		}
+	);
 </aui:script>
