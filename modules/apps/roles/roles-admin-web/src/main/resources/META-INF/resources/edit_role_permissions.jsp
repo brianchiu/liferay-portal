@@ -139,7 +139,6 @@ portletURL.setParameter("roleId", String.valueOf(role.getRoleId()));
 		var groupsHTML = '';
 
 		for (var i = 0; i < selectedGroupIds.length; i++) {
-			var id = selectedGroupIds[i];
 			var name = selectedGroupNames[i];
 
 			groupsHTML += '<span class="lfr-token"><span class="lfr-token-text">' + name + '</span><a class="icon icon-remove lfr-token-close" href="javascript:<portlet:namespace />removeGroup(' + i + ', \'' + target + '\' );"></a></span>';
@@ -154,7 +153,6 @@ portletURL.setParameter("roleId", String.valueOf(role.getRoleId()));
 </aui:script>
 
 <aui:script use="aui-io-request,aui-loading-mask-deprecated,aui-parse-content,aui-toggler,autocomplete-base,autocomplete-filters,liferay-notice">
-	var AArray = A.Array;
 	var AParseContent = A.Plugin.ParseContent;
 
 	var notification;
@@ -307,7 +305,7 @@ portletURL.setParameter("roleId", String.valueOf(role.getRoleId()));
 
 		var permissionContentContainerNode = permissionContainerNode.one('#<portlet:namespace />permissionContentContainer');
 
-		var navigationLink = permissionContainerNode.delegate(
+		permissionContainerNode.delegate(
 			'click',
 			function(event) {
 				event.preventDefault();
