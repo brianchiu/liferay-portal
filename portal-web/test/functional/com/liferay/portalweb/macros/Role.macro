@@ -163,6 +163,7 @@
 			<var name="permissionNavigationValue" value="${permissionNavigationValue}" />
 			<var name="remove" value="${remove}" />
 			<var name="roleName" value="${roleName}" />
+			<var name="roleType" value="${roleType}" />
 			<var name="roleUser" value="${roleUser}" />
 			<var name="siteNameScope" value="${siteNameScope}" />
 		</execute>
@@ -172,6 +173,7 @@
 		<execute macro="Role#definePermissionCmdCP">
 			<var name="permissionDefinitionKey" value="${permissionDefinitionKey}" />
 			<var name="roleName" value="${roleName}" />
+			<var name="roleType" value="${roleType}" />
 			<var name="roleUser" value="${roleUser}" />
 		</execute>
 
@@ -708,6 +710,7 @@
 			<var name="permissionNavigationValue" value="${permissionNavigationValue}" />
 			<var name="remove" value="true" />
 			<var name="roleName" value="${roleName}" />
+			<var name="roleType" value="${roleType}" />
 			<var name="roleUser" value="${roleUser}" />
 			<var name="siteNameScope" value="${siteNameScope}" />
 		</execute>
