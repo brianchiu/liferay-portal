@@ -1,6 +1,6 @@
 <definition>
 	<command name="addCP">
-		<execute function="AssertClick" locator1="NavBar#ADD" value1="Add" />
+		<execute function="Click" locator1="Button#PLUS" />
 
 		<if>
 			<equals arg1="${roleType}" arg2="Organization" />
