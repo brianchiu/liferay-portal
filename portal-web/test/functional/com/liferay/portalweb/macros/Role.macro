@@ -204,7 +204,7 @@
 	<command name="deleteCP">
 		<execute function="Type#sendKeys" locator1="NavBar#BASIC_SEARCH_FIELD" value1="Name" />
 
-		<execute function="AssertClick" locator1="Button#SEARCH" value1="Search" />
+		<execute function="Click" locator1="Button#SUBMIT" />
 
 		<var name="key_roleName" value="${roleName}" />
 
@@ -873,7 +873,7 @@
 
 	<command name="viewDefaultCP">
 		<execute function="Type#sendKeys" locator1="NavBar#BASIC_SEARCH_FIELD" value1="Name" />
-		<execute function="AssertClick" locator1="Button#SEARCH" value1="Search" />
+		<execute function="Click" locator1="Button#SUBMIT" />
 
 		<execute function="AssertTextEquals" locator1="CPRoles#INFO_MESSAGE" value1="No roles were found." />
 	</command>
