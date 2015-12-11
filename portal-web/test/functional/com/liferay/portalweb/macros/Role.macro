@@ -875,7 +875,7 @@
 		<execute function="Type#sendKeys" locator1="NavBar#BASIC_SEARCH_FIELD" value1="Name" />
 		<execute function="Click" locator1="Button#SUBMIT" />
 
-		<execute function="AssertTextEquals" locator1="CPRoles#INFO_MESSAGE" value1="No roles were found." />
+		<execute function="AssertTextEquals" locator1="Message#EMPTY_INFO" value1="No roles were found." />
 	</command>
 
 	<command name="viewNoXSSCP">
