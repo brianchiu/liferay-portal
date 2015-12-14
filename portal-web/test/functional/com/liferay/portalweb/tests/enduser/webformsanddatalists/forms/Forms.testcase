@@ -837,7 +837,7 @@
 			<var name="fieldName" value="CheckboxField" />
 		</execute>
 
-		<execute macro="FormPortlet#submitBlankFormWithRequiredField" />
+		<execute macro="FormPortlet#submitWithValidationError" />
 
 		<execute macro="FormFields#enableCheckbox">
 			<var name="fieldName" value="CheckboxField" />
@@ -937,7 +937,7 @@
 			<var name="fieldName" value="TextField" />
 		</execute>
 
-		<execute macro="FormPortlet#submitBlankFormWithRequiredField" />
+		<execute macro="FormPortlet#submitWithValidationError" />
 
 		<execute macro="FormFields#editTextMultiline">
 			<var name="fieldName" value="TextField" />
@@ -1041,7 +1041,7 @@
 			<var name="fieldName" value="RadioField" />
 		</execute>
 
-		<execute macro="FormPortlet#submitBlankFormWithRequiredField" />
+		<execute macro="FormPortlet#submitWithValidationError" />
 
 		<execute macro="FormFields#selectRadioOption">
 			<var name="fieldName" value="RadioField" />
@@ -1232,7 +1232,7 @@
 			<var name="fieldName" value="TextField" />
 		</execute>
 
-		<execute macro="FormPortlet#submitBlankFormWithRequiredField" />
+		<execute macro="FormPortlet#submitWithValidationError" />
 
 		<execute macro="FormFields#editText">
 			<var name="fieldName" value="TextField" />
