@@ -1561,7 +1561,7 @@
 			<var name="siteURL" value="true" />
 		</execute>
 
-		<execute macro="Staging#viewSitePagesVariationPG">
+		<execute macro="Staging#viewEditedSitePagesVariationPG">
 			<var name="sitePagesVariationName" value="Main Variation Edit" />
 		</execute>
 
