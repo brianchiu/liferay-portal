@@ -164,6 +164,27 @@
 	<td>//div[contains(@data-fieldname,'${key_fieldName}')]//label</td>
 	<td></td>
 </tr>
+<!--VALIDATION-->
+<tr>
+	<td>VALIDATION_TYPE</td>
+	<td>//div[contains(@data-fieldname,'validation')]/div/following-sibling::div//select[contains(@class,'type')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VALIDATION_ARGUMENT</td>
+	<td>//div[contains(@data-fieldname,'validation')]/div/following-sibling::div//select[contains(@class,'validation')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VALIDATION_INPUT</td>
+	<td>//input[contains(@class,'parameter-input')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VALIDATION_ERROR_MESSAGE</td>
+	<td>//input[contains(@class,'message-input')]</td>
+	<td></td>
+</tr>
 <tr>
 	<td></td>
 	<td></td>

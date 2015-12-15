@@ -48,6 +48,15 @@
 		<execute function="Type" locator1="FormFields#TEXT_MULTILINE_FIELD" value1="${fieldValue}" />
 	</command>
 
+	<command name="editValidation">
+		<execute function="Select" locator1="FormFields#VALIDATION_TYPE" value1="${validationType}" />
+
+		<execute function="Select" locator1="FormFields#VALIDATION_ARGUMENT" value1="${validationArgument}" />
+
+		<execute function="Type" locator1="FormFields#VALIDATION_INPUT" value1="${validationInput}" />
+		<execute function="Type" locator1="FormFields#VALIDATION_ERROR_MESSAGE" value1="${validationErrorMessage}" />
+	</command>
+
 	<command name="enableAdvancedOptions">
 		<execute function="AssertClick" locator1="FormFields#ADVANCED_FIELD_SETTINGS_TOGGLE" value1="show-more-options" />
 	</command>
