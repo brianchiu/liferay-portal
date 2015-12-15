@@ -160,22 +160,17 @@
 </tr>
 <tr>
 	<td>SUCCESS</td>
-	<td>//div[contains(@class,'alert') and contains(@class,'alert-success')]</td>
+	<td>//div[contains(@class,'alert-success')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SUCCESS_LOCALIZED</td>
-	<td>//div[contains(@class,'alert') and contains(@class,'alert-success')]</td>
+	<td>//div[contains(@class,'alert-success')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>SUCCESS_1</td>
-	<td>xpath=(//div[contains(@class,'alert') and contains(@class,'alert-success')])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>SUCCESS_2</td>
-	<td>//span[contains(@class,'alert-success') and contains(@class,'message')]</td>
+	<td>xpath=(//div[contains(@class,'alert-success')])[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -195,7 +190,7 @@
 </tr>
 <tr>
 	<td>UNIQUE_SUCCESS</td>
-	<td>//div[contains(@class,'alert') and contains(@class,'alert-success') and contains(.,'${key_uniqueSuccess}')]</td>
+	<td>//div[contains(@class,'alert-success') and contains(.,'${key_uniqueSuccess}')]</td>
 	<td></td>
 </tr>
 <tr>
