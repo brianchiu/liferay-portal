@@ -36,6 +36,65 @@
 		</if>
 	</tear-down>
 
+	<command name="EditDDLFormConfigurationViaSystemSettings">
+		<description message="This is a use case for LPS-59749" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Forms" />
+		</execute>
+
+		<execute macro="Portlet#viewDisplayStyles">
+			<var name="displayStyleList" value="Descriptive,Icon,List" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSystem">
+			<var name="portlet" value="System Settings" />
+		</execute>
+
+		<execute macro="SystemSettings#gotoCategory">
+			<var name="category" value="Productivity" />
+		</execute>
+
+		<execute macro="SystemSettings#editConfiguration">
+			<var name="configurationName" value="Dynamic Data Lists Form Configuration" />
+		</execute>
+
+		<execute macro="FormFields#removeRepeatableField" />
+
+		<execute macro="Button#clickSave" />
+
+		<execute macro="Alert#viewSuccess" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Forms" />
+		</execute>
+
+		<execute macro="Portlet#viewDisplayStyles">
+			<var name="displayStyleList" value="Icon,List" />
+		</execute>
+
+		<execute macro="Portlet#viewDisplayStylesNotPresent">
+			<var name="displayStyleList" value="Descriptive" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSystem">
+			<var name="portlet" value="System Settings" />
+		</execute>
+
+		<execute macro="SystemSettings#deleteConfiguration">
+			<var name="category" value="Productivity" />
+			<var name="configurationName" value="Dynamic Data Lists Form Configuration" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Forms" />
+		</execute>
+
+		<execute macro="Portlet#viewDisplayStyles">
+			<var name="displayStyleList" value="Icon,Descriptive,List" />
+		</execute>
+	</command>
+
 	<command name="NavigateToCorrectForm" priority="4">
 		<description message="This is a use case for LPS-59331" />
 
