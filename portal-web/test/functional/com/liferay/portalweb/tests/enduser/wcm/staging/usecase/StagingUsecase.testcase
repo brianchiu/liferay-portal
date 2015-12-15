@@ -3722,6 +3722,10 @@
 			<var name="sitePagesVariationName" value="Main Variation" />
 		</execute>
 
+		<execute macro="ProductMenu#gotoEditPage" >
+			<var name="page" value="Test Page Name" />
+		</execute>
+
 		<execute macro="SitePage#viewIncompletePageViaStagingPageVariationCP">
 			<var name="pageName" value="Test Page Name" />
 			<var name="sitePagesVariationName" value="main-variation" />
