@@ -86,10 +86,6 @@
 		</if>
 	</command>
 
-	<command name="_selectEventIframe">
-		<execute function="SelectFrame" locator1="CalendarEditEvent#EDIT_EVENT_IFRAME" />
-	</command>
-
 	<command name="_viewNewEventIframe">
 		<execute function="AssertElementPresent#assertVisible" locator1="CalendarEditEvent#START_DATE" />
 		<execute function="AssertElementPresent#assertVisible" locator1="CalendarEditEvent#START_DATE_TIME" />
@@ -442,7 +438,7 @@
 
 		<execute function="AssertClick" locator1="Calendar#ADD_EVENT_BUTTON" value1="Add Event" />
 
-		<execute macro="CalendarEvent#_selectEventIframe" />
+		<execute macro="CalendarEvent#selectEventIframe" />
 
 		<execute function="Type" locator1="TextInput#TITLE" value1="${eventTitle}" />
 
@@ -1112,6 +1108,10 @@
 				<execute function="Select" locator1="CalendarEditEvent#DETAILS_CALENDAR_SELECT" value1="${calendarName}" />
 			</then>
 		</if>
+	</command>
+
+	<command name="selectEventIframe">
+		<execute function="SelectFrame" locator1="CalendarEditEvent#EDIT_EVENT_IFRAME" />
 	</command>
 
 	<command name="selectRepeatFrequency">
