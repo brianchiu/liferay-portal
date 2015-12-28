@@ -796,6 +796,24 @@
 		<execute macro="CalendarEvent#view">
 			<var name="eventTitle" value="${eventTitle}" />
 		</execute>
+
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Week" />
+		</execute>
+
+		<execute macro="CalendarScheduler#selectEvent">
+			<var name="eventTitle" value="${eventTitle}" />
+			<var name="eventType" value="${eventType}" />
+		</execute>
+
+		<execute macro="CalendarScheduler#_gotoDetailsViaDialogBox" />
+
+		<execute macro="CalendarEvent#viewRepeatingEventViaViewDetails">
+			<var name="eventTitle" value="${eventTitle}" />
+			<var name="eventType" value="${eventType}" />
+			<var name="frequency" value="Daily" />
+			<var name="numberOfOccurrences" value="1" />
+		</execute>
 	</command>
 
 	<command name="AddCalendarEventRepeatingCommentToCurrentSiteCalendars" priority="3">
@@ -938,6 +956,24 @@
 
 		<execute macro="CalendarEvent#view">
 			<var name="eventTitle" value="${eventTitle}" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Week" />
+		</execute>
+
+		<execute macro="CalendarScheduler#selectEvent">
+			<var name="eventTitle" value="${eventTitle}" />
+			<var name="eventType" value="${eventType}" />
+		</execute>
+
+		<execute macro="CalendarScheduler#_gotoDetailsViaDialogBox" />
+
+		<execute macro="CalendarEvent#viewRepeatingEventViaViewDetails">
+			<var name="eventTitle" value="${eventTitle}" />
+			<var name="eventType" value="${eventType}" />
+			<var name="frequency" value="Weekly" />
+			<var name="numberOfOccurrences" value="2" />
 		</execute>
 	</command>
 
@@ -1170,6 +1206,23 @@
 
 		<execute macro="CalendarEvent#view">
 			<var name="eventTitle" value="${eventTitle}" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Week" />
+		</execute>
+
+		<execute macro="CalendarScheduler#selectSpecificEvent">
+			<var name="eventTitle" value="${eventTitle}" />
+		</execute>
+
+		<execute macro="CalendarScheduler#_gotoDetailsViaDialogBox" />
+
+		<execute macro="CalendarEvent#viewRepeatingEventViaViewDetails">
+			<var name="eventTitle" value="${eventTitle}" />
+			<var name="eventType" value="${eventType}" />
+			<var name="frequency" value="Yearly" />
+			<var name="yearlyRecurrenceSummary" value="Yearly, on the Third Sunday of February" />
 		</execute>
 
 		<execute macro="CalendarEvent#deleteRepeatingEventViaAgendaView">
