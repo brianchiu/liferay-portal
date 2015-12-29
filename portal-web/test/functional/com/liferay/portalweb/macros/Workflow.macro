@@ -686,6 +686,10 @@
 		<execute function="AssertElementNotPresent" locator1="MyWorkflowTasks#COMPLETED_TABLE_ASSET_TYPE" />
 	</command>
 
+	<command name="viewConfigurationSelected">
+		<execute function="AssertSelectedLabel" locator1="WorkflowConfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
+	</command>
+
 	<command name="viewDefaultMySubmissionsCP">
 		<execute function="AssertTextEquals" locator1="Message#EMPTY_INFO" value1="There are no pending publications requested by me." />
 		<execute function="AssertClick" locator1="MenuItem#COMPLETED" value1="Completed" />
