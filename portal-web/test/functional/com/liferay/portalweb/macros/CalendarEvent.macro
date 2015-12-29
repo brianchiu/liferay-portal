@@ -1364,6 +1364,11 @@
 		</execute>
 	</command>
 
+	<command name="viewApprovedEventRSVPButtons">
+		<execute function="AssertTextEquals" locator1="CalendarViewEventDetails#MAYBE_BUTTON" value1="Maybe" />
+		<execute function="AssertTextEquals" locator1="CalendarViewEventDetails#DECLINE_BUTTON" value1="Decline" />
+	</command>
+
 	<command name="viewApprovedRSVP">
 		<execute macro="CalendarNavigator#gotoView">
 			<var name="viewType" value="Week" />
@@ -1445,6 +1450,27 @@
 		<execute macro="CalendarEvent#viewTitleViaDetails">
 			<var name="eventTitle" value="${eventTitle}" />
 		</execute>
+	</command>
+
+	<command name="viewDetailsInPortlet">
+		<execute function="AssertTextEquals" locator1="CalendarViewEventDetails#EVENT_TITLE" value1="${eventTitle}" />
+
+		<execute macro="CalendarEvent#viewDetailsResources">
+			<var name="calendarName" value="${calendarName}" />
+		</execute>
+
+		<execute function="AssertElementPresent" locator1="CalendarViewEventDetails#START_DATE_FIELD" />
+		<execute function="AssertElementPresent" locator1="CalendarViewEventDetails#END_DATE_FIELD" />
+
+		<if>
+			<isset var="relatedAssetTitle" />
+			<then>
+				<execute function="AssertTextEquals" locator1="AssetRelatedAssets#HEADER" value1="Related Assets:" />
+				<execute function="AssertTextEquals" locator1="AssetRelatedAssets#ASSET_TITLE" value1="${relatedAssetTitle}" />
+			</then>
+		</if>
+
+		<execute macro="CalendarEvent#viewApprovedEventRSVPButtons" />
 	</command>
 
 	<command name="viewDetailsRate4Stars">
