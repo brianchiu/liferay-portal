@@ -217,6 +217,11 @@
 		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
+
+		<execute macro="Workflow#viewConfigurationSelected">
+			<var name="workflowDefinition" value="${workflowDefinition}" />
+			<var name="workflowResourceKey" value="${workflowResourceKey}" />
+		</execute>
 	</command>
 
 	<command name="configureWorkflowViaFolderInfo">
@@ -650,6 +655,10 @@
 		<execute function="AssertElementNotPresent" locator1="MyWorkflowTasks#COMPLETED_TABLE_TASK" />
 		<execute function="AssertElementNotPresent" locator1="MyWorkflowTasks#COMPLETED_TABLE_ASSET_TITLE" />
 		<execute function="AssertElementNotPresent" locator1="MyWorkflowTasks#COMPLETED_TABLE_ASSET_TYPE" />
+	</command>
+
+	<command name="viewConfigurationSelected">
+		<execute function="AssertSelectedLabel" locator1="WorkflowConfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
 	</command>
 
 	<command name="viewDefaultMySubmissionsCP">
