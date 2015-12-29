@@ -1293,7 +1293,7 @@
 		<if>
 			<condition function="IsElementNotPresent" locator1="DocumentsAndMedia#ICON_DOCUMENT_GENERIC" />
 			<then>
-				<execute function="AssertTextEquals" locator1="Message#INFO" value1="There are no documents or media files in this folder." />
+				<execute function="AssertTextEquals" locator1="Message#EMPTY_INFO" value1="There are no documents or media files in this folder." />
 			</then>
 		</if>
 	</command>
@@ -1614,7 +1614,7 @@
 		</execute>
 
 		<if>
-			<condition function="IsElementNotPresent" locator1="Message#INFO" />
+			<condition function="IsElementNotPresent" locator1="Message#EMPTY_INFO" />
 			<then>
 				<execute function="Check" locator1="DocumentsAndMedia#TOOLBAR_SELECT_ALL_CHECKBOX" />
 				<execute function="AssertClick#waitForDMHomeAssertTextEqualsClick" locator1="DocumentsAndMedia#TOOLBAR_ACTIONS" value1="Actions" />
@@ -1723,7 +1723,9 @@
 		</execute>
 
 		<for list="${categoryNameList}" param="categoryName">
-			<execute function="AssertTextEquals" locator1="DocumentsAndMediaDocument#DOCUMENT_INFO_CATEGORIES" value1="Topic: ${categoryName}" />
+			<var name="key_categoryName" value="${categoryName}" />
+
+			<execute function="AssertTextEquals" locator1="AssetCategorization#CATEGORY" value1="${categoryName}" />
 		</for>
 	</command>
 
