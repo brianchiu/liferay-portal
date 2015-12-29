@@ -448,6 +448,10 @@
 		</execute>
 	</command>
 
+	<command name="gotoViewInContext">
+		<execute function="AssertClick" locator1="Link#VIEW_IN_CONTEXT" value1="View in Context »" />
+	</command>
+
 	<command name="rate4StarsPG">
 		<execute function="Click#clickNoMouseOver" locator1="Ratings#YOUR_RATING_STAR_EMPTY_4" />
 	</command>
