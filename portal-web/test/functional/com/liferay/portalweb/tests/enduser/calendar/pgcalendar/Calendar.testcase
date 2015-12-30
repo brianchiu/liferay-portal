@@ -4331,6 +4331,109 @@
 		</for>
 	</command>
 
+	<command name="ViewDisplayedSiteCalendarEventsAsGuest" priority="3">
+		<description message="This is a use case for LPS-59251." />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#editTitle">
+			<var name="eventTitle" value="Liferay Calendar Event Title" />
+		</execute>
+
+		<execute macro="CalendarEvent#setTimes">
+			<var name="endDateTime" value="04:00 AM" />
+			<var name="startDateTime" value="03:00 AM" />
+		</execute>
+
+		<execute macro="CalendarEvent#selectCalendar">
+			<var name="calendarName" value="Liferay" />
+		</execute>
+
+		<execute macro="CalendarEvent#publish" />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#editTitle">
+			<var name="eventTitle" value="Test Test Calendar Event Title" />
+		</execute>
+
+		<execute macro="CalendarEvent#setTimes">
+			<var name="endDateTime" value="09:00 PM" />
+			<var name="startDateTime" value="08:00 PM" />
+		</execute>
+
+		<execute macro="CalendarEvent#selectCalendar">
+			<var name="calendarName" value="Test Test" />
+		</execute>
+
+		<execute macro="CalendarEvent#publish" />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewWeek">
+			<var name="eventTitle" value="Liferay Calendar Event Title" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewWeek">
+			<var name="eventTitle" value="Test Test Calendar Event Title" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoPersonalSite" />
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="${portletName}" />
+		</execute>
+
+		<execute macro="User#logoutPG" />
+
+		<execute macro="Page#gotoPG">
+			<var name="pageName" value="${pageName}" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewSiteCalendarEventWithDefaultPermissions">
+			<var name="calendarName" value="Liferay" />
+			<var name="endDateTime" value="04:00 AM" />
+			<var name="eventTitle" value="Liferay Calendar Event Title" />
+			<var name="siteName" value="Liferay" />
+			<var name="startDateTime" value="03:00 AM" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewHiddenSiteCalendarEvent">
+			<var name="endDateTime" value="09:00 PM" />
+			<var name="siteName" value="Test Test" />
+			<var name="startDateTime" value="08:00 PM" />
+		</execute>
+
+		<execute macro="Navigator#gotoSpecificURLPage">
+			<var name="pageName" value="Welcome" />
+			<var name="url" value="localhost:8080/web/test" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewSiteCalendarEventWithDefaultPermissions">
+			<var name="calendarName" value="Test Test" />
+			<var name="endDateTime" value="09:00 PM" />
+			<var name="eventTitle" value="Test Test Calendar Event Title" />
+			<var name="siteName" value="Test Test" />
+			<var name="startDateTime" value="08:00 PM" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewHiddenSiteCalendarEvent">
+			<var name="endDateTime" value="04:00 AM" />
+			<var name="siteName" value="Liferay" />
+			<var name="startDateTime" value="03:00 AM" />
+		</execute>
+	</command>
+
 	<command name="ViewEventCalendarChange" priority="4">
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
