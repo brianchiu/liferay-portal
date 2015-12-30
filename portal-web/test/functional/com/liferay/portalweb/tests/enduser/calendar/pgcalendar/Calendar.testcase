@@ -4408,7 +4408,7 @@
 			<var name="startDateTime" value="03:00 AM" />
 		</execute>
 
-		<execute macro="CalendarEvent#viewHiddenSiteCalendarEvent">
+		<execute macro="CalendarEvent#viewSiteCalendarEventNotPresent">
 			<var name="endDateTime" value="09:00 PM" />
 			<var name="siteName" value="Test Test" />
 			<var name="startDateTime" value="08:00 PM" />
@@ -4427,7 +4427,7 @@
 			<var name="startDateTime" value="08:00 PM" />
 		</execute>
 
-		<execute macro="CalendarEvent#viewHiddenSiteCalendarEvent">
+		<execute macro="CalendarEvent#viewSiteCalendarEventNotPresent">
 			<var name="endDateTime" value="04:00 AM" />
 			<var name="siteName" value="Liferay" />
 			<var name="startDateTime" value="03:00 AM" />
