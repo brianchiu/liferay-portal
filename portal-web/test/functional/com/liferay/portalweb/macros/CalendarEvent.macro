@@ -1515,6 +1515,16 @@
 		<execute function="SelectFrame" value1="relative=top" />
 	</command>
 
+	<command name="viewHiddenSiteCalendarEvent">
+		<var name="key_endDateTime" value="${endDateTime}" />
+		<var name="key_siteName" value="${siteName}" />
+		<var name="key_startDateTime" value="${startDateTime}" />
+
+		<execute function="AssertElementNotPresent" locator1="Calendar#CURRENT_SITE_CALENDARS_HEADER" value1="${siteName}'s Calendars" />
+
+		<execute function="AssertElementNotPresent" locator1="Calendar#SCHEDULER_EVENT_SPECIFIC_EVENT_TIMES" />
+	</command>
+
 	<command name="viewInvitationResourceNotPresent">
 		<execute macro="CalendarEvent#_expandInvitationsPanel" />
 
@@ -1640,6 +1650,21 @@
 		<var name="key_resource" value="${resourceName}" />
 
 		<execute function="AssertTextEquals" locator1="CalendarEditEvent#INVITATIONS_PENDING" value1="${resourceName}" />
+	</command>
+
+	<command name="viewSiteCalendarEventWithDefaultPermissions">
+		<var name="key_calendarName" value="${calendarName}" />
+		<var name="key_endDateTime" value="${endDateTime}" />
+		<var name="key_siteName" value="${siteName}" />
+		<var name="key_startDateTime" value="${startDateTime}" />
+
+		<execute function="AssertTextEquals" locator1="Calendar#CURRENT_SITE_CALENDARS_HEADER" value1="${siteName}'s Calendars" />
+
+		<execute function="Click" locator1="Calendar#SCHEDULER_EVENT_SPECIFIC_EVENT_TIMES" />
+
+		<execute function="AssertTextEquals" locator1="Calendar#SCHEDULER_EVENT_CALENDAR_NAME" value1="${calendarName}" />
+
+		<execute function="AssertNotVisible" locator1="Calendar#SCHEDULER_EVENT_DIALOG_BOX_EVENT_TITLE" value1="${eventTitle}" />
 	</command>
 
 	<command name="viewSiteRSVPWithApprovedWorkflow">
