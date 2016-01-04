@@ -261,7 +261,10 @@
 
 		<execute function="AssertTextEquals" locator1="Message#SUCCESS" value1="Your request completed successfully." />
 
-		<execute function="AssertTextEquals" locator1="WorkflowConfiguration#RESOURCE_TABLE_WORKFLOW" value1="${workflowDefinition}" />
+		<execute macro="Workflow#viewConfigurationSelected">
+			<var name="workflowDefinition" value="${workflowDefinition}" />
+			<var name="workflowResourceValue" value="${workflowResourceValue}" />
+		</execute>
 	</command>
 
 	<command name="configureWorkflowViaFolderInfo">
@@ -687,7 +690,9 @@
 	</command>
 
 	<command name="viewConfigurationSelected">
-		<execute function="AssertSelectedLabel" locator1="WorkflowConfiguration#${workflowResourceKey}" value1="${workflowDefinition}" />
+		<var name="key_workflowResourceValue" value="${workflowResourceValue}" />
+
+		<execute function="AssertTextEquals" locator1="WorkflowConfiguration#RESOURCE_TABLE_WORKFLOW" value1="${workflowDefinition}" />
 	</command>
 
 	<command name="viewDefaultMySubmissionsCP">
