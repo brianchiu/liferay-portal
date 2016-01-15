@@ -96,4 +96,19 @@
 	<command name="viewFormName">
 		<execute function="AssertTextEquals" locator1="Form#NAME_FIELD" value1="${formName}" />
 	</command>
+
+	<command name="previewForm">
+		<execute macro="Navigator#selectSpecificWindow">
+			<var name="windowTitle" value="Form - Forms" />
+		</execute>
+
+		<var name="key_formName" value="${formName}" />
+
+		<execute function="AssertTextEquals" locator1="Form#PUBLISH_FORM_NAME_FIELD" value1="${formName}" />
+
+		<execute macro="FormFields#viewTextLabel">
+			<var name="fieldLabel" value="${fieldLabel}" />
+			<var name="fieldName" value="${fieldName}" />
+		</execute>
+	</command>
 </definition>

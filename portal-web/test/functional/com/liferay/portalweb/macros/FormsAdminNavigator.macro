@@ -54,4 +54,8 @@
  
  		<execute function="AssertClick" locator1="MenuItem#PUBLISH" value1="Publish" />
  	</command>
+
+ 	<command name="gotoPreviewForm">
+		<execute function="AssertClick" locator1="Message#INFO_LINK" value1="Click here to preview the form in a new window." />
+	</command>
 </definition>
