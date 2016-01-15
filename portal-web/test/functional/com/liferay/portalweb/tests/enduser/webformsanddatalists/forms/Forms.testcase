@@ -1855,4 +1855,83 @@
 			<var name="fieldName" value="HiddenField" />
 		</execute>
 	</command>
+
+	<command name="PreviewAndPublishForm" priority="4">
+		<description message="This is a use case for LPS-61740" />
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Forms" />
+		</execute>
+
+		<execute macro="FormsAdminNavigator#gotoAdd" />
+
+		<execute macro="Form#editName" />
+
+		<execute macro="Form#editDescription" />
+
+		<execute macro="Form#gotoAddFirstField">
+			<var name="fieldType" value="Text" />
+		</execute>
+
+		<execute macro="FormFields#editText">
+			<var name="fieldName" value="label" />
+			<var name="fieldValue" value="Text Field" />
+		</execute>
+
+		<execute macro="FormFields#viewFormName">
+			<var name="fieldName" value="TextField" />
+		</execute>
+
+		<execute macro="FormFields#save" />
+
+		<execute macro="Form#save" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+ 			<var name="portlet" value="Forms" />
+ 		</execute>
+ 
+ 		<execute macro="FormsAdminNavigator#gotoEditFormByName" />
+
+ 		<execute macro="FormsAdminNavigator#gotoPublish" />
+
+ 		<execute macro="FormsAdminNavigator#gotoPreviewForm" />
+
+ 		<execute macro="Form#previewForm">
+			<var name="fieldLabel" value="Text Field" />
+			<var name="fieldName" value="TextField" />
+		</execute>
+
+		<execute macro="Navigator#closeWindow" />
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+ 			<var name="portlet" value="Forms" />
+ 		</execute>
+ 
+ 		<execute macro="FormsAdminNavigator#gotoEditFormByName" />
+
+ 		<execute macro="FormsAdminNavigator#gotoPublish" />
+
+ 		<execute macro="Form#selectPublishSetting" />
+
+ 		<execute macro="Form#viewFormPublish">
+ 			<var name="fieldLabel" value="Text Field" />
+			<var name="fieldName" value="TextField" />
+		</execute>
+
+ 		<execute macro="ProductMenu#gotoSitesContent">
+ 			<var name="portlet" value="Forms" />
+ 		</execute>
+ 
+ 		<execute macro="FormsAdminNavigator#gotoEditFormByName" />
+
+ 		<execute macro="FormsAdminNavigator#gotoPublish" />
+
+ 		<execute macro="Form#selectPublishSetting" />
+
+ 		<execute macro="Form#viewFormNotPublished" />
+	</command>
 </definition>
