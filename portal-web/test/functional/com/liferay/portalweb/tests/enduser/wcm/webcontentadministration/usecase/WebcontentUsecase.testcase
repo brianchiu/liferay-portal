@@ -445,7 +445,7 @@
 
 		<execute function="Refresh" />
 
-		<execute macro="WebContent#addPGViaWCD">
+		<execute macro="WebContent#addStructuredPGViaWCD">
 			<var name="structureName" value="WC Structure Name" />
 			<var name="webContentTitle" value="WC Title" />
 		</execute>
@@ -522,7 +522,7 @@
 
 		<execute function="Refresh" />
 
-		<execute macro="WebContent#addPGViaWCD">
+		<execute macro="WebContent#addStructuredPGViaWCD">
 			<var name="structureName" value="WC Structure Name" />
 			<var name="webContentTitle" value="WC Title" />
 		</execute>
