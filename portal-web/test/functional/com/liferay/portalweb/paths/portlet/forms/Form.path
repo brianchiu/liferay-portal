@@ -112,6 +112,11 @@
 	<td>//label[contains(@class,'publish-checkbox')]//span[@class='toggle-switch-bar']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>PUBLISH_FORM_PUBLIC_URL</td>
+	<td>//input[@class='form-control' and @type='text']</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
