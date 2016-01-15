@@ -46,4 +46,12 @@
 
 		<execute function="AssertClick" locator1="MenuItem#VIEW_ENTRIES" value1="View Entries" />
 	</command>
+
+	<command name="gotoPublish">
+		<execute function="AssertElementPresent" locator1="Form#NAME_FIELD" />
+
+ 		<execute function="Click" locator1="Icon#HEADER_VERTICAL_ELLIPSIS" />
+ 
+ 		<execute function="AssertClick" locator1="MenuItem#PUBLISH" value1="Publish" />
+ 	</command>
 </definition>
