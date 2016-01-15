@@ -111,4 +111,8 @@
 			<var name="fieldName" value="${fieldName}" />
 		</execute>
 	</command>
+
+	<command name="selectPublishSetting">
+		<execute function="Click" locator1="Form#PUBLISH_FORM_SWITCHER" />
+	</command>
 </definition>
