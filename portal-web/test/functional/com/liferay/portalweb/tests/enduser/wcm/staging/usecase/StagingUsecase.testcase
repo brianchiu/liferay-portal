@@ -3645,6 +3645,10 @@
 			<var name="templateName" value="Template Name" />
 		</execute>
 
+		<execute macro="WebContentTemplates#save" />
+
+		<execute macro="Navigator#openURL" />
+
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
 		</execute>
@@ -3659,6 +3663,7 @@
 
 		<execute macro="WebContent#addWithStructureCP">
 			<var name="structureName" value="Structure Name" />
+			<var name="templateName" value="Template Name" />
 			<var name="webContentText" value="Staging Web Content Text" />
 			<var name="webContentTextBox" value="Staging Web Content Body" />
 			<var name="webContentTitle" value="Web Content Title" />

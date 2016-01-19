@@ -612,6 +612,13 @@
 		</if>
 
 		<if>
+			<isset var="templateName" />
+			<then>
+				<execute macro="WebContent#selectTemplateCP" />
+			</then>
+		</if>
+
+		<if>
 			<equals arg1="${saveAsDraft}" arg2="true" />
 			<then>
 				<execute function="AssertClick" locator1="Button#SAVE_AS_DRAFT" value1="Save as Draft" />

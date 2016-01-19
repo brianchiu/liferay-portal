@@ -6,7 +6,20 @@
 
 		<execute function="Type#clickAtSendKeys" locator1="TextInput#NAME" value1="${templateName}" />
 
-		<execute macro="WebContentNavigator#showTemplateDetails" />
+		<if>
+			<isset var="structureName" />
+			<then>
+				<execute macro="WebContentNavigator#showTemplateDetails" />
+
+				<execute function="AssertClick" locator1="Button#SELECT" value1="Select" />
+
+				<var name="key_ddlTemplateName" value="${templateName}" />
+
+				<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
+				<execute function="AssertClickNoError" locator1="DDMSelectTemplate#TEMPLATE_TABLE_CHOOSE_BUTTON" value1="Choose" />
+				<execute function="Confirm" value1="Selecting a new template deletes all unsaved content. Do you want to proceed?" />
+			</then>
+		</if>
 
 		<if>
 			<isset var="templateDescription" />
@@ -208,10 +221,6 @@
 
 	<command name="save">
 		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
-
-		<execute function="SelectFrame" />
-
-		<execute function="SelectFrame" locator1="IFrame#TEMPLATES" />
 
 		<execute macro="Alert#viewRequestCompletedSuccessMessage" />
 	</command>
