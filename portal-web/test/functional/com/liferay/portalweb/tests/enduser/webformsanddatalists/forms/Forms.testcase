@@ -259,7 +259,7 @@
 
 		<execute macro="FormsAdminNavigator#gotoPublish" />
 
-		<execute macro="Form#selectPublishSetting" />
+		<execute macro="Form#clickPublishSwitcher" />
 
 		<execute macro="Form#viewFormPublish">
 			<var name="fieldLabel" value="Text Field" />
@@ -274,7 +274,7 @@
 
 		<execute macro="FormsAdminNavigator#gotoPublish" />
 
-		<execute macro="Form#selectPublishSetting" />
+		<execute macro="Form#clickPublishSwitcher" />
 
 		<execute macro="Form#viewFormNotPublished" />
 	</command>
