@@ -89,6 +89,8 @@
 			<var name="fieldLabel" value="${fieldLabel}" />
 			<var name="fieldName" value="${fieldName}" />
 		</execute>
+
+		<execute function="AssertElementNotPresent" locator1="Button#SUBMIT" value1="Submit" />
 	</command>
 
 	<command name="save">
