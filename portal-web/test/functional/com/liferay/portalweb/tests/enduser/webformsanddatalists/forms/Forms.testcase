@@ -200,7 +200,7 @@
 		</execute>
 	</command>
 
-	<command name="PreviewAndPublishForm" priority="4">
+	<command name="PreviewAndPublishForm" priority="5">
 		<description message="This is a use case for LPS-61740" />
 
 		<execute macro="Navigator#openURL" />
