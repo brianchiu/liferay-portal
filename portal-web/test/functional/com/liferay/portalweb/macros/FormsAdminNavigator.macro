@@ -1,7 +1,7 @@
 <definition>
 	<var name="formName" value="Created Form Name" />
 
-	<command name="gotoAdd">
+	<command name="gotoAddForm">
 		<execute function="Click" locator1="Button#PLUS" />
 	</command>
 
