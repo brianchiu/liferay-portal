@@ -5,6 +5,12 @@
 		<execute function="Click" locator1="Button#PLUS" />
 	</command>
 
+	<command name="gotoDataProviders">
+		<execute function="Click" locator1="Icon#HEADER_VERTICAL_ELLIPSIS" />
+
+		<execute function="AssertClick" locator1="MenuItem#DATA_PROVIDERS" value1="Data Providers" />
+	</command>
+
 	<command name="gotoEdit">
 		<var name="key_rowEntry" value="${formName}" />
 
