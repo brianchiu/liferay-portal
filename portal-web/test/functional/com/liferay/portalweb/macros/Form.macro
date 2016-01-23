@@ -41,6 +41,17 @@
 		</execute>
 	</command>
 
+	<command name="editFieldLabel">
+		<execute macro="FormFields#editText">
+			<var name="fieldName" value="label" />
+			<var name="fieldValue" value="${fieldValue}" />
+		</execute>
+
+		<execute macro="FormFields#viewFormName">
+			<var name="fieldName" value="${fieldName}" />
+		</execute>
+	</command>
+
 	<command name="editName">
 		<var name="key_columnSize" value="${columnSize}" />
 
