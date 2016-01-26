@@ -77,6 +77,17 @@
 	<td>//div[div/input[contains(@value,'${key_displayStyle}')]]/following-sibling::div/a[contains(@class,'delete-button')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<!--DATA_PROVIDER-->
+<tr>
+	<td>DATA_PROVIDER_PLUS_BUTTON</td>
+	<td>//a[contains(@id,'DDMDataProviderPortlet') and contains(@class,'btn') and span[contains(@class,'icon-plus')]]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>

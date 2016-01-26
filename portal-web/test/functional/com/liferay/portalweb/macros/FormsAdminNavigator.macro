@@ -5,6 +5,12 @@
 		<execute function="Click" locator1="Button#PLUS" />
 	</command>
 
+	<command name="gotoAddDataProvider">
+		<execute function="SelectFrame" locator1="IFrame#DIALOG" />
+
+		<execute function="Click" locator1="FormsAdmin#DATA_PROVIDER_PLUS_BUTTON" />
+	</command>
+
 	<command name="gotoDataProviders">
 		<execute function="Click" locator1="Icon#HEADER_VERTICAL_ELLIPSIS" />
 
