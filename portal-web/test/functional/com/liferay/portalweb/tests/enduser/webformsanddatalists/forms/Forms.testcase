@@ -859,7 +859,8 @@
 			<var name="fieldName" value="ParagraphField" />
 		</execute>
 
-		<execute macro="FormFields#editParagraph">
+		<execute macro="FormFields#editTextMultiline">
+			<var name="fieldName" value="text" />
 			<var name="fieldValue" value="Paragraph field body text." />
 		</execute>
 

@@ -165,11 +165,6 @@
 </tr>
 <!--PARAGRAPH-->
 <tr>
-	<td>PARAGRAPH_BODY_TEXT_FIELD</td>
-	<td>//textarea[contains(@id,'text')]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>PARAGRAPH_BODY_TEXT_CONTENT</td>
 	<td>//div[contains(@class,'paragraph') and contains(@data-fieldname,'${key_fieldName}')]/p</td>
 	<td></td>
