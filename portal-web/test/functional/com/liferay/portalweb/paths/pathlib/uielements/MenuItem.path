@@ -249,6 +249,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>DATA_PROVIDERS</td>
+	<td>//a[@role='menuitem']//span[contains(.,'Data Providers')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>DEACTIVATE</td>
 	<td>//div[contains(@class,'open')]//a[@role='menuitem' and contains(.,'Deactivate')]</td>
 	<td></td>

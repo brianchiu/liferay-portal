@@ -29,6 +29,29 @@
 		<execute function="Type#typeAceEditor" locator1="Form#DESCRIPTION_FIELD" value1="${formDescription}" />
 	</command>
 
+	<command name="editFieldDataProvider">
+		<execute macro="FormFields#selectRadioOption">
+			<var name="fieldName" value="dataSourceType" />
+			<var name="radioOption" value="From Data Provider" />
+		</execute>
+
+		<execute macro="FormFields#selectSelectOption">
+			<var name="fieldName" value="ddmDataProviderInstanceId" />
+			<var name="selectOption" value="${dataProvider}" />
+		</execute>
+	</command>
+
+	<command name="editFieldLabel">
+		<execute macro="FormFields#editText">
+			<var name="fieldName" value="label" />
+			<var name="fieldValue" value="${fieldValue}" />
+		</execute>
+
+		<execute macro="FormFields#viewFormName">
+			<var name="fieldName" value="${fieldName}" />
+		</execute>
+	</command>
+
 	<command name="editName">
 		<var name="key_columnSize" value="${columnSize}" />
 
