@@ -1,6 +1,6 @@
 <definition>
 	<command name="createNewUserAccount">
-		<execute macro="User#addNewUserAccount">
+		<execute macro="User#createAccount">
 			<var name="userEmailAddress" value="${userEmailAddress}" />
 			<var name="userFirstName" value="${userFirstName}" />
 			<var name="userLastName" value="${userLastName}" />
