@@ -37,8 +37,6 @@
 			<var name="portlet" value="Export" />
 		</execute>
 
-		<execute macro="LAR#gotoExportTemplateCP" />
-
 		<execute macro="LAR#addExportTemplateCP">
 			<var name="exportTemplateDescription" value="Export Template Description" />
 			<var name="exportTemplateName" value="Export Template Name" />
@@ -124,8 +122,6 @@
 		<execute macro="ProductMenu#gotoSitesPublishingTools">
 			<var name="portlet" value="Export" />
 		</execute>
-
-		<execute macro="LAR#gotoExportTemplateCP" />
 
 		<execute macro="LAR#addExportTemplateCP">
 			<var name="exportTemplateDescription" value="Export Template Description" />
@@ -810,8 +806,6 @@
 			<var name="portlet" value="Export" />
 		</execute>
 
-		<execute macro="LAR#gotoExportTemplateCP" />
-
 		<execute macro="LAR#addExportTemplateCP">
 			<var name="exportTemplateDescription" value="Export Template Description" />
 			<var name="exportTemplateName" value="Export Template Name" />
@@ -983,8 +977,6 @@
 		<execute macro="ProductMenu#gotoSitesPublishingTools">
 			<var name="portlet" value="Export" />
 		</execute>
-
-		<execute macro="LAR#gotoExportTemplateCP" />
 
 		<execute macro="LAR#addExportTemplateCP">
 			<var name="exportTemplateDescription" value="Export Template Description" />
