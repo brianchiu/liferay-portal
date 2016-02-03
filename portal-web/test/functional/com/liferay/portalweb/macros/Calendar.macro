@@ -596,7 +596,7 @@
 
 		<execute function="Click" locator1="CalendarManageCalendars#CALENDAR_TABLE_ACTIONS" />
 
-		<execute function="AssertClick" locator1="MenuItem#EXPORT" value1="Export" />
+		<execute function="AssertClick" locator1="CalendarResources#RESOURCE_MENULIST_EXPORT" value1="Export" />
 
 		<execute function="Pause" locator1="5000" />
 
