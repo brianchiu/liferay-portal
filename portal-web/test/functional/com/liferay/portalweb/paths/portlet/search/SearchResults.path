@@ -125,40 +125,40 @@
 <!--ASSET_ENTRY_TABLE-->
 <tr>
 	<td>ASSET_ENTRY_TABLE_TITLE</td>
-	<td>//tr[contains(.,'${key_searchAssetTitle}')]//span[@class='asset-entry-title']/a</td>
+	<td>//div[contains(@class,'searchcontainer')]//li//strong[contains(.,'${key_searchAssetTitle}')]</td>
 	<td></td>
 </tr><tr>
 	<td>ASSET_ENTRY_TABLE_TITLE_1</td>
-	<td>xpath=(//tr[contains(.,'${key_searchAssetTitle1}')]//span[@class='asset-entry-title']/a)[1]</td>
+	<td>xpath=(//div[contains(@class,'searchcontainer')]//li[1]//strong[contains(.,'${key_searchAssetTitle}')])</td>
 	<td></td>
 </tr><tr>
 	<td>ASSET_ENTRY_TABLE_TITLE_2</td>
-	<td>xpath=(//tr[contains(.,'${key_searchAssetTitle2}')]//span[@class='asset-entry-title']/a)[2]</td>
+	<td>xpath=(//div[contains(@class,'searchcontainer')]//li[2]//strong[contains(.,'${key_searchAssetTitle}')])</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ASSET_ENTRY_TABLE_TITLE_3</td>
-	<td>xpath=(//tr[contains(.,'${key_searchAssetTitle3}')]//span[@class='asset-entry-title']/a)[3]</td>
+	<td>xpath=(//div[contains(@class,'searchcontainer')]//li[3]//strong[contains(.,'${key_searchAssetTitle}')])</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ASSET_ENTRY_TABLE_TYPE</td>
-	<td>//tr[contains(.,'${key_searchAssetTitle}')]//span[@class='asset-entry-type']</td>
+	<td>//div[contains(@class,'searchcontainer')]//li//h6</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ASSET_ENTRY_TABLE_TYPE_1</td>
-	<td>xpath=(//tr[contains(.,'${key_searchAssetTitle1}')]//span[@class='asset-entry-type'])[1]</td>
+	<td>xpath=(//div[contains(@class,'searchcontainer')]//li[1]//h6)</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ASSET_ENTRY_TABLE_TYPE_2</td>
-	<td>xpath=(//tr[contains(.,'${key_searchAssetTitle2}')]//span[@class='asset-entry-type'])[2]</td>
+	<td>xpath=(//div[contains(@class,'searchcontainer')]//li[2]//h6)</td>
 	<td></td>
 </tr>
 <tr>
 	<td>ASSET_ENTRY_TABLE_TYPE_3</td>
-	<td>xpath=(//tr[contains(.,'${key_searchAssetTitle3}')]//span[@class='asset-entry-type'])[3]</td>
+	<td>xpath=(//div[contains(@class,'searchcontainer')]//li[3]//h6)</td>
 	<td></td>
 </tr>
 <tr>
