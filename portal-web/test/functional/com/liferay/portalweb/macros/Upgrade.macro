@@ -1,10 +1,8 @@
 <definition>
 	<command name="viewUpgrade">
-		<execute macro="SignIn#signInViaDockbar" />
+		<execute macro="SignIn#signIn" />
 
-		<!--<execute macro="SignIn#signIn" />
-
-		<execute macro="Smoke#viewWelcomePage" />-->
+		<execute macro="Smoke#viewWelcomePage" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Web Content" />
@@ -81,13 +79,13 @@
 
 		<execute macro="SignOut#signOut" />
 
-		<execute macro="SignIn#signInViaDockbar">
+		<execute macro="SignIn#signIn">
 			<var name="userEmailAddress" value="user@liferay.com" />
 		</execute>
 
-		<!--<execute macro="Smoke#viewWelcomePage">
+		<execute macro="Smoke#viewWelcomePage">
 			<var name="userFirstName" value="Userfn" />
 			<var name="userLastName" value="Userln" />
-		</execute>-->
+		</execute>
 	</command>
 </definition>
