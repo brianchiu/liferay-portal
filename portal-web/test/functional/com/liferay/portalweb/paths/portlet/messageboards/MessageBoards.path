@@ -373,7 +373,7 @@
 </tr>
 <tr>
 	<td>THREAD_LIST_ANSWER</td>
-	<td>//li[contains(.,'${key_threadSubject}')]/div/span[4]</td>
+	<td>//li[contains(.,'${key_threadSubject}')]/div/span[3]</td>
 	<td></td>
 </tr>
 <tr>
