@@ -24,6 +24,8 @@
 			<var name="portletName" value="Documents and Media" />
 		</execute>
 
+		<execute function="Pause" locator1="5000" />
+
 		<execute macro="DMPortlet#setDescriptiveView" />
 
 		<!--<execute macro="DMDocument#viewPGDetails">
