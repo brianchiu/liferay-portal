@@ -18,14 +18,6 @@
 			<var name="pageName" value="Document" />
 		</execute>
 
-		<execute macro="Portlet#dragAndDropPortletToColumnPG">
-			<var name="columnNumberFrom" value="1" />
-			<var name="columnNumberTo" value="2" />
-			<var name="portletName" value="Documents and Media" />
-		</execute>
-
-		<execute function="Refresh" />
-
 		<execute macro="DMPortlet#setDescriptiveView" />
 
 		<!--<execute macro="DMDocument#viewPGDetails">
