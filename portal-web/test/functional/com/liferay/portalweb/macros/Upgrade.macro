@@ -24,6 +24,10 @@
 			<var name="portletName" value="Documents and Media" />
 		</execute>
 
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Document" />
+		</execute>
+
 		<execute macro="DMPortlet#setDescriptiveView" />
 
 		<!--<execute macro="DMDocument#viewPGDetails">
