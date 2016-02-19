@@ -72,9 +72,12 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<execute macro="Navigator#gotoSitePage">
-			<var name="pageName" value="Site Page" />
+		<execute macro="Navigator#openSiteURL">
 			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Home#PAGE_ACTIVE">
+			<var name="key_pageName" value="Site Page" />
 		</execute>
 
 		<execute macro="SignOut#signOut" />
