@@ -107,6 +107,10 @@ public class ReleaseInfo {
 		return _BUILD_NUMBER;
 	}
 
+	public static final int getFeatureSet() {
+		return _FEATURE_SET;
+	}
+
 	public static final String getCodeName() {
 		return _CODE_NAME;
 	}
@@ -152,7 +156,9 @@ public class ReleaseInfo {
 
 	private static final String _CODE_NAME = "Wilberforce";
 
-	private static final String _DATE = "May 8, 2015";
+	private static final String _DATE = "Latest";
+
+	private static final int _FEATURE_SET = 1;
 
 	private static final String _NAME = "Liferay Portal Community Edition";
 
@@ -168,7 +174,7 @@ public class ReleaseInfo {
 
 	private static final String _VERSION = "7.0.0";
 
-	private static final String _VERSION_DISPLAY_NAME = "7.0.0 CE M5";
+	private static final String _VERSION_DISPLAY_NAME = "7.0.0 CE Pre-Release";
 
 	private static String _releaseInfo;
 	private static String _serverInfo;
