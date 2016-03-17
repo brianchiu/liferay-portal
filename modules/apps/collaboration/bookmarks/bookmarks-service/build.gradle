@@ -1,6 +1,5 @@
 buildService {
 	apiDir = "../bookmarks-api/src/main/java"
-	autoNamespaceTables = false
 	testDir = "../bookmarks-test/src/testIntegration/java"
 }
 
