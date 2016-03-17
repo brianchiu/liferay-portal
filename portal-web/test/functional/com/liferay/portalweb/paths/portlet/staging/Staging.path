@@ -187,11 +187,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>STAGING_MENU_MARK_AS_READY_FOR_PUBLICATION_BUTTON</td>
-	<td>//span[@class='staging-bar-control-toggle']//span[@class='toggle-switch-bar' and not (@aria-hidden='true')] </td>
-	<td></td>
-</tr>
-<tr>
 	<td>STAGING_MENU_READY_FOR_PUBLICATION</td>
 	<td>//span[@class='toggle-switch-handle' and @data-label-on='Ready for Publication']</td>
 	<td></td>
