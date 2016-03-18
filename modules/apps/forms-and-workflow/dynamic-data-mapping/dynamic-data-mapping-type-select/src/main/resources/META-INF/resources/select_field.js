@@ -164,6 +164,8 @@ AUI.add(
 					_getDataSourceData: function(callback) {
 						var instance = this;
 
+						var form = instance.getRoot();
+
 						A.io.request(
 							instance.get('dataSourceURL'),
 							{
@@ -193,8 +195,11 @@ AUI.add(
 
 						var value = instance._getContextValue();
 
-						if (value.indexOf(option.value) > -1) {
-							status = selected;
+						for (var i = 0; i < value.length; i++) {
+							if (value[i] === option.value) {
+								status = 'selected';
+								break;
+							}
 						}
 
 						return status;
