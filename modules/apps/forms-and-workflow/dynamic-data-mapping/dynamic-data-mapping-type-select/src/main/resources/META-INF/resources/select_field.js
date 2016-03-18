@@ -58,7 +58,16 @@ AUI.add(
 					getContextValue: function() {
 						var instance = this;
 
-						var value = instance._getContextValue();
+						var value = SelectField.superclass.getContextValue.apply(instance, arguments);
+
+						if (!Array.isArray(value)) {
+							try {
+								value = JSON.parse(value);
+							}
+							catch (e) {
+								value = [value];
+							}
+						}
 
 						return value[0] || '';
 					},
@@ -144,25 +153,10 @@ AUI.add(
 						return instance;
 					},
 
-					_getContextValue: function() {
-						var instance = this;
-
-						var value = SelectField.superclass.getContextValue.apply(instance, arguments);
-
-						if (!Array.isArray(value)) {
-							try {
-								value = JSON.parse(value);
-							}
-							catch (e) {
-								value = [value];
-							}
-						}
-
-						return value;
-					},
-
 					_getDataSourceData: function(callback) {
 						var instance = this;
+
+						var form = instance.getRoot();
 
 						A.io.request(
 							instance.get('dataSourceURL'),
@@ -191,10 +185,8 @@ AUI.add(
 
 						var status = '';
 
-						var value = instance._getContextValue();
-
-						if (value.indexOf(option.value) > -1) {
-							status = selected;
+						if (instance.getContextValue() === option.value) {
+							status = 'selected';
 						}
 
 						return status;
