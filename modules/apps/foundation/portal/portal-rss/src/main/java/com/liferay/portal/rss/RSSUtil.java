@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.rss.util;
+package com.liferay.portal.rss;
 
 import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.StringPool;

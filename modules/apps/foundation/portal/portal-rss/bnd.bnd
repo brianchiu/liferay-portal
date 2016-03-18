@@ -1,7 +1,7 @@
-Bundle-Name: Liferay RSS Utilities
-Bundle-SymbolicName: com.liferay.rss.util
+Bundle-Name: Liferay Portal RSS
+Bundle-SymbolicName: com.liferay.portal.rss
 Bundle-Version: 1.0.0
-Export-Package: com.liferay.rss.util
+Export-Package: com.liferay.portal.rss
 Liferay-Releng-Module-Group-Description:
 Liferay-Releng-Module-Group-Title:
 -liferay-includeresource: @icu4j-*.jar
