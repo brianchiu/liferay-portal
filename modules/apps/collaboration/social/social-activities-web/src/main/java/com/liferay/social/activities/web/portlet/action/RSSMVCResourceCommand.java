@@ -30,7 +30,7 @@ import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.rss.util.RSSUtil;
+import com.liferay.portal.rss.RSSUtil;
 import com.liferay.social.activities.web.constants.SocialActivitiesPortletKeys;
 import com.liferay.social.activities.web.util.SocialActivitiesQueryHelper;
 import com.liferay.social.kernel.model.SocialActivityFeedEntry;
