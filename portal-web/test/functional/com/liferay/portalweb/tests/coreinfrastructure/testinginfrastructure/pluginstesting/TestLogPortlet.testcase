@@ -11,6 +11,8 @@
 	</tear-down>
 
 	<command name="ViewLog" priority="4">
+		<property name="portal.acceptance" value="bob" />
+
 		<execute macro="Page#add">
 			<var name="pageName" value="Test Log Page" />
 		</execute>

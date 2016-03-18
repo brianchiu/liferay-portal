@@ -12,6 +12,8 @@
 	</tear-down>
 
 	<command name="ViewResourcesImporter" priority="4">
+		<property name="portal.acceptance" value="bob" />
+
 		<execute macro="Page#add">
 			<var name="pageName" value="Test Resources Importer Page" />
 		</execute>
