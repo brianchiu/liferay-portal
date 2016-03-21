@@ -404,6 +404,8 @@
 			<var name="portletName" value="Hello World" />
 		</execute>
 
+		<execute macro="Staging#markAsReadyForPublication" />
+
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
 		</execute>
