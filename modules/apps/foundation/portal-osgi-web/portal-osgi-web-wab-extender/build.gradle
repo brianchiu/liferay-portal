@@ -1,3 +1,5 @@
+import com.liferay.gradle.util.copy.RenameDependencyClosure
+
 dependencies {
 	provided files("lib-patch/org.eclipse.equinox.http.servlet.jar")
 	provided group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
@@ -25,8 +27,7 @@ deploy {
 		include "commons-fileupload-*.jar"
 		include "commons-io-*.jar"
 
-		rename(/commons-fileupload-.+\.jar/, "org.apache.commons.fileupload.jar")
-		rename(/commons-io-.+\.jar/, "org.apache.commons.io.jar")
+		rename new RenameDependencyClosure(project, configurations.provided.name)
 	}
 
 	from("lib-patch") {

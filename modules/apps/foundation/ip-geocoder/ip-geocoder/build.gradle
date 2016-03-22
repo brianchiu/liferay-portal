@@ -1,3 +1,5 @@
+import com.liferay.gradle.util.copy.RenameDependencyClosure
+
 sourceCompatibility = "1.6"
 targetCompatibility = "1.6"
 
@@ -15,7 +17,6 @@ deploy {
 		include "geoip-api-*.jar"
 		include "xz-*.jar"
 
-		rename(/geoip-api-.+\.jar/, "com.maxmind.geoip.api.jar")
-		rename(/xz-.+\.jar/, "org.tukaani.xz.jar")
+		rename new RenameDependencyClosure(project, configurations.provided.name)
 	}
 }
