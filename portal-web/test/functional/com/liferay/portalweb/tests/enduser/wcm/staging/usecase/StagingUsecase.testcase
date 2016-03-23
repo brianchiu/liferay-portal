@@ -3187,6 +3187,13 @@
 	<command name="StagingRemoteDMViaGlobalScope" priority="3">
 		<property name="app.server.bundles.size" value="1" />
 		<property name="custom.properties" value="tunneling.servlet.shared.secret=1234567890123456${line.separator}auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=" />
+		<property name="portal.acceptance" value="true" />
+
+		<execute macro="User#logoutPG">
+			<var name="nodePort" value="8080" />
+			<var name="password" value="test" />
+			<var name="userEmailAddress" value="test@liferay.com" />
+		</execute>
 
 		<var name="siteID" value="${siteID}" />
 
@@ -3212,22 +3219,23 @@
 
 		<execute function="Copy" locator1="SitesEditSite#SITE_ID" value1="siteID" />
 
-		<execute macro="User#loginPG">
-			<var name="nodePort" value="8080" />
+		<execute macro="User#logoutPG">
+			<var name="nodePort" value="9080" />
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="test@liferay.com" />
 		</execute>
 
-		<execute macro="Navigator#openSpecificURL">
-			<var name="url" value="http://localhost:9080" />
+		<execute macro="SignIn#signIn">
+			<var name="userEmailAddress" value="test@liferay.com" />
+			<var name="userPassword" value="test" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Global" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoSitesConfiguration">
-			<var name="portlet" value="Site Settings" />
+		<execute macro="ProductMenu#gotoSitesPublishing">
+			<var name="portlet" value="Staging" />
 		</execute>
 
 		<execute macro="Staging#activateStagingCP">
@@ -3236,10 +3244,6 @@
 			<var name="remoteStaging" value="true" />
 			<var name="siteID" value="${siteID}" />
 			<var name="siteName" value="Global" />
-		</execute>
-
-		<execute macro="Navigator#openSpecificURL">
-			<var name="url" value="http://localhost:8080/" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
@@ -3258,10 +3262,6 @@
 			<var name="siteScopeName" value="Global" />
 		</execute>
 
-		<execute macro="Navigator#openSpecificURL">
-			<var name="url" value="http://localhost:8080/" />
-		</execute>
-
 		<execute macro="ProductMenu#gotoControlPanelSites">
 			<var name="portlet" value="Sites" />
 		</execute>
@@ -3271,14 +3271,20 @@
 			<var name="remoteStaging" value="true" />
 		</execute>
 
-		<execute macro="User#loginPG">
-			<var name="nodePort" value="9080" />
+		<execute macro="User#logoutPG">
+			<var name="nodePort" value="8080" />
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="test@liferay.com" />
 		</execute>
 
 		<execute macro="Navigator#openSpecificURL">
 			<var name="url" value="http://localhost:9080" />
+		</execute>
+
+		<execute macro="User#loginPG">
+			<var name="nodePort" value="9080" />
+			<var name="password" value="test" />
+			<var name="userEmailAddress" value="test@liferay.com" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
@@ -3297,6 +3303,12 @@
 		<execute macro="DMDocument#viewCP">
 			<var name="dmDocumentTitle" value="DM Document Title" />
 			<var name="nodePort" value="9080" />
+		</execute>
+
+		<execute macro="User#logoutPG">
+			<var name="nodePort" value="9080" />
+			<var name="password" value="test" />
+			<var name="userEmailAddress" value="test@liferay.com" />
 		</execute>
 
 		<execute macro="User#loginPG">
