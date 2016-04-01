@@ -2418,7 +2418,7 @@
 
 		<execute macro="Page#changeLogoViaPageCP">
 			<var name="logoFile" value="Document_2.png" />
-			<var name="page" value="Staging Test Page" />
+			<var name="page" value="Public Pages" />
 		</execute>
 
 		<execute macro="Navigator#gotoStagedSitePage">
