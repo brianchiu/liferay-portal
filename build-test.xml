@@ -8092,9 +8092,10 @@ jdbc.default.password=${database.mysql.password}</echo>
 				import java.util.regex.Matcher;
 				import java.util.regex.Pattern;
 
-				public boolean matchesPatterns(Pattern[] patterns, String string) {
+				public boolean matchesAnyPattern(Pattern[] patterns, String string) {
 					for (Pattern pattern : patterns) {
 						Matcher matcher = pattern.matcher(string);
+
 						if (matcher.find()) {
 							return true;
 						}
@@ -8102,7 +8103,7 @@ jdbc.default.password=${database.mysql.password}</echo>
 					return false;
 				}
 
-				Pattern[] excludedPatterns = new Pattern[] {
+				Pattern[] excludePatterns = new Pattern[] {
 					Pattern.compile(".*Caused by:.*"),
 					Pattern.compile(".*Plugin security management is not enabled.*"),
 					Pattern.compile(".*Portal property.*is obsolete.*"),
@@ -8110,7 +8111,7 @@ jdbc.default.password=${database.mysql.password}</echo>
 					Pattern.compile(".*Table.*does not exist.*")
 				};
 
-				Pattern[] includedPatterns = new Pattern[] {
+				Pattern[] includePatterns = new Pattern[] {
 					Pattern.compile(".*ERROR.*[\n$]?"),
 					Pattern.compile(".*UpgradeException:.[\n$]?")
 				};
@@ -8123,13 +8124,12 @@ jdbc.default.password=${database.mysql.password}</echo>
 				StringBuffer sb = new StringBuffer();
 
 				for (String line : lines) {
-					if (matchesPatterns(includedPatterns, line)) {
-						if (!matchesPatterns(excludedPatterns, line)) {
-							count++;
-							sb.append("    ");
-							sb.append(line);
-							sb.append("\n\n");
-						}
+					if (matchesAnyPattern(includePatterns, line) && (!matchesAnyPattern(excludePatterns, line))) {
+						count++;
+
+						sb.append("    ");
+						sb.append(line);
+						sb.append("\n\n");
 					}
 				}
 
@@ -8144,6 +8144,7 @@ jdbc.default.password=${database.mysql.password}</echo>
 					sb.append("DB Upgrade functional test failure.\n -> Errors occurred during upgrade.");
 
 					System.out.println(sb.toString());
+
 					project.setProperty("db.upgrade.failed", "true");
 				}
 			]]>
