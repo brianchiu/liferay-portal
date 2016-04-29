@@ -7841,6 +7841,15 @@ jdbc.default.password=${database.mysql.password}</echo>
 			</then>
 		</if>
 
+		<get-testcase-property property.name="portal.version" />
+
+		<if>
+			<isset property="portal.version" />
+			<then>
+				<delete file="${liferay.home}/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg" />
+			</then>
+		</if>
+
 		<antcall target="clean-up-web-xml" />
 	</target>
 
