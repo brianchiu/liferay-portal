@@ -1572,6 +1572,7 @@ counter.jdbc.prefix=jdbc.counter.]]></echo>
 	</macrodef>
 
 	<macrodef name="prepare-portal-legacy-properties">
+		<attribute default="portal-impl/src/portal-ext.properties" name="portal.ext.properties.file.path" />
 		<attribute name="portal.major.version" />
 		<sequential>
 			<var name="portal.legacy.file.content" unset="true" />
@@ -1650,7 +1651,7 @@ counter.jdbc.prefix=jdbc.counter.]]></echo>
 				replace=""
 			/>
 
-			<echo append="true" file="portal-impl/src/portal-ext.properties">
+			<echo append="true" file="@{portal.ext.properties.file.path}">
 
 ##
 ## From portal-legacy-@{portal.major.version}.properties
