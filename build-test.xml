@@ -8015,6 +8015,14 @@ jdbc.default.password=${database.mysql.password}</echo>
 
 		<echo file="${liferay.home}/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg">indexReadOnly=true</echo>
 
+		<java
+			dir="${liferay.home}/tools/portal-tools-db-upgrade-client"
+			failonerror="true"
+			fork="true"
+			jar="${liferay.home}/tools/portal-tools-db-upgrade-client/com.liferay.portal.tools.db.upgrade.client.jar"
+			timeout="900000"
+		/>
+
 		<echo file="${liferay.home}/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg">indexReadOnly=false</echo>
 	</target>
 
