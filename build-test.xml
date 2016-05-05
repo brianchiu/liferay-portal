@@ -8015,6 +8015,16 @@ jdbc.default.password=${database.mysql.password}</echo>
 
 		<echo file="${liferay.home}/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg">indexReadOnly=true</echo>
 
+		<get-database-property property.name="database.driver" />
+		<get-database-property property.name="database.password" />
+		<get-database-property property.name="database.url" />
+		<get-database-property property.name="database.username" />
+
+		<echo file="${liferay.home}/tools/portal-tools-db-upgrade-client/portal-upgrade-database.properties">jdbc.default.driverClassName=${database.driver}
+jdbc.default.url=${database.url}
+jdbc.default.username=${database.username}
+jdbc.default.password=${database.password}</echo>
+
 		<java
 			dir="${liferay.home}/tools/portal-tools-db-upgrade-client"
 			failonerror="true"
