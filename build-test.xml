@@ -8017,6 +8017,16 @@ jdbc.default.password=${database.mysql.password}</echo>
 
 		<echo file="${liferay.home}/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg">indexReadOnly=true</echo>
 
+		<echo>
+
+###
+### App Server Dir
+###
+
+${app.server.dir}
+
+</echo>
+
 		<if>
 			<equals arg1="${app.server.type}" arg2="jboss" />
 			<then>
