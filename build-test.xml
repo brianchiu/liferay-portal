@@ -8016,6 +8016,34 @@ jdbc.default.password=${database.mysql.password}</echo>
 
 		<echo file="${liferay.home}/osgi/configs/com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg">indexReadOnly=true</echo>
 
+		<if>
+			<equals arg1="${app.server.type}" arg2="jboss" />
+			<then>
+				<echo file="${liferay.home}/tools/portal-tools-db-upgrade-client/app-server.properties">dir=${app.server.dir}
+global.lib.dir=modules/com/liferay/portal/main
+portal.dir=standalone/deployments/ROOT.war
+extra.lib.dirs=</echo>
+			</then>
+			<elseif>
+				<equals arg1="${app.server.type}" arg2="tomcat" />
+				<then>
+					<echo file="${liferay.home}/tools/portal-tools-db-upgrade-client/app-server.properties">dir=${app.server.dir}
+global.lib.dir=lib
+portal.dir=webapps/ROOT
+extra.lib.dirs=bin</echo>
+				</then>
+			</elseif>
+			<elseif>
+				<equals arg1="${app.server.type}" arg2="wildfly" />
+				<then>
+					<echo file="${liferay.home}/tools/portal-tools-db-upgrade-client/app-server.properties">dir=${app.server.dir}
+global.lib.dir=modules/com/liferay/portal/main
+portal.dir=standalone/deployments/ROOT.war
+extra.lib.dirs=modules/system/layers/base/javax/mail,modules/system/layers/base/javax/persistence,modules/system/layers/base/javax/servlet</echo>
+				</then>
+			</elseif>
+		</if>
+
 		<get-database-property property.name="database.driver" />
 		<get-database-property property.name="database.password" />
 		<get-database-property property.name="database.url" />
