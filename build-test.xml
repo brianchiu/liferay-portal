@@ -8116,7 +8116,7 @@ jdbc.default.password=${database.password}</echo>
 		<waitfor maxwait="15" maxwaitunit="minute">
 			<resourcecontains
 				resource="${liferay.home}/tools/portal-tools-db-upgrade-client/upgrade.log"
-				substring="Checking to see if all upgrades steps have completed... done."
+				substring="Checking to see if all upgrades have completed... done."
 			/>
 		</waitfor>
 
