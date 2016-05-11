@@ -1,6 +1,6 @@
 Bundle-Name: Liferay Ant BND
 Bundle-SymbolicName: com.liferay.ant.bnd
-Bundle-Version: 2.0.21
+Bundle-Version: 2.0.22
 Export-Package: com.liferay.ant.bnd
 -liferay-includeresource:\
 	@com.liferay.portal.impl-*.jar!/com/liferay/portal/definitions/liferay-social_6_1_0.dtd,\

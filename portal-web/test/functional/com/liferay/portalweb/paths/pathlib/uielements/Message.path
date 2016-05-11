@@ -179,6 +179,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>SEE_MORE_DETAILS_LINK</td>
+	<td>//a[contains(.,'See More Details')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>SERVER_URL_SUCCESS</td>
 	<td>//tr[contains(.,'Server URL')]/td//span[contains(@class,'lfr-status-success')]</td>
 	<td></td>

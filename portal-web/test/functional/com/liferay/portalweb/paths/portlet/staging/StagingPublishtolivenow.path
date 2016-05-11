@@ -159,7 +159,7 @@
 </tr>
 <tr>
 	<td>CONTENT_CHOOSE_CONTENT_CONTENT_CHANGE_LINK</td>
-	<td>//a[@data-portlettitle='${key_uncheckSubContent}']</td>
+	<td>//a[@data-portlettitle='${key_uncheckContent}']</td>
 	<td></td>
 </tr>
 <tr>

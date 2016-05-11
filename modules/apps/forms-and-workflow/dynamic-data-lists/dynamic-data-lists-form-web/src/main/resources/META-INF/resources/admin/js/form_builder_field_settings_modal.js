@@ -66,18 +66,11 @@ AUI.add(
 
 						var settingsForm = field.get('settingsForm');
 
-						var container = settingsForm.get('container');
+						instance._renderSettingsForm(settingsForm);
 
-						container.appendTo(instance._getBodyNode());
+						instance._modal.syncHeight();
 
-						instance._showDefaultToolbar();
-
-						settingsForm.render();
-
-						var modal = instance._modal;
-
-						modal.syncHeight();
-						modal.align();
+						instance._showFormContainer();
 
 						instance._previousSettings = JSON.stringify(field.getSettings());
 					},
@@ -194,6 +187,16 @@ AUI.add(
 						instance._previousSettings = JSON.stringify(event.field.getSettings());
 					},
 
+					_renderSettingsForm: function(settingsForm) {
+						var instance = this;
+
+						var container = settingsForm.get('container');
+
+						container.appendTo(instance._getBodyNode());
+
+						settingsForm.render();
+					},
+
 					_showConfirmationMessage: function() {
 						var instance = this;
 
@@ -251,8 +254,15 @@ AUI.add(
 
 						var footerNode = instance._getFooterNode();
 
-						footerNode.one('.' + CSS_FIELD_SETTINGS_YES).toggle(display);
+						var yesButton = footerNode.one('.' + CSS_FIELD_SETTINGS_YES);
+
 						footerNode.one('.' + CSS_FIELD_SETTINGS_NO).toggle(display);
+
+						yesButton.toggle(display);
+
+						if (display) {
+							yesButton.focus();
+						}
 
 						instance._confirmationToolbarVisible = !!display;
 					},
@@ -271,9 +281,13 @@ AUI.add(
 
 						var field = instance._fieldBeingEdited;
 
-						var container = field.get('settingsForm').get('container');
+						var settingsForm = field.get('settingsForm');
+
+						var container = settingsForm.get('container');
 
 						container.toggle(display);
+
+						settingsForm.getField('label').focus();
 					}
 				}
 			}

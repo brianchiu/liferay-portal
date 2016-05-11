@@ -2476,8 +2476,9 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoSitesConfiguration">
@@ -2495,8 +2496,9 @@
 
 		<execute macro="PortletEntry#save" />
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoSitesContent">
@@ -2557,8 +2559,9 @@
 			<var name="viewEntryContentList" value="Web Content Content" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoSitesConfiguration">
@@ -2603,122 +2606,6 @@
 		</execute>
 
 		<execute macro="UserSegmentContentListPortlet#viewContentNotPresent" />
-	</command>
-
-	<command name="StagingUncheckAppAllAndContentCTRefAllAndWC" priority="4">
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoSitesPublishing">
-			<var name="portlet" value="Staging" />
-		</execute>
-
-		<execute macro="Staging#activateStagingCP">
-			<var name="siteName" value="Site Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoSitesContent">
-			<var name="portlet" value="Web Content" />
-		</execute>
-
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="Web Content Content" />
-			<var name="webContentTitle" value="Web Content Title" />
-		</execute>
-
-		<execute macro="PortletEntry#publish" />
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="Web Content Title" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoSitesConfiguration">
-			<var name="portlet" value="Audience Targeting" />
-		</execute>
-
-		<execute macro="ContentTargetingUserSegment#addCP">
-			<var name="userSegmentDescription" value="User Segment Description" />
-			<var name="userSegmentName" value="User Segment Name" />
-		</execute>
-
-		<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
-			<var name="contentVisitedContent" value="Web Content Article" />
-			<var name="webContentTitle" value="Web Content Title" />
-		</execute>
-
-		<execute macro="PortletEntry#save" />
-
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Site Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoSitesConfiguration">
-			<var name="portlet" value="Audience Targeting" />
-		</execute>
-
-		<execute macro="ContentTargetingCampaign#addCP">
-			<var name="campaignDescription" value="Campaign Description" />
-			<var name="campaignEndDate" value="1/1/2099" />
-			<var name="campaignEndTime" value="12:00 PM" />
-			<var name="campaignName" value="Campaign Name" />
-			<var name="campaignPriorityField" value="3" />
-			<var name="campaignStartDate" value="1/1/2015" />
-			<var name="campaignStartTime" value="12:00 AM" />
-		</execute>
-
-		<execute macro="ContentTargetingCampaign#addTrackingActionContentCP">
-			<var name="contentAlias" value="Content Alias" />
-			<var name="contentTitle" value="Web Content Title" />
-			<var name="contentTrackingActionSelect" value="View" />
-			<var name="menulistContent" value="Web Content Article" />
-		</execute>
-
-		<execute macro="ContentTargetingCampaign#saveCP" />
-
-		<execute macro="Navigator#gotoStagedSitePage">
-			<var name="pageName" value="Test Page Name" />
-			<var name="siteName" value="Site Name" />
-		</execute>
-
-		<execute macro="Staging#gotoPublishToLive" />
-
-		<execute macro="Staging#configurePublishToLive">
-			<var name="contentDateRange" value="All" />
-			<var name="contentName" value="Audience Targeting" />
-			<var name="subContent" value="User Segments" />
-			<var name="uncheckSubSubContent" value="Referenced Content" />
-		</execute>
-
-		<execute macro="Staging#configurePublishToLive">
-			<var name="contentName" value="Audience Targeting" />
-			<var name="subContent" value="Campaigns" />
-			<var name="uncheckSubSubContent" value="Referenced Content" />
-		</execute>
-
-		<execute macro="Staging#configurePublishToLive">
-			<var name="uncheckContentNameList" value="Web Content" />
-		</execute>
-
-		<execute macro="Staging#publishToLive">
-			<var name="publishValidation" value="true" />
-		</execute>
-
-		<execute macro="Staging#gotoPublishToLive" />
-
-		<execute macro="Staging#viewValidationError">
-			<var name="validateErrorMessage" value="The original Referenced Asset does not exist in the current environment." />
-		</execute>
 	</command>
 
 	<command name="StagingUncheckAppCTRefAllAndContentAll" priority="4">
@@ -2850,6 +2737,140 @@
 
 		<execute macro="Staging#publishToLive">
 			<var name="publishValidation" value="true" />
+		</execute>
+	</command>
+
+	<command name="StagingValidationUncheckAllContentCTRefAndWC" priority="4">
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesPublishing">
+			<var name="portlet" value="Staging" />
+		</execute>
+
+		<execute macro="Staging#activateStagingCP">
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Web Content Content" />
+			<var name="webContentTitle" value="Web Content Title" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="Web Content Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesConfiguration">
+			<var name="portlet" value="Audience Targeting" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addCP">
+			<var name="userSegmentDescription" value="User Segment Description" />
+			<var name="userSegmentName" value="User Segment Name" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
+			<var name="contentVisitedContent" value="Web Content Article" />
+			<var name="webContentTitle" value="Web Content Title" />
+		</execute>
+
+		<execute macro="PortletEntry#save" />
+
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesConfiguration">
+			<var name="portlet" value="Audience Targeting" />
+		</execute>
+
+		<execute macro="ContentTargetingCampaign#addCP">
+			<var name="campaignDescription" value="Campaign Description" />
+			<var name="campaignEndDate" value="1/1/2099" />
+			<var name="campaignEndTime" value="12:00 PM" />
+			<var name="campaignName" value="Campaign Name" />
+			<var name="campaignPriorityField" value="3" />
+			<var name="campaignStartDate" value="1/1/2015" />
+			<var name="campaignStartTime" value="12:00 AM" />
+		</execute>
+
+		<execute macro="PortletEntry#save" />
+
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesConfiguration">
+			<var name="portlet" value="Audience Targeting" />
+		</execute>
+
+		<execute macro="ContentTargetingCampaign#gotoAddReport">
+			<var name="campaignName" value="Campaign Name" />
+		</execute>
+
+		<execute macro="ContentTargetingCampaign#addReportName">
+			<var name="reportDescription" value="Content Report Description" />
+			<var name="reportName" value="Content Report Name" />
+		</execute>
+
+		<execute macro="ContentTargetingCampaign#addTrackingActionContentCP">
+			<var name="contentMetricName" value="Content Metric Name" />
+			<var name="contentTitle" value="Web Content Title" />
+			<var name="contentTrackingActionSelect" value="View" />
+			<var name="menulistContent" value="Web Content Article" />
+		</execute>
+
+		<execute macro="PortletEntry#save" />
+
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Staging#gotoPublishToLive" />
+
+		<execute macro="Staging#configurePublishToLive">
+			<var name="contentDateRange" value="All" />
+			<var name="contentName" value="Audience Targeting" />
+			<var name="subContent" value="User Segments" />
+			<var name="uncheckSubSubContent" value="Referenced Content" />
+		</execute>
+
+		<execute macro="Staging#configurePublishToLive">
+			<var name="contentName" value="Audience Targeting" />
+			<var name="subContent" value="Campaigns" />
+			<var name="uncheckSubSubContent" value="Referenced Content" />
+		</execute>
+
+		<execute macro="Staging#configurePublishToLive">
+			<var name="uncheckContentNameList" value="Web Content" />
+		</execute>
+
+		<execute macro="Staging#publishToLive">
+			<var name="failureExpected" value="true" />
+			<var name="validateErrorMessage" value="An unexpected error occurred with the publication process. Please check your portal and publishing configuration." />
 		</execute>
 	</command>
 

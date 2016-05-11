@@ -223,7 +223,9 @@
 			<var name="userSegmentRule" value="Regular Role" />
 		</execute>
 
-		<execute function="AssertSelectedLabel" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_REGULAR_ROLE_SELECT" value1="Administrator" />
+		<var name="key_regularRole" value="${regularRole}" />
+
+		<execute function="AssertSelectedLabel" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_DEFAULT_REGULAR_ROLE" value1="Administrator" />
 
 		<execute function="Select" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_REGULAR_ROLE_SELECT" value1="${regularRole}" />
 	</command>
@@ -232,6 +234,8 @@
 		<execute macro="ContentTargetingUserSegment#addRuleCmdCP">
 			<var name="userSegmentRule" value="Site Member" />
 		</execute>
+
+		<var name="key_selectSiteMemberSite" value="${selectSiteMemberSite}" />
 
 		<execute function="Select" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_SITE_MEMBER_SELECT" value1="${selectSiteMemberSite}" />
 	</command>
@@ -286,7 +290,11 @@
 		<execute function="Click#waitForMenuToggleJSClick" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
 		<execute function="Click" locator1="MenuItem#EDIT" />
 
-		<execute function="Click" locator1="CPContenttargetingAddusersegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_GENDER_${genderRadioPath}_RADIO" />
+		<execute macro="ContentTargetingUserSegment#openFormField">
+			<var name="usersegmentRuleName" value="Gender" />
+		</execute>
+
+		<execute function="Click" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_GENDER_${genderRadioPath}_RADIO" />
 	</command>
 
 	<command name="editUserSegmentCP">
@@ -349,6 +357,17 @@
 		<execute function="Pause" locator1="1000" />
 	</command>
 
+	<command name="openFormField">
+		<var name="key_fieldName" value="${usersegmentRuleName}" />
+
+		<if>
+			<condition function="IsElementPresent" locator1="ContentTargeting#FORM_FIELD_COLLAPSED" />
+			<then>
+				<execute function="Click" locator1="ContentTargeting#FORM_FIELD_COLLAPSED" />
+			</then>
+		</if>
+	</command>
+
 	<command name="viewCP">
 		<execute macro="Navigator#gotoNavItem">
 			<var name="navItem" value="User Segments" />
@@ -400,14 +419,9 @@
 
 			<execute function="AssertTextEquals#assertPartialText" locator1="EditUserSegment#USER_SEGMENT_RULE_APPLIED" value1="${usersegmentRuleName}" />
 
-			<var name="key_fieldName" value="${usersegmentRuleName}" />
-
-			<if>
-				<condition function="IsElementPresent" locator1="ContentTargeting#FORM_FIELD_COLLAPSED" />
-				<then>
-					<execute function="Click" locator1="ContentTargeting#FORM_FIELD_COLLAPSED" />
-				</then>
-			</if>
+			<execute macro="ContentTargetingUserSegment#openFormField">
+				<var name="usersegmentRuleName" value="${usersegmentRuleName}" />
+			</execute>
 
 			<if>
 				<equals arg1="${usersegmentRuleName}" arg2="Content Visited" />
@@ -485,6 +499,8 @@
 				<elseif>
 					<equals arg1="${usersegmentRuleName}" arg2="Site Member" />
 					<then>
+						<var name="key_selectSiteMemberSite" value="${selectSiteMemberSite}" />
+
 						<execute function="AssertSelectedLabel" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_SITE_MEMBER_SELECT" value1="${selectSiteMemberSite}" />
 					</then>
 				</elseif>
@@ -546,6 +562,8 @@
 				<elseif>
 					<equals arg1="${usersegmentRuleName}" arg2="Regular Role" />
 					<then>
+						<var name="key_regularRole" value="${regularRole}" />
+
 						<execute function="AssertSelectedLabel" locator1="EditUserSegment#USER_SEGMENT_RULE_USER_ATTRIBUTES_REGULAR_ROLE_SELECT" value1="${regularRole}" />
 					</then>
 				</elseif>
