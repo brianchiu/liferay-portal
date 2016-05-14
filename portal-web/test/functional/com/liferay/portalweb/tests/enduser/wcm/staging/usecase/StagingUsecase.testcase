@@ -1554,7 +1554,7 @@
 			<var name="pageName" value="Wiki" />
 		</execute>
 
-		<execute macro="Navigator#gotoSitePage">
+		<execute macro="Navigator#gotoStagedSitePage">
 			<var name="pageName" value="Home" />
 			<var name="siteName" value="Community Site Name" />
 		</execute>
@@ -1638,7 +1638,7 @@
 			<var name="sitePagesVariationName" value="Empty Variation" />
 		</execute>
 
-		<execute macro="Navigator#gotoSitePage">
+		<execute macro="Navigator#gotoStagedSitePage">
 			<var name="pageName" value="Home" />
 			<var name="siteName" value="Community Site Name" />
 		</execute>
