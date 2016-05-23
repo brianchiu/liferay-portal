@@ -7038,10 +7038,28 @@ cluster.link.bind.addr["cluster-link-udp"]=127.0.0.1</echo>
 		<get-testcase-property property.name="data.archive.type" />
 		<get-testcase-property property.name="portal.version" />
 
+		<local name="curl-out.log" />
+
+		<exec executable="curl" outputproperty="curl-out.log" logError="true">
+			<arg value="-o ${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip" />
+			<arg value="http://172.16.18.243/${portal.version}/data-archive-portal-sybase.zip" />
+		</exec>
+
+		<echo>${curl-out.log}</echo>
+
 		<unzip
 			dest="${liferay.home}"
 			src="${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip"
 		/>
+
+		<local name="git-out.log" />
+
+		<exec executable="git" dir="${portal.legacy.dir}" outputproperty="git-out.log" logError="true">
+			<arg value="clean" />
+			<arg value="-f" />
+		</exec>
+
+		<echo>${git-out.log}</echo>
 
 		<if>
 			<equals arg1="${database.type}" arg2="mysql" />
