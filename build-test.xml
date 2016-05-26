@@ -7040,8 +7040,9 @@ cluster.link.bind.addr["cluster-link-udp"]=127.0.0.1</echo>
 
 		<local name="curl-out.log" />
 
-		<exec executable="curl" outputproperty="curl-out.log" logError="true">
-			<arg value="-o ${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip" />
+		<exec dir="${portal.legacy.dir}/${portal.version}/data-archive/" executable="curl" outputproperty="curl-out.log" logError="true">
+			<arg value="-o" />
+			<arg value="${data.archive.type}-${database.type}.zip" />
 			<arg value="http://172.16.18.243/${portal.version}/data-archive-portal-sybase.zip" />
 		</exec>
 
