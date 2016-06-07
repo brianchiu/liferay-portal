@@ -7074,6 +7074,13 @@ cluster.link.bind.addr["cluster-link-udp"]=127.0.0.1</echo>
 		<get-testcase-property property.name="data.archive.type" />
 		<get-testcase-property property.name="portal.version" />
 
+		<if>
+			<equals arg1="${database.type}" arg2="db2"/>
+			<then>
+				<copy file="/opt/dev/projects/github/liferay-portal/data-archive/${portal.version}/${data.archive.type}-db2.zip" tofile="${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip" verbose="true" />
+			</then>
+		</if>
+
 		<unzip
 			dest="${liferay.home}"
 			src="${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip"
