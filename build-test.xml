@@ -3527,7 +3527,10 @@ create database lportal${database.index} character set utf8;</echo>
 								<get-testcase-property property.name="database.bare.enabled" />
 
 								<if>
-									<equals arg1="${database.bare.enabled}" arg2="true" />
+									<or>
+										<equals arg1="${database.bare.enabled}" arg2="true" />
+										<equals arg1="${database.type}" arg2="db2" />
+									</or>
 									<then>
 										<var name="database.create.suffix" value="-bare" />
 									</then>
