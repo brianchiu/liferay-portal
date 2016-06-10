@@ -5307,34 +5307,6 @@ javascript.fast.load=false</echo>
 		/>
 
 		<if>
-			<equals arg1="${portal.major.version}" arg2="5.1" />
-			<then>
-				<prepare-portal-legacy-properties portal.major.version="5.1" />
-			</then>
-		</if>
-
-		<if>
-			<or>
-				<equals arg1="${portal.major.version}" arg2="5.1" />
-				<equals arg1="${portal.major.version}" arg2="5.2" />
-			</or>
-			<then>
-				<prepare-portal-legacy-properties portal.major.version="5.2" />
-			</then>
-		</if>
-
-		<if>
-			<or>
-				<equals arg1="${portal.major.version}" arg2="5.1" />
-				<equals arg1="${portal.major.version}" arg2="5.2" />
-				<equals arg1="${portal.major.version}" arg2="6.0" />
-			</or>
-			<then>
-				<prepare-portal-legacy-properties portal.major.version="6.0" />
-			</then>
-		</if>
-
-		<if>
 			<or>
 				<equals arg1="${portal.major.version}" arg2="5.1" />
 				<equals arg1="${portal.major.version}" arg2="5.2" />
@@ -5342,24 +5314,9 @@ javascript.fast.load=false</echo>
 				<equals arg1="${portal.major.version}" arg2="6.1" />
 			</or>
 			<then>
-				<prepare-portal-legacy-properties portal.major.version="6.1" />
-			</then>
-		</if>
-
-		<if>
-			<or>
-				<equals arg1="${portal.major.version}" arg2="5.1" />
-				<equals arg1="${portal.major.version}" arg2="5.2" />
-				<equals arg1="${portal.major.version}" arg2="6.0" />
-				<equals arg1="${portal.major.version}" arg2="6.1" />
-				<equals arg1="${portal.major.version}" arg2="6.2" />
-			</or>
-			<then>
-				<prepare-portal-legacy-properties portal.major.version="6.2" />
-
 				<echo append="true" file="portal-impl/src/portal-ext.properties">
 
-upgrade.processes=${upgrade.processes.master}</echo>
+passwords.encryption.algorithm.legacy=SHA</echo>
 			</then>
 		</if>
 
@@ -8480,38 +8437,11 @@ jdbc.default.password=${database.password}</echo>
 			<or>
 				<equals arg1="${portal.major.version}" arg2="6.0" />
 				<equals arg1="${portal.major.version}" arg2="6.1" />
-				<equals arg1="${portal.major.version}" arg2="6.2" />
 			</or>
 			<then>
-				<prepare-portal-legacy-properties
-					portal.ext.properties.file.path="${liferay.home}/tools/portal-tools-db-upgrade-client/portal-upgrade-ext.properties"
-					portal.major.version="6.2"
-				/>
-			</then>
-		</if>
+				<echo append="true" file="${liferay.home}/tools/portal-tools-db-upgrade-client/portal-upgrade-ext.properties">
 
-		<if>
-			<or>
-				<equals arg1="${portal.major.version}" arg2="6.0" />
-				<equals arg1="${portal.major.version}" arg2="6.1" />
-			</or>
-			<then>
-				<prepare-portal-legacy-properties
-					portal.ext.properties.file.path="${liferay.home}/tools/portal-tools-db-upgrade-client/portal-upgrade-ext.properties"
-					portal.major.version="6.1"
-				/>
-			</then>
-		</if>
-
-		<if>
-			<or>
-				<equals arg1="${portal.major.version}" arg2="6.0" />
-			</or>
-			<then>
-				<prepare-portal-legacy-properties
-					portal.ext.properties.file.path="${liferay.home}/tools/portal-tools-db-upgrade-client/portal-upgrade-ext.properties"
-					portal.major.version="6.0"
-				/>
+passwords.encryption.algorithm.legacy=SHA</echo>
 			</then>
 		</if>
 
