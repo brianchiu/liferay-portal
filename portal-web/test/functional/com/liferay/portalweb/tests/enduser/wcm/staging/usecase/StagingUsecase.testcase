@@ -2211,6 +2211,8 @@
 	</command>
 
 	<command name="StagingLocalLiveWorkflow" priority="4">
+		<property name="portal.acceptance.quarantine" value="true" />
+
 		<execute macro="ProductMenu#gotoControlPanelSites">
 			<var name="portlet" value="Sites" />
 		</execute>
