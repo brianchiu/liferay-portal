@@ -114,6 +114,8 @@
 
 		<execute function="Click" locator1="MenuItem#EDIT" />
 
+		<execute function="AssertElementPresent#assertVisible" locator1="TextInput#TITLE" />
+
 		<execute function="Type" locator1="TextInput#TITLE" value1="${entryTitleEdit}" />
 		<execute function="Type" locator1="TextInput#URL" value1="${entryURLEdit}" />
 		<execute function="Type#typeEditor" locator1="AlloyEditor#CONTENT_FIELD" value1="${entryContentEdit}" />
@@ -181,6 +183,8 @@
 	<command name="viewPG">
 		<var name="key_distributionScope" value="${distributionScope}" />
 		<var name="key_entryTitle" value="${entryTitle}" />
+
+		<execute function="Pause" locator1="2000" />
 
 		<execute function="AssertTextEquals" locator1="Announcements#CARD_VIEW_ENTRY_TITLE" value1="${entryTitle}" />
 
