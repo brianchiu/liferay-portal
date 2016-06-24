@@ -3538,7 +3538,10 @@ create database lportal${database.index} character set utf8;</echo>
 								<get-testcase-property property.name="database.bare.enabled" />
 
 								<if>
-									<equals arg1="${database.bare.enabled}" arg2="true" />
+									<or>
+										<equals arg1="${database.bare.enabled}" arg2="true" />
+										<equals arg1="${database.type}" arg2="db2" />
+									</or>
 									<then>
 										<var name="database.create.suffix" value="-bare" />
 									</then>
@@ -7090,6 +7093,13 @@ cluster.link.bind.addr["cluster-link-udp"]=127.0.0.1</echo>
 	<target name="rebuild-legacy-database">
 		<get-testcase-property property.name="data.archive.type" />
 		<get-testcase-property property.name="portal.version" />
+
+		<if>
+			<equals arg1="${database.type}" arg2="db2"/>
+			<then>
+				<copy file="/opt/dev/projects/github/liferay-portal/data-archive/${portal.version}/${data.archive.type}-db2.zip" tofile="${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip" verbose="true" />
+			</then>
+		</if>
 
 		<unzip
 			dest="${liferay.home}"
