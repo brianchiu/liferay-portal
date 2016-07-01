@@ -145,6 +145,82 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContent#viewWithWorkflowCP">
+			<var name="webContentContent" value="WC Workflow Content" />
+			<var name="webContentTitle" value="WC Workflow Title" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC Workflow Title" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Submissions" />
+		</execute>
+
+		<execute macro="Workflow#viewMySubmissions">
+			<var name="workflowAssetTitle" value="WC Workflow Title" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowDefinition" value="Single Approver" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewWithWorkflowCP">
+			<var name="entryContent" value="Blogs Workflow Content" />
+			<var name="entryTitle" value="Blogs Workflow Title" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewWithWorkflowCP">
+			<var name="entryContent" value="Blogs Workflow Content" />
+			<var name="entryTitle" value="Blogs Workflow Title" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="Blogs Workflow Title" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Submissions" />
+		</execute>
+
+		<execute macro="Workflow#viewMySubmissions">
+			<var name="workflowAssetTitle" value="Blogs Workflow Title" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowDefinition" value="Single Approver" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
 		<execute macro="Navigator#openSiteURL">
 			<var name="siteName" value="Site Name" />
 		</execute>
