@@ -377,6 +377,8 @@
 			<var name="dmFolderName" value="DM Folder Name" />
 		</execute>
 
+		<execute macro="Navigator#openURL" />
+
 		<execute macro="LAR#configureExportSiteCP" >
 			<var name="larFileName" value="DMExport" />
 		</execute>
