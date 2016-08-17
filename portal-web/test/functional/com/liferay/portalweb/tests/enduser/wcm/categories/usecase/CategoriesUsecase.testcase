@@ -1634,7 +1634,7 @@
 			<var name="webContentTitle" value="Web Content Title" />
 		</execute>
 
-		<execute macro="Category#assertNoCategoryOnPage">
+		<execute macro="Page#viewNoSelectCategory">
 			<var name="pageName" value="page Name" />
 			<var name="vocabularyName" value="Vocabulary Name" />
 		</execute>
