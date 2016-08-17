@@ -1636,6 +1636,7 @@
 
 		<execute macro="Category#assertNoCategoryOnPage">
 			<var name="pageName" value="page Name" />
+			<var name="vocabularyName" value="Vocabulary Name" />
 		</execute>
 	</command>
 </definition>

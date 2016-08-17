@@ -78,7 +78,7 @@
 		<if>
 			<isset var="vocabularyAssociatedAssetType2" />
 			<then>
-				<execute function="Click" locator1="Icon#ADD_ROW_BUTTON" />
+				<execute function="Click" locator1="Button#ADD_ROW" />
 
 				<execute function="Select" locator1="CategoriesEditVocabulary#ASSOCIATED_ASSET_TYPES_SELECT_2" value1="${vocabularyAssociatedAssetType2}" />
 			</then>
