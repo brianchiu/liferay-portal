@@ -150,7 +150,9 @@
 			<var name="panelHeading" value="Categorization" />
 		</execute>
 
-		<execute function="AssertElementNotPresent" locator1="Categories#CATEGORY_SELECT" />
+		<execute function="AssertElementNotPresent" locator1="AssetCategorization#CATEGORY_SELECT">
+			<var name="key_vocabularyName" value="${vocabularyName}" />
+		</execute>
 	</command>
 
 	<command name="deleteByIconCP">
