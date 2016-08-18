@@ -49,8 +49,10 @@ import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.model.Company;
 import com.liferay.portal.kernel.portlet.PortletPreferencesFactoryUtil;
 import com.liferay.portal.kernel.repository.model.FileEntry;
+import com.liferay.portal.kernel.service.CompanyLocalService;
 import com.liferay.portal.kernel.service.ResourceLocalService;
 import com.liferay.portal.kernel.service.SystemEventLocalService;
 import com.liferay.portal.kernel.util.CharPool;
@@ -58,6 +60,7 @@ import com.liferay.portal.kernel.util.FriendlyURLNormalizerUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.HtmlUtil;
 import com.liferay.portal.kernel.util.HttpUtil;
+import com.liferay.portal.kernel.util.LocaleThreadLocal;
 import com.liferay.portal.kernel.util.LoggingTimer;
 import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -82,6 +85,7 @@ import java.sql.Timestamp;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.portlet.PortletPreferences;
 
@@ -134,6 +138,13 @@ public class JournalServiceVerifyProcess extends VerifyLayout {
 		AssetEntryLocalService assetEntryLocalService) {
 
 		_assetEntryLocalService = assetEntryLocalService;
+	}
+
+	@Reference(unbind = "-")
+	protected void setCompanyLocalService(
+		CompanyLocalService companyLocalService) {
+
+		_companyLocalService = companyLocalService;
 	}
 
 	@Reference(unbind = "-")
@@ -339,15 +350,33 @@ public class JournalServiceVerifyProcess extends VerifyLayout {
 			PortalUtil.getClassNameId(JournalArticle.class),
 			article.getDDMStructureKey(), true);
 
-		Fields ddmFields = _journalConverter.getDDMFields(
-			ddmStructure, article.getContent());
+		Locale originalefaultLocale = LocaleThreadLocal.getDefaultLocale();
+		Locale originalSiteDefaultLocale =
+			LocaleThreadLocal.getSiteDefaultLocale();
 
-		String content = _journalConverter.getContent(ddmStructure, ddmFields);
+		try {
+			Company company = _companyLocalService.getCompany(
+				article.getCompanyId());
 
-		if (!content.equals(article.getContent())) {
-			article.setContent(content);
+			LocaleThreadLocal.setDefaultLocale(company.getLocale());
+			LocaleThreadLocal.setSiteDefaultLocale(
+				PortalUtil.getSiteDefaultLocale(article.getGroupId()));
 
-			_journalArticleLocalService.updateJournalArticle(article);
+			Fields ddmFields = _journalConverter.getDDMFields(
+				ddmStructure, article.getContent());
+
+			String content = _journalConverter.getContent(
+				ddmStructure, ddmFields);
+
+			if (!content.equals(article.getContent())) {
+				article.setContent(content);
+
+				_journalArticleLocalService.updateJournalArticle(article);
+			}
+		}
+		finally {
+			LocaleThreadLocal.setDefaultLocale(originalefaultLocale);
+			LocaleThreadLocal.setSiteDefaultLocale(originalSiteDefaultLocale);
 		}
 	}
 
@@ -973,6 +1002,7 @@ public class JournalServiceVerifyProcess extends VerifyLayout {
 		JournalServiceVerifyProcess.class);
 
 	private AssetEntryLocalService _assetEntryLocalService;
+	private CompanyLocalService _companyLocalService;
 	private DDMStructureLocalService _ddmStructureLocalService;
 	private DLAppLocalService _dlAppLocalService;
 	private JournalArticleImageLocalService _journalArticleImageLocalService;
