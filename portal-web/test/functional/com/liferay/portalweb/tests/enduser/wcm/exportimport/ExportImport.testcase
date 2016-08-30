@@ -175,6 +175,8 @@
 			<var name="webContentTitle" value="Web Content Title" />
 		</execute>
 
+		<execute function="Pause" locator1="3000" />
+
 		<execute macro="WebContent#viewCP">
 			<var name="webContentContent" value="Web Content Content" />
 			<var name="webContentTitle" value="Web Content Title" />
