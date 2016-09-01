@@ -363,7 +363,7 @@
 		</execute>
 	</command>
 
-	<command name="AddPageFailWithRequiredVocabularyAssetType" priority="4">
+	<command name="AddPageWithRequiredVocabulary" priority="4">
 		<execute macro="Navigator#openURL" />
 
 		<execute macro="ProductMenu#gotoSitesContent">
