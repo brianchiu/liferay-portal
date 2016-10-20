@@ -7627,6 +7627,8 @@ go</echo>
 				</then>
 			</elseif>
 		</if>
+
+		<delete dir="${liferay.home}/data-archive" />
 	</target>
 
 	<target name="record-database-type">
