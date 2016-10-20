@@ -7456,6 +7456,10 @@ cluster.link.bind.addr["cluster-link-udp"]=127.0.0.1</echo>
 			src="${portal.legacy.dir}/${portal.version}/data-archive/${data.archive.type}-${database.type}.zip"
 		/>
 
+		<copy todir="${liferay.home}/data/document_library">
+			<fileset dir="${liferay.home}/data-archive/data/document_library" erroronmissingdir="false" />
+		</copy>
+
 		<if>
 			<equals arg1="${database.type}" arg2="db2" />
 			<then>
