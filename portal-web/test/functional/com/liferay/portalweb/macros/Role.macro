@@ -182,8 +182,6 @@
 
 		<execute function="AssertClick" locator1="Roles#ROLE_TABLE_TITLE_LINK" value1="${roleName}" />
 
-		<execute function="AssertClick" locator1="NavBar#ASSIGNEES" value1="Assignees" />
-
 		<execute function="Click" locator1="Button#PLUS" />
 
 		<execute function="SelectFrame" locator1="IFrame#SELECT_ASSIGNEES" />
@@ -359,22 +357,20 @@
 		<if>
 			<isset var="roleUser" />
 			<then>
-				<var name="key_itemName" value="${roleUser}" />
+				<var name="key_roleUser" value="${roleUser}" />
 
 				<execute function="AssertTextEquals" locator1="Roles#ROLE_TABLE_USER_TITLE" value1="${roleUser}" />
 
-				<execute function="AssertClick" locator1="ListGroupItem#ITEM_NAME_LINK" value1="${roleUser}" />
+				<execute function="Click" locator1="Roles#ROLE_TABLE_ACTIONS" />
 			</then>
 			<else>
-				<var name="key_itemName" value="${roleTitle}" />
+				<execute function="AssertTextEquals" locator1="Roles#ROLE_TABLE_TITLE" value1="${roleName}" />
 
-				<execute function="AssertTextEquals" locator1="ListGroupItem#ITEM_NAME" value1="${roleTitle}" />
-
-				<execute function="AssertClick" locator1="ListGroupItem#ITEM_NAME_LINK" value1="${roleTitle}" />
+				<execute function="Click" locator1="Roles#ROLE_TABLE_ACTIONS" />
 			</else>
 		</if>
 
-		<execute function="AssertClick" locator1="NavBar#DEFINE_PERMISSIONS" value1="Define Permissions" />
+		<execute function="AssertClick" locator1="MenuItem#DEFINE_PERMISSIONS" value1="Define Permissions" />
 
 		<if>
 			<and>
