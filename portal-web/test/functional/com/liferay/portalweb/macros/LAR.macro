@@ -570,6 +570,14 @@
 		</execute>
 	</command>
 
+	<command name="filterCompletedProcesses">
+		<execute function="Click" locator1="Dropdown#FILTER" />
+
+		<var name="key_filterValue" value="Completed" />
+
+		<execute function="AssertClick" locator1="Dropdown#FILTER_VALUES" value1="Completed" />
+	</command>
+
 	<command name="gotoExport">
 		<execute macro="LAR#_gotoExportSite">
 			<var name="siteScopeName" value="${siteScopeName}" />
@@ -643,6 +651,16 @@
 
 		<execute function="Click" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
 		<execute function="Click" locator1="SitePagesExport#CURRENT_AND_PREVIOUS_ACTIONS_MENULIST_RELAUNCH" />
+	</command>
+
+	<command name="orderByCompletionDate">
+		<execute function="Pause" locator1="1000" />
+
+		<execute function="Click" locator1="Dropdown#FILTER_ORDER" />
+
+		<var name="key_filterValue" value="Completion Date" />
+
+		<execute function="AssertClick" locator1="Dropdown#FILTER_ORDER_VALUES" value1="Completion Date" />
 	</command>
 
 	<command name="saveExportTemplateCP">
@@ -863,5 +881,15 @@
 
 		<execute function="AssertTextEquals" locator1="SitePagesExport#EXPORT_TEMPLATES_TABLE_NAME" value1="${exportTemplateName}" />
 		<execute function="AssertTextEquals" locator1="SitePagesExport#EXPORT_TEMPLATES_TABLE_DESCRIPTION" value1="${exportTemplateDescription}" />
+	</command>
+
+	<command name="viewProcessesInDescendingOrder">
+		<execute function="Click" locator1="Icon#CARET_DESCENDING" />
+	</command>
+
+	<command name="viewProcessesInListView">
+		<execute function="Click" locator1="Icon#DISPLAY_STYLE_LIST" />
+
+		<execute function="AssertElementPresent" locator1="Icon#DISPLAY_STYLE_LIST_ACTIVE" />
 	</command>
 </definition>
