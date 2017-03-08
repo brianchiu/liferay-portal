@@ -128,11 +128,16 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 		}
 	}
 
-	protected void checkExports(String fileName, String content) {
+	protected void checkExports(
+		String fileName, String content, Pattern pattern,
+		String definitionKey) {
+
 		String bundleSymbolicName = getDefinitionValue(
 			content, "Bundle-SymbolicName");
 
-		if (bundleSymbolicName == null) {
+		if ((bundleSymbolicName == null) ||
+			bundleSymbolicName.endsWith(".compat")) {
+
 			return;
 		}
 
@@ -141,7 +146,7 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 
 		bundleSymbolicName = matcher.replaceAll(StringPool.BLANK);
 
-		matcher = _exportsPattern.matcher(content);
+		matcher = pattern.matcher(content);
 
 		if (!matcher.find()) {
 			return;
@@ -159,9 +164,10 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 				continue;
 			}
 
-			StringBundler sb = new StringBundler(5);
+			StringBundler sb = new StringBundler(6);
 
-			sb.append("Export-Package '");
+			sb.append(definitionKey);
+			sb.append(" '");
 			sb.append(line);
 			sb.append("' should match Bundle-SymbolicName '");
 			sb.append(bundleSymbolicName);
@@ -208,6 +214,7 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 		String fileName, String absolutePath, String content, Pattern pattern) {
 
 		if (absolutePath.contains("/portal-kernel/") ||
+			absolutePath.contains("/third-party/") ||
 			absolutePath.contains("/util-bridges/") ||
 			absolutePath.contains("/util-java/") ||
 			absolutePath.contains("/util-taglib/") ||
@@ -222,7 +229,7 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 			return;
 		}
 
-		String imports = matcher.group(2);
+		String imports = matcher.group(3);
 
 		matcher = _wilcardImportPattern.matcher(imports);
 
@@ -284,12 +291,15 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 				content, matcher.group(1), StringPool.SPACE, matcher.start());
 		}
 
+		checkWildcardImports(
+			fileName, absolutePath, content, _exportContentsPattern);
 		checkWildcardImports(fileName, absolutePath, content, _exportsPattern);
 
 		checkMissingSchemaVersion(fileName, absolutePath, content);
 
 		ImportsFormatter importsFormatter = new BNDImportsFormatter();
 
+		content = importsFormatter.format(content, _exportContentsPattern);
 		content = importsFormatter.format(content, _exportsPattern);
 		content = importsFormatter.format(content, _importsPattern);
 
@@ -299,7 +309,10 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 			!absolutePath.contains("/third-party/")) {
 
 			checkDirectoryAndBundleName(fileName, absolutePath, content);
-			checkExports(fileName, content);
+
+			checkExports(
+				fileName, content, _exportContentsPattern, "-exportcontents");
+			checkExports(fileName, content, _exportsPattern, "Export-Package");
 		}
 
 		content = formatBundleClassPath(content);
@@ -430,7 +443,8 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 		}
 
 		if (correctKey.equals(definitionKey)) {
-			return content;
+			return StringUtil.replace(
+				content, definitionKey + "=", definitionKey + ":");
 		}
 
 		if (content.startsWith(definitionKey)) {
@@ -718,12 +732,15 @@ public class BNDSourceProcessor extends BaseSourceProcessor {
 	private final Pattern _capabilityLineBreakPattern2 = Pattern.compile(
 		";[^\\\\]");
 	private Map<String, String> _definitionKeysMap;
+	private final Pattern _exportContentsPattern = Pattern.compile(
+		"\n-exportcontents:(\\\\\n| )((.*?)(\n[^\t]|\\Z))",
+		Pattern.DOTALL | Pattern.MULTILINE);
 	private final Pattern _exportsPattern = Pattern.compile(
-		"\nExport-Package:(\\\\\n| )(.*?\n|\\Z)[^\t]",
+		"\nExport-Package:(\\\\\n| )((.*?)(\n[^\t]|\\Z))",
 		Pattern.DOTALL | Pattern.MULTILINE);
 	private Map<String, Map<String, String>> _fileSpecificDefinitionKeysMap;
 	private final Pattern _importsPattern = Pattern.compile(
-		"\nImport-Package:(\\\\\n| )(.*?\n|\\Z)[^\t]",
+		"\nImport-Package:(\\\\\n| )((.*?)(\n[^\t]|\\Z))",
 		Pattern.DOTALL | Pattern.MULTILINE);
 	private final Pattern _includeResourceJarPattern = Pattern.compile(
 		"-[0-9\\.]+\\.jar");

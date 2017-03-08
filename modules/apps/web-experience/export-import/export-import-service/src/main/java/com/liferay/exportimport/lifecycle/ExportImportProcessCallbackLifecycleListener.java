@@ -16,8 +16,7 @@ package com.liferay.exportimport.lifecycle;
 
 import aQute.bnd.annotation.ProviderType;
 
-import com.liferay.exportimport.kernel.lifecycle.ExportImportLifecycleListener;
-import com.liferay.exportimport.kernel.lifecycle.ProcessAwareExportImportLifecycleListener;
+import com.liferay.exportimport.kernel.lifecycle.BaseProcessExportImportLifecycleListener;
 import com.liferay.exportimport.lar.ExportImportProcessCallbackUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -27,15 +26,15 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-import org.osgi.service.component.annotations.Component;
-
 /**
  * @author Daniel Kocsis
+ *
+ * @deprecated As of 4.0.0
  */
-@Component(immediate = true, service = ExportImportLifecycleListener.class)
+@Deprecated
 @ProviderType
 public class ExportImportProcessCallbackLifecycleListener
-	implements ProcessAwareExportImportLifecycleListener {
+	extends BaseProcessExportImportLifecycleListener {
 
 	@Override
 	public boolean isParallel() {
@@ -43,21 +42,21 @@ public class ExportImportProcessCallbackLifecycleListener
 	}
 
 	@Override
-	public void onProcessFailed(List<Serializable> attributes)
+	protected void onProcessFailed(List<Serializable> attributes)
 		throws Exception {
 
 		ExportImportProcessCallbackUtil.popCallbackList();
 	}
 
 	@Override
-	public void onProcessStarted(List<Serializable> attributes)
+	protected void onProcessStarted(List<Serializable> attributes)
 		throws Exception {
 
 		ExportImportProcessCallbackUtil.pushCallbackList();
 	}
 
 	@Override
-	public void onProcessSucceeded(List<Serializable> attributes)
+	protected void onProcessSucceeded(List<Serializable> attributes)
 		throws Exception {
 
 		List<Callable<?>> callables =
@@ -77,4 +76,4 @@ public class ExportImportProcessCallbackLifecycleListener
 	private static final Log _log = LogFactoryUtil.getLog(
 		ExportImportProcessCallbackLifecycleListener.class);
 
-};
+}

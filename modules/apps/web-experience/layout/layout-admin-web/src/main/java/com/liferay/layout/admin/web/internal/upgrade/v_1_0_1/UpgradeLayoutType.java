@@ -20,6 +20,7 @@ import com.liferay.journal.model.JournalArticleResource;
 import com.liferay.journal.service.JournalArticleResourceLocalService;
 import com.liferay.portal.kernel.model.LayoutTypePortletConstants;
 import com.liferay.portal.kernel.model.PortletConstants;
+import com.liferay.portal.kernel.portlet.PortletPreferencesFactoryUtil;
 import com.liferay.portal.kernel.service.PortletPreferencesLocalServiceUtil;
 import com.liferay.portal.kernel.upgrade.UpgradeException;
 import com.liferay.portal.kernel.upgrade.UpgradeProcess;
@@ -84,8 +85,7 @@ public class UpgradeLayoutType extends UpgradeProcess {
 	}
 
 	protected String getPortletId() {
-		String instanceId = PortletConstants.getInstanceId(
-			_PORTLET_ID_JOURNAL_CONTENT);
+		String instanceId = PortletConstants.generateInstanceId();
 
 		return PortletConstants.assemblePortletId(
 			_PORTLET_ID_JOURNAL_CONTENT, instanceId);
@@ -111,7 +111,7 @@ public class UpgradeLayoutType extends UpgradeProcess {
 
 		portletPreferences.setValue("groupId", String.valueOf(groupId));
 
-		return portletPreferences.toString();
+		return PortletPreferencesFactoryUtil.toXML(portletPreferences);
 	}
 
 	protected long getResourcePrimKey(long groupId, String articleId)

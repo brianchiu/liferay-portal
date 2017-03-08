@@ -54,6 +54,10 @@
 	<command name="EditLanguageSelectorAndViewEvent" priority="3">
 		<description message="This is a use case for LPS-58649." />
 
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
 		<execute macro="Portlet#addPG">
 			<var name="pageName" value="Calendar Page" />
 			<var name="portletName" value="Language" />

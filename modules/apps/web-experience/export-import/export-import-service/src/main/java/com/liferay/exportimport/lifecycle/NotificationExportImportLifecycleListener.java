@@ -17,8 +17,7 @@ package com.liferay.exportimport.lifecycle;
 import aQute.bnd.annotation.ProviderType;
 
 import com.liferay.exportimport.constants.ExportImportPortletKeys;
-import com.liferay.exportimport.kernel.lifecycle.ExportImportLifecycleListener;
-import com.liferay.exportimport.kernel.lifecycle.ProcessAwareExportImportLifecycleListener;
+import com.liferay.exportimport.kernel.lifecycle.BaseProcessExportImportLifecycleListener;
 import com.liferay.portal.background.task.model.BackgroundTask;
 import com.liferay.portal.background.task.service.BackgroundTaskLocalService;
 import com.liferay.portal.kernel.backgroundtask.BackgroundTaskConstants;
@@ -35,39 +34,21 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
  * @author Akos Thurzo
+ *
+ * @deprecated As of 4.0.0
  */
-@Component(immediate = true, service = {ExportImportLifecycleListener.class})
+@Deprecated
 @ProviderType
 public class NotificationExportImportLifecycleListener
-	implements ProcessAwareExportImportLifecycleListener {
+	extends BaseProcessExportImportLifecycleListener {
 
 	@Override
 	public boolean isParallel() {
 		return false;
-	}
-
-	@Override
-	public void onProcessFailed(List<Serializable> attributes)
-		throws Exception {
-
-		sendNotification(BackgroundTaskConstants.STATUS_FAILED);
-	}
-
-	@Override
-	public void onProcessStarted(List<Serializable> attributes)
-		throws Exception {
-	}
-
-	@Override
-	public void onProcessSucceeded(List<Serializable> attributes)
-		throws Exception {
-
-		sendNotification(BackgroundTaskConstants.STATUS_SUCCESSFUL);
 	}
 
 	protected JSONObject getPayload(
@@ -81,6 +62,20 @@ public class NotificationExportImportLifecycleListener
 		jsonObject.put("status", status);
 
 		return jsonObject;
+	}
+
+	@Override
+	protected void onProcessFailed(List<Serializable> attributes)
+		throws Exception {
+
+		sendNotification(BackgroundTaskConstants.STATUS_FAILED);
+	}
+
+	@Override
+	protected void onProcessSucceeded(List<Serializable> attributes)
+		throws Exception {
+
+		sendNotification(BackgroundTaskConstants.STATUS_SUCCESSFUL);
 	}
 
 	protected void sendNotification(int status) throws PortalException {

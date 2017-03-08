@@ -146,9 +146,13 @@ public class FTLSourceProcessor extends BaseSourceProcessor {
 
 		content = importsFormatter.format(content, null, null);
 
+		content = fixEmptyLinesInMultiLineTags(content);
+
 		content = fixEmptyLinesInNestedTags(content);
 
 		content = fixEmptyLinesBetweenTags(content);
+
+		content = fixMissingEmptyLinesAroundComments(content);
 
 		content = formatFTL(fileName, content);
 
@@ -168,6 +172,24 @@ public class FTLSourceProcessor extends BaseSourceProcessor {
 	@Override
 	protected String[] doGetIncludes() {
 		return _INCLUDES;
+	}
+
+	protected String fixMissingEmptyLinesAroundComments(String content) {
+		Matcher matcher = _missingEmptyLineAfterCommentPattern.matcher(content);
+
+		if (matcher.find()) {
+			return StringUtil.replaceFirst(
+				content, "\n", "\n\n", matcher.start());
+		}
+
+		matcher = _missingEmptyLineBeforeCommentPattern.matcher(content);
+
+		if (matcher.find()) {
+			return StringUtil.replaceFirst(
+				content, "\n", "\n\n", matcher.start());
+		}
+
+		return content;
 	}
 
 	protected String formatAssignTags(String content) {
@@ -345,6 +367,10 @@ public class FTLSourceProcessor extends BaseSourceProcessor {
 		"^\t*<#assign liferay_.*>\n", Pattern.MULTILINE);
 	private final Pattern _liferayVariablesPattern = Pattern.compile(
 		"(^\t*<#assign liferay_.*>\n)+", Pattern.MULTILINE);
+	private final Pattern _missingEmptyLineAfterCommentPattern =
+		Pattern.compile("-->\n[^\n]");
+	private final Pattern _missingEmptyLineBeforeCommentPattern =
+		Pattern.compile("[^\n]\n\t*<#--");
 	private final Pattern _multiParameterTagPattern = Pattern.compile(
 		"\n(\t*)<@.+=.+=.+/>");
 	private final Pattern _singleParameterTagPattern = Pattern.compile(

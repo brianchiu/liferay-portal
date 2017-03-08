@@ -16,42 +16,4 @@
 
 <%@ include file="/init.jsp" %>
 
-<liferay-util:buffer var="navigation">
-	<liferay-ui:icon-list>
-		<liferay-util:dynamic-include key="com.liferay.login.web#/navigation.jsp#pre" />
-
-		<%
-		NavigationPageIncludeUtil.includePre(pageContext);
-
-		for (String section : PropsValues.LOGIN_FORM_NAVIGATION_PRE) {
-		%>
-
-			<liferay-util:include page='<%= "/navigation/" + section + ".jsp" %>' portletId="<%= portletDisplay.getRootPortletId() %>" servletContext="<%= application %>" />
-
-		<%
-		}
-
-		NavigationPageIncludeUtil.includePost(pageContext);
-
-		for (String section : PropsValues.LOGIN_FORM_NAVIGATION_POST) {
-		%>
-
-			<liferay-util:include page='<%= "/navigation/" + section + ".jsp" %>' portletId="<%= portletDisplay.getRootPortletId() %>" servletContext="<%= application %>" />
-
-		<%
-		}
-		%>
-
-		<liferay-util:dynamic-include key="com.liferay.login.web#/navigation.jsp#post" />
-	</liferay-ui:icon-list>
-</liferay-util:buffer>
-
-<%
-navigation = navigation.trim();
-%>
-
-<c:if test="<%= Validator.isNotNull(navigation) %>">
-	<div class="navigation">
-		<%= navigation %>
-	</div>
-</c:if>
+<%@ include file="/navigation.jspf" %>

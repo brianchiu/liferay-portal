@@ -18,9 +18,8 @@ import aQute.bnd.annotation.ProviderType;
 
 import com.liferay.exportimport.kernel.lar.ExportImportClassedModelUtil;
 import com.liferay.exportimport.kernel.lar.PortletDataContext;
-import com.liferay.exportimport.kernel.lifecycle.EventAwareExportImportLifecycleListener;
+import com.liferay.exportimport.kernel.lifecycle.BaseExportImportLifecycleListener;
 import com.liferay.exportimport.kernel.lifecycle.ExportImportLifecycleEvent;
-import com.liferay.exportimport.kernel.lifecycle.ExportImportLifecycleListener;
 import com.liferay.exportimport.kernel.model.ExportImportConfiguration;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -34,17 +33,34 @@ import java.io.Serializable;
 
 import java.util.Map;
 
-import org.osgi.service.component.annotations.Component;
-
 /**
  * @author Daniel Kocsis
+ *
+ * @deprecated As of 4.0.0
  */
-@Component(immediate = true, service = ExportImportLifecycleListener.class)
+@Deprecated
 @ProviderType
 public class LoggerExportImportLifecycleListener
-	implements EventAwareExportImportLifecycleListener {
+	extends BaseExportImportLifecycleListener {
 
-	public String getStagedModelLogFragment(StagedModel stagedModel) {
+	@Override
+	public boolean isParallel() {
+		return false;
+	}
+
+	@Override
+	public void onExportImportLifecycleEvent(
+			ExportImportLifecycleEvent exportImportLifecycleEvent)
+		throws Exception {
+
+		if (!_log.isDebugEnabled()) {
+			return;
+		}
+
+		super.onExportImportLifecycleEvent(exportImportLifecycleEvent);
+	}
+
+	protected String getStagedModelLogFragment(StagedModel stagedModel) {
 		StringBundler sb = new StringBundler(8);
 
 		sb.append(StringPool.OPEN_CURLY_BRACE);
@@ -67,22 +83,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public boolean isParallel() {
-		return false;
-	}
-
-	@Override
-	public void onExportImportLifecycleEvent(
-			ExportImportLifecycleEvent exportImportLifecycleEvent)
-		throws Exception {
-
-		if (!_log.isDebugEnabled()) {
-			return;
-		}
-	}
-
-	@Override
-	public void onLayoutExportFailed(
+	protected void onLayoutExportFailed(
 			PortletDataContext portletDataContext, Throwable throwable)
 		throws Exception {
 
@@ -96,7 +97,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutExportStarted(PortletDataContext portletDataContext)
+	protected void onLayoutExportStarted(PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -109,7 +110,8 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutExportSucceeded(PortletDataContext portletDataContext)
+	protected void onLayoutExportSucceeded(
+			PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -122,7 +124,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutImportFailed(
+	protected void onLayoutImportFailed(
 			PortletDataContext portletDataContext, Throwable throwable)
 		throws Exception {
 
@@ -136,13 +138,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutImportProcessFinished(
-			PortletDataContext portletDataContext)
-		throws Exception {
-	}
-
-	@Override
-	public void onLayoutImportStarted(PortletDataContext portletDataContext)
+	protected void onLayoutImportStarted(PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -155,7 +151,8 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutImportSucceeded(PortletDataContext portletDataContext)
+	protected void onLayoutImportSucceeded(
+			PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -168,7 +165,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutLocalPublicationFailed(
+	protected void onLayoutLocalPublicationFailed(
 			ExportImportConfiguration exportImportConfiguration,
 			Throwable throwable)
 		throws Exception {
@@ -184,7 +181,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutLocalPublicationStarted(
+	protected void onLayoutLocalPublicationStarted(
 			ExportImportConfiguration exportImportConfiguration)
 		throws Exception {
 
@@ -198,7 +195,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutLocalPublicationSucceeded(
+	protected void onLayoutLocalPublicationSucceeded(
 			ExportImportConfiguration exportImportConfiguration)
 		throws Exception {
 
@@ -212,7 +209,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutRemotePublicationFailed(
+	protected void onLayoutRemotePublicationFailed(
 			ExportImportConfiguration exportImportConfiguration,
 			Throwable throwable)
 		throws Exception {
@@ -228,7 +225,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutRemotePublicationStarted(
+	protected void onLayoutRemotePublicationStarted(
 			ExportImportConfiguration exportImportConfiguration)
 		throws Exception {
 
@@ -242,7 +239,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onLayoutRemotePublicationSucceeded(
+	protected void onLayoutRemotePublicationSucceeded(
 			ExportImportConfiguration exportImportConfiguration)
 		throws Exception {
 
@@ -256,7 +253,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletExportFailed(
+	protected void onPortletExportFailed(
 			PortletDataContext portletDataContext, Throwable throwable)
 		throws Exception {
 
@@ -271,7 +268,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletExportStarted(PortletDataContext portletDataContext)
+	protected void onPortletExportStarted(PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -284,7 +281,8 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletExportSucceeded(PortletDataContext portletDataContext)
+	protected void onPortletExportSucceeded(
+			PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -297,7 +295,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletImportFailed(
+	protected void onPortletImportFailed(
 			PortletDataContext portletDataContext, Throwable throwable)
 		throws Exception {
 
@@ -312,13 +310,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletImportProcessFinished(
-			PortletDataContext portletDataContext)
-		throws Exception {
-	}
-
-	@Override
-	public void onPortletImportStarted(PortletDataContext portletDataContext)
+	protected void onPortletImportStarted(PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -331,7 +323,8 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletImportSucceeded(PortletDataContext portletDataContext)
+	protected void onPortletImportSucceeded(
+			PortletDataContext portletDataContext)
 		throws Exception {
 
 		if (!_log.isDebugEnabled()) {
@@ -344,7 +337,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletPublicationFailed(
+	protected void onPortletPublicationFailed(
 			ExportImportConfiguration exportImportConfiguration,
 			Throwable throwable)
 		throws Exception {
@@ -363,7 +356,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletPublicationStarted(
+	protected void onPortletPublicationStarted(
 			ExportImportConfiguration exportImportConfiguration)
 		throws Exception {
 
@@ -380,7 +373,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onPortletPublicationSucceeded(
+	protected void onPortletPublicationSucceeded(
 			ExportImportConfiguration exportImportConfiguration)
 		throws Exception {
 
@@ -397,7 +390,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onStagedModelExportFailed(
+	protected void onStagedModelExportFailed(
 			PortletDataContext portletDataContext, StagedModel stagedModel,
 			Throwable throwable)
 		throws Exception {
@@ -413,7 +406,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onStagedModelExportStarted(
+	protected void onStagedModelExportStarted(
 			PortletDataContext portletDataContext, StagedModel stagedModel)
 		throws Exception {
 
@@ -427,7 +420,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onStagedModelExportSucceeded(
+	protected void onStagedModelExportSucceeded(
 			PortletDataContext portletDataContext, StagedModel stagedModel)
 		throws Exception {
 
@@ -441,7 +434,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onStagedModelImportFailed(
+	protected void onStagedModelImportFailed(
 			PortletDataContext portletDataContext, StagedModel stagedModel,
 			Throwable throwable)
 		throws Exception {
@@ -457,7 +450,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onStagedModelImportStarted(
+	protected void onStagedModelImportStarted(
 			PortletDataContext portletDataContext, StagedModel stagedModel)
 		throws Exception {
 
@@ -471,7 +464,7 @@ public class LoggerExportImportLifecycleListener
 	}
 
 	@Override
-	public void onStagedModelImportSucceeded(
+	protected void onStagedModelImportSucceeded(
 			PortletDataContext portletDataContext, StagedModel stagedModel)
 		throws Exception {
 
