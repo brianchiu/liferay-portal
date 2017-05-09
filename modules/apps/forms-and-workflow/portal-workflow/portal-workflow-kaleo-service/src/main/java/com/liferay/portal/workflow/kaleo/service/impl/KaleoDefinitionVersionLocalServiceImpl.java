@@ -56,8 +56,9 @@ public class KaleoDefinitionVersionLocalServiceImpl
 
 		// Kaleo definition version
 
+		Date createDate = serviceContext.getCreateDate(new Date());
+		Date modifiedDate = serviceContext.getModifiedDate(new Date());
 		User user = userLocalService.getUser(serviceContext.getGuestOrUserId());
-		Date now = new Date();
 
 		long kaleoDefinitionVersionId = counterLocalService.increment();
 
@@ -72,8 +73,8 @@ public class KaleoDefinitionVersionLocalServiceImpl
 		kaleoDefinitionVersion.setCompanyId(user.getCompanyId());
 		kaleoDefinitionVersion.setUserId(user.getUserId());
 		kaleoDefinitionVersion.setUserName(user.getFullName());
-		kaleoDefinitionVersion.setCreateDate(now);
-		kaleoDefinitionVersion.setModifiedDate(now);
+		kaleoDefinitionVersion.setCreateDate(createDate);
+		kaleoDefinitionVersion.setModifiedDate(modifiedDate);
 		kaleoDefinitionVersion.setName(name);
 		kaleoDefinitionVersion.setTitle(title);
 		kaleoDefinitionVersion.setDescription(description);
@@ -88,7 +89,7 @@ public class KaleoDefinitionVersionLocalServiceImpl
 
 		kaleoDefinitionVersion.setStatusByUserId(user.getUserId());
 		kaleoDefinitionVersion.setStatusByUserName(user.getFullName());
-		kaleoDefinitionVersion.setStatusDate(now);
+		kaleoDefinitionVersion.setStatusDate(modifiedDate);
 
 		kaleoDefinitionVersionPersistence.update(kaleoDefinitionVersion);
 

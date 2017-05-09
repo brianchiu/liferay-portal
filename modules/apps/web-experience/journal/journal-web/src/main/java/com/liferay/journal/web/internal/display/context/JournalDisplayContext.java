@@ -88,6 +88,7 @@ import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
+import com.liferay.trash.kernel.util.TrashUtil;
 
 import java.io.Serializable;
 
@@ -740,7 +741,7 @@ public class JournalDisplayContext {
 		articleSearchContainer.setRowChecker(entriesChecker);
 
 		EntriesMover entriesMover = new EntriesMover(
-			themeDisplay.getScopeGroupId());
+			TrashUtil.isTrashEnabled(themeDisplay.getScopeGroupId()));
 
 		articleSearchContainer.setRowMover(entriesMover);
 

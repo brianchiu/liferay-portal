@@ -33,14 +33,14 @@ public class RepresentorBuilderImpl<T> implements RepresentorBuilder<T> {
 		Map<String, Function<?, String>> identifierFunctions,
 		Map<String, Function<?, Object>> fieldFunctions,
 		List<RelatedModel<?, ?>> embeddedRelatedModels,
-		List<RelatedModel<?, ?>> linkedRelatedModels, Map<String, String> links,
+		List<RelatedModel<?, ?>> linkRelatedModels, Map<String, String> links,
 		List<String> types) {
 
 		_modelClass = modelClass;
 		_identifierFunctions = identifierFunctions;
 		_fieldFunctions = fieldFunctions;
 		_embeddedRelatedModels = embeddedRelatedModels;
-		_linkedRelatedModels = linkedRelatedModels;
+		_linkRelatedModels = linkRelatedModels;
 		_links = links;
 		_types = types;
 	}
@@ -52,7 +52,7 @@ public class RepresentorBuilderImpl<T> implements RepresentorBuilder<T> {
 		return new FirstStep<T>() {
 
 			@Override
-			public <S> FirstStep<T> addEmbedded(
+			public <S> FirstStep<T> addEmbeddedModel(
 				String key, Class<S> modelClass,
 				Function<T, Optional<S>> modelFunction) {
 
@@ -72,19 +72,19 @@ public class RepresentorBuilderImpl<T> implements RepresentorBuilder<T> {
 			}
 
 			@Override
-			public <S> FirstStep<T> addLink(
-				String key, Class<S> modelClass,
-				Function<T, Optional<S>> modelFunction) {
-
-				_linkedRelatedModels.add(
-					new RelatedModel<>(key, modelClass, modelFunction));
+			public FirstStep<T> addLink(String key, String url) {
+				_links.put(key, url);
 
 				return this;
 			}
 
 			@Override
-			public FirstStep<T> addLink(String key, String url) {
-				_links.put(key, url);
+			public <S> FirstStep<T> addLinkedModel(
+				String key, Class<S> modelClass,
+				Function<T, Optional<S>> modelFunction) {
+
+				_linkRelatedModels.add(
+					new RelatedModel<>(key, modelClass, modelFunction));
 
 				return this;
 			}
@@ -102,7 +102,7 @@ public class RepresentorBuilderImpl<T> implements RepresentorBuilder<T> {
 	private final List<RelatedModel<?, ?>> _embeddedRelatedModels;
 	private final Map<String, Function<?, Object>> _fieldFunctions;
 	private final Map<String, Function<?, String>> _identifierFunctions;
-	private final List<RelatedModel<?, ?>> _linkedRelatedModels;
+	private final List<RelatedModel<?, ?>> _linkRelatedModels;
 	private final Map<String, String> _links;
 	private final Class<T> _modelClass;
 	private final List<String> _types;

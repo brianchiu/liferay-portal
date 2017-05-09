@@ -321,12 +321,20 @@
 				else {
 					var portletName = form.data('fm-namespace');
 
-					Liferay.once(
-						portletName + 'formReady',
-						function() {
+					var formReadyEventName = portletName + 'formReady';
+
+					var formReadyHandler = function(event) {
+						var elFormName = form.attr('name');
+						var formName = event.formName;
+
+						if (elFormName === formName) {
 							el.focus();
+
+							Liferay.detach(formReadyEventName, formReadyHandler);
 						}
-					);
+					};
+
+					Liferay.on(formReadyEventName, formReadyHandler);
 				}
 			}
 		},

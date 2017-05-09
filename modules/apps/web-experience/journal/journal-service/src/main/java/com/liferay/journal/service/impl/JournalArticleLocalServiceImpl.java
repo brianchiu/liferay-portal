@@ -167,11 +167,11 @@ import com.liferay.portal.kernel.xml.XPath;
 import com.liferay.portal.spring.extender.service.ServiceReference;
 import com.liferay.social.kernel.model.SocialActivityConstants;
 import com.liferay.subscription.service.SubscriptionLocalService;
+import com.liferay.trash.TrashHelper;
 import com.liferay.trash.kernel.exception.RestoreEntryException;
 import com.liferay.trash.kernel.exception.TrashEntryException;
 import com.liferay.trash.kernel.model.TrashEntry;
 import com.liferay.trash.kernel.model.TrashVersion;
-import com.liferay.trash.kernel.util.TrashUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -3729,7 +3729,7 @@ public class JournalArticleLocalServiceImpl
 			article.getResourcePrimKey(), articleResource.getUuid(), null,
 			oldStatus, articleVersionStatusOVPs, typeSettingsProperties);
 
-		String trashArticleId = TrashUtil.getTrashTitle(
+		String trashArticleId = _trashHelper.getTrashTitle(
 			trashEntry.getEntryId());
 
 		for (JournalArticle articleVersion : articleVersions) {
@@ -3900,7 +3900,7 @@ public class JournalArticleLocalServiceImpl
 				RestoreEntryException.INVALID_STATUS);
 		}
 
-		String trashArticleId = TrashUtil.getOriginalTitle(
+		String trashArticleId = _trashHelper.getOriginalTitle(
 			article.getArticleId());
 
 		List<JournalArticle> articleVersions =
@@ -8474,5 +8474,8 @@ public class JournalArticleLocalServiceImpl
 
 	@ServiceReference(type = SubscriptionLocalService.class)
 	private SubscriptionLocalService _subscriptionLocalService;
+
+	@ServiceReference(type = TrashHelper.class)
+	private TrashHelper _trashHelper;
 
 }
