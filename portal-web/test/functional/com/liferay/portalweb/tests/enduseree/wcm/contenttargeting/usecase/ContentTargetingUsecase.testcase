@@ -3962,26 +3962,35 @@
 
 		<execute macro="User#logoutPG" />
 
-		<var name="count" value="0" />
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-		<while>
-			<not>
-				<equals arg1="${count}" arg2="3" />
-			</not>
-			<then>
-				<execute macro="Navigator#gotoSitePage">
-					<var name="pageName" value="Test Page Name" />
-					<var name="siteName" value="Site Name" />
-				</execute>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
 
-				<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
-					<var name="assetContent" value="Blogs Entry Content" />
-					<var name="assetTitle" value="Blogs Entry Title" />
-				</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-				<var method="MathUtil#sum('${count}', '1')" name="count" />
-			</then>
-		</while>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="User Segment Content Display Page" />
@@ -3994,26 +4003,35 @@
 			<var name="userEmailAddress" value="userea@liferay.com" />
 		</execute>
 
-		<var name="count" value="0" />
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-		<while>
-			<not>
-				<equals arg1="${count}" arg2="3" />
-			</not>
-			<then>
-				<execute macro="Navigator#gotoSitePage">
-					<var name="pageName" value="Test Page Name" />
-					<var name="siteName" value="Site Name" />
-				</execute>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
 
-				<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
-					<var name="assetContent" value="Blogs Entry Content" />
-					<var name="assetTitle" value="Blogs Entry Title" />
-				</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-				<var method="MathUtil#sum('${count}', '1')" name="count" />
-			</then>
-		</while>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="User Segment Content Display Page" />
@@ -4286,26 +4304,35 @@
 
 		<execute macro="User#logoutPG" />
 
-		<var name="count" value="0" />
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-		<while>
-			<not>
-				<equals arg1="${count}" arg2="3" />
-			</not>
-			<then>
-				<execute macro="Navigator#gotoSitePage">
-					<var name="pageName" value="Test Page Name" />
-					<var name="siteName" value="Site Name" />
-				</execute>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
 
-				<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
-					<var name="assetContent" value="Blogs Entry Content" />
-					<var name="assetTitle" value="Blogs Entry Title" />
-				</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-				<var method="MathUtil#sum('${count}', '1')" name="count" />
-			</then>
-		</while>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Blogs Entry Content" />
+			<var name="assetTitle" value="Blogs Entry Title" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="User Segment Content Display Page" />
