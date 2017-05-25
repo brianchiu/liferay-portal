@@ -148,16 +148,236 @@
 			</execute>
 
 			<execute macro="DMDocument#addCP">
-				<var name="dmDocumentFile" value="${dmDocumentTitle}" />
-				<var name="dmDocumentTitle" value="${dmDocumentTitle}" />
+				<var name="dmDocumentFile" value="Document_1.doc" />
+				<var name="dmDocumentTitle" value="Document_1.doc" />
 			</execute>
 
 			<execute macro="DMNavigator#gotoDocumentCP">
-				<var name="dmDocumentTitle" value="${dmDocumentTitle}" />
+				<var name="dmDocumentTitle" value="Document_1.doc" />
 			</execute>
 
 			<execute macro="DMDocument#viewCP">
-				<var name="dmDocumentTitle" value="${dmDocumentTitle}" />
+				<var name="dmDocumentTitle" value="Document_1.doc" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.docx" />
+				<var name="dmDocumentTitle" value="Document_1.docx" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.docx" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.docx" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.jpeg" />
+				<var name="dmDocumentTitle" value="Document_1.jpeg" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.jpeg" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.jpeg" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.jpg" />
+				<var name="dmDocumentTitle" value="Document_1.jpg" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.jpg" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.jpg" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.mp4" />
+				<var name="dmDocumentTitle" value="Document_1.mp4" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.mp4" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.mp4" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.pdf" />
+				<var name="dmDocumentTitle" value="Document_1.pdf" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.pdf" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.pdf" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.png" />
+				<var name="dmDocumentTitle" value="Document_1.png" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.png" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.png" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.ppt" />
+				<var name="dmDocumentTitle" value="Document_1.ppt" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.ppt" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.ppt" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.pptx" />
+				<var name="dmDocumentTitle" value="Document_1.pptx" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.pptx" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.pptx" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.txt" />
+				<var name="dmDocumentTitle" value="Document_1.txt" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.txt" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.txt" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.xls" />
+				<var name="dmDocumentTitle" value="Document_1.xls" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.xls" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.xls" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Documents and Media" />
+			</execute>
+		<execute macro="DMRepository#gotoCP">
+				<var name="dmRepositoryName" value="Documentum Repository Name" />
+			</execute>
+
+			<execute macro="DMDocument#addCP">
+				<var name="dmDocumentFile" value="Document_1.xlsx" />
+				<var name="dmDocumentTitle" value="Document_1.xlsx" />
+			</execute>
+
+			<execute macro="DMNavigator#gotoDocumentCP">
+				<var name="dmDocumentTitle" value="Document_1.xlsx" />
+			</execute>
+
+			<execute macro="DMDocument#viewCP">
+				<var name="dmDocumentTitle" value="Document_1.xlsx" />
 			</execute>
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -299,7 +519,7 @@
 			<var name="dmDocumentTitle" value="Document_3.txt" />
 		</execute>
 
-		<execute macro="DMDocument#viewCheckedinCP" >
+		<execute macro="DMDocument#viewCheckedinCP">
 			<var name="dmDocumentVersionNumber" value="1.1" />
 			<var name="dmRepositoryName" value="true" />
 		</execute>
@@ -355,7 +575,7 @@
 			<var name="dmDocumentTitle" value="Document_4.txt" />
 		</execute>
 
-		<execute macro="DMDocument#viewCheckedoutCP" >
+		<execute macro="DMDocument#viewCheckedoutCP">
 			<var name="dmRepositoryName" value="true" />
 		</execute>
 
@@ -707,7 +927,7 @@
 			<var name="dmDocumentTitle" value="Document_1.txt" />
 		</execute>
 
-		<execute macro="DMDocument#viewCheckedoutCP" >
+		<execute macro="DMDocument#viewCheckedoutCP">
 			<var name="dmRepositoryName" value="true" />
 		</execute>
 
@@ -740,7 +960,7 @@
 			<var name="dmDocumentTitle" value="Document_1.txt" />
 		</execute>
 
-		<execute macro="DMDocument#viewCheckedoutCP" >
+		<execute macro="DMDocument#viewCheckedoutCP">
 			<var name="dmRepositoryName" value="true" />
 		</execute>
 
@@ -889,7 +1109,7 @@
 			<var name="dmDocumentTitle" value="Document_1_Edit.jpg" />
 		</execute>
 
-		<execute macro="DMDocument#viewCheckedoutCP" >
+		<execute macro="DMDocument#viewCheckedoutCP">
 			<var name="dmRepositoryName" value="true" />
 		</execute>
 
