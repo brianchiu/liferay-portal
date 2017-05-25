@@ -181,9 +181,7 @@
 	</command>
 
 	<command name="ViewAnnouncementsPagination" priority="3">
-		<var name="entryCountList" value="1,2,3,4,5,6,7" />
-
-		<for list="${entryCountList}" param="entryCount">
+		<for list="1,2,3,4,5,6,7" param="entryCount">
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Announcements Page" />
 			</execute>
@@ -191,8 +189,74 @@
 			<execute macro="AnnouncementsEntry#addPG">
 				<var name="announcementType" value="General" />
 				<var name="distributionScope" value="General" />
-				<var name="entryContent" value="Announcements Entry Content ${entryCount}" />
-				<var name="entryTitle" value="Announcements Entry Title ${entryCount}" />
+				<var name="entryContent" value="Announcements Entry Content 1" />
+				<var name="entryTitle" value="Announcements Entry Title 1" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Announcements Page" />
+			</execute>
+
+			<execute macro="AnnouncementsEntry#addPG">
+				<var name="announcementType" value="General" />
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 2" />
+				<var name="entryTitle" value="Announcements Entry Title 2" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Announcements Page" />
+			</execute>
+
+			<execute macro="AnnouncementsEntry#addPG">
+				<var name="announcementType" value="General" />
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 3" />
+				<var name="entryTitle" value="Announcements Entry Title 3" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Announcements Page" />
+			</execute>
+
+			<execute macro="AnnouncementsEntry#addPG">
+				<var name="announcementType" value="General" />
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 4" />
+				<var name="entryTitle" value="Announcements Entry Title 4" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Announcements Page" />
+			</execute>
+
+			<execute macro="AnnouncementsEntry#addPG">
+				<var name="announcementType" value="General" />
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 5" />
+				<var name="entryTitle" value="Announcements Entry Title 5" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Announcements Page" />
+			</execute>
+
+			<execute macro="AnnouncementsEntry#addPG">
+				<var name="announcementType" value="General" />
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 6" />
+				<var name="entryTitle" value="Announcements Entry Title 6" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Announcements Page" />
+			</execute>
+
+			<execute macro="AnnouncementsEntry#addPG">
+				<var name="announcementType" value="General" />
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 7" />
+				<var name="entryTitle" value="Announcements Entry Title 7" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
 		</for>
@@ -209,13 +273,35 @@
 			<var name="pageName" value="Announcements Page" />
 		</execute>
 
-		<var name="viewEntryList" value="3,4,5,6,7" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
+		<for list="3,4,5,6,7" param="viewEntryCount">
 			<execute macro="AnnouncementsEntry#viewViaEntriesPG">
 				<var name="distributionScope" value="General" />
-				<var name="entryContent" value="Announcements Entry Content ${viewEntryCount}" />
-				<var name="entryTitle" value="Announcements Entry Title ${viewEntryCount}" />
+				<var name="entryContent" value="Announcements Entry Content 3" />
+				<var name="entryTitle" value="Announcements Entry Title 3" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 4" />
+				<var name="entryTitle" value="Announcements Entry Title 4" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 5" />
+				<var name="entryTitle" value="Announcements Entry Title 5" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 6" />
+				<var name="entryTitle" value="Announcements Entry Title 6" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 7" />
+				<var name="entryTitle" value="Announcements Entry Title 7" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
 		</for>
@@ -226,33 +312,62 @@
 		<execute function="AssertTextNotPresent" locator1="Announcements#CARD_VIEW_ENTRY_TITLE" value1="Announcements Entry Title 2" />
 		<execute function="AssertClick" locator1="Pagination#NEXT_LINK" value1="Next" />
 
-		<var name="viewEntryList" value="1,2" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
+		<for list="1,2" param="viewEntryCount">
 			<execute macro="AnnouncementsEntry#viewViaEntriesPG">
 				<var name="distributionScope" value="General" />
-				<var name="entryContent" value="Announcements Entry Content ${viewEntryCount}" />
-				<var name="entryTitle" value="Announcements Entry Title ${viewEntryCount}" />
+				<var name="entryContent" value="Announcements Entry Content 1" />
+				<var name="entryTitle" value="Announcements Entry Title 1" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 2" />
+				<var name="entryTitle" value="Announcements Entry Title 2" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
 		</for>
 
 		<var name="key_entryTitle" value="Announcements Entry Title" />
-		<var name="viewEntryList" value="3,4,5,6,7" />
 
-		<for list="${viewEntryList}" param="viewEntryCount">
-			<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title ${viewEntryCount}" />
+		<for list="3,4,5,6,7" param="viewEntryCount">
+			<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 3" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 4" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 5" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 6" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 7" />
 		</for>
 
 		<execute function="AssertClick" locator1="Pagination#PREVIOUS_LINK" value1="Previous" />
 
-		<var name="viewEntryList" value="3,4,5,6,7" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
+		<for list="3,4,5,6,7" param="viewEntryCount">
 			<execute macro="AnnouncementsEntry#viewViaEntriesPG">
 				<var name="distributionScope" value="General" />
-				<var name="entryContent" value="Announcements Entry Content ${viewEntryCount}" />
-				<var name="entryTitle" value="Announcements Entry Title ${viewEntryCount}" />
+				<var name="entryContent" value="Announcements Entry Content 3" />
+				<var name="entryTitle" value="Announcements Entry Title 3" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 4" />
+				<var name="entryTitle" value="Announcements Entry Title 4" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 5" />
+				<var name="entryTitle" value="Announcements Entry Title 5" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 6" />
+				<var name="entryTitle" value="Announcements Entry Title 6" />
+				<var name="entryURL" value="http://www.liferay.com" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewViaEntriesPG">
+				<var name="distributionScope" value="General" />
+				<var name="entryContent" value="Announcements Entry Content 7" />
+				<var name="entryTitle" value="Announcements Entry Title 7" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
 		</for>
@@ -273,12 +388,26 @@
 			<var name="itemsPerPage" value="5" />
 		</execute>
 
-		<var name="viewEntryList" value="1,2,3,4,5" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
+		<for list="1,2,3,4,5" param="viewEntryCount">
 			<execute macro="AnnouncementsEntry#viewList">
 				<var name="distributionScope" value="General" />
-				<var name="entryTitle" value="Announcements Entry Title ${viewEntryCount}" />
+				<var name="entryTitle" value="Announcements Entry Title 1" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 2" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 3" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 4" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 5" />
 			</execute>
 		</for>
 
@@ -287,29 +416,47 @@
 
 		<execute function="Click" locator1="Pagination#NEXT_LINK" />
 
-		<var name="viewEntryList" value="6,7" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
+		<for list="6,7" param="viewEntryCount">
 			<execute macro="AnnouncementsEntry#viewList">
 				<var name="distributionScope" value="General" />
-				<var name="entryTitle" value="Announcements Entry Title ${viewEntryCount}" />
+				<var name="entryTitle" value="Announcements Entry Title 6" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 7" />
 			</execute>
 		</for>
 
-		<var name="viewEntryList" value="1,2,3,4,5" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
-			<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title ${viewEntryCount}" />
+		<for list="1,2,3,4,5" param="viewEntryCount">
+			<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 1" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 2" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 3" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 4" />
+		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 5" />
 		</for>
 
 		<execute function="Click" locator1="Pagination#PREVIOUS_LINK" />
 
-		<var name="viewEntryList" value="1,2,3,4,5" />
-
-		<for list="${viewEntryList}" param="viewEntryCount">
+		<for list="1,2,3,4,5" param="viewEntryCount">
 			<execute macro="AnnouncementsEntry#viewList">
 				<var name="distributionScope" value="General" />
-				<var name="entryTitle" value="Announcements Entry Title ${viewEntryCount}" />
+				<var name="entryTitle" value="Announcements Entry Title 1" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 2" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 3" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 4" />
+			</execute>
+		<execute macro="AnnouncementsEntry#viewList">
+				<var name="distributionScope" value="General" />
+				<var name="entryTitle" value="Announcements Entry Title 5" />
 			</execute>
 		</for>
 
