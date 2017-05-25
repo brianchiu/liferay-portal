@@ -48,6 +48,14 @@
 		<execute macro="Alert#viewRequestFailedToComplete" />
 	</command>
 
+	<command name="addMultipleCP">
+		<for list="${tagNames}" param="tagName">
+			<execute macro="Tag#addCP">
+				<var name="tagName" value="${tagName}" />
+			</execute>
+		</for>
+	</command>
+
 	<command name="addViaSiteCP">
 		<execute macro="Panel#expandPanel">
 			<var name="panelHeading" value="Categorization" />
