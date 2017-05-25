@@ -1881,7 +1881,7 @@
 			<var name="fieldValue" value="testEntry1" />
 		</execute>
 
-		<execute macro="FormsAdmin#searchFormEntires">
+		<execute macro="FormsAdmin#searchFormEntries">
 			<var name="fieldLabel" value="Text Field" />
 			<var name="fieldValueList" value="${fieldValueList}" />
 		</execute>
