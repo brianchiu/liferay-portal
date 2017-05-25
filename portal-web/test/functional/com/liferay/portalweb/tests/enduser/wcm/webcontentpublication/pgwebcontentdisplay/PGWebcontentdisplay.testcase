@@ -144,29 +144,29 @@
 	<command name="AddWebContentPortalScopeCurrentPage" priority="3">
 		<property name="testray.component.names" value="Web Content Display" />
 
-		
-			<execute macro="Page#add">
-				<var name="pageName" value="Web Content Display Page1" />
-			</execute>
-
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Web Content Display" />
-			</execute>
 		<execute macro="Page#add">
-				<var name="pageName" value="Web Content Display Page2" />
-			</execute>
+			<var name="pageName" value="Web Content Display Page1" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Web Content Display" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="Web Content Display Page3" />
-			</execute>
+			<var name="pageName" value="Web Content Display Page2" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Web Content Display" />
-			</execute>
-		
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="Web Content Display Page3" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Web Content Display Page1" />

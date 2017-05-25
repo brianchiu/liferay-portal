@@ -242,18 +242,17 @@
 			<var name="portlet" value="Documents and Media" />
 		</execute>
 
-		
-			<execute macro="DMDocument#addCP">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_1.jpg" />
-				<var name="dmDocumentTitle" value="Document_1.jpg" />
-			</execute>
 		<execute macro="DMDocument#addCP">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_2.jpg" />
-				<var name="dmDocumentTitle" value="Document_2.jpg" />
-			</execute>
-		
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_1.jpg" />
+			<var name="dmDocumentTitle" value="Document_1.jpg" />
+		</execute>
+
+		<execute macro="DMDocument#addCP">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_2.jpg" />
+			<var name="dmDocumentTitle" value="Document_2.jpg" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Blogs" />
@@ -2159,32 +2158,32 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization1 Name" />
-				<var name="orgType" value="Organization" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
 		<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization2 Name" />
-				<var name="orgType" value="Organization" />
-			</execute>
+			<var name="orgName" value="Organization1 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
 		<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization3 Name" />
-				<var name="orgType" value="Organization" />
-			</execute>
+			<var name="orgName" value="Organization2 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-		
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization3 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
 		<execute macro="UsersAndOrganizationsNavigator#gotoOrganizations" />
 

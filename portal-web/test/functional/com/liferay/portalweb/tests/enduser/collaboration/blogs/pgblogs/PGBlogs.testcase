@@ -69,62 +69,62 @@
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
 		<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
 		<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
-
-			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
+			<var name="pageName" value="Blogs Page" />
+		</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
 
-			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
+		<execute macro="BlogsEntry#viewEntry">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
+			<var name="pageName" value="Blogs Page" />
+		</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
 
-			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		
+		<execute macro="BlogsEntry#viewEntry">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
 	</command>
 
 	<command name="AddBlogsEntry" priority="4">
@@ -800,123 +800,123 @@
 	<command name="DeleteBlogsEntries" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
+			<var name="pageName" value="Blogs Page" />
+		</execute>
 
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
-		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		
-
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
-
-			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
-		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
-
-			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
-		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-
-			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		
-
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="BlogsEntry#moveToRecycleBinPG">
-				<var name="assetType" value="Blogs Entry" />
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="BlogsEntry#moveToRecycleBinPG">
-				<var name="assetType" value="Blogs Entry" />
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
-		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Blogs Page" />
-			</execute>
-
-			<execute macro="BlogsEntry#moveToRecycleBinPG">
-				<var name="assetType" value="Blogs Entry" />
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
-		
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		
-			<execute macro="BlogsEntry#viewNoPG">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewEntry">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewEntry">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsEntry#moveToRecycleBinPG">
+			<var name="assetType" value="Blogs Entry" />
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsEntry#moveToRecycleBinPG">
+			<var name="assetType" value="Blogs Entry" />
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
+		<execute macro="BlogsEntry#moveToRecycleBinPG">
+			<var name="assetType" value="Blogs Entry" />
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Blogs Page" />
+		</execute>
+
 		<execute macro="BlogsEntry#viewNoPG">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
 		<execute macro="BlogsEntry#viewNoPG">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewNoPG">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
 	</command>
 
 	<command name="DeleteBlogsEntryComment" priority="4">
@@ -1276,115 +1276,117 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs" />
-			</execute>
-
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Blogs" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Entry" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Entry" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Blogs" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Content" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Entry" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Content" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Entry" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs Entry Content" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Content" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Blogs Entry Content" />
-			</execute>
-		
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Content" />
+		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs1" />
-			</execute>
-
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Blogs1" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Entry1" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs Entry Content" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Entry1" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Blogs Entry Content" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Content1" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs1" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Content1" />
-			</execute>
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Blogs1" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs1 Entry1 Content1" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Entry1" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Blogs1 Entry1 Content1" />
-			</execute>
-		
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Entry1" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Content1" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Content1" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs1 Entry1 Content1" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Blogs1 Entry1 Content1" />
+		</execute>
 	</command>
 
 	<command name="SearchBlogsEntryContentQuotes" priority="4">
@@ -1401,115 +1403,117 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs&quot;" />
-			</execute>
-
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Blogs&quot;" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Entry&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Entry&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Blogs&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Content&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Entry&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Content&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Entry&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs Entry Content&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Content&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Blogs Entry Content&quot;" />
-			</execute>
-		
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Content&quot;" />
+		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs1&quot;" />
-			</execute>
-
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Blogs1&quot;" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Entry1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs Entry Content&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Entry1&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Blogs Entry Content&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Content1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs1&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Content1&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Blogs1&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs1 Entry1 Content1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Entry1&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Blogs1 Entry1 Content1&quot;" />
-			</execute>
-		
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Entry1&quot;" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Content1&quot;" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Content1&quot;" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs1 Entry1 Content1&quot;" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Blogs1 Entry1 Content1&quot;" />
+		</execute>
 	</command>
 
 	<command name="SearchBlogsEntryTitle" priority="4">
@@ -1526,115 +1530,117 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs" />
-			</execute>
-
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Blogs" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Entry" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Entry" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Blogs" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Title" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Entry" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Title" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Entry" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs Entry Title" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Title" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="Blogs Entry Title" />
-			</execute>
-		
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Title" />
+		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs1" />
-			</execute>
-
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Blogs1" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Entry1" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs Entry Title" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Entry1" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="Blogs Entry Title" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Title1" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs1" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Title1" />
-			</execute>
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Blogs1" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="Blogs1 Entry1 Title1" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Entry1" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="Blogs1 Entry1 Title1" />
-			</execute>
-		
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Entry1" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Title1" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Title1" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="Blogs1 Entry1 Title1" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="Blogs1 Entry1 Title1" />
+		</execute>
 	</command>
 
 	<command name="SearchBlogsEntryTitleQuotes" priority="4">
@@ -1655,141 +1661,145 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs&quot;" />
-			</execute>
-
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Blogs&quot;" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Entry&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Entry&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Blogs&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Title&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Entry&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Title&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Entry&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs Entry Title&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Title&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchResultPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchAssetType" value="Blogs Entry" />
-				<var name="searchTerm" value="&quot;Blogs Entry Title&quot;" />
-			</execute>
-		
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Title&quot;" />
+		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs1&quot;" />
-			</execute>
-
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Blogs1&quot;" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Entry1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs Entry Title&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Entry1&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchResultPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchAssetType" value="Blogs Entry" />
+			<var name="searchTerm" value="&quot;Blogs Entry Title&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Title1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs1&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Title1&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Blogs1&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Blogs1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Entry1&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Blogs1&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Entry1&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Entry1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Title1&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Entry1&quot;" />
-			</execute>
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Title1&quot;" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Search#searchPG">
-				<var name="searchTerm" value="&quot;Title1&quot;" />
-			</execute>
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Blogs1&quot;" />
+		</execute>
 
-			<execute macro="Search#viewSearchNoPG">
-				<var name="searchAssetTitle" value="Blogs Entry Title" />
-				<var name="searchNoResults" value="true" />
-				<var name="searchTerm" value="&quot;Title1&quot;" />
-			</execute>
-		
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Blogs1&quot;" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Entry1&quot;" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Entry1&quot;" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Search#searchPG">
+			<var name="searchTerm" value="&quot;Title1&quot;" />
+		</execute>
+
+		<execute macro="Search#viewSearchNoPG">
+			<var name="searchAssetTitle" value="Blogs Entry Title" />
+			<var name="searchNoResults" value="true" />
+			<var name="searchTerm" value="&quot;Title1&quot;" />
+		</execute>
 	</command>
 
 	<command name="SubscribeToBlogsEntryComment" priority="3">
@@ -2538,32 +2548,35 @@
 			<var name="roleTitle" value="Site Member" />
 		</execute>
 
-		
-			<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
 		<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_TO_PAGE_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_TO_PAGE_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
-		
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
+		<execute macro="Role#removePermissionPG">
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Blogs Page" />
@@ -2586,31 +2599,34 @@
 			<var name="roleTitle" value="Site Member" />
 		</execute>
 
-		
-			<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
 		<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_TO_PAGE_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_TO_PAGE_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
 		<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" />
-				<var name="roleTitle" value="Owner" />
-			</execute>
-		
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
+
+		<execute macro="PermissionsInline#viewPermissionsRemoved">
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" />
+			<var name="roleTitle" value="Owner" />
+		</execute>
 	</command>
 </definition>
