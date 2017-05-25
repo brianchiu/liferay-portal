@@ -244,7 +244,7 @@
 			<var name="webContentTitle" value="WC Webcontent Title" />
 		</execute>
 
-		<for list="Blogs,Bookmarks,Calendar,Documents and Media,Dynamic Data Lists Display,Knowledge Base Article,Web Content Display" param="portletName">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Asset Publisher Page" />
 			</execute>
@@ -294,7 +294,7 @@
 			<execute macro="Portlet#addPG">
 				<var name="portletName" value="Web Content Display" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="AddBookmarkViaAP" priority="4">
@@ -777,7 +777,7 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -805,7 +805,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="third tag" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -1026,7 +1026,7 @@
 	<command name="OrderWCByPriorityViaAP" priority="4">
 		<property name="testray.component.names" value="Asset Publisher" />
 
-		<for list="1,5,3" param="i">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Web Content" />
 			</execute>
@@ -1075,7 +1075,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Asset Publisher Page" />

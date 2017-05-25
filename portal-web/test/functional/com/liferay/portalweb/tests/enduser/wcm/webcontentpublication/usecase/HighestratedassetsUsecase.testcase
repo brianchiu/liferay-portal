@@ -34,7 +34,7 @@
 			<var name="portlet" value="Sites" />
 		</execute>
 
-		<for list="1,2" param="n">
+		
 			<execute macro="Page#add">
 				<var name="pageName" value="Test Page 1" />
 				<var name="siteName" value="Site Name" />
@@ -43,7 +43,7 @@
 				<var name="pageName" value="Test Page 2" />
 				<var name="siteName" value="Site Name" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page 1" />
@@ -81,7 +81,7 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<for list="1,2" param="n">
+		
 			<execute macro="WebContentNavigator#gotoAddCP" />
 
 			<execute macro="WebContent#addCP">
@@ -98,7 +98,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page 1" />

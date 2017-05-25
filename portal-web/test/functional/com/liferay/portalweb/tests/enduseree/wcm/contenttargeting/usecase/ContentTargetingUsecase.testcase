@@ -2879,7 +2879,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Admin,Page Visited,Male,Woman" param="ruleName">
+		
 			<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="Site Name" />
 			</execute>
@@ -2960,7 +2960,7 @@
 			<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC Title Woman" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -3012,7 +3012,7 @@
 			<var name="usersEmailsList" value="male@liferay.com,woman@liferay.com,wcmuser@liferay.com" />
 		</execute>
 
-		<for list="male,woman,wcmuser" param="userScreenName">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -3079,7 +3079,7 @@
 				<var name="userLastName" value="wcmuser" />
 				<var name="userScreenName" value="wcmuser" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />

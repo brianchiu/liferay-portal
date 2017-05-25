@@ -927,7 +927,7 @@
 
 		<execute macro="DMPortlet#setDescriptiveView" />
 
-		<for list="Document_1.jpeg,Document_2.docx,Document_3.mp3,Document_4.txt" param="dmDocumentTitle">
+		
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Staging Test Page" />
 				<var name="siteName" value="Site Name" />
@@ -960,7 +960,7 @@
 			<execute macro="DMDocument#viewPG">
 				<var name="dmDocumentTitle" value="Document_4.txt" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openSiteURL">
 			<var name="siteName" value="Site Name" />
@@ -1296,7 +1296,7 @@
 			<var name="structureName" value="Structure Name" />
 		</execute>
 
-		<for list="Text,Text Box" param="structureFieldName">
+		
 			<execute macro="DynamicDataMapping#addField">
 				<var name="field" value="Text" />
 				<var name="fieldFieldLabel" value="Text" />
@@ -1307,7 +1307,7 @@
 				<var name="fieldFieldLabel" value="Text Box" />
 				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
 			</execute>
-		</for>
+		
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="Structure Name" />
