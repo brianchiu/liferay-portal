@@ -107,7 +107,47 @@
 			<execute macro="ReportsAdmin#addReportDefinition">
 				<var name="dataSource" value="Portal" />
 				<var name="reportsDefinitionDescription" value="Reports Definition Description" />
-				<var name="reportsDefinitionName" value="Reports Definition ${number}" />
+				<var name="reportsDefinitionName" value="Reports Definition 1" />
+				<var name="templateFile" value="reports_admin_template_source_sample_class_name.jrxml" />
+			</execute>
+		<execute macro="ReportsAdmin#gotoDefinitions" />
+
+			<execute macro="ReportsAdmin#addReportDefinition">
+				<var name="dataSource" value="Portal" />
+				<var name="reportsDefinitionDescription" value="Reports Definition Description" />
+				<var name="reportsDefinitionName" value="Reports Definition 2" />
+				<var name="templateFile" value="reports_admin_template_source_sample_class_name.jrxml" />
+			</execute>
+		<execute macro="ReportsAdmin#gotoDefinitions" />
+
+			<execute macro="ReportsAdmin#addReportDefinition">
+				<var name="dataSource" value="Portal" />
+				<var name="reportsDefinitionDescription" value="Reports Definition Description" />
+				<var name="reportsDefinitionName" value="Reports Definition 3" />
+				<var name="templateFile" value="reports_admin_template_source_sample_class_name.jrxml" />
+			</execute>
+		<execute macro="ReportsAdmin#gotoDefinitions" />
+
+			<execute macro="ReportsAdmin#addReportDefinition">
+				<var name="dataSource" value="Portal" />
+				<var name="reportsDefinitionDescription" value="Reports Definition Description" />
+				<var name="reportsDefinitionName" value="Reports Definition 4" />
+				<var name="templateFile" value="reports_admin_template_source_sample_class_name.jrxml" />
+			</execute>
+		<execute macro="ReportsAdmin#gotoDefinitions" />
+
+			<execute macro="ReportsAdmin#addReportDefinition">
+				<var name="dataSource" value="Portal" />
+				<var name="reportsDefinitionDescription" value="Reports Definition Description" />
+				<var name="reportsDefinitionName" value="Reports Definition 5" />
+				<var name="templateFile" value="reports_admin_template_source_sample_class_name.jrxml" />
+			</execute>
+		<execute macro="ReportsAdmin#gotoDefinitions" />
+
+			<execute macro="ReportsAdmin#addReportDefinition">
+				<var name="dataSource" value="Portal" />
+				<var name="reportsDefinitionDescription" value="Reports Definition Description" />
+				<var name="reportsDefinitionName" value="Reports Definition 6" />
 				<var name="templateFile" value="reports_admin_template_source_sample_class_name.jrxml" />
 			</execute>
 		</for>
