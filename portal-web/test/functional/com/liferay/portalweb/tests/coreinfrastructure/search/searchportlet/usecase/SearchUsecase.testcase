@@ -469,32 +469,28 @@
 			<var name="searchTerm">"AssetContent"</var>
 		</execute>
 
-		
-			<var name="key_searchAssetTitle" value="Blogs Entry1 Title" />
+		<var name="key_searchAssetTitle" value="Blogs Entry1 Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry1 Title" />
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry1 Title" />
 		<var name="key_searchAssetTitle" value="WC WebContent2 Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent2 Title" />
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent2 Title" />
 		<var name="key_searchAssetTitle" value="Wiki Page2 Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page2 Title" />
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page2 Title" />
 		<var name="key_searchAssetTitle" value="DM Document Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="DM Document Title" />
-		
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="DM Document Title" />
 
-		
-			<var name="key_searchAssetTitle" value="Blogs Entry2 Title" />
+		<var name="key_searchAssetTitle" value="Blogs Entry2 Title" />
 
-			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry2 Title" />
+		<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry2 Title" />
 		<var name="key_searchAssetTitle" value="WC WebContent1 Title" />
 
-			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent1 Title" />
+		<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent1 Title" />
 		<var name="key_searchAssetTitle" value="Wiki Page1 Title" />
 
-			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page1 Title" />
-		
+		<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page1 Title" />
 
 		<execute macro="Search#viewAssetTypeFacetPG">
 			<var name="facetFrequency" value="1" />
@@ -508,32 +504,28 @@
 			<var name="searchModifiedRange" value="Past Month" />
 		</execute>
 
-		
-			<var name="key_searchAssetTitle" value="Blogs Entry1 Title" />
+		<var name="key_searchAssetTitle" value="Blogs Entry1 Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry1 Title" />
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry1 Title" />
 		<var name="key_searchAssetTitle" value="WC WebContent2 Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent2 Title" />
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent2 Title" />
 		<var name="key_searchAssetTitle" value="Wiki Page2 Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page2 Title" />
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page2 Title" />
 		<var name="key_searchAssetTitle" value="DM Document Title" />
 
-			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="DM Document Title" />
-		
+		<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="DM Document Title" />
 
-		
-			<var name="key_searchAssetTitle" value="Blogs Entry2 Title" />
+		<var name="key_searchAssetTitle" value="Blogs Entry2 Title" />
 
-			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry2 Title" />
+		<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry2 Title" />
 		<var name="key_searchAssetTitle" value="WC WebContent1 Title" />
 
-			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent1 Title" />
+		<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="WC WebContent1 Title" />
 		<var name="key_searchAssetTitle" value="Wiki Page1 Title" />
 
-			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page1 Title" />
-		
+		<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page1 Title" />
 	</command>
 
 	<command name="SearchTwiceHideSitesFacet" priority="5">
@@ -1058,29 +1050,29 @@
 			<var name="pageName" value="Search Page" />
 		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
-
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Search Bar" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Search Results" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Search Bar" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Search Page" />
-			</execute>
+			<var name="pageName" value="Search Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Type Facet" />
-			</execute>
-		
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Search Results" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Search Page" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Type Facet" />
+		</execute>
 
 		<execute macro="SearchBarPortlet#searchPG">
 			<var name="searchTerm" value="Blogs Entry Title" />

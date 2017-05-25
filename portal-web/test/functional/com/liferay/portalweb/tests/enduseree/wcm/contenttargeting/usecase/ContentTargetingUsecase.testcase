@@ -2879,7 +2879,6 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		
 			<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="Site Name" />
 			</execute>
@@ -2900,6 +2899,7 @@
 			<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC Title Admin" />
 			</execute>
+
 		<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="Site Name" />
 			</execute>
@@ -2920,6 +2920,7 @@
 			<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC Title Page Visited" />
 			</execute>
+
 		<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="Site Name" />
 			</execute>
@@ -2940,6 +2941,7 @@
 			<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC Title Male" />
 			</execute>
+
 		<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="Site Name" />
 			</execute>
@@ -2960,7 +2962,6 @@
 			<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC Title Woman" />
 			</execute>
-		
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -3012,7 +3013,6 @@
 			<var name="usersEmailsList" value="male@liferay.com,woman@liferay.com,wcmuser@liferay.com" />
 		</execute>
 
-		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -3035,6 +3035,7 @@
 				<var name="userLastName" value="male" />
 				<var name="userScreenName" value="male" />
 			</execute>
+
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -3057,6 +3058,7 @@
 				<var name="userLastName" value="woman" />
 				<var name="userScreenName" value="woman" />
 			</execute>
+
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -3079,7 +3081,6 @@
 				<var name="userLastName" value="wcmuser" />
 				<var name="userScreenName" value="wcmuser" />
 			</execute>
-		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
