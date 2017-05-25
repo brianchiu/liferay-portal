@@ -46,17 +46,17 @@
 			<var name="pageName" value="Site Page Name" />
 		</execute>
 
-		
-			<execute macro="Portlet#viewSpecificPG">
-				<var name="portletName" value="Tags Navigation" />
-			</execute>
 		<execute macro="Portlet#viewSpecificPG">
-				<var name="portletName" value="Categories Navigation" />
-			</execute>
+			<var name="portletName" value="Tags Navigation" />
+		</execute>
+
 		<execute macro="Portlet#viewSpecificPG">
-				<var name="portletName" value="Asset Publisher" />
-			</execute>
-		
+			<var name="portletName" value="Categories Navigation" />
+		</execute>
+
+		<execute macro="Portlet#viewSpecificPG">
+			<var name="portletName" value="Asset Publisher" />
+		</execute>
 	</command>
 
 	<command name="DeletePages" priority="5">

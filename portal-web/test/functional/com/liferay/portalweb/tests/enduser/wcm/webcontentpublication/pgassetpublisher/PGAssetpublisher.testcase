@@ -244,57 +244,61 @@
 			<var name="webContentTitle" value="WC Webcontent Title" />
 		</execute>
 
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
-
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Blogs" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Bookmarks" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Blogs" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Calendar" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Bookmarks" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Documents and Media" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Calendar" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Dynamic Data Lists Display" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Documents and Media" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Knowledge Base Article" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Dynamic Data Lists Display" />
+		</execute>
+
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Asset Publisher Page" />
-			</execute>
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Web Content Display" />
-			</execute>
-		
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Knowledge Base Article" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Asset Publisher Page" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
 	</command>
 
 	<command name="AddBookmarkViaAP" priority="4">
@@ -777,35 +781,35 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		
-			<execute macro="Navigator#openURL" />
-
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
-
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="first tag" />
-			</execute>
 		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="second tag" />
-			</execute>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="first tag" />
+		</execute>
+
 		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="third tag" />
-			</execute>
-		
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="second tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="third tag" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -1026,56 +1030,54 @@
 	<command name="OrderWCByPriorityViaAP" priority="4">
 		<property name="testray.component.names" value="Asset Publisher" />
 
-		
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
-
-			<execute macro="WebContentNavigator#gotoAddCP" />
-
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="WC Priority 1 Title" />
-			</execute>
-
-			<execute macro="WebContent#addPriority">
-				<var name="priority" value="1" />
-			</execute>
-
-			<execute macro="PortletEntry#publish" />
 		<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="WC Priority 5 Title" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC Priority 1 Title" />
+		</execute>
 
-			<execute macro="WebContent#addPriority">
-				<var name="priority" value="5" />
-			</execute>
+		<execute macro="WebContent#addPriority">
+			<var name="priority" value="1" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
+		<execute macro="PortletEntry#publish" />
 		<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="WC Priority 3 Title" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC Priority 5 Title" />
+		</execute>
 
-			<execute macro="WebContent#addPriority">
-				<var name="priority" value="3" />
-			</execute>
+		<execute macro="WebContent#addPriority">
+			<var name="priority" value="5" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC Priority 3 Title" />
+		</execute>
+
+		<execute macro="WebContent#addPriority">
+			<var name="priority" value="3" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Asset Publisher Page" />
