@@ -43,19 +43,13 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Site#tearDownCP">
-					<var name="siteName" value="Site Name" />
-				</execute>
-			</else>
-		</if>
+		<execute macro="Site#tearDownCP">
+			<var name="siteName" value="Site Name" />
+		</execute>
 	</tear-down>
 
 	<command name="DisplayPrivatePageWithChildPage" priority="4">

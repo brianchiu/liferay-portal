@@ -56,25 +56,19 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="WikiPortlet#tearDownCP" />
+		<execute macro="WikiPortlet#tearDownCP" />
 
-				<execute macro="WikiPage#tearDownCP" />
+		<execute macro="WikiPage#tearDownCP" />
 
-				<execute macro="WikiNode#tearDownCP" />
+		<execute macro="WikiNode#tearDownCP" />
 
-				<execute macro="Page#tearDownPG" />
+		<execute macro="Page#tearDownPG" />
 
-				<execute macro="User#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="User#tearDownCP" />
 	</tear-down>
 
 	<command name="ViewWebsiteNotificationForNewWikiPage" priority="4">

@@ -14,33 +14,27 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="KaleoFormsAdmin#tearDownProcess" />
+		<execute macro="KaleoFormsAdmin#tearDownProcess" />
 
-				<execute macro="DDLTemplate#tearDownTemplateCP" />
+		<execute macro="DDLTemplate#tearDownTemplateCP" />
 
-				<execute macro="DDLTemplate#tearDownTemplateCP">
-					<var name="ddlDataDefinitionName" value="To Do" />
-				</execute>
+		<execute macro="DDLTemplate#tearDownTemplateCP">
+			<var name="ddlDataDefinitionName" value="To Do" />
+		</execute>
 
-				<execute macro="KaleoFormsAdmin#deleteFieldSet" />
+		<execute macro="KaleoFormsAdmin#deleteFieldSet" />
 
-				<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
-					<var name="workflowDefinitionTitle" value="Edited Workflow Definition" />
-				</execute>
+		<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
+			<var name="workflowDefinitionTitle" value="Edited Workflow Definition" />
+		</execute>
 
-				<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
+		<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
 
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="Page#tearDownPG" />
 	</tear-down>
 
 	<command name="AddFieldSetWithDocumentsAndMediaField" priority="3">
