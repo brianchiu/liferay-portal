@@ -78,7 +78,7 @@
 
 		<execute function="Click" locator1="Icon#SHARE" />
 
-		<for list="Twitter,Facebook,Google+,LinkedIn,Delicious,Digg,Evernote,Newsvine,Reddit,Slashdot,StumbleUpon,Tuenti" param="socialBookmarkSites">
+		
 			<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Twitter" />
 			</execute>
@@ -115,7 +115,7 @@
 		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Tuenti" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />
@@ -135,7 +135,7 @@
 			<var name="pageName" value="Knowledge Base Display Page" />
 		</execute>
 
-		<for list="Facebook,Google+,AddThis,LinkedIn,Delicious,Digg,Evernote" param="socialBookmarkSites">
+		
 			<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Facebook" />
 			</execute>
@@ -157,9 +157,9 @@
 		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Evernote" />
 			</execute>
-		</for>
+		
 
-		<for list="Twitter,Newsvine,Reddit,Slashdot,StumbleUpon,Tuenti" param="socialBookmarkSites">
+		
 			<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Twitter" />
 			</execute>
@@ -178,7 +178,7 @@
 		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Tuenti" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="ViewBlogsEntryWithSocialBookmarksSites" priority="3">
@@ -280,7 +280,7 @@
 			<var name="pageName" value="Knowledge Base Display Page" />
 		</execute>
 
-		<for list="Twitter,Facebook,Google+,AddThis,LinkedIn,Delicious,Digg,Evernote,Newsvine,Reddit,Slashdot,StumbleUpon,Tuenti" param="socialBookmarkSites">
+		
 			<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Twitter" />
 			</execute>
@@ -320,6 +320,6 @@
 		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
 				<var name="socialBookmarkSite" value="Tuenti" />
 			</execute>
-		</for>
+		
 	</command>
 </definition>

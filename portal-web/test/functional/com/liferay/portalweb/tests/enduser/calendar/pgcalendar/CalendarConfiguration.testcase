@@ -52,7 +52,7 @@
 	</tear-down>
 
 	<command name="ConfigureDefaultView" priority="3">
-		<for list="Day,Week,Month" param="defaultView">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Calendar Page" />
 			</execute>
@@ -110,7 +110,7 @@
 			<execute macro="CalendarScheduler#viewSelectedView">
 				<var name="view" value="Month" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="ConfigureDisplayTimeZone" priority="5">
@@ -204,7 +204,7 @@
 	</command>
 
 	<command name="ConfigureEventsDisplaySettingsAndViewEvents" priority="4">
-		<for list="1,2,3,4,5,6" param="eventNumber">
+		
 			<execute macro="CalendarNavigator#gotoAddEvent" />
 
 			<execute macro="CalendarEvent#add">
@@ -247,7 +247,7 @@
 				<var name="eventType" value="All Day" />
 				<var name="pageName" value="Calendar Page" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Calendar Page" />
@@ -257,7 +257,7 @@
 			<var name="viewType" value="Agenda" />
 		</execute>
 
-		<for list="1,2,3,4,5,6" param="eventNumber">
+		
 			<execute macro="CalendarEvent#viewViaAgendaView">
 				<var name="eventNumber" value="1" />
 			</execute>
@@ -276,7 +276,7 @@
 		<execute macro="CalendarEvent#viewViaAgendaView">
 				<var name="eventNumber" value="6" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Calendar Page" />
@@ -298,7 +298,7 @@
 			<var name="viewType" value="Agenda" />
 		</execute>
 
-		<for list="1,2,3,4,5" param="eventNumber">
+		
 			<execute macro="CalendarEvent#viewViaAgendaView">
 				<var name="eventNumber" value="1" />
 			</execute>
@@ -314,7 +314,7 @@
 		<execute macro="CalendarEvent#viewViaAgendaView">
 				<var name="eventNumber" value="5" />
 			</execute>
-		</for>
+		
 
 		<execute macro="CalendarEvent#viewNotPresentViaAgendaView">
 			<var name="eventNumber" value="6" />

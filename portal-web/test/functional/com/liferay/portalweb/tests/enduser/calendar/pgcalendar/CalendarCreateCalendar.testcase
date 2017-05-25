@@ -186,7 +186,7 @@
 			<var name="userScreenName" value="usersn" />
 		</execute>
 
-		<for list="Site A,Site B,Site C" param="siteName">
+		
 			<execute macro="ProductMenu#gotoControlPanelSites">
 				<var name="portlet" value="Sites" />
 			</execute>
@@ -235,7 +235,7 @@
 				<var name="siteName" value="Site C" />
 				<var name="userScreenName" value="usersn" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site A" />
@@ -293,7 +293,7 @@
 			<var name="searchValue" value="site" />
 		</execute>
 
-		<for list="Site A,Site B,Site C" param="calendarName">
+		
 			<execute macro="Calendar#viewOtherCalendarsSearchResult">
 				<var name="calendarName" value="Site A" />
 			</execute>
@@ -303,7 +303,7 @@
 		<execute macro="Calendar#viewOtherCalendarsSearchResult">
 				<var name="calendarName" value="Site C" />
 			</execute>
-		</for>
+		
 
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 

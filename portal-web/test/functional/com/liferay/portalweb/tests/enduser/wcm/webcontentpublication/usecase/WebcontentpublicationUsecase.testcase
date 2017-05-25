@@ -87,7 +87,7 @@
 			<var name="page" value="Public Pages" />
 		</execute>
 
-		<for list="Home,Documents and Media,News" param="sitePageName">
+		
 			<execute macro="ProductMenu#gotoControlPanelSites">
 				<var name="portlet" value="Sites" />
 			</execute>
@@ -115,7 +115,7 @@
 				<var name="siteName" value="Organization Name" />
 				<var name="sitePagePrivacy" value="Private" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelConfiguration">
 			<var name="portlet" value="Server Administration" />
@@ -174,7 +174,7 @@
 			<var name="virtualHostsURL" value="http://www.baker.com:8080" />
 		</execute>
 
-		<for list="Home,Documents and Media,News" param="sitePageName">
+		
 			<execute function="AssertElementPresent" locator1="Home#PAGE" value1="Home">
 				<var name="key_pageName" value="Home" />
 			</execute>
@@ -184,20 +184,20 @@
 		<execute function="AssertElementPresent" locator1="Home#PAGE" value1="News">
 				<var name="key_pageName" value="News" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openSpecificURL">
 			<var name="url" value="http://www.able.com:8080" />
 		</execute>
 
-		<for list="Documents and Media,News" param="sitePageName">
+		
 			<execute function="AssertElementNotPresent" locator1="Home#PAGE" value1="Documents and Media">
 				<var name="key_pageName" value="Documents and Media" />
 			</execute>
 		<execute function="AssertElementNotPresent" locator1="Home#PAGE" value1="News">
 				<var name="key_pageName" value="News" />
 			</execute>
-		</for>
+		
 
 		<execute macro="User#firstLoginPG">
 			<var name="password" value="test" />
@@ -797,7 +797,7 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		<for list="Boolean,Date,Decimal,Documents and Media,HTML,Image,Integer,Link to Page,Number,Radio,Select,Text,Text Box" param="structureFieldName">
+		
 			<execute macro="DynamicDataMapping#addField">
 				<var name="field" value="Boolean" />
 				<var name="fieldFieldLabel" value="Boolean" />
@@ -863,7 +863,7 @@
 				<var name="fieldFieldLabel" value="Text Box" />
 				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
 			</execute>
-		</for>
+		
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name" />
@@ -1160,7 +1160,7 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		<for list="Boolean,Date,Decimal,Documents and Media,HTML,Image,Integer,Link to Page,Number,Radio,Select,Text,Text Box" param="structureFieldName">
+		
 			<execute macro="DynamicDataMapping#editFieldIndexable">
 				<var name="fieldFieldLabel" value="Boolean" />
 			</execute>
@@ -1200,7 +1200,7 @@
 		<execute macro="DynamicDataMapping#editFieldIndexable">
 				<var name="fieldFieldLabel" value="Text Box" />
 			</execute>
-		</for>
+		
 
 		<execute macro="WebContentStructures#saveCP" />
 
@@ -1345,7 +1345,7 @@
 			<var name="siteName" value="${siteName}" />
 		</execute>
 
-		<for list="${siteName},Site Name,Global" param="siteName">
+		
 			<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="${siteName}" />
 			</execute>
@@ -1394,7 +1394,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Site Page" />
@@ -1419,7 +1419,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="${siteName},Site Name,Global" param="siteName">
+		
 			<execute macro="AssetPublisherPortlet#viewAssetPG">
 				<var name="assetContent" value="${siteName} WC Content" />
 				<var name="assetTitle" value="${siteName} WC Title" />
@@ -1432,7 +1432,6 @@
 				<var name="assetContent" value="Global WC Content" />
 				<var name="assetTitle" value="Global WC Title" />
 			</execute>
-		</for>
 
 		<execute macro="AssetPublisherPortlet#viewAssetNotPresentPG">
 			<var name="assetContent" value="Liferay WC Content" />
@@ -1463,7 +1462,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="${siteName},Site Name,Global" param="siteName1">
+		
 			<execute macro="ProductMenu#gotoSite">
 				<var name="site" value="${siteName}" />
 			</execute>
@@ -1512,7 +1511,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Site Page" />
@@ -1801,7 +1800,7 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		<for list="author1,author2" param="userScreenName">
+		
 			<var name="userEmailAddress" value="author1ea@liferay.com" />
 			<var name="userFirstName" value="author1" />
 			<var name="userLastName" value="author1" />
@@ -1866,7 +1865,7 @@
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
-		</for>
+		
 
 		<execute macro="User#logoutAndLoginPG">
 			<var name="userLoginEmailAddress" value="author1ea@liferay.com" />
