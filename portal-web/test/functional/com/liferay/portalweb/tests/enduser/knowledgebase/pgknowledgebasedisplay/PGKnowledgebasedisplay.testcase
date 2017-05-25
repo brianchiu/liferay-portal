@@ -174,16 +174,15 @@
 			<var name="portlet" value="Knowledge Base" />
 		</execute>
 
-		
-			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article1 Content" />
-				<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
-			</execute>
 		<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article2 Content" />
-				<var name="kbArticleTitle" value="Knowledge Base Article2 Title" />
-			</execute>
-		
+			<var name="kbArticleContent" value="Knowledge Base Article1 Content" />
+			<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
+		</execute>
+
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article2 Content" />
+			<var name="kbArticleTitle" value="Knowledge Base Article2 Title" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />
@@ -193,20 +192,20 @@
 			<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
 		</execute>
 
-		
-			<execute macro="KBArticleSuggestion#addPG">
-				<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
-				<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion1" />
-			</execute>
 		<execute macro="KBArticleSuggestion#addPG">
-				<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
-				<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion2" />
-			</execute>
+			<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
+			<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion1" />
+		</execute>
+
 		<execute macro="KBArticleSuggestion#addPG">
-				<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
-				<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion3" />
-			</execute>
-		
+			<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
+			<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion2" />
+		</execute>
+
+		<execute macro="KBArticleSuggestion#addPG">
+			<var name="kbArticleTitle" value="Knowledge Base Article1 Title" />
+			<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion3" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />
@@ -214,23 +213,23 @@
 
 		<execute function="AssertTextEquals#assertPartialText" locator1="KnowledgeBase#LINK_THERE_ARE_SUGGESTIONS" value1="There are 3 suggestions. (3 Pending)" />
 
-		
-			<execute macro="KBArticleSuggestion#viewPG">
-				<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion1" />
-				<var name="kbSuggestionUserName" value="Test Test" />
-				<var name="status" value="New" />
-			</execute>
 		<execute macro="KBArticleSuggestion#viewPG">
-				<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion2" />
-				<var name="kbSuggestionUserName" value="Test Test" />
-				<var name="status" value="New" />
-			</execute>
+			<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion1" />
+			<var name="kbSuggestionUserName" value="Test Test" />
+			<var name="status" value="New" />
+		</execute>
+
 		<execute macro="KBArticleSuggestion#viewPG">
-				<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion3" />
-				<var name="kbSuggestionUserName" value="Test Test" />
-				<var name="status" value="New" />
-			</execute>
-		
+			<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion2" />
+			<var name="kbSuggestionUserName" value="Test Test" />
+			<var name="status" value="New" />
+		</execute>
+
+		<execute macro="KBArticleSuggestion#viewPG">
+			<var name="kbSuggestionBody" value="Knowledge Base Article1 Suggestion3" />
+			<var name="kbSuggestionUserName" value="Test Test" />
+			<var name="status" value="New" />
+		</execute>
 	</command>
 
 	<command name="CancelAddChildArticle" priority="4">
@@ -721,20 +720,20 @@
 			<var name="portlet" value="Knowledge Base" />
 		</execute>
 
-		
-			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Content 1" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Title 1" />
-			</execute>
 		<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Content 2" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Title 2" />
-			</execute>
+			<var name="kbArticleContent" value="Knowledge Base Article Content 1" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Title 1" />
+		</execute>
+
 		<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Content 3" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Title 3" />
-			</execute>
-		
+			<var name="kbArticleContent" value="Knowledge Base Article Content 2" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Title 2" />
+		</execute>
+
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article Content 3" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Title 3" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />
@@ -939,38 +938,38 @@
 			<var name="portlet" value="Knowledge Base" />
 		</execute>
 
-		
-			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Parent Content 1" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
-			</execute>
 		<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Parent Content 2" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
-			</execute>
-		<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Parent Content 3" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 3" />
-			</execute>
-		
+			<var name="kbArticleContent" value="Knowledge Base Article Parent Content 1" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+		</execute>
 
-		
-			<execute macro="KBArticle#addChildArticleViaKBAdmin">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
-				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 1" />
-				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
-			</execute>
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article Parent Content 2" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
+		</execute>
+
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article Parent Content 3" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 3" />
+		</execute>
+
 		<execute macro="KBArticle#addChildArticleViaKBAdmin">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
-				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 2" />
-				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
-			</execute>
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 1" />
+			<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+		</execute>
+
 		<execute macro="KBArticle#addChildArticleViaKBAdmin">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
-				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 3" />
-				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
-			</execute>
-		
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 2" />
+			<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+		</execute>
+
+		<execute macro="KBArticle#addChildArticleViaKBAdmin">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 3" />
+			<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
+		</execute>
 
 		<execute macro="KBArticle#addChildArticleViaKBAdmin">
 			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />

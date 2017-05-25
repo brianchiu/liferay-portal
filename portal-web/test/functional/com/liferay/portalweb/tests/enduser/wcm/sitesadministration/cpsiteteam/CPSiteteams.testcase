@@ -454,46 +454,45 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="User Groups" />
-			</execute>
-
-			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="User Group Name 1" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoSitesMembers">
-				<var name="portlet" value="Site Memberships" />
-			</execute>
-
-			<execute macro="Site#assignUserGroupAsMemberCP">
-				<var name="userGroupName" value="User Group Name 1" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="User Groups" />
-			</execute>
+			<var name="portlet" value="User Groups" />
+		</execute>
 
-			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="User Group Name 2" />
-			</execute>
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesMembers">
-				<var name="portlet" value="Site Memberships" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesMembers">
+			<var name="portlet" value="Site Memberships" />
+		</execute>
 
-			<execute macro="Site#assignUserGroupAsMemberCP">
-				<var name="userGroupName" value="User Group Name 2" />
-			</execute>
-		
+		<execute macro="Site#assignUserGroupAsMemberCP">
+			<var name="userGroupName" value="User Group Name 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="User Groups" />
+		</execute>
+
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesMembers">
+			<var name="portlet" value="Site Memberships" />
+		</execute>
+
+		<execute macro="Site#assignUserGroupAsMemberCP">
+			<var name="userGroupName" value="User Group Name 2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -548,56 +547,55 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="userea1@liferay.com" />
-				<var name="userFirstName" value="userfn1" />
-				<var name="userLastName" value="userln1" />
-				<var name="userScreenName" value="usersn1" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoSitesMembers">
-				<var name="portlet" value="Site Memberships" />
-			</execute>
-
-			<execute macro="Site#assignUserAsMemberCP">
-				<var name="userFirstName" value="userfn1" />
-				<var name="userLastName" value="userln1" />
-				<var name="userScreenName" value="usersn1" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="userea2@liferay.com" />
-				<var name="userFirstName" value="userfn2" />
-				<var name="userLastName" value="userln2" />
-				<var name="userScreenName" value="usersn2" />
-			</execute>
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="userea1@liferay.com" />
+			<var name="userFirstName" value="userfn1" />
+			<var name="userLastName" value="userln1" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesMembers">
-				<var name="portlet" value="Site Memberships" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesMembers">
+			<var name="portlet" value="Site Memberships" />
+		</execute>
 
-			<execute macro="Site#assignUserAsMemberCP">
-				<var name="userFirstName" value="userfn2" />
-				<var name="userLastName" value="userln2" />
-				<var name="userScreenName" value="usersn2" />
-			</execute>
-		
+		<execute macro="Site#assignUserAsMemberCP">
+			<var name="userFirstName" value="userfn1" />
+			<var name="userLastName" value="userln1" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="userea2@liferay.com" />
+			<var name="userFirstName" value="userfn2" />
+			<var name="userLastName" value="userln2" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesMembers">
+			<var name="portlet" value="Site Memberships" />
+		</execute>
+
+		<execute macro="Site#assignUserAsMemberCP">
+			<var name="userFirstName" value="userfn2" />
+			<var name="userLastName" value="userln2" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -629,38 +627,38 @@
 			<var name="rowEntry" value="Site Team Name" />
 		</execute>
 
-		
-			<execute macro="Team#searchCP">
-				<var name="membershipType" value="User" />
-				<var name="searchTerm" value="userfn1" />
-			</execute>
 		<execute macro="Team#searchCP">
-				<var name="membershipType" value="User" />
-				<var name="searchTerm" value="userln1" />
-			</execute>
-		<execute macro="Team#searchCP">
-				<var name="membershipType" value="User" />
-				<var name="searchTerm" value="usersn1" />
-			</execute>
-		
+			<var name="membershipType" value="User" />
+			<var name="searchTerm" value="userfn1" />
+		</execute>
 
-		
-			<execute macro="Team#searchCP">
-				<var name="isEmpty" value="true" />
-				<var name="membershipType" value="User" />
-				<var name="searchTerm" value="userfn2" />
-			</execute>
 		<execute macro="Team#searchCP">
-				<var name="isEmpty" value="true" />
-				<var name="membershipType" value="User" />
-				<var name="searchTerm" value="userln2" />
-			</execute>
+			<var name="membershipType" value="User" />
+			<var name="searchTerm" value="userln1" />
+		</execute>
+
 		<execute macro="Team#searchCP">
-				<var name="isEmpty" value="true" />
-				<var name="membershipType" value="User" />
-				<var name="searchTerm" value="usersn2" />
-			</execute>
-		
+			<var name="membershipType" value="User" />
+			<var name="searchTerm" value="usersn1" />
+		</execute>
+
+		<execute macro="Team#searchCP">
+			<var name="isEmpty" value="true" />
+			<var name="membershipType" value="User" />
+			<var name="searchTerm" value="userfn2" />
+		</execute>
+
+		<execute macro="Team#searchCP">
+			<var name="isEmpty" value="true" />
+			<var name="membershipType" value="User" />
+			<var name="searchTerm" value="userln2" />
+		</execute>
+
+		<execute macro="Team#searchCP">
+			<var name="isEmpty" value="true" />
+			<var name="membershipType" value="User" />
+			<var name="searchTerm" value="usersn2" />
+		</execute>
 	</command>
 
 	<command name="DeleteSiteTeam" priority="5">
