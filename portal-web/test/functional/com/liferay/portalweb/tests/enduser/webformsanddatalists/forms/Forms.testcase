@@ -1841,10 +1841,24 @@
 			<var name="pageName" value="Form Page" />
 		</execute>
 
-		<for list="${fieldValueList}" param="fieldValue">
+		<for list="testEntry1,exampleText,sampleAnswer" param="fieldValue">
 			<execute macro="FormFields#editText">
 				<var name="fieldName" value="TextField" />
-				<var name="fieldValue" value="${fieldValue}" />
+				<var name="fieldValue" value="testEntry1" />
+			</execute>
+
+			<execute macro="FormPortlet#submit" />
+
+			<execute macro="FormFields#editText">
+				<var name="fieldName" value="TextField" />
+				<var name="fieldValue" value="exampleText" />
+			</execute>
+
+			<execute macro="FormPortlet#submit" />
+
+			<execute macro="FormFields#editText">
+				<var name="fieldName" value="TextField" />
+				<var name="fieldValue" value="sampleAnswer" />
 			</execute>
 
 			<execute macro="FormPortlet#submit" />
