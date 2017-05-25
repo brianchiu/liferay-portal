@@ -234,7 +234,7 @@
 			<var name="teamName" value="Site Team Name" />
 		</execute>
 
-		<for list="ACTION_ASSIGN_MEMBERS,ACTION_DELETE,ACTION_PERMISSIONS,ACTION_UPDATE,ACTION_VIEW" param="permissionDefinitionKey">
+		
 			<execute macro="Team#definePermissionPG">
 				<var name="permissionDefinitionKey" value="ACTION_ASSIGN_MEMBERS" />
 				<var name="teamName" value="Site Team Name" />
@@ -255,7 +255,7 @@
 				<var name="permissionDefinitionKey" value="ACTION_VIEW" />
 				<var name="teamName" value="Site Team Name" />
 			</execute>
-		</for>
+		
 
 		<execute macro="User#logoutPG" />
 
@@ -2123,7 +2123,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="1,2" param="userNumber">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -2180,7 +2180,7 @@
 				<var name="siteName" value="Site Name" />
 				<var name="userScreenName" value="usersn2" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -2241,7 +2241,7 @@
 			<var name="roleTitle" value="site-member" />
 		</execute>
 
-		<for list="ACTION_ADD_DISCUSSION,ACTION_ADD_LAYOUT,ACTION_CONFIGURE_PORTLETS,ACTION_CUSTOMIZE,ACTION_DELETE,ACTION_DELETE_DISCUSSION,ACTION_PERMISSIONS,ACTION_UPDATE,ACTION_UPDATE_DISCUSSION,ACTION_VIEW" param="permissionDefinitionKey">
+		
 			<execute macro="Team#definePermissionPG">
 				<var name="permissionDefinitionKey" value="ACTION_ADD_DISCUSSION" />
 				<var name="teamName" value="Site Team Name" />
@@ -2282,7 +2282,7 @@
 				<var name="permissionDefinitionKey" value="ACTION_VIEW" />
 				<var name="teamName" value="Site Team Name" />
 			</execute>
-		</for>
+		
 
 		<execute macro="User#logoutPG" />
 
@@ -2296,7 +2296,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Blogs,Tag Cloud,Recent Bloggers" param="portletTitleName">
+		
 			<var name="key_portletTitleName" value="Blogs" />
 
 			<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="Blogs" />
@@ -2306,7 +2306,7 @@
 		<var name="key_portletTitleName" value="Recent Bloggers" />
 
 			<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="Recent Bloggers" />
-		</for>
+		
 
 		<execute macro="User#logoutPG" />
 

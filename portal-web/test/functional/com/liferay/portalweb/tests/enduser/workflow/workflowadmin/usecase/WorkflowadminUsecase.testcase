@@ -1059,7 +1059,7 @@
 			<var name="workflowDefinition" value="Single Approver (Version 1)" />
 		</execute>
 
-		<for list="1,2,3" param="number">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1132,7 +1132,7 @@
 				<var name="entrySubtitle" value="Subtitle 3" />
 				<var name="entryTitle" value="Blogs Entry Title 3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelConfiguration">
 			<var name="portlet" value="Workflow Definition" />
@@ -1142,7 +1142,7 @@
 			<var name="portletName" value="My Workflow Tasks" />
 		</execute>
 
-		<for list="1,2,3" param="number">
+		
 			<execute macro="Workflow#viewTaskAssignedToMyRoles">
 				<var name="workflowAssetTitle" value="WC WebContent Title 1" />
 				<var name="workflowAssetType" value="Web Content Article" />
@@ -1176,7 +1176,7 @@
 				<var name="workflowAssetType" value="Blogs Entry" />
 				<var name="workflowTask" value="Review" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Pagination#viewResults">
 			<var name="results" value="Showing 1 to 6 of 6 entries." />
@@ -1331,7 +1331,7 @@
 			<var name="roleType" value="Site" />
 		</execute>
 
-		<for list="1,2" param="n">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -1488,7 +1488,7 @@
 				<var name="workflowAssetType" value="Blogs Entry" />
 				<var name="workflowTask" value="Review" />
 			</execute>
-		</for>
+		
 
 		<execute macro="User#logoutAndLoginPG">
 			<var name="userLoginEmailAddress" value="usersn1@liferay.com" />

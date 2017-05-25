@@ -202,7 +202,7 @@
 			<var name="roleUser" value="User" />
 		</execute>
 
-		<for list="1,2,3,4,5" param="userNumber">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -298,7 +298,7 @@
 				<var name="userEmailAddress" value="userea5@liferay.com" />
 				<var name="userScreenName" value="usersn5" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="User Groups" />

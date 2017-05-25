@@ -69,7 +69,7 @@
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Blogs#addEntry">
 				<var name="entryContent" value="Blogs Entry1 Content" />
 				<var name="entryTitle" value="Blogs Entry1 Title" />
@@ -82,9 +82,9 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Blogs Page" />
 			</execute>
@@ -124,7 +124,7 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="AddBlogsEntry" priority="4">
@@ -800,7 +800,7 @@
 	<command name="DeleteBlogsEntries" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Blogs Page" />
 			</execute>
@@ -825,9 +825,9 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Blogs Page" />
 			</execute>
@@ -867,9 +867,9 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
-		<for list="3,2,1" param="entryCount">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Blogs Page" />
 			</execute>
@@ -897,13 +897,13 @@
 				<var name="entryContent" value="Blogs Entry1 Content" />
 				<var name="entryTitle" value="Blogs Entry1 Title" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="BlogsEntry#viewNoPG">
 				<var name="entryContent" value="Blogs Entry1 Content" />
 				<var name="entryTitle" value="Blogs Entry1 Title" />
@@ -916,7 +916,7 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="DeleteBlogsEntryComment" priority="4">
@@ -1276,7 +1276,7 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<for list="Blogs,Entry,Content,Blogs Entry Content" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1329,9 +1329,9 @@
 				<var name="searchAssetType" value="Blogs Entry" />
 				<var name="searchTerm" value="Blogs Entry Content" />
 			</execute>
-		</for>
+		
 
-		<for list="Blogs1,Entry1,Content1,Blogs1 Entry1 Content1" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1384,7 +1384,7 @@
 				<var name="searchNoResults" value="true" />
 				<var name="searchTerm" value="Blogs1 Entry1 Content1" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SearchBlogsEntryContentQuotes" priority="4">
@@ -1401,7 +1401,7 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<for list="&quot;Blogs&quot;,&quot;Entry&quot;,&quot;Content&quot;,&quot;Blogs Entry Content&quot;" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1454,9 +1454,9 @@
 				<var name="searchAssetType" value="Blogs Entry" />
 				<var name="searchTerm" value="&quot;Blogs Entry Content&quot;" />
 			</execute>
-		</for>
+		
 
-		<for list="&quot;Blogs1&quot;,&quot;Entry1&quot;,&quot;Content1&quot;,&quot;Blogs1 Entry1 Content1&quot;" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1509,7 +1509,7 @@
 				<var name="searchNoResults" value="true" />
 				<var name="searchTerm" value="&quot;Blogs1 Entry1 Content1&quot;" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SearchBlogsEntryTitle" priority="4">
@@ -1526,7 +1526,7 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<for list="Blogs,Entry,Title,Blogs Entry Title" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1579,9 +1579,9 @@
 				<var name="searchAssetType" value="Blogs Entry" />
 				<var name="searchTerm" value="Blogs Entry Title" />
 			</execute>
-		</for>
+		
 
-		<for list="Blogs1,Entry1,Title1,Blogs1 Entry1 Title1" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1634,7 +1634,7 @@
 				<var name="searchNoResults" value="true" />
 				<var name="searchTerm" value="Blogs1 Entry1 Title1" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SearchBlogsEntryTitleQuotes" priority="4">
@@ -1655,7 +1655,7 @@
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
-		<for list="&quot;Blogs&quot;,&quot;Entry&quot;,&quot;Title&quot;,&quot;Blogs Entry Title&quot;" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1708,9 +1708,9 @@
 				<var name="searchAssetType" value="Blogs Entry" />
 				<var name="searchTerm" value="&quot;Blogs Entry Title&quot;" />
 			</execute>
-		</for>
+		
 
-		<for list="&quot;Blogs1&quot;,&quot;Entry1&quot;,&quot;Title1&quot;,&quot;Blogs1&quot;,&quot;Entry1&quot;,&quot;Title1&quot;" param="searchTerm">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1789,7 +1789,7 @@
 				<var name="searchNoResults" value="true" />
 				<var name="searchTerm" value="&quot;Title1&quot;" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SubscribeToBlogsEntryComment" priority="3">
@@ -2538,7 +2538,7 @@
 			<var name="roleTitle" value="Site Member" />
 		</execute>
 
-		<for list="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX,CONFIGURATION_PERMISSIONS_ADD_TO_PAGE_CHECKBOX,CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX,CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX,CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX,CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" param="permissionDefinitionKeyValue">
+		
 			<execute macro="Role#removePermissionPG">
 				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX" />
 				<var name="roleTitle" value="Owner" />
@@ -2563,7 +2563,7 @@
 				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" />
 				<var name="roleTitle" value="Owner" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Blogs Page" />
@@ -2586,7 +2586,7 @@
 			<var name="roleTitle" value="Site Member" />
 		</execute>
 
-		<for list="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX,CONFIGURATION_PERMISSIONS_ADD_TO_PAGE_CHECKBOX,CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX,CONFIGURATION_PERMISSIONS_CONFIGURATION_CHECKBOX,CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX,CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" param="permissionDefinitionKeyValue">
+		
 			<execute macro="PermissionsInline#viewPermissionsRemoved">
 				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_ADD_DISPLAY_TEMPLATE_CHECKBOX" />
 				<var name="roleTitle" value="Owner" />
@@ -2611,6 +2611,6 @@
 				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_PERMISSIONS_CHECKBOX" />
 				<var name="roleTitle" value="Owner" />
 			</execute>
-		</for>
+		
 	</command>
 </definition>
