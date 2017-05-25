@@ -150,38 +150,35 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		
-			<execute macro="DDLRecord#viewViaDDLDisplayTable">
-				<var name="ddlRecordFieldData" value="John" />
-				<var name="fieldFieldLabel" value="First Name" />
-			</execute>
 		<execute macro="DDLRecord#viewViaDDLDisplayTable">
-				<var name="ddlRecordFieldData" value="Jane" />
-				<var name="fieldFieldLabel" value="First Name" />
-			</execute>
-		
+			<var name="ddlRecordFieldData" value="John" />
+			<var name="fieldFieldLabel" value="First Name" />
+		</execute>
 
-		
-			<execute macro="DDLRecord#viewViaDDLDisplayTable">
-				<var name="ddlRecordFieldData" value="Doe" />
-				<var name="fieldFieldLabel" value="Last Name" />
-			</execute>
 		<execute macro="DDLRecord#viewViaDDLDisplayTable">
-				<var name="ddlRecordFieldData" value="Smith" />
-				<var name="fieldFieldLabel" value="Last Name" />
-			</execute>
-		
+			<var name="ddlRecordFieldData" value="Jane" />
+			<var name="fieldFieldLabel" value="First Name" />
+		</execute>
 
-		
-			<execute macro="DDLRecord#viewViaDDLDisplayTable">
-				<var name="ddlRecordFieldData" value="Beef Jerky" />
-				<var name="fieldFieldLabel" value="What are you bringing" />
-			</execute>
 		<execute macro="DDLRecord#viewViaDDLDisplayTable">
-				<var name="ddlRecordFieldData" value="Carrots" />
-				<var name="fieldFieldLabel" value="What are you bringing" />
-			</execute>
-		
+			<var name="ddlRecordFieldData" value="Doe" />
+			<var name="fieldFieldLabel" value="Last Name" />
+		</execute>
+
+		<execute macro="DDLRecord#viewViaDDLDisplayTable">
+			<var name="ddlRecordFieldData" value="Smith" />
+			<var name="fieldFieldLabel" value="Last Name" />
+		</execute>
+
+		<execute macro="DDLRecord#viewViaDDLDisplayTable">
+			<var name="ddlRecordFieldData" value="Beef Jerky" />
+			<var name="fieldFieldLabel" value="What are you bringing" />
+		</execute>
+
+		<execute macro="DDLRecord#viewViaDDLDisplayTable">
+			<var name="ddlRecordFieldData" value="Carrots" />
+			<var name="fieldFieldLabel" value="What are you bringing" />
+		</execute>
 
 		<execute macro="DDLRecord#viewStatusViaDDLDisplayTable">
 			<var name="fieldFieldLabel" value="Status" />
