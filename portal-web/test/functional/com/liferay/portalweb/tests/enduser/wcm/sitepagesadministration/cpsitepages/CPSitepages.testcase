@@ -188,7 +188,6 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Site Child Page 1,Site Child Page 2,Site Child Page 3" param="childPageName">
 			<execute macro="ProductMenu#gotoControlPanelSites">
 				<var name="portlet" value="Sites" />
 			</execute>
@@ -219,9 +218,7 @@
 				<var name="siteChildPageName" value="Site Child Page 3" />
 				<var name="siteName" value="Site Name" />
 			</execute>
-		</for>
 
-		<for list="Site Child Page 1,Site Child Page 2,Site Child Page 3" param="childPageName">
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Site Page" />
 				<var name="siteName" value="Site Name" />
@@ -246,7 +243,6 @@
 			<execute macro="Page#viewChildPage">
 				<var name="pageName" value="Site Child Page 3" />
 			</execute>
-		</for>
 	</command>
 
 	<command name="AddSitePrivateChildPage" priority="4">
@@ -568,7 +564,6 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Site Page 1,Site Page 2,Site Page 3" param="pageName">
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoControlPanelSites">
@@ -602,7 +597,6 @@
 				<var name="pageName" value="Site Page 3" />
 				<var name="siteName" value="Site Name" />
 			</execute>
-		</for>
 
 		<execute macro="Page#deletePG">
 			<var name="pageName" value="Site Page 2" />

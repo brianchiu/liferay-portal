@@ -60,7 +60,7 @@
 	<command name="AddMBCategories" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<for list="MB Category1 Name,MB Category2 Name,MB Category3 Name" param="categoryName">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Message Boards Page" />
 			</execute>
@@ -94,7 +94,7 @@
 			<execute macro="MessageboardsCategory#viewPG">
 				<var name="categoryName" value="MB Category3 Name" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="AddMBCategory" priority="5">
@@ -1040,7 +1040,7 @@
 			<var name="pageName" value="Message Boards Page" />
 		</execute>
 
-		<for list="1,2,3,4,5,6,7" param="replyCount">
+		
 			<execute macro="MessageboardsThread#replyPG">
 				<var name="threadReplyBody" value="Message Boards Thread Reply 1" />
 				<var name="threadSubject" value="Message Boards Thread Subject" />
@@ -1097,7 +1097,7 @@
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Message Boards Page" />
 			</execute>
-		</for>
+		
 
 		<execute macro="MessageboardsThread#gotoPG">
 			<var name="lastPostUserName" value="Test Test" />
@@ -1105,7 +1105,7 @@
 			<var name="threadSubject" value="Message Boards Thread Subject" />
 		</execute>
 
-		<for list="1,2,3,4" param="replyCount">
+		
 			<var name="key_threadBody" value="Message Boards Thread Reply 1" />
 
 			<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 1" />
@@ -1118,11 +1118,11 @@
 		<var name="key_threadBody" value="Message Boards Thread Reply 4" />
 
 			<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 4" />
-		</for>
+		
 
 		<execute function="AssertVisible" locator1="Button#MORE_MESSAGES" />
 
-		<for list="5,6,7" param="replyNotVisible">
+		
 			<var name="key_threadBody" value="Message Boards Thread Reply 5" />
 
 			<execute function="AssertElementNotPresent" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 5" />
@@ -1132,11 +1132,11 @@
 		<var name="key_threadBody" value="Message Boards Thread Reply 7" />
 
 			<execute function="AssertElementNotPresent" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 7" />
-		</for>
+		
 
 		<execute function="AssertClick" locator1="Button#MORE_MESSAGES" value1="More Messages" />
 
-		<for list="1,2,3,4,5,6,7" param="replyCount">
+		
 			<var name="key_threadBody" value="Message Boards Thread Reply 1" />
 
 			<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 1" />
@@ -1158,7 +1158,7 @@
 		<var name="key_threadBody" value="Message Boards Thread Reply 7" />
 
 			<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 7" />
-		</for>
+		
 	</command>
 
 	<command name="ViewSubcategorySubscriptionViaMySubscriptionsPage" priority="4">

@@ -212,7 +212,7 @@
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="DMDocument#addPG">
 				<var name="dmDocumentDescription" value="DM Document Description" />
 				<var name="dmDocumentFile" value="Document_1.doc" />
@@ -228,9 +228,9 @@
 				<var name="dmDocumentFile" value="Document_3.doc" />
 				<var name="dmDocumentTitle" value="Document_3.doc" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Documents and Media Page" />
 			</execute>
@@ -258,7 +258,7 @@
 				<var name="dmDocumentSize" value="22KB" />
 				<var name="dmDocumentTitle" value="Document_3.doc" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="AddDocumentType" priority="4">

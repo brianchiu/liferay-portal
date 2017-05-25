@@ -181,7 +181,7 @@
 	</command>
 
 	<command name="ViewAnnouncementsPagination" priority="3">
-		<for list="1,2,3,4,5,6,7" param="entryCount">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Announcements Page" />
 			</execute>
@@ -259,7 +259,7 @@
 				<var name="entryTitle" value="Announcements Entry Title 7" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Announcements Page" />
@@ -273,7 +273,7 @@
 			<var name="pageName" value="Announcements Page" />
 		</execute>
 
-		<for list="3,4,5,6,7" param="viewEntryCount">
+		
 			<execute macro="AnnouncementsEntry#viewViaEntriesPG">
 				<var name="distributionScope" value="General" />
 				<var name="entryContent" value="Announcements Entry Content 3" />
@@ -304,7 +304,7 @@
 				<var name="entryTitle" value="Announcements Entry Title 7" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
-		</for>
+		
 
 		<var name="key_entryTitle" value="Announcements Entry Title" />
 
@@ -312,7 +312,7 @@
 		<execute function="AssertTextNotPresent" locator1="Announcements#CARD_VIEW_ENTRY_TITLE" value1="Announcements Entry Title 2" />
 		<execute function="AssertClick" locator1="Pagination#NEXT_LINK" value1="Next" />
 
-		<for list="1,2" param="viewEntryCount">
+		
 			<execute macro="AnnouncementsEntry#viewViaEntriesPG">
 				<var name="distributionScope" value="General" />
 				<var name="entryContent" value="Announcements Entry Content 1" />
@@ -325,21 +325,21 @@
 				<var name="entryTitle" value="Announcements Entry Title 2" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
-		</for>
+		
 
 		<var name="key_entryTitle" value="Announcements Entry Title" />
 
-		<for list="3,4,5,6,7" param="viewEntryCount">
+		
 			<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 3" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 4" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 5" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 6" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 7" />
-		</for>
+		
 
 		<execute function="AssertClick" locator1="Pagination#PREVIOUS_LINK" value1="Previous" />
 
-		<for list="3,4,5,6,7" param="viewEntryCount">
+		
 			<execute macro="AnnouncementsEntry#viewViaEntriesPG">
 				<var name="distributionScope" value="General" />
 				<var name="entryContent" value="Announcements Entry Content 3" />
@@ -370,7 +370,7 @@
 				<var name="entryTitle" value="Announcements Entry Title 7" />
 				<var name="entryURL" value="http://www.liferay.com" />
 			</execute>
-		</for>
+		
 
 		<var name="key_entryTitle" value="Announcements Entry Title" />
 
@@ -388,7 +388,7 @@
 			<var name="itemsPerPage" value="5" />
 		</execute>
 
-		<for list="1,2,3,4,5" param="viewEntryCount">
+		
 			<execute macro="AnnouncementsEntry#viewList">
 				<var name="distributionScope" value="General" />
 				<var name="entryTitle" value="Announcements Entry Title 1" />
@@ -409,14 +409,14 @@
 				<var name="distributionScope" value="General" />
 				<var name="entryTitle" value="Announcements Entry Title 5" />
 			</execute>
-		</for>
+		
 
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 6" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 7" />
 
 		<execute function="Click" locator1="Pagination#NEXT_LINK" />
 
-		<for list="6,7" param="viewEntryCount">
+		
 			<execute macro="AnnouncementsEntry#viewList">
 				<var name="distributionScope" value="General" />
 				<var name="entryTitle" value="Announcements Entry Title 6" />
@@ -425,19 +425,19 @@
 				<var name="distributionScope" value="General" />
 				<var name="entryTitle" value="Announcements Entry Title 7" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3,4,5" param="viewEntryCount">
+		
 			<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 1" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 2" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 3" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 4" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 5" />
-		</for>
+		
 
 		<execute function="Click" locator1="Pagination#PREVIOUS_LINK" />
 
-		<for list="1,2,3,4,5" param="viewEntryCount">
+		
 			<execute macro="AnnouncementsEntry#viewList">
 				<var name="distributionScope" value="General" />
 				<var name="entryTitle" value="Announcements Entry Title 1" />
@@ -458,7 +458,7 @@
 				<var name="distributionScope" value="General" />
 				<var name="entryTitle" value="Announcements Entry Title 5" />
 			</execute>
-		</for>
+		
 
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 6" />
 		<execute function="AssertTextNotPresent" locator1="AnnouncementsManageEntries#ENTRY_TABLE_TITLE" value1="Announcements Entry Title 7" />

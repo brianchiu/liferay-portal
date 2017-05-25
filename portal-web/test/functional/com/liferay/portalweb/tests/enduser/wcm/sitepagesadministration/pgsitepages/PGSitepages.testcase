@@ -46,7 +46,7 @@
 			<var name="pageName" value="Site Page Name" />
 		</execute>
 
-		<for list="Tags Navigation,Categories Navigation,Asset Publisher" param="portletName">
+		
 			<execute macro="Portlet#viewSpecificPG">
 				<var name="portletName" value="Tags Navigation" />
 			</execute>
@@ -56,7 +56,7 @@
 		<execute macro="Portlet#viewSpecificPG">
 				<var name="portletName" value="Asset Publisher" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="DeletePages" priority="5">
