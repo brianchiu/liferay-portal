@@ -14,7 +14,7 @@
 		<execute macro="Alert#viewSuccessMessage" />
 	</command>
 
-	<execute macro="searchFormEntries">
+	<command name="searchFormEntries">
 		<for list="${fieldValueList}" param="fieldValue">
 			<execute macro="FormsAdmin#searchFormEntry">
 				<var name="searchTerm" value="${fieldValue}" />
@@ -39,7 +39,7 @@
 				</if>
 			</for>
 		</for>
-	</execute>
+	</command>
 
 	<command name="editDataProvider">
 		<execute macro="FormFields#editText">
