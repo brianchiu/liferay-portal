@@ -897,7 +897,17 @@
 			</execute>
 
 			<execute macro="Category#addCP">
-				<var name="categoryName" value="${categoryName}" />
+				<var name="categoryName" value="Category Name 1" />
+				<var name="vocabularyName" value="Vocabulary Name" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Category#addCP">
+				<var name="categoryName" value="Category Name 2" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
 		</for>
@@ -1255,7 +1265,17 @@
 			</execute>
 
 			<execute macro="Category#addCP">
-				<var name="categoryName" value="${categoryName}" />
+				<var name="categoryName" value="dog" />
+				<var name="vocabularyName" value="Vocabulary Name" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Category#addCP">
+				<var name="categoryName" value="cat" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
 		</for>
@@ -1269,7 +1289,18 @@
 
 			<execute macro="Subcategory#addCP">
 				<var name="categoryName" value="dog" />
-				<var name="subcategoryName" value="${subcategoryName}" />
+				<var name="subcategoryName" value="bone" />
+				<var name="vocabularyName" value="Vocabulary Name" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Subcategory#addCP">
+				<var name="categoryName" value="dog" />
+				<var name="subcategoryName" value="milk" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
 		</for>
@@ -1345,12 +1376,26 @@
 			</execute>
 
 			<execute macro="Category#searchCP">
-				<var name="categorySearchEntry" value="${categoryName}" />
+				<var name="categorySearchEntry" value="llama" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
 
 			<execute macro="Category#viewSearchResultsCP">
-				<var name="categoryNameList" value="${categoryName}" />
+				<var name="categoryNameList" value="llama" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Category#searchCP">
+				<var name="categorySearchEntry" value="panda" />
+				<var name="vocabularyName" value="Vocabulary Name" />
+			</execute>
+
+			<execute macro="Category#viewSearchResultsCP">
+				<var name="categoryNameList" value="panda" />
 			</execute>
 		</for>
 
@@ -1362,12 +1407,26 @@
 			</execute>
 
 			<execute macro="Category#searchCP">
-				<var name="categorySearchEntry" value="${categoryDescription}" />
+				<var name="categorySearchEntry" value="brown" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
 
 			<execute macro="Category#viewSearchResultsCP">
-				<var name="categoryDefinitionList" value="${categoryDescription}" />
+				<var name="categoryDefinitionList" value="brown" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Category#searchCP">
+				<var name="categorySearchEntry" value="black" />
+				<var name="vocabularyName" value="Vocabulary Name" />
+			</execute>
+
+			<execute macro="Category#viewSearchResultsCP">
+				<var name="categoryDefinitionList" value="black" />
 			</execute>
 		</for>
 
@@ -1538,7 +1597,22 @@
 			</execute>
 
 			<execute macro="Subcategory#viewSearchResultsCP">
-				<var name="categoryNameList" value="${categoryName}" />
+				<var name="categoryNameList" value="beard" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Subcategory#searchCP">
+				<var name="categoryName" value="Category Name" />
+				<var name="subcategorySearchEntry" value="${subcategoryName}" />
+				<var name="vocabularyName" value="Vocabulary Name" />
+			</execute>
+
+			<execute macro="Subcategory#viewSearchResultsCP">
+				<var name="categoryNameList" value="mustache" />
 			</execute>
 		</for>
 
@@ -1658,11 +1732,24 @@
 			</execute>
 
 			<execute macro="Vocabulary#searchCP">
-				<var name="vocabularySearchEntry" value="${vocabularyName}" />
+				<var name="vocabularySearchEntry" value="Food" />
 			</execute>
 
 			<execute macro="Vocabulary#viewSearchResultsCP">
-				<var name="vocabularyNameList" value="${vocabularyName} Vocab" />
+				<var name="vocabularyNameList" value="Food Vocab" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Vocabulary#searchCP">
+				<var name="vocabularySearchEntry" value="Sport" />
+			</execute>
+
+			<execute macro="Vocabulary#viewSearchResultsCP">
+				<var name="vocabularyNameList" value="Sport Vocab" />
 			</execute>
 		</for>
 
@@ -1674,11 +1761,24 @@
 			</execute>
 
 			<execute macro="Vocabulary#searchCP">
-				<var name="vocabularySearchEntry" value="${vocabularyDescription}" />
+				<var name="vocabularySearchEntry" value="Sushi" />
 			</execute>
 
 			<execute macro="Vocabulary#viewSearchResultsCP">
-				<var name="vocabularyDefinitionList" value="${vocabularyDescription}" />
+				<var name="vocabularyDefinitionList" value="Sushi" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Categories" />
+			</execute>
+
+			<execute macro="Vocabulary#searchCP">
+				<var name="vocabularySearchEntry" value="Futbol" />
+			</execute>
+
+			<execute macro="Vocabulary#viewSearchResultsCP">
+				<var name="vocabularyDefinitionList" value="Futbol" />
 			</execute>
 		</for>
 

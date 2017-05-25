@@ -102,7 +102,42 @@
 			<execute macro="CalendarNavigator#gotoAddEvent" />
 
 			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event ${eventNumber}" />
+				<var name="eventTitle" value="Calendar Event 1" />
+				<var name="eventType" value="All Day" />
+				<var name="pageName" value="Calendar Page" />
+			</execute>
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+			<execute macro="CalendarEvent#add">
+				<var name="eventTitle" value="Calendar Event 2" />
+				<var name="eventType" value="All Day" />
+				<var name="pageName" value="Calendar Page" />
+			</execute>
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+			<execute macro="CalendarEvent#add">
+				<var name="eventTitle" value="Calendar Event 3" />
+				<var name="eventType" value="All Day" />
+				<var name="pageName" value="Calendar Page" />
+			</execute>
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+			<execute macro="CalendarEvent#add">
+				<var name="eventTitle" value="Calendar Event 4" />
+				<var name="eventType" value="All Day" />
+				<var name="pageName" value="Calendar Page" />
+			</execute>
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+			<execute macro="CalendarEvent#add">
+				<var name="eventTitle" value="Calendar Event 5" />
+				<var name="eventType" value="All Day" />
+				<var name="pageName" value="Calendar Page" />
+			</execute>
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+			<execute macro="CalendarEvent#add">
+				<var name="eventTitle" value="Calendar Event 6" />
 				<var name="eventType" value="All Day" />
 				<var name="pageName" value="Calendar Page" />
 			</execute>
