@@ -14,45 +14,39 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#firstLoginPG" />
+		<execute macro="User#firstLoginPG" />
 
-				<execute macro="KaleoFormsAdmin#tearDownProcess" />
+		<execute macro="KaleoFormsAdmin#tearDownProcess" />
 
-				<execute macro="DDLTemplate#tearDownTemplateCP" />
+		<execute macro="DDLTemplate#tearDownTemplateCP" />
 
-				<execute macro="DDLTemplate#tearDownTemplateCP">
-					<var name="ddlDataDefinitionName" value="To Do" />
-				</execute>
+		<execute macro="DDLTemplate#tearDownTemplateCP">
+			<var name="ddlDataDefinitionName" value="To Do" />
+		</execute>
 
-				<execute macro="DDLTemplate#tearDownTemplateCP">
-					<var name="ddlDataDefinitionName" value="Inventory" />
-				</execute>
+		<execute macro="DDLTemplate#tearDownTemplateCP">
+			<var name="ddlDataDefinitionName" value="Inventory" />
+		</execute>
 
-				<execute macro="KaleoFormsAdmin#deleteFieldSet" />
+		<execute macro="KaleoFormsAdmin#deleteFieldSet" />
 
-				<execute macro="DMDocument#tearDownCP" />
+		<execute macro="DMDocument#tearDownCP" />
 
-				<execute macro="Page#tearDownPG" />
+		<execute macro="Page#tearDownPG" />
 
-				<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
-					<var name="workflowDefinitionTitle" value="Edited Workflow Definition" />
-				</execute>
+		<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
+			<var name="workflowDefinitionTitle" value="Edited Workflow Definition" />
+		</execute>
 
-				<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
+		<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
 
-				<execute macro="User#tearDownCP" />
+		<execute macro="User#tearDownCP" />
 
-				<execute macro="Role#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="Role#tearDownCP" />
 	</tear-down>
 
 	<command name="AssertCanEditPendingForm" priority="4">

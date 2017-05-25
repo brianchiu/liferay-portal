@@ -51,27 +51,21 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="MessageboardsThread#tearDownCP" />
+		<execute macro="MessageboardsThread#tearDownCP" />
 
-				<execute macro="BlogsEntry#tearDownCP" />
+		<execute macro="BlogsEntry#tearDownCP" />
 
-				<execute macro="WebContent#tearDownCP" />
+		<execute macro="WebContent#tearDownCP" />
 
-				<execute macro="Page#tearDownPG" />
+		<execute macro="Page#tearDownPG" />
 
-				<execute macro="Workflow#tearDownPortalWorkflow" />
+		<execute macro="Workflow#tearDownPortalWorkflow" />
 
-				<execute macro="Workflow#tearDownSiteWorkflow" />
-			</else>
-		</if>
+		<execute macro="Workflow#tearDownSiteWorkflow" />
 	</tear-down>
 
 	<command name="ApproveBlogsEntryPG" priority="4">

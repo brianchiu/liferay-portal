@@ -10,25 +10,19 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-				<execute macro="ProductMenu#gotoSitesContent">
-					<var name="portlet" value="Forms" />
-				</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Forms" />
+		</execute>
 
-				<execute macro="FormsAdmin#teardownForms" />
+		<execute macro="FormsAdmin#teardownForms" />
 
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="Page#tearDownPG" />
 	</tear-down>
 
 	<command name="ConfigureAutofillRule" priority="5">
