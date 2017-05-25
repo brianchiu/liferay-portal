@@ -1320,11 +1320,12 @@
 			<var name="portlet" value="Tags" />
 		</execute>
 
-		<var name="tagNameList" value="tag1,tag2" />
-
-		<for list="${tagNameList}" param="tagName">
+		<for list="tag1,tag2" param="tagName">
 			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
+				<var name="tagName" value="tag1" />
+			</execute>
+		<execute macro="Tag#addCP">
+				<var name="tagName" value="tag2" />
 			</execute>
 		</for>
 
@@ -1371,10 +1372,13 @@
 
 		<execute function="AssertTextEquals" locator1="AssetCategorization#CATEGORY" value1="Category Name" />
 
-		<for list="${tagNameList}" param="tagName">
-			<var name="key_tagName" value="${tagName}" />
+		<for list="tag1,tag2" param="tagName">
+			<var name="key_tagName" value="tag1" />
 
-			<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="${tagName}" />
+			<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag1" />
+		<var name="key_tagName" value="tag2" />
+
+			<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag2" />
 		</for>
 
 		<execute macro="Navigator#gotoPage">
