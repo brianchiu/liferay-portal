@@ -115,44 +115,44 @@
 			<var name="wikiPageTitle" value="FrontPage" />
 		</execute>
 
-		
-			<execute macro="WikiPage#addAttachmentViaPageEdit">
-				<var name="attachmentFileName" value="Document_1.jpg" />
-				<var name="wikiPageTitle" value="FrontPage" />
-			</execute>
-
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Wiki Test Page" />
-			</execute>
-
-			<execute macro="WikiNavigator#gotoPG">
-				<var name="wikiPageTitle" value="FrontPage" />
-			</execute>
 		<execute macro="WikiPage#addAttachmentViaPageEdit">
-				<var name="attachmentFileName" value="Document_2.mp3" />
-				<var name="wikiPageTitle" value="FrontPage" />
-			</execute>
+			<var name="attachmentFileName" value="Document_1.jpg" />
+			<var name="wikiPageTitle" value="FrontPage" />
+		</execute>
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Wiki Test Page" />
-			</execute>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Wiki Test Page" />
+		</execute>
 
-			<execute macro="WikiNavigator#gotoPG">
-				<var name="wikiPageTitle" value="FrontPage" />
-			</execute>
+		<execute macro="WikiNavigator#gotoPG">
+			<var name="wikiPageTitle" value="FrontPage" />
+		</execute>
+
 		<execute macro="WikiPage#addAttachmentViaPageEdit">
-				<var name="attachmentFileName" value="Document_3.doc" />
-				<var name="wikiPageTitle" value="FrontPage" />
-			</execute>
+			<var name="attachmentFileName" value="Document_2.mp3" />
+			<var name="wikiPageTitle" value="FrontPage" />
+		</execute>
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Wiki Test Page" />
-			</execute>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Wiki Test Page" />
+		</execute>
 
-			<execute macro="WikiNavigator#gotoPG">
-				<var name="wikiPageTitle" value="FrontPage" />
-			</execute>
-		
+		<execute macro="WikiNavigator#gotoPG">
+			<var name="wikiPageTitle" value="FrontPage" />
+		</execute>
+
+		<execute macro="WikiPage#addAttachmentViaPageEdit">
+			<var name="attachmentFileName" value="Document_3.doc" />
+			<var name="wikiPageTitle" value="FrontPage" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Wiki Test Page" />
+		</execute>
+
+		<execute macro="WikiNavigator#gotoPG">
+			<var name="wikiPageTitle" value="FrontPage" />
+		</execute>
 
 		<execute macro="WikiPage#viewAttachmentPGViaEdit">
 			<var name="attachmentFileName" value="Document_1.jpg" />
@@ -302,29 +302,28 @@
 			<var name="wikiPageTitle" value="FrontPage" />
 		</execute>
 
-		
 			<execute macro="WikiPage#addChildPagePG">
 				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page1 Content" />
 				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page1 Title" />
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
+
 		<execute macro="WikiPage#addChildPagePG">
 				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page2 Content" />
 				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page2 Title" />
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
+
 		<execute macro="WikiPage#addChildPagePG">
 				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page3 Content" />
 				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page3 Title" />
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
-		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Wiki Test Page" />
 		</execute>
 
-		
 			<execute macro="WikiNavigator#gotoPG">
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
@@ -337,6 +336,7 @@
 				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page1 Content" />
 				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page1 Title" />
 			</execute>
+
 		<execute macro="WikiNavigator#gotoPG">
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
@@ -349,6 +349,7 @@
 				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page2 Content" />
 				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page2 Title" />
 			</execute>
+
 		<execute macro="WikiNavigator#gotoPG">
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
@@ -361,7 +362,6 @@
 				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page3 Content" />
 				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page3 Title" />
 			</execute>
-		
 	</command>
 
 	<command name="AddWikiFrontPageChildPageWithInvalidTitle" priority="4">
@@ -815,7 +815,6 @@
 
 		<execute macro="WikiNavigator#gotoAllPagesPG" />
 
-		
 			<execute macro="WikiPage#addPG">
 				<var name="wikiPageContent" value="Wiki Page1 Content" />
 				<var name="wikiPageTitle" value="Wiki Page1 Title" />
@@ -834,9 +833,7 @@
 			</execute>
 
 			<execute function="Refresh" />
-		
 
-		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Wiki Test Page" />
 			</execute>
@@ -852,6 +849,7 @@
 				<var name="wikiPageContent" value="Wiki Page1 Content" />
 				<var name="wikiPageTitle" value="Wiki Page1 Title" />
 			</execute>
+
 		<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Wiki Test Page" />
 			</execute>
@@ -867,6 +865,7 @@
 				<var name="wikiPageContent" value="Wiki Page2 Content" />
 				<var name="wikiPageTitle" value="Wiki Page2 Title" />
 			</execute>
+
 		<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Wiki Test Page" />
 			</execute>
@@ -882,7 +881,6 @@
 				<var name="wikiPageContent" value="Wiki Page3 Content" />
 				<var name="wikiPageTitle" value="Wiki Page3 Title" />
 			</execute>
-		
 	</command>
 
 	<command name="AddWikiPageWithInlineImage" priority="4">

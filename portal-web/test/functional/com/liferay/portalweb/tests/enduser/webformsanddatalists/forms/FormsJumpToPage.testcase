@@ -51,59 +51,57 @@
 
 		<execute macro="Form#closeSidebar" />
 
-		
-			<execute macro="Form#addPage" />
-
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
-
-			<execute macro="Form#editPageTitle">
-				<var name="formPageName" value="Page ${pageNumber}" />
-			</execute>
-
-			<execute macro="Form#gotoAddField">
-				<var name="fieldType" value="Text Field" />
-			</execute>
-
-			<execute macro="Form#editFieldLabel">
-				<var name="fieldValue" value="Destiny 1" />
-			</execute>
-
-			<execute macro="Form#closeSidebar" />
 		<execute macro="Form#addPage" />
 
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+		<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
 
-			<execute macro="Form#editPageTitle">
-				<var name="formPageName" value="Page ${pageNumber}" />
-			</execute>
+		<execute macro="Form#editPageTitle">
+			<var name="formPageName" value="Page ${pageNumber}" />
+		</execute>
 
-			<execute macro="Form#gotoAddField">
-				<var name="fieldType" value="Text Field" />
-			</execute>
+		<execute macro="Form#gotoAddField">
+			<var name="fieldType" value="Text Field" />
+		</execute>
 
-			<execute macro="Form#editFieldLabel">
-				<var name="fieldValue" value="Destiny 2" />
-			</execute>
+		<execute macro="Form#editFieldLabel">
+			<var name="fieldValue" value="Destiny 1" />
+		</execute>
 
-			<execute macro="Form#closeSidebar" />
+		<execute macro="Form#closeSidebar" />
 		<execute macro="Form#addPage" />
 
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+		<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
 
-			<execute macro="Form#editPageTitle">
-				<var name="formPageName" value="Page ${pageNumber}" />
-			</execute>
+		<execute macro="Form#editPageTitle">
+			<var name="formPageName" value="Page ${pageNumber}" />
+		</execute>
 
-			<execute macro="Form#gotoAddField">
-				<var name="fieldType" value="Text Field" />
-			</execute>
+		<execute macro="Form#gotoAddField">
+			<var name="fieldType" value="Text Field" />
+		</execute>
 
-			<execute macro="Form#editFieldLabel">
-				<var name="fieldValue" value="Destiny 3" />
-			</execute>
+		<execute macro="Form#editFieldLabel">
+			<var name="fieldValue" value="Destiny 2" />
+		</execute>
 
-			<execute macro="Form#closeSidebar" />
-		
+		<execute macro="Form#closeSidebar" />
+		<execute macro="Form#addPage" />
+
+		<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+
+		<execute macro="Form#editPageTitle">
+			<var name="formPageName" value="Page ${pageNumber}" />
+		</execute>
+
+		<execute macro="Form#gotoAddField">
+			<var name="fieldType" value="Text Field" />
+		</execute>
+
+		<execute macro="Form#editFieldLabel">
+			<var name="fieldValue" value="Destiny 3" />
+		</execute>
+
+		<execute macro="Form#closeSidebar" />
 
 		<execute macro="FormsAdminNavigator#gotoRules" />
 
@@ -204,62 +202,60 @@
 			<var name="publishFormURL" value="${publishedFormPublicURL}" />
 		</execute>
 
-		
-			<execute macro="FormFields#selectRadioOption">
-				<var name="fieldName" value="ChooseYourDestiny" />
-				<var name="radioOption" value="Destiny 1" />
-			</execute>
-
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
-
-			<execute macro="FormPortlet#nextPage">
-				<var name="formPageCurrent" value="Page 1" />
-				<var name="formPageNext" value="Page ${pageNumber}" />
-			</execute>
-
-			<execute macro="FormFields#viewTextField">
-				<var name="fieldLabel" value="Destiny 1" />
-				<var name="fieldName" value="Destiny1" />
-			</execute>
-
-			<execute macro="FormPortlet#previousPage" />
 		<execute macro="FormFields#selectRadioOption">
-				<var name="fieldName" value="ChooseYourDestiny" />
-				<var name="radioOption" value="Destiny 2" />
-			</execute>
+			<var name="fieldName" value="ChooseYourDestiny" />
+			<var name="radioOption" value="Destiny 1" />
+		</execute>
 
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+		<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
 
-			<execute macro="FormPortlet#nextPage">
-				<var name="formPageCurrent" value="Page 1" />
-				<var name="formPageNext" value="Page ${pageNumber}" />
-			</execute>
+		<execute macro="FormPortlet#nextPage">
+			<var name="formPageCurrent" value="Page 1" />
+			<var name="formPageNext" value="Page ${pageNumber}" />
+		</execute>
 
-			<execute macro="FormFields#viewTextField">
-				<var name="fieldLabel" value="Destiny 2" />
-				<var name="fieldName" value="Destiny2" />
-			</execute>
+		<execute macro="FormFields#viewTextField">
+			<var name="fieldLabel" value="Destiny 1" />
+			<var name="fieldName" value="Destiny1" />
+		</execute>
 
-			<execute macro="FormPortlet#previousPage" />
+		<execute macro="FormPortlet#previousPage" />
 		<execute macro="FormFields#selectRadioOption">
-				<var name="fieldName" value="ChooseYourDestiny" />
-				<var name="radioOption" value="Destiny 3" />
-			</execute>
+			<var name="fieldName" value="ChooseYourDestiny" />
+			<var name="radioOption" value="Destiny 2" />
+		</execute>
 
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+		<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
 
-			<execute macro="FormPortlet#nextPage">
-				<var name="formPageCurrent" value="Page 1" />
-				<var name="formPageNext" value="Page ${pageNumber}" />
-			</execute>
+		<execute macro="FormPortlet#nextPage">
+			<var name="formPageCurrent" value="Page 1" />
+			<var name="formPageNext" value="Page ${pageNumber}" />
+		</execute>
 
-			<execute macro="FormFields#viewTextField">
-				<var name="fieldLabel" value="Destiny 3" />
-				<var name="fieldName" value="Destiny3" />
-			</execute>
+		<execute macro="FormFields#viewTextField">
+			<var name="fieldLabel" value="Destiny 2" />
+			<var name="fieldName" value="Destiny2" />
+		</execute>
 
-			<execute macro="FormPortlet#previousPage" />
-		
+		<execute macro="FormPortlet#previousPage" />
+		<execute macro="FormFields#selectRadioOption">
+			<var name="fieldName" value="ChooseYourDestiny" />
+			<var name="radioOption" value="Destiny 3" />
+		</execute>
+
+		<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+
+		<execute macro="FormPortlet#nextPage">
+			<var name="formPageCurrent" value="Page 1" />
+			<var name="formPageNext" value="Page ${pageNumber}" />
+		</execute>
+
+		<execute macro="FormFields#viewTextField">
+			<var name="fieldLabel" value="Destiny 3" />
+			<var name="fieldName" value="Destiny3" />
+		</execute>
+
+		<execute macro="FormPortlet#previousPage" />
 
 		<execute macro="FormFields#selectRadioOption">
 			<var name="fieldName" value="ChooseYourDestiny" />
