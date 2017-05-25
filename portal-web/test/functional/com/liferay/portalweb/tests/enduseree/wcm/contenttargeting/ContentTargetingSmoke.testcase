@@ -156,32 +156,32 @@
 
 		<execute macro="PortletEntry#save" />
 
-		
-			<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Test Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
-
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Campaign Content Display" />
-			</execute>
 		<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Test Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="User Segment Content Display" />
-			</execute>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Campaign Content Display" />
+		</execute>
+
 		<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Test Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="User Segment Content List" />
-			</execute>
-		
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="User Segment Content Display" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="User Segment Content List" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page Name" />

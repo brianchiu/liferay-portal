@@ -52,65 +52,66 @@
 	</tear-down>
 
 	<command name="ConfigureDefaultView" priority="3">
-		
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
 
-			<execute macro="CalendarNavigator#gotoConfiguration" />
-
-			<execute macro="CalendarConfiguration#selectDefaultView">
-				<var name="defaultView" value="Day" />
-			</execute>
-
-			<execute macro="CalendarConfiguration#save" />
-
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
-
-			<execute macro="CalendarScheduler#viewSelectedView">
-				<var name="view" value="Day" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
-			<execute macro="CalendarNavigator#gotoConfiguration" />
+		<execute macro="CalendarNavigator#gotoConfiguration" />
 
-			<execute macro="CalendarConfiguration#selectDefaultView">
-				<var name="defaultView" value="Week" />
-			</execute>
+		<execute macro="CalendarConfiguration#selectDefaultView">
+			<var name="defaultView" value="Day" />
+		</execute>
 
-			<execute macro="CalendarConfiguration#save" />
+		<execute macro="CalendarConfiguration#save" />
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
-
-			<execute macro="CalendarScheduler#viewSelectedView">
-				<var name="view" value="Week" />
-			</execute>
 		<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
-			<execute macro="CalendarNavigator#gotoConfiguration" />
+		<execute macro="CalendarScheduler#viewSelectedView">
+			<var name="view" value="Day" />
+		</execute>
 
-			<execute macro="CalendarConfiguration#selectDefaultView">
-				<var name="defaultView" value="Month" />
-			</execute>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
-			<execute macro="CalendarConfiguration#save" />
+		<execute macro="CalendarNavigator#gotoConfiguration" />
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+		<execute macro="CalendarConfiguration#selectDefaultView">
+			<var name="defaultView" value="Week" />
+		</execute>
 
-			<execute macro="CalendarScheduler#viewSelectedView">
-				<var name="view" value="Month" />
-			</execute>
-		
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewSelectedView">
+			<var name="view" value="Week" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoConfiguration" />
+
+		<execute macro="CalendarConfiguration#selectDefaultView">
+			<var name="defaultView" value="Month" />
+		</execute>
+
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewSelectedView">
+			<var name="view" value="Month" />
+		</execute>
 	</command>
 
 	<command name="ConfigureDisplayTimeZone" priority="5">
@@ -204,50 +205,54 @@
 	</command>
 
 	<command name="ConfigureEventsDisplaySettingsAndViewEvents" priority="4">
-		
-			<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event 1" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event 2" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 1" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event 3" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 2" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event 4" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 3" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event 5" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 4" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event 6" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
-		
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 5" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 6" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Calendar Page" />
@@ -257,26 +262,29 @@
 			<var name="viewType" value="Agenda" />
 		</execute>
 
-		
-			<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="1" />
-			</execute>
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="2" />
-			</execute>
+			<var name="eventNumber" value="1" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="3" />
-			</execute>
+			<var name="eventNumber" value="2" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="4" />
-			</execute>
+			<var name="eventNumber" value="3" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="5" />
-			</execute>
+			<var name="eventNumber" value="4" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="6" />
-			</execute>
-		
+			<var name="eventNumber" value="5" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewViaAgendaView">
+			<var name="eventNumber" value="6" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Calendar Page" />
@@ -298,23 +306,25 @@
 			<var name="viewType" value="Agenda" />
 		</execute>
 
-		
-			<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="1" />
-			</execute>
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="2" />
-			</execute>
+			<var name="eventNumber" value="1" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="3" />
-			</execute>
+			<var name="eventNumber" value="2" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="4" />
-			</execute>
+			<var name="eventNumber" value="3" />
+		</execute>
+
 		<execute macro="CalendarEvent#viewViaAgendaView">
-				<var name="eventNumber" value="5" />
-			</execute>
-		
+			<var name="eventNumber" value="4" />
+		</execute>
+
+		<execute macro="CalendarEvent#viewViaAgendaView">
+			<var name="eventNumber" value="5" />
+		</execute>
 
 		<execute macro="CalendarEvent#viewNotPresentViaAgendaView">
 			<var name="eventNumber" value="6" />

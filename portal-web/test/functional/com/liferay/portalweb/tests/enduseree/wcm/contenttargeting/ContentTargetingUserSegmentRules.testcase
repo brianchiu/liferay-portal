@@ -314,16 +314,15 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
-				<var name="contentVisitedContent" value="Basic Web Content" />
-				<var name="webContentTitle" value="Web Content Title 1" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
-				<var name="contentVisitedContent" value="Basic Web Content" />
-				<var name="webContentTitle" value="Web Content Title 2" />
-			</execute>
-		
+			<var name="contentVisitedContent" value="Basic Web Content" />
+			<var name="webContentTitle" value="Web Content Title 1" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
+			<var name="contentVisitedContent" value="Basic Web Content" />
+			<var name="webContentTitle" value="Web Content Title 2" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -373,14 +372,13 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addBehaviorPageVisitedRuleCP">
-				<var name="friendlyURL" value="/test-page-name" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addBehaviorPageVisitedRuleCP">
-				<var name="friendlyURL" value="/site-page-name" />
-			</execute>
-		
+			<var name="friendlyURL" value="/test-page-name" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addBehaviorPageVisitedRuleCP">
+			<var name="friendlyURL" value="/site-page-name" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -435,16 +433,15 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesCustomFieldCP">
-				<var name="customFieldKey" value="usercustomfield" />
-				<var name="customFieldValue" value="User Custom Field Value 1" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesCustomFieldCP">
-				<var name="customFieldKey" value="usercustomfield" />
-				<var name="customFieldValue" value="User Custom Field Value 2" />
-			</execute>
-		
+			<var name="customFieldKey" value="usercustomfield" />
+			<var name="customFieldValue" value="User Custom Field Value 1" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesCustomFieldCP">
+			<var name="customFieldKey" value="usercustomfield" />
+			<var name="customFieldValue" value="User Custom Field Value 2" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -478,24 +475,23 @@
 	<command name="AddUserSegmentMultipleUserAttributesOrganizationMemberCP" priority="4">
 		<property name="content.targeting.release" value="true" />
 
-		
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization Name 1" />
-				<var name="orgType" value="Organization" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization Name 2" />
-				<var name="orgType" value="Organization" />
-			</execute>
-		
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 1" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 2" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -510,14 +506,13 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationMemberRuleCP">
-				<var name="organizationName" value="Organization Name 1" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationMemberRuleCP">
-				<var name="organizationName" value="Organization Name 2" />
-			</execute>
-		
+			<var name="organizationName" value="Organization Name 1" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationMemberRuleCP">
+			<var name="organizationName" value="Organization Name 2" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -545,24 +540,23 @@
 	<command name="AddUserSegmentMultipleUserAttributesOrganizationRoleCP" priority="4">
 		<property name="content.targeting.release" value="true" />
 
-		
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization Name 1" />
-				<var name="orgType" value="Organization" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization Name 2" />
-				<var name="orgType" value="Organization" />
-			</execute>
-		
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 1" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 2" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -577,16 +571,15 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationRoleRuleCP">
-				<var name="organizationName" value="Organization Name 1" />
-				<var name="organizationRole" value="Organization Owner" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationRoleRuleCP">
-				<var name="organizationName" value="Organization Name 2" />
-				<var name="organizationRole" value="Organization Owner" />
-			</execute>
-		
+			<var name="organizationName" value="Organization Name 1" />
+			<var name="organizationRole" value="Organization Owner" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationRoleRuleCP">
+			<var name="organizationName" value="Organization Name 2" />
+			<var name="organizationRole" value="Organization Owner" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -629,14 +622,13 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesRegularRoleRuleCP">
-				<var name="regularRole" value="Administrator" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesRegularRoleRuleCP">
-				<var name="regularRole" value="Power User" />
-			</execute>
-		
+			<var name="regularRole" value="Administrator" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesRegularRoleRuleCP">
+			<var name="regularRole" value="Power User" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -682,14 +674,13 @@
 			<var name="siteName" value="${siteName}" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesSiteMemberRuleCP">
-				<var name="selectSiteMemberSite" value="Site Name" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesSiteMemberRuleCP">
-				<var name="selectSiteMemberSite" value="${siteName}" />
-			</execute>
-		
+			<var name="selectSiteMemberSite" value="Site Name" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesSiteMemberRuleCP">
+			<var name="selectSiteMemberSite" value="${siteName}" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -730,16 +721,15 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesSiteRoleRuleCP">
-				<var name="siteRole" value="Site Administrator" />
-				<var name="siteRoleSite" value="Site Name" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesSiteRoleRuleCP">
-				<var name="siteRole" value="Site Owner" />
-				<var name="siteRoleSite" value="Site Name" />
-			</execute>
-		
+			<var name="siteRole" value="Site Administrator" />
+			<var name="siteRoleSite" value="Site Name" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesSiteRoleRuleCP">
+			<var name="siteRole" value="Site Owner" />
+			<var name="siteRoleSite" value="Site Name" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -773,22 +763,21 @@
 	<command name="AddUserSegmentMultipleUserAttributesUserGroupMemberCP" priority="4">
 		<property name="content.targeting.release" value="true" />
 
-		
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="User Groups" />
-			</execute>
-
-			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="User Group Name 1" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="User Groups" />
-			</execute>
+			<var name="portlet" value="User Groups" />
+		</execute>
 
-			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="User Group Name 2" />
-			</execute>
-		
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="User Groups" />
+		</execute>
+
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -803,14 +792,13 @@
 			<var name="rowEntry" value="User Segment Name" />
 		</execute>
 
-		
-			<execute macro="ContentTargetingUserSegment#addUserAttributesUserGroupMemberRuleCP">
-				<var name="userGroupName" value="User Group Name 1" />
-			</execute>
 		<execute macro="ContentTargetingUserSegment#addUserAttributesUserGroupMemberRuleCP">
-				<var name="userGroupName" value="User Group Name 2" />
-			</execute>
-		
+			<var name="userGroupName" value="User Group Name 1" />
+		</execute>
+
+		<execute macro="ContentTargetingUserSegment#addUserAttributesUserGroupMemberRuleCP">
+			<var name="userGroupName" value="User Group Name 2" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 

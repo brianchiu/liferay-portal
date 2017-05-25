@@ -111,19 +111,17 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		
-			<execute macro="RSS#viewDisplayFeedTitle">
-				<var name="feedTitle" value="Technology" />
-			</execute>
+		<execute macro="RSS#viewDisplayFeedTitle">
+			<var name="feedTitle" value="Technology" />
+		</execute>
 
-			<execute macro="RSS#viewDisplayFeedTitle">
-				<var name="feedTitle" value="Reuters > Sports News" />
-			</execute>
+		<execute macro="RSS#viewDisplayFeedTitle">
+			<var name="feedTitle" value="Reuters > Sports News" />
+		</execute>
 
-			<execute macro="RSS#viewDisplayFeedTitle">
-				<var name="feedTitle" value="Latimes > Technology News" />
-			</execute>
-		
+		<execute macro="RSS#viewDisplayFeedTitle">
+			<var name="feedTitle" value="Latimes > Technology News" />
+		</execute>
 	</command>
 
 	<command name="AddFeedWithWrongUrl" priority="4">
