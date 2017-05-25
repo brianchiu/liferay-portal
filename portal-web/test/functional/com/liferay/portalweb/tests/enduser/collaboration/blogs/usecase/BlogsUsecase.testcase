@@ -242,7 +242,7 @@
 			<var name="portlet" value="Documents and Media" />
 		</execute>
 
-		<for list="1,2" param="entryCount">
+		
 			<execute macro="DMDocument#addCP">
 				<var name="dmDocumentDescription" value="DM Document Description" />
 				<var name="dmDocumentFile" value="Document_1.jpg" />
@@ -253,7 +253,7 @@
 				<var name="dmDocumentFile" value="Document_2.jpg" />
 				<var name="dmDocumentTitle" value="Document_2.jpg" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Blogs" />
@@ -2159,7 +2159,7 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		<for list="Organization1 Name,Organization2 Name,Organization3 Name" param="orgName">
+		
 			<execute macro="Organization#addCP">
 				<var name="orgName" value="Organization1 Name" />
 				<var name="orgType" value="Organization" />
@@ -2184,7 +2184,7 @@
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
-		</for>
+		
 
 		<execute macro="UsersAndOrganizationsNavigator#gotoOrganizations" />
 
