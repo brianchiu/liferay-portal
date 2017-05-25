@@ -1017,16 +1017,15 @@
 			<var name="threadSubject" value="MB Thread Message Subject" />
 		</execute>
 
-		
-			<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
-				<var name="roleTitle" value="Power User" />
-			</execute>
 		<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
-				<var name="roleTitle" value="User" />
-			</execute>
-		
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="Power User" />
+		</execute>
+
+		<execute macro="PermissionsInline#viewPermissionsRemoved">
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="User" />
+		</execute>
 
 		<execute macro="PermissionsInline#viewPermissionsChecked">
 			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
@@ -1290,16 +1289,15 @@
 			<var name="pageName" value="Message Boards Page" />
 		</execute>
 
-		
-			<execute macro="Role#definePermissionPG">
-				<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_REPLY_TO_MESSAGE_CHECKBOX" />
-				<var name="roleTitle" value="User" />
-			</execute>
 		<execute macro="Role#definePermissionPG">
-				<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_VIEW_CHECKBOX" />
-				<var name="roleTitle" value="User" />
-			</execute>
-		
+			<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_REPLY_TO_MESSAGE_CHECKBOX" />
+			<var name="roleTitle" value="User" />
+		</execute>
+
+		<execute macro="Role#definePermissionPG">
+			<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="User" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Message Boards Page" />

@@ -186,56 +186,56 @@
 			<var name="userScreenName" value="usersn" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
-
-			<execute macro="Site#addBlankCP">
-				<var name="siteName" value="Site A" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-
-			<execute macro="User#editUserSiteCP">
-				<var name="siteName" value="Site A" />
-				<var name="userScreenName" value="usersn" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
+			<var name="portlet" value="Sites" />
+		</execute>
 
-			<execute macro="Site#addBlankCP">
-				<var name="siteName" value="Site B" />
-			</execute>
+		<execute macro="Site#addBlankCP">
+			<var name="siteName" value="Site A" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editUserSiteCP">
-				<var name="siteName" value="Site B" />
-				<var name="userScreenName" value="usersn" />
-			</execute>
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="Site A" />
+			<var name="userScreenName" value="usersn" />
+		</execute>
+
 		<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
+			<var name="portlet" value="Sites" />
+		</execute>
 
-			<execute macro="Site#addBlankCP">
-				<var name="siteName" value="Site C" />
-			</execute>
+		<execute macro="Site#addBlankCP">
+			<var name="siteName" value="Site B" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editUserSiteCP">
-				<var name="siteName" value="Site C" />
-				<var name="userScreenName" value="usersn" />
-			</execute>
-		
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="Site B" />
+			<var name="userScreenName" value="usersn" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
+
+		<execute macro="Site#addBlankCP">
+			<var name="siteName" value="Site C" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="Site C" />
+			<var name="userScreenName" value="usersn" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site A" />
@@ -293,17 +293,17 @@
 			<var name="searchValue" value="site" />
 		</execute>
 
-		
-			<execute macro="Calendar#viewOtherCalendarsSearchResult">
-				<var name="calendarName" value="Site A" />
-			</execute>
 		<execute macro="Calendar#viewOtherCalendarsSearchResult">
-				<var name="calendarName" value="Site B" />
-			</execute>
+			<var name="calendarName" value="Site A" />
+		</execute>
+
 		<execute macro="Calendar#viewOtherCalendarsSearchResult">
-				<var name="calendarName" value="Site C" />
-			</execute>
-		
+			<var name="calendarName" value="Site B" />
+		</execute>
+
+		<execute macro="Calendar#viewOtherCalendarsSearchResult">
+			<var name="calendarName" value="Site C" />
+		</execute>
 
 		<execute macro="CalendarNavigator#gotoAddEvent" />
 

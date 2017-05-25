@@ -436,38 +436,38 @@
 
 		<execute macro="Navigator#openURL" />
 
-		
-			<execute macro="Navigator#openURL" />
-
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Blogs" />
-			</execute>
-
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry1 Content" />
-				<var name="entryTitle" value="Blogs Entry1 Title" />
-			</execute>
 		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Blogs" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
 
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry2 Content" />
-				<var name="entryTitle" value="Blogs Entry2 Title" />
-			</execute>
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
 		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Blogs" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
 
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry3 Content" />
-				<var name="entryTitle" value="Blogs Entry3 Title" />
-			</execute>
-		
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Group Statistics Page" />

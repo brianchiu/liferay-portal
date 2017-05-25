@@ -59,28 +59,29 @@
 			<var name="structureName" value="WC Structure Name 1" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Boolean" />
-				<var name="fieldFieldLabel" value="Boolean" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Date" />
-				<var name="fieldFieldLabel" value="Date" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Decimal" />
-				<var name="fieldFieldLabel" value="Decimal" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Date" />
+			<var name="fieldFieldLabel" value="Date" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Documents and Media" />
-				<var name="fieldFieldLabel" value="Documents and Media" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Decimal" />
+			<var name="fieldFieldLabel" value="Decimal" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Documents and Media" />
+			<var name="fieldFieldLabel" value="Documents and Media" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name 1" />
@@ -99,28 +100,29 @@
 			<var name="structureName" value="WC Structure Name 2" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Image" />
-				<var name="fieldFieldLabel" value="Image" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Integer" />
-				<var name="fieldFieldLabel" value="Integer" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Image" />
+			<var name="fieldFieldLabel" value="Image" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Link to Page" />
-				<var name="fieldFieldLabel" value="Link to Page" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Integer" />
+			<var name="fieldFieldLabel" value="Integer" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Link to Page" />
+			<var name="fieldFieldLabel" value="Link to Page" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name 2" />
@@ -139,38 +141,41 @@
 			<var name="structureName" value="WC Structure Name 3" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Number" />
-				<var name="fieldFieldLabel" value="Number" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Radio" />
-				<var name="fieldFieldLabel" value="Radio" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Number" />
+			<var name="fieldFieldLabel" value="Number" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Select" />
-				<var name="fieldFieldLabel" value="Select" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Radio" />
+			<var name="fieldFieldLabel" value="Radio" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Separator" />
-				<var name="fieldFieldLabel" value="Separator" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Select" />
+			<var name="fieldFieldLabel" value="Select" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Separator" />
+			<var name="fieldFieldLabel" value="Separator" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text Box" />
-				<var name="fieldFieldLabel" value="Text Box" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Text Box" />
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name 3" />
@@ -193,24 +198,25 @@
 			<var name="rowEntry" value="WC Structure Name 1" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Boolean" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Date" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Decimal" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Date" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Documents and Media" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="fieldFieldLabel" value="Decimal" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#viewField">
+			<var name="fieldFieldLabel" value="Documents and Media" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -229,24 +235,25 @@
 			<var name="rowEntry" value="WC Structure Name 2" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="HTML" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Image" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="HTML" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Integer" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Image" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Link to Page" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="fieldFieldLabel" value="Integer" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#viewField">
+			<var name="fieldFieldLabel" value="Link to Page" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -265,32 +272,35 @@
 			<var name="rowEntry" value="WC Structure Name 3" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Number" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Radio" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Number" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Select" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Radio" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Separator" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Select" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Text" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="fieldFieldLabel" value="Separator" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Text Box" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#viewField">
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 	</command>
 
 	<command name="AddStructureWithSubfield" priority="4">
@@ -398,16 +408,15 @@
 			<var name="rowEntry" value="WC Structure Name" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Text" />
-				<var name="fieldName" value="Text" />
-			</execute>
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Integer" />
-				<var name="fieldName" value="Integer" />
-			</execute>
-		
+			<var name="fieldFieldLabel" value="Text" />
+			<var name="fieldName" value="Text" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#viewField">
+			<var name="fieldFieldLabel" value="Integer" />
+			<var name="fieldName" value="Integer" />
+		</execute>
 	</command>
 
 	<command name="AddStructureWithUnlocalizableFields" priority="4">
@@ -426,18 +435,17 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text Box" />
-				<var name="fieldFieldLabel" value="Text Box" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Text Box" />
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name" />
@@ -455,11 +463,9 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#editFieldLocalizable">
-				<var name="fieldFieldLabel" value="Text Box" />
-			</execute>
-		
+		<execute macro="DynamicDataMapping#editFieldLocalizable">
+			<var name="fieldFieldLabel" value="Text Box" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP" />
 
@@ -1530,18 +1536,17 @@
 			<var name="name" value="Basic Web Content Edit" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Date" />
-				<var name="fieldFieldLabel" value="Date" />
-				<var name="fieldName" value="Date" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Image" />
-				<var name="fieldFieldLabel" value="Image" />
-				<var name="fieldName" value="Image" />
-			</execute>
-		
+			<var name="field" value="Date" />
+			<var name="fieldFieldLabel" value="Date" />
+			<var name="fieldName" value="Date" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Image" />
+			<var name="fieldFieldLabel" value="Image" />
+			<var name="fieldName" value="Image" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="Basic Web Content Edit" />
@@ -1571,14 +1576,13 @@
 			<var name="description" value="Basic Web Content Description" />
 		</execute>
 
-		
-			<execute macro="WebContentTemplates#addField">
-				<var name="fieldName" value="Date" />
-			</execute>
 		<execute macro="WebContentTemplates#addField">
-				<var name="fieldName" value="Image" />
-			</execute>
-		
+			<var name="fieldName" value="Date" />
+		</execute>
+
+		<execute macro="WebContentTemplates#addField">
+			<var name="fieldName" value="Image" />
+		</execute>
 
 		<execute macro="PortletEntry#save" />
 
@@ -1592,16 +1596,15 @@
 			<var name="structureName" value="Basic Web Content Edit" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Date" />
-				<var name="fieldName" value="Date" />
-			</execute>
 		<execute macro="DynamicDataMapping#viewField">
-				<var name="fieldFieldLabel" value="Image" />
-				<var name="fieldName" value="Image" />
-			</execute>
-		
+			<var name="fieldFieldLabel" value="Date" />
+			<var name="fieldName" value="Date" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#viewField">
+			<var name="fieldFieldLabel" value="Image" />
+			<var name="fieldName" value="Image" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Web Content" />
@@ -1632,28 +1635,29 @@
 			<var name="structureName" value="WC Structure Name1" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text Box" />
-				<var name="fieldFieldLabel" value="Text Box" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Image" />
-				<var name="fieldFieldLabel" value="Image" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Text Box" />
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Documents and Media" />
-				<var name="fieldFieldLabel" value="Documents and Media" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Image" />
+			<var name="fieldFieldLabel" value="Image" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Documents and Media" />
+			<var name="fieldFieldLabel" value="Documents and Media" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name1" />
@@ -2548,143 +2552,149 @@
 
 		<execute macro="WebContentNavigator#gotoManageStructures" />
 
-		
-			<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 1" />
-			</execute>
-
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
-
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 2" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 1" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 3" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 2" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 4" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 3" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 5" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 4" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 6" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 5" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 7" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 6" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 8" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 7" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
 		<execute macro="WebContentStructures#addCP">
-				<var name="structureDescription" value="WC Structure Description" />
-				<var name="structureName" value="WC Structure Name 9" />
-			</execute>
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 8" />
+		</execute>
 
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var name="fieldName" value="HTML" />
-				<var name="structureFieldName" value="HTML" />
-			</execute>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
 
-			<execute macro="WebContentStructures#saveCP">
-				<var name="structureName" value="${structureName}" />
-			</execute>
-		
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
+
+		<execute macro="WebContentStructures#addCP">
+			<var name="structureDescription" value="WC Structure Description" />
+			<var name="structureName" value="WC Structure Name 9" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var name="fieldName" value="HTML" />
+			<var name="structureFieldName" value="HTML" />
+		</execute>
+
+		<execute macro="WebContentStructures#saveCP">
+			<var name="structureName" value="${structureName}" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -2696,38 +2706,45 @@
 			<var name="pageMod" value="7 of 10" />
 		</execute>
 
-		
-			<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="Basic Web Content" />
-			</execute>
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 1" />
-			</execute>
+			<var name="structureName" value="Basic Web Content" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 2" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 1" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 3" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 2" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 4" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 3" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 5" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 4" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 6" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 5" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 7" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 6" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 8" />
-			</execute>
+			<var name="structureName" value="WC Structure Name 7" />
+		</execute>
+
 		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
-				<var name="structureName" value="WC Structure Name 9" />
-			</execute>
-		
+			<var name="structureName" value="WC Structure Name 8" />
+		</execute>
+
+		<execute macro="WebContentStructures#viewStructuresViaMoreIFrame">
+			<var name="structureName" value="WC Structure Name 9" />
+		</execute>
 
 		<execute macro="WebContentStructures#viewNoFavoriteStructure" />
 

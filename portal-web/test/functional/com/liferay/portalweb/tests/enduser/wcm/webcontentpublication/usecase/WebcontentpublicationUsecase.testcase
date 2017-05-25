@@ -87,35 +87,35 @@
 			<var name="page" value="Public Pages" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
-
-			<execute macro="Page#add">
-				<var name="pageName" value="Home" />
-				<var name="siteName" value="Organization Name" />
-				<var name="sitePagePrivacy" value="Private" />
-			</execute>
 		<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
+			<var name="portlet" value="Sites" />
+		</execute>
 
-			<execute macro="Page#add">
-				<var name="pageName" value="Documents and Media" />
-				<var name="siteName" value="Organization Name" />
-				<var name="sitePagePrivacy" value="Private" />
-			</execute>
+		<execute macro="Page#add">
+			<var name="pageName" value="Home" />
+			<var name="siteName" value="Organization Name" />
+			<var name="sitePagePrivacy" value="Private" />
+		</execute>
+
 		<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
+			<var name="portlet" value="Sites" />
+		</execute>
 
-			<execute macro="Page#add">
-				<var name="pageName" value="News" />
-				<var name="siteName" value="Organization Name" />
-				<var name="sitePagePrivacy" value="Private" />
-			</execute>
-		
+		<execute macro="Page#add">
+			<var name="pageName" value="Documents and Media" />
+			<var name="siteName" value="Organization Name" />
+			<var name="sitePagePrivacy" value="Private" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="News" />
+			<var name="siteName" value="Organization Name" />
+			<var name="sitePagePrivacy" value="Private" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelConfiguration">
 			<var name="portlet" value="Server Administration" />
@@ -174,30 +174,29 @@
 			<var name="virtualHostsURL" value="http://www.baker.com:8080" />
 		</execute>
 
-		
-			<execute function="AssertElementPresent" locator1="Home#PAGE" value1="Home">
-				<var name="key_pageName" value="Home" />
-			</execute>
+		<execute function="AssertElementPresent" locator1="Home#PAGE" value1="Home">
+			<var name="key_pageName" value="Home" />
+		</execute>
+
 		<execute function="AssertElementPresent" locator1="Home#PAGE" value1="Documents and Media">
-				<var name="key_pageName" value="Documents and Media" />
-			</execute>
+			<var name="key_pageName" value="Documents and Media" />
+		</execute>
+
 		<execute function="AssertElementPresent" locator1="Home#PAGE" value1="News">
-				<var name="key_pageName" value="News" />
-			</execute>
-		
+			<var name="key_pageName" value="News" />
+		</execute>
 
 		<execute macro="Navigator#openSpecificURL">
 			<var name="url" value="http://www.able.com:8080" />
 		</execute>
 
-		
-			<execute function="AssertElementNotPresent" locator1="Home#PAGE" value1="Documents and Media">
-				<var name="key_pageName" value="Documents and Media" />
-			</execute>
+		<execute function="AssertElementNotPresent" locator1="Home#PAGE" value1="Documents and Media">
+			<var name="key_pageName" value="Documents and Media" />
+		</execute>
+
 		<execute function="AssertElementNotPresent" locator1="Home#PAGE" value1="News">
-				<var name="key_pageName" value="News" />
-			</execute>
-		
+			<var name="key_pageName" value="News" />
+		</execute>
 
 		<execute macro="User#firstLoginPG">
 			<var name="password" value="test" />
@@ -796,73 +795,83 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Boolean" />
-				<var name="fieldFieldLabel" value="Boolean" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Date" />
-				<var name="fieldFieldLabel" value="Date" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Decimal" />
-				<var name="fieldFieldLabel" value="Decimal" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Date" />
+			<var name="fieldFieldLabel" value="Date" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Documents and Media" />
-				<var name="fieldFieldLabel" value="Documents and Media" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Decimal" />
+			<var name="fieldFieldLabel" value="Decimal" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="HTML" />
-				<var name="fieldFieldLabel" value="HTML" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Documents and Media" />
+			<var name="fieldFieldLabel" value="Documents and Media" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Image" />
-				<var name="fieldFieldLabel" value="Image" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Integer" />
-				<var name="fieldFieldLabel" value="Integer" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Image" />
+			<var name="fieldFieldLabel" value="Image" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Link to Page" />
-				<var name="fieldFieldLabel" value="Link to Page" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Integer" />
+			<var name="fieldFieldLabel" value="Integer" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Number" />
-				<var name="fieldFieldLabel" value="Number" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Link to Page" />
+			<var name="fieldFieldLabel" value="Link to Page" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Radio" />
-				<var name="fieldFieldLabel" value="Radio" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Number" />
+			<var name="fieldFieldLabel" value="Number" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Select" />
-				<var name="fieldFieldLabel" value="Select" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Radio" />
+			<var name="fieldFieldLabel" value="Radio" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
+			<var name="field" value="Select" />
+			<var name="fieldFieldLabel" value="Select" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text Box" />
-				<var name="fieldFieldLabel" value="Text Box" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Text Box" />
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name" />
@@ -1159,47 +1168,57 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Boolean" />
-			</execute>
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Date" />
-			</execute>
+			<var name="fieldFieldLabel" value="Boolean" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Decimal" />
-			</execute>
+			<var name="fieldFieldLabel" value="Date" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Documents and Media" />
-			</execute>
+			<var name="fieldFieldLabel" value="Decimal" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="HTML" />
-			</execute>
+			<var name="fieldFieldLabel" value="Documents and Media" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Image" />
-			</execute>
+			<var name="fieldFieldLabel" value="HTML" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Integer" />
-			</execute>
+			<var name="fieldFieldLabel" value="Image" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Link to Page" />
-			</execute>
+			<var name="fieldFieldLabel" value="Integer" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Number" />
-			</execute>
+			<var name="fieldFieldLabel" value="Link to Page" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Radio" />
-			</execute>
+			<var name="fieldFieldLabel" value="Number" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Select" />
-			</execute>
+			<var name="fieldFieldLabel" value="Radio" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Text" />
-			</execute>
+			<var name="fieldFieldLabel" value="Select" />
+		</execute>
+
 		<execute macro="DynamicDataMapping#editFieldIndexable">
-				<var name="fieldFieldLabel" value="Text Box" />
-			</execute>
-		
+			<var name="fieldFieldLabel" value="Text" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#editFieldIndexable">
+			<var name="fieldFieldLabel" value="Text Box" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP" />
 
@@ -1344,56 +1363,54 @@
 			<var name="siteName" value="${siteName}" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="${siteName}" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
-
-			<execute macro="WebContentNavigator#gotoAddCP" />
-
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="${siteName} WC Content" />
-				<var name="webContentTitle" value="${siteName} WC Title" />
-			</execute>
-
-			<execute macro="PortletEntry#publish" />
 		<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
+			<var name="site" value="${siteName}" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="Site Name WC Content" />
-				<var name="webContentTitle" value="Site Name WC Title" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="${siteName} WC Content" />
+			<var name="webContentTitle" value="${siteName} WC Title" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
+		<execute macro="PortletEntry#publish" />
 		<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Global" />
-			</execute>
+			<var name="site" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="Global WC Content" />
-				<var name="webContentTitle" value="Global WC Title" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Site Name WC Content" />
+			<var name="webContentTitle" value="Site Name WC Title" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Global" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Global WC Content" />
+			<var name="webContentTitle" value="Global WC Title" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Site Page" />
@@ -1418,19 +1435,20 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		
-			<execute macro="AssetPublisherPortlet#viewAssetPG">
-				<var name="assetContent" value="${siteName} WC Content" />
-				<var name="assetTitle" value="${siteName} WC Title" />
-			</execute>
 		<execute macro="AssetPublisherPortlet#viewAssetPG">
-				<var name="assetContent" value="Site Name WC Content" />
-				<var name="assetTitle" value="Site Name WC Title" />
-			</execute>
+			<var name="assetContent" value="${siteName} WC Content" />
+			<var name="assetTitle" value="${siteName} WC Title" />
+		</execute>
+
 		<execute macro="AssetPublisherPortlet#viewAssetPG">
-				<var name="assetContent" value="Global WC Content" />
-				<var name="assetTitle" value="Global WC Title" />
-			</execute>
+			<var name="assetContent" value="Site Name WC Content" />
+			<var name="assetTitle" value="Site Name WC Title" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetPG">
+			<var name="assetContent" value="Global WC Content" />
+			<var name="assetTitle" value="Global WC Title" />
+		</execute>
 
 		<execute macro="AssetPublisherPortlet#viewAssetNotPresentPG">
 			<var name="assetContent" value="Liferay WC Content" />
@@ -1461,56 +1479,54 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="${siteName}" />
-			</execute>
-
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
-
-			<execute macro="WebContentNavigator#gotoAddCP" />
-
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="${siteName} WC Content" />
-				<var name="webContentTitle" value="${siteName} WC Title" />
-			</execute>
-
-			<execute macro="PortletEntry#publish" />
 		<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
+			<var name="site" value="${siteName}" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="Site Name WC Content" />
-				<var name="webContentTitle" value="Site Name WC Title" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="${siteName} WC Content" />
+			<var name="webContentTitle" value="${siteName} WC Title" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
+		<execute macro="PortletEntry#publish" />
 		<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Global" />
-			</execute>
+			<var name="site" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="Global WC Content" />
-				<var name="webContentTitle" value="Global WC Title" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Site Name WC Content" />
+			<var name="webContentTitle" value="Site Name WC Title" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Global" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Global WC Content" />
+			<var name="webContentTitle" value="Global WC Title" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Site Page" />
@@ -1883,72 +1899,71 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		
-			<var name="userEmailAddress" value="author1ea@liferay.com" />
-			<var name="userFirstName" value="author1" />
-			<var name="userLastName" value="author1" />
+		<var name="userEmailAddress" value="author1ea@liferay.com" />
+		<var name="userFirstName" value="author1" />
+		<var name="userLastName" value="author1" />
 
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="${userEmailAddress}" />
-				<var name="userFirstName" value="${userFirstName}" />
-				<var name="userLastName" value="${userLastName}" />
-				<var name="userScreenName" value="author1" />
-			</execute>
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="${userEmailAddress}" />
+			<var name="userFirstName" value="${userFirstName}" />
+			<var name="userLastName" value="${userLastName}" />
+			<var name="userScreenName" value="author1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editPasswordCP">
-				<var name="userEmailAddress" value="${userEmailAddress}" />
-				<var name="userScreenName" value="author1" />
-			</execute>
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="${userEmailAddress}" />
+			<var name="userScreenName" value="author1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Roles" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Roles" />
+		</execute>
 
-			<execute macro="Role#assignRegRoleCP">
-				<var name="roleTitle" value="WC Author" />
-				<var name="userScreenName" value="author1" />
-			</execute>
+		<execute macro="Role#assignRegRoleCP">
+			<var name="roleTitle" value="WC Author" />
+			<var name="userScreenName" value="author1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
 		<var name="userEmailAddress" value="author2ea@liferay.com" />
-			<var name="userFirstName" value="author2" />
-			<var name="userLastName" value="author2" />
+		<var name="userFirstName" value="author2" />
+		<var name="userLastName" value="author2" />
 
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="${userEmailAddress}" />
-				<var name="userFirstName" value="${userFirstName}" />
-				<var name="userLastName" value="${userLastName}" />
-				<var name="userScreenName" value="author2" />
-			</execute>
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="${userEmailAddress}" />
+			<var name="userFirstName" value="${userFirstName}" />
+			<var name="userLastName" value="${userLastName}" />
+			<var name="userScreenName" value="author2" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editPasswordCP">
-				<var name="userEmailAddress" value="${userEmailAddress}" />
-				<var name="userScreenName" value="author2" />
-			</execute>
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="${userEmailAddress}" />
+			<var name="userScreenName" value="author2" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Roles" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Roles" />
+		</execute>
 
-			<execute macro="Role#assignRegRoleCP">
-				<var name="roleTitle" value="WC Author" />
-				<var name="userScreenName" value="author2" />
-			</execute>
+		<execute macro="Role#assignRegRoleCP">
+			<var name="roleTitle" value="WC Author" />
+			<var name="userScreenName" value="author2" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-		
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
 		<execute macro="User#logoutAndLoginPG">
 			<var name="userLoginEmailAddress" value="author1ea@liferay.com" />

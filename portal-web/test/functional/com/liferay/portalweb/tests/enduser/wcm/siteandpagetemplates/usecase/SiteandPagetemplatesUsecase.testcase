@@ -258,22 +258,21 @@
 			<var name="userGroupName" value="UG UserGroup Name" />
 		</execute>
 
-		
-			<execute macro="ProductMenu#gotoSiteViaLink">
-				<var name="site" value="UG UserGroup Name" />
-			</execute>
-
-			<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
-				<var name="page" value="Home" />
-			</execute>
 		<execute macro="ProductMenu#gotoSiteViaLink">
-				<var name="site" value="UG UserGroup Name" />
-			</execute>
+			<var name="site" value="UG UserGroup Name" />
+		</execute>
 
-			<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
-				<var name="page" value="Wiki" />
-			</execute>
-		
+		<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
+			<var name="page" value="Home" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSiteViaLink">
+			<var name="site" value="UG UserGroup Name" />
+		</execute>
+
+		<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
+			<var name="page" value="Wiki" />
+		</execute>
 	</command>
 
 	<command name="SitesDynamicTemplateInheritance" priority="4">

@@ -641,7 +641,6 @@
 			<var name="fieldName" value="Pergunta" />
 		</execute>
 
-		
 			<execute macro="DDLRecord#addTranslation">
 				<var name="localizedLanguage" value="Spanish (Spain)" />
 			</execute>
@@ -655,6 +654,7 @@
 				<var name="ddlRecordFieldData" value="Spanish (Spain) Pergunta" />
 				<var name="fieldName" value="Pergunta" />
 			</execute>
+
 		<execute macro="DDLRecord#addTranslation">
 				<var name="localizedLanguage" value="Portuguese (Brazil)" />
 			</execute>
@@ -668,9 +668,7 @@
 				<var name="ddlRecordFieldData" value="Portuguese (Brazil) Pergunta" />
 				<var name="fieldName" value="Pergunta" />
 			</execute>
-		
 
-		
 			<execute macro="DDLRecord#selectTranslation">
 				<var name="localizedLanguage" value="English (United States)" />
 			</execute>
@@ -684,6 +682,7 @@
 				<var name="fieldName" value="Pergunta" />
 				<var name="fieldValue" value="English (United States) Pergunta" />
 			</execute>
+
 		<execute macro="DDLRecord#selectTranslation">
 				<var name="localizedLanguage" value="Spanish (Spain)" />
 			</execute>
@@ -697,6 +696,7 @@
 				<var name="fieldName" value="Pergunta" />
 				<var name="fieldValue" value="Spanish (Spain) Pergunta" />
 			</execute>
+
 		<execute macro="DDLRecord#selectTranslation">
 				<var name="localizedLanguage" value="Portuguese (Brazil)" />
 			</execute>
@@ -710,6 +710,5 @@
 				<var name="fieldName" value="Pergunta" />
 				<var name="fieldValue" value="Portuguese (Brazil) Pergunta" />
 			</execute>
-		
 	</command>
 </definition>
