@@ -934,7 +934,31 @@
 			</execute>
 
 			<execute macro="DMDocument#viewPG">
-				<var name="dmDocumentTitle" value="${dmDocumentTitle}" />
+				<var name="dmDocumentTitle" value="Document_1.jpeg" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Staging Test Page" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="DMDocument#viewPG">
+				<var name="dmDocumentTitle" value="Document_2.docx" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Staging Test Page" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="DMDocument#viewPG">
+				<var name="dmDocumentTitle" value="Document_3.mp3" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Staging Test Page" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="DMDocument#viewPG">
+				<var name="dmDocumentTitle" value="Document_4.txt" />
 			</execute>
 		</for>
 
@@ -1274,8 +1298,13 @@
 
 		<for list="Text,Text Box" param="structureFieldName">
 			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="${structureFieldName}" />
-				<var name="fieldFieldLabel" value="${structureFieldName}" />
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			</execute>
+		<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text Box" />
+				<var name="fieldFieldLabel" value="Text Box" />
 				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
 			</execute>
 		</for>
@@ -1387,7 +1416,7 @@
 		</execute>
 	</command>
 
-	<command name="StagingWithPublishTemplate" priority="4" >
+	<command name="StagingWithPublishTemplate" priority="4">
 		<execute macro="Navigator#openSiteURL">
 			<var name="siteName" value="Site Name" />
 		</execute>
@@ -1714,7 +1743,7 @@
 			<var name="pageVariationNameMenulistName" value="Test Page Variation Name" />
 		</execute>
 
-		<execute macro="Staging#viewHistoryVersionPG" >
+		<execute macro="Staging#viewHistoryVersionPG">
 			<var name="historyVersion" value="${historyVersion}" />
 		</execute>
 	</command>

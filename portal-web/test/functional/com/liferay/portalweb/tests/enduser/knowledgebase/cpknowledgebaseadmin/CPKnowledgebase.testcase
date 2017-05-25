@@ -105,8 +105,16 @@
 
 		<for list="1,2,3" param="kbCount">
 			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Content ${kbCount}" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Title ${kbCount}" />
+				<var name="kbArticleContent" value="Knowledge Base Article Content 1" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 1" />
+			</execute>
+		<execute macro="KBArticle#addCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Content 2" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 2" />
+			</execute>
+		<execute macro="KBArticle#addCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Content 3" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 3" />
 			</execute>
 		</for>
 
@@ -118,8 +126,28 @@
 			</execute>
 
 			<execute macro="KBArticle#viewCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Content ${kbCount}" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Title ${kbCount}" />
+				<var name="kbArticleContent" value="Knowledge Base Article Content 1" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 1" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Knowledge Base" />
+			</execute>
+
+			<execute macro="KBArticle#viewCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Content 2" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 2" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Knowledge Base" />
+			</execute>
+
+			<execute macro="KBArticle#viewCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Content 3" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 3" />
 			</execute>
 		</for>
 	</command>
@@ -1088,8 +1116,12 @@
 
 		<for list="1,2" param="kbCount">
 			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Content ${kbCount}" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Title ${kbCount}" />
+				<var name="kbArticleContent" value="Knowledge Base Article Content 1" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 1" />
+			</execute>
+		<execute macro="KBArticle#addCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Content 2" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Title 2" />
 			</execute>
 		</for>
 

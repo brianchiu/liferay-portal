@@ -264,7 +264,14 @@
 			</execute>
 
 			<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
-				<var name="page" value="${page}" />
+				<var name="page" value="Home" />
+			</execute>
+		<execute macro="ProductMenu#gotoSiteViaLink">
+				<var name="site" value="UG UserGroup Name" />
+			</execute>
+
+			<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
+				<var name="page" value="Wiki" />
 			</execute>
 		</for>
 	</command>
