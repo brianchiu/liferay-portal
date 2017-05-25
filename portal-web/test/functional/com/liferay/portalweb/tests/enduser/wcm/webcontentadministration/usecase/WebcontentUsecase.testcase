@@ -160,7 +160,7 @@
 
 		<execute function="Refresh" />
 
-		<for list="1,2" param="number">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -227,7 +227,7 @@
 				<var name="userLastName" value="userln2" />
 				<var name="userScreenName" value="usersn2" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
@@ -1315,7 +1315,7 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		<for list="Boolean,Date,Decimal,Documents and Media,HTML,Image,Integer,Link to Page,Number,Radio,Select,Text,Text Box" param="structureFieldName">
+		
 			<execute macro="DynamicDataMapping#addField">
 				<var name="field" value="Boolean" />
 				<var name="fieldFieldLabel" value="Boolean" />
@@ -1381,7 +1381,7 @@
 				<var name="fieldFieldLabel" value="Text Box" />
 				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
 			</execute>
-		</for>
+		
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name" />
@@ -1682,7 +1682,7 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<for list="1,2,3" param="i">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Web Content" />
 			</execute>
@@ -1719,7 +1719,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Web Content" />
@@ -1729,7 +1729,7 @@
 			<var name="webContentTitleList" value="WC WebContent Title 1,WC WebContent Title 2,WC WebContent Title 3," />
 		</execute>
 
-		<for list="1,2,3" param="i">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Web Content" />
 			</execute>
@@ -1769,7 +1769,7 @@
 				<var name="webContentStatus" value="Expired" />
 				<var name="webContentTitle" value="WC WebContent Title 3" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="MoveMultipleWebContentToFolder" priority="4">
@@ -1784,7 +1784,7 @@
 			<var name="folderName" value="WC Folder Name" />
 		</execute>
 
-		<for list="WC WebContent Title 1,WC WebContent Title 2,WC WebContent Title 3" param="webContentTitle">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Web Content" />
 			</execute>
@@ -1821,7 +1821,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Web Content" />
@@ -1841,7 +1841,7 @@
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
 
-		<for list="WC WebContent Title 1,WC WebContent Title 2,WC WebContent Title 3" param="webContentTitle">
+		
 			<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC WebContent Title 1" />
 			</execute>
@@ -1851,7 +1851,7 @@
 		<execute macro="WebContent#viewTitle">
 				<var name="webContentTitle" value="WC WebContent Title 3" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="StagingPublishExpiredWebContentViaWCD" priority="4">
@@ -2224,7 +2224,7 @@
 			<var name="portlet" value="Categories" />
 		</execute>
 
-		<for list="Category Name 1,Category Name 2,Category Name 3,Category Name 4,Category Name 5" param="categoryName">
+		
 			<execute macro="Category#addCP">
 				<var name="categoryName" value="Category Name 1" />
 				<var name="vocabularyName" value="Vocabulary Name" />
@@ -2275,7 +2275,7 @@
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Categories" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -2319,7 +2319,7 @@
 	<command name="ViewMultipleVocabulariesViaAddWebContent" priority="4">
 		<property name="testray.component.names" value="Categories,Web Content Administration" />
 
-		<for list="Vocabulary Name 1,Vocabulary Name 2,Vocabulary Name 3,Vocabulary Name 4,Vocabulary Name 5" param="vocabularyName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -2390,7 +2390,7 @@
 				<var name="categoryName" value="Category Name" />
 				<var name="vocabularyName" value="Vocabulary Name 5" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
