@@ -113,7 +113,15 @@
 
 		<for list="Technology,Reuters > Sports News,Latimes > Technology News" param="feedTitle" >
 			<execute macro="RSS#viewDisplayFeedTitle">
-				<var name="feedTitle" value="${feedTitle}" />
+				<var name="feedTitle" value="Technology" />
+			</execute>
+
+			<execute macro="RSS#viewDisplayFeedTitle">
+				<var name="feedTitle" value="Reuters > Sports News" />
+			</execute>
+
+			<execute macro="RSS#viewDisplayFeedTitle">
+				<var name="feedTitle" value="Latimes > Technology News" />
 			</execute>
 		</for>
 	</command>
