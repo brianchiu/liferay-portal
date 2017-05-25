@@ -1242,8 +1242,24 @@
 			</execute>
 
 			<execute macro="User#editPasswordCP">
-				<var name="userEmailAddress" value="${userScreenName}@liferay.com" />
-				<var name="userScreenName" value="${userScreenName}" />
+				<var name="userEmailAddress" value="usersn1@liferay.com" />
+				<var name="userScreenName" value="usersn1" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+				<var name="portlet" value="Users and Organizations" />
+			</execute>
+
+			<execute macro="User#editPasswordCP">
+				<var name="userEmailAddress" value="usersn2@liferay.com" />
+				<var name="userScreenName" value="usersn2" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+				<var name="portlet" value="Users and Organizations" />
+			</execute>
+
+			<execute macro="User#editPasswordCP">
+				<var name="userEmailAddress" value="usersn3@liferay.com" />
+				<var name="userScreenName" value="usersn3" />
 			</execute>
 		</for>
 

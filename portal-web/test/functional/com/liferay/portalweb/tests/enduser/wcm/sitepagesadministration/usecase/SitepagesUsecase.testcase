@@ -180,7 +180,7 @@
 			<var name="localizedFriendlyURL" value="/german" />
 		</execute>
 
-		<execute macro="Page#deleteFriendlyURLPG" >
+		<execute macro="Page#deleteFriendlyURLPG">
 			<var name="friendlyUrlLocalized" value="en_US" />
 		</execute>
 
@@ -205,7 +205,16 @@
 
 		<for list="Page1 Name,Page2 Name,Page3 Name,Page4 Name" param="pageName">
 			<execute macro="Page#add">
-				<var name="pageName" value="${pageName}" />
+				<var name="pageName" value="Page1 Name" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Page2 Name" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Page3 Name" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Page4 Name" />
 			</execute>
 		</for>
 
@@ -221,7 +230,31 @@
 			<execute macro="Page#addChild">
 				<var name="page" value="Public Pages" />
 				<var name="pageName" value="Welcome" />
-				<var name="siteChildPageName" value="${siteChildPageName}" />
+				<var name="siteChildPageName" value="Child Page1 Name" />
+				<var name="siteScopeSelected" value="true" />
+			</execute>
+		<execute macro="Page#addChild">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Welcome" />
+				<var name="siteChildPageName" value="Child Page2 Name" />
+				<var name="siteScopeSelected" value="true" />
+			</execute>
+		<execute macro="Page#addChild">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Welcome" />
+				<var name="siteChildPageName" value="Child Page3 Name" />
+				<var name="siteScopeSelected" value="true" />
+			</execute>
+		<execute macro="Page#addChild">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Welcome" />
+				<var name="siteChildPageName" value="Child Page4 Name" />
+				<var name="siteScopeSelected" value="true" />
+			</execute>
+		<execute macro="Page#addChild">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Welcome" />
+				<var name="siteChildPageName" value=" Child Page5 Name" />
 				<var name="siteScopeSelected" value="true" />
 			</execute>
 		</for>

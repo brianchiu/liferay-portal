@@ -317,7 +317,11 @@
 		<for list="Web Content Title 1,Web Content Title 2" param="webContentTitle">
 			<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
 				<var name="contentVisitedContent" value="Basic Web Content" />
-				<var name="webContentTitle" value="${webContentTitle}" />
+				<var name="webContentTitle" value="Web Content Title 1" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addBehaviorContentVisitedRuleCP">
+				<var name="contentVisitedContent" value="Basic Web Content" />
+				<var name="webContentTitle" value="Web Content Title 2" />
 			</execute>
 		</for>
 
@@ -371,7 +375,10 @@
 
 		<for list="/test-page-name,/site-page-name" param="friendlyURL">
 			<execute macro="ContentTargetingUserSegment#addBehaviorPageVisitedRuleCP">
-				<var name="friendlyURL" value="${friendlyURL}" />
+				<var name="friendlyURL" value="/test-page-name" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addBehaviorPageVisitedRuleCP">
+				<var name="friendlyURL" value="/site-page-name" />
 			</execute>
 		</for>
 
@@ -431,7 +438,11 @@
 		<for list="User Custom Field Value 1,User Custom Field Value 2" param="customFieldValue">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesCustomFieldCP">
 				<var name="customFieldKey" value="usercustomfield" />
-				<var name="customFieldValue" value="${customFieldValue}" />
+				<var name="customFieldValue" value="User Custom Field Value 1" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesCustomFieldCP">
+				<var name="customFieldKey" value="usercustomfield" />
+				<var name="customFieldValue" value="User Custom Field Value 2" />
 			</execute>
 		</for>
 
@@ -473,7 +484,15 @@
 			</execute>
 
 			<execute macro="Organization#addCP">
-				<var name="orgName" value="${orgName}" />
+				<var name="orgName" value="Organization Name 1" />
+				<var name="orgType" value="Organization" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+				<var name="portlet" value="Users and Organizations" />
+			</execute>
+
+			<execute macro="Organization#addCP">
+				<var name="orgName" value="Organization Name 2" />
 				<var name="orgType" value="Organization" />
 			</execute>
 		</for>
@@ -493,7 +512,10 @@
 
 		<for list="Organization Name 1,Organization Name 2" param="organizationName">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationMemberRuleCP">
-				<var name="organizationName" value="${organizationName}" />
+				<var name="organizationName" value="Organization Name 1" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationMemberRuleCP">
+				<var name="organizationName" value="Organization Name 2" />
 			</execute>
 		</for>
 
@@ -529,7 +551,15 @@
 			</execute>
 
 			<execute macro="Organization#addCP">
-				<var name="orgName" value="${orgName}" />
+				<var name="orgName" value="Organization Name 1" />
+				<var name="orgType" value="Organization" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+				<var name="portlet" value="Users and Organizations" />
+			</execute>
+
+			<execute macro="Organization#addCP">
+				<var name="orgName" value="Organization Name 2" />
 				<var name="orgType" value="Organization" />
 			</execute>
 		</for>
@@ -549,7 +579,11 @@
 
 		<for list="Organization Name 1,Organization Name 2" param="organizationName">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationRoleRuleCP">
-				<var name="organizationName" value="${organizationName}" />
+				<var name="organizationName" value="Organization Name 1" />
+				<var name="organizationRole" value="Organization Owner" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesOrganizationRoleRuleCP">
+				<var name="organizationName" value="Organization Name 2" />
 				<var name="organizationRole" value="Organization Owner" />
 			</execute>
 		</for>
@@ -597,7 +631,10 @@
 
 		<for list="Administrator,Power User" param="regularRole">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesRegularRoleRuleCP">
-				<var name="regularRole" value="${regularRole}" />
+				<var name="regularRole" value="Administrator" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesRegularRoleRuleCP">
+				<var name="regularRole" value="Power User" />
 			</execute>
 		</for>
 
@@ -647,7 +684,10 @@
 
 		<for list="Site Name,${siteName}" param="selectSiteMemberSite">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesSiteMemberRuleCP">
-				<var name="selectSiteMemberSite" value="${selectSiteMemberSite}" />
+				<var name="selectSiteMemberSite" value="Site Name" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesSiteMemberRuleCP">
+				<var name="selectSiteMemberSite" value="${siteName}" />
 			</execute>
 		</for>
 
@@ -692,7 +732,11 @@
 
 		<for list="Site Administrator,Site Owner" param="siteRole">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesSiteRoleRuleCP">
-				<var name="siteRole" value="${siteRole}" />
+				<var name="siteRole" value="Site Administrator" />
+				<var name="siteRoleSite" value="Site Name" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesSiteRoleRuleCP">
+				<var name="siteRole" value="Site Owner" />
 				<var name="siteRoleSite" value="Site Name" />
 			</execute>
 		</for>
@@ -735,7 +779,14 @@
 			</execute>
 
 			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="${userGroupName}" />
+				<var name="userGroupName" value="User Group Name 1" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+				<var name="portlet" value="User Groups" />
+			</execute>
+
+			<execute macro="UserGroup#addCP">
+				<var name="userGroupName" value="User Group Name 2" />
 			</execute>
 		</for>
 
@@ -754,7 +805,10 @@
 
 		<for list="User Group Name 1,User Group Name 2" param="userGroupName">
 			<execute macro="ContentTargetingUserSegment#addUserAttributesUserGroupMemberRuleCP">
-				<var name="userGroupName" value="${userGroupName}" />
+				<var name="userGroupName" value="User Group Name 1" />
+			</execute>
+		<execute macro="ContentTargetingUserSegment#addUserAttributesUserGroupMemberRuleCP">
+				<var name="userGroupName" value="User Group Name 2" />
 			</execute>
 		</for>
 
