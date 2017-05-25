@@ -344,7 +344,7 @@
 	<command name="DeleteBlogsEntries" priority="5">
 		<property name="portal.acceptance" value="quarantine" />
 
-		<for list="1,2,3" param="entryCount" >
+		<for list="1,2,3" param="entryCount">
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -352,12 +352,32 @@
 			</execute>
 
 			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
+				<var name="entryContent" value="Blogs Entry1 Content" />
+				<var name="entryTitle" value="Blogs Entry1 Title" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Blogs" />
+			</execute>
+
+			<execute macro="Blogs#addEntry">
+				<var name="entryContent" value="Blogs Entry2 Content" />
+				<var name="entryTitle" value="Blogs Entry2 Title" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Blogs" />
+			</execute>
+
+			<execute macro="Blogs#addEntry">
+				<var name="entryContent" value="Blogs Entry3 Content" />
+				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
 		</for>
 
-		<for list="1,2,3" param="entryCount" >
+		<for list="1,2,3" param="entryCount">
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -365,17 +385,47 @@
 			</execute>
 
 			<execute macro="BlogsNavigator#gotoEntryCP">
-				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
+				<var name="entryContent" value="Blogs Entry1 Content" />
+				<var name="entryTitle" value="Blogs Entry1 Title" />
 			</execute>
 
 			<execute macro="BlogsEntry#viewEntry">
-				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
+				<var name="entryContent" value="Blogs Entry1 Content" />
+				<var name="entryTitle" value="Blogs Entry1 Title" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Blogs" />
+			</execute>
+
+			<execute macro="BlogsNavigator#gotoEntryCP">
+				<var name="entryContent" value="Blogs Entry2 Content" />
+				<var name="entryTitle" value="Blogs Entry2 Title" />
+			</execute>
+
+			<execute macro="BlogsEntry#viewEntry">
+				<var name="entryContent" value="Blogs Entry2 Content" />
+				<var name="entryTitle" value="Blogs Entry2 Title" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Blogs" />
+			</execute>
+
+			<execute macro="BlogsNavigator#gotoEntryCP">
+				<var name="entryContent" value="Blogs Entry3 Content" />
+				<var name="entryTitle" value="Blogs Entry3 Title" />
+			</execute>
+
+			<execute macro="BlogsEntry#viewEntry">
+				<var name="entryContent" value="Blogs Entry3 Content" />
+				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
 		</for>
 
-		<for list="1,2,3" param="entryCount" >
+		<for list="1,2,3" param="entryCount">
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -384,7 +434,27 @@
 
 			<execute macro="BlogsNavigator#moveToRecycleBinCP">
 				<var name="assetType" value="Blogs Entry" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
+				<var name="entryTitle" value="Blogs Entry1 Title" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Blogs" />
+			</execute>
+
+			<execute macro="BlogsNavigator#moveToRecycleBinCP">
+				<var name="assetType" value="Blogs Entry" />
+				<var name="entryTitle" value="Blogs Entry2 Title" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Blogs" />
+			</execute>
+
+			<execute macro="BlogsNavigator#moveToRecycleBinCP">
+				<var name="assetType" value="Blogs Entry" />
+				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
 		</for>
 
@@ -394,9 +464,15 @@
 			<var name="portlet" value="Blogs" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount" >
+		<for list="1,2,3" param="entryCount">
 			<execute macro="BlogsEntry#viewNoCP">
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
+				<var name="entryTitle" value="Blogs Entry1 Title" />
+			</execute>
+		<execute macro="BlogsEntry#viewNoCP">
+				<var name="entryTitle" value="Blogs Entry2 Title" />
+			</execute>
+		<execute macro="BlogsEntry#viewNoCP">
+				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
 		</for>
 	</command>
