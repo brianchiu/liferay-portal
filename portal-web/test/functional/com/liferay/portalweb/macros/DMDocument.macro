@@ -2548,4 +2548,28 @@
 
 		<execute function="AssertTextEquals" locator1="DocumentsAndMediaDocument#DOCUMENT_INFO_WORKFLOW_STATUS" value1="Pending (${workflowTask})" />
 	</command>
+
+	<command name="waitForVideoToGenerate">
+		<while>
+			<and>
+				<not>
+					<equals arg1="${videoGenerationTimeCounter}" arg2="${videoGenerationTimeMaxWaitTime}" />
+				</not>
+				<condition function="IsElementPresent" locator1="Message#INFO" />
+			</and>
+			<then>
+				<var method="MathUtil#sum('${videoGenerationTimeCounter}', '1')" name="videoGenerationTimeCounter" />
+
+				<execute function="Pause" locator1="30000" />
+
+				<execute macro="Navigator#gotoPage">
+					<var name="pageName" value="Documents and Media Page" />
+				</execute>
+
+				<execute macro="DMNavigator#gotoDocumentPG">
+					<var name="dmDocumentTitle" value="Document_1.mp4" />
+				</execute>
+			</then>
+		</while>
+	</command>
 </definition>

@@ -700,30 +700,10 @@
 
 		<execute function="Pause" locator1="30000" />
 
-		<var name="videoGenerationTimeCounter" value="0" />
-		<var name="videoGenerationTimeMaxWaitTime" value="6" />
-
-		<while>
-			<and>
-				<not>
-					<equals arg1="${videoGenerationTimeCounter}" arg2="${videoGenerationTimeMaxWaitTime}" />
-				</not>
-				<condition function="IsElementPresent" locator1="Message#INFO" />
-			</and>
-			<then>
-				<var method="MathUtil#sum('${videoGenerationTimeCounter}', '1')" name="videoGenerationTimeCounter" />
-
-				<execute function="Pause" locator1="30000" />
-
-				<execute macro="Navigator#gotoPage">
-					<var name="pageName" value="Documents and Media Page" />
-				</execute>
-
-				<execute macro="DMNavigator#gotoDocumentPG">
-					<var name="dmDocumentTitle" value="Document_1.mp4" />
-				</execute>
-			</then>
-		</while>
+		<execute macro="DMDocument#waitForVideoToGenerate">
+			<var name="videoGenerationTimeCounter" value="0" />
+			<var name="videoGenerationTimeMaxWaitTime" value="6" />
+		</execute>
 
 		<var attribute="poster" locator="//video" name="videoPreviewThumbnailLink" />
 
