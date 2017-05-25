@@ -469,7 +469,7 @@
 			<var name="searchTerm">"AssetContent"</var>
 		</execute>
 
-		<for list="Blogs Entry1 Title,WC WebContent2 Title,Wiki Page2 Title,DM Document Title" param="searchAssetTitle">
+		
 			<var name="key_searchAssetTitle" value="Blogs Entry1 Title" />
 
 			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry1 Title" />
@@ -482,9 +482,9 @@
 		<var name="key_searchAssetTitle" value="DM Document Title" />
 
 			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="DM Document Title" />
-		</for>
+		
 
-		<for list="Blogs Entry2 Title,WC WebContent1 Title,Wiki Page1 Title" param="searchAssetTitle">
+		
 			<var name="key_searchAssetTitle" value="Blogs Entry2 Title" />
 
 			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry2 Title" />
@@ -494,7 +494,7 @@
 		<var name="key_searchAssetTitle" value="Wiki Page1 Title" />
 
 			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page1 Title" />
-		</for>
+		
 
 		<execute macro="Search#viewAssetTypeFacetPG">
 			<var name="facetFrequency" value="1" />
@@ -508,7 +508,7 @@
 			<var name="searchModifiedRange" value="Past Month" />
 		</execute>
 
-		<for list="Blogs Entry1 Title,WC WebContent2 Title,Wiki Page2 Title,DM Document Title" param="searchAssetTitle">
+		
 			<var name="key_searchAssetTitle" value="Blogs Entry1 Title" />
 
 			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry1 Title" />
@@ -521,9 +521,9 @@
 		<var name="key_searchAssetTitle" value="DM Document Title" />
 
 			<execute function="AssertTextEquals" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="DM Document Title" />
-		</for>
+		
 
-		<for list="Blogs Entry2 Title,WC WebContent1 Title,Wiki Page1 Title" param="searchAssetTitle">
+		
 			<var name="key_searchAssetTitle" value="Blogs Entry2 Title" />
 
 			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Blogs Entry2 Title" />
@@ -533,7 +533,7 @@
 		<var name="key_searchAssetTitle" value="Wiki Page1 Title" />
 
 			<execute function="AssertTextNotPresent" locator1="SearchResults#ASSET_ENTRY_TABLE_TITLE" value1="Wiki Page1 Title" />
-		</for>
+		
 	</command>
 
 	<command name="SearchTwiceHideSitesFacet" priority="5">
@@ -1058,7 +1058,7 @@
 			<var name="pageName" value="Search Page" />
 		</execute>
 
-		<for list="Search Bar,Search Results,Type Facet" param="portletName">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Search Page" />
 			</execute>
@@ -1080,7 +1080,7 @@
 			<execute macro="Portlet#addPG">
 				<var name="portletName" value="Type Facet" />
 			</execute>
-		</for>
+		
 
 		<execute macro="SearchBarPortlet#searchPG">
 			<var name="searchTerm" value="Blogs Entry Title" />

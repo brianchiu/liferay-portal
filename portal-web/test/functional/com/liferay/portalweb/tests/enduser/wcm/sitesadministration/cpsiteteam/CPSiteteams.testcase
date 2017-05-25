@@ -454,7 +454,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="1,2" param="n">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="User Groups" />
 			</execute>
@@ -493,7 +493,7 @@
 			<execute macro="Site#assignUserGroupAsMemberCP">
 				<var name="userGroupName" value="User Group Name 2" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -548,7 +548,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="1,2" param="n">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -597,7 +597,7 @@
 				<var name="userLastName" value="userln2" />
 				<var name="userScreenName" value="usersn2" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Site Name" />
@@ -629,7 +629,7 @@
 			<var name="rowEntry" value="Site Team Name" />
 		</execute>
 
-		<for list="userfn1,userln1,usersn1" param="searchTerm">
+		
 			<execute macro="Team#searchCP">
 				<var name="membershipType" value="User" />
 				<var name="searchTerm" value="userfn1" />
@@ -642,9 +642,9 @@
 				<var name="membershipType" value="User" />
 				<var name="searchTerm" value="usersn1" />
 			</execute>
-		</for>
+		
 
-		<for list="userfn2,userln2,usersn2" param="searchTerm">
+		
 			<execute macro="Team#searchCP">
 				<var name="isEmpty" value="true" />
 				<var name="membershipType" value="User" />
@@ -660,7 +660,7 @@
 				<var name="membershipType" value="User" />
 				<var name="searchTerm" value="usersn2" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="DeleteSiteTeam" priority="5">

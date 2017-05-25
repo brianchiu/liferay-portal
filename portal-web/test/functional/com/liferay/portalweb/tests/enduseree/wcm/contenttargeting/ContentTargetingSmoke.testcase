@@ -156,7 +156,7 @@
 
 		<execute macro="PortletEntry#save" />
 
-		<for list="Campaign Content Display,User Segment Content Display,User Segment Content List" param="portletName">
+		
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Test Page Name" />
 				<var name="siteName" value="Site Name" />
@@ -181,7 +181,7 @@
 			<execute macro="Portlet#addPG">
 				<var name="portletName" value="User Segment Content List" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page Name" />

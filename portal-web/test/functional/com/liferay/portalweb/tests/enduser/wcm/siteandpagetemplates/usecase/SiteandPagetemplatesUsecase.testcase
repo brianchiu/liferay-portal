@@ -258,7 +258,7 @@
 			<var name="userGroupName" value="UG UserGroup Name" />
 		</execute>
 
-		<for list="Home,Wiki" param="page">
+		
 			<execute macro="ProductMenu#gotoSiteViaLink">
 				<var name="site" value="UG UserGroup Name" />
 			</execute>
@@ -273,7 +273,7 @@
 			<execute macro="Page#viewNoDeletePagesAssociatedWithSiteTemplate">
 				<var name="page" value="Wiki" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SitesDynamicTemplateInheritance" priority="4">

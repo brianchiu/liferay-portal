@@ -45,7 +45,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
+		
 			<execute macro="Navigator#openSiteURL">
 				<var name="siteName" value="Site Name" />
 			</execute>
@@ -79,7 +79,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="tag name 3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -184,7 +184,7 @@
 			<var name="tagNameList" value="tag name 1,tag name 2,tag name 3" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
+		
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Page Name" />
 				<var name="siteName" value="Site Name" />
@@ -230,7 +230,7 @@
 				<var name="entryTitle" value="Entry Title" />
 				<var name="tagName" value="tag name 3" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="AddSelectTagViaBlogs" priority="5">
@@ -254,7 +254,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="tag1,tag2,tag3" param="tagName">
+		
 			<execute macro="Navigator#openSiteURL">
 				<var name="siteName" value="Site Name" />
 			</execute>
@@ -288,7 +288,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="tag3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -310,7 +310,7 @@
 			<var name="tagNameList" value="tag1,tag3" />
 		</execute>
 
-		<for list="tag1,tag3" param="tagName">
+		
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Page Name" />
 				<var name="siteName" value="Site Name" />
@@ -337,7 +337,7 @@
 				<var name="entryTitle" value="Entry Title" />
 				<var name="tagName" value="tag3" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="AddTagViaBlogs" priority="5">
@@ -431,7 +431,7 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -459,7 +459,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="third tag" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -543,7 +543,7 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -571,7 +571,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="third tag" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -634,7 +634,7 @@
 			<var name="portletName" value="Tags Navigation" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -662,7 +662,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="tag name 3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Tags Navigation Page" />
@@ -721,7 +721,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
+		
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Page Name" />
 				<var name="siteName" value="Site Name" />
@@ -767,7 +767,7 @@
 				<var name="entryTitle" value="Entry Title" />
 				<var name="tagName" value="tag name 3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -782,14 +782,14 @@
 			<var name="panelHeading" value="Categorization" />
 		</execute>
 
-		<for list="tag name 1,tag name 3" param="tagName">
+		
 			<execute macro="AssetCategorization#removeTag">
 				<var name="tagName" value="tag name 1" />
 			</execute>
 		<execute macro="AssetCategorization#removeTag">
 				<var name="tagName" value="tag name 3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="PortletEntry#publish" />
 
@@ -843,7 +843,7 @@
 			<var name="tagNameList" value="tag name 1,tag name 2,tag name 3" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
+		
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Page Name" />
 				<var name="siteName" value="Site Name" />
@@ -889,7 +889,7 @@
 				<var name="entryTitle" value="Entry Title" />
 				<var name="tagName" value="tag name 3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -1093,7 +1093,7 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1121,7 +1121,7 @@
 			<execute macro="Tag#addCP">
 				<var name="tagName" value="third tag" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
