@@ -146,7 +146,21 @@
 
 		<for list="1,2,3" param="i">
 			<execute macro="Page#add">
-				<var name="pageName" value="Web Content Display Page${i}" />
+				<var name="pageName" value="Web Content Display Page1" />
+			</execute>
+
+			<execute macro="Portlet#addPG">
+				<var name="portletName" value="Web Content Display" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Web Content Display Page2" />
+			</execute>
+
+			<execute macro="Portlet#addPG">
+				<var name="portletName" value="Web Content Display" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Web Content Display Page3" />
 			</execute>
 
 			<execute macro="Portlet#addPG">

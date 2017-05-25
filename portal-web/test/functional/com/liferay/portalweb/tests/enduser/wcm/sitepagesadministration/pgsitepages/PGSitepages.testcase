@@ -48,7 +48,13 @@
 
 		<for list="Tags Navigation,Categories Navigation,Asset Publisher" param="portletName">
 			<execute macro="Portlet#viewSpecificPG">
-				<var name="portletName" value="${portletName}" />
+				<var name="portletName" value="Tags Navigation" />
+			</execute>
+		<execute macro="Portlet#viewSpecificPG">
+				<var name="portletName" value="Categories Navigation" />
+			</execute>
+		<execute macro="Portlet#viewSpecificPG">
+				<var name="portletName" value="Asset Publisher" />
 			</execute>
 		</for>
 	</command>

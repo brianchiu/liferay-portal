@@ -77,7 +77,7 @@
 
 		<for list="1,2,3" param="i">
 			<execute macro="MyAccount#addOrganization">
-				<var name="organizationName" value="Organization Name ${i}" />
+				<var name="organizationName" value="Organization Name 1" />
 			</execute>
 
 			<execute macro="ProductMenu#gotoUserMyAccount">
@@ -85,8 +85,32 @@
 			</execute>
 
 			<execute macro="Organization#searchCP">
-				<var name="orgName" value="Organization Name ${i}" />
-				<var name="searchTerm" value="Organization Name ${i}" />
+				<var name="orgName" value="Organization Name 1" />
+				<var name="searchTerm" value="Organization Name 1" />
+			</execute>
+		<execute macro="MyAccount#addOrganization">
+				<var name="organizationName" value="Organization Name 2" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoUserMyAccount">
+				<var name="portlet" value="My Organizations" />
+			</execute>
+
+			<execute macro="Organization#searchCP">
+				<var name="orgName" value="Organization Name 2" />
+				<var name="searchTerm" value="Organization Name 2" />
+			</execute>
+		<execute macro="MyAccount#addOrganization">
+				<var name="organizationName" value="Organization Name 3" />
+			</execute>
+
+			<execute macro="ProductMenu#gotoUserMyAccount">
+				<var name="portlet" value="My Organizations" />
+			</execute>
+
+			<execute macro="Organization#searchCP">
+				<var name="orgName" value="Organization Name 3" />
+				<var name="searchTerm" value="Organization Name 3" />
 			</execute>
 		</for>
 	</command>
