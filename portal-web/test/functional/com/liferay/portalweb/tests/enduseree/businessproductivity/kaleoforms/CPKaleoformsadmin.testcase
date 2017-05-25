@@ -1173,7 +1173,7 @@
 			<var name="kfFormName" value="Created Task Form" />
 		</execute>
 
-		<execute macro="KaleoFormsAdmin#editForm" >
+		<execute macro="KaleoFormsAdmin#editForm">
 			<var name="kfFormName" value="Created Task Form" />
 			<var name="kfFormNameEdit" value="Created Task Form Edit" />
 		</execute>
@@ -1327,7 +1327,87 @@
 			</execute>
 
 			<execute macro="KaleoFormsAdmin#addFieldSet">
-				<var name="kfFieldSetName" value="${kfFieldSetName}" />
+				<var name="kfFieldSetName" value="Field1" />
+				<var name="kfProcessName" value="${kfProcessName}" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field2" />
+				<var name="kfProcessName" value="${kfProcessName}" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field3" />
+				<var name="kfProcessName" value="${kfProcessName}" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field4" />
+				<var name="kfProcessName" value="${kfProcessName}" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field5" />
+				<var name="kfProcessName" value="${kfProcessName}" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field6" />
 				<var name="kfProcessName" value="${kfProcessName}" />
 			</execute>
 
@@ -1658,7 +1738,87 @@
 			</execute>
 
 			<execute macro="KaleoFormsAdmin#addFieldSet">
-				<var name="kfFieldSetName" value="${kfFieldSetName}" />
+				<var name="kfFieldSetName" value="Field1" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field2" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field3" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field4" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field5" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field6" />
 				<var name="kfProcessName" value="Kaleo Forms Process" />
 			</execute>
 
@@ -3481,7 +3641,87 @@
 			</execute>
 
 			<execute macro="KaleoFormsAdmin#addFieldSet">
-				<var name="kfFieldSetName" value="${kfFieldSetName}" />
+				<var name="kfFieldSetName" value="Field1" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field2" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field3" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field4" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field5" />
+				<var name="kfProcessName" value="Kaleo Forms Process" />
+			</execute>
+
+			<execute macro="DynamicDataMapping#addField">
+				<var name="field" value="Text" />
+				<var name="fieldFieldLabel" value="Text" />
+				<var name="fieldName" value="Text" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#saveFieldSet" />
+		<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Kaleo Forms Admin" />
+			</execute>
+
+			<execute macro="KaleoFormsAdmin#addFieldSet">
+				<var name="kfFieldSetName" value="Field6" />
 				<var name="kfProcessName" value="Kaleo Forms Process" />
 			</execute>
 
