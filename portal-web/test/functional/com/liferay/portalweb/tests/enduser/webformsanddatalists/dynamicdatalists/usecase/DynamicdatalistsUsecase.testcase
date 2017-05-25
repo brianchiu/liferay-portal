@@ -2055,7 +2055,7 @@
 
 		<execute macro="DDLNavigator#gotoManageDataDefinitions" />
 
-		<for list="Contacts,Events,Inventory,Issues Tracking,Meeting Minutes,To Do" param="ddlDataDefinitionName">
+		
 			<execute macro="DDLDataDefinition#viewName">
 				<var name="ddlDataDefinitionName" value="Contacts" />
 			</execute>
@@ -2074,7 +2074,7 @@
 		<execute macro="DDLDataDefinition#viewName">
 				<var name="ddlDataDefinitionName" value="To Do" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="DeleteStructure" priority="3">
@@ -2763,7 +2763,7 @@
 
 		<execute macro="Navigator#openURL" />
 
-		<for list="P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12" param="pageName">
+		
 			<execute macro="Page#add">
 				<var name="pageName" value="P1" />
 			</execute>
@@ -2800,7 +2800,7 @@
 		<execute macro="Page#add">
 				<var name="pageName" value="P12" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Dynamic Data Lists" />
@@ -2984,7 +2984,7 @@
 			<var name="siteName" value="${siteName}" />
 		</execute>
 
-		<for list="Device,Company,PermissionChecker" param="fieldName">
+		
 			<var name="key_fieldName" value="Device" />
 
 			<if>
@@ -3042,7 +3042,7 @@
 			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="PermissionChecker" />
 
 			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
-		</for>
+		
 	</command>
 
 	<command name="ViewFieldsNestedInDDLRecord" priority="3">
@@ -3395,7 +3395,7 @@
 
 		<execute macro="DDLNavigator#gotoListRecords" />
 
-		<for list="firstRecord,secondText,thirdTest" param="ddlRecordFieldData">
+		
 			<execute macro="DDLNavigator#gotoAddListRecord" />
 
 			<execute macro="DDLRecord#populateFieldText">
@@ -3423,7 +3423,7 @@
 			</execute>
 
 			<execute macro="PortletEntry#publish" />
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Asset Publisher Page" />

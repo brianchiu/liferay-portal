@@ -344,7 +344,7 @@
 	<command name="DeleteBlogsEntries" priority="5">
 		<property name="portal.acceptance" value="quarantine" />
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -375,9 +375,9 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -423,9 +423,9 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -456,7 +456,7 @@
 				<var name="assetType" value="Blogs Entry" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -464,7 +464,7 @@
 			<var name="portlet" value="Blogs" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="BlogsEntry#viewNoCP">
 				<var name="entryTitle" value="Blogs Entry1 Title" />
 			</execute>
@@ -474,7 +474,7 @@
 		<execute macro="BlogsEntry#viewNoCP">
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="EditBlogsEntryContent" priority="5">

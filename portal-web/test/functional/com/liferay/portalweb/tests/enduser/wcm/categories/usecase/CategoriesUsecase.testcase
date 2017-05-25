@@ -889,7 +889,7 @@
 			<var name="vocabularyName" value="Vocabulary Name" />
 		</execute>
 
-		<for list="Category Name 1,Category Name 2" param="categoryName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -910,7 +910,7 @@
 				<var name="categoryName" value="Category Name 2" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -1257,7 +1257,7 @@
 			<var name="vocabularyName" value="Vocabulary Name" />
 		</execute>
 
-		<for list="dog,cat" param="categoryName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1278,9 +1278,9 @@
 				<var name="categoryName" value="cat" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
-		</for>
+		
 
-		<for list="bone,milk" param="subcategoryName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1303,7 +1303,7 @@
 				<var name="subcategoryName" value="milk" />
 				<var name="vocabularyName" value="Vocabulary Name" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -1368,7 +1368,7 @@
 			<var name="vocabularyName" value="Vocabulary Name" />
 		</execute>
 
-		<for list="llama,panda" param="categoryName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1397,9 +1397,9 @@
 			<execute macro="Category#viewSearchResultsCP">
 				<var name="categoryNameList" value="panda" />
 			</execute>
-		</for>
+		
 
-		<for list="brown,black" param="categoryDescription">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1428,7 +1428,7 @@
 			<execute macro="Category#viewSearchResultsCP">
 				<var name="categoryDefinitionList" value="black" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -1583,7 +1583,7 @@
 			<var name="vocabularyName" value="Vocabulary Name" />
 		</execute>
 
-		<for list="beard,mustache" param="categoryName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1614,9 +1614,9 @@
 			<execute macro="Subcategory#viewSearchResultsCP">
 				<var name="categoryNameList" value="mustache" />
 			</execute>
-		</for>
+		
 
-		<for list="friendly chops,handlebar" param="categoryDescription">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1632,7 +1632,7 @@
 			<execute macro="Subcategory#viewSearchResultsCP">
 				<var name="subcategoryDefinitionList" value="${subcategoryDescription}" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -1724,7 +1724,7 @@
 			<var name="vocabularyName" value="Sport Vocab" />
 		</execute>
 
-		<for list="Food,Sport" param="vocabularyName">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1751,9 +1751,9 @@
 			<execute macro="Vocabulary#viewSearchResultsCP">
 				<var name="vocabularyNameList" value="Sport Vocab" />
 			</execute>
-		</for>
+		
 
-		<for list="Sushi,Futbol" param="vocabularyDescription">
+		
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
@@ -1780,7 +1780,7 @@
 			<execute macro="Vocabulary#viewSearchResultsCP">
 				<var name="vocabularyDefinitionList" value="Futbol" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 

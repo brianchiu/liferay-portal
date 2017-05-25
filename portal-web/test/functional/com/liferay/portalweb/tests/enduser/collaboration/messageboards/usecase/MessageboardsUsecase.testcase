@@ -1017,7 +1017,7 @@
 			<var name="threadSubject" value="MB Thread Message Subject" />
 		</execute>
 
-		<for list="Power User,User" param="roleTitle">
+		
 			<execute macro="PermissionsInline#viewPermissionsRemoved">
 				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
 				<var name="roleTitle" value="Power User" />
@@ -1026,7 +1026,7 @@
 				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
 				<var name="roleTitle" value="User" />
 			</execute>
-		</for>
+		
 
 		<execute macro="PermissionsInline#viewPermissionsChecked">
 			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
@@ -1290,7 +1290,7 @@
 			<var name="pageName" value="Message Boards Page" />
 		</execute>
 
-		<for list="INLINE_PERMISSIONS_REPLY_TO_MESSAGE_CHECKBOX,INLINE_PERMISSIONS_VIEW_CHECKBOX" param="permissionDefinitionKey">
+		
 			<execute macro="Role#definePermissionPG">
 				<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_REPLY_TO_MESSAGE_CHECKBOX" />
 				<var name="roleTitle" value="User" />
@@ -1299,7 +1299,7 @@
 				<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_VIEW_CHECKBOX" />
 				<var name="roleTitle" value="User" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Message Boards Page" />
