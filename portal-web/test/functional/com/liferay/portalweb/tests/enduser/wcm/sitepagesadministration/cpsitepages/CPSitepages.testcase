@@ -188,7 +188,7 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Site Child Page 1,Site Child Page 2,Site Child Page 3" param="childPageName" >
+		<for list="Site Child Page 1,Site Child Page 2,Site Child Page 3" param="childPageName">
 			<execute macro="ProductMenu#gotoControlPanelSites">
 				<var name="portlet" value="Sites" />
 			</execute>
@@ -196,19 +196,55 @@
 			<execute macro="Page#addChild">
 				<var name="page" value="Public Pages" />
 				<var name="pageName" value="Site Page" />
-				<var name="siteChildPageName" value="${childPageName}" />
+				<var name="siteChildPageName" value="Site Child Page 1" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Page#addChild">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Site Page" />
+				<var name="siteChildPageName" value="Site Child Page 2" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Page#addChild">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Site Page" />
+				<var name="siteChildPageName" value="Site Child Page 3" />
 				<var name="siteName" value="Site Name" />
 			</execute>
 		</for>
 
-		<for list="Site Child Page 1,Site Child Page 2,Site Child Page 3" param="childPageName" >
+		<for list="Site Child Page 1,Site Child Page 2,Site Child Page 3" param="childPageName">
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Site Page" />
 				<var name="siteName" value="Site Name" />
 			</execute>
 
 			<execute macro="Page#viewChildPage">
-				<var name="pageName" value="${childPageName}" />
+				<var name="pageName" value="Site Child Page 1" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Site Page" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="Page#viewChildPage">
+				<var name="pageName" value="Site Child Page 2" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Site Page" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="Page#viewChildPage">
+				<var name="pageName" value="Site Child Page 3" />
 			</execute>
 		</for>
 	</command>
@@ -541,7 +577,29 @@
 
 			<execute macro="Page#add">
 				<var name="page" value="Public Pages" />
-				<var name="pageName" value="${pageName}" />
+				<var name="pageName" value="Site Page 1" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Page#add">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Site Page 2" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Page#add">
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Site Page 3" />
 				<var name="siteName" value="Site Name" />
 			</execute>
 		</for>
@@ -555,7 +613,7 @@
 		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Site Pages Administration,Training" />
 
-		<execute macro="SitePageNavigator#gotoPages" >
+		<execute macro="SitePageNavigator#gotoPages">
 			<var name="page" value="Public Pages" />
 		</execute>
 
@@ -571,7 +629,7 @@
 			<var name="pageNameEdit" value="Site Page Edit" />
 		</execute>
 
-		<execute macro="SitePageNavigator#gotoPages" >
+		<execute macro="SitePageNavigator#gotoPages">
 			<var name="page" value="Public Pages" />
 		</execute>
 

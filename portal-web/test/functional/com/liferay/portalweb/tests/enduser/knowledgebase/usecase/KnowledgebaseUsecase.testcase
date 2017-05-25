@@ -2423,15 +2423,31 @@
 
 		<for list="1,2,3" param="kbCount">
 			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Parent Content ${kbCount}" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title ${kbCount}" />
+				<var name="kbArticleContent" value="Knowledge Base Article Parent Content 1" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			</execute>
+		<execute macro="KBArticle#addCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Parent Content 2" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
+			</execute>
+		<execute macro="KBArticle#addCP">
+				<var name="kbArticleContent" value="Knowledge Base Article Parent Content 3" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 3" />
 			</execute>
 		</for>
 
 		<for list="1,2,3" param="kbCount">
 			<execute macro="KBArticle#viewKBArticlePriorityCP">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title ${kbCount}" />
-				<var name="kbPriority" value="${kbCount}.0" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+				<var name="kbPriority" value="1.0" />
+			</execute>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
+				<var name="kbPriority" value="2.0" />
+			</execute>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 3" />
+				<var name="kbPriority" value="3.0" />
 			</execute>
 		</for>
 
@@ -2954,8 +2970,18 @@
 		<for list="1,2,3" param="kbCount">
 			<execute macro="KBArticle#addChildArticleViaKBAdmin">
 				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
-				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child ${kbCount}" />
-				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child ${kbCount}" />
+				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 1" />
+				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+			</execute>
+		<execute macro="KBArticle#addChildArticleViaKBAdmin">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 2" />
+				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+			</execute>
+		<execute macro="KBArticle#addChildArticleViaKBAdmin">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 3" />
+				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
 			</execute>
 		</for>
 
@@ -2965,8 +2991,16 @@
 
 		<for list="1,2,3" param="kbCount">
 			<execute macro="KBArticle#viewKBArticlePriorityCP">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child ${kbCount}" />
-				<var name="kbPriority" value="${kbCount}.0" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+				<var name="kbPriority" value="1.0" />
+			</execute>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+				<var name="kbPriority" value="2.0" />
+			</execute>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
+				<var name="kbPriority" value="3.0" />
 			</execute>
 		</for>
 
@@ -3000,8 +3034,16 @@
 
 		<for list="1,2,3" param="kbCount">
 			<execute macro="KBArticle#viewKBArticlePriorityCP">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child ${kbCount}" />
-				<var name="kbPriority" value="${kbCount}.0" />
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+				<var name="kbPriority" value="1.0" />
+			</execute>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+				<var name="kbPriority" value="2.0" />
+			</execute>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
+				<var name="kbPriority" value="3.0" />
 			</execute>
 		</for>
 
