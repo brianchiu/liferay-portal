@@ -2055,26 +2055,29 @@
 
 		<execute macro="DDLNavigator#gotoManageDataDefinitions" />
 
-		
-			<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="Contacts" />
-			</execute>
 		<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="Events" />
-			</execute>
+			<var name="ddlDataDefinitionName" value="Contacts" />
+		</execute>
+
 		<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="Inventory" />
-			</execute>
+			<var name="ddlDataDefinitionName" value="Events" />
+		</execute>
+
 		<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="Issues Tracking" />
-			</execute>
+			<var name="ddlDataDefinitionName" value="Inventory" />
+		</execute>
+
 		<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="Meeting Minutes" />
-			</execute>
+			<var name="ddlDataDefinitionName" value="Issues Tracking" />
+		</execute>
+
 		<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="To Do" />
-			</execute>
-		
+			<var name="ddlDataDefinitionName" value="Meeting Minutes" />
+		</execute>
+
+		<execute macro="DDLDataDefinition#viewName">
+			<var name="ddlDataDefinitionName" value="To Do" />
+		</execute>
 	</command>
 
 	<command name="DeleteStructure" priority="3">
@@ -2763,44 +2766,53 @@
 
 		<execute macro="Navigator#openURL" />
 
-		
-			<execute macro="Page#add">
-				<var name="pageName" value="P1" />
-			</execute>
 		<execute macro="Page#add">
-				<var name="pageName" value="P2" />
-			</execute>
+			<var name="pageName" value="P1" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P3" />
-			</execute>
+			<var name="pageName" value="P2" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P4" />
-			</execute>
+			<var name="pageName" value="P3" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P5" />
-			</execute>
+			<var name="pageName" value="P4" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P6" />
-			</execute>
+			<var name="pageName" value="P5" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P7" />
-			</execute>
+			<var name="pageName" value="P6" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P8" />
-			</execute>
+			<var name="pageName" value="P7" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P9" />
-			</execute>
+			<var name="pageName" value="P8" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P10" />
-			</execute>
+			<var name="pageName" value="P9" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P11" />
-			</execute>
+			<var name="pageName" value="P10" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="P12" />
-			</execute>
-		
+			<var name="pageName" value="P11" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="P12" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Dynamic Data Lists" />
@@ -2984,65 +2996,63 @@
 			<var name="siteName" value="${siteName}" />
 		</execute>
 
-		
-			<var name="key_fieldName" value="Device" />
+		<var name="key_fieldName" value="Device" />
 
-			<if>
-				<equals arg1="${fieldName}" arg2="PermissionChecker" />
-				<then>
-					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
-				</then>
-				<else>
-					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
-				</else>
-			</if>
+		<if>
+			<equals arg1="${fieldName}" arg2="PermissionChecker" />
+			<then>
+				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
+			</then>
+			<else>
+				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
+			</else>
+		</if>
 
-			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Device" />
+		<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Device" />
 
-			<execute function="SelectWindow#selectPopUp" locator1="null" />
+		<execute function="SelectWindow#selectPopUp" locator1="null" />
 
-			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Device" />
+		<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Device" />
 
-			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
+		<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
 		<var name="key_fieldName" value="Company" />
 
-			<if>
-				<equals arg1="${fieldName}" arg2="PermissionChecker" />
-				<then>
-					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
-				</then>
-				<else>
-					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
-				</else>
-			</if>
+		<if>
+			<equals arg1="${fieldName}" arg2="PermissionChecker" />
+			<then>
+				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
+			</then>
+			<else>
+				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
+			</else>
+		</if>
 
-			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Company" />
+		<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Company" />
 
-			<execute function="SelectWindow#selectPopUp" locator1="null" />
+		<execute function="SelectWindow#selectPopUp" locator1="null" />
 
-			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Company" />
+		<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Company" />
 
-			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
+		<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
 		<var name="key_fieldName" value="PermissionChecker" />
 
-			<if>
-				<equals arg1="${fieldName}" arg2="PermissionChecker" />
-				<then>
-					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
-				</then>
-				<else>
-					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
-				</else>
-			</if>
+		<if>
+			<equals arg1="${fieldName}" arg2="PermissionChecker" />
+			<then>
+				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
+			</then>
+			<else>
+				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
+			</else>
+		</if>
 
-			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="PermissionChecker" />
+		<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="PermissionChecker" />
 
-			<execute function="SelectWindow#selectPopUp" locator1="null" />
+		<execute function="SelectWindow#selectPopUp" locator1="null" />
 
-			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="PermissionChecker" />
+		<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="PermissionChecker" />
 
-			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
-		
+		<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
 	</command>
 
 	<command name="ViewFieldsNestedInDDLRecord" priority="3">
@@ -3395,35 +3405,33 @@
 
 		<execute macro="DDLNavigator#gotoListRecords" />
 
-		
-			<execute macro="DDLNavigator#gotoAddListRecord" />
-
-			<execute macro="DDLRecord#populateFieldText">
-				<var name="ddlRecordFieldData" value="firstRecord" />
-				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
-				<var name="fieldName" value="TextName" />
-			</execute>
-
-			<execute macro="PortletEntry#publish" />
 		<execute macro="DDLNavigator#gotoAddListRecord" />
 
-			<execute macro="DDLRecord#populateFieldText">
-				<var name="ddlRecordFieldData" value="secondText" />
-				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
-				<var name="fieldName" value="TextName" />
-			</execute>
+		<execute macro="DDLRecord#populateFieldText">
+			<var name="ddlRecordFieldData" value="firstRecord" />
+			<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
+			<var name="fieldName" value="TextName" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
+		<execute macro="PortletEntry#publish" />
 		<execute macro="DDLNavigator#gotoAddListRecord" />
 
-			<execute macro="DDLRecord#populateFieldText">
-				<var name="ddlRecordFieldData" value="thirdTest" />
-				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
-				<var name="fieldName" value="TextName" />
-			</execute>
+		<execute macro="DDLRecord#populateFieldText">
+			<var name="ddlRecordFieldData" value="secondText" />
+			<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
+			<var name="fieldName" value="TextName" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		
+		<execute macro="PortletEntry#publish" />
+		<execute macro="DDLNavigator#gotoAddListRecord" />
+
+		<execute macro="DDLRecord#populateFieldText">
+			<var name="ddlRecordFieldData" value="thirdTest" />
+			<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
+			<var name="fieldName" value="TextName" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Asset Publisher Page" />

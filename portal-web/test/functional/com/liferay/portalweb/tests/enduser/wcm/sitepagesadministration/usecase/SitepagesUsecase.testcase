@@ -203,20 +203,21 @@
 		<property name="custom.properties" value="layout.manage.pages.initial.children=3" />
 		<property name="testray.component.names" value="Site Pages Administration" />
 
-		
-			<execute macro="Page#add">
-				<var name="pageName" value="Page1 Name" />
-			</execute>
 		<execute macro="Page#add">
-				<var name="pageName" value="Page2 Name" />
-			</execute>
+			<var name="pageName" value="Page1 Name" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="Page3 Name" />
-			</execute>
+			<var name="pageName" value="Page2 Name" />
+		</execute>
+
 		<execute macro="Page#add">
-				<var name="pageName" value="Page4 Name" />
-			</execute>
-		
+			<var name="pageName" value="Page3 Name" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="Page4 Name" />
+		</execute>
 
 		<execute macro="SitePageNavigator#gotoPages">
 			<var name="page" value="Public Pages" />
@@ -226,38 +227,40 @@
 			<var name="siteChildPages" value="false" />
 		</execute>
 
-		
-			<execute macro="Page#addChild">
-				<var name="page" value="Public Pages" />
-				<var name="pageName" value="Welcome" />
-				<var name="siteChildPageName" value="Child Page1 Name" />
-				<var name="siteScopeSelected" value="true" />
-			</execute>
 		<execute macro="Page#addChild">
-				<var name="page" value="Public Pages" />
-				<var name="pageName" value="Welcome" />
-				<var name="siteChildPageName" value="Child Page2 Name" />
-				<var name="siteScopeSelected" value="true" />
-			</execute>
+			<var name="page" value="Public Pages" />
+			<var name="pageName" value="Welcome" />
+			<var name="siteChildPageName" value="Child Page1 Name" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
 		<execute macro="Page#addChild">
-				<var name="page" value="Public Pages" />
-				<var name="pageName" value="Welcome" />
-				<var name="siteChildPageName" value="Child Page3 Name" />
-				<var name="siteScopeSelected" value="true" />
-			</execute>
+			<var name="page" value="Public Pages" />
+			<var name="pageName" value="Welcome" />
+			<var name="siteChildPageName" value="Child Page2 Name" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
 		<execute macro="Page#addChild">
-				<var name="page" value="Public Pages" />
-				<var name="pageName" value="Welcome" />
-				<var name="siteChildPageName" value="Child Page4 Name" />
-				<var name="siteScopeSelected" value="true" />
-			</execute>
+			<var name="page" value="Public Pages" />
+			<var name="pageName" value="Welcome" />
+			<var name="siteChildPageName" value="Child Page3 Name" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
 		<execute macro="Page#addChild">
-				<var name="page" value="Public Pages" />
-				<var name="pageName" value="Welcome" />
-				<var name="siteChildPageName" value=" Child Page5 Name" />
-				<var name="siteScopeSelected" value="true" />
-			</execute>
-		
+			<var name="page" value="Public Pages" />
+			<var name="pageName" value="Welcome" />
+			<var name="siteChildPageName" value="Child Page4 Name" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
+
+		<execute macro="Page#addChild">
+			<var name="page" value="Public Pages" />
+			<var name="pageName" value="Welcome" />
+			<var name="siteChildPageName" value=" Child Page5 Name" />
+			<var name="siteScopeSelected" value="true" />
+		</execute>
 
 		<execute macro="SitePageNavigator#gotoPages">
 			<var name="page" value="Public Pages" />
