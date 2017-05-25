@@ -99,7 +99,7 @@
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Blogs#addEntry">
 				<var name="entryContent" value="Blogs Entry1 Content" />
 				<var name="entryTitle" value="Blogs Entry1 Title" />
@@ -112,7 +112,7 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Notifications#viewNoNotifications">
 			<var name="activePanel" value="Profile" />
@@ -161,7 +161,7 @@
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount">
+		
 			<execute macro="Blogs#addEntry">
 				<var name="entryContent" value="Blogs Entry1 Content" />
 				<var name="entryTitle" value="Blogs Entry1 Title" />
@@ -174,7 +174,7 @@
 				<var name="entryContent" value="Blogs Entry3 Content" />
 				<var name="entryTitle" value="Blogs Entry3 Title" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Notifications#viewNoNotifications">
 			<var name="activePanel" value="Profile" />

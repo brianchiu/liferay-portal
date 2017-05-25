@@ -820,7 +820,7 @@
 			<var name="fieldValue" value="Select" />
 		</execute>
 
-		<for list="1,2,3" param="number">
+		
 			<execute macro="FormFields#editOptionsRow">
 				<var name="optionName" value="Select1" />
 				<var name="optionValue" value="Select 1" />
@@ -851,7 +851,7 @@
 				<var name="fieldName" value="Select3" />
 				<var name="rowNumber" value="3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="FormFields#deleteOptionsRow">
 			<var name="rowNumber" value="3" />
@@ -1304,7 +1304,7 @@
 			<var name="fieldName" value="exposeGlobal" />
 		</execute>
 
-		<for list="applyVersioning,exposeGlobal" param="fieldName">
+		
 			<execute macro="FormFields#viewCheckboxChecked">
 				<var name="fieldName" value="applyVersioning" />
 			</execute>
@@ -1319,7 +1319,7 @@
 			<execute macro="FormFields#disableCheckbox">
 				<var name="fieldName" value="exposeGlobal" />
 			</execute>
-		</for>
+		
 
 		<execute macro="SystemSettings#saveConfiguration" />
 
@@ -1327,14 +1327,14 @@
 			<var name="configurationName" value="JavaScript Loader" />
 		</execute>
 
-		<for list="applyVersioning,exposeGlobal" param="fieldName">
+		
 			<execute macro="FormFields#viewCheckboxNotChecked">
 				<var name="fieldName" value="applyVersioning" />
 			</execute>
 		<execute macro="FormFields#viewCheckboxNotChecked">
 				<var name="fieldName" value="exposeGlobal" />
 			</execute>
-		</for>
+		
 
 		<execute macro="SystemSettings#exitEditConfiguration" />
 
@@ -1694,7 +1694,7 @@
 			<var name="fieldType" value="Multiple Selection" />
 		</execute>
 
-		<for list="1,2,3,4" param="number">
+		
 			<execute macro="FormFields#editOptionsRow">
 				<var name="optionName" value="Checkbox1" />
 				<var name="optionValue" value="Checkbox 1" />
@@ -1735,7 +1735,7 @@
 				<var name="fieldName" value="Checkbox4" />
 				<var name="rowNumber" value="4" />
 			</execute>
-		</for>
+		
 
 		<execute macro="FormFields#moveOptionsRow">
 			<var name="rowNumberEnd" value="1" />
@@ -1841,7 +1841,7 @@
 			<var name="pageName" value="Form Page" />
 		</execute>
 
-		<for list="testEntry1,exampleText,sampleAnswer" param="fieldValue">
+		
 			<execute macro="FormFields#editText">
 				<var name="fieldName" value="TextField" />
 				<var name="fieldValue" value="testEntry1" />
@@ -1862,7 +1862,7 @@
 			</execute>
 
 			<execute macro="FormPortlet#submit" />
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -2016,7 +2016,7 @@
 			<var name="pageName" value="Form Page" />
 		</execute>
 
-		<for list="one,two,three,four,five,six" param="fieldName">
+		
 			<execute macro="FormFields#editText">
 				<var name="fieldName" value="one" />
 				<var name="fieldValue" value="Field one" />
@@ -2041,7 +2041,7 @@
 				<var name="fieldName" value="six" />
 				<var name="fieldValue" value="Field six" />
 			</execute>
-		</for>
+		
 
 		<execute macro="FormPortlet#submit" />
 
@@ -2053,7 +2053,7 @@
 
 		<execute macro="FormsAdminNavigator#gotoViewEntries" />
 
-		<for list="one,two,three,four,five" param="fieldLabel">
+		
 			<execute macro="FormsAdmin#viewFormTableEntry">
 				<var name="fieldLabel" value="one" />
 				<var name="fieldValue" value="Field one" />
@@ -2074,7 +2074,7 @@
 				<var name="fieldLabel" value="five" />
 				<var name="fieldValue" value="Field five" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SubmitFormAndViewEmailNotification" priority="4">
@@ -2235,7 +2235,7 @@
 
 		<execute macro="PortletEntry#save" />
 
-		<for list="private,public" param="formAccessLevel">
+		
 			<if>
 				<equals arg1="${formAccessLevel}" arg2="private" />
 				<then>
@@ -2318,7 +2318,7 @@
 				<var name="fieldName" value="TextField" />
 				<var name="fieldValue" value="Text Field Value" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SubmitFormWithAllFieldTypesAfterEditingFields" priority="5">
@@ -3156,7 +3156,7 @@
 			<var name="fieldValue" value="Grid Field Survey" />
 		</execute>
 
-		<for list="1,2,3" param="optionNumber">
+		
 			<execute macro="FormFields#editGridOptions">
 				<var name="gridField" value="row" />
 				<var name="optionValue" value="Option 1" />
@@ -3172,9 +3172,9 @@
 				<var name="optionValue" value="Option 3" />
 				<var name="rowNumber" value="3" />
 			</execute>
-		</for>
+		
 
-		<for list="1,2,3" param="optionNumber">
+		
 			<execute macro="FormFields#editGridOptions">
 				<var name="gridField" value="column" />
 				<var name="optionValue" value="Category 1" />
@@ -3190,7 +3190,7 @@
 				<var name="optionValue" value="Category 3" />
 				<var name="rowNumber" value="3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Form#closeSidebar" />
 
@@ -3215,7 +3215,7 @@
 			<var name="pageName" value="Form Page" />
 		</execute>
 
-		<for list="1,2,3" param="optionNumber">
+		
 			<execute macro="FormFields#selectGridRadioOption">
 				<var name="categoryColumnName" value="Category1" />
 				<var name="optionRowName" value="Option1" />
@@ -3228,7 +3228,7 @@
 				<var name="categoryColumnName" value="Category3" />
 				<var name="optionRowName" value="Option3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="FormPortlet#submit" />
 
@@ -3240,7 +3240,7 @@
 
 		<execute macro="FormsAdminNavigator#gotoViewEntries" />
 
-		<for list="1,2,3" param="optionNumber">
+		
 			<execute macro="FormsAdmin#viewFormGridFieldTableEntry">
 				<var name="categoryColumnLabel" value="Category 1" />
 				<var name="fieldLabel" value="Grid Field Survey" />
@@ -3256,7 +3256,7 @@
 				<var name="fieldLabel" value="Grid Field Survey" />
 				<var name="optionRowLabel" value="Option 3" />
 			</execute>
-		</for>
+		
 	</command>
 
 	<command name="SubmitFormWithMultipleFieldsAndViewEntriesViaDescriptiveDisplay" priority="4">
