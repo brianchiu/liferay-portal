@@ -2998,15 +2998,9 @@
 
 		<var name="key_fieldName" value="Device" />
 
-		<if>
-			<equals arg1="${fieldName}" arg2="PermissionChecker" />
-			<then>
-				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
-			</then>
-			<else>
-				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
-			</else>
-		</if>
+		<execute macro="DDLTemplate#editTemplateScript">
+			<var name="fieldName" value="Device" />
+		</execute>
 
 		<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Device" />
 
@@ -3017,15 +3011,9 @@
 		<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
 		<var name="key_fieldName" value="Company" />
 
-		<if>
-			<equals arg1="${fieldName}" arg2="PermissionChecker" />
-			<then>
-				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
-			</then>
-			<else>
-				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
-			</else>
-		</if>
+		<execute macro="DDLTemplate#editTemplateScript">
+			<var name="fieldName" value="Company" />
+		</execute>
 
 		<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Company" />
 
@@ -3034,17 +3022,12 @@
 		<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Company" />
 
 		<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
+
 		<var name="key_fieldName" value="PermissionChecker" />
 
-		<if>
-			<equals arg1="${fieldName}" arg2="PermissionChecker" />
-			<then>
-				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
-			</then>
-			<else>
-				<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
-			</else>
-		</if>
+		<execute macro="DDLTemplate#editTemplateScript">
+			<var name="fieldName" value="PermissionChecker" />
+		</execute>
 
 		<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="PermissionChecker" />
 
