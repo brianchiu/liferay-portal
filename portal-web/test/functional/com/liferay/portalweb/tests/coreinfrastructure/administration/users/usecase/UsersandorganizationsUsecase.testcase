@@ -490,7 +490,7 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		<for list="usersn1,usersn2,usersn3,usersn4,usersn5" param="userScreenName">
+		
 			<var name="key_userScreenName" value="usersn1" />
 
 			<execute function="AssertTextEquals" locator1="UsersAndOrganizations#USER_TABLE_SCREEN_NAME" value1="usersn1" />
@@ -506,7 +506,7 @@
 		<var name="key_userScreenName" value="usersn5" />
 
 			<execute function="AssertTextEquals" locator1="UsersAndOrganizations#USER_TABLE_SCREEN_NAME" value1="usersn5" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
@@ -560,7 +560,7 @@
 
 		<execute function="Click" locator1="UsersAndOrganizations#ORGANIZATION_TABLE_NAME" />
 
-		<for list="usersn1,usersn3,usersn5" param="userScreenName">
+		
 			<var name="key_userScreenName" value="usersn1" />
 
 			<execute function="AssertTextEquals" locator1="UsersAndOrganizations#USER_TABLE_SCREEN_NAME" value1="usersn1" />
@@ -570,16 +570,16 @@
 		<var name="key_userScreenName" value="usersn5" />
 
 			<execute function="AssertTextEquals" locator1="UsersAndOrganizations#USER_TABLE_SCREEN_NAME" value1="usersn5" />
-		</for>
+		
 
-		<for list="usersn2,usersn4" param="userScreenName">
+		
 			<var name="key_userScreenName" value="usersn2" />
 
 			<execute function="AssertTextNotPresent" locator1="UsersAndOrganizations#USER_TABLE_SCREEN_NAME" value1="usersn2" />
 		<var name="key_userScreenName" value="usersn4" />
 
 			<execute function="AssertTextNotPresent" locator1="UsersAndOrganizations#USER_TABLE_SCREEN_NAME" value1="usersn4" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelSites">
 			<var name="portlet" value="Sites" />
@@ -644,14 +644,14 @@
 			<var name="pageNameList" value="Home,Wiki" />
 		</execute>
 
-		<for list="Message Boards,User Statistics" param="portletTitleName">
+		
 			<var name="key_portletTitleName" value="Message Boards" />
 
 			<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="Message Boards" />
 		<var name="key_portletTitleName" value="User Statistics" />
 
 			<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="User Statistics" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
@@ -840,7 +840,7 @@
 	</command>
 
 	<command name="OrganizationDropDownItems" priority="3">
-		<for list="Site Name A,Site Name B,Site Name C,Site Name D,Site Name E,Site Name F,Site Name G,Site Name H" param="siteName">
+		
 			<execute macro="ProductMenu#gotoControlPanelSites">
 				<var name="portlet" value="Sites" />
 			</execute>
@@ -897,13 +897,13 @@
 			<execute macro="Site#addCommunityCP">
 				<var name="siteName" value="Site Name H" />
 			</execute>
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelSites">
 			<var name="portlet" value="Sites" />
 		</execute>
 
-		<for list="Site Name A,Site Name B,Site Name C,Site Name D,Site Name E,Site Name F,Site Name G,Site Name H" param="siteName">
+		
 			<var name="key_siteName" value="Site Name A" />
 
 			<execute function="AssertTextEquals#assertPartialText" locator1="Sites#SITE_TABLE_NAME" value1="Site Name A" />
@@ -928,7 +928,7 @@
 		<var name="key_siteName" value="Site Name H" />
 
 			<execute function="AssertTextEquals#assertPartialText" locator1="Sites#SITE_TABLE_NAME" value1="Site Name H" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />

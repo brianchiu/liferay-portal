@@ -98,7 +98,7 @@
 	</command>
 
 	<command name="ViewDefaultDurationsViaScheduler" priority="3">
-		<for list="15,30,60,120" param="minutes">
+		
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Calendar Page" />
 			</execute>
@@ -219,7 +219,7 @@
 			</execute>
 
 			<execute macro="CalendarEvent#tearDown" />
-		</for>
+		
 	</command>
 
 	<command name="ViewDisplayedSiteCalendarEventsAsGuest" priority="3">

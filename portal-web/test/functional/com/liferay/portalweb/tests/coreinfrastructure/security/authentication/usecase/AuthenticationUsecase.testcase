@@ -44,7 +44,7 @@
 			<var name="portlet" value="Instance Settings" />
 		</execute>
 
-		<for list="ENABLED,IMPORT_ENABLED,IMPORT_ON_STARTUP_ENABLED,USE_LDAP_PASSWORD_POLICY" param="enableCheckboxKey">
+		
 			<execute macro="PortalSettingsNavigator#gotoLDAP" />
 
 			<execute macro="PortalSettings#enableLDAPSetting">
@@ -89,7 +89,7 @@
 			<execute macro="PortalSettings#viewEnabledLDAPSetting">
 				<var name="enableCheckboxKey" value="USE_LDAP_PASSWORD_POLICY" />
 			</execute>
-		</for>
+		
 
 		<execute macro="PortalSettings#addLDAPServer">
 			<var name="LDAPServerName" value="ApacheDS Server" />

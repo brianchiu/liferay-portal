@@ -135,7 +135,7 @@
 	<command name="DeleteMBCategories" priority="4">
 		<execute macro="Navigator#openURL" />
 
-		<for list="MB Category1 Name,MB Category2 Name,MB Category3 Name" param="categoryName">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Message Boards" />
 			</execute>
@@ -157,7 +157,7 @@
 			<execute macro="MessageboardsCategory#addCP">
 				<var name="categoryName" value="MB Category3 Name" />
 			</execute>
-		</for>
+		
 
 		<execute macro="MessageboardsCategory#tearDownCP">
 			<var name="assetType" value="3 items" />
