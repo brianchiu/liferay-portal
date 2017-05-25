@@ -386,32 +386,31 @@
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		
-			<execute macro="DMDocument#editCmdPG">
-				<var name="dmDocumentTagName" value="tag1" />
-				<var name="dmDocumentTitle" value="Document_1.doc" />
-			</execute>
-
-			<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
-
-			<execute function="Pause" locator1="10000" />
-
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Documents and Media Page" />
-			</execute>
 		<execute macro="DMDocument#editCmdPG">
-				<var name="dmDocumentTagName" value="tag2" />
-				<var name="dmDocumentTitle" value="Document_1.doc" />
-			</execute>
+			<var name="dmDocumentTagName" value="tag1" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
 
-			<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
+		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 
-			<execute function="Pause" locator1="10000" />
+		<execute function="Pause" locator1="10000" />
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Documents and Media Page" />
-			</execute>
-		
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
+
+		<execute macro="DMDocument#editCmdPG">
+			<var name="dmDocumentTagName" value="tag2" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
+
+		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
+
+		<execute function="Pause" locator1="10000" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
 
 		<execute macro="DMDocument#editSavePG">
 			<var name="dmDocumentTitle" value="Document_1.doc" />
@@ -842,39 +841,37 @@
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		
-			<execute macro="DMDocument#addPG">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_1.doc" />
-				<var name="dmDocumentTitle" value="Document_1.doc" />
-			</execute>
 		<execute macro="DMDocument#addPG">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_2.doc" />
-				<var name="dmDocumentTitle" value="Document_2.doc" />
-			</execute>
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_1.doc" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
+
 		<execute macro="DMDocument#addPG">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_3.doc" />
-				<var name="dmDocumentTitle" value="Document_3.doc" />
-			</execute>
-		
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_2.doc" />
+			<var name="dmDocumentTitle" value="Document_2.doc" />
+		</execute>
+
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_3.doc" />
+			<var name="dmDocumentTitle" value="Document_3.doc" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		
-			<var name="key_dmDocumentTitle" value="Document_1.doc" />
+		<var name="key_dmDocumentTitle" value="Document_1.doc" />
 
-			<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
+		<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
 		<var name="key_dmDocumentTitle" value="Document_2.doc" />
 
-			<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
+		<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
 		<var name="key_dmDocumentTitle" value="Document_3.doc" />
 
-			<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
-		
+		<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
 
 		<execute function="Click" locator1="Icon#MOVE_TO_RECYCLE_BIN" />
 
@@ -1320,14 +1317,13 @@
 			<var name="portlet" value="Tags" />
 		</execute>
 
-		
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="tag1" />
-			</execute>
 		<execute macro="Tag#addCP">
-				<var name="tagName" value="tag2" />
-			</execute>
-		
+			<var name="tagName" value="tag1" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag2" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />
@@ -1372,14 +1368,12 @@
 
 		<execute function="AssertTextEquals" locator1="AssetCategorization#CATEGORY" value1="Category Name" />
 
-		
-			<var name="key_tagName" value="tag1" />
+		<var name="key_tagName" value="tag1" />
 
-			<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag1" />
+		<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag1" />
 		<var name="key_tagName" value="tag2" />
 
-			<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag2" />
-		
+		<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag2" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />

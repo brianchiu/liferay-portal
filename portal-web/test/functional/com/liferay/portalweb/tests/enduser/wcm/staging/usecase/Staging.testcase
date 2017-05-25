@@ -927,40 +927,41 @@
 
 		<execute macro="DMPortlet#setDescriptiveView" />
 
-		
-			<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Staging Test Page" />
-				<var name="siteName" value="Site Name" />
-			</execute>
-
-			<execute macro="DMDocument#viewPG">
-				<var name="dmDocumentTitle" value="Document_1.jpeg" />
-			</execute>
 		<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Staging Test Page" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+			<var name="pageName" value="Staging Test Page" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="DMDocument#viewPG">
-				<var name="dmDocumentTitle" value="Document_2.docx" />
-			</execute>
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentTitle" value="Document_1.jpeg" />
+		</execute>
+
 		<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Staging Test Page" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+			<var name="pageName" value="Staging Test Page" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="DMDocument#viewPG">
-				<var name="dmDocumentTitle" value="Document_3.mp3" />
-			</execute>
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentTitle" value="Document_2.docx" />
+		</execute>
+
 		<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Staging Test Page" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+			<var name="pageName" value="Staging Test Page" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="DMDocument#viewPG">
-				<var name="dmDocumentTitle" value="Document_4.txt" />
-			</execute>
-		
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentTitle" value="Document_3.mp3" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Staging Test Page" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentTitle" value="Document_4.txt" />
+		</execute>
 
 		<execute macro="Navigator#openSiteURL">
 			<var name="siteName" value="Site Name" />
@@ -1296,18 +1297,17 @@
 			<var name="structureName" value="Structure Name" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
 		<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="Text Box" />
-				<var name="fieldFieldLabel" value="Text Box" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Text Box" />
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="Structure Name" />
