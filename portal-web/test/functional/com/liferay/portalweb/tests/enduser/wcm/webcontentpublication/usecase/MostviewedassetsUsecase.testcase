@@ -89,26 +89,35 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<var name="count" value="0" />
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-		<while>
-			<not>
-				<equals arg1="${count}" arg2="3" />
-			</not>
-			<then>
-				<execute macro="Navigator#gotoSitePage">
-					<var name="pageName" value="Test Page 2" />
-					<var name="siteName" value="Site Name" />
-				</execute>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 1" />
+		</execute>
 
-				<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
-					<var name="assetContent" value="Web Content Content" />
-					<var name="assetTitle" value="Web Content Title 1" />
-				</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-				<var method="MathUtil#sum('${count}', '1')" name="count" />
-			</then>
-		</while>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 1" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 1" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page 1" />
@@ -125,26 +134,55 @@
 			<var name="viewCount" value="0 View" />
 		</execute>
 
-		<var name="count" value="0" />
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-		<while>
-			<not>
-				<equals arg1="${count}" arg2="5" />
-			</not>
-			<then>
-				<execute macro="Navigator#gotoSitePage">
-					<var name="pageName" value="Test Page 2" />
-					<var name="siteName" value="Site Name" />
-				</execute>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 2" />
+		</execute>
 
-				<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
-					<var name="assetContent" value="Web Content Content" />
-					<var name="assetTitle" value="Web Content Title 2" />
-				</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-				<var method="MathUtil#sum('${count}', '1')" name="count" />
-			</then>
-		</while>
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 2" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 2" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 2" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#viewAssetDetailsPG">
+			<var name="assetContent" value="Web Content Content" />
+			<var name="assetTitle" value="Web Content Title 2" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page 1" />
