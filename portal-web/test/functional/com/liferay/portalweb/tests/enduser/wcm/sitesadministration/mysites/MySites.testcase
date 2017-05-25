@@ -39,7 +39,168 @@
 			</execute>
 
 			<execute macro="Site#addBlankCP">
-				<var name="siteName" value="Site Name ${number}" />
+				<var name="siteName" value="Site Name 01" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 02" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 03" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 04" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 05" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 06" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 07" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 08" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 09" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 10" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 11" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 12" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 13" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 14" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 15" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 16" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 17" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 18" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 19" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 20" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 21" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 22" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 23" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addBlankCP">
+				<var name="siteName" value="Site Name 24" />
 			</execute>
 		</for>
 
@@ -104,7 +265,7 @@
 
 		<execute macro="User#logoutPG" />
 
-		<execute macro="User#loginPG" >
+		<execute macro="User#loginPG">
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="userea@liferay.com" />
 			<var name="userScreenName" value="usersn" />
@@ -160,7 +321,7 @@
 
 		<execute macro="User#logoutPG" />
 
-		<execute macro="User#loginPG" >
+		<execute macro="User#loginPG">
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="userea@liferay.com" />
 			<var name="userScreenName" value="usersn" />
@@ -216,7 +377,7 @@
 
 		<execute macro="User#logoutPG" />
 
-		<execute macro="User#loginPG" >
+		<execute macro="User#loginPG">
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="userea@liferay.com" />
 			<var name="userScreenName" value="usersn" />
@@ -264,7 +425,7 @@
 
 		<execute macro="User#logoutPG" />
 
-		<execute macro="User#loginPG" >
+		<execute macro="User#loginPG">
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="userea@liferay.com" />
 			<var name="userScreenName" value="usersn" />
@@ -320,7 +481,7 @@
 
 		<execute macro="User#logoutPG" />
 
-		<execute macro="User#loginPG" >
+		<execute macro="User#loginPG">
 			<var name="password" value="test" />
 			<var name="userEmailAddress" value="userea@liferay.com" />
 			<var name="userScreenName" value="usersn" />
@@ -770,9 +931,15 @@
 			<var name="portlet" value="Site Settings" />
 		</execute>
 
-		<for list="apple,banana,mango" param="tagName" >
+		<for list="apple,banana,mango" param="tagName">
 			<execute macro="Tag#addViaSiteCP">
-				<var name="tagName" value="${tagName}" />
+				<var name="tagName" value="apple" />
+			</execute>
+		<execute macro="Tag#addViaSiteCP">
+				<var name="tagName" value="banana" />
+			</execute>
+		<execute macro="Tag#addViaSiteCP">
+				<var name="tagName" value="mango" />
 			</execute>
 		</for>
 
@@ -794,9 +961,15 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="apple,banana,mango" param="tagName" >
+		<for list="apple,banana,mango" param="tagName">
 			<execute macro="MySites#viewTags">
-				<var name="tagName" value="${tagName}" />
+				<var name="tagName" value="apple" />
+			</execute>
+		<execute macro="MySites#viewTags">
+				<var name="tagName" value="banana" />
+			</execute>
+		<execute macro="MySites#viewTags">
+				<var name="tagName" value="mango" />
 			</execute>
 		</for>
 	</command>
