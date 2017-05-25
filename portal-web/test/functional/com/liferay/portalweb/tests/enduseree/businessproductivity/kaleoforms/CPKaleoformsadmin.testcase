@@ -1321,7 +1321,7 @@
 	<command name="EditProcessFieldSetPaginationAndViewSelectedForm" priority="2">
 		<description message="This is a use case for LPS-49037." />
 
-		<for list="Field1,Field2,Field3,Field4,Field5,Field6" param="kfFieldSetName">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Kaleo Forms Admin" />
 			</execute>
@@ -1418,7 +1418,7 @@
 			</execute>
 
 			<execute macro="KaleoFormsAdmin#saveFieldSet" />
-		</for>
+		
 
 		<execute macro="Navigator#openURL" />
 
@@ -1732,7 +1732,7 @@
 	<command name="EditProcessNewFieldSet" priority="4">
 		<execute macro="Navigator#openURL" />
 
-		<for list="Field1,Field2,Field3,Field4,Field5,Field6" param="kfFieldSetName">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Kaleo Forms Admin" />
 			</execute>
@@ -1829,7 +1829,7 @@
 			</execute>
 
 			<execute macro="KaleoFormsAdmin#saveFieldSet" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Kaleo Forms Admin" />
@@ -3635,7 +3635,7 @@
 
 		<execute macro="Navigator#openURL" />
 
-		<for list="Field1,Field2,Field3,Field4,Field5,Field6" param="kfFieldSetName">
+		
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Kaleo Forms Admin" />
 			</execute>
@@ -3732,7 +3732,7 @@
 			</execute>
 
 			<execute macro="KaleoFormsAdmin#saveFieldSet" />
-		</for>
+		
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Kaleo Forms Admin" />
