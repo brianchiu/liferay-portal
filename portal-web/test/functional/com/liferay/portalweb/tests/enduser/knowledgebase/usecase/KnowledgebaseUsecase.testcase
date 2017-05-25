@@ -693,22 +693,33 @@
 			<var name="portlet" value="Knowledge Base" />
 		</execute>
 
-		<var name="entries" value="2010,2017" />
-
-		<for list="${entries}" param="kbEntry">
+		<for list="2010,2017" param="kbEntry">
 			<execute macro="Navigator#openURL" />
 
 			<execute macro="ProductMenu#gotoSitesContent">
 				<var name="portlet" value="Knowledge Base" />
 			</execute>
 
-			<var name="key_rowEntry" value="${kbEntry}" />
+			<var name="key_rowEntry" value="2010" />
 
 			<execute function="Click" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
 
 			<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
 
-			<execute function="AssertTextEquals" locator1="TextInput#CUSTOM_FIELD" value1="01/01/${kbEntry}" />
+			<execute function="AssertTextEquals" locator1="TextInput#CUSTOM_FIELD" value1="01/01/2010" />
+		<execute macro="Navigator#openURL" />
+
+			<execute macro="ProductMenu#gotoSitesContent">
+				<var name="portlet" value="Knowledge Base" />
+			</execute>
+
+			<var name="key_rowEntry" value="2017" />
+
+			<execute function="Click" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
+
+			<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
+
+			<execute function="AssertTextEquals" locator1="TextInput#CUSTOM_FIELD" value1="01/01/2017" />
 		</for>
 	</command>
 
