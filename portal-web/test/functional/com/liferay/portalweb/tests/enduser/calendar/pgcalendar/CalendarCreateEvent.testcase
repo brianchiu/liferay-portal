@@ -1236,7 +1236,7 @@
 			<var name="userScreenName" value="usersn3" />
 		</execute>
 
-		<for list="usersn1,usersn2,usersn3" param="userScreenName">
+		
 			<execute macro="ProductMenu#gotoControlPanelUsers">
 				<var name="portlet" value="Users and Organizations" />
 			</execute>
@@ -1261,7 +1261,7 @@
 				<var name="userEmailAddress" value="usersn3@liferay.com" />
 				<var name="userScreenName" value="usersn3" />
 			</execute>
-		</for>
+		
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Calendar Page" />

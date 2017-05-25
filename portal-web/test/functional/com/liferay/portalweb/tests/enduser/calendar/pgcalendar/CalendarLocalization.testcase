@@ -98,7 +98,7 @@
 	<command name="ViewShowMoreLocalization" priority="3">
 		<description message="This is a use case for LPS-54786." />
 
-		<for list="1,2,3,4,5,6" param="eventNumber">
+		
 			<execute macro="CalendarNavigator#gotoAddEvent" />
 
 			<execute macro="CalendarEvent#add">
@@ -141,7 +141,7 @@
 				<var name="eventType" value="All Day" />
 				<var name="pageName" value="Calendar Page" />
 			</execute>
-		</for>
+		
 
 		<execute macro="MyAccount#configureDisplaySettingsLanguage">
 			<var name="languageName" value="español (España)" />
