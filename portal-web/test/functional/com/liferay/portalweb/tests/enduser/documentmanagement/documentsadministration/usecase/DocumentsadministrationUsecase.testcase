@@ -476,12 +476,7 @@
 
 		<execute function="AssertClick#assertTextClick" locator1="Button#EDIT" value1="Edit" />
 
-		<while>
-			<condition function="IsElementPresent" locator1="AssetCategorization#TAGS_REMOVE_ICON_GENERIC" />
-			<then>
-				<execute function="Click" locator1="AssetCategorization#TAGS_REMOVE_ICON_GENERIC" />
-			</then>
-		</while>
+		<execute macro="AssetCategorization#removeAllTags" />
 
 		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 
