@@ -4066,13 +4066,11 @@
 			<var name="fieldName" value="Text" />
 		</execute>
 
-		
-			<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var name="fieldName" value="${fieldName}" />
-			</execute>
-		
+		<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var name="fieldName" value="${fieldName}" />
+		</execute>
 
 		<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
 			<var name="field" value="Text" />
