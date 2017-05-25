@@ -298,13 +298,76 @@
 	<command name="MySitesDropDownDoesNotShowUserOrganizationOnTop" priority="3">
 		<property name="testray.component.names" value="Site Administration,Users and Organization" />
 
-		<for list="Site1 Name,Site2 Name,Site3 Name,Site4 Name,Site5 Name,Site6 Name,Site7 Name,Site8 Name,Site9 Name,Site10 Name" param="siteNameListsCount" >
+		<for list="Site1 Name,Site2 Name,Site3 Name,Site4 Name,Site5 Name,Site6 Name,Site7 Name,Site8 Name,Site9 Name,Site10 Name" param="siteNameListsCount">
 			<execute macro="ProductMenu#gotoControlPanelSites">
 				<var name="portlet" value="Sites" />
 			</execute>
 
 			<execute macro="Site#addCommunityCP">
-				<var name="siteName" value="${siteNameListsCount}" />
+				<var name="siteName" value="Site1 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site2 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site3 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site4 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site5 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site6 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site7 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site8 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site9 Name" />
+			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+				<var name="portlet" value="Sites" />
+			</execute>
+
+			<execute macro="Site#addCommunityCP">
+				<var name="siteName" value="Site10 Name" />
 			</execute>
 		</for>
 
@@ -1015,9 +1078,15 @@
 			<var name="siteName" value="World Cup - Russia 2018" />
 		</execute>
 
-		<for list="World Cup,Russia,2018" param="tagName" >
+		<for list="World Cup,Russia,2018" param="tagName">
 			<execute macro="Tag#addViaSiteCP">
-				<var name="tagName" value="${tagName}" />
+				<var name="tagName" value="World Cup" />
+			</execute>
+		<execute macro="Tag#addViaSiteCP">
+				<var name="tagName" value="Russia" />
+			</execute>
+		<execute macro="Tag#addViaSiteCP">
+				<var name="tagName" value="2018" />
 			</execute>
 		</for>
 
@@ -1032,25 +1101,46 @@
 			<var name="siteFriendlyURLEdit" value="/russia2018" />
 		</execute>
 
-		<for list="Home,Arenas" param="publicPageName" >
+		<for list="Home,Arenas" param="publicPageName">
 			<execute macro="Page#add">
-				<var name="pageName" value="${publicPageName}" />
+				<var name="pageName" value="Home" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Arenas" />
 			</execute>
 		</for>
 
-		<for list="Arena Baltika,Zenit Arena,Kazan Arena" param="childPageName" >
+		<for list="Arena Baltika,Zenit Arena,Kazan Arena" param="childPageName">
 			<execute macro="Page#addChild">
 				<var name="childSitepageName" value="true" />
 				<var name="page" value="Public Pages" />
 				<var name="pageName" value="Arenas" />
-				<var name="siteChildPageName" value="${childPageName}" />
+				<var name="siteChildPageName" value="Arena Baltika" />
+				<var name="siteScopeSelected" value="true" />
+			</execute>
+		<execute macro="Page#addChild">
+				<var name="childSitepageName" value="true" />
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Arenas" />
+				<var name="siteChildPageName" value="Zenit Arena" />
+				<var name="siteScopeSelected" value="true" />
+			</execute>
+		<execute macro="Page#addChild">
+				<var name="childSitepageName" value="true" />
+				<var name="page" value="Public Pages" />
+				<var name="pageName" value="Arenas" />
+				<var name="siteChildPageName" value="Kazan Arena" />
 				<var name="siteScopeSelected" value="true" />
 			</execute>
 		</for>
 
-		<for list="Accomodations,Maps" param="privatePageName" >
+		<for list="Accomodations,Maps" param="privatePageName">
 			<execute macro="Page#add">
-				<var name="pageName" value="${privatePageName}" />
+				<var name="pageName" value="Accomodations" />
+				<var name="sitePagePrivacy" value="Private" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="Maps" />
 				<var name="sitePagePrivacy" value="Private" />
 			</execute>
 		</for>
@@ -1071,9 +1161,21 @@
 
 		<execute macro="Page#viewCustomLogoPG" />
 
-		<for list="Arena Baltika,Zenit Arena,Kazan Arena" param="childPageName" >
+		<for list="Arena Baltika,Zenit Arena,Kazan Arena" param="childPageName">
 			<execute macro="Page#viewChildPageDropdown">
-				<var name="childPageName" value="${childPageName}" />
+				<var name="childPageName" value="Arena Baltika" />
+				<var name="javaScriptPage" value="Welcome to Russia." />
+				<var name="pageName" value="Arenas" />
+				<var name="viewChildPageDropdown" value="PAGE_2" />
+			</execute>
+		<execute macro="Page#viewChildPageDropdown">
+				<var name="childPageName" value="Zenit Arena" />
+				<var name="javaScriptPage" value="Welcome to Russia." />
+				<var name="pageName" value="Arenas" />
+				<var name="viewChildPageDropdown" value="PAGE_2" />
+			</execute>
+		<execute macro="Page#viewChildPageDropdown">
+				<var name="childPageName" value="Kazan Arena" />
 				<var name="javaScriptPage" value="Welcome to Russia." />
 				<var name="pageName" value="Arenas" />
 				<var name="viewChildPageDropdown" value="PAGE_2" />
@@ -1190,14 +1292,34 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Arena Baltika,Zenit Arena,Kazan Arena" param="childPageName" >
+		<for list="Arena Baltika,Zenit Arena,Kazan Arena" param="childPageName">
 			<execute macro="Navigator#gotoSitePage">
 				<var name="pageName" value="Home" />
 				<var name="siteName" value="Site Name" />
 			</execute>
 
 			<execute macro="Page#viewChildPageDropdown">
-				<var name="childPageName" value="${childPageName}" />
+				<var name="childPageName" value="Arena Baltika" />
+				<var name="pageName" value="Arenas" />
+				<var name="viewChildPageDropdown" value="PAGE_2" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Home" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="Page#viewChildPageDropdown">
+				<var name="childPageName" value="Zenit Arena" />
+				<var name="pageName" value="Arenas" />
+				<var name="viewChildPageDropdown" value="PAGE_2" />
+			</execute>
+		<execute macro="Navigator#gotoSitePage">
+				<var name="pageName" value="Home" />
+				<var name="siteName" value="Site Name" />
+			</execute>
+
+			<execute macro="Page#viewChildPageDropdown">
+				<var name="childPageName" value="Kazan Arena" />
 				<var name="pageName" value="Arenas" />
 				<var name="viewChildPageDropdown" value="PAGE_2" />
 			</execute>
@@ -1331,9 +1453,13 @@
 			<var name="pageName" value="Blog Page Template" />
 		</execute>
 
-		<for list="CONTENT_PERMISSIONS_ADD_DISCUSSION_CHECKBOX,CONTENT_PERMISSIONS_VIEW_CHECKBOX" param="permissionsInLineUncheckListsCount" >
+		<for list="CONTENT_PERMISSIONS_ADD_DISCUSSION_CHECKBOX,CONTENT_PERMISSIONS_VIEW_CHECKBOX" param="permissionsInLineUncheckListsCount">
 			<execute macro="Role#removePermissionPG">
-				<var name="permissionDefinitionKey" value="${permissionsInLineUncheckListsCount}" />
+				<var name="permissionDefinitionKey" value="CONTENT_PERMISSIONS_ADD_DISCUSSION_CHECKBOX" />
+				<var name="roleTitle" value="Site Member" />
+			</execute>
+		<execute macro="Role#removePermissionPG">
+				<var name="permissionDefinitionKey" value="CONTENT_PERMISSIONS_VIEW_CHECKBOX" />
 				<var name="roleTitle" value="Site Member" />
 			</execute>
 		</for>
@@ -1347,9 +1473,45 @@
 			<var name="pageName" value="Blog Page Template" />
 		</execute>
 
-		<for list="ACTION_ADD_DISCUSSION,ACTION_ADD_LAYOUT,ACTION_CONFIGURE_PORTLETS,ACTION_CUSTOMIZE,ACTION_DELETE,ACTION_DELETE_DISCUSSION,ACTION_PERMISSIONS,ACTION_UPDATE,ACTION_UPDATE_DISCUSSION,ACTION_VIEW" param="permissionsInLineCheckListsCount" >
+		<for list="ACTION_ADD_DISCUSSION,ACTION_ADD_LAYOUT,ACTION_CONFIGURE_PORTLETS,ACTION_CUSTOMIZE,ACTION_DELETE,ACTION_DELETE_DISCUSSION,ACTION_PERMISSIONS,ACTION_UPDATE,ACTION_UPDATE_DISCUSSION,ACTION_VIEW" param="permissionsInLineCheckListsCount">
 			<execute macro="Team#definePermissionPG">
-				<var name="permissionDefinitionKey" value="${permissionsInLineCheckListsCount}" />
+				<var name="permissionDefinitionKey" value="ACTION_ADD_DISCUSSION" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_ADD_LAYOUT" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_CONFIGURE_PORTLETS" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_CUSTOMIZE" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_DELETE" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_DELETE_DISCUSSION" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_PERMISSIONS" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_UPDATE" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_UPDATE_DISCUSSION" />
+				<var name="teamName" value="Site Team Name" />
+			</execute>
+		<execute macro="Team#definePermissionPG">
+				<var name="permissionDefinitionKey" value="ACTION_VIEW" />
 				<var name="teamName" value="Site Team Name" />
 			</execute>
 		</for>
