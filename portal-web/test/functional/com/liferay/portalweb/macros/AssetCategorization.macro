@@ -77,6 +77,15 @@
 		<execute macro="Portlet#expandTree" />
 	</command>
 
+	<command name="removeAllTags">
+		<while>
+			<condition function="IsElementPresent" locator1="AssetCategorization#TAGS_REMOVE_ICON_GENERIC" />
+			<then>
+				<execute function="Click" locator1="AssetCategorization#TAGS_REMOVE_ICON_GENERIC" />
+			</then>
+		</while>
+	</command>
+
 	<command name="removeTag">
 		<var name="key_tagName" value="${tagName}" />
 
