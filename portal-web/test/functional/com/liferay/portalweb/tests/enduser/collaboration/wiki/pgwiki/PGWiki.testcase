@@ -115,9 +115,33 @@
 			<var name="wikiPageTitle" value="FrontPage" />
 		</execute>
 
-		<for list="Document_1.jpg,Document_2.mp3,Document_3.doc" param="attachmentFileName" >
+		<for list="Document_1.jpg,Document_2.mp3,Document_3.doc" param="attachmentFileName">
 			<execute macro="WikiPage#addAttachmentViaPageEdit">
-				<var name="attachmentFileName" value="${attachmentFileName}" />
+				<var name="attachmentFileName" value="Document_1.jpg" />
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+
+			<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Wiki Test Page" />
+			</execute>
+
+			<execute macro="WikiNavigator#gotoPG">
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+		<execute macro="WikiPage#addAttachmentViaPageEdit">
+				<var name="attachmentFileName" value="Document_2.mp3" />
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+
+			<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Wiki Test Page" />
+			</execute>
+
+			<execute macro="WikiNavigator#gotoPG">
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+		<execute macro="WikiPage#addAttachmentViaPageEdit">
+				<var name="attachmentFileName" value="Document_3.doc" />
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
 
@@ -278,10 +302,20 @@
 			<var name="wikiPageTitle" value="FrontPage" />
 		</execute>
 
-		<for list="1,2,3" param="childPageCount" >
+		<for list="1,2,3" param="childPageCount">
 			<execute macro="WikiPage#addChildPagePG">
-				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page${childPageCount} Content" />
-				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page${childPageCount} Title" />
+				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page1 Content" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page1 Title" />
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+		<execute macro="WikiPage#addChildPagePG">
+				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page2 Content" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page2 Title" />
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+		<execute macro="WikiPage#addChildPagePG">
+				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page3 Content" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page3 Title" />
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
 		</for>
@@ -290,18 +324,42 @@
 			<var name="pageName" value="Wiki Test Page" />
 		</execute>
 
-		<for list="1,2,3" param="childPageCount" >
+		<for list="1,2,3" param="childPageCount">
 			<execute macro="WikiNavigator#gotoPG">
 				<var name="wikiPageTitle" value="FrontPage" />
 			</execute>
 
 			<execute macro="WikiNavigator#gotoChildPagePG">
-				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page${childPageCount} Title" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page1 Title" />
 			</execute>
 
 			<execute macro="WikiPage#viewChildPagePG">
-				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page${childPageCount} Content" />
-				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page${childPageCount} Title" />
+				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page1 Content" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page1 Title" />
+			</execute>
+		<execute macro="WikiNavigator#gotoPG">
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+
+			<execute macro="WikiNavigator#gotoChildPagePG">
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page2 Title" />
+			</execute>
+
+			<execute macro="WikiPage#viewChildPagePG">
+				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page2 Content" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page2 Title" />
+			</execute>
+		<execute macro="WikiNavigator#gotoPG">
+				<var name="wikiPageTitle" value="FrontPage" />
+			</execute>
+
+			<execute macro="WikiNavigator#gotoChildPagePG">
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page3 Title" />
+			</execute>
+
+			<execute macro="WikiPage#viewChildPagePG">
+				<var name="wikiChildPageContent" value="Wiki FrontPage Child Page3 Content" />
+				<var name="wikiChildPageTitle" value="Wiki FrontPage Child Page3 Title" />
 			</execute>
 		</for>
 	</command>
@@ -757,30 +815,72 @@
 
 		<execute macro="WikiNavigator#gotoAllPagesPG" />
 
-		<for list="1,2,3" param="entryCount" >
+		<for list="1,2,3" param="entryCount">
 			<execute macro="WikiPage#addPG">
-				<var name="wikiPageContent" value="Wiki Page${entryCount} Content" />
-				<var name="wikiPageTitle" value="Wiki Page${entryCount} Title" />
+				<var name="wikiPageContent" value="Wiki Page1 Content" />
+				<var name="wikiPageTitle" value="Wiki Page1 Title" />
+			</execute>
+
+			<execute function="Refresh" />
+		<execute macro="WikiPage#addPG">
+				<var name="wikiPageContent" value="Wiki Page2 Content" />
+				<var name="wikiPageTitle" value="Wiki Page2 Title" />
+			</execute>
+
+			<execute function="Refresh" />
+		<execute macro="WikiPage#addPG">
+				<var name="wikiPageContent" value="Wiki Page3 Content" />
+				<var name="wikiPageTitle" value="Wiki Page3 Title" />
 			</execute>
 
 			<execute function="Refresh" />
 		</for>
 
-		<for list="1,2,3" param="entryCount" >
+		<for list="1,2,3" param="entryCount">
 			<execute macro="Navigator#gotoPage">
 				<var name="pageName" value="Wiki Test Page" />
 			</execute>
 
 			<execute macro="WikiNavigator#gotoPG">
-				<var name="wikiPageContent" value="Wiki Page${entryCount} Content" />
+				<var name="wikiPageContent" value="Wiki Page1 Content" />
 				<var name="wikiPageRevision" value="1.0" />
-				<var name="wikiPageTitle" value="Wiki Page${entryCount} Title" />
+				<var name="wikiPageTitle" value="Wiki Page1 Title" />
 				<var name="wikiPageUsername" value="Test Test" />
 			</execute>
 
 			<execute macro="WikiPage#viewPG">
-				<var name="wikiPageContent" value="Wiki Page${entryCount} Content" />
-				<var name="wikiPageTitle" value="Wiki Page${entryCount} Title" />
+				<var name="wikiPageContent" value="Wiki Page1 Content" />
+				<var name="wikiPageTitle" value="Wiki Page1 Title" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Wiki Test Page" />
+			</execute>
+
+			<execute macro="WikiNavigator#gotoPG">
+				<var name="wikiPageContent" value="Wiki Page2 Content" />
+				<var name="wikiPageRevision" value="1.0" />
+				<var name="wikiPageTitle" value="Wiki Page2 Title" />
+				<var name="wikiPageUsername" value="Test Test" />
+			</execute>
+
+			<execute macro="WikiPage#viewPG">
+				<var name="wikiPageContent" value="Wiki Page2 Content" />
+				<var name="wikiPageTitle" value="Wiki Page2 Title" />
+			</execute>
+		<execute macro="Navigator#gotoPage">
+				<var name="pageName" value="Wiki Test Page" />
+			</execute>
+
+			<execute macro="WikiNavigator#gotoPG">
+				<var name="wikiPageContent" value="Wiki Page3 Content" />
+				<var name="wikiPageRevision" value="1.0" />
+				<var name="wikiPageTitle" value="Wiki Page3 Title" />
+				<var name="wikiPageUsername" value="Test Test" />
+			</execute>
+
+			<execute macro="WikiPage#viewPG">
+				<var name="wikiPageContent" value="Wiki Page3 Content" />
+				<var name="wikiPageTitle" value="Wiki Page3 Title" />
 			</execute>
 		</for>
 	</command>

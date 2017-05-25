@@ -2057,7 +2057,22 @@
 
 		<for list="Contacts,Events,Inventory,Issues Tracking,Meeting Minutes,To Do" param="ddlDataDefinitionName">
 			<execute macro="DDLDataDefinition#viewName">
-				<var name="ddlDataDefinitionName" value="${ddlDataDefinitionName}" />
+				<var name="ddlDataDefinitionName" value="Contacts" />
+			</execute>
+		<execute macro="DDLDataDefinition#viewName">
+				<var name="ddlDataDefinitionName" value="Events" />
+			</execute>
+		<execute macro="DDLDataDefinition#viewName">
+				<var name="ddlDataDefinitionName" value="Inventory" />
+			</execute>
+		<execute macro="DDLDataDefinition#viewName">
+				<var name="ddlDataDefinitionName" value="Issues Tracking" />
+			</execute>
+		<execute macro="DDLDataDefinition#viewName">
+				<var name="ddlDataDefinitionName" value="Meeting Minutes" />
+			</execute>
+		<execute macro="DDLDataDefinition#viewName">
+				<var name="ddlDataDefinitionName" value="To Do" />
 			</execute>
 		</for>
 	</command>
@@ -2750,7 +2765,40 @@
 
 		<for list="P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12" param="pageName">
 			<execute macro="Page#add">
-				<var name="pageName" value="${pageName}" />
+				<var name="pageName" value="P1" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P2" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P3" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P4" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P5" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P6" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P7" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P8" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P9" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P10" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P11" />
+			</execute>
+		<execute macro="Page#add">
+				<var name="pageName" value="P12" />
 			</execute>
 		</for>
 
@@ -2937,7 +2985,7 @@
 		</execute>
 
 		<for list="Device,Company,PermissionChecker" param="fieldName">
-			<var name="key_fieldName" value="${fieldName}" />
+			<var name="key_fieldName" value="Device" />
 
 			<if>
 				<equals arg1="${fieldName}" arg2="PermissionChecker" />
@@ -2949,11 +2997,49 @@
 				</else>
 			</if>
 
-			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="${fieldName}" />
+			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Device" />
 
 			<execute function="SelectWindow#selectPopUp" locator1="null" />
 
-			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="${fieldName}" />
+			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Device" />
+
+			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
+		<var name="key_fieldName" value="Company" />
+
+			<if>
+				<equals arg1="${fieldName}" arg2="PermissionChecker" />
+				<then>
+					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
+				</then>
+				<else>
+					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
+				</else>
+			</if>
+
+			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="Company" />
+
+			<execute function="SelectWindow#selectPopUp" locator1="null" />
+
+			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="Company" />
+
+			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
+		<var name="key_fieldName" value="PermissionChecker" />
+
+			<if>
+				<equals arg1="${fieldName}" arg2="PermissionChecker" />
+				<then>
+					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_UTIL" />
+				</then>
+				<else>
+					<execute function="MouseOver" locator1="DDMEditTemplate#SCRIPT_VARIABLE" />
+				</else>
+			</if>
+
+			<execute function="AssertClick" locator1="JavaDocs#TOOLTIP_JAVA_CLASS_LINK" value1="PermissionChecker" />
+
+			<execute function="SelectWindow#selectPopUp" locator1="null" />
+
+			<execute function="AssertTextEquals" locator1="JavaDocs#JAVA_CLASS_NAME" value1="PermissionChecker" />
 
 			<execute function="Close#closeAndSelectWindow" locator1="title=New Template for Structure: Contacts - ${siteName}" />
 		</for>
@@ -3313,7 +3399,25 @@
 			<execute macro="DDLNavigator#gotoAddListRecord" />
 
 			<execute macro="DDLRecord#populateFieldText">
-				<var name="ddlRecordFieldData" value="${ddlRecordFieldData}" />
+				<var name="ddlRecordFieldData" value="firstRecord" />
+				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
+				<var name="fieldName" value="TextName" />
+			</execute>
+
+			<execute macro="PortletEntry#publish" />
+		<execute macro="DDLNavigator#gotoAddListRecord" />
+
+			<execute macro="DDLRecord#populateFieldText">
+				<var name="ddlRecordFieldData" value="secondText" />
+				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
+				<var name="fieldName" value="TextName" />
+			</execute>
+
+			<execute macro="PortletEntry#publish" />
+		<execute macro="DDLNavigator#gotoAddListRecord" />
+
+			<execute macro="DDLRecord#populateFieldText">
+				<var name="ddlRecordFieldData" value="thirdTest" />
 				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
 				<var name="fieldName" value="TextName" />
 			</execute>

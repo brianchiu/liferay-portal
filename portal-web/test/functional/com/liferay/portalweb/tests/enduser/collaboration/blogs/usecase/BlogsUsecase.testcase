@@ -244,11 +244,11 @@
 
 		<var name="dmDocumentCounterList" value="1,2" />
 
-		<for list="${dmDocumentCounterList}" param="entryCount" >
+		<for list="${dmDocumentCounterList}" param="entryCount">
 			<execute macro="DMDocument#addCP">
 				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_${entryCount}.jpg" />
-				<var name="dmDocumentTitle" value="Document_${entryCount}.jpg" />
+				<var name="dmDocumentFile" value="Document_${dmDocumentCounterList}.jpg" />
+				<var name="dmDocumentTitle" value="Document_${dmDocumentCounterList}.jpg" />
 			</execute>
 		</for>
 

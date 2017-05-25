@@ -84,33 +84,72 @@
 
 		<for list="Spanish (Spain),Portuguese (Brazil)" param="language">
 			<execute macro="DDLRecord#addTranslation">
-				<var name="localizedLanguage" value="${language}" />
+				<var name="localizedLanguage" value="Spanish (Spain)" />
 			</execute>
 
 			<execute macro="DDLRecord#populateFieldText">
-				<var name="ddlRecordFieldData" value="${language} Parent" />
+				<var name="ddlRecordFieldData" value="Spanish (Spain) Parent" />
 				<var name="fieldName" value="textParent" />
 			</execute>
 
 			<execute macro="DDLRecord#populateFieldText">
-				<var name="ddlRecordFieldData" value="${language} Child" />
+				<var name="ddlRecordFieldData" value="Spanish (Spain) Child" />
+				<var name="fieldName" value="textChild" />
+			</execute>
+		<execute macro="DDLRecord#addTranslation">
+				<var name="localizedLanguage" value="Portuguese (Brazil)" />
+			</execute>
+
+			<execute macro="DDLRecord#populateFieldText">
+				<var name="ddlRecordFieldData" value="Portuguese (Brazil) Parent" />
+				<var name="fieldName" value="textParent" />
+			</execute>
+
+			<execute macro="DDLRecord#populateFieldText">
+				<var name="ddlRecordFieldData" value="Portuguese (Brazil) Child" />
 				<var name="fieldName" value="textChild" />
 			</execute>
 		</for>
 
 		<for list="English (United States),Spanish (Spain),Portuguese (Brazil)" param="language">
 			<execute macro="DDLRecord#selectTranslation">
-				<var name="localizedLanguage" value="${language}" />
+				<var name="localizedLanguage" value="English (United States)" />
 			</execute>
 
 			<execute macro="FormFields#viewTextValue">
 				<var name="fieldName" value="textParent" />
-				<var name="fieldValue" value="${language} Parent" />
+				<var name="fieldValue" value="English (United States) Parent" />
 			</execute>
 
 			<execute macro="FormFields#viewTextValue">
 				<var name="fieldName" value="textChild" />
-				<var name="fieldValue" value="${language} Child" />
+				<var name="fieldValue" value="English (United States) Child" />
+			</execute>
+		<execute macro="DDLRecord#selectTranslation">
+				<var name="localizedLanguage" value="Spanish (Spain)" />
+			</execute>
+
+			<execute macro="FormFields#viewTextValue">
+				<var name="fieldName" value="textParent" />
+				<var name="fieldValue" value="Spanish (Spain) Parent" />
+			</execute>
+
+			<execute macro="FormFields#viewTextValue">
+				<var name="fieldName" value="textChild" />
+				<var name="fieldValue" value="Spanish (Spain) Child" />
+			</execute>
+		<execute macro="DDLRecord#selectTranslation">
+				<var name="localizedLanguage" value="Portuguese (Brazil)" />
+			</execute>
+
+			<execute macro="FormFields#viewTextValue">
+				<var name="fieldName" value="textParent" />
+				<var name="fieldValue" value="Portuguese (Brazil) Parent" />
+			</execute>
+
+			<execute macro="FormFields#viewTextValue">
+				<var name="fieldName" value="textChild" />
+				<var name="fieldValue" value="Portuguese (Brazil) Child" />
 			</execute>
 		</for>
 	</command>
