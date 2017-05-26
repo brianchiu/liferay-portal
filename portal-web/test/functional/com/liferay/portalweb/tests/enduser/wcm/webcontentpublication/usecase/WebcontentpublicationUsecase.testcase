@@ -1436,11 +1436,6 @@
 		</execute>
 
 		<execute macro="AssetPublisherPortlet#viewAssetPG">
-			<var name="assetContent" value="${siteName} WC Content" />
-			<var name="assetTitle" value="${siteName} WC Title" />
-		</execute>
-
-		<execute macro="AssetPublisherPortlet#viewAssetPG">
 			<var name="assetContent" value="Site Name WC Content" />
 			<var name="assetTitle" value="Site Name WC Title" />
 		</execute>
