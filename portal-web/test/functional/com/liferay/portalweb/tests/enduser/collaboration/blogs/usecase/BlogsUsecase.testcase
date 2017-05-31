@@ -63,7 +63,7 @@
 		</execute>
 
 		<execute macro="Blogs#addEntryWithHTML">
-			<var name="entryContent"><![CDATA[<b>Bold Type</b> <i>Italics</i>]]></var>
+			<var name="entryContent">&lt;b&gt;Bold Type&lt;/b&gt; &lt;i&gt;Italics&lt;/i&gt;</var>
 			<var name="entrySubtitle" value="Blogs Entry Subtitle" />
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
@@ -242,15 +242,17 @@
 			<var name="portlet" value="Documents and Media" />
 		</execute>
 
-		<var name="dmDocumentCounterList" value="1,2" />
+		<execute macro="DMDocument#addCP">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_${dmDocumentCounterList}.jpg" />
+			<var name="dmDocumentTitle" value="Document_${dmDocumentCounterList}.jpg" />
+		</execute>
 
-		<for list="${dmDocumentCounterList}" param="entryCount" >
-			<execute macro="DMDocument#addCP">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_${entryCount}.jpg" />
-				<var name="dmDocumentTitle" value="Document_${entryCount}.jpg" />
-			</execute>
-		</for>
+		<execute macro="DMDocument#addCP">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_${dmDocumentCounterList}.jpg" />
+			<var name="dmDocumentTitle" value="Document_${dmDocumentCounterList}.jpg" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Blogs" />
@@ -1148,7 +1150,7 @@
 
 		<execute macro="Blogs#addEntry">
 			<var name="entryContent" value="Blogs Entry Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="Navigator#gotoPage">
@@ -1157,12 +1159,12 @@
 
 		<execute macro="BlogsNavigator#gotoEntryPG">
 			<var name="entryContent" value="Blogs Entry Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="BlogsEntry#viewPG">
 			<var name="entryContent" value="Blogs Entry Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelConfiguration">
@@ -1229,17 +1231,17 @@
 
 		<execute macro="Blogs#addEntry">
 			<var name="entryContent" value="Blogs Entry2 Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="BlogsNavigator#gotoEntryPG">
 			<var name="entryContent" value="Blogs Entry2 Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="BlogsEntry#viewPG">
 			<var name="entryContent" value="Blogs Entry2 Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="User#logoutPG" />
@@ -1270,12 +1272,12 @@
 
 		<execute macro="BlogsNavigator#gotoEntryPG">
 			<var name="entryContent" value="Blogs Entry2 Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 
 		<execute macro="BlogsEntry#viewPG">
 			<var name="entryContent" value="Blogs Entry2 Content" />
-			<var name="entryTitle"><![CDATA[Blogs Entry Title `~!@#$%^&*(){}[],.<>/?|]]></var>
+			<var name="entryTitle">Blogs Entry Title `~!@#$%^&amp;*(){}[],.&lt;&gt;/?|</var>
 		</execute>
 	</command>
 
@@ -1991,7 +1993,7 @@
 		</execute>
 
 		<execute macro="BlogsEntry#viewInlineImage">
-			<var name="uploadFileName"><![CDATA[Document_2+%281%29.jpg]]></var>
+			<var name="uploadFileName">Document_2+%281%29.jpg</var>
 		</execute>
 	</command>
 
@@ -2156,18 +2158,32 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		<var name="orgNameList" value="Organization1 Name,Organization2 Name,Organization3 Name" />
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization1 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
-		<for list="${orgNameList}" param="orgName">
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="${orgName}" />
-				<var name="orgType" value="Organization" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-		</for>
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization2 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization3 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
 		<execute macro="UsersAndOrganizationsNavigator#gotoOrganizations" />
 
