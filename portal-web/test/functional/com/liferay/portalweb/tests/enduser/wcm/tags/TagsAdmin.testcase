@@ -19,17 +19,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Tag#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="CannotMergeSingleTagViewWarning" priority="4">
@@ -46,15 +38,21 @@
 			<var name="tagName" value="tagname1" />
 		</execute>
 
-		<for list="2,3" param="i">
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname2" />
+		</execute>
 
-			<execute macro="Tag#viewCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
-		</for>
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname2" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname3" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname3" />
+		</execute>
 
 		<execute macro="PortletEntry#deleteViaToolbar">
 			<var name="rowEntries" value="tagname1,tagname2,tagname3" />
@@ -150,21 +148,34 @@
 	</command>
 
 	<command name="MergeMultipleTags" priority="4">
-		<for list="2,3" param="i">
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
 
-			<execute macro="Tag#viewCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname2" />
+		</execute>
 
-		<for list="1,2,3" param="i">
-			<execute macro="LexiconEntry#selectEntry">
-				<var name="rowEntry" value="tagname${i}" />
-			</execute>
-		</for>
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname2" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname3" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname3" />
+		</execute>
+
+		<execute macro="LexiconEntry#selectEntry">
+			<var name="rowEntry" value="tagname1" />
+		</execute>
+
+		<execute macro="LexiconEntry#selectEntry">
+			<var name="rowEntry" value="tagname2" />
+		</execute>
+
+		<execute macro="LexiconEntry#selectEntry">
+			<var name="rowEntry" value="tagname3" />
+		</execute>
 
 		<execute macro="Tag#gotoMerge" />
 
@@ -177,21 +188,59 @@
 			<var name="tagName" value="tagname1" />
 		</execute>
 
-		<for list="2,3" param="i">
-			<execute function="AssertTextNotPresent" value1="tagname${i}" />
-		</for>
+		<execute function="AssertTextNotPresent" value1="tagname2" />
+		<execute function="AssertTextNotPresent" value1="tagname3" />
 	</command>
 
 	<command name="MergeTagsSelectAdditionalTag" priority="3">
-		<for list="2,3,4,5,6,7" param="i">
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
 
-			<execute macro="Tag#viewCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname2" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname2" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname3" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname3" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname4" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname4" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname5" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname5" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname6" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname6" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tagname7" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname7" />
+		</execute>
 
 		<execute macro="Pagination#changePagination">
 			<var name="itemsPerPage" value="5" />
@@ -201,11 +250,17 @@
 			<var name="results" value="Showing 1 to 5 of 7 entries." />
 		</execute>
 
-		<for list="1,2,3" param="i">
-			<execute macro="LexiconEntry#selectEntry">
-				<var name="rowEntry" value="tagname${i}" />
-			</execute>
-		</for>
+		<execute macro="LexiconEntry#selectEntry">
+			<var name="rowEntry" value="tagname1" />
+		</execute>
+
+		<execute macro="LexiconEntry#selectEntry">
+			<var name="rowEntry" value="tagname2" />
+		</execute>
+
+		<execute macro="LexiconEntry#selectEntry">
+			<var name="rowEntry" value="tagname3" />
+		</execute>
 
 		<execute macro="Tag#gotoMerge" />
 
@@ -218,15 +273,25 @@
 			<var name="tagNameList" value="tagname1,tagname2,tagname3,tagname7" />
 		</execute>
 
-		<for list="1,4,5,6" param="i">
-			<execute macro="Tag#viewCP">
-				<var name="tagName" value="tagname${i}" />
-			</execute>
-		</for>
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname1" />
+		</execute>
 
-		<for list="2,3,7" param="i">
-			<execute function="AssertTextNotPresent" value1="tagname${i}" />
-		</for>
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname4" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname5" />
+		</execute>
+
+		<execute macro="Tag#viewCP">
+			<var name="tagName" value="tagname6" />
+		</execute>
+
+		<execute function="AssertTextNotPresent" value1="tagname2" />
+		<execute function="AssertTextNotPresent" value1="tagname3" />
+		<execute function="AssertTextNotPresent" value1="tagname7" />
 	</command>
 
 	<command name="ToggleDisplayStyles" priority="4">

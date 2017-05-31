@@ -23,32 +23,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Navigator#gotoPage">
-					<var name="pageName" value="Calendar Page" />
-				</execute>
-
-				<if>
-					<condition function="IsElementPresent" locator1="Calendar#SCHEDULER_EVENT_GENERIC" />
-					<then>
-						<execute macro="CalendarEvent#tearDown" />
-					</then>
-				</if>
-
-				<execute macro="Calendar#tearDown" />
-
-				<execute macro="CalendarConfiguration#tearDown" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="ViewCorrectNumberOfWeeksMonthView" priority="3">
@@ -98,38 +75,127 @@
 	</command>
 
 	<command name="ViewDefaultDurationsViaScheduler" priority="3">
-		<for list="15,30,60,120" param="minutes">
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
 
-			<execute macro="CalendarNavigator#gotoConfiguration" />
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
-			<execute macro="CalendarConfiguration#selectDefaultDuration">
-				<var name="defaultDuration" value="${minutes} Minutes" />
-			</execute>
+		<execute macro="CalendarNavigator#gotoConfiguration" />
 
-			<execute macro="CalendarConfiguration#save" />
+		<execute macro="CalendarConfiguration#selectDefaultDuration">
+			<var name="defaultDuration" value="15 Minutes" />
+		</execute>
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Calendar Page" />
-			</execute>
+		<execute macro="CalendarConfiguration#save" />
 
-			<execute macro="CalendarNavigator#gotoView">
-				<var name="viewType" value="Day" />
-			</execute>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
-			<execute macro="CalendarEvent#addViaDayView">
-				<var name="eventTitle" value="Calendar Event ${minutes} Minutes Title" />
-			</execute>
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Day" />
+		</execute>
 
-			<execute macro="CalendarScheduler#viewEventDuration">
-				<var name="eventTitle" value="Calendar Event ${minutes} Minutes Title" />
-				<var name="minutes" value="${minutes}" />
-			</execute>
+		<execute macro="CalendarEvent#addViaDayView">
+			<var name="eventTitle" value="Calendar Event 15 Minutes Title" />
+		</execute>
 
-			<execute macro="CalendarEvent#tearDown" />
-		</for>
+		<execute macro="CalendarScheduler#viewEventDuration">
+			<var name="eventTitle" value="Calendar Event 15 Minutes Title" />
+			<var name="minutes" value="15" />
+		</execute>
+
+		<execute macro="CalendarEvent#tearDown" />
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoConfiguration" />
+
+		<execute macro="CalendarConfiguration#selectDefaultDuration">
+			<var name="defaultDuration" value="30 Minutes" />
+		</execute>
+
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Day" />
+		</execute>
+
+		<execute macro="CalendarEvent#addViaDayView">
+			<var name="eventTitle" value="Calendar Event 30 Minutes Title" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewEventDuration">
+			<var name="eventTitle" value="Calendar Event 30 Minutes Title" />
+			<var name="minutes" value="30" />
+		</execute>
+
+		<execute macro="CalendarEvent#tearDown" />
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoConfiguration" />
+
+		<execute macro="CalendarConfiguration#selectDefaultDuration">
+			<var name="defaultDuration" value="60 Minutes" />
+		</execute>
+
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Day" />
+		</execute>
+
+		<execute macro="CalendarEvent#addViaDayView">
+			<var name="eventTitle" value="Calendar Event 60 Minutes Title" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewEventDuration">
+			<var name="eventTitle" value="Calendar Event 60 Minutes Title" />
+			<var name="minutes" value="60" />
+		</execute>
+
+		<execute macro="CalendarEvent#tearDown" />
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoConfiguration" />
+
+		<execute macro="CalendarConfiguration#selectDefaultDuration">
+			<var name="defaultDuration" value="120 Minutes" />
+		</execute>
+
+		<execute macro="CalendarConfiguration#save" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoView">
+			<var name="viewType" value="Day" />
+		</execute>
+
+		<execute macro="CalendarEvent#addViaDayView">
+			<var name="eventTitle" value="Calendar Event 120 Minutes Title" />
+		</execute>
+
+		<execute macro="CalendarScheduler#viewEventDuration">
+			<var name="eventTitle" value="Calendar Event 120 Minutes Title" />
+			<var name="minutes" value="120" />
+		</execute>
+
+		<execute macro="CalendarEvent#tearDown" />
 	</command>
 
 	<command name="ViewDisplayedSiteCalendarEventsAsGuest" priority="3">
