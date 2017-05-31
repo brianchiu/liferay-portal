@@ -649,16 +649,23 @@
 	<command name="SiteMembershipSearchOrganization" priority="3">
 		<property name="testray.component.names" value="Site Administration,Users and Organizations" />
 
-		<for list="1,2" param="n">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization Name ${n}" />
-				<var name="orgType" value="Organization" />
-			</execute>
-		</for>
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 1" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 2" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesMembers">
 			<var name="portlet" value="Site Memberships" />
@@ -689,15 +696,21 @@
 	<command name="SiteMembershipSearchUserGroup" priority="3">
 		<property name="testray.component.names" value="Site Administration,User Groups" />
 
-		<for list="1,2" param="n">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="User Groups" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="User Groups" />
+		</execute>
 
-			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="User Group Name ${n}" />
-			</execute>
-		</for>
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="User Groups" />
+		</execute>
+
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesMembers">
 			<var name="portlet" value="Site Memberships" />
@@ -1068,16 +1081,23 @@
 	<command name="ViewMembershipRequestWithSiteMembershipScope" priority="3">
 		<property name="testray.component.names" value="Site Administration,Users and Organizations" />
 
-		<for list="1,2" param="i">
-			<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
 
-			<execute macro="Site#addBlankCP">
-				<var name="membershipType" value="Restricted" />
-				<var name="siteName" value="Site Name ${i}" />
-			</execute>
-		</for>
+		<execute macro="Site#addBlankCP">
+			<var name="membershipType" value="Restricted" />
+			<var name="siteName" value="Site Name 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
+
+		<execute macro="Site#addBlankCP">
+			<var name="membershipType" value="Restricted" />
+			<var name="siteName" value="Site Name 2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
