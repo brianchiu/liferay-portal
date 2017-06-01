@@ -10,29 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="DDLTemplate#tearDownTemplateCP" />
-
-				<execute macro="DDLTemplate#tearDownTemplateCP">
-					<var name="ddlDataDefinitionName" value="Data Definition Copy" />
-				</execute>
-
-				<execute macro="DDLList#tearDownCP" />
-
-				<execute macro="DDLDataDefinition#tearDownCP" />
-
-				<execute macro="DMDocument#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddDisplayTemplateFreeMarker" priority="4">
@@ -4066,13 +4046,11 @@
 			<var name="fieldName" value="Text" />
 		</execute>
 
-		<for list="${character1},${character2},${character3},${character4},${character5},${character6},${character7},${character8},${character9},${character10},${character11},${character12},${character13},${character14},${character15},${character16},${character17}.${character18},${character19},${character20},${character21},${character22},${character23},${character24},${character25},${character26},${character27},${character28},${character29},${character30},${character31}" param="fieldName">
-			<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
-				<var name="field" value="Text" />
-				<var name="fieldFieldLabel" value="Text" />
-				<var name="fieldName" value="${fieldName}" />
-			</execute>
-		</for>
+		<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var name="fieldName" value="${fieldName}" />
+		</execute>
 
 		<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
 			<var name="field" value="Text" />
@@ -4260,7 +4238,7 @@
 		</execute>
 	</command>
 
-	<command name="ViewListRecordAndAssertAnchorLink"  priority="3">
+	<command name="ViewListRecordAndAssertAnchorLink" priority="3">
 		<execute macro="Navigator#openURL" />
 
 		<execute macro="ProductMenu#gotoSitesContent">

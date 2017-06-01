@@ -14,25 +14,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="MessageboardsPortlet#tearDownConfigurationEmailCP" />
-
-				<execute macro="MessageboardsCategory#tearDownCP" />
-
-				<execute macro="MessageboardsThread#tearDownCP" />
-
-				<execute macro="Site#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="CopyAndPasteTextInAlloyEditor" priority="4">
@@ -1017,12 +1001,15 @@
 			<var name="threadSubject" value="MB Thread Message Subject" />
 		</execute>
 
-		<for list="Power User,User" param="roleTitle">
-			<execute macro="PermissionsInline#viewPermissionsRemoved">
-				<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
-				<var name="roleTitle" value="${roleTitle}" />
-			</execute>
-		</for>
+		<execute macro="PermissionsInline#viewPermissionsRemoved">
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="Power User" />
+		</execute>
+
+		<execute macro="PermissionsInline#viewPermissionsRemoved">
+			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="User" />
+		</execute>
 
 		<execute macro="PermissionsInline#viewPermissionsChecked">
 			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
@@ -1286,12 +1273,15 @@
 			<var name="pageName" value="Message Boards Page" />
 		</execute>
 
-		<for list="INLINE_PERMISSIONS_REPLY_TO_MESSAGE_CHECKBOX,INLINE_PERMISSIONS_VIEW_CHECKBOX" param="permissionDefinitionKey" >
-			<execute macro="Role#definePermissionPG">
-				<var name="permissionDefinitionKey" value="${permissionDefinitionKey}" />
-				<var name="roleTitle" value="User" />
-			</execute>
-		</for>
+		<execute macro="Role#definePermissionPG">
+			<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_REPLY_TO_MESSAGE_CHECKBOX" />
+			<var name="roleTitle" value="User" />
+		</execute>
+
+		<execute macro="Role#definePermissionPG">
+			<var name="permissionDefinitionKey" value="INLINE_PERMISSIONS_VIEW_CHECKBOX" />
+			<var name="roleTitle" value="User" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Message Boards Page" />
@@ -1740,7 +1730,7 @@
 			<var name="portlet" value="Message Boards" />
 		</execute>
 
-		<execute macro="MessageboardsThread#viewMarkAsQuestionNotCheckedCP" >
+		<execute macro="MessageboardsThread#viewMarkAsQuestionNotCheckedCP">
 			<var name="threadSubject" value="Thread Subject" />
 		</execute>
 
@@ -1754,7 +1744,7 @@
 			<var name="portlet" value="Message Boards" />
 		</execute>
 
-		<execute macro="MessageboardsThread#viewMarkAsQuestionCheckedCP" >
+		<execute macro="MessageboardsThread#viewMarkAsQuestionCheckedCP">
 			<var name="threadSubject" value="Thread Subject" />
 		</execute>
 

@@ -23,32 +23,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Navigator#gotoPage">
-					<var name="pageName" value="Calendar Page" />
-				</execute>
-
-				<if>
-					<condition function="IsElementPresent" locator1="Calendar#SCHEDULER_EVENT_GENERIC" />
-					<then>
-						<execute macro="CalendarEvent#tearDown" />
-					</then>
-				</if>
-
-				<execute macro="Calendar#tearDown" />
-
-				<execute macro="CalendarConfiguration#tearDown" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="EditLanguageSelectorAndViewEvent" priority="3">
@@ -98,15 +75,53 @@
 	<command name="ViewShowMoreLocalization" priority="3">
 		<description message="This is a use case for LPS-54786." />
 
-		<for list="1,2,3,4,5,6" param="eventNumber">
-			<execute macro="CalendarNavigator#gotoAddEvent" />
+		<execute macro="CalendarNavigator#gotoAddEvent" />
 
-			<execute macro="CalendarEvent#add">
-				<var name="eventTitle" value="Calendar Event ${eventNumber}" />
-				<var name="eventType" value="All Day" />
-				<var name="pageName" value="Calendar Page" />
-			</execute>
-		</for>
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 1" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 2" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 3" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 4" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 5" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
+
+		<execute macro="CalendarNavigator#gotoAddEvent" />
+
+		<execute macro="CalendarEvent#add">
+			<var name="eventTitle" value="Calendar Event 6" />
+			<var name="eventType" value="All Day" />
+			<var name="pageName" value="Calendar Page" />
+		</execute>
 
 		<execute macro="MyAccount#configureDisplaySettingsLanguage">
 			<var name="languageName" value="español (España)" />
