@@ -50,25 +50,25 @@
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Boolean" />
 			<var name="fieldFieldLabel" value="Boolean" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Boolean', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Date" />
 			<var name="fieldFieldLabel" value="Date" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Date', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Decimal" />
 			<var name="fieldFieldLabel" value="Decimal" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Decimal', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Documents and Media" />
 			<var name="fieldFieldLabel" value="Documents and Media" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Documents and Media', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
@@ -1626,25 +1626,25 @@
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Text" />
 			<var name="fieldFieldLabel" value="Text" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Text Box" />
 			<var name="fieldFieldLabel" value="Text Box" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text Box', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Image" />
 			<var name="fieldFieldLabel" value="Image" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Image', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Documents and Media" />
 			<var name="fieldFieldLabel" value="Documents and Media" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Documents and Media', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
