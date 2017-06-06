@@ -10,41 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#firstLoginPG" />
-
-				<execute macro="User#tearDownCP" />
-
-				<execute macro="BlogsEntry#tearDownCP" />
-
-				<execute macro="WebContent#tearDownCP" />
-
-				<execute macro="WikiNode#tearDownCP" />
-
-				<execute macro="WikiPage#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-
-				<execute macro="Workflow#tearDownPortalWorkflow" />
-
-				<execute macro="Workflow#tearDownSiteWorkflow" />
-
-				<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
-					<var name="workflowDefinitionTitle" value="Single Approver Edited" />
-				</execute>
-
-				<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
-
-				<execute macro="Site#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddBlogsEntriesWithPortalScopeWorkflowAndAssertWorkflowScope" priority="4">
@@ -960,7 +928,7 @@
 
 		<execute macro="Blogs#addWithWorkflow">
 			<var name="entryContent" value="Blogs Entry Content" />
-			<var name="entrySubtitle" value="Subtitle"  />
+			<var name="entrySubtitle" value="Subtitle" />
 			<var name="entryTitle" value="Blogs Entry Title" />
 		</execute>
 
@@ -1059,32 +1027,80 @@
 			<var name="workflowDefinition" value="Single Approver (Version 1)" />
 		</execute>
 
-		<for list="1,2,3" param="number">
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addWithWorkflowCP">
-				<var name="webContentContent" value="WC WebContent Content ${number}" />
-				<var name="webContentTitle" value="WC WebContent Title ${number}" />
-			</execute>
+		<execute macro="WebContent#addWithWorkflowCP">
+			<var name="webContentContent" value="WC WebContent Content 1" />
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
 
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Blogs" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
 
-			<execute macro="Blogs#addWithWorkflow">
-				<var name="entryContent" value="Blogs Entry Content ${number}" />
-				<var name="entrySubtitle" value="Subtitle ${number}" />
-				<var name="entryTitle" value="Blogs Entry Title ${number}" />
-			</execute>
-		</for>
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="Blogs Entry Content 1" />
+			<var name="entrySubtitle" value="Subtitle 1" />
+			<var name="entryTitle" value="Blogs Entry Title 1" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addWithWorkflowCP">
+			<var name="webContentContent" value="WC WebContent Content 2" />
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="Blogs Entry Content 2" />
+			<var name="entrySubtitle" value="Subtitle 2" />
+			<var name="entryTitle" value="Blogs Entry Title 2" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addWithWorkflowCP">
+			<var name="webContentContent" value="WC WebContent Content 3" />
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="Blogs Entry Content 3" />
+			<var name="entrySubtitle" value="Subtitle 3" />
+			<var name="entryTitle" value="Blogs Entry Title 3" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelConfiguration">
 			<var name="portlet" value="Workflow Definition" />
@@ -1094,19 +1110,41 @@
 			<var name="portletName" value="My Workflow Tasks" />
 		</execute>
 
-		<for list="1,2,3" param="number">
-			<execute macro="Workflow#viewTaskAssignedToMyRoles">
-				<var name="workflowAssetTitle" value="WC WebContent Title ${number}" />
-				<var name="workflowAssetType" value="Web Content Article" />
-				<var name="workflowTask" value="Review" />
-			</execute>
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC WebContent Title 1" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="Review" />
+		</execute>
 
-			<execute macro="Workflow#viewTaskAssignedToMyRoles">
-				<var name="workflowAssetTitle" value="Blogs Entry Title ${number}" />
-				<var name="workflowAssetType" value="Blogs Entry" />
-				<var name="workflowTask" value="Review" />
-			</execute>
-		</for>
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="Blogs Entry Title 1" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC WebContent Title 2" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="Blogs Entry Title 2" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="WC WebContent Title 3" />
+			<var name="workflowAssetType" value="Web Content Article" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Workflow#viewTaskAssignedToMyRoles">
+			<var name="workflowAssetTitle" value="Blogs Entry Title 3" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
 
 		<execute macro="Pagination#viewResults">
 			<var name="results" value="Showing 1 to 6 of 6 entries." />
@@ -1261,86 +1299,163 @@
 			<var name="roleType" value="Site" />
 		</execute>
 
-		<for list="1,2" param="n">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="usersn${n}@liferay.com" />
-				<var name="userFirstName" value="userfn${n}" />
-				<var name="userLastName" value="userln${n}" />
-				<var name="userScreenName" value="usersn${n}" />
-			</execute>
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="usersn1@liferay.com" />
+			<var name="userFirstName" value="userfn1" />
+			<var name="userLastName" value="userln1" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editUserSiteCP">
-				<var name="siteName" value="${siteName}" />
-				<var name="userScreenName" value="usersn${n}" />
-			</execute>
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="${siteName}" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editPasswordCP">
-				<var name="userEmailAddress" value="usersn${n}@liferay.com" />
-				<var name="userScreenName" value="usersn${n}" />
-			</execute>
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="usersn1@liferay.com" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="User#logoutAndLoginPG">
-				<var name="userLoginEmailAddress" value="usersn${n}@liferay.com" />
-				<var name="userScreenName" value="usersn${n}" />
-			</execute>
+		<execute macro="User#logoutAndLoginPG">
+			<var name="userLoginEmailAddress" value="usersn1@liferay.com" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Blogs" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
 
-			<execute macro="Blogs#addWithWorkflow">
-				<var name="entryContent" value="User ${n} Blog Content Approved" />
-				<var name="entrySubtitle" value="User ${n} Blog Subtitle Approved" />
-				<var name="entryTitle" value="User ${n} Blog Title Approved" />
-			</execute>
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="User 1 Blog Content Approved" />
+			<var name="entrySubtitle" value="User 1 Blog Subtitle Approved" />
+			<var name="entryTitle" value="User 1 Blog Title Approved" />
+		</execute>
 
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Blogs" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
 
-			<execute macro="Blogs#addWithWorkflow">
-				<var name="entryContent" value="User ${n} Blog Content Pending" />
-				<var name="entrySubtitle" value="User ${n} Blog Subtitle Pending" />
-				<var name="entryTitle" value="User ${n} Blog Title Pending" />
-			</execute>
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="User 1 Blog Content Pending" />
+			<var name="entrySubtitle" value="User 1 Blog Subtitle Pending" />
+			<var name="entryTitle" value="User 1 Blog Title Pending" />
+		</execute>
 
-			<execute macro="User#logoutAndLoginPG">
-				<var name="userLoginEmailAddress" value="test@liferay.com" />
-				<var name="userScreenName" value="Test Test" />
-			</execute>
+		<execute macro="User#logoutAndLoginPG">
+			<var name="userLoginEmailAddress" value="test@liferay.com" />
+			<var name="userScreenName" value="Test Test" />
+		</execute>
 
-			<execute macro="Page#gotoMyAccount">
-				<var name="portletName" value="My Workflow Tasks" />
-			</execute>
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
 
-			<execute macro="Workflow#assignToMeTaskByActions">
-				<var name="workflowAssetTitle" value="User ${n} Blog Title Approved" />
-				<var name="workflowAssetType" value="Blogs Entry" />
-				<var name="workflowTask" value="Review" />
-			</execute>
+		<execute macro="Workflow#assignToMeTaskByActions">
+			<var name="workflowAssetTitle" value="User 1 Blog Title Approved" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
 
-			<execute macro="Workflow#approveTaskByActions">
-				<var name="workflowAssetTitle" value="User ${n} Blog Title Approved" />
-				<var name="workflowAssetType" value="Blogs Entry" />
-				<var name="workflowTask" value="Review" />
-			</execute>
-		</for>
+		<execute macro="Workflow#approveTaskByActions">
+			<var name="workflowAssetTitle" value="User 1 Blog Title Approved" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="usersn2@liferay.com" />
+			<var name="userFirstName" value="userfn2" />
+			<var name="userLastName" value="userln2" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="${siteName}" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="usersn2@liferay.com" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="User#logoutAndLoginPG">
+			<var name="userLoginEmailAddress" value="usersn2@liferay.com" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="User 2 Blog Content Approved" />
+			<var name="entrySubtitle" value="User 2 Blog Subtitle Approved" />
+			<var name="entryTitle" value="User 2 Blog Title Approved" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Blogs" />
+		</execute>
+
+		<execute macro="Blogs#addWithWorkflow">
+			<var name="entryContent" value="User 2 Blog Content Pending" />
+			<var name="entrySubtitle" value="User 2 Blog Subtitle Pending" />
+			<var name="entryTitle" value="User 2 Blog Title Pending" />
+		</execute>
+
+		<execute macro="User#logoutAndLoginPG">
+			<var name="userLoginEmailAddress" value="test@liferay.com" />
+			<var name="userScreenName" value="Test Test" />
+		</execute>
+
+		<execute macro="Page#gotoMyAccount">
+			<var name="portletName" value="My Workflow Tasks" />
+		</execute>
+
+		<execute macro="Workflow#assignToMeTaskByActions">
+			<var name="workflowAssetTitle" value="User 2 Blog Title Approved" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
+
+		<execute macro="Workflow#approveTaskByActions">
+			<var name="workflowAssetTitle" value="User 2 Blog Title Approved" />
+			<var name="workflowAssetType" value="Blogs Entry" />
+			<var name="workflowTask" value="Review" />
+		</execute>
 
 		<execute macro="User#logoutAndLoginPG">
 			<var name="userLoginEmailAddress" value="usersn1@liferay.com" />

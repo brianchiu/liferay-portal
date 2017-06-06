@@ -11,14 +11,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AssertHighestRatededAsset" priority="4">
@@ -34,12 +29,15 @@
 			<var name="portlet" value="Sites" />
 		</execute>
 
-		<for list="1,2" param="n">
-			<execute macro="Page#add">
-				<var name="pageName" value="Test Page ${n}" />
-				<var name="siteName" value="Site Name" />
-			</execute>
-		</for>
+		<execute macro="Page#add">
+			<var name="pageName" value="Test Page 1" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="Test Page 2" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page 1" />
@@ -77,16 +75,22 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<for list="1,2" param="n">
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="Web Content Content" />
-				<var name="webContentTitle" value="Web Content Title ${n}" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Web Content Content" />
+			<var name="webContentTitle" value="Web Content Title 1" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		</for>
+		<execute macro="PortletEntry#publish" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Web Content Content" />
+			<var name="webContentTitle" value="Web Content Title 2" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Test Page 1" />

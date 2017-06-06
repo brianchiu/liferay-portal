@@ -11,31 +11,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#firstLoginPG" />
-
-				<execute macro="DMDocument#tearDownCP" />
-
-				<execute macro="DMFolder#tearDownCP" />
-
-				<execute macro="DMDocumentType#tearDownCP" />
-
-				<execute macro="DMMetadataSet#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-
-				<execute macro="User#tearDownCP" />
-
-				<execute macro="Site#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddAndRemoveMetadataSets" priority="4">
@@ -386,20 +364,31 @@
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		<for list="1,2" param="tagCount" >
-			<execute macro="DMDocument#editCmdPG">
-				<var name="dmDocumentTagName" value="tag${tagCount}" />
-				<var name="dmDocumentTitle" value="Document_1.doc" />
-			</execute>
+		<execute macro="DMDocument#editCmdPG">
+			<var name="dmDocumentTagName" value="tag1" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
 
-			<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
+		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 
-			<execute function="Pause" locator1="10000" />
+		<execute function="Pause" locator1="10000" />
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Documents and Media Page" />
-			</execute>
-		</for>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
+
+		<execute macro="DMDocument#editCmdPG">
+			<var name="dmDocumentTagName" value="tag2" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
+
+		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
+
+		<execute function="Pause" locator1="10000" />
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
 
 		<execute macro="DMDocument#editSavePG">
 			<var name="dmDocumentTitle" value="Document_1.doc" />
@@ -476,12 +465,7 @@
 
 		<execute function="AssertClick#assertTextClick" locator1="Button#EDIT" value1="Edit" />
 
-		<while>
-			<condition function="IsElementPresent" locator1="AssetCategorization#TAGS_REMOVE_ICON_GENERIC" />
-			<then>
-				<execute function="Click" locator1="AssetCategorization#TAGS_REMOVE_ICON_GENERIC" />
-			</then>
-		</while>
+		<execute macro="AssetCategorization#removeAllTags" />
 
 		<execute function="AssertClick" locator1="Button#SAVE" value1="Save" />
 
@@ -705,30 +689,10 @@
 
 		<execute function="Pause" locator1="30000" />
 
-		<var name="videoGenerationTimeCounter" value="0" />
-		<var name="videoGenerationTimeMaxWaitTime" value="6" />
-
-		<while>
-			<and>
-				<not>
-					<equals arg1="${videoGenerationTimeCounter}" arg2="${videoGenerationTimeMaxWaitTime}" />
-				</not>
-				<condition function="IsElementPresent" locator1="Message#INFO" />
-			</and>
-			<then>
-				<var method="MathUtil#sum('${videoGenerationTimeCounter}', '1')" name="videoGenerationTimeCounter" />
-
-				<execute function="Pause" locator1="30000" />
-
-				<execute macro="Navigator#gotoPage">
-					<var name="pageName" value="Documents and Media Page" />
-				</execute>
-
-				<execute macro="DMNavigator#gotoDocumentPG">
-					<var name="dmDocumentTitle" value="Document_1.mp4" />
-				</execute>
-			</then>
-		</while>
+		<execute macro="DMDocument#waitForVideoToGenerate">
+			<var name="videoGenerationTimeCounter" value="0" />
+			<var name="videoGenerationTimeMaxWaitTime" value="6" />
+		</execute>
 
 		<var attribute="poster" locator="//video" name="videoPreviewThumbnailLink" />
 
@@ -855,23 +819,37 @@
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount" >
-			<execute macro="DMDocument#addPG">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_${entryCount}.doc" />
-				<var name="dmDocumentTitle" value="Document_${entryCount}.doc" />
-			</execute>
-		</for>
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_1.doc" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
+
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_2.doc" />
+			<var name="dmDocumentTitle" value="Document_2.doc" />
+		</execute>
+
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_3.doc" />
+			<var name="dmDocumentTitle" value="Document_3.doc" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount" >
-			<var name="key_dmDocumentTitle" value="Document_${entryCount}.doc" />
+		<var name="key_dmDocumentTitle" value="Document_1.doc" />
 
-			<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
-		</for>
+		<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
+		<var name="key_dmDocumentTitle" value="Document_2.doc" />
+
+		<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
+		<var name="key_dmDocumentTitle" value="Document_3.doc" />
+
+		<execute function="Check" locator1="DocumentsAndMedia#ICON_DOCUMENT_CHECKBOX" />
 
 		<execute function="Click" locator1="Icon#MOVE_TO_RECYCLE_BIN" />
 
@@ -1317,13 +1295,13 @@
 			<var name="portlet" value="Tags" />
 		</execute>
 
-		<var name="tagNameList" value="tag1,tag2" />
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag1" />
+		</execute>
 
-		<for list="${tagNameList}" param="tagName">
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag2" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />
@@ -1368,11 +1346,12 @@
 
 		<execute function="AssertTextEquals" locator1="AssetCategorization#CATEGORY" value1="Category Name" />
 
-		<for list="${tagNameList}" param="tagName">
-			<var name="key_tagName" value="${tagName}" />
+		<var name="key_tagName" value="tag1" />
 
-			<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="${tagName}" />
-		</for>
+		<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag1" />
+		<var name="key_tagName" value="tag2" />
+
+		<execute function="AssertTextEquals" locator1="AssetCategorization#TAG" value1="tag2" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />

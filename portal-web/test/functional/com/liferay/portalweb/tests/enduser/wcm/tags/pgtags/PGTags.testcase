@@ -10,19 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Tag#tearDownCP" />
-
-				<execute macro="Site#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddAutoAssertionTagViaBlogs" priority="4">
@@ -45,19 +35,41 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
-			<execute macro="Navigator#openSiteURL">
-				<var name="siteName" value="Site Name" />
-			</execute>
+		<execute macro="Navigator#openSiteURL">
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag name 1" />
+		</execute>
+
+		<execute macro="Navigator#openSiteURL">
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag name 2" />
+		</execute>
+
+		<execute macro="Navigator#openSiteURL">
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag name 3" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -162,23 +174,53 @@
 			<var name="tagNameList" value="tag name 1,tag name 2,tag name 3" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
-			<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Entry Content" />
-				<var name="entryTitle" value="Entry Title" />
-			</execute>
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
 
-			<execute macro="BlogsEntry#viewTagPG">
-				<var name="entryContent" value="Entry Content" />
-				<var name="entryTitle" value="Entry Title" />
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 1" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 2" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 3" />
+		</execute>
 	</command>
 
 	<command name="AddSelectTagViaBlogs" priority="5">
@@ -202,19 +244,41 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="tag1,tag2,tag3" param="tagName">
-			<execute macro="Navigator#openSiteURL">
-				<var name="siteName" value="Site Name" />
-			</execute>
+		<execute macro="Navigator#openSiteURL">
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag1" />
+		</execute>
+
+		<execute macro="Navigator#openSiteURL">
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag2" />
+		</execute>
+
+		<execute macro="Navigator#openSiteURL">
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag3" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -236,21 +300,33 @@
 			<var name="tagNameList" value="tag1,tag3" />
 		</execute>
 
-		<for list="tag1,tag3" param="tagName">
-			<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<var name="key_entryTitle" value="Entry Title" />
+		<var name="key_entryTitle" value="Entry Title" />
 
-			<execute function="AssertClick" locator1="BlogsEntry#TITLE_LINK" value1="Entry Title" />
+		<execute function="AssertClick" locator1="BlogsEntry#TITLE_LINK" value1="Entry Title" />
 
-			<execute macro="BlogsEntry#viewTagPG">
-				<var name="entryTitle" value="Entry Title" />
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag1" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<var name="key_entryTitle" value="Entry Title" />
+
+		<execute function="AssertClick" locator1="BlogsEntry#TITLE_LINK" value1="Entry Title" />
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag3" />
+		</execute>
 	</command>
 
 	<command name="AddTagViaBlogs" priority="5">
@@ -344,17 +420,35 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="first tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="second tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="third tag" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -438,17 +532,35 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="first tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="second tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="third tag" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -511,17 +623,35 @@
 			<var name="portletName" value="Tags Navigation" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag name 1" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag name 2" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="tag name 3" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Tags Navigation Page" />
@@ -580,23 +710,53 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
-			<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Entry Content" />
-				<var name="entryTitle" value="Entry Title" />
-			</execute>
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
 
-			<execute macro="BlogsEntry#viewTagPG">
-				<var name="entryContent" value="Entry Content" />
-				<var name="entryTitle" value="Entry Title" />
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 1" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 2" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 3" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -611,11 +771,13 @@
 			<var name="panelHeading" value="Categorization" />
 		</execute>
 
-		<for list="tag name 1,tag name 3" param="tagName">
-			<execute macro="AssetCategorization#removeTag">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="AssetCategorization#removeTag">
+			<var name="tagName" value="tag name 1" />
+		</execute>
+
+		<execute macro="AssetCategorization#removeTag">
+			<var name="tagName" value="tag name 3" />
+		</execute>
 
 		<execute macro="PortletEntry#publish" />
 
@@ -669,23 +831,53 @@
 			<var name="tagNameList" value="tag name 1,tag name 2,tag name 3" />
 		</execute>
 
-		<for list="tag name 1,tag name 2,tag name 3" param="tagName">
-			<execute macro="Navigator#gotoSitePage">
-				<var name="pageName" value="Page Name" />
-				<var name="siteName" value="Site Name" />
-			</execute>
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
 
-			<execute macro="BlogsNavigator#gotoEntryPG">
-				<var name="entryContent" value="Entry Content" />
-				<var name="entryTitle" value="Entry Title" />
-			</execute>
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
 
-			<execute macro="BlogsEntry#viewTagPG">
-				<var name="entryContent" value="Entry Content" />
-				<var name="entryTitle" value="Entry Title" />
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 1" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 2" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Page Name" />
+			<var name="siteName" value="Site Name" />
+		</execute>
+
+		<execute macro="BlogsNavigator#gotoEntryPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+		</execute>
+
+		<execute macro="BlogsEntry#viewTagPG">
+			<var name="entryContent" value="Entry Content" />
+			<var name="entryTitle" value="Entry Title" />
+			<var name="tagName" value="tag name 3" />
+		</execute>
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Page Name" />
@@ -889,17 +1081,35 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<for list="first tag,second tag,third tag" param="tagName">
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Tags" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
 
-			<execute macro="Tag#addCP">
-				<var name="tagName" value="${tagName}" />
-			</execute>
-		</for>
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="first tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="second tag" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Tags" />
+		</execute>
+
+		<execute macro="Tag#addCP">
+			<var name="tagName" value="third tag" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
