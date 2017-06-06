@@ -772,79 +772,79 @@
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Boolean" />
 			<var name="fieldFieldLabel" value="Boolean" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Boolean', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Date" />
 			<var name="fieldFieldLabel" value="Date" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Date', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Decimal" />
 			<var name="fieldFieldLabel" value="Decimal" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Decimal', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Documents and Media" />
 			<var name="fieldFieldLabel" value="Documents and Media" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Documents and Media', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="HTML" />
 			<var name="fieldFieldLabel" value="HTML" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('HTML', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Image" />
 			<var name="fieldFieldLabel" value="Image" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Image', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Integer" />
 			<var name="fieldFieldLabel" value="Integer" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Integer', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Link to Page" />
 			<var name="fieldFieldLabel" value="Link to Page" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Link to Page', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Number" />
 			<var name="fieldFieldLabel" value="Number" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Number', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Radio" />
 			<var name="fieldFieldLabel" value="Radio" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Radio', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Select" />
 			<var name="fieldFieldLabel" value="Select" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Select', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Text" />
 			<var name="fieldFieldLabel" value="Text" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Text Box" />
 			<var name="fieldFieldLabel" value="Text Box" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text Box, ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
