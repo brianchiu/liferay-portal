@@ -11,25 +11,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Workflow#tearDownSiteWorkflow" />
-
-				<execute macro="KBFolder#tearDownCP" />
-
-				<execute macro="KBArticle#tearDownCP" />
-
-				<execute macro="User#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddKBChildArticleAsDraft" priority="3">
@@ -693,23 +677,32 @@
 			<var name="portlet" value="Knowledge Base" />
 		</execute>
 
-		<var name="entries" value="2010,2017" />
+		<execute macro="Navigator#openURL" />
 
-		<for list="${entries}" param="kbEntry">
-			<execute macro="Navigator#openURL" />
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Knowledge Base" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Knowledge Base" />
-			</execute>
+		<var name="key_rowEntry" value="2010" />
 
-			<var name="key_rowEntry" value="${kbEntry}" />
+		<execute function="Click" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
 
-			<execute function="Click" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
+		<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
 
-			<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
+		<execute function="AssertTextEquals" locator1="TextInput#CUSTOM_FIELD" value1="01/01/2010" />
+		<execute macro="Navigator#openURL" />
 
-			<execute function="AssertTextEquals" locator1="TextInput#CUSTOM_FIELD" value1="01/01/${kbEntry}" />
-		</for>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Knowledge Base" />
+		</execute>
+
+		<var name="key_rowEntry" value="2017" />
+
+		<execute function="Click" locator1="Icon#ROW_VERTICAL_ELLIPSIS" />
+
+		<execute function="AssertClick" locator1="MenuItem#EDIT" value1="Edit" />
+
+		<execute function="AssertTextEquals" locator1="TextInput#CUSTOM_FIELD" value1="01/01/2017" />
 	</command>
 
 	<command name="SaveEditedChildArticleAsDraft" priority="3">
@@ -2421,19 +2414,35 @@
 			<var name="portlet" value="Knowledge Base" />
 		</execute>
 
-		<for list="1,2,3" param="kbCount">
-			<execute macro="KBArticle#addCP">
-				<var name="kbArticleContent" value="Knowledge Base Article Parent Content ${kbCount}" />
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title ${kbCount}" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article Parent Content 1" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+		</execute>
 
-		<for list="1,2,3" param="kbCount">
-			<execute macro="KBArticle#viewKBArticlePriorityCP">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title ${kbCount}" />
-				<var name="kbPriority" value="${kbCount}.0" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article Parent Content 2" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
+		</execute>
+
+		<execute macro="KBArticle#addCP">
+			<var name="kbArticleContent" value="Knowledge Base Article Parent Content 3" />
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 3" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbPriority" value="1.0" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
+			<var name="kbPriority" value="2.0" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 3" />
+			<var name="kbPriority" value="3.0" />
+		</execute>
 
 		<execute macro="KBArticle#viewKBArticlePriorityCP">
 			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 2" />
@@ -2951,24 +2960,42 @@
 			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
 		</execute>
 
-		<for list="1,2,3" param="kbCount">
-			<execute macro="KBArticle#addChildArticleViaKBAdmin">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
-				<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child ${kbCount}" />
-				<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child ${kbCount}" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#addChildArticleViaKBAdmin">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 1" />
+			<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+		</execute>
+
+		<execute macro="KBArticle#addChildArticleViaKBAdmin">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 2" />
+			<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+		</execute>
+
+		<execute macro="KBArticle#addChildArticleViaKBAdmin">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
+			<var name="kbChildArticleContent" value="Knowledge Base Article Parent Content 1 Child 3" />
+			<var name="kbChildArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
+		</execute>
 
 		<execute macro="KBArticle#gotoChildArticleDescriptiveDetails">
 			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1" />
 		</execute>
 
-		<for list="1,2,3" param="kbCount">
-			<execute macro="KBArticle#viewKBArticlePriorityCP">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child ${kbCount}" />
-				<var name="kbPriority" value="${kbCount}.0" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+			<var name="kbPriority" value="1.0" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+			<var name="kbPriority" value="2.0" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
+			<var name="kbPriority" value="3.0" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />
@@ -2998,12 +3025,20 @@
 			<var name="kbArticleTitleEdit" value="Knowledge Base Article Parent Title 1 Child 2" />
 		</execute>
 
-		<for list="1,2,3" param="kbCount">
-			<execute macro="KBArticle#viewKBArticlePriorityCP">
-				<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child ${kbCount}" />
-				<var name="kbPriority" value="${kbCount}.0" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 1" />
+			<var name="kbPriority" value="1.0" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 2" />
+			<var name="kbPriority" value="2.0" />
+		</execute>
+
+		<execute macro="KBArticle#viewKBArticlePriorityCP">
+			<var name="kbArticleTitle" value="Knowledge Base Article Parent Title 1 Child 3" />
+			<var name="kbPriority" value="3.0" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />

@@ -26,21 +26,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Page#tearDownPG">
-					<var name="site" value="Liferay" />
-				</execute>
-
-				<execute macro="Site#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddFeedBetweenFeeds" priority="3">
@@ -111,11 +99,17 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Technology,Reuters > Sports News,Latimes > Technology News" param="feedTitle" >
-			<execute macro="RSS#viewDisplayFeedTitle">
-				<var name="feedTitle" value="${feedTitle}" />
-			</execute>
-		</for>
+		<execute macro="RSS#viewDisplayFeedTitle">
+			<var name="feedTitle" value="Technology" />
+		</execute>
+
+		<execute macro="RSS#viewDisplayFeedTitle">
+			<var name="feedTitle" value="Reuters > Sports News" />
+		</execute>
+
+		<execute macro="RSS#viewDisplayFeedTitle">
+			<var name="feedTitle" value="Latimes > Technology News" />
+		</execute>
 	</command>
 
 	<command name="AddFeedWithWrongUrl" priority="4">
