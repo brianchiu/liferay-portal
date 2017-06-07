@@ -10,23 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Organization#tearDownCP" />
-
-				<execute macro="Site#tearDownCP" />
-
-				<execute macro="UserGroup#tearDownCP" />
-
-				<execute macro="User#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddMember" priority="4">
@@ -649,16 +635,23 @@
 	<command name="SiteMembershipSearchOrganization" priority="3">
 		<property name="testray.component.names" value="Site Administration,Users and Organizations" />
 
-		<for list="1,2" param="n">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="Organization Name ${n}" />
-				<var name="orgType" value="Organization" />
-			</execute>
-		</for>
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 1" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization Name 2" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesMembers">
 			<var name="portlet" value="Site Memberships" />
@@ -689,15 +682,21 @@
 	<command name="SiteMembershipSearchUserGroup" priority="3">
 		<property name="testray.component.names" value="Site Administration,User Groups" />
 
-		<for list="1,2" param="n">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="User Groups" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="User Groups" />
+		</execute>
 
-			<execute macro="UserGroup#addCP">
-				<var name="userGroupName" value="User Group Name ${n}" />
-			</execute>
-		</for>
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="User Groups" />
+		</execute>
+
+		<execute macro="UserGroup#addCP">
+			<var name="userGroupName" value="User Group Name 2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesMembers">
 			<var name="portlet" value="Site Memberships" />
@@ -733,7 +732,7 @@
 		</execute>
 
 		<execute macro="User#addMultipleCP">
-			<var name="usersEmailsList" value="userfn1@liferay.com,userfn2@liferay.com,userfn3@liferay.com,userfn4@liferay.com,userfn5@liferay.com,userfn6@liferay.com,userfn7@liferay.com,userfn8@liferay.com,userfn9@liferay.com,userfn10@liferay.com" />
+			<var name="numberOfUsers" value="10" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelSites">
@@ -763,7 +762,7 @@
 		</execute>
 
 		<execute macro="Site#viewMemberListCP">
-			<var name="usersEmailsList" value="userfn1@liferay.com,userfn2@liferay.com,userfn3@liferay.com,userfn4@liferay.com,userfn5@liferay.com,userfn6@liferay.com,userfn7@liferay.com,userfn8@liferay.com,userfn9@liferay.com,userfn10@liferay.com" />
+			<var name="usersEmailsList" value="userea1@liferay.com,userea2@liferay.com,userea3@liferay.com,userea4@liferay.com,userea5@liferay.com,userea6@liferay.com,userea7@liferay.com,userea8@liferay.com,userea9@liferay.com,userea10@liferay.com" />
 		</execute>
 
 		<execute macro="Site#viewMemberCP">
@@ -791,11 +790,11 @@
 		</execute>
 
 		<execute macro="Site#viewMemberListCP">
-			<var name="usersEmailsList" value="userfn4@liferay.com,userfn5@liferay.com,userfn6@liferay.com,userfn7@liferay.com,userfn8@liferay.com" />
+			<var name="usersEmailsList" value="userea4@liferay.com,userea5@liferay.com,userea6@liferay.com,userea7@liferay.com,userea8@liferay.com" />
 		</execute>
 
 		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn9@liferay.com" />
+			<var name="usersEmailsList" value="userea9@liferay.com" />
 		</execute>
 
 		<execute function="Click" locator1="Pagination#FIRST_LINK" />
@@ -803,15 +802,11 @@
 		<execute function="AssertTextEquals" locator1="Pagination#CURRENT_PAGE_SELECT" value1="Showing 1 to 5 of 11 entries." />
 
 		<execute macro="Site#viewMemberListCP">
-			<var name="usersEmailsList" value="userfn1@liferay.com,userfn2@liferay.com,userfn3@liferay.com,userfn10@liferay.com" />
+			<var name="usersEmailsList" value="userea1@liferay.com,userea2@liferay.com,userea3@liferay.com,userea10@liferay.com" />
 		</execute>
 
 		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn4@liferay.com,userfn5@liferay.com,userfn6@liferay.com,userfn7@liferay.com,userfn8@liferay.com" />
-		</execute>
-
-		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn9@liferay.com" />
+			<var name="usersEmailsList" value="userea4@liferay.com,userea5@liferay.com,userea6@liferay.com,userea7@liferay.com,userea8@liferay.com,userea9@liferay.com" />
 		</execute>
 
 		<execute macro="Site#viewMemberCP">
@@ -821,18 +816,15 @@
 		</execute>
 
 		<execute function="Click" locator1="Pagination#LAST_LINK" />
+
 		<execute function="AssertTextEquals" locator1="Pagination#CURRENT_PAGE_SELECT" value1="Showing 11 to 11 of 11 entries." />
 
 		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn1@liferay.com,userfn2@liferay.com,userfn3@liferay.com,userfn10@liferay.com" />
-		</execute>
-
-		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn4@liferay.com,userfn5@liferay.com,userfn6@liferay.com,userfn7@liferay.com,userfn8@liferay.com" />
+			<var name="usersEmailsList" value="userea1@liferay.com,userea2@liferay.com,userea3@liferay.com,userea4@liferay.com,userea5@liferay.com,userea6@liferay.com,userea7@liferay.com,userea8@liferay.com,userea10@liferay.com" />
 		</execute>
 
 		<execute macro="Site#viewMemberListCP">
-			<var name="usersEmailsList" value="userfn9@liferay.com" />
+			<var name="usersEmailsList" value="userea9@liferay.com" />
 		</execute>
 
 		<execute function="Click" locator1="Pagination#PREVIOUS_LINK" />
@@ -840,15 +832,11 @@
 		<execute function="AssertTextEquals" locator1="Pagination#CURRENT_PAGE_SELECT" value1="Showing 6 to 10 of 11 entries." />
 
 		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn1@liferay.com,userfn2@liferay.com,userfn3@liferay.com,userfn10@liferay.com" />
+			<var name="usersEmailsList" value="userea1@liferay.com,userea2@liferay.com,userea3@liferay.com,userea9@liferay.com,userea10@liferay.com" />
 		</execute>
 
 		<execute macro="Site#viewMemberListCP">
-			<var name="usersEmailsList" value="userfn4@liferay.com,userfn5@liferay.com,userfn6@liferay.com,userfn7@liferay.com,userfn8@liferay.com" />
-		</execute>
-
-		<execute macro="Site#assertMemberListNotVisibleCP">
-			<var name="usersEmailsList" value="userfn9@liferay.com" />
+			<var name="usersEmailsList" value="userea4@liferay.com,userea5@liferay.com,userea6@liferay.com,userea7@liferay.com,userea8@liferay.com" />
 		</execute>
 	</command>
 
@@ -1068,16 +1056,23 @@
 	<command name="ViewMembershipRequestWithSiteMembershipScope" priority="3">
 		<property name="testray.component.names" value="Site Administration,Users and Organizations" />
 
-		<for list="1,2" param="i">
-			<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
 
-			<execute macro="Site#addBlankCP">
-				<var name="membershipType" value="Restricted" />
-				<var name="siteName" value="Site Name ${i}" />
-			</execute>
-		</for>
+		<execute macro="Site#addBlankCP">
+			<var name="membershipType" value="Restricted" />
+			<var name="siteName" value="Site Name 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
+
+		<execute macro="Site#addBlankCP">
+			<var name="membershipType" value="Restricted" />
+			<var name="siteName" value="Site Name 2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />

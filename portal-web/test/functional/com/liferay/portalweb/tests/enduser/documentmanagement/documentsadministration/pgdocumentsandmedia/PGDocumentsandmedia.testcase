@@ -34,23 +34,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="DMDocument#tearDownCP" />
-
-				<execute macro="DMFolder#tearDownCP" />
-
-				<execute macro="DMDocumentType#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddDocument" priority="5">
@@ -212,25 +198,53 @@
 			<var name="pageName" value="Documents and Media Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount" >
-			<execute macro="DMDocument#addPG">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_${entryCount}.doc" />
-				<var name="dmDocumentTitle" value="Document_${entryCount}.doc" />
-			</execute>
-		</for>
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_1.doc" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
 
-		<for list="1,2,3" param="entryCount" >
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Documents and Media Page" />
-			</execute>
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_2.doc" />
+			<var name="dmDocumentTitle" value="Document_2.doc" />
+		</execute>
 
-			<execute macro="DMDocument#viewPG">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentSize" value="22KB" />
-				<var name="dmDocumentTitle" value="Document_${entryCount}.doc" />
-			</execute>
-		</for>
+		<execute macro="DMDocument#addPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_3.doc" />
+			<var name="dmDocumentTitle" value="Document_3.doc" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
+
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentSize" value="22KB" />
+			<var name="dmDocumentTitle" value="Document_1.doc" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
+
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentSize" value="22KB" />
+			<var name="dmDocumentTitle" value="Document_2.doc" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Documents and Media Page" />
+		</execute>
+
+		<execute macro="DMDocument#viewPG">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentSize" value="22KB" />
+			<var name="dmDocumentTitle" value="Document_3.doc" />
+		</execute>
 	</command>
 
 	<command name="AddDocumentType" priority="4">
@@ -1600,7 +1614,7 @@
 		</execute>
 	</command>
 
-	<command name="RemovePortlet" priority="5" >
+	<command name="RemovePortlet" priority="5">
 		<property name="portal.acceptance" value="true" />
 
 		<execute macro="Navigator#gotoPage">

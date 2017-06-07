@@ -11,26 +11,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="BlogsEntry#tearDownCP" />
-
-				<execute macro="Blogs#tearDownConfigurationDisplaySettingsPG">
-					<var name="pageName" value="Blogs Page" />
-					<var name="portletName" value="Blogs" />
-				</execute>
-
-				<execute macro="KBArticle#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="ChangeSocialBookmarkSitesForKBArticle" priority="4">
@@ -78,11 +61,53 @@
 
 		<execute function="Click" locator1="Icon#SHARE" />
 
-		<for list="Twitter,Facebook,Google+,LinkedIn,Delicious,Digg,Evernote,Newsvine,Reddit,Slashdot,StumbleUpon,Tuenti" param="socialBookmarkSites" >
-			<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
-				<var name="socialBookmarkSite" value="${socialBookmarkSites}" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Twitter" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Facebook" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Google+" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="LinkedIn" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Delicious" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Digg" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Evernote" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Newsvine" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Reddit" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Slashdot" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="StumbleUpon" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Tuenti" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Knowledge Base Display Page" />
@@ -102,17 +127,57 @@
 			<var name="pageName" value="Knowledge Base Display Page" />
 		</execute>
 
-		<for list="Facebook,Google+,AddThis,LinkedIn,Delicious,Digg,Evernote" param="socialBookmarkSites" >
-			<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
-				<var name="socialBookmarkSite" value="${socialBookmarkSites}" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Facebook" />
+		</execute>
 
-		<for list="Twitter,Newsvine,Reddit,Slashdot,StumbleUpon,Tuenti" param="socialBookmarkSites" >
-			<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
-				<var name="socialBookmarkSite" value="${socialBookmarkSites}" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Google+" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="AddThis" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="LinkedIn" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Delicious" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Digg" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Evernote" />
+		</execute>
+
+		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Twitter" />
+		</execute>
+
+		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Newsvine" />
+		</execute>
+
+		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Reddit" />
+		</execute>
+
+		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Slashdot" />
+		</execute>
+
+		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="StumbleUpon" />
+		</execute>
+
+		<execute macro="KBArticle#viewDisabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Tuenti" />
+		</execute>
 	</command>
 
 	<command name="ViewBlogsEntryWithSocialBookmarksSites" priority="3">
@@ -214,10 +279,56 @@
 			<var name="pageName" value="Knowledge Base Display Page" />
 		</execute>
 
-		<for list="Twitter,Facebook,Google+,AddThis,LinkedIn,Delicious,Digg,Evernote,Newsvine,Reddit,Slashdot,StumbleUpon,Tuenti" param="socialBookmarkSites" >
-			<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
-				<var name="socialBookmarkSite" value="${socialBookmarkSites}" />
-			</execute>
-		</for>
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Twitter" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Facebook" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Google+" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="AddThis" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="LinkedIn" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Delicious" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Digg" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Evernote" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Newsvine" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Reddit" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Slashdot" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="StumbleUpon" />
+		</execute>
+
+		<execute macro="KBArticle#viewEnabledKBSocialBookmarkSites">
+			<var name="socialBookmarkSite" value="Tuenti" />
+		</execute>
 	</command>
 </definition>
