@@ -27,24 +27,18 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#tearDownCP" />
+		<execute macro="User#tearDownCP" />
 
-				<execute macro="Page#tearDownPG" />
+		<execute macro="Page#tearDownPG" />
 
-				<execute macro="Page#tearDownPG">
-					<var name="site" value="test" />
-					<var name="siteURL" value="true" />
-				</execute>
-			</else>
-		</if>
+		<execute macro="Page#tearDownPG">
+			<var name="site" value="test" />
+			<var name="siteURL" value="true" />
+		</execute>
 	</tear-down>
 
 	<command name="SearchFriendsDirectory" priority="3">

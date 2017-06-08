@@ -11,22 +11,16 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
-					<var name="workflowDefinitionTitle" value="Edited Workflow Definition" />
-				</execute>
+		<execute macro="Workflow#tearDownSpecificWorkflowDefinition">
+			<var name="workflowDefinitionTitle" value="Edited Workflow Definition" />
+		</execute>
 
-				<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
-				<execute macro="Workflow#tearDownWorkflowDefinitionDraftsViaKDCP" />
-			</else>
-		</if>
+		<execute macro="Workflow#tearDownWorkflowDefinitionsViaWorkflowCP" />
+		<execute macro="Workflow#tearDownWorkflowDefinitionDraftsViaKDCP" />
 	</tear-down>
 
 	<command name="AddConditionNodeEditNameAndDesciptionAndDeleteViaViewTab" priority="3">
