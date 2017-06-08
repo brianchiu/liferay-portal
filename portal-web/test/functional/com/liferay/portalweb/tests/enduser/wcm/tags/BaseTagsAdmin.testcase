@@ -15,17 +15,11 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Tag#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="Tag#tearDownCP" />
 	</tear-down>
 
 	<command name="CannotAddEmptyTag" priority="4">
@@ -43,33 +37,9 @@
 	</command>
 
 	<command name="ViewTagsPagination" priority="4">
-		<var name="index" value="1" />
-
-		<while>
-			<not>
-				<equals arg1="${index}" arg2="10" />
-			</not>
-			<then>
-				<execute macro="Tag#addCP">
-					<var name="tagName" value="tagname0${index}" />
-				</execute>
-
-				<var method="MathUtil#sum('${index}', '1')" name="index" />
-			</then>
-		</while>
-
-		<while max-iterations="16">
-			<not>
-				<equals arg1="${index}" arg2="26" />
-			</not>
-			<then>
-				<execute macro="Tag#addCP">
-					<var name="tagName" value="tagname${index}" />
-				</execute>
-
-				<var method="MathUtil#sum('${index}', '1')" name="index" />
-			</then>
-		</while>
+		<execute macro="Tag#addMultipleCP">
+			<var name="tagNames" value="tagname01,tagname02,tagname03,tagname04,tagname05,tagname06,tagname07,tagname08,tagname09,tagname10,tagname11,tagname12,tagname13,tagname14,tagname15,tagname16,tagname17,tagname18,tagname19,tagname20,tagname21,tagname22,tagname23,tagname24,tagname25" />
+		</execute>
 
 		<execute function="AssertTextEquals" locator1="Pagination#ITEMS_PER_PAGE_SELECT" value1="20 Entries" />
 

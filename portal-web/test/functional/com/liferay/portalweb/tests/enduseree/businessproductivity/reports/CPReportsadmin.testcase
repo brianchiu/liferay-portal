@@ -11,21 +11,15 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="ReportsAdmin#tearDownReports" />
-				<execute macro="ReportsAdmin#tearDownDefinitions" />
-				<execute macro="ReportsAdmin#tearDownSources" />
+		<execute macro="ReportsAdmin#tearDownReports" />
+		<execute macro="ReportsAdmin#tearDownDefinitions" />
+		<execute macro="ReportsAdmin#tearDownSources" />
 
-				<execute macro="ServerAdministration#tearDownMailServerSettings" />
-			</else>
-		</if>
+		<execute macro="ServerAdministration#tearDownMailServerSettings" />
 	</tear-down>
 
 	<command name="AddReportInvalidEmail" priority="4">
