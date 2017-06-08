@@ -843,7 +843,7 @@
 		<execute macro="DynamicDataMapping#addField">
 			<var name="field" value="Text Box" />
 			<var name="fieldFieldLabel" value="Text Box" />
-			<var method="StringUtil#replace('Text Box, ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text Box', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
