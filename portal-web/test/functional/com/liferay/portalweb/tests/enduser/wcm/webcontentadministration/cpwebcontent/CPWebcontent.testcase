@@ -188,22 +188,22 @@
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Boolean" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Boolean', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Date" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Date', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Decimal" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Decimal', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Documents and Media" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Documents and Media', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="Navigator#openURL" />
@@ -225,22 +225,22 @@
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="HTML" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('HTML', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Image" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Image', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Integer" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Integer', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Link to Page" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Link to Page', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="Navigator#openURL" />
@@ -262,32 +262,32 @@
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Number" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Number', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Radio" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Radio', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Select" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Select', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Separator" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Separator', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Text" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text', ' ', '')" name="fieldName" />
 		</execute>
 
 		<execute macro="DynamicDataMapping#viewField">
 			<var name="fieldFieldLabel" value="Text Box" />
-			<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
+			<var method="StringUtil#replace('Text Box', ' ', '')" name="fieldName" />
 		</execute>
 	</command>
 
