@@ -25,34 +25,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#logoutAndLoginPG">
-					<var name="userLoginEmailAddress" value="test@liferay.com" />
-					<var name="userLoginFullName" value="Test Test" />
-				</execute>
-
-				<execute macro="BlogsEntry#tearDownCP" />
-
-				<execute macro="Blogs#tearDownConfigurationScopePG">
-					<var name="pageName" value="Blogs Page" />
-				</execute>
-
-				<execute macro="Organization#tearDownCP" />
-
-				<execute macro="PortalInstances#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-
-				<execute macro="Site#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddBlogsEntryWithHTML" priority="4">
@@ -242,15 +217,17 @@
 			<var name="portlet" value="Documents and Media" />
 		</execute>
 
-		<var name="dmDocumentCounterList" value="1,2" />
+		<execute macro="DMDocument#addCP">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_1.jpg" />
+			<var name="dmDocumentTitle" value="Document_1.jpg" />
+		</execute>
 
-		<for list="${dmDocumentCounterList}" param="entryCount" >
-			<execute macro="DMDocument#addCP">
-				<var name="dmDocumentDescription" value="DM Document Description" />
-				<var name="dmDocumentFile" value="Document_${entryCount}.jpg" />
-				<var name="dmDocumentTitle" value="Document_${entryCount}.jpg" />
-			</execute>
-		</for>
+		<execute macro="DMDocument#addCP">
+			<var name="dmDocumentDescription" value="DM Document Description" />
+			<var name="dmDocumentFile" value="Document_2.jpg" />
+			<var name="dmDocumentTitle" value="Document_2.jpg" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Blogs" />
@@ -2156,18 +2133,32 @@
 			<var name="portlet" value="Users and Organizations" />
 		</execute>
 
-		<var name="orgNameList" value="Organization1 Name,Organization2 Name,Organization3 Name" />
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization1 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
 
-		<for list="${orgNameList}" param="orgName">
-			<execute macro="Organization#addCP">
-				<var name="orgName" value="${orgName}" />
-				<var name="orgType" value="Organization" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
-		</for>
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization2 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="Organization#addCP">
+			<var name="orgName" value="Organization3 Name" />
+			<var name="orgType" value="Organization" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
 		<execute macro="UsersAndOrganizationsNavigator#gotoOrganizations" />
 

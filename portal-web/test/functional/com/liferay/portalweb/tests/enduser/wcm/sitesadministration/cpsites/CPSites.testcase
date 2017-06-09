@@ -11,17 +11,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Site#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="ActivateSite" priority="4">
@@ -319,16 +311,24 @@
 	</command>
 
 	<command name="AddSiteWithInvalidName" priority="3">
-		<for list="Site Name*,22222" param="siteName" >
-			<execute macro="ProductMenu#gotoControlPanelSites">
-				<var name="portlet" value="Sites" />
-			</execute>
 
-			<execute macro="Site#viewCannotAdd">
-				<var name="siteName" value="${siteName}" />
-				<var name="siteNameInvalid" value="Invalid" />
-			</execute>
-		</for>
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
+
+		<execute macro="Site#viewCannotAdd">
+			<var name="siteName" value="Site Name*" />
+			<var name="siteNameInvalid" value="Invalid" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelSites">
+			<var name="portlet" value="Sites" />
+		</execute>
+
+		<execute macro="Site#viewCannotAdd">
+			<var name="siteName" value="22222" />
+			<var name="siteNameInvalid" value="Invalid" />
+		</execute>
 	</command>
 
 	<command name="AddSiteWithNullName" priority="3">

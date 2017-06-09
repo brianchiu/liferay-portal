@@ -10,19 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="PortalSettings#tearDownAuthenticationCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="ImportLDAPUserWithBlankPassword" priority="3">
@@ -44,19 +34,53 @@
 			<var name="portlet" value="Instance Settings" />
 		</execute>
 
-		<for list="ENABLED,IMPORT_ENABLED,IMPORT_ON_STARTUP_ENABLED,USE_LDAP_PASSWORD_POLICY" param="enableCheckboxKey">
-			<execute macro="PortalSettingsNavigator#gotoLDAP" />
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
 
-			<execute macro="PortalSettings#enableLDAPSetting">
-				<var name="enableCheckboxKey" value="${enableCheckboxKey}" />
-			</execute>
+		<execute macro="PortalSettings#enableLDAPSetting">
+			<var name="enableCheckboxKey" value="ENABLED" />
+		</execute>
 
-			<execute macro="PortalSettingsNavigator#gotoLDAP" />
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
 
-			<execute macro="PortalSettings#viewEnabledLDAPSetting">
-				<var name="enableCheckboxKey" value="${enableCheckboxKey}" />
-			</execute>
-		</for>
+		<execute macro="PortalSettings#viewEnabledLDAPSetting">
+			<var name="enableCheckboxKey" value="ENABLED" />
+		</execute>
+
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
+
+		<execute macro="PortalSettings#enableLDAPSetting">
+			<var name="enableCheckboxKey" value="IMPORT_ENABLED" />
+		</execute>
+
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
+
+		<execute macro="PortalSettings#viewEnabledLDAPSetting">
+			<var name="enableCheckboxKey" value="IMPORT_ENABLED" />
+		</execute>
+
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
+
+		<execute macro="PortalSettings#enableLDAPSetting">
+			<var name="enableCheckboxKey" value="IMPORT_ON_STARTUP_ENABLED" />
+		</execute>
+
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
+
+		<execute macro="PortalSettings#viewEnabledLDAPSetting">
+			<var name="enableCheckboxKey" value="IMPORT_ON_STARTUP_ENABLED" />
+		</execute>
+
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
+
+		<execute macro="PortalSettings#enableLDAPSetting">
+			<var name="enableCheckboxKey" value="USE_LDAP_PASSWORD_POLICY" />
+		</execute>
+
+		<execute macro="PortalSettingsNavigator#gotoLDAP" />
+
+		<execute macro="PortalSettings#viewEnabledLDAPSetting">
+			<var name="enableCheckboxKey" value="USE_LDAP_PASSWORD_POLICY" />
+		</execute>
 
 		<execute macro="PortalSettings#addLDAPServer">
 			<var name="LDAPServerName" value="ApacheDS Server" />

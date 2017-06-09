@@ -10,21 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="MessageboardsCategory#tearDownCP" />
-
-				<execute macro="MessageboardsThread#tearDownCP" />
-
-				<execute macro="MessageboardsPortlet#tearDownConfigurationGeneralCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddMBCategory" priority="5">
@@ -135,15 +123,29 @@
 	<command name="DeleteMBCategories" priority="4">
 		<execute macro="Navigator#openURL" />
 
-		<for list="MB Category1 Name,MB Category2 Name,MB Category3 Name" param="categoryName" >
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Message Boards" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Message Boards" />
+		</execute>
 
-			<execute macro="MessageboardsCategory#addCP">
-				<var name="categoryName" value="${categoryName}" />
-			</execute>
-		</for>
+		<execute macro="MessageboardsCategory#addCP">
+			<var name="categoryName" value="MB Category1 Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Message Boards" />
+		</execute>
+
+		<execute macro="MessageboardsCategory#addCP">
+			<var name="categoryName" value="MB Category2 Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Message Boards" />
+		</execute>
+
+		<execute macro="MessageboardsCategory#addCP">
+			<var name="categoryName" value="MB Category3 Name" />
+		</execute>
 
 		<execute macro="MessageboardsCategory#tearDownCP">
 			<var name="assetType" value="3 items" />
