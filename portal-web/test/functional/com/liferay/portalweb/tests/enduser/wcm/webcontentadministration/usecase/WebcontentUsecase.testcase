@@ -12,29 +12,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#firstLoginPG" />
-
-				<execute macro="WebContent#tearDownCP" />
-
-				<execute macro="WebContentTemplates#tearDownCP" />
-
-				<execute macro="WebContentStructures#tearDownCP" />
-
-				<execute macro="WebContentStructures#tearDownCP">
-					<var name="siteScopeName" value="${globalSiteName}" />
-				</execute>
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddAndViewStructureAndTemplateWithPermissions" priority="4">
@@ -160,41 +140,73 @@
 
 		<execute function="Refresh" />
 
-		<for list="1,2" param="number">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="user${number}@liferay.com" />
-				<var name="userFirstName" value="userfn${number}" />
-				<var name="userLastName" value="userln${number}" />
-				<var name="userScreenName" value="usersn${number}" />
-			</execute>
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="user1@liferay.com" />
+			<var name="userFirstName" value="userfn1" />
+			<var name="userLastName" value="userln1" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editPasswordCP">
-				<var name="userEmailAddress" value="user${number}@liferay.com" />
-				<var name="userScreenName" value="usersn${number}" />
-			</execute>
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="user1@liferay.com" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSite">
-				<var name="site" value="Site Name" />
-			</execute>
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoSitesMembers">
-				<var name="portlet" value="Site Memberships" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesMembers">
+			<var name="portlet" value="Site Memberships" />
+		</execute>
 
-			<execute macro="Site#assignUserAsMemberCP">
-				<var name="userFirstName" value="userfn${number}" />
-				<var name="userLastName" value="userln${number}" />
-				<var name="userScreenName" value="usersn${number}" />
-			</execute>
-		</for>
+		<execute macro="Site#assignUserAsMemberCP">
+			<var name="userFirstName" value="userfn1" />
+			<var name="userLastName" value="userln1" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="user2@liferay.com" />
+			<var name="userFirstName" value="userfn2" />
+			<var name="userLastName" value="userln2" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="user2@liferay.com" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesMembers">
+			<var name="portlet" value="Site Memberships" />
+		</execute>
+
+		<execute macro="Site#assignUserAsMemberCP">
+			<var name="userFirstName" value="userfn2" />
+			<var name="userLastName" value="userln2" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
 
 		<execute macro="ProductMenu#gotoControlPanelUsers">
 			<var name="portlet" value="Users and Organizations" />
@@ -796,7 +808,7 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
-		<execute macro="Role#removePermissionPG" >
+		<execute macro="Role#removePermissionPG">
 			<var name="permissionDefinitionKey" value="CONFIGURATION_PERMISSIONS_VIEW_CHECKBOX" />
 			<var name="roleTitle" value="Guest" />
 		</execute>
@@ -1282,13 +1294,83 @@
 			<var name="structureName" value="WC Structure Name" />
 		</execute>
 
-		<for list="Boolean,Date,Decimal,Documents and Media,HTML,Image,Integer,Link to Page,Number,Radio,Select,Text,Text Box" param="structureFieldName">
-			<execute macro="DynamicDataMapping#addField">
-				<var name="field" value="${structureFieldName}" />
-				<var name="fieldFieldLabel" value="${structureFieldName}" />
-				<var method="StringUtil#replace('${structureFieldName}', ' ', '')" name="fieldName" />
-			</execute>
-		</for>
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Boolean" />
+			<var name="fieldFieldLabel" value="Boolean" />
+			<var method="StringUtil#replace('Boolean', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Date" />
+			<var name="fieldFieldLabel" value="Date" />
+			<var method="StringUtil#replace('Date', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Decimal" />
+			<var name="fieldFieldLabel" value="Decimal" />
+			<var method="StringUtil#replace('Decimal', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Documents and Media" />
+			<var name="fieldFieldLabel" value="Documents and Media" />
+			<var method="StringUtil#replace('Documents and Media', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="HTML" />
+			<var name="fieldFieldLabel" value="HTML" />
+			<var method="StringUtil#replace('HTML', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Image" />
+			<var name="fieldFieldLabel" value="Image" />
+			<var method="StringUtil#replace('Image', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Integer" />
+			<var name="fieldFieldLabel" value="Integer" />
+			<var method="StringUtil#replace('Integer', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Link to Page" />
+			<var name="fieldFieldLabel" value="Link to Page" />
+			<var method="StringUtil#replace('Link to Page', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Number" />
+			<var name="fieldFieldLabel" value="Number" />
+			<var method="StringUtil#replace('Number', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Radio" />
+			<var name="fieldFieldLabel" value="Radio" />
+			<var method="StringUtil#replace('Radio', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Select" />
+			<var name="fieldFieldLabel" value="Select" />
+			<var method="StringUtil#replace('Select', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Text" />
+			<var name="fieldFieldLabel" value="Text" />
+			<var method="StringUtil#replace('Text', ' ', '')" name="fieldName" />
+		</execute>
+
+		<execute macro="DynamicDataMapping#addField">
+			<var name="field" value="Text Box" />
+			<var name="fieldFieldLabel" value="Text Box" />
+			<var method="StringUtil#replace('Text Box', ' ', '')" name="fieldName" />
+		</execute>
 
 		<execute macro="WebContentStructures#saveCP">
 			<var name="structureName" value="WC Structure Name" />
@@ -1589,20 +1671,42 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<for list="1,2,3" param="i">
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="WC WebContent Title ${i}" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		</for>
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Web Content" />
@@ -1612,21 +1716,47 @@
 			<var name="webContentTitleList" value="WC WebContent Title 1,WC WebContent Title 2,WC WebContent Title 3," />
 		</execute>
 
-		<for list="1,2,3" param="i">
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoEditCP">
-				<var name="webContentTitle" value="WC WebContent Title ${i}" />
-			</execute>
+		<execute macro="WebContentNavigator#gotoEditCP">
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
 
-			<execute macro="WebContent#viewStatus">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentStatus" value="Expired" />
-				<var name="webContentTitle" value="WC WebContent Title ${i}" />
-			</execute>
-		</for>
+		<execute macro="WebContent#viewStatus">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentStatus" value="Expired" />
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoEditCP">
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
+		<execute macro="WebContent#viewStatus">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentStatus" value="Expired" />
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoEditCP">
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
+
+		<execute macro="WebContent#viewStatus">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentStatus" value="Expired" />
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
 	</command>
 
 	<command name="MoveMultipleWebContentToFolder" priority="4">
@@ -1641,20 +1771,42 @@
 			<var name="folderName" value="WC Folder Name" />
 		</execute>
 
-		<for list="WC WebContent Title 1,WC WebContent Title 2,WC WebContent Title 3" param="webContentTitle">
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Web Content" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
+		<execute macro="WebContentNavigator#gotoAddCP" />
 
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="${webContentTitle}" />
-			</execute>
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
 
-			<execute macro="PortletEntry#publish" />
-		</for>
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Web Content" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="WC WebContent Content" />
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
 
 		<execute macro="ProductMenu#gotoSitesContent">
 			<var name="portlet" value="Web Content" />
@@ -1674,11 +1826,17 @@
 			<var name="webContentTitle" value="WC Folder Name" />
 		</execute>
 
-		<for list="WC WebContent Title 1,WC WebContent Title 2,WC WebContent Title 3" param="webContentTitle">
-			<execute macro="WebContent#viewTitle">
-				<var name="webContentTitle" value="${webContentTitle}" />
-			</execute>
-		</for>
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title 1" />
+		</execute>
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title 2" />
+		</execute>
+
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="WC WebContent Title 3" />
+		</execute>
 	</command>
 
 	<command name="StagingPublishExpiredWebContentViaWCD" priority="4">
@@ -2051,18 +2209,60 @@
 			<var name="portlet" value="Categories" />
 		</execute>
 
-		<for list="Category Name 1,Category Name 2,Category Name 3,Category Name 4,Category Name 5" param="categoryName">
-			<execute macro="Category#addCP">
-				<var name="categoryName" value="${categoryName}" />
-				<var name="vocabularyName" value="Vocabulary Name" />
-			</execute>
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name 1" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
 
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Categories" />
-			</execute>
-		</for>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name 2" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name 3" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name 4" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name 5" />
+			<var name="vocabularyName" value="Vocabulary Name" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -2106,22 +2306,80 @@
 	<command name="ViewMultipleVocabulariesViaAddWebContent" priority="4">
 		<property name="testray.component.names" value="Categories,Web Content Administration" />
 
-		<for list="Vocabulary Name 1,Vocabulary Name 2,Vocabulary Name 3,Vocabulary Name 4,Vocabulary Name 5" param="vocabularyName">
-			<execute macro="Navigator#openURL" />
+		<execute macro="Navigator#openURL" />
 
-			<execute macro="ProductMenu#gotoSitesContent">
-				<var name="portlet" value="Categories" />
-			</execute>
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
 
-			<execute macro="Vocabulary#addCP">
-				<var name="vocabularyName" value="${vocabularyName}" />
-			</execute>
+		<execute macro="Vocabulary#addCP">
+			<var name="vocabularyName" value="Vocabulary Name 1" />
+		</execute>
 
-			<execute macro="Category#addCP">
-				<var name="categoryName" value="Category Name" />
-				<var name="vocabularyName" value="${vocabularyName}" />
-			</execute>
-		</for>
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name" />
+			<var name="vocabularyName" value="Vocabulary Name 1" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Vocabulary#addCP">
+			<var name="vocabularyName" value="Vocabulary Name 2" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name" />
+			<var name="vocabularyName" value="Vocabulary Name 2" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Vocabulary#addCP">
+			<var name="vocabularyName" value="Vocabulary Name 3" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name" />
+			<var name="vocabularyName" value="Vocabulary Name 3" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Vocabulary#addCP">
+			<var name="vocabularyName" value="Vocabulary Name 4" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name" />
+			<var name="vocabularyName" value="Vocabulary Name 4" />
+		</execute>
+
+		<execute macro="Navigator#openURL" />
+
+		<execute macro="ProductMenu#gotoSitesContent">
+			<var name="portlet" value="Categories" />
+		</execute>
+
+		<execute macro="Vocabulary#addCP">
+			<var name="vocabularyName" value="Vocabulary Name 5" />
+		</execute>
+
+		<execute macro="Category#addCP">
+			<var name="categoryName" value="Category Name" />
+			<var name="vocabularyName" value="Vocabulary Name 5" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 

@@ -306,6 +306,16 @@
 		<execute function="AssertClick" locator1="DDMEditStructure#SETTINGS_CELL_EDITOR_SAVE_BUTTON" value1="Save" />
 	</command>
 
+	<command name="editFieldNamesWithInvalidCharacters">
+		<for list="${characterList}" param="fieldName">
+			<execute macro="DynamicDataMapping#editFieldNameInvalidCharacter">
+				<var name="field" value="${field}" />
+				<var name="fieldFieldLabel" value="${fieldFieldLabel}" />
+				<var name="fieldName" value="${fieldName}" />
+			</execute>
+		</for>
+	</command>
+
 	<command name="editFieldNestedWithDuplicateName">
 		<execute macro="DynamicDataMapping#selectDynamicDataMappingFrame" />
 

@@ -25,21 +25,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Site#tearDownCP" />
-
-				<execute macro="WebContent#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddDraftNotApproved" priority="4">
@@ -144,15 +132,29 @@
 	<command name="AddWebContentPortalScopeCurrentPage" priority="3">
 		<property name="testray.component.names" value="Web Content Display" />
 
-		<for list="1,2,3" param="i">
-			<execute macro="Page#add">
-				<var name="pageName" value="Web Content Display Page${i}" />
-			</execute>
+		<execute macro="Page#add">
+			<var name="pageName" value="Web Content Display Page1" />
+		</execute>
 
-			<execute macro="Portlet#addPG">
-				<var name="portletName" value="Web Content Display" />
-			</execute>
-		</for>
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="Web Content Display Page2" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
+
+		<execute macro="Page#add">
+			<var name="pageName" value="Web Content Display Page3" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Web Content Display" />
+		</execute>
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Web Content Display Page1" />
