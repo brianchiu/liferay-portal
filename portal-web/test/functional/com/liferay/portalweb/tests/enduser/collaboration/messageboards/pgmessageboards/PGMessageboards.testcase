@@ -38,41 +38,49 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="MessageboardsCategory#tearDownCP" />
-
-				<execute macro="MessageboardsThread#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-
-				<execute macro="ServerAdministration#tearDownDMFileUploadSettings" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="AddMBCategories" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<for list="MB Category1 Name,MB Category2 Name,MB Category3 Name" param="categoryName" >
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Message Boards Page" />
-			</execute>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
 
-			<execute macro="MessageboardsCategory#addPG">
-				<var name="categoryName" value="${categoryName}" />
-			</execute>
+		<execute macro="MessageboardsCategory#addPG">
+			<var name="categoryName" value="MB Category1 Name" />
+		</execute>
 
-			<execute macro="MessageboardsCategory#viewPG">
-				<var name="categoryName" value="${categoryName}" />
-			</execute>
-		</for>
+		<execute macro="MessageboardsCategory#viewPG">
+			<var name="categoryName" value="MB Category1 Name" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsCategory#addPG">
+			<var name="categoryName" value="MB Category2 Name" />
+		</execute>
+
+		<execute macro="MessageboardsCategory#viewPG">
+			<var name="categoryName" value="MB Category2 Name" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsCategory#addPG">
+			<var name="categoryName" value="MB Category3 Name" />
+		</execute>
+
+		<execute macro="MessageboardsCategory#viewPG">
+			<var name="categoryName" value="MB Category3 Name" />
+		</execute>
 	</command>
 
 	<command name="AddMBCategory" priority="5">
@@ -1018,16 +1026,68 @@
 			<var name="pageName" value="Message Boards Page" />
 		</execute>
 
-		<for list="1,2,3,4,5,6,7" param="replyCount">
-			<execute macro="MessageboardsThread#replyPG">
-				<var name="threadReplyBody" value="Message Boards Thread Reply ${replyCount}" />
-				<var name="threadSubject" value="Message Boards Thread Subject" />
-			</execute>
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 1" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
 
-			<execute macro="Navigator#gotoPage">
-				<var name="pageName" value="Message Boards Page" />
-			</execute>
-		</for>
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 2" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 3" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 4" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 5" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 6" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
+
+		<execute macro="MessageboardsThread#replyPG">
+			<var name="threadReplyBody" value="Message Boards Thread Reply 7" />
+			<var name="threadSubject" value="Message Boards Thread Subject" />
+		</execute>
+
+		<execute macro="Navigator#gotoPage">
+			<var name="pageName" value="Message Boards Page" />
+		</execute>
 
 		<execute macro="MessageboardsThread#gotoPG">
 			<var name="lastPostUserName" value="Test Test" />
@@ -1035,27 +1095,54 @@
 			<var name="threadSubject" value="Message Boards Thread Subject" />
 		</execute>
 
-		<for list="1,2,3,4" param="replyCount">
-			<var name="key_threadBody" value="Message Boards Thread Reply ${replyCount}" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 1" />
 
-			<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply ${replyCount}" />
-		</for>
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 1" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 2" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 2" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 3" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 3" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 4" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 4" />
 
 		<execute function="AssertVisible" locator1="Button#MORE_MESSAGES" />
 
-		<for list="5,6,7" param="replyNotVisible">
-			<var name="key_threadBody" value="Message Boards Thread Reply ${replyNotVisible}" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 5" />
 
-			<execute function="AssertElementNotPresent" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply ${replyNotVisible}" />
-		</for>
+		<execute function="AssertElementNotPresent" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 5" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 6" />
+
+		<execute function="AssertElementNotPresent" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 6" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 7" />
+
+		<execute function="AssertElementNotPresent" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 7" />
 
 		<execute function="AssertClick" locator1="Button#MORE_MESSAGES" value1="More Messages" />
 
-		<for list="1,2,3,4,5,6,7" param="replyCount">
-			<var name="key_threadBody" value="Message Boards Thread Reply ${replyCount}" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 1" />
 
-			<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply ${replyCount}" />
-		</for>
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 1" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 2" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 2" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 3" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 3" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 4" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 4" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 5" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 5" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 6" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 6" />
+		<var name="key_threadBody" value="Message Boards Thread Reply 7" />
+
+		<execute function="AssertTextEquals" locator1="MessageBoardsThread#THREAD_BODY" value1="Message Boards Thread Reply 7" />
 	</command>
 
 	<command name="ViewSubcategorySubscriptionViaMySubscriptionsPage" priority="4">

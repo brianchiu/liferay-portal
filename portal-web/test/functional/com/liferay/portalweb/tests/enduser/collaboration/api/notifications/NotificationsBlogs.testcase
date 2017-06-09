@@ -56,25 +56,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Blogs#tearDownSubscribePG" />
-
-				<execute macro="Blogs#tearDownCP" />
-
-				<execute macro="NotificationsPortlet#tearDownUserDeliveries" />
-
-				<execute macro="Page#tearDownPG" />
-
-				<execute macro="User#tearDownCP" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="MarkAllNotificationsAsRead" priority="4">
@@ -99,12 +83,20 @@
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount" >
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
-			</execute>
-		</for>
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
 
 		<execute macro="Notifications#viewNoNotifications">
 			<var name="activePanel" value="Profile" />
@@ -153,12 +145,20 @@
 			<var name="pageName" value="Blogs Page" />
 		</execute>
 
-		<for list="1,2,3" param="entryCount" >
-			<execute macro="Blogs#addEntry">
-				<var name="entryContent" value="Blogs Entry${entryCount} Content" />
-				<var name="entryTitle" value="Blogs Entry${entryCount} Title" />
-			</execute>
-		</for>
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry1 Content" />
+			<var name="entryTitle" value="Blogs Entry1 Title" />
+		</execute>
+
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry2 Content" />
+			<var name="entryTitle" value="Blogs Entry2 Title" />
+		</execute>
+
+		<execute macro="Blogs#addEntry">
+			<var name="entryContent" value="Blogs Entry3 Content" />
+			<var name="entryTitle" value="Blogs Entry3 Title" />
+		</execute>
 
 		<execute macro="Notifications#viewNoNotifications">
 			<var name="activePanel" value="Profile" />

@@ -51,25 +51,51 @@
 
 		<execute macro="Form#closeSidebar" />
 
-		<for list="1,2,3" param="option">
-			<execute macro="Form#addPage" />
+		<execute macro="Form#addPage" />
 
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+		<execute macro="Form#editPageTitle">
+			<var name="formPageName" value="Page 2" />
+		</execute>
 
-			<execute macro="Form#editPageTitle">
-				<var name="formPageName" value="Page ${pageNumber}" />
-			</execute>
+		<execute macro="Form#gotoAddField">
+			<var name="fieldType" value="Text Field" />
+		</execute>
 
-			<execute macro="Form#gotoAddField">
-				<var name="fieldType" value="Text Field" />
-			</execute>
+		<execute macro="Form#editFieldLabel">
+			<var name="fieldValue" value="Destiny 1" />
+		</execute>
 
-			<execute macro="Form#editFieldLabel">
-				<var name="fieldValue" value="Destiny ${option}" />
-			</execute>
+		<execute macro="Form#closeSidebar" />
+		<execute macro="Form#addPage" />
 
-			<execute macro="Form#closeSidebar" />
-		</for>
+		<execute macro="Form#editPageTitle">
+			<var name="formPageName" value="Page 3" />
+		</execute>
+
+		<execute macro="Form#gotoAddField">
+			<var name="fieldType" value="Text Field" />
+		</execute>
+
+		<execute macro="Form#editFieldLabel">
+			<var name="fieldValue" value="Destiny 2" />
+		</execute>
+
+		<execute macro="Form#closeSidebar" />
+		<execute macro="Form#addPage" />
+
+		<execute macro="Form#editPageTitle">
+			<var name="formPageName" value="Page 4" />
+		</execute>
+
+		<execute macro="Form#gotoAddField">
+			<var name="fieldType" value="Text Field" />
+		</execute>
+
+		<execute macro="Form#editFieldLabel">
+			<var name="fieldValue" value="Destiny 3" />
+		</execute>
+
+		<execute macro="Form#closeSidebar" />
 
 		<execute macro="FormsAdminNavigator#gotoRules" />
 
@@ -115,25 +141,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="Navigator#openURL" />
-
-				<execute macro="ProductMenu#gotoSitesContent">
-					<var name="portlet" value="Forms" />
-				</execute>
-
-				<execute macro="FormsAdmin#teardownForms" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="ViewFormRulesSummary" priority="4">
@@ -170,26 +180,54 @@
 			<var name="publishFormURL" value="${publishedFormPublicURL}" />
 		</execute>
 
-		<for list="1,2,3" param="option">
-			<execute macro="FormFields#selectRadioOption">
-				<var name="fieldName" value="ChooseYourDestiny" />
-				<var name="radioOption" value="Destiny ${option}" />
-			</execute>
+		<execute macro="FormFields#selectRadioOption">
+			<var name="fieldName" value="ChooseYourDestiny" />
+			<var name="radioOption" value="Destiny 1" />
+		</execute>
 
-			<var method="MathUtil#sum('${option}','1')" name="pageNumber" />
+		<execute macro="FormPortlet#nextPage">
+			<var name="formPageCurrent" value="Page 1" />
+			<var name="formPageNext" value="Page 2" />
+		</execute>
 
-			<execute macro="FormPortlet#nextPage">
-				<var name="formPageCurrent" value="Page 1" />
-				<var name="formPageNext" value="Page ${pageNumber}" />
-			</execute>
+		<execute macro="FormFields#viewTextField">
+			<var name="fieldLabel" value="Destiny 1" />
+			<var name="fieldName" value="Destiny1" />
+		</execute>
 
-			<execute macro="FormFields#viewTextField">
-				<var name="fieldLabel" value="Destiny ${option}" />
-				<var name="fieldName" value="Destiny${option}" />
-			</execute>
+		<execute macro="FormPortlet#previousPage" />
+		<execute macro="FormFields#selectRadioOption">
+			<var name="fieldName" value="ChooseYourDestiny" />
+			<var name="radioOption" value="Destiny 2" />
+		</execute>
 
-			<execute macro="FormPortlet#previousPage" />
-		</for>
+		<execute macro="FormPortlet#nextPage">
+			<var name="formPageCurrent" value="Page 1" />
+			<var name="formPageNext" value="Page 3" />
+		</execute>
+
+		<execute macro="FormFields#viewTextField">
+			<var name="fieldLabel" value="Destiny 2" />
+			<var name="fieldName" value="Destiny2" />
+		</execute>
+
+		<execute macro="FormPortlet#previousPage" />
+		<execute macro="FormFields#selectRadioOption">
+			<var name="fieldName" value="ChooseYourDestiny" />
+			<var name="radioOption" value="Destiny 3" />
+		</execute>
+
+		<execute macro="FormPortlet#nextPage">
+			<var name="formPageCurrent" value="Page 1" />
+			<var name="formPageNext" value="Page 4" />
+		</execute>
+
+		<execute macro="FormFields#viewTextField">
+			<var name="fieldLabel" value="Destiny 3" />
+			<var name="fieldName" value="Destiny3" />
+		</execute>
+
+		<execute macro="FormPortlet#previousPage" />
 
 		<execute macro="FormFields#selectRadioOption">
 			<var name="fieldName" value="ChooseYourDestiny" />
