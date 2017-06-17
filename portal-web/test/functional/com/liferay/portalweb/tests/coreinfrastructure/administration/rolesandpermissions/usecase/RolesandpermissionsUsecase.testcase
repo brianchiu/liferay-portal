@@ -10,39 +10,9 @@
 	</set-up>
 
 	<tear-down>
-		<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
-
-		<if>
-			<equals arg1="${testPortalInstance}" arg2="true" />
-			<then>
-				<execute macro="PortalInstances#tearDownCP" />
-			</then>
-			<else>
-				<execute macro="User#firstLoginPG" />
-
-				<execute macro="Role#tearDownCP" />
-
-				<execute macro="DDLList#tearDownCP" />
-
-				<execute macro="DDLDataDefinition#tearDownCP" />
-
-				<execute macro="User#tearDownCP" />
-
-				<execute macro="UserGroup#tearDownCP" />
-
-				<execute macro="Organization#tearDownCP" />
-
-				<execute macro="Team#tearDownCP" />
-
-				<execute macro="Site#tearDownCP" />
-
-				<execute macro="Bookmark#tearDownCP" />
-
-				<execute macro="DMDocument#tearDownCP" />
-
-				<execute macro="Page#tearDownPG" />
-			</else>
-		</if>
+		<execute macro="PortalInstances#tearDownCP">
+			<var method="TestPropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		</execute>
 	</tear-down>
 
 	<command name="EditTeamPermissions" priority="4">
@@ -234,12 +204,30 @@
 			<var name="teamName" value="Site Team Name" />
 		</execute>
 
-		<for list="ACTION_ASSIGN_MEMBERS,ACTION_DELETE,ACTION_PERMISSIONS,ACTION_UPDATE,ACTION_VIEW" param="permissionDefinitionKey">
-			<execute macro="Team#definePermissionPG">
-				<var name="permissionDefinitionKey" value="${permissionDefinitionKey}" />
-				<var name="teamName" value="Site Team Name" />
-			</execute>
-		</for>
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_ASSIGN_MEMBERS" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_DELETE" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_PERMISSIONS" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_UPDATE" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_VIEW" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
 
 		<execute macro="User#logoutPG" />
 
@@ -490,7 +478,7 @@
 			<var name="portletName" value="Blogs" />
 		</execute>
 
-		<execute macro="PermissionsInline#gotoConfigurationPG" >
+		<execute macro="PermissionsInline#gotoConfigurationPG">
 			<var name="portletName" value="Blogs" />
 		</execute>
 
@@ -2107,36 +2095,63 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="1,2" param="userNumber">
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#addCP">
-				<var name="userEmailAddress" value="userea${userNumber}@liferay.com" />
-				<var name="userFirstName" value="userfn${userNumber}" />
-				<var name="userLastName" value="userln${userNumber}" />
-				<var name="userScreenName" value="usersn${userNumber}" />
-			</execute>
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="userea1@liferay.com" />
+			<var name="userFirstName" value="userfn1" />
+			<var name="userLastName" value="userln1" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editPasswordCP">
-				<var name="userEmailAddress" value="userea${userNumber}@liferay.com" />
-				<var name="userScreenName" value="usersn${userNumber}" />
-			</execute>
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="userea1@liferay.com" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
 
-			<execute macro="ProductMenu#gotoControlPanelUsers">
-				<var name="portlet" value="Users and Organizations" />
-			</execute>
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
 
-			<execute macro="User#editUserSiteCP">
-				<var name="siteName" value="Site Name" />
-				<var name="userScreenName" value="usersn${userNumber}" />
-			</execute>
-		</for>
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="Site Name" />
+			<var name="userScreenName" value="usersn1" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#addCP">
+			<var name="userEmailAddress" value="userea2@liferay.com" />
+			<var name="userFirstName" value="userfn2" />
+			<var name="userLastName" value="userln2" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="userea2@liferay.com" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoControlPanelUsers">
+			<var name="portlet" value="Users and Organizations" />
+		</execute>
+
+		<execute macro="User#editUserSiteCP">
+			<var name="siteName" value="Site Name" />
+			<var name="userScreenName" value="usersn2" />
+		</execute>
 
 		<execute macro="Navigator#openURL" />
 
@@ -2197,12 +2212,55 @@
 			<var name="roleTitle" value="site-member" />
 		</execute>
 
-		<for list="ACTION_ADD_DISCUSSION,ACTION_ADD_LAYOUT,ACTION_CONFIGURE_PORTLETS,ACTION_CUSTOMIZE,ACTION_DELETE,ACTION_DELETE_DISCUSSION,ACTION_PERMISSIONS,ACTION_UPDATE,ACTION_UPDATE_DISCUSSION,ACTION_VIEW" param="permissionDefinitionKey">
-			<execute macro="Team#definePermissionPG">
-				<var name="permissionDefinitionKey" value="${permissionDefinitionKey}" />
-				<var name="teamName" value="Site Team Name" />
-			</execute>
-		</for>
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_ADD_DISCUSSION" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_ADD_LAYOUT" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_CONFIGURE_PORTLETS" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_CUSTOMIZE" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_DELETE" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_DELETE_DISCUSSION" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_PERMISSIONS" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_UPDATE" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_UPDATE_DISCUSSION" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
+
+		<execute macro="Team#definePermissionPG">
+			<var name="permissionDefinitionKey" value="ACTION_VIEW" />
+			<var name="teamName" value="Site Team Name" />
+		</execute>
 
 		<execute macro="User#logoutPG" />
 
@@ -2216,11 +2274,15 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<for list="Blogs,Tag Cloud,Recent Bloggers" param="portletTitleName">
-			<var name="key_portletTitleName" value="${portletTitleName}" />
+		<var name="key_portletTitleName" value="Blogs" />
 
-			<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="${portletTitleName}" />
-		</for>
+		<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="Blogs" />
+		<var name="key_portletTitleName" value="Tag Cloud" />
+
+		<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="Tag Cloud" />
+		<var name="key_portletTitleName" value="Recent Bloggers" />
+
+		<execute function="AssertTextEquals" locator1="Portlet#SPECIFIC_TITLE" value1="Recent Bloggers" />
 
 		<execute macro="User#logoutPG" />
 
