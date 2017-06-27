@@ -35,8 +35,8 @@
 	<command name="ViewRecaptchaEnabled" priority="4">
 		<property name="test.name.skip.portal.instance" value="Captcha#ViewRecaptchaEnabled" />
 
-		<var name="recaptchaPrivateKey" method="TestPropsUtil#get('recaptcha.private.key')" />
-		<var name="recaptchaPublicKey" method="TestPropsUtil#get('recaptcha.public.key')" />
+		<var method="TestPropsUtil#get('recaptcha.private.key')" name="recaptchaPrivateKey" />
+		<var method="TestPropsUtil#get('recaptcha.public.key')" name="recaptchaPublicKey" />
 
 		<execute macro="User#firstLoginPG" />
 
