@@ -647,6 +647,7 @@
 	</command>
 
 	<command name="SiteMembershipSearchOrganization" priority="3">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Site Administration,Users and Organizations" />
 
 		<for list="1,2" param="n">
@@ -687,6 +688,7 @@
 	</command>
 
 	<command name="SiteMembershipSearchUserGroup" priority="3">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Site Administration,User Groups" />
 
 		<for list="1,2" param="n">

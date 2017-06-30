@@ -444,6 +444,7 @@
 	</command>
 
 	<command name="AddSiteTeamSearchUserGroups">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Site Administration,User Groups" />
 
 		<execute macro="ProductMenu#gotoControlPanelSites">

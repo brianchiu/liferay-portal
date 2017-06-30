@@ -272,6 +272,8 @@
 	</command>
 
 	<command name="SearchBlogsEntryCategoryQuotes" priority="4">
+		<property name="portal.acceptance" value="true" />
+
 		<execute macro="Navigator#openURL" />
 
 		<execute macro="ProductMenu#gotoSitesContent">
@@ -369,6 +371,8 @@
 	</command>
 
 	<command name="SearchBlogsEntryQuotes" priority="4">
+		<property name="portal.acceptance" value="true" />
+
 		<execute macro="Navigator#openURL" />
 
 		<execute macro="ProductMenu#gotoSitesContent">
@@ -623,6 +627,8 @@
 	</command>
 
 	<command name="SearchBlogsEntryTagQuotes" priority="4">
+		<property name="portal.acceptance" value="true" />
+
 		<execute macro="Navigator#openURL" />
 
 		<execute macro="ProductMenu#gotoSitesContent">
