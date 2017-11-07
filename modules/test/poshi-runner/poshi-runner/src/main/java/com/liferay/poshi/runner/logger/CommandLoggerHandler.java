@@ -47,6 +47,8 @@ public final class CommandLoggerHandler {
 		}
 
 		try {
+			_writeWebPage(_errorLinkId);
+
 			_commandElement = null;
 
 			_failLineGroupLoggerElement(_lineGroupLoggerElement);
@@ -153,6 +155,8 @@ public final class CommandLoggerHandler {
 		}
 
 		try {
+			_setHTMLSource();
+
 			_takeScreenshot("before", _errorLinkId);
 
 			_commandElement = element;
