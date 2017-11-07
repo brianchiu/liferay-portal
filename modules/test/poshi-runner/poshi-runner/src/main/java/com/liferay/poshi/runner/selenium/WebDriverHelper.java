@@ -110,7 +110,7 @@ public class WebDriverHelper {
 		sb.append(getCSSSource(htmlSource));
 		sb.append("</style></html>");
 
-		FileUtil.write(fileName, htmlSource.replace("<\\html>", sb.toString()));
+		FileUtil.write(fileName, htmlSource.replace("</html>", sb.toString()));
 	}
 
 }
