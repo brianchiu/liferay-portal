@@ -79,7 +79,9 @@ public class WebDriverHelper {
 		for (Element element : elements) {
 			String href = element.attr("href");
 
-			if (!href.contains(PropsValues.PORTAL_URL)) {
+			if (!href.contains(PropsValues.PORTAL_URL) &&
+				!href.startsWith("http")) {
+
 				href = PropsValues.PORTAL_URL + href;
 			}
 
