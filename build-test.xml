@@ -8214,6 +8214,17 @@ auto.deploy.dest.dir=C:/WINDOWS/system32/config/systemprofile/liferay/websphere-
 			</then>
 		</if>
 
+		<get-testcase-property property.name="test.save.web.page" />
+
+		<if>
+			<equals arg1="${test.save.web.page}" arg2="true" />
+			<then>
+				<echo append="true" file="${test.ext.properties.file}">
+					save.web.page=true
+				</echo>
+			</then>
+		</if>
+
 		<get-testcase-property property.name="theme.file.name" />
 
 		<if>
