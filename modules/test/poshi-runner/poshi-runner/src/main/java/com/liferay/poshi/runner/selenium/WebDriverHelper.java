@@ -79,7 +79,9 @@ public class WebDriverHelper {
 		for (Element element : elements) {
 			String href = element.attr("href");
 
-			if (!href.contains(PropsValues.PORTAL_URL)) {
+			if (!href.contains(PropsValues.PORTAL_URL) &&
+				!href.startsWith("http")) {
+
 				href = PropsValues.PORTAL_URL + href;
 			}
 
@@ -108,7 +110,7 @@ public class WebDriverHelper {
 		sb.append(getCSSSource(htmlSource));
 		sb.append("</style></html>");
 
-		FileUtil.write(fileName, htmlSource.replace("<\\html>", sb.toString()));
+		FileUtil.write(fileName, htmlSource.replace("</html>", sb.toString()));
 	}
 
 }
