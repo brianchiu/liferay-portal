@@ -28,6 +28,7 @@
 	</tear-down>
 
 	<command name="AddFolder" priority="5">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Training,Web Content Administration" />
 
 		<execute macro="Navigator#openURL" />
@@ -45,6 +46,7 @@
 	</command>
 
 	<command name="AddStructures" priority="5">
+		<property name="portal.acceptance" value="pending" />
 		<property name="testray.component.names" value="Training,Web Content Administration" />
 
 		<execute macro="Navigator#openURL" />
@@ -656,6 +658,7 @@
 	</command>
 
 	<command name="AddTemplateXSL" priority="5">
+		<property name="portal.acceptance" value="pending" />
 		<property name="testray.component.names" value="Training,Web Content Administration,XSL" />
 
 		<execute macro="Navigator#openURL" />
@@ -1552,6 +1555,7 @@
 	</command>
 
 	<command name="DeleteWebContent" priority="5">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Web Content Administration" />
 
 		<execute macro="Navigator#openURL" />
@@ -1863,6 +1867,7 @@
 	</command>
 
 	<command name="EditWebContent" priority="5">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Web Content Administration" />
 
 		<execute macro="Navigator#openURL" />
@@ -2487,6 +2492,7 @@
 	</command>
 
 	<command name="ImportTrainingLAR" priority="5">
+		<property name="portal.acceptance" value="pending" />
 		<property name="testray.component.names" value="Training" />
 
 		<execute macro="ProductMenu#gotoPortlet">
@@ -2679,6 +2685,7 @@
 	</command>
 
 	<command name="SearchWebContent" priority="5">
+		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Web Content Administration" />
 
 		<execute macro="Navigator#openURL" />

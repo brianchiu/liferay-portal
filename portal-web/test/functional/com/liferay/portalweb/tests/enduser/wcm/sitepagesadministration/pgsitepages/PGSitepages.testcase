@@ -27,6 +27,7 @@
 	</tear-down>
 
 	<command name="AddPageFromExistingPage" priority="5">
+		<property name="portal.acceptance" value="pending" />
 		<property name="testray.component.names" value="Training" />
 
 		<execute macro="Navigator#openURL" />
@@ -63,6 +64,8 @@
 	</command>
 
 	<command name="DeletePages" priority="5">
+		<property name="portal.acceptance" value="true" />
+
 		<execute macro="ProductMenu#gotoPortlet">
 			<var name="category" value="Navigation" />
 			<var name="panel" value="Site Administration" />
@@ -99,6 +102,7 @@
 	<command name="EditPageViaControlMenu" priority="5">
 		<description message="This is a use case for LPS-71160" />
 
+		<property name="portal.acceptance" value="pending" />
 		<property name="testray.component.names" value="Training" />
 
 		<execute macro="ProductMenu#gotoPortlet">
