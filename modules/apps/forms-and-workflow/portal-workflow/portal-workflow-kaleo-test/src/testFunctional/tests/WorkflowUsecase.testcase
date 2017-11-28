@@ -1003,6 +1003,8 @@
 	</command>
 
 	<command name="DeactivateAndDeleteUploadedDefinition" priority="5">
+		<property name="portal.acceptance" value="true" />
+
 		<execute macro="ProductMenu#gotoPortlet">
 			<var name="category" value="Configuration" />
 			<var name="panel" value="Control Panel" />
@@ -1372,6 +1374,7 @@
 
 	<command name="ViewWorkflowSubmissionsFromDifferentUsers" priority="5">
 		<description message="This is a use case for LRQA-13519." />
+		<property name="portal.acceptance" value="true" />
 
 		<execute macro="TestCase#getSiteName">
 			<return from="siteName" name="siteName" />
