@@ -332,7 +332,7 @@
 	</command>
 
 	<command name="RemoveBookmarkPortlet" priority="5">
-		<property name="portal.acceptance" value="false" />
+		<property name="portal.acceptance" value="true" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Bookmarks Page" />
