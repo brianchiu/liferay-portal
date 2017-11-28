@@ -62,7 +62,7 @@
 	</tear-down>
 
 	<command name="AddDocument" priority="5">
-		<property name="portal.acceptance" value="false" />
+		<property name="portal.acceptance" value="quarantine" />
 		<property name="testray.component.names" value="Training" />
 
 		<execute macro="Navigator#gotoPage">
@@ -217,7 +217,7 @@
 	</command>
 
 	<command name="AddDocuments" priority="5">
-		<property name="portal.acceptance" value="false" />
+		<property name="portal.acceptance" value="quarantine" />
 
 		<execute macro="Navigator#gotoPage">
 			<var name="pageName" value="Documents and Media Page" />
@@ -347,7 +347,7 @@
 	</command>
 
 	<command name="AddFolderDocuments" priority="5">
-		<property name="portal.acceptance" value="false" />
+		<property name="portal.acceptance" value="quarantine" />
 		<property name="testray.component.names" value="Training" />
 
 		<execute macro="Navigator#gotoPage">
@@ -1836,7 +1836,7 @@
 	</command>
 
 	<command name="ViewSearchResultsForChildObjectRespectsParentFolderPermissions" priority="5">
-		<property name="portal.acceptance" value="false" />
+		<property name="portal.acceptance" value="pending" />
 		<property name="test.name.skip.portal.instance" value="PGDocumentsandmedia#ViewSearchResultsForChildObjectRespectsParentFolderPermissions" />
 		<property name="testray.component.names" value="Training" />
 
