@@ -50,6 +50,7 @@
 	</tear-down>
 
 	<command name="ActivateDeactivateRemoteStaging" priority="4">
+		<property name="portal.acceptance" value="quarantine" />
 		<property name="custom.properties" value="tunneling.servlet.shared.secret=1234567890123456${line.separator}auth.verifier.TunnelAuthVerifier.hosts.allowed=" />
 
 		<execute macro="Staging#remoteStagingSetUp">
