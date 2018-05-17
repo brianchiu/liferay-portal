@@ -245,7 +245,7 @@
 		</execute>
 
 		<execute macro="Collection#deleteCollection">
-			<var name="collectioNName" value="Collection Name" />
+			<var name="collectionName" value="Collection Name" />
 		</execute>
 
 		<execute macro="Collection#viewNotPresent">
