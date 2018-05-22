@@ -58,17 +58,12 @@ public class FragmentEntryRenderUtil {
 		long fragmentEntryId, long fragmentEntryInstanceId, String css,
 		String html, String js) {
 
-		StringBundler fragmentIdSB = new StringBundler(4);
+		StringBundler sb = new StringBundler(13);
 
-		fragmentIdSB.append("fragment-");
-		fragmentIdSB.append(fragmentEntryId);
-		fragmentIdSB.append("-");
-		fragmentIdSB.append(fragmentEntryInstanceId);
-
-		StringBundler sb = new StringBundler(14);
-
-		sb.append("<div id=\"");
-		sb.append(fragmentIdSB.toString());
+		sb.append("<div id=\"fragment-");
+		sb.append(fragmentEntryId);
+		sb.append("-");
+		sb.append(fragmentEntryInstanceId);
 		sb.append("\" >");
 		sb.append(html);
 		sb.append("</div>");
@@ -81,9 +76,6 @@ public class FragmentEntryRenderUtil {
 
 		if (Validator.isNotNull(js)) {
 			sb.append("<script>(function() {");
-			sb.append("var fragmentElement = document.querySelector('#");
-			sb.append(fragmentIdSB.toString());
-			sb.append("');");
 			sb.append(js);
 			sb.append(";}());</script>");
 		}

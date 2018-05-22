@@ -110,7 +110,7 @@ List<FragmentCollection> fragmentCollections = FragmentCollectionServiceUtil.get
 			%>
 
 			<c:if test="<%= fragmentCollection != null %>">
-				<h3 class="sheet">
+				<div class="sheet">
 					<h3 class="sheet-title">
 						<div class="align-items-center autofit-row">
 							<div class="autofit-col">
@@ -121,7 +121,7 @@ List<FragmentCollection> fragmentCollections = FragmentCollectionServiceUtil.get
 								<liferay-util:include page="/fragment_collection_action.jsp" servletContext="<%= application %>" />
 							</div>
 						</div>
-					</h3>
+					</div>
 
 					<div class="sheet-section">
 						<liferay-util:include page="/view_fragment_entries.jsp" servletContext="<%= application %>" />
