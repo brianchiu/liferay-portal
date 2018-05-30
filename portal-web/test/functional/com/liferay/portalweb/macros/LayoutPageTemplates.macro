@@ -1,4 +1,19 @@
 <definition>
+	<command name="_gotoAddCollection">
+		<command name="addCollection">
+		<if>
+			<condition function="IsElementPresent" locator1="NavNested#NAV_NESTED_PLUS" />
+			<then>
+				<execute function="Click" locator1="NavNested#NAV_NESTED_PLUS" />
+			</then>
+			<else>
+				<execute macro="Button#click">
+					<var name="button" value="New" />
+				</execute>
+			</else>
+		</if>
+	</command>
+
 	<command name="add">
 		<execute macro="LexiconEntry#gotoAdd" />
 
