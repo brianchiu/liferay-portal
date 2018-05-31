@@ -24,6 +24,15 @@
 		<execute macro="Button#clickModalSubmit" />
 	</command>
 
+	<command name="addCollection">
+		<execute macro="LayoutPageTemplates#_gotoAddCollection" />
+
+		<execute macro="Collection#editCollection">
+			<var name="collectionDescription" value="${collectionDescription}" />
+			<var name="collectionName" value="${collectionName}" />
+		</execute>
+	</command>
+
 	<command name="editFragmentImage">
 		<execute function="MouseOver#mouseOverNotVisible" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_HEADER">
 			<var name="key_fragmentName" value="${fragmentName}" />

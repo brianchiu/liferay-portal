@@ -1,13 +1,4 @@
 <definition>
-	<command name="addCollection">
-		<execute macro="Collection#editCollection">
-			<var name="collectionDescription" value="${collectionDescription}" />
-			<var name="collectionName" value="${collectionName}" />
-		</execute>
-
-		<execute macro="PortletEntry#save" />
-	</command>
-
 	<command name="deleteCollection">
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="${collectionName}" />
