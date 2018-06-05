@@ -1,4 +1,10 @@
 <definition>
+	<command name="save">
+		<execute macro="Button#clickSave" />
+
+		<execute macro="Alert#viewSuccessMessage" />
+	</command>
+
 	<command name="submit">
 		<execute macro="Button#clickModalSubmit" />
 
