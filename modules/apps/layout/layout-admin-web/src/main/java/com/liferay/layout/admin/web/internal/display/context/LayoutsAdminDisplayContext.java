@@ -998,65 +998,50 @@ public class LayoutsAdminDisplayContext {
 		return breadcrumbEntryJSONObject;
 	}
 
+	private JSONObject _getFirstColumn(boolean privatePages) {
+		JSONObject pagesJSONObject = JSONFactoryUtil.createJSONObject();
+
+		PortletURL privatePagesURL = getPortletURL();
+
+		privatePagesURL.setParameter(
+			"privatePages", String.valueOf(privatePages));
+
+		pagesJSONObject.put("active", privatePages);
+		pagesJSONObject.put("hasChild", true);
+		pagesJSONObject.put("plid", LayoutConstants.DEFAULT_PLID);
+		pagesJSONObject.put(
+			"title",
+			LanguageUtil.get(
+				_request, privatePages ? "private-pages" : "public:pages"));
+		pagesJSONObject.put("url", privatePagesURL.toString());
+
+		return pagesJSONObject;
+	}
+
 	private JSONArray _getLayoutColumnsJSONArray() throws Exception {
 		JSONArray layoutColumnsJSONArray = JSONFactoryUtil.createJSONArray();
 
 		JSONArray firstColumnJSONArray = JSONFactoryUtil.createJSONArray();
 
-		boolean publicPages = ParamUtil.getBoolean(_request, "publicPages");
 		boolean privatePages = ParamUtil.getBoolean(_request, "privatePages");
 
 		int publicPagesCount = LayoutLocalServiceUtil.getLayoutsCount(
 			getSelGroup(), false, 0);
 
 		if (publicPagesCount > 0) {
-			JSONObject publicPagesJSONObject =
-				JSONFactoryUtil.createJSONObject();
-
-			PortletURL publicPagesURL = getPortletURL();
-
-			publicPagesURL.setParameter("publicPages", Boolean.TRUE.toString());
-
-			publicPagesJSONObject.put("active", publicPages);
-			publicPagesJSONObject.put("hasChild", true);
-			publicPagesJSONObject.put("plid", LayoutConstants.DEFAULT_PLID);
-			publicPagesJSONObject.put(
-				"title", LanguageUtil.get(_request, "public-pages"));
-			publicPagesJSONObject.put("url", publicPagesURL.toString());
-
-			firstColumnJSONArray.put(publicPagesJSONObject);
+			firstColumnJSONArray.put(_getFirstColumn(false));
 		}
 
 		int privatePagesCount = LayoutLocalServiceUtil.getLayoutsCount(
 			getSelGroup(), true, 0);
 
 		if (privatePagesCount > 0) {
-			JSONObject privatePagesJSONObject =
-				JSONFactoryUtil.createJSONObject();
-
-			PortletURL privatePagesURL = getPortletURL();
-
-			privatePagesURL.setParameter(
-				"privatePages", Boolean.TRUE.toString());
-
-			privatePagesJSONObject.put("active", privatePages);
-			privatePagesJSONObject.put("hasChild", true);
-			privatePagesJSONObject.put("plid", LayoutConstants.DEFAULT_PLID);
-			privatePagesJSONObject.put(
-				"title", LanguageUtil.get(_request, "private-pages"));
-			privatePagesJSONObject.put("url", privatePagesURL.toString());
-
-			firstColumnJSONArray.put(privatePagesJSONObject);
+			firstColumnJSONArray.put(_getFirstColumn(true));
 		}
 
 		layoutColumnsJSONArray.put(firstColumnJSONArray);
 
-		if (publicPages) {
-			layoutColumnsJSONArray.put(_getLayoutsJSONArray(0, false));
-		}
-		else if (privatePages) {
-			layoutColumnsJSONArray.put(_getLayoutsJSONArray(0, true));
-		}
+		layoutColumnsJSONArray.put(_getLayoutsJSONArray(0, privatePages));
 
 		if (getSelPlid() == LayoutConstants.DEFAULT_PLID) {
 			return layoutColumnsJSONArray;
