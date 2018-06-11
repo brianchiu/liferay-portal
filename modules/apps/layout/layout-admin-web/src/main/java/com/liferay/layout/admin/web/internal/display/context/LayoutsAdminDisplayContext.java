@@ -1008,9 +1008,12 @@ public class LayoutsAdminDisplayContext {
 		PortletURL privatePagesURL = getPortletURL();
 
 		privatePagesURL.setParameter(
-			"privatePages", String.valueOf(privatePages));
+			"navigation", privatePages ? "private-pages" : "public-pages");
+		privatePagesURL.setParameter(
+			"selPlid", String.valueOf(LayoutConstants.DEFAULT_PLID));
 
-		pagesJSONObject.put("active", privatePages);
+		pagesJSONObject.put(
+			"active", privatePages ? isPrivatePages() : isPublicPages());
 		pagesJSONObject.put("hasChild", true);
 		pagesJSONObject.put("plid", LayoutConstants.DEFAULT_PLID);
 		pagesJSONObject.put(
@@ -1027,8 +1030,6 @@ public class LayoutsAdminDisplayContext {
 
 		JSONArray firstColumnJSONArray = JSONFactoryUtil.createJSONArray();
 
-		boolean privatePages = ParamUtil.getBoolean(_request, "privatePages");
-
 		if (LayoutLocalServiceUtil.hasLayouts(getSelGroup(), false) &&
 			isShowPublicPages()) {
 
@@ -1041,7 +1042,7 @@ public class LayoutsAdminDisplayContext {
 
 		layoutColumnsJSONArray.put(firstColumnJSONArray);
 
-		layoutColumnsJSONArray.put(_getLayoutsJSONArray(0, privatePages));
+		layoutColumnsJSONArray.put(_getLayoutsJSONArray(0, isPrivatePages()));
 
 		if (getSelPlid() == LayoutConstants.DEFAULT_PLID) {
 			return layoutColumnsJSONArray;
