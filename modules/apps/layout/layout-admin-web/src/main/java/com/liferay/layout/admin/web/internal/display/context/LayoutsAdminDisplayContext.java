@@ -1002,9 +1002,13 @@ public class LayoutsAdminDisplayContext {
 		return breadcrumbEntryJSONObject;
 	}
 
-	private JSONObject _getFirstColumn(boolean privatePages) {
+	private JSONObject _getFirstColumn(boolean privatePages)
+		throws PortalException {
+
 		JSONObject pagesJSONObject = JSONFactoryUtil.createJSONObject();
 
+		pagesJSONObject.put(
+			"actionURLs", _getFirstColumnActionURLsJSONObject(privatePages));
 		pagesJSONObject.put(
 			"active", privatePages ? isPrivatePages() : isPublicPages());
 		pagesJSONObject.put("hasChild", true);
@@ -1024,6 +1028,34 @@ public class LayoutsAdminDisplayContext {
 		pagesJSONObject.put("url", privatePagesURL.toString());
 
 		return pagesJSONObject;
+	}
+
+	private JSONObject _getFirstColumnActionURLsJSONObject(boolean privatePages)
+		throws PortalException {
+
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+
+		if (GroupPermissionUtil.contains(
+				_themeDisplay.getPermissionChecker(), getSelGroupId(),
+				ActionKeys.MANAGE_LAYOUTS)) {
+
+			PortletURL editLayoutSetURL =
+				_liferayPortletResponse.createRenderURL();
+
+			editLayoutSetURL.setParameter("mvcPath", "/edit_layout_set.jsp");
+			editLayoutSetURL.setParameter(
+				"redirect", _themeDisplay.getURLCurrent());
+			editLayoutSetURL.setParameter(
+				"backURL", _themeDisplay.getURLCurrent());
+			editLayoutSetURL.setParameter(
+				"groupId", String.valueOf(_themeDisplay.getScopeGroupId()));
+			editLayoutSetURL.setParameter(
+				"privateLayout", String.valueOf(privatePages));
+
+			jsonObject.put("configureURL", editLayoutSetURL.toString());
+		}
+
+		return jsonObject;
 	}
 
 	private JSONArray _getLayoutColumnsJSONArray() throws Exception {

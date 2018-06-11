@@ -104,7 +104,20 @@
 			{/if}
 		</div>
 
-        {if $layoutColumnItem.plid != '0'}
+		{if $layoutColumnItem.plid == '0'}
+			{if $layoutColumnItem.actionURLs['configureURL']}
+				<div class="flex-col">
+					<div class="quick-action-menu">
+						<a class="btn btn-link p-1" href="{$layoutColumnItem.actionURLs['configureURL']}">
+							{call .lexiconIcon}
+								{param name: 'cog' /}
+								{param pathThemeImages: $pathThemeImages /}
+							{/call}
+						</a>
+					</div>
+				</div>
+			{/if}
+		{else}
 			{if $layoutColumnItem.actionURLs['addURL']}
 				<div class="flex-col">
 					<div class="quick-action-menu">
