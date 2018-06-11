@@ -1012,7 +1012,7 @@ public class LayoutsAdminDisplayContext {
 		pagesJSONObject.put(
 			"title",
 			LanguageUtil.get(
-				_request, privatePages ? "private-pages" : "public:pages"));
+				_request, privatePages ? "private-pages" : "public-pages"));
 		pagesJSONObject.put("url", privatePagesURL.toString());
 
 		return pagesJSONObject;
@@ -1025,17 +1025,11 @@ public class LayoutsAdminDisplayContext {
 
 		boolean privatePages = ParamUtil.getBoolean(_request, "privatePages");
 
-		int publicPagesCount = LayoutLocalServiceUtil.getLayoutsCount(
-			getSelGroup(), false, 0);
-
-		if (publicPagesCount > 0) {
+		if (LayoutLocalServiceUtil.hasLayouts(getSelGroup(), false)) {
 			firstColumnJSONArray.put(_getFirstColumn(false));
 		}
 
-		int privatePagesCount = LayoutLocalServiceUtil.getLayoutsCount(
-			getSelGroup(), true, 0);
-
-		if (privatePagesCount > 0) {
+		if (LayoutLocalServiceUtil.hasLayouts(getSelGroup(), true)) {
 			firstColumnJSONArray.put(_getFirstColumn(true));
 		}
 
