@@ -1005,13 +1005,6 @@ public class LayoutsAdminDisplayContext {
 	private JSONObject _getFirstColumn(boolean privatePages) {
 		JSONObject pagesJSONObject = JSONFactoryUtil.createJSONObject();
 
-		PortletURL privatePagesURL = getPortletURL();
-
-		privatePagesURL.setParameter(
-			"navigation", privatePages ? "private-pages" : "public-pages");
-		privatePagesURL.setParameter(
-			"selPlid", String.valueOf(LayoutConstants.DEFAULT_PLID));
-
 		pagesJSONObject.put(
 			"active", privatePages ? isPrivatePages() : isPublicPages());
 		pagesJSONObject.put("hasChild", true);
@@ -1020,6 +1013,14 @@ public class LayoutsAdminDisplayContext {
 			"title",
 			LanguageUtil.get(
 				_request, privatePages ? "private-pages" : "public-pages"));
+
+		PortletURL privatePagesURL = getPortletURL();
+
+		privatePagesURL.setParameter(
+			"navigation", privatePages ? "private-pages" : "public-pages");
+		privatePagesURL.setParameter(
+			"selPlid", String.valueOf(LayoutConstants.DEFAULT_PLID));
+
 		pagesJSONObject.put("url", privatePagesURL.toString());
 
 		return pagesJSONObject;
