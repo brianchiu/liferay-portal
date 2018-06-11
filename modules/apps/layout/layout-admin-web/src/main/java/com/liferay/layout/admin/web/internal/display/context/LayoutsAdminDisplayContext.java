@@ -161,10 +161,7 @@ public class LayoutsAdminDisplayContext {
 
 		breadcrumbEntriesJSONArray.put(
 			_getBreadcrumbEntryJSONObject(
-				LayoutConstants.DEFAULT_PLID,
-				LanguageUtil.get(
-					_themeDisplay.getLocale(),
-					isPrivateLayout() ? "private-pages" : "public-pages")));
+				LayoutConstants.DEFAULT_PLID, _getTitle(isPrivatePages())));
 
 		if (getSelPlid() == LayoutConstants.DEFAULT_PLID) {
 			return breadcrumbEntriesJSONArray;
@@ -1013,10 +1010,7 @@ public class LayoutsAdminDisplayContext {
 			"active", privatePages ? isPrivatePages() : isPublicPages());
 		pagesJSONObject.put("hasChild", true);
 		pagesJSONObject.put("plid", LayoutConstants.DEFAULT_PLID);
-		pagesJSONObject.put(
-			"title",
-			LanguageUtil.get(
-				_request, privatePages ? "private-pages" : "public-pages"));
+		pagesJSONObject.put("title", _getTitle(privatePages));
 
 		PortletURL privatePagesURL = getPortletURL();
 
@@ -1191,6 +1185,21 @@ public class LayoutsAdminDisplayContext {
 					});
 			}
 		};
+	}
+
+	private String _getTitle(boolean privatePages) {
+		String title = "pages";
+
+		if (isShowPublicPages()) {
+			if (privatePages) {
+				title = "private-pages";
+			}
+			else {
+				title = "public-pages";
+			}
+		}
+
+		return LanguageUtil.get(_request, title);
 	}
 
 	private boolean _isActive(long plid) throws PortalException {
