@@ -122,14 +122,16 @@ public class LayoutsAdminDisplayContext {
 	public List<DropdownItem> getAddLayoutDropdownItems() {
 		return new DropdownItemList() {
 			{
-				add(
-					SafeConsumer.ignore(
-						dropdownItem -> {
-							dropdownItem.setHref(
-								getSelectLayoutPageTemplateEntryURL(false));
-							dropdownItem.setLabel(
-								LanguageUtil.get(_request, "public-page"));
-						}));
+				if (isShowPublicPages()) {
+					add(
+						SafeConsumer.ignore(
+							dropdownItem -> {
+								dropdownItem.setHref(
+									getSelectLayoutPageTemplateEntryURL(false));
+								dropdownItem.setLabel(
+									LanguageUtil.get(_request, "public-page"));
+							}));
+				}
 
 				add(
 					SafeConsumer.ignore(
@@ -240,14 +242,16 @@ public class LayoutsAdminDisplayContext {
 	public CreationMenu getCreationMenu() {
 		return new CreationMenu() {
 			{
-				addPrimaryDropdownItem(
-					SafeConsumer.ignore(
-						dropdownItem -> {
-							dropdownItem.setHref(
-								getSelectLayoutPageTemplateEntryURL(false));
-							dropdownItem.setLabel(
-								LanguageUtil.get(_request, "public-page"));
-						}));
+				if (isShowPublicPages()) {
+					addPrimaryDropdownItem(
+						SafeConsumer.ignore(
+							dropdownItem -> {
+								dropdownItem.setHref(
+									getSelectLayoutPageTemplateEntryURL(false));
+								dropdownItem.setLabel(
+									LanguageUtil.get(_request, "public-page"));
+							}));
+				}
 
 				addPrimaryDropdownItem(
 					SafeConsumer.ignore(
@@ -1025,7 +1029,9 @@ public class LayoutsAdminDisplayContext {
 
 		boolean privatePages = ParamUtil.getBoolean(_request, "privatePages");
 
-		if (LayoutLocalServiceUtil.hasLayouts(getSelGroup(), false)) {
+		if (LayoutLocalServiceUtil.hasLayouts(getSelGroup(), false) &&
+			isShowPublicPages()) {
+
 			firstColumnJSONArray.put(_getFirstColumn(false));
 		}
 
