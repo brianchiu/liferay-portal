@@ -57,66 +57,23 @@
 <aui:form action="<%= deleteLayoutURL %>" cssClass="container-fluid-1280" name="fm">
 	<c:choose>
 		<c:when test="<%= layoutsAdminDisplayContext.hasLayouts() %>">
-			<c:choose>
-				<c:when test="<%= layoutsAdminDisplayContext.isMillerColumnsEnabled() %>">
 
-					<%
-					Map<String, Object> context = new HashMap<>();
+			<%
+			Map<String, Object> context = new HashMap<>();
 
-					context.put("breadcrumbEntries", layoutsAdminDisplayContext.getBreadcrumbEntriesJSONArray());
-					context.put("layoutColumns", layoutsAdminDisplayContext.getLayoutColumnsJSONArray());
-					context.put("pathThemeImages", themeDisplay.getPathThemeImages());
-					context.put("portletNamespace", renderResponse.getNamespace());
-					context.put("searchContainerId", "pages");
-					context.put("siteNavigationMenuNames", layoutsAdminDisplayContext.getAutoSiteNavigationMenuNames());
-					%>
+			context.put("breadcrumbEntries", layoutsAdminDisplayContext.getBreadcrumbEntriesJSONArray());
+			context.put("layoutColumns", layoutsAdminDisplayContext.getLayoutColumnsJSONArray());
+			context.put("pathThemeImages", themeDisplay.getPathThemeImages());
+			context.put("portletNamespace", renderResponse.getNamespace());
+			context.put("searchContainerId", "pages");
+			context.put("siteNavigationMenuNames", layoutsAdminDisplayContext.getAutoSiteNavigationMenuNames());
+			%>
 
-					<soy:component-renderer
-						context="<%= context %>"
-						module="layout-admin-web/js/miller_columns/Layout.es"
-						templateNamespace="com.liferay.layout.admin.web.Layout.render"
-					/>
-				</c:when>
-				<c:otherwise>
-					<liferay-ui:search-container
-						id="pages"
-						searchContainer="<%= layoutsAdminDisplayContext.getLayoutsSearchContainer() %>"
-					>
-						<liferay-ui:search-container-row
-							className="com.liferay.portal.kernel.model.Layout"
-							keyProperty="plid"
-							modelVar="curLayout"
-						>
-							<liferay-ui:search-container-column-text
-								cssClass="table-cell-content"
-								name="page"
-								value="<%= HtmlUtil.escape(curLayout.getName(locale)) %>"
-							/>
-
-							<liferay-ui:search-container-column-text
-								cssClass="table-cell-content"
-								name="path"
-							>
-								<%= HtmlUtil.escape(layoutsAdminDisplayContext.getPath(curLayout, locale)) %> <strong><%= HtmlUtil.escape(curLayout.getName(locale)) %></strong>
-							</liferay-ui:search-container-column-text>
-
-							<liferay-ui:search-container-column-date
-								name="create-date"
-								property="createDate"
-							/>
-
-							<liferay-ui:search-container-column-jsp
-								path="/layout_action.jsp"
-							/>
-						</liferay-ui:search-container-row>
-
-						<liferay-ui:search-iterator
-							displayStyle="list"
-							markupView="lexicon"
-						/>
-					</liferay-ui:search-container>
-				</c:otherwise>
-			</c:choose>
+			<soy:component-renderer
+				context="<%= context %>"
+				module="layout-admin-web/js/miller_columns/Layout.es"
+				templateNamespace="com.liferay.layout.admin.web.Layout.render"
+			/>
 		</c:when>
 		<c:otherwise>
 			<liferay-frontend:empty-result-message

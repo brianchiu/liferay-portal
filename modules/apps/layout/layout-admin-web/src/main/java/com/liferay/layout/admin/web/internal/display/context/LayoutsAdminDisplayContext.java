@@ -21,8 +21,6 @@ import com.liferay.frontend.taglib.clay.servlet.taglib.util.DropdownItemList;
 import com.liferay.frontend.taglib.clay.servlet.taglib.util.NavigationItem;
 import com.liferay.frontend.taglib.clay.servlet.taglib.util.NavigationItemList;
 import com.liferay.frontend.taglib.clay.servlet.taglib.util.SafeConsumer;
-import com.liferay.layout.admin.web.configuration.LayoutAdminWebConfiguration;
-import com.liferay.layout.admin.web.constants.LayoutAdminDisplayStyleKeys;
 import com.liferay.layout.admin.web.internal.constants.LayoutAdminWebKeys;
 import com.liferay.layout.page.template.model.LayoutPageTemplateCollection;
 import com.liferay.layout.page.template.service.LayoutPageTemplateCollectionService;
@@ -31,8 +29,6 @@ import com.liferay.layout.page.template.util.comparator.LayoutPageTemplateCollec
 import com.liferay.layout.util.comparator.LayoutCreateDateComparator;
 import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.dao.orm.QueryUtil;
-import com.liferay.portal.kernel.dao.search.EmptyOnClickRowChecker;
-import com.liferay.portal.kernel.dao.search.SearchContainer;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSONArray;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
@@ -399,48 +395,6 @@ public class LayoutsAdminDisplayContext {
 		return _layoutId;
 	}
 
-	public SearchContainer getLayoutsSearchContainer() throws PortalException {
-		if (_layoutsSearchContainer != null) {
-			return _layoutsSearchContainer;
-		}
-
-		String emptyResultMessage = "there-are-no-public-pages";
-
-		if (isPrivatePages()) {
-			emptyResultMessage = "there-are-no-private-pages";
-		}
-
-		SearchContainer layoutsSearchContainer = new SearchContainer(
-			_liferayPortletRequest, getPortletURL(), null, emptyResultMessage);
-
-		layoutsSearchContainer.setOrderByCol(getOrderByCol());
-
-		OrderByComparator orderByComparator = _getOrderByComparator();
-
-		layoutsSearchContainer.setOrderByComparator(orderByComparator);
-
-		layoutsSearchContainer.setOrderByType(getOrderByType());
-
-		EmptyOnClickRowChecker emptyOnClickRowChecker =
-			new EmptyOnClickRowChecker(_liferayPortletResponse);
-
-		layoutsSearchContainer.setRowChecker(emptyOnClickRowChecker);
-
-		int layoutsCount = LayoutLocalServiceUtil.getLayoutsCount(
-			getSelGroup(), isPrivatePages());
-		List<Layout> layouts = LayoutLocalServiceUtil.getLayouts(
-			getSelGroupId(), isPrivatePages(),
-			layoutsSearchContainer.getStart(), layoutsSearchContainer.getEnd(),
-			orderByComparator);
-
-		layoutsSearchContainer.setTotal(layoutsCount);
-		layoutsSearchContainer.setResults(layouts);
-
-		_layoutsSearchContainer = layoutsSearchContainer;
-
-		return _layoutsSearchContainer;
-	}
-
 	public Group getLiveGroup() {
 		return _groupDisplayContextHelper.getLiveGroup();
 	}
@@ -799,9 +753,8 @@ public class LayoutsAdminDisplayContext {
 	}
 
 	public int getTotalItems() throws Exception {
-		SearchContainer layoutsSearchContainer = getLayoutsSearchContainer();
-
-		return layoutsSearchContainer.getTotal();
+		return LayoutLocalServiceUtil.getLayoutsCount(
+			getSelGroup(), isPrivatePages());
 	}
 
 	public String getViewLayoutURL(Layout layout) throws PortalException {
@@ -820,27 +773,6 @@ public class LayoutsAdminDisplayContext {
 		}
 
 		return false;
-	}
-
-	public boolean isMillerColumnsEnabled() {
-		if (_millerColumnsEnabled != null) {
-			return _millerColumnsEnabled;
-		}
-
-		_millerColumnsEnabled = false;
-
-		LayoutAdminWebConfiguration layoutAdminWebConfiguration =
-			(LayoutAdminWebConfiguration)_liferayPortletRequest.getAttribute(
-				LayoutAdminWebKeys.LAYOUT_ADMIN_CONFIGURATION);
-
-		if (Objects.equals(
-				layoutAdminWebConfiguration.layoutDisplayStyle(),
-				LayoutAdminDisplayStyleKeys.MILLER)) {
-
-			_millerColumnsEnabled = true;
-		}
-
-		return _millerColumnsEnabled;
 	}
 
 	public boolean isPagesTab() {
@@ -1262,14 +1194,11 @@ public class LayoutsAdminDisplayContext {
 		return false;
 	}
 
-	private String _displayStyle;
 	private final GroupDisplayContextHelper _groupDisplayContextHelper;
 	private List<LayoutDescription> _layoutDescriptions;
 	private Long _layoutId;
-	private SearchContainer _layoutsSearchContainer;
 	private final LiferayPortletRequest _liferayPortletRequest;
 	private final LiferayPortletResponse _liferayPortletResponse;
-	private Boolean _millerColumnsEnabled;
 	private String _navigation;
 	private String _orderByCol;
 	private String _orderByType;
