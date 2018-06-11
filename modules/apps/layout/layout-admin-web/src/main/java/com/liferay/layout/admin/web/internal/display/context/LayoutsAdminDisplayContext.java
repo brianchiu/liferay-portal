@@ -164,7 +164,9 @@ public class LayoutsAdminDisplayContext {
 		breadcrumbEntriesJSONArray.put(
 			_getBreadcrumbEntryJSONObject(
 				LayoutConstants.DEFAULT_PLID,
-				LanguageUtil.get(_themeDisplay.getLocale(), "home")));
+				LanguageUtil.get(
+					_themeDisplay.getLocale(),
+					isPrivateLayout() ? "private-pages" : "public-pages")));
 
 		if (getSelPlid() == LayoutConstants.DEFAULT_PLID) {
 			return breadcrumbEntriesJSONArray;
