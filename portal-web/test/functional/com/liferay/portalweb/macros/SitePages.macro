@@ -122,7 +122,7 @@
 
 	<command name="addPrivateChildPage">
 		<execute macro="SitePages#togglePrivacy">
-			<var name="privacy" value="Private" />
+			<var name="privacy" value="Private Pages" />
 		</execute>
 
 		<execute macro="SitePages#addChildPage">
@@ -135,7 +135,7 @@
 
 	<command name="addPrivatePage">
 		<execute macro="LexiconEntry#gotoAddMenuItem">
-			<var name="menuItem" value="Private Pages" />
+			<var name="menuItem" value="Private Page" />
 		</execute>
 
 		<execute macro="SitePages#_addPage">
@@ -148,7 +148,7 @@
 
 	<command name="addPublicChildPage">
 		<execute macro="SitePages#togglePrivacy">
-			<var name="privacy" value="Public" />
+			<var name="privacy" value="Public Pages" />
 		</execute>
 
 		<execute macro="SitePages#addChildPage">
@@ -161,7 +161,7 @@
 
 	<command name="addPublicPage">
 		<execute macro="LexiconEntry#gotoAddMenuItem">
-			<var name="menuItem" value="Public Pages" />
+			<var name="menuItem" value="Public Page" />
 		</execute>
 
 		<execute macro="SitePages#_addPage">
