@@ -270,10 +270,8 @@
 	</command>
 
 	<command name="togglePrivacy">
-		<execute function="Click" locator1="Dropdown#FILTER_AND_ORDER" />
-
-		<execute function="AssertClick" locator1="MenuItem#ANY_MENU_ITEM" value1="${privacy} Pages">
-			<var name="key_menuItem" value="${privacy} Pages" />
+		<execute function="Click" locator1="SitePages#LIST_GROUP_ITEM_ANGLE_ICON_SPECIFIC">
+			<var name="key_pageName" value="${privacy}" />
 		</execute>
 	</command>
 </definition>
