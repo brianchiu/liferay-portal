@@ -1,10 +1,6 @@
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
-configJSModules {
-	include "**/*.js*"
-}
-
 dependencies {
 	compileOnly group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
 	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.impl", version: "default"
@@ -25,6 +21,7 @@ dependencies {
 	compileOnly project(":apps:frontend-taglib:frontend-taglib")
 	compileOnly project(":apps:frontend-taglib:frontend-taglib-clay")
 	compileOnly project(":apps:frontend-taglib:frontend-taglib-soy")
+	compileOnly project(":apps:frontend-js:frontend-js-loader-modules-extender-api")
 	compileOnly project(":apps:html-preview:html-preview-api")
 	compileOnly project(":apps:item-selector:item-selector-api")
 	compileOnly project(":apps:item-selector:item-selector-criteria-api")
@@ -49,6 +46,6 @@ dependencies {
 	compileOnly project(":core:petra:petra-reflect")
 	compileOnly project(":core:petra:petra-string")
 
-	soyCompile project(":apps:frontend-js:frontend-js-web")
-	soyCompile project(":apps:frontend-taglib:frontend-taglib")
+	jsCompile project(":apps:frontend-js:frontend-js-web")
+	jsCompile project(":apps:frontend-taglib:frontend-taglib")
 }

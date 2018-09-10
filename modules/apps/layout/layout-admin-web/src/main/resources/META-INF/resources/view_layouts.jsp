@@ -64,9 +64,13 @@
 			context.put("siteNavigationMenuNames", layoutsAdminDisplayContext.getAutoSiteNavigationMenuNames());
 			%>
 
+			<%
+				String layoutModuleName = (String)renderRequest.getAttribute("layoutModuleName");
+			%>
+
 			<soy:component-renderer
 				context="<%= context %>"
-				module="layout-admin-web/js/miller_columns/Layout.es"
+				module="<%= layoutModuleName %>"
 				templateNamespace="com.liferay.layout.admin.web.Layout.render"
 			/>
 		</c:when>

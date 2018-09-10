@@ -33,8 +33,12 @@ renderResponse.setTitle(layoutPageTemplateDisplayContext.getLayoutPageTemplateEn
 	editorName="alloyeditor"
 />
 
+<%
+	String fragmentsEditorModuleName = (String)renderRequest.getAttribute("fragmentsEditorModuleName");
+%>
+
 <soy:component-renderer
 	context="<%= fragmentsEditorDisplayContext.getEditorContext() %>"
-	module="layout-admin-web/js/fragments_editor/FragmentsEditor.es"
+	module="<%= fragmentsEditorModuleName %>"
 	templateNamespace="com.liferay.layout.admin.web.FragmentsEditor.render"
 />

@@ -61,6 +61,8 @@ import com.liferay.portal.kernel.util.Portal;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.site.navigation.service.SiteNavigationMenuLocalService;
 
+import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
+
 import java.io.IOException;
 
 import java.util.List;
@@ -186,6 +188,24 @@ public class GroupPagesPortlet extends MVCPortlet {
 	}
 
 	@Override
+	public void doView(
+		RenderRequest renderRequest, RenderResponse renderResponse)
+		throws IOException, PortletException {
+
+		String layoutModuleName = _npmResolver.resolveModuleName(
+			"layout-admin-web/js/miller_columns/Layout.es");
+
+		renderRequest.setAttribute("layoutModuleName", layoutModuleName);
+
+		String fragmentsEditorModuleName = _npmResolver.resolveModuleName(
+			"layout-admin-web@3.0.0/js/fragments_editor/FragmentsEditor.es");
+
+		renderRequest.setAttribute("fragmentsEditorModuleName", fragmentsEditorModuleName);
+
+		super.doView(renderRequest, renderResponse);
+	}
+
+	@Override
 	protected boolean isAlwaysSendRedirect() {
 		return true;
 	}
@@ -265,5 +285,8 @@ public class GroupPagesPortlet extends MVCPortlet {
 
 	@Reference
 	private SiteNavigationMenuLocalService _siteNavigationMenuLocalService;
+
+	@Reference
+	private NPMResolver _npmResolver;
 
 }

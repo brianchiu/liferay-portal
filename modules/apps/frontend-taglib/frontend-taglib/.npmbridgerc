@@ -1,0 +1,70 @@
+{
+	"cards_treeview": {
+		"dest-file-mapper": {
+			"from": "(.*)\\$(.*)@.*/lib/(.*)",
+			"to": "$2/src/$3"
+		},
+		"dest-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "bridge/cards_treeview/$1"
+		},
+		"file-globs": "cards_treeview/**/*.js",
+		"input": "classes/META-INF/resources",
+		"output": "classes/META-INF/resources/bridge/frontend-taglib",
+		"src-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "frontend-taglib/$1"
+		}
+	},
+	"contextual_sidebar": {
+		"dest-file-mapper": {
+			"from": "(.*)\\$(.*)@.*/lib/(.*)",
+			"to": "$2/src/$3"
+		},
+		"dest-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "bridge/contextual_sidebar/$1"
+		},
+		"file-globs": "contextual_sidebar/**/*.js",
+		"input": "classes/META-INF/resources",
+		"output": "classes/META-INF/resources/bridge/frontend-taglib",
+		"src-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "frontend-taglib/$1"
+		}
+	},
+	"diff_version_comparator": {
+		"dest-file-mapper": {
+			"from": "(.*)\\$(.*)@.*/lib/(.*)",
+			"to": "$2/src/$3"
+		},
+		"dest-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "bridge/diff_version_comparator/$1"
+		},
+		"file-globs": "diff_version_comparator/**/*.js",
+		"input": "classes/META-INF/resources",
+		"output": "classes/META-INF/resources/bridge/frontend-taglib",
+		"src-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "frontend-taglib/$1"
+		}
+	},
+	"translation_manager": {
+		"dest-file-mapper": {
+			"from": "(.*)\\$(.*)@.*/lib/(.*)",
+			"to": "$2/src/$3"
+		},
+		"dest-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "bridge/translation_manager/$1"
+		},
+		"file-globs": "translation_manager/**/*.js",
+		"input": "classes/META-INF/resources",
+		"output": "classes/META-INF/resources/bridge/frontend-taglib",
+		"src-mod-name-mapper": {
+			"from": "(.*)\\.js$",
+			"to": "frontend-taglib/$1"
+		}
+	}
+}
