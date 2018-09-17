@@ -1,0 +1,16 @@
+{
+  "config": {
+    "imports": {
+      "frontend-js-metal-web": {
+        "/": ">=3.0.0"
+      }
+    }
+  },
+  "dump-report": true,
+	"ignore": [
+		"**/*.js",
+		"!**/*.es.js",
+		"!**/*.soy.js"
+	],
+  "output": "classes/META-INF/resources/"
+}
