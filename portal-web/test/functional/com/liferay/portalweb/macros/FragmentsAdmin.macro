@@ -18,7 +18,7 @@
 	</command>
 
 	<command name="addCollection">
-		<execute macro="Fragment#_gotoAddCollection" />
+		<execute macro="FragmentsAdmin#_gotoAddCollection" />
 
 		<execute macro="Collection#editCollection">
 			<var name="collectionDescription" value="${collectionDescription}" />
@@ -71,7 +71,7 @@
 	</command>
 
 	<command name="importCollectionFromDependenciesFolder">
-		<execute macro="Fragment#gotoImportCollection" />
+		<execute macro="FragmentsAdmin#gotoImportCollection" />
 
 		<execute function="UploadCommonFile" locator1="TextInput#FILE" value1="${collectionZipFile}" />
 
@@ -85,7 +85,7 @@
 	</command>
 
 	<command name="importCollectionFromTempFolder">
-		<execute macro="Fragment#gotoImportCollection" />
+		<execute macro="FragmentsAdmin#gotoImportCollection" />
 
 		<var method="PropsUtil#get('output.dir.name')" name="tempDir" />
 

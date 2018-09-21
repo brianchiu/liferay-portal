@@ -24,7 +24,7 @@
 			<var name="portlet" value="Page Fragments" />
 		</execute>
 
-		<execute macro="Fragment#addCollection">
+		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionName" value="Fragment Collection Name" />
 		</execute>
 	</set-up>
@@ -56,7 +56,7 @@
 			<var name="navNested" value="Fragment Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -65,7 +65,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -107,7 +107,7 @@
 			<var name="navNested" value="Fragment Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -116,7 +116,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -165,7 +165,7 @@
 			<var name="navNested" value="Fragment Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -174,7 +174,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -224,7 +224,7 @@
 			<var name="navNested" value="Fragment Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -233,7 +233,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -331,7 +331,7 @@
 			<var name="navNested" value="Fragment Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -340,7 +340,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -350,7 +350,7 @@
 			<var name="fileName" value="fragment_title.css" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="css" />
 			<var name="templateScript" value="${cssSnippet}" />
 		</execute>
@@ -425,7 +425,7 @@
 			<var name="navNested" value="Fragment Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -434,7 +434,7 @@
 			<var name="fileName" value="fragment_multiple_editables.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>

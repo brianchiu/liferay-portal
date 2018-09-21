@@ -198,7 +198,7 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name 2" />
 		</execute>
 
@@ -235,7 +235,7 @@
 </div>${line.separator}
 </html>]]></var>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>

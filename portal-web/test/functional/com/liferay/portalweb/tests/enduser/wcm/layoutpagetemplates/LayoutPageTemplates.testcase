@@ -40,7 +40,7 @@
 			<var name="portlet" value="Page Fragments" />
 		</execute>
 
-		<execute macro="Fragment#addCollection">
+		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description" />
 			<var name="collectionName" value="Collection Name" />
 		</execute>
@@ -49,7 +49,7 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -58,7 +58,7 @@
 			<var name="fileName" value="fragment_button.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -108,7 +108,7 @@
 			<var name="portlet" value="Page Fragments" />
 		</execute>
 
-		<execute macro="Fragment#addCollection">
+		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description" />
 			<var name="collectionName" value="Collection Name" />
 		</execute>
@@ -117,7 +117,7 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -126,7 +126,7 @@
 			<var name="fileName" value="fragment_image.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -136,7 +136,7 @@
 			<var name="fileName" value="fragment_image.css" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="css" />
 			<var name="templateScript" value="${cssSnippet}" />
 		</execute>
@@ -181,7 +181,7 @@
 			<var name="portlet" value="Page Fragments" />
 		</execute>
 
-		<execute macro="Fragment#addCollection">
+		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description" />
 			<var name="collectionName" value="Collection Name" />
 		</execute>
@@ -190,7 +190,7 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
@@ -199,7 +199,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -389,7 +389,7 @@
 			<var name="portlet" value="Page Fragments" />
 		</execute>
 
-		<execute macro="Fragment#addCollection">
+		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description" />
 			<var name="collectionName" value="Collection Name" />
 		</execute>
@@ -398,7 +398,7 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment 1" />
 		</execute>
 
@@ -407,7 +407,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -417,14 +417,14 @@
 			<var name="fileName" value="fragment_title.css" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="css" />
 			<var name="templateScript" value="${cssSnippet}" />
 		</execute>
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment 2" />
 		</execute>
 
@@ -433,7 +433,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="html" />
 			<var name="templateScript" value="${htmlSnippet}" />
 		</execute>
@@ -443,7 +443,7 @@
 			<var name="fileName" value="fragment_content.css" />
 		</execute>
 
-		<execute macro="Fragment#typeFragmentEditor">
+		<execute macro="FragmentsAdmin#typeFragmentEditor">
 			<var name="editor" value="css" />
 			<var name="templateScript" value="${cssSnippet}" />
 		</execute>
@@ -528,7 +528,7 @@
 			<var name="portlet" value="Page Fragments" />
 		</execute>
 
-		<execute macro="Fragment#addCollection">
+		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description" />
 			<var name="collectionName" value="Collection Name" />
 		</execute>
@@ -537,7 +537,7 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="Fragment#addFragment">
+		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
