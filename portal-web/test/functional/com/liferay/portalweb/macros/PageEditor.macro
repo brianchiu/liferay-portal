@@ -1,4 +1,23 @@
 <definition>
+	<command name="addFragment">
+		<execute macro="PageEditor#gotoTab">
+			<var name="tabName" value="Available" />
+		</execute>
+
+		<execute macro="PageEditor#expandFragmentCollection">
+			<var name="collectionName" value="${collectionName}" />
+		</execute>
+
+		<execute function="Click" locator1="Fragment#FRAGMENT_SIDEBAR_FRAGMENT">
+			<var name="key_collectionName" value="${collectionName}" />
+			<var name="key_fragmentName" value="${fragmentName}" />
+		</execute>
+
+		<execute function="AssertElementPresent" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_HEADER">
+			<var name="key_fragmentName" value="${fragmentName}" />
+		</execute>
+	</command>
+
 	<command name="editFragmentImage">
 		<execute function="MouseOver#mouseOverNotVisible" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_HEADER">
 			<var name="key_fragmentName" value="${fragmentName}" />
@@ -94,25 +113,6 @@
 		</execute>
 
 		<execute function="Click" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_DELETE_BUTTON">
-			<var name="key_fragmentName" value="${fragmentName}" />
-		</execute>
-	</command>
-
-	<command name="addFragment">
-		<execute macro="PageEditor#gotoTab">
-			<var name="tabName" value="Available" />
-		</execute>
-
-		<execute macro="PageEditor#expandFragmentCollection">
-			<var name="collectionName" value="${collectionName}" />
-		</execute>
-
-		<execute function="Click" locator1="Fragment#FRAGMENT_SIDEBAR_FRAGMENT">
-			<var name="key_collectionName" value="${collectionName}" />
-			<var name="key_fragmentName" value="${fragmentName}" />
-		</execute>
-
-		<execute function="AssertElementPresent" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_HEADER">
 			<var name="key_fragmentName" value="${fragmentName}" />
 		</execute>
 	</command>
