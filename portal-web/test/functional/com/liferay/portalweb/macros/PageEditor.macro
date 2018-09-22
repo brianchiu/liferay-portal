@@ -1,5 +1,5 @@
 <definition>
-	<command name="_gotoTab">
+	<command name="gotoTab">
 		<execute function="AssertClick" locator1="Fragment#FRAGMENT_SIDEBAR_TAB" value1="${tabName}">
 			<var name="key_tabName" value="${tabName}" />
 		</execute>
@@ -99,7 +99,7 @@
 	</command>
 
 	<command name="selectFragment">
-		<execute macro="PageEditor#_gotoTab">
+		<execute macro="PageEditor#gotoTab">
 			<var name="tabName" value="Available" />
 		</execute>
 
