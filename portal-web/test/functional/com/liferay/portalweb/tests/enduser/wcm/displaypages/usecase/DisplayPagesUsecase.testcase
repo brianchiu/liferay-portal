@@ -84,7 +84,7 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="PageEditor#selectFragment">
+		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -135,7 +135,7 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="PageEditor#selectFragment">
+		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -193,7 +193,7 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="PageEditor#selectFragment">
+		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -252,7 +252,7 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="PageEditor#selectFragment">
+		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -369,7 +369,7 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="PageEditor#selectFragment">
+		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -453,7 +453,7 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="PageEditor#selectFragment">
+		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>

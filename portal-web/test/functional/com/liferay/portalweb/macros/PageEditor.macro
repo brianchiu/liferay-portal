@@ -98,7 +98,7 @@
 		</execute>
 	</command>
 
-	<command name="selectFragment">
+	<command name="addFragment">
 		<execute macro="PageEditor#gotoTab">
 			<var name="tabName" value="Available" />
 		</execute>
