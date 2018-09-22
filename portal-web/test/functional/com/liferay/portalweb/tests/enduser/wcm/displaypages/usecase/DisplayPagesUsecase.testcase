@@ -140,12 +140,12 @@
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="DisplayPages#selectAssetType">
+		<execute macro="PageEditorMapping#selectAssetType">
 			<var name="assetType" value="Web Content Article" />
 			<var name="subType" value="Basic Web Content" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="title" />
 			<var name="itemName" value="Title" />
@@ -257,12 +257,12 @@
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="DisplayPages#selectAssetType">
+		<execute macro="PageEditorMapping#selectAssetType">
 			<var name="assetType" value="Web Content Article" />
 			<var name="subType" value="Basic Web Content" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="title" />
 			<var name="itemName" value="Title" />
@@ -374,12 +374,12 @@
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="DisplayPages#selectAssetType">
+		<execute macro="PageEditorMapping#selectAssetType">
 			<var name="assetType" value="Web Content Article" />
 			<var name="subType" value="Basic Web Content" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="title" />
 			<var name="itemName" value="Title" />
@@ -458,30 +458,30 @@
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="DisplayPages#selectAssetType">
+		<execute macro="PageEditorMapping#selectAssetType">
 			<var name="assetType" value="Web Content Article" />
 			<var name="subType" value="Basic Web Content" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="test1" />
 			<var name="itemName" value="Title" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="test2" />
 			<var name="itemName" value="Content" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="test3" />
 			<var name="itemName" value="Tags" />
 		</execute>
 
-		<execute macro="DisplayPages#mapEditableTextToAsset">
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="test4" />
 			<var name="itemName" value="Publish Date" />
