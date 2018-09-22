@@ -10,7 +10,7 @@
 	</command>
 
 	<command name="assertAssetTypeUnselectable">
-		<execute macro="LayoutPageTemplates#_gotoTab">
+		<execute macro="PageEditor#_gotoTab">
 			<var name="tabName" value="Mapping" />
 		</execute>
 
@@ -20,7 +20,7 @@
 	</command>
 
 	<command name="mapEditableTextToAsset">
-		<execute macro="LayoutPageTemplates#_gotoTab">
+		<execute macro="PageEditor#_gotoTab">
 			<var name="tabName" value="Mapping" />
 		</execute>
 
@@ -42,7 +42,7 @@
 	</command>
 
 	<command name="selectAssetType">
-		<execute macro="LayoutPageTemplates#_gotoTab">
+		<execute macro="PageEditor#_gotoTab">
 			<var name="tabName" value="Mapping" />
 		</execute>
 

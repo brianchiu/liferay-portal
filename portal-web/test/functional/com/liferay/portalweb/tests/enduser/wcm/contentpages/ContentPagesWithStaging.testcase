@@ -38,12 +38,12 @@
 			<var name="pageName" value="Test Content Page Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Title" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Rich Text" />
 		</execute>
@@ -156,12 +156,12 @@
 
 		<execute macro="ContentPages#gotoEdit" />
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Content" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#moveFragment">
+		<execute macro="PageEditor#moveFragment">
 			<var name="direction" value="down" />
 			<var name="fragmentName" value="Title" />
 		</execute>

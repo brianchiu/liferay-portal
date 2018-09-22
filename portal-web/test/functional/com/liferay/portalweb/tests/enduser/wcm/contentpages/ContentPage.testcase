@@ -111,7 +111,7 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>

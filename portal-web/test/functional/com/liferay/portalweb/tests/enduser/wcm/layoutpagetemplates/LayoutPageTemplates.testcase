@@ -85,20 +85,20 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewAutoSaveMessage" />
+		<execute macro="PageEditor#viewAutoSaveMessage" />
 
-		<execute macro="LayoutPageTemplates#removeFragment">
+		<execute macro="PageEditor#removeFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewAutoSaveMessage" />
+		<execute macro="PageEditor#viewAutoSaveMessage" />
 
-		<execute macro="LayoutPageTemplates#viewEditorEmpty" />
+		<execute macro="PageEditor#viewEditorEmpty" />
 	</command>
 
 	<command name="ChangeEditableImage" priority="5">
@@ -163,12 +163,12 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#editFragmentImage">
+		<execute macro="PageEditor#editFragmentImage">
 			<var name="fileName" value="Document_1.png" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -226,18 +226,18 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#editFragmentText">
+		<execute macro="PageEditor#editFragmentText">
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="title" />
 			<var name="text" value="Editing Finished" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentEditableText">
+		<execute macro="PageEditor#viewFragmentEditableText">
 			<var name="editableText" value="Editing Finished" />
 			<var name="fragmentName" value="Fragment Name" />
 			<var name="id" value="title" />
@@ -470,52 +470,52 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Fragment 1" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#selectFragment">
+		<execute macro="PageEditor#selectFragment">
 			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Fragment 2" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentOrder">
+		<execute macro="PageEditor#viewFragmentOrder">
 			<var name="fragmentName" value="Fragment 1" />
 			<var name="position" value="1" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentOrder">
+		<execute macro="PageEditor#viewFragmentOrder">
 			<var name="fragmentName" value="Fragment 2" />
 			<var name="position" value="2" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#moveFragment">
+		<execute macro="PageEditor#moveFragment">
 			<var name="direction" value="down" />
 			<var name="fragmentName" value="Fragment 1" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentOrder">
+		<execute macro="PageEditor#viewFragmentOrder">
 			<var name="fragmentName" value="Fragment 1" />
 			<var name="position" value="2" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentOrder">
+		<execute macro="PageEditor#viewFragmentOrder">
 			<var name="fragmentName" value="Fragment 2" />
 			<var name="position" value="1" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#moveFragment">
+		<execute macro="PageEditor#moveFragment">
 			<var name="direction" value="up" />
 			<var name="fragmentName" value="Fragment 1" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentOrder">
+		<execute macro="PageEditor#viewFragmentOrder">
 			<var name="fragmentName" value="Fragment 1" />
 			<var name="position" value="1" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewFragmentOrder">
+		<execute macro="PageEditor#viewFragmentOrder">
 			<var name="fragmentName" value="Fragment 2" />
 			<var name="position" value="2" />
 		</execute>
@@ -561,7 +561,7 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="LayoutPageTemplates#viewCollectionNotPresent">
+		<execute macro="PageEditor#viewCollectionNotPresent">
 			<var name="collectionName" value="Collection Name" />
 		</execute>
 	</command>
