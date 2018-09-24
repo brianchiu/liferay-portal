@@ -101,7 +101,7 @@
 			<var name="rowEntry" value="Default" />
 		</execute>
 
-		<execute macro="SiteNavigationMenu#deleteItem">
+		<execute macro="NavigationMenusAdmin#deleteItem">
 			<var name="itemName" value="Staging Test Page" />
 		</execute>
 
