@@ -5,18 +5,17 @@
 		</execute>
 
 		<if>
-			<isset var="collectionName" />
+			<not>
+				<isset var="collectionName" />
+			</not>
 			<then>
-				<execute macro="Navigator#gotoNavNested">
-					<var name="navNested" value="${collectionName}" />
-				</execute>
+				<var name="collectionName" value="Basic Pages" />
 			</then>
-			<else>
-				<execute macro="Navigator#gotoNavNested">
-					<var name="navNested" value="Basic Pages" />
-				</execute>
-			</else>
 		</if>
+
+		<execute macro="Navigator#gotoNavNested">
+			<var name="navNested" value="${collectionName}" />
+		</execute>
 
 		<if>
 			<isset var="pageTemplateName" />
