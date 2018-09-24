@@ -23,9 +23,7 @@
 			<var name="name" value="Fragment Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Test Site Name" />
-		</execute>
+		<execute macro="FragmentsAdmin#openFragmentsAdmin" />
 	</set-up>
 
 	<tear-down>
@@ -46,12 +44,6 @@
 
 	<command name="DeleteFragment" priority="5">
 		<property name="portal.acceptance" value="true" />
-
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="Collection Name" />
@@ -79,12 +71,6 @@
 	<command name="DeleteFragmentCollection" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
 		<execute macro="Collection#deleteCollection">
 			<var name="collectionName" value="Collection Name" />
 		</execute>
@@ -101,12 +87,6 @@
 	</command>
 
 	<command name="RenameFragment" priority="4">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="Collection Name" />
 		</execute>
@@ -138,12 +118,6 @@
 	</command>
 
 	<command name="ViewCannotDeleteFragmentInUse" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="Collection Name" />
 		</execute>
@@ -188,12 +162,6 @@
 	</command>
 
 	<command name="ViewOnlyDraftFragmentsCanBeSaved" priority="4">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="Collection Name" />
 		</execute>
