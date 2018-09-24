@@ -28,9 +28,9 @@
 					<var name="groupName" value="Test Site Name" />
 				</execute>
 
-				<execute macro="JSONGroup#deleteGroupByName">
-					<var name="groupName" value="New Site Name" />
-				</execute>
+				<execute macro="Navigator#openURL" />
+
+				<execute macro="Site#tearDownCP" />
 			</else>
 		</if>
 	</tear-down>
