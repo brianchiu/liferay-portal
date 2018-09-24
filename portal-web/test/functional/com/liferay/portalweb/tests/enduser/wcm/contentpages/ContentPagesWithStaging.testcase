@@ -9,15 +9,15 @@
 		<execute macro="User#firstLoginPG" />
 
 		<execute macro="JSONGroup#addGroup">
-			<var name="groupName" value="Site Name" />
+			<var name="groupName" value="Test Site Name" />
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/site-name/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+			<var name="urlAppend" value="group/test-site-name/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
 		</execute>
 
 		<execute macro="Staging#activateStagingCP">
-			<var name="siteName" value="Site Name" />
+			<var name="siteName" value="Test Site Name" />
 		</execute>
 
 		<execute macro="ProductMenu#gotoPortlet">
@@ -31,7 +31,7 @@
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/site-name-staging/~/control_panel/manage?p_p_id=com_liferay_layout_admin_web_portlet_GroupPagesPortlet" />
+			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_layout_admin_web_portlet_GroupPagesPortlet" />
 		</execute>
 
 		<execute macro="ContentPages#addPage">
@@ -67,17 +67,17 @@
 		<description message="Published content pages should remain if staging is deactivated." />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
 
 		<execute macro="Staging#deactivateStagingCP">
-			<var name="siteName" value="Site Name" />
+			<var name="siteName" value="Test Site Name" />
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#CONTENT_PAGE_FRAGMENT">
@@ -97,7 +97,7 @@
 		<description message="Content pages only appear in live view after being published and should appear properly." />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name-staging/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name-staging/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#CONTENT_PAGE_FRAGMENT">
@@ -113,19 +113,19 @@
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertTextPresent" value1="The requested resource could not be found." />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#CONTENT_PAGE_FRAGMENT">
@@ -145,13 +145,13 @@
 		<description message="Edits made to existing content pages should not appear in the live site until after published." />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name-staging/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name-staging/test-content-page-name" />
 		</execute>
 
 		<execute macro="ContentPages#gotoEdit" />
@@ -167,7 +167,7 @@
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name-staging/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name-staging/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#CONTENT_PAGE_FRAGMENT">
@@ -189,7 +189,7 @@
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#CONTENT_PAGE_FRAGMENT">
@@ -211,13 +211,13 @@
 		</execute>
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/site-name/test-content-page-name" />
+			<var name="urlAppend" value="web/test-site-name/test-content-page-name" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#CONTENT_PAGE_FRAGMENT">
