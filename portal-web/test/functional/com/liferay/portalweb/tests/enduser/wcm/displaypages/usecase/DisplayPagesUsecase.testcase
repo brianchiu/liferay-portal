@@ -77,7 +77,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -125,7 +125,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -180,7 +180,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -236,7 +236,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -301,7 +301,7 @@
 			<var name="assetLinkBehavior" value="View in Context" />
 		</execute>
 
-		<execute macro="DisplayPages#viewPGViaAP">
+		<execute macro="DisplayPagesAdmin#viewPGViaAP">
 			<var name="contentList" value="Webcontent Title" />
 			<var name="webContentContent" value="Webcontent Content" />
 			<var name="webContentTitle" value="Webcontent Title" />
@@ -347,7 +347,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -389,7 +389,7 @@
 
 		<execute macro="Alert#viewSuccessMessage" />
 
-		<execute macro="DisplayPages#viewPGViaFriendlyURL">
+		<execute macro="DisplayPagesAdmin#viewPGViaFriendlyURL">
 			<var name="contentList" value="Webcontent Title" />
 			<var name="friendlyURL" value="webcontent-title" />
 			<var name="siteName" value="Test Site Name" />
@@ -428,7 +428,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -519,7 +519,7 @@
 			<var name="assetLinkBehavior" value="View in Context" />
 		</execute>
 
-		<execute macro="DisplayPages#viewPGViaAP">
+		<execute macro="DisplayPagesAdmin#viewPGViaAP">
 			<var name="contentList" value="Webcontent Title,Webcontent Content,tag1,tag2,tag3" />
 			<var name="webContentContent" value="Webcontent Content" />
 			<var name="webContentTitle" value="Webcontent Title" />

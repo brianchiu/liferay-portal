@@ -42,7 +42,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -58,7 +58,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -81,7 +81,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -111,7 +111,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
@@ -142,7 +142,7 @@
 
 		<execute macro="NavItem#gotoDisplayPages" />
 
-		<execute macro="DisplayPages#add">
+		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
