@@ -65,10 +65,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="html" />
-			<var name="templateScript" value="${htmlSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
 
 		<execute macro="PortletEntry#publish" />
 
@@ -116,10 +113,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="html" />
-			<var name="templateScript" value="${htmlSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
 
 		<execute macro="PortletEntry#publish" />
 
@@ -174,10 +168,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="html" />
-			<var name="templateScript" value="${htmlSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
 
 		<execute macro="PortletEntry#publish" />
 
@@ -233,10 +224,7 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="html" />
-			<var name="templateScript" value="${htmlSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
 
 		<execute macro="PortletEntry#publish" />
 
@@ -340,20 +328,14 @@
 			<var name="fileName" value="fragment_title.html" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="html" />
-			<var name="templateScript" value="${htmlSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
 
 		<execute macro="TestCase#getFileContent">
 			<return name="cssSnippet" />
 			<var name="fileName" value="fragment_title.css" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="css" />
-			<var name="templateScript" value="${cssSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#CSS_EDITOR" value1="${cssSnippet}" />
 
 		<execute macro="PortletEntry#publish" />
 
@@ -434,10 +416,7 @@
 			<var name="fileName" value="fragment_multiple_editables.html" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#typeFragmentEditor">
-			<var name="editor" value="html" />
-			<var name="templateScript" value="${htmlSnippet}" />
-		</execute>
+		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
 
 		<execute macro="PortletEntry#publish" />
 
