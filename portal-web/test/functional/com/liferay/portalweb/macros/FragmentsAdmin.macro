@@ -1,6 +1,4 @@
 <definition>
-	<var name="pageURL" value="control_panel/manage/-/fragments" />
-
 	<command name="_gotoAddCollection">
 		<if>
 			<condition function="IsElementPresent" locator1="NavNested#NAV_NESTED_PLUS" />
@@ -113,32 +111,8 @@
 	</command>
 
 	<command name="openFragmentsAdmin">
-		<if>
-			<not>
-				<isset var="siteURLKey" />
-			</not>
-			<then>
-				<var name="siteURLKey" value="test-site-name" />
-			</then>
-		</if>
-
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/${siteURLKey}/~/${pageURL}" />
-		</execute>
-	</command>
-
-	<command name="openFragmentsAdminInStaging">
-		<if>
-			<not>
-				<isset var="siteURLKey" />
-			</not>
-			<then>
-				<var name="siteURLKey" value="test-site-name-staging" />
-			</then>
-		</if>
-
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/${siteURLKey}/~/${pageURL}" />
+			<var name="urlAppend" value="group/${siteURLKey}/~/control_panel/manage/-/fragments" />
 		</execute>
 	</command>
 </definition>

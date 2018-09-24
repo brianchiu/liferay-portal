@@ -20,7 +20,9 @@
 			<var name="siteName" value="Test Site Name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#openFragmentsAdminInStaging" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name-staging" />
+		</execute>
 
 		<execute macro="FragmentsAdmin#importCollectionFromDependenciesFolder">
 			<var name="collectionZipFile" value="fragment-collection.zip" />

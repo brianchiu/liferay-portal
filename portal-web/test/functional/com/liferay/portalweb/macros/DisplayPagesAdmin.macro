@@ -1,6 +1,4 @@
 <definition>
-	<var name="pageURL" value="control_panel/manage?p_p_id=com_liferay_layout_admin_web_portlet_GroupPagesPortlet&amp;_com_liferay_layout_admin_web_portlet_GroupPagesPortlet_tabs1=display-pages" />
-
 	<command name="add">
 		<execute macro="LexiconEntry#gotoAdd" />
 
@@ -12,32 +10,8 @@
 	</command>
 
 	<command name="openDisplayPagesAdmin">
-		<if>
-			<not>
-				<isset var="siteURLKey" />
-			</not>
-			<then>
-				<var name="siteURLKey" value="test-site-name" />
-			</then>
-		</if>
-
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/${siteURLKey}/~/${pageURL}" />
-		</execute>
-	</command>
-
-	<command name="openDisplayPagesAdminInStaging">
-		<if>
-			<not>
-				<isset var="siteURLKey" />
-			</not>
-			<then>
-				<var name="siteURLKey" value="test-site-name-staging" />
-			</then>
-		</if>
-
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/${siteURLKey}/~/${pageURL}" />
+			<var name="urlAppend" value="group/${siteURLKey}/~/control_panel/manage?p_p_id=com_liferay_layout_admin_web_portlet_GroupPagesPortlet&amp;_com_liferay_layout_admin_web_portlet_GroupPagesPortlet_tabs1=display-pages" />
 		</execute>
 	</command>
 

@@ -23,7 +23,9 @@
 			<var name="name" value="Fragment Name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#openFragmentsAdmin" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
 	</set-up>
 
 	<tear-down>

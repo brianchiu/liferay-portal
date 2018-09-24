@@ -12,7 +12,9 @@
 			<var name="groupName" value="Test Site Name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#openFragmentsAdmin" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
 
 		<execute macro="FragmentsAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description" />
