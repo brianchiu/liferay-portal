@@ -1,4 +1,6 @@
 <definition>
+	<var name="pageURL" value="control_panel/manage/-/fragments" />
+
 	<command name="_gotoAddCollection">
 		<if>
 			<condition function="IsElementPresent" locator1="NavNested#NAV_NESTED_PLUS" />
@@ -63,8 +65,8 @@
 			</else>
 		</if>
 
-		<execute macro="MenuItem#click">
-			<var name="menuItem" value="Import" />
+		<execute macro="Button#click">
+			<var name="button" value="Import" />
 		</execute>
 
 		<execute macro="IFrame#selectConfigurationFrame" />
@@ -108,5 +110,35 @@
 		<execute macro="Alert#viewSuccessMessage" />
 
 		<execute macro="IFrame#closeFrame" />
+	</command>
+
+	<command name="openFragmentsAdmin">
+		<if>
+			<not>
+				<isset var="siteURLKey" />
+			</not>
+			<then>
+				<var name="siteURLKey" value="test-site-name" />
+			</then>
+		</if>
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="group/${siteURLKey}/~/${pageURL}" />
+		</execute>
+	</command>
+
+	<command name="openFragmentsAdminInStaging">
+		<if>
+			<not>
+				<isset var="siteURLKey" />
+			</not>
+			<then>
+				<var name="siteURLKey" value="test-site-name-staging" />
+			</then>
+		</if>
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="group/${siteURLKey}/~/${pageURL}" />
+		</execute>
 	</command>
 </definition>

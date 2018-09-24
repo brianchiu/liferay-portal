@@ -20,11 +20,7 @@
 			<var name="siteName" value="Test Site Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
+		<execute macro="FragmentsAdmin#openFragmentsAdminInStaging" />
 
 		<execute macro="FragmentsAdmin#importCollectionFromDependenciesFolder">
 			<var name="collectionZipFile" value="fragment-collection.zip" />
