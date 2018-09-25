@@ -12,8 +12,8 @@
 			<var name="groupName" value="Test Site Name" />
 		</execute>
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+		<execute macro="Staging#openStagingAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Staging#activateStagingCP">
@@ -66,8 +66,8 @@
 	<command name="DeactivateStagingAfterPublish" priority="4">
 		<description message="Published content pages should remain if staging is deactivated." />
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+		<execute macro="Staging#openStagingAdmin">
+			<var name="siteURLKey" value="test-site-name-staging" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
@@ -118,8 +118,8 @@
 
 		<execute function="AssertTextPresent" value1="The requested resource could not be found." />
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+		<execute macro="Staging#openStagingAdmin">
+			<var name="siteURLKey" value="test-site-name-staging" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
@@ -144,8 +144,8 @@
 	<command name="PublishEditedContentPage" priority="5">
 		<description message="Edits made to existing content pages should not appear in the live site until after published." />
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+		<execute macro="Staging#openStagingAdmin">
+			<var name="siteURLKey" value="test-site-name-staging" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />
@@ -210,8 +210,8 @@
 			<var name="key_position" value="3" />
 		</execute>
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+		<execute macro="Staging#openStagingAdmin">
+			<var name="siteURLKey" value="test-site-name-staging" />
 		</execute>
 
 		<execute macro="Staging#publishCustomPublication" />

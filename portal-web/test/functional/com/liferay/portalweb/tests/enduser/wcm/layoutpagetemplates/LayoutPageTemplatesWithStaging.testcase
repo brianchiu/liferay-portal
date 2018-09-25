@@ -12,8 +12,8 @@
 			<var name="groupName" value="Test Site Name" />
 		</execute>
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name/~/control_panel/manage?p_p_id=com_liferay_staging_processes_web_portlet_StagingProcessesPortlet" />
+		<execute macro="Staging#openStagingAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Staging#activateStagingCP">
