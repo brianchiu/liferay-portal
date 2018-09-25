@@ -1,5 +1,4 @@
 <definition component-name="portal-wcm">
-	<property name="portal.acceptance" value="wem" />
 	<property name="portal.release" value="true" />
 	<property name="portal.upstream" value="true" />
 	<property name="testray.main.component.name" value="Fragments" />
@@ -13,8 +12,8 @@
 			<var name="groupName" value="Test Site Name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#openFragmentsAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoSite">
+			<var name="site" value="Test Site Name" />
 		</execute>
 	</set-up>
 
@@ -37,7 +36,13 @@
 	<command name="AddCollectionFragmentWithSnippets" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="FragmentsAdmin#addCollection">
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Page Fragments" />
+		</execute>
+
+		<execute macro="Fragment#addCollection">
 			<var name="collectionName" value="Collection Name" />
 		</execute>
 
@@ -45,12 +50,14 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#addFragment">
+		<execute macro="Fragment#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#openFragmentsAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Page Fragments" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
@@ -67,26 +74,37 @@
 			<var name="fileName" value="fragment_button.html" />
 		</execute>
 
-		<execute function="Type#typeAceEditorNoError" locator1="Fragment#HTML_EDITOR" value1="${htmlSnippet}" />
+		<execute macro="Fragment#typeFragmentEditor">
+			<var name="editor" value="html" />
+			<var name="templateScript" value="${htmlSnippet}" />
+		</execute>
 
 		<execute macro="TestCase#getFileContent">
 			<return name="cssSnippet" />
 			<var name="fileName" value="fragment_button.css" />
 		</execute>
 
-		<execute function="Type#typeAceEditorNoError" locator1="Fragment#CSS_EDITOR" value1="${cssSnippet}" />
+		<execute macro="Fragment#typeFragmentEditor">
+			<var name="editor" value="css" />
+			<var name="templateScript" value="${cssSnippet}" />
+		</execute>
 
 		<execute macro="TestCase#getFileContent">
 			<return name="javascriptSnippet" />
 			<var name="fileName" value="fragment_button.js" />
 		</execute>
 
-		<execute function="Type#typeAceEditorNoError" locator1="Fragment#JAVASCRIPT_EDITOR" value1="${javascriptSnippet}" />
+		<execute macro="Fragment#typeFragmentEditor">
+			<var name="editor" value="javascript" />
+			<var name="templateScript" value="${javascriptSnippet}" />
+		</execute>
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="FragmentsAdmin#openFragmentsAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Page Fragments" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
