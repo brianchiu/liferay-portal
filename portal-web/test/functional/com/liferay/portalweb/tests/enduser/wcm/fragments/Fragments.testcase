@@ -55,10 +55,8 @@
 			<var name="rowEntry" value="Fragment Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
@@ -77,10 +75,8 @@
 			<var name="collectionName" value="Collection Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Collection#viewNotPresent">
@@ -104,10 +100,8 @@
 
 		<execute macro="Modal#save" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
@@ -124,10 +118,8 @@
 			<var name="navNested" value="Collection Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="NavItem#gotoPageTemplates" />
@@ -147,10 +139,8 @@
 
 		<execute macro="PageEditor#viewAutoSaveMessage" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
@@ -178,10 +168,8 @@
 
 		<execute macro="PortletEntry#saveAsDraft" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">

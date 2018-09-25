@@ -48,10 +48,8 @@
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">
@@ -86,10 +84,8 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="Navigator#gotoNavNested">

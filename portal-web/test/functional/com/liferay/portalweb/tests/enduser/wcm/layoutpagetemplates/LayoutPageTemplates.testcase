@@ -36,10 +36,8 @@
 	<command name="AddLayoutPageTemplateRemoveFragment" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="FragmentsAdmin#addCollection">
@@ -64,13 +62,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -101,10 +95,8 @@
 	</command>
 
 	<command name="ChangeEditableImage" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="FragmentsAdmin#addCollection">
@@ -136,13 +128,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -168,10 +156,8 @@
 	</command>
 
 	<command name="ChangeEditableText" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="FragmentsAdmin#addCollection">
@@ -196,13 +182,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -237,13 +219,9 @@
 	<command name="DeleteCollection" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Collection Name" />
@@ -261,13 +239,9 @@
 	<command name="DeletePageTemplate" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -281,13 +255,9 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="Page Template Collection" />
@@ -303,13 +273,9 @@
 	</command>
 
 	<command name="RenameCollection" priority="4">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionDescription" value="Collection Description Original" />
@@ -328,13 +294,9 @@
 	</command>
 
 	<command name="RenamePageTemplate" priority="4">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -348,13 +310,9 @@
 			<var name="pageTemplateName" value="Page Template Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="Navigator#gotoNavNested">
 			<var name="navNested" value="Page Template Collection" />
@@ -373,10 +331,8 @@
 	<command name="ReorderFragments" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="FragmentsAdmin#addCollection">
@@ -428,13 +384,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -500,10 +452,8 @@
 	</command>
 
 	<command name="ViewDraftFragmentDoesNotDisplayInSidebar" priority="4">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="FragmentsAdmin#addCollection">
@@ -519,13 +469,9 @@
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="PageTemplatesAdmin#openPageTemplatesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoPageTemplates" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />

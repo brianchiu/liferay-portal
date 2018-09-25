@@ -40,16 +40,6 @@
 	<command name="AddDisplayPage" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
-		<execute macro="Navigator#gotoNavNested">
-			<var name="navNested" value="Fragment Collection Name" />
-		</execute>
-
 		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -63,13 +53,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
@@ -88,16 +74,6 @@
 	<command name="MapDisplayPageToBasicWebContent" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
-		<execute macro="Navigator#gotoNavNested">
-			<var name="navNested" value="Fragment Collection Name" />
-		</execute>
-
 		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -111,13 +87,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
@@ -143,16 +115,6 @@
 	</command>
 
 	<command name="UpdateDisplayPageEditableText" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
-		<execute macro="Navigator#gotoNavNested">
-			<var name="navNested" value="Fragment Collection Name" />
-		</execute>
-
 		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -166,13 +128,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
@@ -198,16 +156,6 @@
 
 	<command name="ViewDisplayPageViaAssetPublisher" priority="5">
 		<property name="portal.acceptance" value="true" />
-
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
-		<execute macro="Navigator#gotoNavNested">
-			<var name="navNested" value="Fragment Collection Name" />
-		</execute>
 
 		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
@@ -303,16 +251,6 @@
 	</command>
 
 	<command name="ViewDisplayPageViaFriendlyURL" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
-		<execute macro="Navigator#gotoNavNested">
-			<var name="navNested" value="Fragment Collection Name" />
-		</execute>
-
 		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -333,13 +271,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
@@ -391,16 +325,6 @@
 	</command>
 
 	<command name="ViewDisplayPageWithComplexRichTextFragments" priority="4">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
-		</execute>
-
-		<execute macro="Navigator#gotoNavNested">
-			<var name="navNested" value="Fragment Collection Name" />
-		</execute>
-
 		<execute macro="FragmentsAdmin#addFragment">
 			<var name="fragmentName" value="Fragment Name" />
 		</execute>
@@ -414,13 +338,9 @@
 
 		<execute macro="PortletEntry#publish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />

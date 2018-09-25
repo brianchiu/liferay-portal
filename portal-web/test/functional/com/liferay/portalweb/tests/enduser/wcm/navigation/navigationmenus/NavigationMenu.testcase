@@ -36,10 +36,8 @@
 	<command name="AddNavigationMenuEntriesAllTypes" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
@@ -96,10 +94,8 @@
 	</command>
 
 	<command name="AddNavigationMenuEntriesNestItems" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<for list="1,2" param="index">
@@ -157,10 +153,8 @@
 	</command>
 
 	<command name="AddNavigationMenuEntriesSortViewOrder" priority="5">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<for list="1,2,3,4" param="index">
@@ -220,10 +214,8 @@
 	</command>
 
 	<command name="AddPageToNavigationMenuUponCreation" priority="3">
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
@@ -329,10 +321,8 @@
 	<command name="AddURLNavigationMenu" priority="4">
 		<description message="This is a use case for LPS-75059." />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
@@ -523,10 +513,8 @@
 		<description message="This is a usecase for LPS-76658" />
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<for list="1,2" param="index">
@@ -662,10 +650,8 @@
 		<description message="This is a test case for LPS-77912." />
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">

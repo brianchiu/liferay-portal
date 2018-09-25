@@ -112,20 +112,12 @@
 			<var name="collectionName" value="Collection Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Sites" />
-			<var name="panel" value="Control Panel" />
-			<var name="portlet" value="Sites" />
+		<execute macro="JSONGroup#addGroup">
+			<var name="groupName" value="New Site Name" />
 		</execute>
 
-		<execute macro="Site#addBlankCP">
-			<var name="siteName" value="New Site Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Page Fragments" />
+		<execute macro="FragmentsAdmin#openFragmentsAdmin">
+			<var name="siteURLKey" value="new-site-name" />
 		</execute>
 
 		<execute macro="FragmentsAdmin#importCollectionFromTempFolder" />
