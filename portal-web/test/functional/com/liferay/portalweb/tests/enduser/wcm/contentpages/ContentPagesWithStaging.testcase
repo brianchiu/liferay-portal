@@ -28,8 +28,8 @@
 			<var name="collectionZipFile" value="fragment-collection.zip" />
 		</execute>
 
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/test-site-name-staging/~/control_panel/manage?p_p_id=com_liferay_layout_admin_web_portlet_GroupPagesPortlet" />
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name-staging" />
 		</execute>
 
 		<execute macro="ContentPages#addPage">
