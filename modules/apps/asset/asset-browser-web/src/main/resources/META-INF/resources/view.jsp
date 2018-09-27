@@ -202,7 +202,6 @@
 	searchContainer.on(
 		'rowToggled',
 		function(event) {
-			debugger;
 			var selectedItems = event.elements.allSelectedElements;
 
 			var arr = [];
