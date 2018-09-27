@@ -69,11 +69,11 @@
 				data.put("entityid", assetEntry.getEntryId());
 				data.put("groupdescriptivename", group.getDescriptiveName(locale));
 
-				cssClass = "selector-button";
-			}
+				if (assetBrowserDisplayContext.isMultipleSelection()) {
+					row.setData(data);
+				}
 
-			if (assetBrowserDisplayContext.isMultipleSelection()) {
-				row.setData(data);
+				cssClass = "selector-button";
 			}
 			%>
 
