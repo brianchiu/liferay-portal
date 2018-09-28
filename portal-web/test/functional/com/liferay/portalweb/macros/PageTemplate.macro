@@ -95,7 +95,7 @@
 	</command>
 
 	<command name="editDescription">
-		<execute macro="PageTemplatesAdminGlobalSite#viewDescription">
+		<execute macro="PageTemplate#viewDescription">
 			<var name="pageTemplateDescription" value="${pageTemplateDescription}" />
 			<var name="pageTemplateName" value="${pageTemplateName}" />
 		</execute>
