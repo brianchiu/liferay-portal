@@ -26,21 +26,8 @@ import java.io.Serializable;
 public class TransactionalPortalCache<K extends Serializable, V>
 	extends PortalCacheWrapper<K, V> {
 
-	/**
-	 * @deprecated As of Judson (7.1.x), replaced by {@link
-	 *             #TransactionalPortalCache(PortalCache, boolean)}
-	 */
-	@Deprecated
 	public TransactionalPortalCache(PortalCache<K, V> portalCache) {
-		this(portalCache, false);
-	}
-
-	public TransactionalPortalCache(
-		PortalCache<K, V> portalCache, boolean mvcc) {
-
 		super(portalCache);
-
-		_mvcc = mvcc;
 	}
 
 	@Override
@@ -87,7 +74,7 @@ public class TransactionalPortalCache<K extends Serializable, V>
 			}
 
 			TransactionalPortalCacheHelper.put(
-				portalCache, key, value, timeToLive, _mvcc);
+				portalCache, key, value, timeToLive);
 		}
 		else {
 			portalCache.put(key, value, timeToLive);
@@ -104,7 +91,7 @@ public class TransactionalPortalCache<K extends Serializable, V>
 			TransactionalPortalCacheHelper.put(
 				portalCache, key,
 				(V)TransactionalPortalCacheHelper.getNullHolder(),
-				DEFAULT_TIME_TO_LIVE, _mvcc);
+				DEFAULT_TIME_TO_LIVE);
 		}
 		else {
 			portalCache.remove(key);
@@ -114,13 +101,11 @@ public class TransactionalPortalCache<K extends Serializable, V>
 	@Override
 	public void removeAll() {
 		if (TransactionalPortalCacheHelper.isEnabled()) {
-			TransactionalPortalCacheHelper.removeAll(portalCache, _mvcc);
+			TransactionalPortalCacheHelper.removeAll(portalCache);
 		}
 		else {
 			portalCache.removeAll();
 		}
 	}
-
-	private final boolean _mvcc;
 
 }
