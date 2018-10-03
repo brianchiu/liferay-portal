@@ -216,7 +216,7 @@ public class TransactionalPortalCacheHelper {
 					(PortalCache<Serializable, Object>)portalCache);
 			}
 			else {
-				uncommittedBuffer = new MarkerUncommittedBuffer(
+				uncommittedBuffer = new MVCCUncommittedBuffer(
 					(PortalCache<Serializable, Object>)portalCache);
 			}
 
@@ -252,7 +252,7 @@ public class TransactionalPortalCacheHelper {
 					(PortalCache<Serializable, Object>)portalCache);
 			}
 			else {
-				uncommittedBuffer = new MarkerUncommittedBuffer(
+				uncommittedBuffer = new MVCCUncommittedBuffer(
 					(PortalCache<Serializable, Object>)portalCache);
 			}
 
@@ -315,7 +315,7 @@ public class TransactionalPortalCacheHelper {
 				ArrayList::new, false);
 	private static volatile Boolean _transactionalCacheEnabled;
 
-	private static class MarkerUncommittedBuffer extends UncommittedBuffer {
+	private static class MVCCUncommittedBuffer extends UncommittedBuffer {
 
 		@Override
 		public void commit(boolean readOnly) {
@@ -323,10 +323,10 @@ public class TransactionalPortalCacheHelper {
 				return;
 			}
 
-			_markers.compute(
+			_placeHolders.compute(
 				_portalCacheName,
 				(key, placeHolder) -> {
-					if (placeHolder != _marker) {
+					if (placeHolder != _placeHolder) {
 						commitByRemove = true;
 					}
 
@@ -342,22 +342,22 @@ public class TransactionalPortalCacheHelper {
 				});
 		}
 
-		private MarkerUncommittedBuffer(
+		private MVCCUncommittedBuffer(
 			PortalCache<Serializable, Object> portalCache) {
 
 			super(portalCache);
 
 			_portalCacheName = portalCache.getPortalCacheName();
 
-			_marker = _markers.computeIfAbsent(
+			_placeHolder = _placeHolders.computeIfAbsent(
 				_portalCacheName, key -> new Object());
 		}
 
-		private static final Map<String, Object> _markers =
+		private static final Map<String, Object> _placeHolders =
 			new ConcurrentReferenceValueHashMap<>(
 				FinalizeManager.WEAK_REFERENCE_FACTORY);
 
-		private final Object _marker;
+		private final Object _placeHolder;
 		private final String _portalCacheName;
 
 	}
