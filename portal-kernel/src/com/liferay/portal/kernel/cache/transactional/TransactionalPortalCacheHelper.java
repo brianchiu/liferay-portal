@@ -34,9 +34,7 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import java.io.Serializable;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -70,7 +68,7 @@ public class TransactionalPortalCacheHelper {
 							backupPortalCacheMaps.size() - 1));
 				}
 				else if (transactionStatus.isNewTransaction()) {
-					commit(transactionAttribute.isReadOnly());
+					commit();
 				}
 			}
 
@@ -139,19 +137,11 @@ public class TransactionalPortalCacheHelper {
 		portalCacheMaps.add(new PortalCacheMap());
 	}
 
-	/**
-	 * @deprecated As of Judson (7.1.x), replaced by {@link #commit(boolean)}
-	 */
-	@Deprecated
 	public static void commit() {
-		commit(false);
-	}
-
-	public static void commit(boolean readOnly) {
 		PortalCacheMap portalCacheMap = _popPortalCacheMap();
 
 		for (UncommittedBuffer uncommittedBuffer : portalCacheMap.values()) {
-			uncommittedBuffer.commit(readOnly);
+			uncommittedBuffer.commit();
 		}
 
 		portalCacheMap.clear();
@@ -318,11 +308,7 @@ public class TransactionalPortalCacheHelper {
 	private static class MVCCUncommittedBuffer extends UncommittedBuffer {
 
 		@Override
-		public void commit(boolean readOnly) {
-			if (skipCommit(readOnly)) {
-				return;
-			}
-
+		public void commit() {
 			_placeHolders.compute(
 				_portalCacheName,
 				(key, placeHolder) -> {
@@ -330,13 +316,7 @@ public class TransactionalPortalCacheHelper {
 						commitByRemove = true;
 					}
 
-					if (!readOnly || !commitByRemove) {
-						doCommit();
-					}
-
-					if (readOnly) {
-						return placeHolder;
-					}
+					super.commit();
 
 					return new Object();
 				});
@@ -364,15 +344,7 @@ public class TransactionalPortalCacheHelper {
 
 	private static class UncommittedBuffer {
 
-		public void commit(boolean readOnly) {
-			if (skipCommit(readOnly)) {
-				return;
-			}
-
-			doCommit();
-		}
-
-		protected void doCommit() {
+		public void commit() {
 			if (_removeAll) {
 				if (_skipReplicator) {
 					PortalCacheHelperUtil.removeAllWithoutReplicator(
@@ -423,30 +395,6 @@ public class TransactionalPortalCacheHelper {
 			if (_skipReplicator) {
 				_skipReplicator = skipReplicator;
 			}
-		}
-
-		protected boolean skipCommit(boolean readOnly) {
-			if (readOnly) {
-				_removeAll = false;
-
-				Collection<ValueEntry> valueEntries = _uncommittedMap.values();
-
-				Iterator<ValueEntry> iterator = valueEntries.iterator();
-
-				while (iterator.hasNext()) {
-					ValueEntry valueEntry = iterator.next();
-
-					if (valueEntry.isRemove()) {
-						iterator.remove();
-					}
-				}
-			}
-
-			if (!_removeAll && _uncommittedMap.isEmpty()) {
-				return true;
-			}
-
-			return false;
 		}
 
 		protected boolean commitByRemove;
@@ -505,14 +453,6 @@ public class TransactionalPortalCacheHelper {
 			else {
 				portalCache.remove(key);
 			}
-		}
-
-		public boolean isRemove() {
-			if (_value == _NULL_HOLDER) {
-				return true;
-			}
-
-			return false;
 		}
 
 		public void merge(ValueEntry valueEntry) {
