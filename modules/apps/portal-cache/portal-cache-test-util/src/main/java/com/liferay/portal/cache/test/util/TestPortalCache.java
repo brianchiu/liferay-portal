@@ -116,16 +116,20 @@ public class TestPortalCache<K extends Serializable, V>
 	protected void doRemove(K key) {
 		V value = _concurrentMap.remove(key);
 
-		aggregatedPortalCacheListener.notifyEntryRemoved(
-			this, key, value, DEFAULT_TIME_TO_LIVE);
+		if (value != null) {
+			aggregatedPortalCacheListener.notifyEntryRemoved(
+				this, key, value, DEFAULT_TIME_TO_LIVE);
+		}
 	}
 
 	@Override
 	protected boolean doRemove(K key, V value) {
 		boolean removed = _concurrentMap.remove(key, value);
 
-		aggregatedPortalCacheListener.notifyEntryRemoved(
-			this, key, value, DEFAULT_TIME_TO_LIVE);
+		if (removed) {
+			aggregatedPortalCacheListener.notifyEntryRemoved(
+				this, key, value, DEFAULT_TIME_TO_LIVE);
+		}
 
 		return removed;
 	}
