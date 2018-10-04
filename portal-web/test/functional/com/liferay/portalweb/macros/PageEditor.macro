@@ -62,6 +62,16 @@
 			<var name="key_fragmentName" value="${fragmentName}" />
 			<var name="key_id" value="${id}" />
 		</execute>
+
+		<execute function="KeyPress" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_EDITABLE_TEXT_CK_EDITOR" value1="\SPACE">
+			<var name="key_fragmentName" value="${fragmentName}" />
+			<var name="key_id" value="${id}" />
+		</execute>
+
+		<execute function="KeyPress" locator1="Fragment#PAGE_TEMPLATE_FRAGMENT_EDITABLE_TEXT_CK_EDITOR" value1="\BACK_SPACE">
+			<var name="key_fragmentName" value="${fragmentName}" />
+			<var name="key_id" value="${id}" />
+		</execute>
 	</command>
 
 	<command name="expandContentPageFragmentSidebar">
