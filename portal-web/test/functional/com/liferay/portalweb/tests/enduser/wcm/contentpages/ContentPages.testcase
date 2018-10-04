@@ -154,6 +154,7 @@
 
 	<command name="AddContentPageWithEditedFragmentText" priority="5">
 		<description message="Add a content page and edit its fragment immediately. This is a variation of the steps from LPS-85872." />
+		<property name="portal.acceptance" value="bchiu" />
 
 		<execute macro="SitePages#openPagesAdmin">
 			<var name="siteURLKey" value="test-site-name" />
@@ -189,6 +190,7 @@
 
 	<command name="EditContentPage" priority="5">
 		<description message="Edit an existing content page that has fragments. This testcase covers the bug found in LPS-85872." />
+		<property name="portal.acceptance" value="bchiu" />
 
 		<execute macro="SitePages#openPagesAdmin">
 			<var name="siteURLKey" value="test-site-name" />
