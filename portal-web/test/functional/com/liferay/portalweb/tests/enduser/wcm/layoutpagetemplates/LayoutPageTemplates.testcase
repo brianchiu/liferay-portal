@@ -1,4 +1,5 @@
 <definition component-name="portal-wcm">
+		<property name="portal.acceptance" value="bchiu" />
 	<property name="portal.release" value="true" />
 	<property name="portal.upstream" value="true" />
 	<property name="testray.main.component.name" value="Layout Page Templates" />
@@ -47,7 +48,6 @@
 
 	<command name="AddLayoutPageTemplateRemoveFragment" priority="5">
 		<description message="Add and remove a fragment in the page editor." />
-		<property name="portal.acceptance" value="true" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -138,7 +138,6 @@
 
 	<command name="DeleteCollection" priority="5">
 		<description message="Delete a page template collection." />
-		<property name="portal.acceptance" value="true" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Collection Name" />
@@ -155,7 +154,6 @@
 
 	<command name="DeletePageTemplate" priority="5">
 		<description message="Delete a page template." />
-		<property name="portal.acceptance" value="true" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
@@ -240,7 +238,6 @@
 
 	<command name="ReorderFragments" priority="5">
 		<description message="Change the ordering of fragments in the page editor." />
-		<property name="portal.acceptance" value="true" />
 
 		<execute macro="PageTemplatesAdmin#addCollection">
 			<var name="collectionName" value="Page Template Collection" />
