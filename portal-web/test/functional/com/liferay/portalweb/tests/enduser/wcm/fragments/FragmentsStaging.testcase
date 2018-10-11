@@ -1,0 +1,97 @@
+<definition component-name="portal-wcm">
+	<property name="portal.release" value="true" />
+	<property name="portal.upstream" value="true" />
+	<property name="testray.main.component.name" value="Fragments" />
+
+	<set-up>
+		<execute macro="TestCase#setUpPortalInstance" />
+
+		<execute macro="User#firstLoginPG" />
+
+		<execute macro="JSONGroup#addGroup">
+			<var name="groupName" value="Test Site Name" />
+		</execute>
+
+		<execute macro="JSONLayout#addLayoutByGroupName">
+			<var name="groupName" value="Test Site Name" />
+			<var name="layoutName" value="Staging Test Page" />
+		</execute>
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Publishing" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Staging" />
+		</execute>
+
+		<execute macro="Staging#activateStagingCP">
+			<var name="siteName" value="Test Site Name" />
+		</execute>
+	</set-up>
+
+	<tear-down>
+		<var method="PropsUtil#get('test.portal.instance')" name="testPortalInstance" />
+		<if>
+			<equals arg1="${testPortalInstance}" arg2="true" />
+			<then>
+				<execute macro="PortalInstances#tearDownCP" />
+			</then>
+			<else>
+				<execute macro="JSONGroup#deleteGroupByName">
+					<var name="groupName" value="Test Site Name" />
+				</execute>
+			</else>
+		</if>
+	</tear-down>
+
+	<command name="AssertFragmentNotAccessibleinStagingLiveSite" priority="5">
+		<execute macro="ProductMenu#gotoLiveSite">
+			<var name="site" value="Site Name" />
+		</execute>
+
+		<execute macro="ProductMenu#viewNoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Page Fragments" />
+		</execute>
+	</command>
+
+	<command name="AssertFragmentsAlwaysPublish" priority="5">
+		<execute macro="JSONFragment#addFragmentCollection">
+			<var name="groupKey" value="Test Site Name-staging" />
+			<var name="name" value="Collection Name" />
+			<var name="site" value="false" />
+		</execute>
+
+		<execute macro="JSONFragment#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="groupKey" value="Test Site Name-staging" />
+			<var name="name" value="Fragment Name" />
+			<var name="site" value="false" />
+		</execute>
+
+		<execute macro="JSONFragment#assertFragmentNotInGroup">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Fragment Name" />
+			<var name="groupName" value="Test Site Name" />
+		</execute>
+
+		<execute macro="Navigator#gotoStagedSitePage">
+			<var name="pageName" value="Staging Test Page" />
+			<var name="siteName" value="Test Site Name" />
+		</execute>
+
+		<execute macro="Staging#gotoPublishToLive" />
+
+		<execute macro="Staging#publishToLive" />
+
+		<execute macro="JSONFragment#assertFragmentInGroup">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Fragment Name" />
+			<var name="groupName" value="Test Site Name" />
+		</execute>
+	</command>
+</definition>
