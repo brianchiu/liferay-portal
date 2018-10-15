@@ -2396,11 +2396,7 @@
 			<var name="userScreenName" value="usersn" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Users" />
-			<var name="panel" value="Control Panel" />
-			<var name="portlet" value="Roles" />
-		</execute>
+		<execute macro="Role#openRolesAdmin" />
 
 		<execute macro="Role#assignRegRoleCP">
 			<var name="roleTitle" value="Web Content Administrator Role" />
