@@ -1384,12 +1384,8 @@
 	<command name="EditBasicWebContentStructureAndTemplate" priority="4">
 		<property name="testray.component.names" value="Web Content Administration" />
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Global" />
-		</execute>
-
 		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+			<var name="siteURLKey" value="global" />
 		</execute>
 
 		<execute macro="NavItem#gotoStructures" />
@@ -2307,11 +2303,6 @@
 	<command name="UserEditWebContent" priority="4">
 		<property name="testray.component.names" value="Permissions,Roles,Users and Organizations,Web Content Administration" />
 
-		<execute macro="TestCase#getSiteName">
-			<return name="siteName" />
-			<var name="siteName" value="${siteName}" />
-		</execute>
-
 		<execute macro="WebContent#openWebContentAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -2395,10 +2386,6 @@
 			<var name="userScreenName" value="usersn" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="${siteName}" />
-		</execute>
-
 		<execute macro="Site#openSiteMembershipsAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -2440,12 +2427,8 @@
 	<command name="ValidateDDMNavigation" priority="4">
 		<property name="testray.component.names" value="Web Content Administration" />
 
-		<execute macro="ProductMenu#gotoSite">
-			<var name="site" value="Global" />
-		</execute>
-
 		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+			<var name="siteURLKey" value="global" />
 		</execute>
 
 		<execute macro="NavItem#gotoStructures" />
