@@ -857,14 +857,11 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="Web Content Content" />
-			<var name="webContentTitle" value="Web Content Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="Web Content Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="Web Content Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="Web Content Title" />
@@ -1300,14 +1297,11 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
@@ -2190,14 +2184,11 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
@@ -2274,14 +2265,11 @@
 				<var name="portlet" value="Web Content" />
 			</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
-
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="WC WebContent Title ${i}" />
+			<execute macro="JSONWebcontent#addWebContent">
+				<var name="content" value="WC WebContent Content" />
+				<var name="groupName" value="Test Site Name" />
+				<var name="title" value="WC WebContent Title ${i}" />
 			</execute>
-
-			<execute macro="PortletEntry#publish" />
 		</for>
 
 		<execute macro="ProductMenu#gotoPortlet">
@@ -2496,14 +2484,11 @@
 				<var name="portlet" value="Web Content" />
 			</execute>
 
-			<execute macro="WebContentNavigator#gotoAddCP" />
-
-			<execute macro="WebContent#addCP">
-				<var name="webContentContent" value="WC WebContent Content" />
-				<var name="webContentTitle" value="${webContentTitle}" />
+			<execute macro="JSONWebcontent#addWebContent">
+				<var name="content" value="WC WebContent Content" />
+				<var name="groupName" value="Test Site Name" />
+				<var name="title" value="${webContentTitle}" />
 			</execute>
-
-			<execute macro="PortletEntry#publish" />
 		</for>
 
 		<execute macro="ProductMenu#gotoPortlet">
@@ -2546,14 +2531,11 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
@@ -3300,14 +3282,11 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent Title" />
@@ -3623,79 +3602,61 @@
 			<var name="portlet" value="Web Content" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent 1 Content" />
-			<var name="webContentTitle" value="WC WebContent 1 Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent 1 Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent 1 Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent 1 Title" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent 2 Content" />
-			<var name="webContentTitle" value="WC WebContent 2 Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent 2 Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent 2 Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent 2 Title" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent 3 Content" />
-			<var name="webContentTitle" value="WC WebContent 3 Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent 3 Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent 3 Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent 3 Title" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent 4 Content" />
-			<var name="webContentTitle" value="WC WebContent 4 Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent 4 Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent 4 Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent 4 Title" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent 5 Content" />
-			<var name="webContentTitle" value="WC WebContent 5 Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent 5 Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent 5 Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent 5 Title" />
 		</execute>
 
-		<execute macro="WebContentNavigator#gotoAddCP" />
-
-		<execute macro="WebContent#addCP">
-			<var name="webContentContent" value="WC WebContent 6 Content" />
-			<var name="webContentTitle" value="WC WebContent 6 Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent 6 Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent 6 Title" />
 		</execute>
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="WebContent#viewTitle">
 			<var name="webContentTitle" value="WC WebContent 6 Title" />
