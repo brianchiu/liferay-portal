@@ -714,26 +714,18 @@
 			<var name="displaySettings" value="Set as the Default Asset Publisher for This Page" />
 		</execute>
 
-		<execute macro="Navigator#openSiteURL">
-			<var name="siteName" value="Test Site Name" />
-		</execute>
-
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="Web Content Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="Web Content Title" />
 		</execute>
 
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="Web Content Title" />
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
-		<execute macro="Navigator#openSiteURL">
-			<var name="siteName" value="Test Site Name" />
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="Web Content Title" />
 		</execute>
 
 		<execute macro="WebContent#openWebContentAdmin">
@@ -1137,14 +1129,14 @@
 
 		<execute macro="SystemSettings#saveConfiguration" />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -1941,14 +1933,14 @@
 	<command name="ExpireLastestVersion" priority="4">
 		<description message="This is a use case for LPS-80208." />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -2224,14 +2216,14 @@
 	<command name="MoveWebContentToFolder" priority="5">
 		<property name="testray.component.names" value="Training" />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -2872,14 +2864,14 @@
 			<var name="webContentContent" value="WC WebContent Content" />
 		</execute>
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -3159,69 +3151,23 @@
 	<command name="WebContentAdministrationPaginatingRelatedAssets" priority="3">
 		<property name="testray.component.names" value="Related Assets,Web Content Administration" />
 
+		<for list="1,2,3,4,5,6" param="index">
+			<execute macro="JSONWebcontent#addWebContent">
+				<var name="content" value="WC WebContent ${index} Content" />
+				<var name="groupName" value="Test Site Name" />
+				<var name="title" value="WC WebContent ${index} Title" />
+			</execute>
+		</for>
+
 		<execute macro="WebContent#openWebContentAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="WC WebContent 1 Content" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="WC WebContent 1 Title" />
-		</execute>
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="WC WebContent 1 Title" />
-		</execute>
-
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="WC WebContent 2 Content" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="WC WebContent 2 Title" />
-		</execute>
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="WC WebContent 2 Title" />
-		</execute>
-
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="WC WebContent 3 Content" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="WC WebContent 3 Title" />
-		</execute>
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="WC WebContent 3 Title" />
-		</execute>
-
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="WC WebContent 4 Content" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="WC WebContent 4 Title" />
-		</execute>
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="WC WebContent 4 Title" />
-		</execute>
-
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="WC WebContent 5 Content" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="WC WebContent 5 Title" />
-		</execute>
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="WC WebContent 5 Title" />
-		</execute>
-
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="WC WebContent 6 Content" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="WC WebContent 6 Title" />
-		</execute>
-
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="WC WebContent 6 Title" />
-		</execute>
+		<for list="1,2,3,4,5,6" param="index">
+			<execute macro="WebContent#viewTitle">
+				<var name="webContentTitle" value="WC WebContent ${index} Title" />
+			</execute>
+		</for>
 
 		<execute macro="WebContent#openWebContentAdmin">
 			<var name="siteURLKey" value="test-site-name" />

@@ -219,14 +219,14 @@
 	<command name="AddWebContentViaAddContentPanel" priority="5">
 		<property name="testray.component.names" value="Web Content Display,Training" />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -531,14 +531,14 @@
 	<command name="SearchWebContent" priority="4">
 		<property name="testray.component.names" value="Web Content Display" />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -588,14 +588,14 @@
 		<property name="portal.acceptance" value="true" />
 		<property name="testray.component.names" value="Web Content Display,Training" />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -623,14 +623,16 @@
 			<var name="site" value="Global" />
 		</execute>
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
-			<var name="groupName" value="Test Site Name" />
+			<var name="groupName" value="Global" />
 			<var name="title" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Content" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Web Content" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -735,28 +737,24 @@
 		<property name="test.name.skip.portal.instance" value="PGWebcontentdisplay#ViewAllSettingsEnabledWCDConfiguration" />
 		<property name="testray.component.names" value="Web Content Display" />
 
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="Web Content Content 1" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="Web Content Title 1" />
 		</execute>
 
-		<execute macro="WebContent#viewTitle">
-			<var name="webContentTitle" value="Web Content Title 1" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="Web Content Content 2" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="Web Content Title 2" />
 		</execute>
 
 		<execute macro="WebContent#openWebContentAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
-		<execute macro="JSONWebcontent#addWebContent">
-			<var name="content" value="Web Content Content 2" />
-			<var name="groupName" value="Test Site Name" />
-			<var name="title" value="Web Content Title 2" />
+		<execute macro="WebContent#viewTitle">
+			<var name="webContentTitle" value="Web Content Title 1" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
