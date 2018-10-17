@@ -105,25 +105,6 @@
 		</execute>
 	</command>
 
-	<command name="AddWebContent" priority="5">
-		<property name="portal.acceptance" value="true" />
-		<property name="testray.component.names" value="Web Content Display" />
-
-		<execute macro="Navigator#gotoSitePage">
-			<var name="pageName" value="Web Content Display Page" />
-			<var name="siteName" value="Test Site Name" />
-		</execute>
-
-		<execute macro="WebContent#addPGViaWCD">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
-		</execute>
-
-		<execute macro="WebContent#viewPGViaWCD">
-			<var name="webContentContent" value="WC WebContent Content" />
-		</execute>
-	</command>
-
 	<command name="AddWebContentPortalScopeCurrentPage" priority="3">
 		<property name="testray.component.names" value="Web Content Display" />
 
