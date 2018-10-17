@@ -975,8 +975,10 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
-		<execute macro="Page#openPageAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Pages" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
@@ -1055,8 +1057,10 @@
 			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
-		<execute macro="Page#openPageAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Pages" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
@@ -2022,8 +2026,10 @@
 	<command name="ImportLARLinkToPageValidation" priority="4">
 		<property name="testray.component.names" value="Web Content Administration" />
 
-		<execute macro="Page#openPageAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Pages" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
@@ -2115,8 +2121,10 @@
 			<var name="siteName" value="Site Name" />
 		</execute>
 
-		<execute macro="Page#openPageAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Pages" />
 		</execute>
 
 		<execute macro="SitePages#addPublicPage">
