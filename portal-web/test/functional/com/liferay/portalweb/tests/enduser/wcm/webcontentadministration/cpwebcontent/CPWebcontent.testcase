@@ -2399,8 +2399,10 @@
 			<var name="site" value="${siteName}" />
 		</execute>
 
-		<execute macro="Site#openSiteMembershipsAdmin">
-			<var name="siteURLKey" value="test-site-name" />
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Members" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Site Memberships" />
 		</execute>
 
 		<execute macro="Site#addAllMembersCP" />

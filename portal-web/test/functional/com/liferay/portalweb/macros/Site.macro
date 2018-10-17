@@ -877,12 +877,6 @@
 		<execute macro="PortletEntry#save" />
 	</command>
 
-	<command name="openSiteMembershipsAdmin">
-		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="group/${siteURLKey}/~/control_panel/manage/-/site_memberships" />
-		</execute>
-	</command>
-
 	<command name="openSitesAdmin">
 		<execute macro="Navigator#openWithAppendToBaseURL">
 			<var name="urlAppend" value="group/control_panel/manage/-/sites" />
