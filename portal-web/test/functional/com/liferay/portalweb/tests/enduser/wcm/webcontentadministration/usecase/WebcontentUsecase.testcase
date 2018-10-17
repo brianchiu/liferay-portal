@@ -2274,6 +2274,12 @@
 			<var name="pageName" value="Staging Test Page" />
 		</execute>
 
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Staging Test Page" />
 			<var name="siteName" value="Site Name" />
@@ -2281,11 +2287,6 @@
 
 		<execute macro="Portlet#addPG">
 			<var name="portletName" value="Web Content Display" />
-		</execute>
-
-		<execute macro="WebContent#addPGViaWCD">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="WebContent#viewPGViaWCD">

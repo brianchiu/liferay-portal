@@ -211,9 +211,10 @@
 			<var name="portletName" value="Asset Publisher" />
 		</execute>
 
-		<execute macro="WebContent#addPGViaWCD">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="Navigator#gotoSpecificURLPage">
@@ -1322,8 +1323,8 @@
 			</execute>
 
 			<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
+				<var name="siteURLKey" value="test-site-name" />
+			</execute>
 
 			<execute macro="JSONWebcontent#addWebContent">
 				<var name="content" value="${siteName} WC Content" />
@@ -1398,8 +1399,8 @@
 			</execute>
 
 			<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
+				<var name="siteURLKey" value="test-site-name" />
+			</execute>
 
 			<execute macro="JSONWebcontent#addWebContent">
 				<var name="content" value="${siteName1} WC Content" />
@@ -2107,14 +2108,15 @@
 			<var name="portletName" value="Blogs" />
 		</execute>
 
+		<execute macro="JSONWebcontent#addWebContent">
+			<var name="content" value="WC WebContent Content" />
+			<var name="groupName" value="Test Site Name" />
+			<var name="title" value="WC WebContent Title" />
+		</execute>
+
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Web Content Display Page" />
 			<var name="siteName" value="Test Site Name" />
-		</execute>
-
-		<execute macro="WebContent#addPGViaWCD">
-			<var name="webContentContent" value="WC WebContent Content" />
-			<var name="webContentTitle" value="WC WebContent Title" />
 		</execute>
 
 		<execute macro="WebContent#viewPGViaWCD">
