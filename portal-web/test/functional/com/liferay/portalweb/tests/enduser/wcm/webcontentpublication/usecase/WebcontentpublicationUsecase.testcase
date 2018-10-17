@@ -941,14 +941,14 @@
 
 		<execute macro="PortletEntry#publish" />
 
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="Web Content4 Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="Web Content4 Title" />
-		</execute>
-
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -1822,14 +1822,14 @@
 			<var name="userLoginFullName" value="author1 author1" />
 		</execute>
 
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
-		</execute>
-
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
@@ -1977,14 +1977,14 @@
 
 	<command name="ViewDeletedWCDArticleAsAdminAndGuestCP" priority="4">
 
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
 		<execute macro="JSONWebcontent#addWebContent">
 			<var name="content" value="WC WebContent Content" />
 			<var name="groupName" value="Test Site Name" />
 			<var name="title" value="WC WebContent Title" />
-		</execute>
-
-		<execute macro="WebContent#openWebContentAdmin">
-			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#viewTitle">
