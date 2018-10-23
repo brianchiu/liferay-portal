@@ -215,6 +215,19 @@ public class JournalDisplayContext {
 		return _articleDisplay;
 	}
 
+	public String getAuthor(JournalArticle article) {
+		long classPK = JournalArticleAssetRenderer.getClassPK(article);
+
+		AssetEntry assetEntry = AssetEntryLocalServiceUtil.fetchEntry(
+			JournalArticle.class.getName(), classPK);
+
+		if (assetEntry != null) {
+			return assetEntry.getUserName();
+		}
+
+		return article.getUserName();
+	}
+
 	public String[] getCharactersBlacklist() throws PortalException {
 		JournalServiceConfiguration journalServiceConfiguration =
 			ConfigurationProviderUtil.getCompanyConfiguration(
