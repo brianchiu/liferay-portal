@@ -8,8 +8,6 @@
 <tr><td rowspan="1" colspan="3">KaleoFormsAdmin</td></tr>
 </thead>
 <tbody>
-<!--OPTIONS_MENULIST-->
-<!--TOOLBAR-->
 <!--PROCESS_TABLE-->
 <tr>
 	<td>PROCESS_TABLE_NAME</td>

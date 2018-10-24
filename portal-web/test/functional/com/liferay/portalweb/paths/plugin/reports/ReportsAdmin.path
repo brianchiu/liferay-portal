@@ -46,7 +46,6 @@
 	<td>//a[@role='menuitem' and contains(.,'Delete')]</td>
 	<td></td>
 </tr>
-<!--DEFINITIONS-->
 <!--DEFINITIONS_DEFINITION_TABLE-->
 <tr>
 	<td>DEFINITIONS_DEFINITION_TABLE_DEFINITION_NAME</td>
