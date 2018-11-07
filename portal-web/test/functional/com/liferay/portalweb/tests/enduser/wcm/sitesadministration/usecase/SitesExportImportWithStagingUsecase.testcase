@@ -219,6 +219,7 @@
 
 	<command name="ImportLiveSiteToStagingSite" priority="5">
 		<description message="Export a live site into a different staging site. This test is focused on modern site building features. The high level steps of this test are outlined in LRQA-44517." />
+		<property name="portal.acceptance" value="true" />
 
 		<!-- Export the live site. -->
 
