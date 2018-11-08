@@ -147,7 +147,7 @@
 		</execute>
 	</command>
 
-	<command name="UpdateDisplayPageEditableText" priority="5">
+	<command name="EditDisplayPageEditableText" priority="5">
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
