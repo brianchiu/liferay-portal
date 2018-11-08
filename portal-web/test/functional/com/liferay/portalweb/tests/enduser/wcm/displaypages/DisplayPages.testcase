@@ -107,13 +107,9 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="LexiconEntry#delete">
 			<var name="rowEntry" value="Display Page Name" />
@@ -171,13 +167,9 @@
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="PageTemplatesAdmin#rename">
 			<var name="pageTemplateName" value="Display Page Name New" />
@@ -201,10 +193,8 @@
 
 		<execute macro="Button#clickPublish" />
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Content" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Web Content" />
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
 		<execute macro="WebContent#addArticleCP">
@@ -221,13 +211,9 @@
 			<var name="pageType" value="Display Pages" />
 		</execute>
 
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
 
 		<execute macro="LexiconEntry#delete">
 			<var name="failure" value="Error:You cannot delete asset display pages that are used by one or more assets." />
