@@ -52,30 +52,13 @@
 	<command name="AddDisplayPage" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="FragmentsAdmin#addFragment">
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="TestCase#getFileContent">
-			<return name="htmlSnippet" />
-			<var name="fileName" value="fragment_title.html" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#HTML_EDITOR" value1="${htmlSnippet}" />
-
-		<execute macro="PortletEntry#publish" />
-
-		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
 		<execute macro="PageEditor#addFragment">
-			<var name="collectionName" value="Fragment Collection Name" />
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Title" />
 		</execute>
 
 		<execute macro="PageEditor#viewAutoSaveMessage" />
@@ -144,42 +127,25 @@
 	</command>
 
 	<command name="UpdateDisplayPageEditableText" priority="5">
-		<execute macro="FragmentsAdmin#addFragment">
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="TestCase#getFileContent">
-			<return name="htmlSnippet" />
-			<var name="fileName" value="fragment_title.html" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#HTML_EDITOR" value1="${htmlSnippet}" />
-
-		<execute macro="PortletEntry#publish" />
-
-		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
 		<execute macro="PageEditor#addFragment">
-			<var name="collectionName" value="Fragment Collection Name" />
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Content" />
 		</execute>
 
 		<execute macro="PageEditor#editFragmentText">
-			<var name="fragmentName" value="Fragment Name" />
-			<var name="id" value="title" />
+			<var name="fragmentName" value="Content" />
+			<var name="id" value="content" />
 			<var name="text" value="Editing Finished" />
 		</execute>
 
 		<execute macro="PageEditor#viewFragmentEditableText">
 			<var name="editableText" value="Editing Finished" />
-			<var name="fragmentName" value="Fragment Name" />
-			<var name="id" value="title" />
+			<var name="fragmentName" value="Content" />
+			<var name="id" value="content" />
 		</execute>
 	</command>
 
