@@ -47,6 +47,10 @@
 		</execute>
 
 		<execute macro="PortletEntry#publish" />
+
+		<execute macro="LexiconEntry#viewEntryName">
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
 	</command>
 
 	<command name="AddDisplayPage" priority="5">
@@ -61,9 +65,26 @@
 			<var name="fragmentName" value="Title" />
 		</execute>
 
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Lorem ipsum dolor sit amet" />
+			<var name="key_fragmentClass" value="header" />
+			<var name="key_position" value="1" />
+		</execute>
+
 		<execute macro="PageEditor#viewAutoSaveMessage" />
 
 		<execute macro="PortletEntry#publish" />
+
+		<execute macro="LexiconEntry#gotoEntryMenuItem">
+			<var name="menuItem" value="Edit" />
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Lorem ipsum dolor sit amet" />
+			<var name="key_fragmentClass" value="header" />
+			<var name="key_position" value="1" />
+		</execute>
 	</command>
 
 	<command name="AssertAssetTypeOnlySelectableOnce" priority="4">
@@ -146,6 +167,25 @@
 			<var name="editableText" value="Editing Finished" />
 			<var name="fragmentName" value="Content" />
 			<var name="id" value="content" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
+
+		<execute macro="LexiconEntry#gotoEntryMenuItem">
+			<var name="menuItem" value="Edit" />
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
+
+		<execute macro="PageEditor#viewFragmentEditableText">
+			<var name="editableText" value="Editing Finished" />
+			<var name="fragmentName" value="Content" />
+			<var name="id" value="content" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Editing Finished" />
+			<var name="key_fragmentClass" value="body" />
+			<var name="key_position" value="1" />
 		</execute>
 	</command>
 
