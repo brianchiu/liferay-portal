@@ -124,29 +124,6 @@
 		</execute>
 	</command>
 
-	<command name="RenameDisplayPage" priority="4">
-		<execute macro="DisplayPagesAdmin#add">
-			<var name="displayPageName" value="Display Page Name" />
-		</execute>
-
-		<execute macro="ProductMenu#gotoPortlet">
-			<var name="category" value="Build" />
-			<var name="panel" value="Site Administration" />
-			<var name="portlet" value="Pages" />
-		</execute>
-
-		<execute macro="NavItem#gotoDisplayPages" />
-
-		<execute macro="PageTemplatesAdmin#rename">
-			<var name="pageTemplateName" value="Display Page Name New" />
-			<var name="rowEntry" value="Display Page Name" />
-		</execute>
-
-		<execute macro="LexiconEntry#viewEntryName">
-			<var name="rowEntry" value="Display Page Name New" />
-		</execute>
-	</command>
-
 	<command name="EditDisplayPageEditableText" priority="5">
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
@@ -186,6 +163,29 @@
 			<var name="key_content" value="Editing Finished" />
 			<var name="key_fragmentClass" value="body" />
 			<var name="key_position" value="1" />
+		</execute>
+	</command>
+
+	<command name="RenameDisplayPage" priority="4">
+		<execute macro="DisplayPagesAdmin#add">
+			<var name="displayPageName" value="Display Page Name" />
+		</execute>
+
+		<execute macro="ProductMenu#gotoPortlet">
+			<var name="category" value="Build" />
+			<var name="panel" value="Site Administration" />
+			<var name="portlet" value="Pages" />
+		</execute>
+
+		<execute macro="NavItem#gotoDisplayPages" />
+
+		<execute macro="PageTemplatesAdmin#rename">
+			<var name="pageTemplateName" value="Display Page Name New" />
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
+
+		<execute macro="LexiconEntry#viewEntryName">
+			<var name="rowEntry" value="Display Page Name New" />
 		</execute>
 	</command>
 
