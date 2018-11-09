@@ -41,21 +41,4 @@
 			</execute>
 		</for>
 	</command>
-
-	<command name="viewPGViaFriendlyURL">
-		<var method="PropsUtil#get('portal.url')" name="portalURL" />
-		<var method="StringUtil#toLowerCase('${siteName}')" name="siteNameURL" />
-
-		<var method="StringUtil#replace('${siteNameURL}', ' ', '-')" name="siteNameURL" />
-
-		<execute macro="Navigator#openSpecificURL">
-			<var name="url" value="${portalURL}/web/${siteNameURL}/-/${friendlyURL}" />
-		</execute>
-
-		<for list="${contentList}" param="content">
-			<execute function="AssertElementPresent" locator1="Fragment#EDITABLE_FIELD_CONTENT">
-				<var name="key_text" value="${content}" />
-			</execute>
-		</for>
-	</command>
 </definition>
