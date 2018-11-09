@@ -75,6 +75,7 @@
 	</tear-down>
 
 	<command name="ViewDisplayPageViaAssetPublisher" priority="5">
+		<description message="Display pages can be viewed through the asset publisher widget." />
 		<property name="portal.acceptance" value="true" />
 
 		<execute macro="WebContent#openWebContentAdmin">
@@ -140,6 +141,8 @@
 	</command>
 
 	<command name="ViewDisplayPageViaFriendlyURL" priority="5">
+		<description message="Display pages can be viewed through friendly URL." />
+
 		<execute macro="WebContent#openWebContentAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
