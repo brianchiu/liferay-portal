@@ -45,28 +45,6 @@
 		</if>
 	</tear-down>
 
-	<command name="MapDisplayPageToBasicWebContent" priority="5">
-		<property name="portal.acceptance" value="true" />
-
-		<execute macro="PageEditor#addFragment">
-			<var name="collectionName" value="Fragment Collection Name" />
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="PageEditorMapping#selectAssetType">
-			<var name="assetType" value="Web Content Article" />
-			<var name="subType" value="Basic Web Content" />
-		</execute>
-
-		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Title" />
-			<var name="id" value="title" />
-			<var name="itemName" value="Title" />
-		</execute>
-
-		<execute macro="PortletEntry#publish" />
-	</command>
-
 	<command name="ViewDisplayPageViaAssetPublisher" priority="5">
 		<property name="portal.acceptance" value="true" />
 
