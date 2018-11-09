@@ -157,11 +157,9 @@
 			<var name="key_position" value="3" />
 		</execute>
 
-		<for list="Submit,Cancel" param="button">
-			<execute macro="Button#viewNotPresent">
-				<var name="button" value="${button}" />
-			</execute>
-		</for>
+		<execute macro="Button#viewNotPresent">
+			<var name="button" value="Submit" />
+		</execute>
 	</command>
 
 	<command name="DeleteDisplayPage" priority="5">
@@ -257,11 +255,9 @@
 			<var name="key_position" value="3" />
 		</execute>
 
-		<for list="Submit,Cancel" param="button">
-			<execute macro="Button#viewNotPresent">
-				<var name="button" value="${button}" />
-			</execute>
-		</for>
+		<execute macro="Button#viewNotPresent">
+			<var name="button" value="Submit" />
+		</execute>
 	</command>
 
 	<command name="RenameDisplayPage" priority="4">
