@@ -16,8 +16,12 @@
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#addCollection">
-			<var name="collectionName" value="Fragment Collection Name" />
+		<execute macro="FragmentsAdmin#importCollectionFromDependenciesFolder">
+			<var name="collectionZipFile" value="fragment-collection.zip" />
+		</execute>
+
+		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 	</set-up>
 
@@ -38,30 +42,13 @@
 	</tear-down>
 
 	<command name="ViewDisplayPageWithComplexRichTextFragments" priority="4">
-		<execute macro="FragmentsAdmin#addFragment">
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="TestCase#getFileContent">
-			<return name="htmlSnippet" />
-			<var name="fileName" value="fragment_multiple_editables.html" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#HTML_EDITOR" value1="${htmlSnippet}" />
-
-		<execute macro="PortletEntry#publish" />
-
-		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
-			<var name="siteURLKey" value="test-site-name" />
-		</execute>
-
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
 
 		<execute macro="PageEditor#addFragment">
-			<var name="collectionName" value="Fragment Collection Name" />
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Multiple Editables" />
 		</execute>
 
 		<execute macro="PageEditorMapping#selectAssetType">
@@ -70,25 +57,25 @@
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Multiple Editables" />
 			<var name="id" value="test1" />
 			<var name="itemName" value="Title" />
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Multiple Editables" />
 			<var name="id" value="test2" />
 			<var name="itemName" value="Content" />
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Multiple Editables" />
 			<var name="id" value="test3" />
 			<var name="itemName" value="Tags" />
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Multiple Editables" />
 			<var name="id" value="test4" />
 			<var name="itemName" value="Publish Date" />
 		</execute>
