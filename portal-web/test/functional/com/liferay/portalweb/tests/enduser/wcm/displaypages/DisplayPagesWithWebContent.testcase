@@ -158,8 +158,6 @@
 			<var name="pageType" value="Display Pages" />
 		</execute>
 
-		<execute macro="Alert#viewSuccessMessage" />
-
 		<execute macro="Navigator#openWithAppendToBaseURL">
 			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
 		</execute>
