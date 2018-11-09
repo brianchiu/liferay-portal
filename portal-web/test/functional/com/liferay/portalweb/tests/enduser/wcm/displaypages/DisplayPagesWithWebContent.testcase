@@ -74,6 +74,43 @@
 		</if>
 	</tear-down>
 
+	<command name="ViewDisplayPageMarkedAsDefault" priority="5">
+		<description message="When a display page is marked as default, associated assets will be displayed through the display page by default without need for additional configuration." />
+
+		<execute macro="DisplayPagesAdmin#markDisplayPageAsDefault">
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Webcontent Content" />
+			<var name="webContentTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute macro="PortletEntry#publish" />
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Webcontent Title" />
+			<var name="key_fragmentClass" value="header" />
+			<var name="key_position" value="1" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Webcontent Content" />
+			<var name="key_fragmentClass" value="rich-text" />
+			<var name="key_position" value="2" />
+		</execute>
+	</command>
+
 	<command name="ViewDisplayPageViaAssetPublisher" priority="5">
 		<description message="Display pages can be viewed through the asset publisher widget." />
 		<property name="portal.acceptance" value="true" />
@@ -170,6 +207,159 @@
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Webcontent Content" />
+			<var name="key_fragmentClass" value="rich-text" />
+			<var name="key_position" value="2" />
+		</execute>
+	</command>
+
+	<command name="ViewNonDefaultDisplayPage" priority="5">
+		<description message="A selected display page should override the default display page." />
+
+		<execute macro="DisplayPagesAdmin#markDisplayPageAsDefault">
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
+
+		<execute macro="DisplayPagesAdmin#add">
+			<var name="displayPageName" value="Non-Default Display Page" />
+		</execute>
+
+		<execute macro="PageEditor#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Rich Text" />
+		</execute>
+
+		<execute macro="PageEditor#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Title" />
+		</execute>
+
+		<execute macro="PageEditorMapping#selectAssetType">
+			<var name="assetType" value="Web Content Article" />
+			<var name="subType" value="Basic Web Content" />
+		</execute>
+
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
+			<var name="fragmentName" value="Rich Text" />
+			<var name="id" value="rich-text" />
+			<var name="itemName" value="content" />
+		</execute>
+
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
+			<var name="fragmentName" value="Title" />
+			<var name="id" value="title" />
+			<var name="itemName" value="Title" />
+		</execute>
+
+		<execute macro="Button#clickPublish" />
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Webcontent Content" />
+			<var name="webContentTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute macro="WebContent#editDisplayPage">
+			<var name="pageName" value="Non-Default Display Page" />
+			<var name="pageType" value="Display Pages" />
+		</execute>
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Webcontent Content" />
+			<var name="key_fragmentClass" value="rich-text" />
+			<var name="key_position" value="1" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Webcontent Title" />
+			<var name="key_fragmentClass" value="header" />
+			<var name="key_position" value="2" />
+		</execute>
+	</command>
+
+	<command name="ViewNoSelectedDisplayPage" priority="4">
+		<description message="When no display page is selected, assets should not be displayed through the default display page." />
+
+		<execute macro="DisplayPagesAdmin#markDisplayPageAsDefault">
+			<var name="rowEntry" value="Display Page Name" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Webcontent Content" />
+			<var name="webContentTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute macro="Panel#expandPanel">
+			<var name="panel" value="Display Page" />
+		</execute>
+
+		<execute function="Click" locator1="WCSelectDisplayPage#NONE" />
+
+		<execute macro="PortletEntry#publish" />
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
+		</execute>
+
+		<execute function="AssertTextPresent" value1="The requested resource could not be found." />
+
+		<execute macro="SitePages#openPagesAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="SitePages#addPublicPage">
+			<var name="pageName" value="Site Page Name" />
+		</execute>
+
+		<execute macro="Navigator#gotoSitePage">
+			<var name="pageName" value="Site Page Name" />
+			<var name="siteName" value="Test Site Name" />
+		</execute>
+
+		<execute macro="Portlet#addPG">
+			<var name="portletName" value="Asset Publisher" />
+		</execute>
+
+		<execute macro="AssetPublisherPortlet#configureAssetLinkBehaviorPG">
+			<var name="assetLinkBehavior" value="View in Context" />
+		</execute>
+
+		<execute function="AssertTextEquals" locator1="AP#ASSET_ABSTRACT_TITLE" value1="Webcontent Title">
+			<var name="key_assetTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute function="AssertTextEquals#assertPartialText" locator1="AP#ASSET_ABSTRACT_DESCRIPTION" value1="Webcontent Content">
+			<var name="key_assetTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute function="Click" locator1="AP#ASSET_ABSTRACT_TITLE">
+			<var name="key_assetTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute function="AssertTextEquals#assertPartialText" locator1="AP#ASSET_ABSTRACT_DETAIL_CONTENT" value1="Webcontent Content" />
+
+		<execute function="AssertElementNotPresent" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Webcontent Title" />
+			<var name="key_fragmentClass" value="header" />
+			<var name="key_position" value="1" />
+		</execute>
+
+		<execute function="AssertElementNotPresent" locator1="Fragment#FRAGMENT">
 			<var name="key_content" value="Webcontent Content" />
 			<var name="key_fragmentClass" value="rich-text" />
 			<var name="key_position" value="2" />
