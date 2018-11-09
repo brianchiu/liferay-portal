@@ -16,8 +16,8 @@
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
 
-		<execute macro="FragmentsAdmin#addCollection">
-			<var name="collectionName" value="Fragment Collection Name" />
+		<execute macro="FragmentsAdmin#importCollectionFromDependenciesFolder">
+			<var name="collectionZipFile" value="fragment-collection.zip" />
 		</execute>
 	</set-up>
 
@@ -40,19 +40,6 @@
 	<command name="MapDisplayPageToBasicWebContent" priority="5">
 		<property name="portal.acceptance" value="true" />
 
-		<execute macro="FragmentsAdmin#addFragment">
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="TestCase#getFileContent">
-			<return name="htmlSnippet" />
-			<var name="fileName" value="fragment_title.html" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#HTML_EDITOR" value1="${htmlSnippet}" />
-
-		<execute macro="PortletEntry#publish" />
-
 		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -72,7 +59,7 @@
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Title" />
 			<var name="id" value="title" />
 			<var name="itemName" value="Title" />
 		</execute>
@@ -82,19 +69,6 @@
 
 	<command name="ViewDisplayPageViaAssetPublisher" priority="5">
 		<property name="portal.acceptance" value="true" />
-
-		<execute macro="FragmentsAdmin#addFragment">
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="TestCase#getFileContent">
-			<return name="htmlSnippet" />
-			<var name="fileName" value="fragment_title.html" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#HTML_EDITOR" value1="${htmlSnippet}" />
-
-		<execute macro="PortletEntry#publish" />
 
 		<execute macro="ProductMenu#gotoPortlet">
 			<var name="category" value="Build" />
@@ -110,7 +84,7 @@
 
 		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Title" />
 		</execute>
 
 		<execute macro="PageEditorMapping#selectAssetType">
@@ -119,7 +93,7 @@
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Title" />
 			<var name="id" value="title" />
 			<var name="itemName" value="Title" />
 		</execute>
@@ -177,26 +151,6 @@
 	</command>
 
 	<command name="ViewDisplayPageViaFriendlyURL" priority="5">
-		<execute macro="FragmentsAdmin#addFragment">
-			<var name="fragmentName" value="Fragment Name" />
-		</execute>
-
-		<execute macro="TestCase#getFileContent">
-			<return name="htmlSnippet" />
-			<var name="fileName" value="fragment_title.html" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#HTML_EDITOR" value1="${htmlSnippet}" />
-
-		<execute macro="TestCase#getFileContent">
-			<return name="cssSnippet" />
-			<var name="fileName" value="fragment_title.css" />
-		</execute>
-
-		<execute function="Type#typeAceEditorNoError" locator1="FragmentEditor#CSS_EDITOR" value1="${cssSnippet}" />
-
-		<execute macro="PortletEntry#publish" />
-
 		<execute macro="DisplayPagesAdmin#openDisplayPagesAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -207,7 +161,7 @@
 
 		<execute macro="PageEditor#addFragment">
 			<var name="collectionName" value="Fragment Collection Name" />
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Title" />
 		</execute>
 
 		<execute macro="PageEditorMapping#selectAssetType">
@@ -216,7 +170,7 @@
 		</execute>
 
 		<execute macro="PageEditorMapping#mapEditableTextToAsset">
-			<var name="fragmentName" value="Fragment Name" />
+			<var name="fragmentName" value="Title" />
 			<var name="id" value="title" />
 			<var name="itemName" value="Title" />
 		</execute>
