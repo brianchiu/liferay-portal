@@ -29,12 +29,12 @@
 		</execute>
 
 		<execute macro="PageEditor#addFragment">
-			<var name="collectionName" value="Fragment Collection Name" />
+			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Title" />
 		</execute>
 
 		<execute macro="PageEditor#addFragment">
-			<var name="collectionName" value="Fragment Collection Name" />
+			<var name="collectionName" value="Collection Name" />
 			<var name="fragmentName" value="Rich Text" />
 		</execute>
 
@@ -116,10 +116,17 @@
 			<var name="assetLinkBehavior" value="View in Context" />
 		</execute>
 
-		<execute function="AssertTextEquals" locator1="AP#ASSET_ABSTRACT_TITLE" value1="Webcontent Title" />
-		<execute function="AssertTextEquals#assertPartialText" locator1="AP#ASSET_ABSTRACT_DESCRIPTION" value1="Webcontent Content" />
+		<execute function="AssertTextEquals" locator1="AP#ASSET_ABSTRACT_TITLE" value1="Webcontent Title">
+			<var name="key_assetTitle" value="Webcontent Title" />
+		</execute>
 
-		<execute function="AssertClick" locator1="AP#ASSET_ABSTRACT_TITLE" value1="Webcontent Title" />
+		<execute function="AssertTextEquals#assertPartialText" locator1="AP#ASSET_ABSTRACT_DESCRIPTION" value1="Webcontent Content">
+			<var name="key_assetTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute function="Click" locator1="AP#ASSET_ABSTRACT_TITLE">
+			<var name="key_assetTitle" value="Webcontent Title" />
+		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
 			<var name="key_content" value="Webcontent Title" />
@@ -154,7 +161,7 @@
 		<execute macro="Alert#viewSuccessMessage" />
 
 		<execute macro="Navigator#openWithAppendToBaseURL">
-			<var name="urlAppend" value="web/test-site-name-staging/-/webcontent-title" />
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
 		</execute>
 
 		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
