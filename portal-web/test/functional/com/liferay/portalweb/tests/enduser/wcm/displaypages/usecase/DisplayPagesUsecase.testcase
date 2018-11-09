@@ -42,6 +42,8 @@
 	</tear-down>
 
 	<command name="ViewDisplayPageWithComplexRichTextFragments" priority="4">
+		<description message="Add a fragment with multiple editable fields in it." />
+
 		<execute macro="DisplayPagesAdmin#add">
 			<var name="displayPageName" value="Display Page Name" />
 		</execute>
