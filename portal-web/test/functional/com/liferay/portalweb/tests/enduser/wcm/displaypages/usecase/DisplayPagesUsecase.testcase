@@ -37,9 +37,279 @@
 				<execute macro="JSONGroup#deleteGroupByName">
 					<var name="groupName" value="Test Site Name" />
 				</execute>
+
+				<execute macro="User#logoutAndLoginPG">
+					<var name="userLoginEmailAddress" value="test@liferay.com" />
+					<var name="userLoginFullName" value="Test Test" />
+				</execute>
+
+				<execute macro="MyAccount#openMyAccountAdmin" />
+
+				<execute macro="User#deleteProfileImage" />
+
+				<execute macro="Button#click">
+					<var name="button" value="Save" />
+				</execute>
+
+				<execute macro="User#tearDownCP" />
 			</else>
 		</if>
 	</tear-down>
+
+	<command name="MapWebContentAuthor" priority="5">
+		<description message="This is a test for LPS-86550. Users should be able to map author name and author profile image to a fragment editable field in a display page." />
+
+		<!-- Add a display page with author name and profile fields mapped. -->
+
+		<execute macro="DisplayPagesAdmin#add">
+			<var name="displayPageName" value="Display Page Name" />
+		</execute>
+
+		<execute macro="PageEditor#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Rich Text" />
+		</execute>
+
+		<execute macro="PageEditor#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Image" />
+		</execute>
+
+		<execute macro="PageEditorMapping#selectAssetType">
+			<var name="assetType" value="Web Content Article" />
+			<var name="subType" value="Basic Web Content" />
+		</execute>
+
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
+			<var name="fragmentName" value="Rich Text" />
+			<var name="id" value="rich-text" />
+			<var name="itemName" value="Author Name" />
+		</execute>
+
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
+			<var name="fragmentName" value="Image" />
+			<var name="id" value="image" />
+			<var name="itemName" value="Author Profile" />
+		</execute>
+
+		<execute macro="Button#clickPublish" />
+
+		<!-- Add profile image for the super admin user. -->
+
+		<execute macro="MyAccount#openMyAccountAdmin" />
+
+		<execute macro="User#changeProfileImage">
+			<var name="imageName" value="marketplace_icon.png" />
+		</execute>
+
+		<execute macro="Button#click">
+			<var name="button" value="Save" />
+		</execute>
+
+		<!-- Add a web content article as the super admin user. -->
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Webcontent Content" />
+			<var name="webContentTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute macro="WebContent#editDisplayPage">
+			<var name="pageName" value="Display Page Name" />
+			<var name="pageType" value="Display Pages" />
+		</execute>
+
+		<!-- Assert super admin name and profile image appear. -->
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Test Test" />
+			<var name="key_fragmentClass" value="rich-text" />
+			<var name="key_position" value="1" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="" />
+			<var name="key_fragmentClass" value="image" />
+			<var name="key_position" value="2" />
+		</execute>
+
+		<execute function="SikuliAssertElementPresent" locator1="Fragment#MARKETPLACE_ICON_PNG" />
+	</command>
+
+	<command name="MapWebContentLastEditor" priority="5">
+		<description message="This is a test for LPS-86550. Users should be able to map last editor name and author profile image to a fragment editable field in a display page." />
+
+		<!-- Add a display page with last editor name and profile fields mapped. -->
+
+		<execute macro="DisplayPagesAdmin#add">
+			<var name="displayPageName" value="Display Page Name" />
+		</execute>
+
+		<execute macro="PageEditor#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Rich Text" />
+		</execute>
+
+		<execute macro="PageEditor#addFragment">
+			<var name="collectionName" value="Collection Name" />
+			<var name="fragmentName" value="Image" />
+		</execute>
+
+		<execute macro="PageEditorMapping#selectAssetType">
+			<var name="assetType" value="Web Content Article" />
+			<var name="subType" value="Basic Web Content" />
+		</execute>
+
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
+			<var name="fragmentName" value="Rich Text" />
+			<var name="id" value="rich-text" />
+			<var name="itemName" value="Last Editor Name" />
+		</execute>
+
+		<execute macro="PageEditorMapping#mapEditableTextToAsset">
+			<var name="fragmentName" value="Image" />
+			<var name="id" value="image" />
+			<var name="itemName" value="Last Editor Profile" />
+		</execute>
+
+		<execute macro="Button#clickPublish" />
+
+		<!-- Add profile image for the super admin user. -->
+
+		<execute macro="MyAccount#openMyAccountAdmin" />
+
+		<execute macro="User#changeProfileImage">
+			<var name="imageName" value="marketplace_icon.png" />
+		</execute>
+
+		<execute macro="Button#click">
+			<var name="button" value="Save" />
+		</execute>
+
+		<!-- Add a second user with permission to edit web content articles. -->
+
+		<execute macro="JSONUser#addUser">
+			<var name="userEmailAddress" value="userea@liferay.com" />
+			<var name="userFirstName" value="Userfn" />
+			<var name="userLastName" value="Userln" />
+			<var name="userScreenName" value="usersn" />
+		</execute>
+
+		<execute macro="User#openUsersAdmin" />
+
+		<execute macro="User#editPasswordCP">
+			<var name="userEmailAddress" value="userea@liferay.com" />
+			<var name="userScreenName" value="usersn" />
+		</execute>
+
+		<execute macro="User#openUsersAdmin" />
+
+		<execute macro="User#assignRegularRoleCP">
+			<var name="roleTitle" value="Administrator" />
+			<var name="userScreenName" value="usersn" />
+		</execute>
+
+		<!-- Add profile image for the second user. -->
+
+		<execute macro="User#openUsersAdmin" />
+
+		<execute macro="UserNavigator#gotoUser">
+			<var name="userScreenName" value="usersn" />
+		</execute>
+
+		<execute macro="User#changeProfileImage">
+			<var name="imageName" value="Document_4.jpg" />
+		</execute>
+
+		<execute macro="Button#click">
+			<var name="button" value="Save" />
+		</execute>
+
+		<!-- Add a web content article as the super admin user. -->
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoAddCP" />
+
+		<execute macro="WebContent#addCP">
+			<var name="webContentContent" value="Webcontent Content" />
+			<var name="webContentTitle" value="Webcontent Title" />
+		</execute>
+
+		<execute macro="WebContent#editDisplayPage">
+			<var name="pageName" value="Display Page Name" />
+			<var name="pageType" value="Display Pages" />
+		</execute>
+
+		<!-- Assert super admin name and profile image appear. -->
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Test Test" />
+			<var name="key_fragmentClass" value="rich-text" />
+			<var name="key_position" value="1" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="" />
+			<var name="key_fragmentClass" value="image" />
+			<var name="key_position" value="2" />
+		</execute>
+
+		<!-- Edit the web content article as the second user. -->
+
+		<execute macro="User#logoutAndLoginPG">
+			<var name="userLoginEmailAddress" value="userea@liferay.com" />
+			<var name="userLoginFullName" value="Userfn Userln" />
+		</execute>
+
+		<execute macro="WebContent#openWebContentAdmin">
+			<var name="siteURLKey" value="test-site-name" />
+		</execute>
+
+		<execute macro="WebContentNavigator#gotoEditCP">
+			<var name="webContentTitle" value="WC WebContent Title" />
+		</execute>
+
+		<execute macro="WebContent#editCP">
+			<var name="webContentContentEdit" value="Webcontent Content Edit" />
+			<var name="webContentTitleEdit" value="Webcontent Title Edit" />
+		</execute>
+
+		<!-- Assert super admin name and profile image appear. -->
+
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="web/test-site-name/-/webcontent-title" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="Userfn Userln" />
+			<var name="key_fragmentClass" value="rich-text" />
+			<var name="key_position" value="1" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="Fragment#FRAGMENT">
+			<var name="key_content" value="" />
+			<var name="key_fragmentClass" value="image" />
+			<var name="key_position" value="2" />
+		</execute>
+
+		<execute function="SikuliAssertElementPresent" locator1="Fragment#DOCUMENT_4_PNG" />
+	</command>
 
 	<command name="ViewDisplayPageWithComplexRichTextFragments" priority="4">
 		<description message="Add a fragment with multiple editable fields in it." />
