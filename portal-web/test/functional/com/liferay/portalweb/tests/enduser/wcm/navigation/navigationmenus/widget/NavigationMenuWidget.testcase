@@ -6,10 +6,14 @@
 	<command name="AddURLNavigationMenu" priority="4">
 		<description message="This is a use case for LPS-75059." />
 
+		<!-- Create site page -->
+
 		<execute macro="JSONLayout#addPublicLayout">
 			<var name="groupName" value="Test Site Name" />
 			<var name="layoutName" value="Test Page Name" />
 		</execute>
+
+		<!-- Create navigation menu -->
 
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
@@ -18,6 +22,8 @@
 		<execute macro="NavigationMenusAdmin#addMenu">
 			<var name="menuName" value="Test Navigation Menu Name" />
 		</execute>
+
+		<!-- Add navigation menu URL item -->
 
 		<execute macro="NavigationMenusAdmin#addItem">
 			<var name="item" value="URL" />
@@ -28,6 +34,8 @@
 		<execute macro="NavigationMenusAdmin#viewItem">
 			<var name="itemName" value="Liferay" />
 		</execute>
+
+		<!-- Set primary navigation as the default navigation method -->
 
 		<execute macro="Navigator#openSiteURL">
 			<var name="siteName" value="Test Site Name" />
@@ -41,6 +49,8 @@
 
 		<execute macro="Portlet#saveAndCloseConfig" />
 
+		<!-- Navigate to URL item -->
+
 		<execute function="AssertClick" locator1="Home#PAGE" value1="Liferay">
 			<var name="key_pageName" value="Liferay" />
 		</execute>
@@ -50,6 +60,8 @@
 
 	<command name="AddSubmenuNavigationMenu" priority="5">
 		<description message="This is a use case for LPS-75061" />
+
+		<!-- Create navigation menu -->
 
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
@@ -66,6 +78,8 @@
 		<execute macro="LexiconEntry#gotoEntry">
 			<var name="rowEntry" value="Primary Menu Name 1" />
 		</execute>
+
+		<!-- Add navigation menu submenu item -->
 
 		<execute macro="NavigationMenusAdmin#addItem">
 			<var name="item" value="Submenu" />
@@ -100,6 +114,8 @@
 			<var name="itemName" value="Liferay" />
 		</execute>
 
+		<!-- Navigate to submenu's child item -->
+
 		<execute macro="ProductMenu#gotoSite">
 			<var name="site" value="Test Site Name" />
 		</execute>
@@ -114,12 +130,16 @@
 		<description message="This is a usecase for LPS-76658" />
 		<property name="portal.acceptance" value="true" />
 
+		<!-- Add required pages -->
+
 		<for list="1,2" param="index">
 			<execute macro="JSONLayout#addPublicLayout">
 				<var name="groupName" value="Test Site Name" />
 				<var name="layoutName" value="Test Page Name ${index}" />
 			</execute>
 		</for>
+
+		<!-- Create navigation menu -->
 
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
@@ -129,10 +149,14 @@
 			<var name="menuName" value="Test Navigation Menu Name" />
 		</execute>
 
+		<!-- Add navigation menu items -->
+
 		<execute macro="NavigationMenusAdmin#addItem">
 			<var name="item" value="Page" />
 			<var name="pageNames" value="Site Page Name 1,Site Page Name 2" />
 		</execute>
+
+		<!-- Edit navigation menu item name -->
 
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
@@ -152,6 +176,8 @@
 			<var name="itemName" value="Site Page Name 3" />
 		</execute>
 
+		<!-- Set navigation menu widget to use primary navigation -->
+
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Site Page Name 1" />
 			<var name="siteName" value="Test Site Name" />
@@ -164,6 +190,8 @@
 		</execute>
 
 		<execute macro="Portlet#saveAndCloseConfig" />
+
+		<!-- Assert navigation menu item name changed but the site page reference is the same -->
 
 		<execute macro="Navigator#gotoSitePage">
 			<var name="pageName" value="Site Page Name 3" />
