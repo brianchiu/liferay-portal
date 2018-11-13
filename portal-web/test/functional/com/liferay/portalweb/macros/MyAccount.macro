@@ -84,6 +84,12 @@
 		</if>
 	</command>
 
+	<command name="openMyAccountAdmin">
+		<execute macro="Navigator#openWithAppendToBaseURL">
+			<var name="urlAppend" value="group/control_panel/manage?p_p_id=com_liferay_my_account_web_portlet_MyAccountPortlet" />
+		</execute>
+	</command>
+
 	<command name="view">
 		<execute function="AssertElementPresent" locator1="UsersAndOrganizationsEditUser#CATEGORIZATION_LABEL" />
 
