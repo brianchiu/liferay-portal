@@ -58,6 +58,7 @@
 
 	<command name="MapWebContentAuthor" priority="5">
 		<description message="This is a test for LPS-86550. Users should be able to map author name and author profile image to a fragment editable field in a display page." />
+		<property name="portal.acceptance" value="true" />
 
 		<!-- Add a display page with author name and profile fields mapped. -->
 
@@ -147,6 +148,7 @@
 
 	<command name="MapWebContentLastEditor" priority="5">
 		<description message="This is a test for LPS-86550. Users should be able to map last editor name and author profile image to a fragment editable field in a display page." />
+		<property name="portal.acceptance" value="true" />
 
 		<!-- Add a display page with last editor name and profile fields mapped. -->
 
