@@ -30,6 +30,7 @@
 	</tear-down>
 
 	<command name="AddNavigationMenuEntriesAllTypes" priority="5">
+		<description message="Assert we can add one of each type of navigation menu item" />
 		<property name="portal.acceptance" value="true" />
 
 		<execute macro="JSONLayout#addPublicLayout">
@@ -83,6 +84,8 @@
 	</command>
 
 	<command name="AddNavigationMenuEntriesNestItems" priority="5">
+		<description message="Assert we can nest a navigation menu item using drag and drop." />
+
 		<for list="1,2" param="index">
 			<execute macro="JSONLayout#addPublicLayout">
 				<var name="groupName" value="Test Site Name" />
@@ -133,6 +136,8 @@
 	</command>
 
 	<command name="AddNavigationMenuEntriesSortViewOrder" priority="5">
+		<description message="Assert we can reorder navigation menu items using drag and drop." />
+
 		<for list="1,2" param="index">
 			<execute macro="JSONLayout#addPublicLayout">
 				<var name="groupName" value="Test Site Name" />
@@ -209,6 +214,8 @@
 	</command>
 
 	<command name="ConfigurePrimaryNavigationMenu" priority="4">
+		<description message="Assert we can set the menu type of a navigation menu to primary navigation" />
+
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -247,6 +254,8 @@
 	</command>
 
 	<command name="ConfigureSecondaryNavigationMenu" priority="4">
+		<description message="Assert we can set the menu type of a navigation menu to secondary navigation" />
+
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -279,6 +288,8 @@
 	</command>
 
 	<command name="ConfigureSocialNavigationMenu" priority="4">
+		<description message="Assert we can set the menu type of a navigation menu to social navigation" />
+
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -311,6 +322,7 @@
 	</command>
 
 	<command name="DeleteNavigationMenu" priority="5">
+		<description message="Assert we can delete a navigation menu" />
 		<property name="portal.acceptance" value="true" />
 
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
@@ -336,6 +348,8 @@
 	</command>
 
 	<command name="RenameNavigationMenu" priority="5">
+		<description message="Assert we can delete a navigation menu" />
+
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
 		</execute>
@@ -487,7 +501,7 @@
 	</command>
 
 	<command name="ViewNavigationMenuPropertiesSidebar" priority="5">
-		<description message="This is a use case for LPS-67191." />
+		<description message="This is a use case for LPS-67191. We assert that clicking on an added element will bring up a sidebar specific to itself." />
 
 		<execute macro="NavigationMenusAdmin#openNavigationMenusAdmin">
 			<var name="siteURLKey" value="test-site-name" />
@@ -521,7 +535,7 @@
 	</command>
 
 	<command name="ViewSuccessMessageAfterAddingMenuItem" priority="4">
-		<description message="This is a test case for LPS-77912." />
+		<description message="This is a test case for LPS-77912. We assert that a success message appears after adding a navigation menu item." />
 		<property name="portal.acceptance" value="true" />
 
 		<execute macro="SitePages#openPagesAdmin">
