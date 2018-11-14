@@ -722,6 +722,32 @@
 		</if>
 	</command>
 
+	<command name="changeProfileImage">
+		<execute macro="Button#click">
+			<var name="button" value="Change" />
+		</execute>
+
+		<execute macro="IFrame#selectModalFrame" />
+
+		<execute function="Click" locator1="UsersAndOrganizationsEditUser#UPLOAD_IMAGE_SELECT" />
+
+		<execute function="SikuliUploadCommonFile" locator1="OS#FILE_DIALOG_BOX_FILE_NAME_FIELD_PNG" value1="${imageName}" />
+
+		<execute function="WaitForElementNotPresent" locator1="Button#ANY_DISABLED">
+			<var name="key_text" value="Done" />
+		</execute>
+
+		<execute macro="Button#click">
+			<var name="button" value="Done" />
+		</execute>
+
+		<execute macro="IFrame#selectTopFrame" />
+
+		<execute function="AssertVisible" locator1="UsersAndOrganizationsEditUser#DETAILS_PROFILE_IMAGE">
+			<var name="key_imageName" value="${imageName}" />
+		</execute>
+	</command>
+
 	<command name="createAccount">
 		<execute macro="SignInNavigator#gotoCreateAccount" />
 
@@ -821,6 +847,16 @@
 				<execute macro="Alert#viewSuccessMessage" />
 			</then>
 		</if>
+	</command>
+
+	<command name="deleteProfileImage">
+		<execute macro="Button#click">
+			<var name="button" value="Delete" />
+		</execute>
+
+		<execute function="AssertVisible" locator1="UsersAndOrganizationsEditUser#DETAILS_PROFILE_IMAGE">
+			<var name="key_imageName" value="user_male_portrait" />
+		</execute>
 	</command>
 
 	<command name="editDetailsViaMyAccount">
