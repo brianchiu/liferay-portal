@@ -98,6 +98,9 @@ LayoutPageTemplateEntry layoutPageTemplateEntry = (LayoutPageTemplateEntry)row.g
 		if ((defaultLayoutPageTemplateEntry != null) && (defaultLayoutPageTemplateEntry.getLayoutPageTemplateEntryId() != layoutPageTemplateEntry.getLayoutPageTemplateEntryId())) {
 			taglibOnClickPrimary = "if (confirm('" + UnicodeLanguageUtil.format(request, "do-you-want-to-replace-x-for-x-as-the-default-display-page", new String[] {layoutPageTemplateEntry.getName(), defaultLayoutPageTemplateEntry.getName()}) + "')) { submitForm(document.hrefFm, '" + editLayoutPageTemplateSettingsURL + "'); } ";
 		}
+		else if (layoutPageTemplateEntry.getDefaultTemplate()) {
+			taglibOnClickPrimary = "if (confirm('" + LanguageUtil.get(request, "unmark-default-confirmation") + "')) { submitForm(document.hrefFm, '" + editLayoutPageTemplateSettingsURL + "'); } ";
+		}
 		%>
 
 		<liferay-ui:icon
