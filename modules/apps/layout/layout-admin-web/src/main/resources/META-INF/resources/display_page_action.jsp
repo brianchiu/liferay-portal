@@ -87,7 +87,7 @@ LayoutPageTemplateEntry layoutPageTemplateEntry = (LayoutPageTemplateEntry)row.g
 		<portlet:actionURL name="/layout/edit_layout_page_template_settings" var="editLayoutPageTemplateSettingsURL">
 			<portlet:param name="redirect" value="<%= currentURL %>" />
 			<portlet:param name="layoutPageTemplateEntryId" value="<%= String.valueOf(layoutPageTemplateEntry.getLayoutPageTemplateEntryId()) %>" />
-			<portlet:param name="defaultTemplate" value="<%= Boolean.TRUE.toString() %>" />
+			<portlet:param name="defaultTemplate" value="<%= layoutPageTemplateEntry.getDefaultTemplate() ? Boolean.FALSE.toString() : Boolean.TRUE.toString() %>" />
 		</portlet:actionURL>
 
 		<%
@@ -101,10 +101,9 @@ LayoutPageTemplateEntry layoutPageTemplateEntry = (LayoutPageTemplateEntry)row.g
 		%>
 
 		<liferay-ui:icon
-			icon='<%= layoutPageTemplateEntry.getDefaultTemplate() ? "check" : StringPool.BLANK %>'
 			iconCssClass="pull-right"
 			markupView="lexicon"
-			message="mark-as-default"
+			message='<%= layoutPageTemplateEntry.getDefaultTemplate() ? "unmark-default" : "mark-as-default" %>'
 			onClick="<%= taglibOnClickPrimary %>"
 			url="javascript:;"
 		/>
