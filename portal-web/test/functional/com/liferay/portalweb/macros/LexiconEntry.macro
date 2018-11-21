@@ -35,7 +35,10 @@
 			<isset var="failure" />
 			<then>
 				<if>
-					<condition function="IsElementPresent" locator1="Message#ERROR_2" />
+					<and>
+						<condition function="IsElementPresent" locator1="Message#ERROR_2" />
+						<condition function="IsElementPresent" locator1="Message#ERROR_DISMISSIBLE" />
+					</and>
 					<then>
 						<execute macro="Alert#viewRequestFailedToComplete" />
 
