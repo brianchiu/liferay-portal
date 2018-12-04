@@ -136,6 +136,7 @@ DisplayPageDisplayContext displayPageDisplayContext = new DisplayPageDisplayCont
 								<liferay-frontend:vertical-card-sticker-bottom>
 									<div class="sticker sticker-bottom-left sticker-primary">
 										<liferay-ui:icon
+											cssClass="inline-item"
 											icon="check-circle"
 											markupView="lexicon"
 										/>
@@ -205,6 +206,7 @@ DisplayPageDisplayContext displayPageDisplayContext = new DisplayPageDisplayCont
 								<liferay-frontend:vertical-card-sticker-bottom>
 									<div class="sticker sticker-bottom-left sticker-primary">
 										<liferay-ui:icon
+											cssClass="inline-item"
 											icon="check-circle"
 											markupView="lexicon"
 										/>
