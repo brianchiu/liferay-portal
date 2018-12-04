@@ -43,8 +43,6 @@ import com.liferay.portal.kernel.exception.RequiredLayoutPrototypeException;
 import com.liferay.portal.kernel.exception.SitemapChangeFrequencyException;
 import com.liferay.portal.kernel.exception.SitemapIncludeException;
 import com.liferay.portal.kernel.exception.SitemapPagePriorityException;
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.Group;
 import com.liferay.portal.kernel.model.LayoutPrototype;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -157,9 +155,7 @@ public class GroupPagesPortlet extends MVCPortlet {
 				ServiceContextThreadLocal.pushServiceContext(serviceContext);
 			}
 			catch (Exception e) {
-				if (_log.isWarnEnabled()) {
-					_log.warn(e, e);
-				}
+				throw new IllegalArgumentException(e);
 			}
 
 			renderRequest.setAttribute(
@@ -209,9 +205,6 @@ public class GroupPagesPortlet extends MVCPortlet {
 
 		return false;
 	}
-
-	private static final Log _log = LogFactoryUtil.getLog(
-		GroupPagesPortlet.class);
 
 	@Reference
 	private AssetDisplayContributorTracker _assetDisplayContributorTracker;
