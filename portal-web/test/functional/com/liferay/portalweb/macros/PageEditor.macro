@@ -68,13 +68,15 @@
 	</command>
 
 	<command name="expandContentPageFragmentSidebar">
-		<execute function="Pause" locator1="1000" />
-
 		<if>
 			<not>
 				<condition function="IsElementPresent" locator1="PageEditor#CONTENT_PAGE_FRAGMENT_SIDEBAR" />
 			</not>
 			<then>
+				<execute function="AssertElementPresent" locator1="ControlMenu#ADD" />
+
+				<execute function="AssertElementPresent" locator1="//script[contains(@src,'/frontend-js-web/clay/side-navigation.js')]" />
+
 				<execute function="Click#clickAt" locator1="ControlMenu#ADD" />
 			</then>
 		</if>
