@@ -33,6 +33,7 @@ definition {
 	@priority = "5"
 	test CannotImportInvalidZip {
 		property portal.acceptance = "true";
+		property test.name.skip.portal.instance = "FragmentsExportImport#CannotImportInvalidZip";
 
 		FragmentsAdmin.gotoImportCollection();
 
@@ -54,6 +55,7 @@ definition {
 	@priority = "5"
 	test CannotImportNonZip {
 		property portal.acceptance = "true";
+		property test.name.skip.portal.instance = "FragmentsExportImport#CannotImportNonZip";
 
 		FragmentsAdmin.gotoImportCollection();
 
