@@ -572,6 +572,7 @@ definition {
 	@priority = "5"
 	test ExportImportPrivatePage {
 		property portal.acceptance = "true";
+		property test.name.skip.portal.instance = "ExportImport#ExportImportPrivatePage";
 		property testray.component.names = "Training";
 
 		ProductMenu.gotoPortlet(
