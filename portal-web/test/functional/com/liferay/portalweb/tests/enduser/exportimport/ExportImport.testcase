@@ -684,6 +684,7 @@ definition {
 	@priority = "5"
 	test ExportImportSmoke {
 		property portal.acceptance = "true";
+		property test.name.skip.portal.instance = "ExportImport#ExportImportSmoke";
 		property testray.component.names = "Training";
 
 		User.firstLoginPG();
