@@ -936,6 +936,7 @@ definition {
 	@priority = "5"
 	test ImportCorruptedFile {
 		property portal.acceptance = "true";
+		property test.name.skip.portal.instance = "ExportImport#ImportCorruptedFile";
 		property portal.release = "false";
 
 		Navigator.openURL();
