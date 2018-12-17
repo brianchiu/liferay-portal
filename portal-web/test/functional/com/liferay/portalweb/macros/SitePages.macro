@@ -5,7 +5,9 @@ definition {
 			sitePageType = "${sitePageType}"
 		);
 
-		SelectFrame(locator1 = "IFrame#DIALOG");
+		if (IsElementPresent(locator1 = "IFrame#DIALOG")) {
+			SelectFrame(locator1 = "IFrame#DIALOG");
+		}
 
 		SitePages._addPageToNavigationMenu(
 			assertCheckboxMissing = "${assertCheckboxMissing}",
