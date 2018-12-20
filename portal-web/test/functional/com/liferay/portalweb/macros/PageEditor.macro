@@ -80,6 +80,11 @@ definition {
 	}
 
 	macro expandFragmentCollection {
+		AssertVisible(
+			locator1 = "PageEditor#FRAGMENT_SIDEBAR_COLLECTION_PANEL",
+			key_collectionName = "${collectionName}"
+		);
+
 		if (IsElementPresent(locator1 = "PageEditor#FRAGMENT_SIDEBAR_COLLECTION_PANEL_COLLAPSED", key_collectionName = "${collectionName}")) {
 			AssertClick(
 				locator1 = "PageEditor#FRAGMENT_SIDEBAR_COLLECTION_PANEL_COLLAPSED",
