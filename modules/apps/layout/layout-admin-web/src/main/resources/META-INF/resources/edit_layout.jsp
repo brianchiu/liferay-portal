@@ -35,29 +35,6 @@ Layout selLayout = layoutsAdminDisplayContext.getSelLayout();
 
 PortletURL redirectURL = layoutsAdminDisplayContext.getRedirectURL();
 
-long refererPlid = ParamUtil.getLong(request, "refererPlid", LayoutConstants.DEFAULT_PLID);
-
-Set<Long> parentPlids = new HashSet<Long>();
-
-long parentPlid = refererPlid;
-
-while (parentPlid > 0) {
-	try {
-		Layout parentLayout = LayoutLocalServiceUtil.getLayout(parentPlid);
-
-		if (parentLayout.isRootLayout()) {
-			break;
-		}
-
-		parentPlid = parentLayout.getParentPlid();
-
-		parentPlids.add(parentPlid);
-	}
-	catch (Exception e) {
-		break;
-	}
-}
-
 LayoutRevision layoutRevision = LayoutStagingUtil.getLayoutRevision(selLayout);
 
 String layoutSetBranchName = StringPool.BLANK;
@@ -153,6 +130,20 @@ renderResponse.setTitle(selLayout.getName(locale));
 			<aui:input name="type" type="hidden" value="<%= selLayout.getType() %>" />
 			<aui:input name="<%= PortletDataHandlerKeys.SELECTED_LAYOUTS %>" type="hidden" />
 
+			<c:if test="<%= StringUtil.equals(selLayout.getType(), LayoutConstants.LAYOUT_TYPE_ASSET_DISPLAY) %>">
+
+				<%
+				for (String languageId : group.getAvailableLanguageIds()) {
+				%>
+
+					<aui:input name='<%= "name_" + languageId %>' type="hidden" value="<%= selLayout.getName(LocaleUtil.fromLanguageId(languageId)) %>" />
+
+				<%
+				}
+				%>
+
+			</c:if>
+
 			<liferay-frontend:edit-form-body>
 				<liferay-ui:success key="layoutAdded" message="the-page-was-created-succesfully" />
 
@@ -198,7 +189,7 @@ renderResponse.setTitle(selLayout.getName(locale));
 					<aui:input name="layoutSetBranchId" type="hidden" value="<%= layoutRevision.getLayoutSetBranchId() %>" />
 				</c:if>
 
-				<c:if test="<%= !group.isLayoutPrototype() && (selLayout != null) %>">
+				<c:if test="<%= !group.isLayoutPrototype() %>">
 					<c:if test="<%= selGroup.hasLocalOrRemoteStagingGroup() && !selGroup.isStagingGroup() %>">
 						<div class="alert alert-warning">
 							<liferay-ui:message key="changes-are-immediately-available-to-end-users" />

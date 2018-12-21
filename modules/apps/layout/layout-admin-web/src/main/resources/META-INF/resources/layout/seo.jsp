@@ -19,11 +19,7 @@
 <%
 Layout selLayout = layoutsAdminDisplayContext.getSelLayout();
 
-UnicodeProperties layoutTypeSettings = null;
-
-if (selLayout != null) {
-	layoutTypeSettings = selLayout.getTypeSettingsProperties();
-}
+UnicodeProperties layoutTypeSettings = selLayout.getTypeSettingsProperties();
 %>
 
 <liferay-ui:error-marker
@@ -33,13 +29,15 @@ if (selLayout != null) {
 
 <aui:model-context bean="<%= selLayout %>" model="<%= Layout.class %>" />
 
-<aui:input label="html-title" name="title" placeholder="title" />
+<c:if test="<%= !StringUtil.equals(selLayout.getType(), LayoutConstants.LAYOUT_TYPE_ASSET_DISPLAY) %>">
+	<aui:input label="html-title" name="title" placeholder="title" />
 
-<h4><liferay-ui:message key="meta-tags" /></h4>
+	<h4><liferay-ui:message key="meta-tags" /></h4>
 
-<aui:input id="descriptionSEO" name="description" placeholder="description" />
+	<aui:input id="descriptionSEO" name="description" placeholder="description" />
 
-<aui:input name="keywords" placeholder="keywords" />
+	<aui:input name="keywords" placeholder="keywords" />
+</c:if>
 
 <aui:input name="robots" placeholder="robots" />
 
