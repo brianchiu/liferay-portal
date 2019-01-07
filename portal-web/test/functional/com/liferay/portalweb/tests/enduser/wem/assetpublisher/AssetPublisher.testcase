@@ -96,32 +96,6 @@ definition {
 		);
 	}
 
-	@priority = "4"
-	test AddAPPortletToSite {
-		ProductMenu.gotoPortlet(
-			category = "Sites",
-			panel = "Control Panel",
-			portlet = "Sites"
-		);
-
-		Site.addBlankCP(siteName = "Site Name");
-
-		ProductMenu.gotoPortlet(
-			category = "Build",
-			panel = "Site Administration",
-			portlet = "Pages"
-		);
-
-		SitePages.addPublicPage(pageName = "Asset Publisher Page");
-
-		Navigator.gotoSitePage(
-			pageName = "Asset Publisher Page",
-			siteName = "Site Name"
-		);
-
-		Portlet.addPG(portletName = "Asset Publisher");
-	}
-
 	@description = "This is a use case for LPS-47619 and LPS-67326."
 	@priority = "5"
 	test AddAssetTypesViaAPAndAddRespectivePortletsToSamePage {
