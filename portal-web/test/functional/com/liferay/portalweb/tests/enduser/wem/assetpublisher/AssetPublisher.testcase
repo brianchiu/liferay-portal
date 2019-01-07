@@ -11,15 +11,15 @@ definition {
 
 		JSONGroup.addGroup(groupName = "Test Site Name");
 
-		ProductMenu.gotoPortlet(
-			category = "Build",
-			panel = "Site Administration",
-			portlet = "Pages"
+		JSONLayout.addPublicLayout(
+			groupName = "Test Site Name",
+			layoutName = "Asset Publisher Page"
 		);
 
-		SitePages.addPublicPage(pageName = "Asset Publisher Page");
-
-		Navigator.gotoPage(pageName = "Asset Publisher Page");
+		Navigator.gotoSitePage(
+			pageName = "Asset Publisher Page",
+			siteName = "Test Site Name"
+		);
 
 		Portlet.addPG(portletName = "Asset Publisher");
 
