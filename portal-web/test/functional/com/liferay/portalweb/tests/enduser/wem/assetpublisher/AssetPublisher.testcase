@@ -9,6 +9,8 @@ definition {
 
 		User.firstLoginPG();
 
+		JSONGroup.addGroup(groupName = "Test Site Name");
+
 		ProductMenu.gotoPortlet(
 			category = "Build",
 			panel = "Site Administration",
@@ -33,27 +35,9 @@ definition {
 			PortalInstances.tearDownCP();
 		}
 		else {
-			User.firstLoginPG();
-
 			Site.tearDownCP();
 
-			User.tearDownCP();
-
-			Role.tearDownCP();
-
-			Page.tearDownCP();
-
-			Bookmark.tearDownCP();
-
-			BookmarksFolder.tearDownCP();
-
-			WebContent.tearDownCP();
-
-			WebContentTemplates.tearDownCP();
-
-			WebContentStructures.tearDownCP();
-
-			BlogsEntry.tearDownCP();
+			JSONGroup.deleteGroupByName(groupName = "Test Site Name");
 		}
 	}
 
