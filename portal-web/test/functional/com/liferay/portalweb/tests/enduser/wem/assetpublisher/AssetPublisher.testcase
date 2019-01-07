@@ -101,8 +101,6 @@ definition {
 	test AddAssetTypesViaAPAndAddRespectivePortletsToSamePage {
 		property plugins.deployment.type = "osgi";
 
-		var siteName = TestCase.getSiteName(siteName = "${siteName}");
-
 		Navigator.gotoSitePage(
 			pageName = "Asset Publisher Page",
 			siteName = "Test Site Name"
@@ -134,7 +132,7 @@ definition {
 		);
 
 		CalendarEvent.viewViaAssetPublisher(
-			calendarName = "${siteName}",
+			calendarName = "Test Site Name",
 			eventTitle = "Calendar Event Title"
 		);
 
@@ -446,10 +444,6 @@ definition {
 	@priority = "4"
 	test ConfigureAPPortletEnableRatings {
 		property testray.component.names = "Asset Publisher";
-
-		var siteName = TestCase.getSiteName(siteName = "${siteName}");
-
-		ProductMenu.gotoSite(site = "${siteName}");
 
 		Navigator.gotoSitePage(
 			pageName = "Asset Publisher Page",
