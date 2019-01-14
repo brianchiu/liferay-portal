@@ -31,11 +31,9 @@
 
 		{if $_selectedPanelId}
 			<div class="fragments-editor__floating-toolbar-panel popover">
-				{if $_selectedPanelId == 'spacing'}
-					{call com.liferay.layout.admin.web.FloatingToolbarSpacingPanel.render}
-						{param store: $store /}
-					{/call}
-				{/if}
+				{delcall com.liferay.layout.admin.web.FloatingToolbarPanel variant="$_selectedPanelId"}
+					{param store: $store /}
+				{/delcall}
 			</div>
 		{/if}
 	</div>
@@ -77,3 +75,12 @@
 		</svg>
 	</button>
 {/template}
+
+/**
+ * FloatingToolbarPanel
+ */
+{deltemplate com.liferay.layout.admin.web.FloatingToolbarPanel}
+	{@param? store: ?}
+
+	<div>Toolbar Panel</div>
+{/deltemplate}
