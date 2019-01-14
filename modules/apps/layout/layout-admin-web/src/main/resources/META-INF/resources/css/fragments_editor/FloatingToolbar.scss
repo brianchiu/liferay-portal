@@ -17,6 +17,16 @@
 
 	&-buttons {
 		display: inline-block;
+		padding: $fragmentsEditorSpacing;
+
+		& .btn {
+			opacity: 0.6;
+
+			&.active {
+				background-color: rgba(0, 0, 0, 0.1);
+				opacity: 1;
+			}
+		}
 	}
 
 	&-panel {
