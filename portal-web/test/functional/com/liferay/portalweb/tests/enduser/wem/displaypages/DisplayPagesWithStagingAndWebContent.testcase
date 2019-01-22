@@ -116,7 +116,7 @@ definition {
 	}
 
 	@description = "Display pages only appear in live view after being published and should appear properly. This is a test case for LPS-86373 where web content articles lost their reference to display pages."
-	@priority = "4"
+	@priority = "5"
 	test PublishDisplayPage {
 		WebContent.openWebContentAdmin(siteURLKey = "test-site-name-staging");
 
