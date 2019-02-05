@@ -862,10 +862,8 @@ definition {
 		else {
 			Navigator.gotoNavItem(navItem = "${pageType}");
 
-			AssertClick(
-				locator1 = "Card#SPECIFIC_LARGE_TEXT",
-				value1 = "${pageName}",
-				key_cardText = "${pageName}"
+			LexiconCard.clickCard(
+				card = "${pageName}"
 			);
 		}
 
