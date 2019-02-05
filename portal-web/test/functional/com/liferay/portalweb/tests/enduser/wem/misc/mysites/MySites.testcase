@@ -495,7 +495,7 @@ definition {
 		// Go to public and private pages via MySites widget
 
 		MySites.gotoPagesPG(
-			menuItem = "Go to Public Pages",
+			item = "Go to Public Pages",
 			pageName = "Public Page",
 			siteName = "Site Name"
 		);
@@ -503,7 +503,7 @@ definition {
 		Navigator.gotoSitePage(pageName = "Site Page", siteName = "Home Site");
 
 		MySites.gotoPagesPG(
-			menuItem = "Go to Private Pages",
+			item = "Go to Private Pages",
 			pageName = "Private Page",
 			siteName = "Site Name"
 		);

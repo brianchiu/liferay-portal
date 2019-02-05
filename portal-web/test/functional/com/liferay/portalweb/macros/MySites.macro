@@ -1,8 +1,8 @@
 definition {
 	macro gotoPagesPG {
-		LexiconEntry.gotoEntryMenuItem(
-			menuItem = "${menuItem}",
-			rowEntry = "${siteName}"
+		LexiconList.clickEllipsisItem(
+			item = "${item}",
+			listEntry = "${siteName}"
 		);
 
 		SelectWindow.selectPopUp(locator1 = "null");
@@ -13,7 +13,9 @@ definition {
 	}
 
 	macro viewMembershipRequested {
-		LexiconEntry.openEntryMenu(rowEntry = "${siteName}");
+		LexiconList.clickEllipsis(
+			listEntry = "${siteName}"
+		);
 
 		MenuItem.viewPresent(menuItem = "Membership Requested");
 
@@ -24,8 +26,8 @@ definition {
 		Navigator.gotoNavItem(navItem = "${navItem}");
 
 		AssertElementNotPresent(
-			locator1 = "Icon#ROW_VERTICAL_ELLIPSIS",
-			key_rowEntry = "${siteName}"
+			locator1 = "LexiconList#LIST_ENTRY_ELLIPSIS",
+			key_listEntry = "${siteName}"
 		);
 	}
 

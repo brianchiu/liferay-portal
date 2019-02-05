@@ -683,10 +683,8 @@ definition {
 	}
 
 	macro gotoSiteViaMySitesPG {
-		AssertClick(
-			locator1 = "ListGroupItem#ITEM_NAME_LINK",
-			value1 = "${siteName}",
-			key_itemName = "${siteName}"
+		LexiconList.clickListEntryTitle(
+			listEntry = "${siteName}"
 		);
 	}
 
@@ -735,27 +733,23 @@ definition {
 		Pause(locator1 = "3000");
 
 		if ("${membershipType}" == "Private") {
-			AssertElementNotPresent(
-				locator1 = "ListGroupItem#ITEM_NAME",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntryNotPresent(
+				listEntry = "${siteName}"
 			);
 		}
 		else if ("${membershipType}" == "Restricted") {
-			AssertTextEquals(
-				locator1 = "ListGroupItem#ITEM_NAME",
-				value1 = "${siteName}",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntryTitle(
+				listEntry = "${siteName}"
 			);
 
-			AssertTextEquals(
-				locator1 = "ListGroupItem#ITEM_SUB_INFO",
-				value1 = "Members: 1",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntrySubtitle(
+				listEntry = "${siteName}",
+				listEntrySubtitle = "Members: 1"
 			);
 
-			LexiconEntry.gotoEntryMenuItem(
-				menuItem = "Request Membership",
-				rowEntry = "${siteName}"
+			LexiconList.clickEllipsisItem(
+				item = "Request Membership",
+				listEntry = "${siteName}"
 			);
 
 			Type(
@@ -772,35 +766,34 @@ definition {
 			MySites.viewMembershipRequested(siteName = "${siteName}");
 		}
 		else {
-			AssertTextEquals(
-				locator1 = "ListGroupItem#ITEM_NAME",
-				value1 = "${siteName}",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntryTitle(
+				listEntry = "${siteName}"
 			);
 
-			AssertTextEquals(
-				locator1 = "ListGroupItem#ITEM_SUB_INFO",
-				value1 = "Members: 1",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntrySubtitle(
+				listEntry = "${siteName}",
+				listEntrySubtitle = "Members: 1"
 			);
 
-			LexiconEntry.gotoEntryMenuItem(menuItem = "Join", rowEntry = "${siteName}");
+			LexiconList.clickEllipsisItem(
+				item = "Join",
+				listEntry = "${siteName}"
+			);
 
 			Alert.viewSuccessMessage();
 
-			AssertTextEquals(
-				locator1 = "ListGroupItem#ITEM_NAME",
-				value1 = "${siteName}",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntryTitle(
+				listEntry = "${siteName}"
 			);
 
-			AssertTextEquals(
-				locator1 = "ListGroupItem#ITEM_SUB_INFO",
-				value1 = "Members: 2",
-				key_itemName = "${siteName}"
+			LexiconList.viewListEntrySubtitle(
+				listEntry = "${siteName}",
+				listEntrySubtitle = "Members: 2"
 			);
 
-			LexiconEntry.openEntryMenu(rowEntry = "${siteName}");
+			LexiconList.clickEllipsis(
+				listEntry = "${siteName}"
+			);
 
 			AssertVisible(
 				locator1 = "MenuItem#ANY_MENU_ITEM",
@@ -811,49 +804,45 @@ definition {
 	}
 
 	macro leaveViaMySitesPG {
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_NAME",
-			value1 = "${siteName}",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntryTitle(
+			listEntry = "${siteName}"
 		);
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_SUB_INFO",
-			value1 = "Members: 2",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntrySubtitle(
+			listEntry = "${siteName}",
+			listEntrySubtitle = "Members: 2"
 		);
 
 		Navigator.gotoNavItem(navItem = "Available Sites");
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_NAME",
-			value1 = "${siteName}",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntryTitle(
+			listEntry = "${siteName}"
 		);
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_SUB_INFO",
-			value1 = "Members: 2",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntrySubtitle(
+			listEntry = "${siteName}",
+			listEntrySubtitle = "Members: 2"
 		);
 
-		LexiconEntry.gotoEntryMenuItem(menuItem = "Leave", rowEntry = "${siteName}");
+		LexiconList.clickEllipsisItem(
+			item = "Leave",
+			listEntry = "${siteName}"
+		);
 
 		Alert.viewSuccessMessage();
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_NAME",
-			value1 = "${siteName}",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntryTitle(
+			listEntry = "${siteName}"
 		);
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_SUB_INFO",
-			value1 = "Members: 1",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntrySubtitle(
+			listEntry = "${siteName}",
+			listEntrySubtitle = "Members: 1"
 		);
 
-		LexiconEntry.openEntryMenu(rowEntry = "${siteName}");
+		LexiconList.clickEllipsis(
+			listEntry = "${siteName}"
+		);
 
 		AssertVisible(
 			locator1 = "MenuItem#ANY_MENU_ITEM",
@@ -1312,33 +1301,19 @@ definition {
 			key_navItem = "My Sites"
 		);
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_NAME",
-			value1 = "${siteName}",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntryTitle(
+			listEntry = "${siteName}"
 		);
 
-		AssertTextEquals(
-			locator1 = "ListGroupItem#ITEM_SUB_INFO",
-			value1 = "Members: ${memberCount}",
-			key_itemName = "${siteName}"
+		LexiconList.viewListEntrySubtitle(
+			listEntry = "${siteName}",
+			listEntrySubtitle = "Members: ${memberCount}"
 		);
 	}
 
 	macro viewNoMySitesViaMySitesPG {
-		AssertElementNotPresent(
-			locator1 = "ListGroupItem#ITEM_NAME",
-			key_itemName = "${siteName}"
-		);
-
-		AssertElementNotPresent(
-			locator1 = "ListGroupItem#ITEM_SUB_INFO",
-			key_itemName = "${siteName}"
-		);
-
-		AssertElementNotPresent(
-			locator1 = "Icon#ROW_VERTICAL_ELLIPSIS",
-			key_rowEntry = "${siteName}"
+		LexiconList.viewListEntryNotPresent(
+			listEntry = "${siteName}"
 		);
 	}
 
