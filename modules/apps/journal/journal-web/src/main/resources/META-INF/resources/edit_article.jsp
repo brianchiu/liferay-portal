@@ -35,6 +35,7 @@ JournalEditArticleDisplayContext journalEditArticleDisplayContext = new JournalE
 
 <liferay-frontend:edit-form
 	action="<%= editArticleActionURL %>"
+	cssClass="contextual-sidebar-content"
 	enctype="multipart/form-data"
 	method="post"
 	name="fm1"
@@ -129,11 +130,17 @@ JournalEditArticleDisplayContext journalEditArticleDisplayContext = new JournalE
 			/>
 		</c:if>
 
-		<liferay-frontend:form-navigator
-			formModelBean="<%= article %>"
-			id="<%= FormNavigatorConstants.FORM_NAVIGATOR_ID_JOURNAL %>"
-			showButtons="<%= false %>"
-		/>
+		<liferay-util:include page="/article/content.jsp" servletContext="<%= application %>" />
+
+		<div class="contextual-sidebar contextual-sidebar-visible edit-article-sidebar sidebar-light">
+			<div class="sidebar-body">
+				<liferay-frontend:form-navigator
+					formModelBean="<%= article %>"
+					id="<%= FormNavigatorConstants.FORM_NAVIGATOR_ID_JOURNAL %>"
+					showButtons="<%= false %>"
+				/>
+			</div>
+		</div>
 	</liferay-frontend:edit-form-body>
 
 	<liferay-frontend:edit-form-footer>
