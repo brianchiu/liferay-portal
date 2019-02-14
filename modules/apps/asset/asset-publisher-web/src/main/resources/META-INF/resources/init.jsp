@@ -90,6 +90,7 @@ page import="com.liferay.portal.kernel.trash.TrashHandler" %><%@
 page import="com.liferay.portal.kernel.trash.TrashHandlerRegistryUtil" %><%@
 page import="com.liferay.portal.kernel.util.ArrayUtil" %><%@
 page import="com.liferay.portal.kernel.util.Constants" %><%@
+page import="com.liferay.portal.kernel.util.FastDateFormatConstants" %><%@
 page import="com.liferay.portal.kernel.util.FastDateFormatFactoryUtil" %><%@
 page import="com.liferay.portal.kernel.util.FriendlyURLNormalizerUtil" %><%@
 page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
@@ -119,6 +120,7 @@ page import="com.liferay.site.item.selector.criterion.SiteItemSelectorCriterion"
 
 <%@ page import="java.util.ArrayList" %><%@
 page import="java.util.Arrays" %><%@
+page import="java.util.Date" %><%@
 page import="java.util.HashMap" %><%@
 page import="java.util.HashSet" %><%@
 page import="java.util.List" %><%@
@@ -143,6 +145,7 @@ AssetPublisherHelper assetPublisherHelper = (AssetPublisherHelper)request.getAtt
 AssetPublisherWebUtil assetPublisherWebUtil = (AssetPublisherWebUtil)request.getAttribute(AssetPublisherWebKeys.ASSET_PUBLISHER_WEB_UTIL);
 
 Format dateFormatDate = FastDateFormatFactoryUtil.getDate(locale, timeZone);
+Format dateFormatDateTime = FastDateFormatFactoryUtil.getDateTime(FastDateFormatConstants.LONG, FastDateFormatConstants.SHORT, locale, timeZone);
 %>
 
 <%@ include file="/init-ext.jsp" %>
