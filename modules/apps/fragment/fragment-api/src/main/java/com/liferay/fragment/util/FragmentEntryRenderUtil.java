@@ -18,6 +18,7 @@ import com.liferay.fragment.constants.FragmentEntryLinkConstants;
 import com.liferay.fragment.model.FragmentEntry;
 import com.liferay.fragment.model.FragmentEntryLink;
 import com.liferay.fragment.processor.FragmentEntryProcessorRegistry;
+import com.liferay.fragment.processor.PortletRegistry;
 import com.liferay.osgi.util.ServiceTrackerFactory;
 import com.liferay.petra.string.StringBundler;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -45,6 +46,10 @@ import org.osgi.util.tracker.ServiceTracker;
  * @author Pablo Molina
  */
 public class FragmentEntryRenderUtil {
+
+	public static PortletRegistry getPortletRegistry() {
+		return _portletRegistryServiceTracler.getService();
+	}
 
 	public static FragmentEntryProcessorRegistry getService() {
 		return _serviceTracker.getService();
@@ -161,6 +166,8 @@ public class FragmentEntryRenderUtil {
 			css = _processTemplate(css, parameterMap, request, response);
 		}
 
+		_writePortletPaths(fragmentEntryLink, request, response);
+
 		return renderFragmentEntry(
 			fragmentEntryLink.getFragmentEntryId(),
 			fragmentEntryLink.getPosition(), css, html,
@@ -203,6 +210,21 @@ public class FragmentEntryRenderUtil {
 		return unsyncStringWriter.toString();
 	}
 
+	private static void _writePortletPaths(
+			FragmentEntryLink fragmentEntryLink,
+			HttpServletRequest httpServletRequest,
+			HttpServletResponse httpServletResponse)
+		throws PortalException {
+
+		PortletRegistry portletRegistry = getPortletRegistry();
+
+		portletRegistry.writePortletPaths(
+			fragmentEntryLink, httpServletRequest, httpServletResponse);
+	}
+
+	private static final ServiceTracker
+		<PortletRegistry, PortletRegistry> _portletRegistryServiceTracler =
+			ServiceTrackerFactory.open(PortletRegistry.class);
 	private static final ServiceTracker
 		<FragmentEntryProcessorRegistry, FragmentEntryProcessorRegistry>
 			_serviceTracker = ServiceTrackerFactory.open(
