@@ -49,10 +49,6 @@ AssetEntryResult assetEntryResult = (AssetEntryResult)request.getAttribute("view
 		if ((assetRenderer == null) || !assetRenderer.isDisplayable()) {
 			continue;
 		}
-
-		request.setAttribute("view.jsp-assetEntry", assetEntry);
-		request.setAttribute("view.jsp-assetRenderer", assetRenderer);
-		request.setAttribute("view.jsp-showIconLabel", false);
 	%>
 
 		<li class="list-group-item list-group-item-flex">
@@ -133,11 +129,11 @@ AssetEntryResult assetEntryResult = (AssetEntryResult)request.getAttribute("view
 
 </ul>
 
-<%!
-private static Log _log = LogFactoryUtil.getLog("com_liferay_asset_publisher_web.view_asset_entry_title_list_jsp");
-%>
-
 <liferay-frontend:component
 	componentId="<%= com.liferay.asset.publisher.web.internal.constants.AssetPublisherWebKeys.ASSET_ENTRY_DROPDOWN_DEFAULT_EVENT_HANDLER %>"
 	module="js/AssetPublisherDropdownDefaultEventHandler.es"
 />
+
+<%!
+private static Log _log = LogFactoryUtil.getLog("com_liferay_asset_publisher_web.view_asset_entry_title_list_jsp");
+%>
