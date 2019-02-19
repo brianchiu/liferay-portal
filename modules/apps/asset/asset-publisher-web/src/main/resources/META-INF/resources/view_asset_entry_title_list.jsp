@@ -52,7 +52,7 @@ AssetEntryResult assetEntryResult = (AssetEntryResult)request.getAttribute("view
 
 		request.setAttribute("view.jsp-assetEntry", assetEntry);
 		request.setAttribute("view.jsp-assetRenderer", assetRenderer);
-        request.setAttribute("view.jsp-showIconLabel", false);
+		request.setAttribute("view.jsp-showIconLabel", false);
 	%>
 
 		<li class="list-group-item list-group-item-flex">
