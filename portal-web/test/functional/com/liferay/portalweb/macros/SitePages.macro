@@ -80,22 +80,19 @@ definition {
 	}
 
 	macro _selectPageType {
+		if (!(contains("${pageTemplateName}", "{pageTemplateName}"))) {
+			var sitePageType = "${pageTemplateName}";
+
+			Navigator.gotoNavNested(navNested = "Global Templates");
+		}
+
 		if (contains("${sitePageType}", "{sitePageType}")) {
 			var sitePageType = "Widget Page";
 		}
 
-		if (!(contains("${pageTemplateName}", "{pageTemplateName}"))) {
-			Navigator.gotoNavNested(navNested = "Global Templates");
-
-			LexiconCard.clickCard(
-				card = "${pageTemplateName}"
-			);
-		}
-		else {
-			Card.clickSitePagesCardLink(
-				cardName = "${sitePageType}"
-			);
-		}
+		LexiconCard.clickCard(
+			card = "${sitePageType}"
+		);
 	}
 
 	macro addChildPage {

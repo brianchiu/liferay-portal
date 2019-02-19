@@ -26,8 +26,8 @@ definition {
 		else {
 			Navigator.gotoNavNested(navNested = "Basic Pages");
 
-			Card.clickSitePagesCardLink(
-				cardName = "Content Page"
+			LexiconCard.clickCard(
+				card = "Content Page"
 			);
 		}
 
