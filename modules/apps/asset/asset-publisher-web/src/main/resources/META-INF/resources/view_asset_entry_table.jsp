@@ -40,7 +40,7 @@ if (stageableGroup.isLayout()) {
 			<table class="table table-autofit">
 				<thead>
 					<tr>
-						<th class="table-cell-expand">
+						<th class="table-cell-expand table-title">
 							<liferay-ui:message key="title" />
 						</th>
 
@@ -91,90 +91,92 @@ if (stageableGroup.isLayout()) {
 					%>
 
 						<tr>
-							<td class="table-cell-expand">
-								<div class="table-title">
-									<span class="asset-anchor lfr-asset-anchor" id="<%= assetEntry.getEntryId() %>"></span>
+							<td class="table-cell-expand table-title">
+								<span class="asset-anchor lfr-asset-anchor" id="<%= assetEntry.getEntryId() %>"></span>
 
-									<c:choose>
-										<c:when test="<%= Validator.isNotNull(viewURL) %>">
-											<a class="text-truncate-inline" href="<%= viewURL %>">
-												<span class="text-truncate"><%= HtmlUtil.escape(assetRenderer.getTitle(locale)) %></span>
-											</a>
-										</c:when>
-										<c:otherwise>
-											<span class="text-truncate-inline">
-												<span class="text-truncate"><%= HtmlUtil.escape(assetRenderer.getTitle(locale)) %></span>
-											</span>
-										</c:otherwise>
-									</c:choose>
-								</div>
+								<c:choose>
+									<c:when test="<%= Validator.isNotNull(viewURL) %>">
+										<a class="text-truncate-inline" href="<%= viewURL %>">
+											<span class="text-truncate"><%= HtmlUtil.escape(assetRenderer.getTitle(locale)) %></span>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<span class="text-truncate-inline">
+											<span class="text-truncate"><%= HtmlUtil.escape(assetRenderer.getTitle(locale)) %></span>
+										</span>
+									</c:otherwise>
+								</c:choose>
 							</td>
 
 							<%
 							for (String metadataField : assetPublisherDisplayContext.getMetadataFields()) {
 							%>
 
-								<td class="table-cell-expand">
-									<c:choose>
-										<c:when test='<%= Objects.equals(metadataField, "categories") %>'>
+								<c:choose>
+									<c:when test='<%= Objects.equals(metadataField, "author") %>'>
+										<td class="table-cell-expand">
+											<%= HtmlUtil.escape(PortalUtil.getUserName(assetRenderer.getUserId(), assetRenderer.getUserName())) %>
+										</td>
+									</c:when>
+									<c:when test='<%= Objects.equals(metadataField, "categories") %>'>
+										<td class="table-cell-expand">
 											<liferay-asset:asset-categories-summary
 												className="<%= assetEntry.getClassName() %>"
 												classPK="<%= assetEntry.getClassPK() %>"
 												displayStyle="simple-category"
 												portletURL="<%= renderResponse.createRenderURL() %>"
 											/>
-										</c:when>
-										<c:when test='<%= Objects.equals(metadataField, "tags") %>'>
+										</td>
+									</c:when>
+									<c:when test='<%= Objects.equals(metadataField, "tags") %>'>
+										<td class="table-cell-expand">
 											<liferay-asset:asset-tags-summary
 												className="<%= assetEntry.getClassName() %>"
 												classPK="<%= assetEntry.getClassPK() %>"
 												portletURL="<%= renderResponse.createRenderURL() %>"
 											/>
-										</c:when>
-										<c:otherwise>
+										</td>
+									</c:when>
+									<c:otherwise>
 
-											<%
-											String value = null;
+										<%
+										String value = null;
 
-											if (Objects.equals(metadataField, "create-date")) {
-												value = dateFormatDate.format(assetEntry.getCreateDate());
+										if (Objects.equals(metadataField, "create-date")) {
+											value = dateFormatDate.format(assetEntry.getCreateDate());
+										}
+										else if (Objects.equals(metadataField, "modified-date")) {
+											value = dateFormatDate.format(assetEntry.getModifiedDate());
+										}
+										else if (Objects.equals(metadataField, "publish-date")) {
+											if (assetEntry.getPublishDate() == null) {
+												value = StringPool.BLANK;
 											}
-											else if (Objects.equals(metadataField, "modified-date")) {
-												value = dateFormatDate.format(assetEntry.getModifiedDate());
+											else {
+												value = dateFormatDate.format(assetEntry.getPublishDate());
 											}
-											else if (Objects.equals(metadataField, "publish-date")) {
-												if (assetEntry.getPublishDate() == null) {
-													value = StringPool.BLANK;
-												}
-												else {
-													value = dateFormatDate.format(assetEntry.getPublishDate());
-												}
+										}
+										else if (Objects.equals(metadataField, "expiration-date")) {
+											if (assetEntry.getExpirationDate() == null) {
+												value = StringPool.BLANK;
 											}
-											else if (Objects.equals(metadataField, "expiration-date")) {
-												if (assetEntry.getExpirationDate() == null) {
-													value = StringPool.BLANK;
-												}
-												else {
-													value = dateFormatDate.format(assetEntry.getExpirationDate());
-												}
+											else {
+												value = dateFormatDate.format(assetEntry.getExpirationDate());
 											}
-											else if (Objects.equals(metadataField, "priority")) {
-												value = String.valueOf(assetEntry.getPriority());
-											}
-											else if (Objects.equals(metadataField, "author")) {
-												String userName = PortalUtil.getUserName(assetRenderer.getUserId(), assetRenderer.getUserName());
+										}
+										else if (Objects.equals(metadataField, "priority")) {
+											value = String.valueOf(assetEntry.getPriority());
+										}
+										else if (Objects.equals(metadataField, "view-count")) {
+											value = String.valueOf(assetEntry.getViewCount());
+										}
+										%>
 
-												value = HtmlUtil.escape(userName);
-											}
-											else if (Objects.equals(metadataField, "view-count")) {
-												value = String.valueOf(assetEntry.getViewCount());
-											}
-											%>
-
+										<td class="table-cell-expand-smallest">
 											<liferay-ui:message key="<%= value %>" />
-										</c:otherwise>
-									</c:choose>
-								</td>
+										</td>
+									</c:otherwise>
+								</c:choose>
 
 							<%
 							}
@@ -187,11 +189,13 @@ if (stageableGroup.isLayout()) {
 								%>
 
 								<td>
-									<clay:dropdown-actions
-										defaultEventHandler="<%= com.liferay.asset.publisher.web.internal.constants.AssetPublisherWebKeys.ASSET_ENTRY_DROPDOWN_DEFAULT_EVENT_HANDLER %>"
-										dropdownItems="<%= assetEntryActionDropdownItemsProvider.getActionDropdownItems() %>"
-										elementClasses="visible-interaction"
-									/>
+									<span class="table-action-link">
+										<clay:dropdown-actions
+											defaultEventHandler="<%= com.liferay.asset.publisher.web.internal.constants.AssetPublisherWebKeys.ASSET_ENTRY_DROPDOWN_DEFAULT_EVENT_HANDLER %>"
+											dropdownItems="<%= assetEntryActionDropdownItemsProvider.getActionDropdownItems() %>"
+											elementClasses="visible-interaction"
+										/>
+									</span>
 								</td>
 							</c:if>
 						</tr>
