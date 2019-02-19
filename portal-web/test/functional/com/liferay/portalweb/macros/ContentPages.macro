@@ -18,18 +18,14 @@ definition {
 
 		if (isSet(collectionName)) {
 			Navigator.gotoNavNested(navNested = "${collectionName}");
-
-			LexiconCard.clickCard(
-				card = "${pageTemplateName}"
-			);
 		}
 		else {
-			Navigator.gotoNavNested(navNested = "Basic Pages");
-
-			LexiconCard.clickCard(
-				card = "Content Page"
-			);
+			var pageTemplateName = "Content Page";
 		}
+
+		LexiconCard.clickCard(
+			card = "${pageTemplateName}"
+		);
 
 		SelectFrame(locator1 = "IFrame#DIALOG");
 
