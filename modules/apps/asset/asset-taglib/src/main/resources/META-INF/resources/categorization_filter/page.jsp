@@ -50,16 +50,18 @@ if (assetCategoryId != 0) {
 	var="removeCategory"
 >
 	<c:if test="<%= assetCategoryId != 0 %>">
-		<span class="asset-entry badge badge-default badge-sm">
-			<%= assetCategoryTitle %>
+		<portlet:renderURL var="viewURLWithoutCategory">
+			<portlet:param name="categoryId" value="0" />
+		</portlet:renderURL>
 
-			<portlet:renderURL var="viewURLWithoutCategory">
-				<portlet:param name="categoryId" value="0" />
-			</portlet:renderURL>
+		<span class="label label-dark label-dismissible label-lg text-uppercase">
+			<span class="label-item label-item-expand"><%= assetCategoryTitle %></span>
 
-			<a href="<%= viewURLWithoutCategory %>" title="<liferay-ui:message key="remove" />">
-				<aui:icon cssClass="textboxlistentry-remove" image="times" markupView="lexicon" />
-			</a>
+			<span class="label-item label-item-after">
+				<a href="<%= viewURLWithoutCategory %>" title="<liferay-ui:message key="remove" />">
+					<aui:icon image="times" markupView="lexicon" />
+				</a>
+			</span>
 		</span>
 	</c:if>
 </liferay-util:buffer>
@@ -68,16 +70,18 @@ if (assetCategoryId != 0) {
 	var="removeTag"
 >
 	<c:if test="<%= Validator.isNotNull(assetTagName) %>">
-		<span class="asset-entry badge badge-default badge-sm">
-			<%= HtmlUtil.escape(assetTagName) %>
+		<liferay-portlet:renderURL allowEmptyParam="<%= true %>" var="viewURLWithoutTag">
+			<liferay-portlet:param name="tag" value="" />
+		</liferay-portlet:renderURL>
 
-			<liferay-portlet:renderURL allowEmptyParam="<%= true %>" var="viewURLWithoutTag">
-				<liferay-portlet:param name="tag" value="" />
-			</liferay-portlet:renderURL>
+		<span class="label label-dark label-dismissible label-lg text-uppercase">
+			<span class="label-item label-item-expand"><%= HtmlUtil.escape(assetTagName) %></span>
 
-			<a href="<%= viewURLWithoutTag %>" title="<liferay-ui:message key="remove" />">
-				<aui:icon cssClass="textboxlistentry-remove" image="times" markupView="lexicon" />
-			</a>
+			<span class="label-item label-item-after">
+				<a href="<%= viewURLWithoutTag %>" title="<liferay-ui:message key="remove" />">
+					<aui:icon image="times" markupView="lexicon" />
+				</a>
+			</span>
 		</span>
 	</c:if>
 </liferay-util:buffer>
