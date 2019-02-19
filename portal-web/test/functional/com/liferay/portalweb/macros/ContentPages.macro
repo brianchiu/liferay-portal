@@ -1,4 +1,21 @@
 definition {
+	macro _selectCard {
+		if (isSet(collectionName)) {
+			Navigator.gotoNavNested(navNested = "${collectionName}");
+
+			LexiconCard.clickCard(
+				card = "${pageTemplateName}"
+			);
+		}
+		else {
+			Navigator.gotoNavNested(navNested = "Basic Pages");
+
+			LexiconCard.clickCard(
+				card = "Content Page"
+			);
+		}
+	}
+
 	macro addPage {
 		var key_breadcrumbName="Pages";
 
@@ -16,15 +33,9 @@ definition {
 			LexiconEntry.gotoAddMenuItem(menuItem = "Public Page");
 		}
 
-		if (isSet(collectionName)) {
-			Navigator.gotoNavNested(navNested = "${collectionName}");
-		}
-		else {
-			var pageTemplateName = "Content Page";
-		}
-
-		LexiconCard.clickCard(
-			card = "${pageTemplateName}"
+		ContentPages._selectCard(
+			collectionName = "${collectionName}",
+			pageTemplateName = "${pageTemplateName}"
 		);
 
 		SelectFrame(locator1 = "IFrame#DIALOG");
