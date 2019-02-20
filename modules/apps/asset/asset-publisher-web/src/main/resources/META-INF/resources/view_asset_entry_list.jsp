@@ -21,67 +21,87 @@ for (AssetEntryResult assetEntryResult : assetPublisherDisplayContext.getAssetEn
 	List<AssetEntry> assetEntries = assetEntryResult.getAssetEntries();
 %>
 
-	<c:if test="<%= Validator.isNotNull(assetEntryResult.getTitle()) %>">
-		<h3 class="asset-entries-group-label"><%= HtmlUtil.escape(assetEntryResult.getTitle()) %></h3>
-	</c:if>
+	<c:choose>
+		<c:when test='<%= Objects.equals(assetPublisherDisplayContext.getDisplayStyle(), "table") %>'>
 
-	<liferay-ddm:template-renderer
-		className="<%= AssetEntry.class.getName() %>"
-		displayStyle="<%= assetPublisherDisplayContext.getDisplayStyle() %>"
-		displayStyleGroupId="<%= assetPublisherDisplayContext.getDisplayStyleGroupId() %>"
-		entries="<%= assetEntries %>"
-	>
+			<%
+			request.setAttribute("view.jsp-assetEntryResult", assetEntryResult);
+			%>
 
-		<%
-		request.setAttribute("view.jsp-results", assetEntries);
+			<liferay-util:include page="/view_asset_entry_table.jsp" servletContext="<%= application %>" />
+		</c:when>
+		<c:when test='<%= Objects.equals(assetPublisherDisplayContext.getDisplayStyle(), "title-list") %>'>
 
-		for (int assetEntryIndex = 0; assetEntryIndex < assetEntries.size(); assetEntryIndex++) {
-			AssetEntry assetEntry = assetEntries.get(assetEntryIndex);
+			<%
+			request.setAttribute("view.jsp-assetEntryResult", assetEntryResult);
+			%>
 
-			long classPK = assetEntry.getClassPK();
+			<liferay-util:include page="/view_asset_entry_title_list.jsp" servletContext="<%= application %>" />
+		</c:when>
+		<c:otherwise>
+			<c:if test="<%= Validator.isNotNull(assetEntryResult.getTitle()) %>">
+				<h3 class="asset-entries-group-label"><%= HtmlUtil.escape(assetEntryResult.getTitle()) %></h3>
+			</c:if>
 
-			AssetRendererFactory<?> assetRendererFactory = AssetRendererFactoryRegistryUtil.getAssetRendererFactoryByClassNameId(assetEntry.getClassNameId());
+			<liferay-ddm:template-renderer
+				className="<%= AssetEntry.class.getName() %>"
+				displayStyle="<%= assetPublisherDisplayContext.getDisplayStyle() %>"
+				displayStyleGroupId="<%= assetPublisherDisplayContext.getDisplayStyleGroupId() %>"
+				entries="<%= assetEntries %>"
+			>
 
-			if (assetRendererFactory == null) {
-				continue;
-			}
+				<%
+				request.setAttribute("view.jsp-results", assetEntries);
 
-			AssetRenderer<?> assetRenderer = null;
+				for (int assetEntryIndex = 0; assetEntryIndex < assetEntries.size(); assetEntryIndex++) {
+					AssetEntry assetEntry = assetEntries.get(assetEntryIndex);
 
-			try {
-				assetRenderer = assetRendererFactory.getAssetRenderer(classPK);
-			}
-			catch (Exception e) {
-				if (_log.isWarnEnabled()) {
-					_log.warn(e, e);
+					long classPK = assetEntry.getClassPK();
+
+					AssetRendererFactory<?> assetRendererFactory = AssetRendererFactoryRegistryUtil.getAssetRendererFactoryByClassNameId(assetEntry.getClassNameId());
+
+					if (assetRendererFactory == null) {
+						continue;
+					}
+
+					AssetRenderer<?> assetRenderer = null;
+
+					try {
+						assetRenderer = assetRendererFactory.getAssetRenderer(classPK);
+					}
+					catch (Exception e) {
+						if (_log.isWarnEnabled()) {
+							_log.warn(e, e);
+						}
+					}
+
+					if ((assetRenderer == null) || !assetRenderer.isDisplayable()) {
+						continue;
+					}
+
+					request.setAttribute("view.jsp-assetEntry", assetEntry);
+					request.setAttribute("view.jsp-assetEntryIndex", assetEntryIndex);
+					request.setAttribute("view.jsp-assetRenderer", assetRenderer);
+					request.setAttribute("view.jsp-assetRendererFactory", assetRendererFactory);
+					request.setAttribute("view.jsp-print", Boolean.FALSE);
+					request.setAttribute("view.jsp-title", assetRenderer.getTitle(locale));
+
+					try {
+				%>
+
+						<liferay-util:include page='<%= "/display/" + TextFormatter.format(assetPublisherDisplayContext.getDisplayStyle(), TextFormatter.N) + ".jsp" %>' servletContext="<%= application %>" />
+
+				<%
+					}
+					catch (Exception e) {
+						_log.error(e.getMessage());
+					}
 				}
-			}
+				%>
 
-			if ((assetRenderer == null) || !assetRenderer.isDisplayable()) {
-				continue;
-			}
-
-			request.setAttribute("view.jsp-assetEntry", assetEntry);
-			request.setAttribute("view.jsp-assetEntryIndex", assetEntryIndex);
-			request.setAttribute("view.jsp-assetRenderer", assetRenderer);
-			request.setAttribute("view.jsp-assetRendererFactory", assetRendererFactory);
-			request.setAttribute("view.jsp-print", Boolean.FALSE);
-			request.setAttribute("view.jsp-title", assetRenderer.getTitle(locale));
-
-			try {
-		%>
-
-				<liferay-util:include page='<%= "/display/" + TextFormatter.format(assetPublisherDisplayContext.getDisplayStyle(), TextFormatter.N) + ".jsp" %>' servletContext="<%= application %>" />
-
-		<%
-			}
-			catch (Exception e) {
-				_log.error(e.getMessage());
-			}
-		}
-		%>
-
-	</liferay-ddm:template-renderer>
+			</liferay-ddm:template-renderer>
+		</c:otherwise>
+	</c:choose>
 
 <%
 }
