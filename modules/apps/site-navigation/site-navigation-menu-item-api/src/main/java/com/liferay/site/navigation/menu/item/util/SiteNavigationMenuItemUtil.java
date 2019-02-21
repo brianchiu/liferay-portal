@@ -49,7 +49,7 @@ public class SiteNavigationMenuItemUtil {
 		String[] localizableParameters = {};
 
 		for (String key : parameterMap.keySet()) {
-			if (!key.startsWith("")) {
+			if (!key.startsWith(prefix)) {
 				continue;
 			}
 
