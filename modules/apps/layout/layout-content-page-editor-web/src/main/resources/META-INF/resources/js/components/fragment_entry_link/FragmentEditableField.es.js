@@ -15,7 +15,6 @@ import templates from './FragmentEditableField.soy';
 import {
 	OPEN_MAPPING_FIELDS_DIALOG,
 	UPDATE_EDITABLE_VALUE,
-	UPDATE_HOVERED_ITEM,
 	UPDATE_LAST_SAVE_DATE,
 	UPDATE_SAVING_CHANGES_STATUS,
 	UPDATE_TRANSLATION_STATUS
@@ -311,25 +310,6 @@ class FragmentEditableField extends Component {
 	 */
 	_handleEditableDestroyed() {
 		this._editing = false;
-	}
-
-	/**
-	 * Callback executed when cursor enters editable element
-	 * @private
-	 * @review
-	 */
-	_handleEditableHoverStart(event) {
-		event.stopPropagation();
-
-		if (this.store) {
-			this.store.dispatchAction(
-				UPDATE_HOVERED_ITEM,
-				{
-					hoveredItemId: this.editableId,
-					hoveredItemType: FRAGMENTS_EDITOR_ITEM_TYPES.editable
-				}
-			);
-		}
 	}
 
 	/**
