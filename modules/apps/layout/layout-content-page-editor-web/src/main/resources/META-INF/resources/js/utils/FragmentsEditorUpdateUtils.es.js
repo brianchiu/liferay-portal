@@ -29,14 +29,14 @@ function focusItem(itemId, itemType) {
 	if (itemId && itemType) {
 		let attr = '';
 
-		if (itemType === FRAGMENTS_EDITOR_ITEM_TYPES.editable) {
-			attr = 'id';
+		if (itemType === FRAGMENTS_EDITOR_ITEM_TYPES.section) {
+			attr = 'data-layout-section-id';
 		}
 		else if (itemType === FRAGMENTS_EDITOR_ITEM_TYPES.fragment) {
 			attr = 'data-fragment-entry-link-id';
 		}
-		else if (itemType === FRAGMENTS_EDITOR_ITEM_TYPES.section) {
-			attr = 'data-layout-section-id';
+		else if (itemType === FRAGMENTS_EDITOR_ITEM_TYPES.editable) {
+			attr = 'id';
 		}
 
 		const item = document.querySelector(`[${attr}='${itemId}']`);
