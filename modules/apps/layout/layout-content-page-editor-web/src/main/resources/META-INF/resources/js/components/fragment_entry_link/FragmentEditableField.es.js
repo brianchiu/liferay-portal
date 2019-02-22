@@ -6,9 +6,7 @@ import Soy from 'metal-soy';
 import './FragmentEditableFieldTooltip.es';
 
 import FragmentProcessors from '../fragment_processors/FragmentProcessors.es';
-import {FRAGMENTS_EDITOR_ITEM_TYPES} from '../../utils/constants';
 import {getActiveEditableElement} from '../fragment_processors/EditableTextFragmentProcessor.es';
-import {setIn} from '../../utils/FragmentsEditorUpdateUtils.es';
 import {Store} from '../../store/store.es';
 import templates from './FragmentEditableField.soy';
 import {
@@ -58,17 +56,6 @@ const TOOLTIP_BUTTONS = {
  * FragmentEditableField
  */
 class FragmentEditableField extends Component {
-
-	/**
-	 * Adds item types to state
-	 * @param {Object} _state
-	 * @private
-	 * @return {Object}
-	 * @static
-	 */
-	static _addItemTypesToState(_state) {
-		return setIn(_state, ['itemTypes'], FRAGMENTS_EDITOR_ITEM_TYPES);
-	}
 
 	/**
 	 * @inheritDoc
@@ -137,11 +124,9 @@ class FragmentEditableField extends Component {
 			this.type
 		);
 
-		const nextState = FragmentEditableField._addItemTypesToState(state);
-
 		return object.mixin(
 			{},
-			nextState,
+			state,
 			{
 				content,
 				_tooltipButtons
