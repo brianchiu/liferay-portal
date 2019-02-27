@@ -208,8 +208,6 @@ if (hints != null) {
 				}
 			}
 
-			cssClass += " form-group form-group-inline";
-
 			boolean showTime = true;
 
 			if (hints != null) {
@@ -219,35 +217,39 @@ if (hints != null) {
 			String timeFormat = GetterUtil.getString((String)dynamicAttributes.get("timeFormat"));
 			%>
 
-			<div class="clearfix">
-				<liferay-ui:input-date
-					autoFocus="<%= autoFocus %>"
-					cssClass="<%= cssClass %>"
-					dayParam='<%= fieldParam + "Day" %>'
-					dayValue="<%= day %>"
-					disabled="<%= disabled %>"
-					firstDayOfWeek="<%= firstDayOfWeek %>"
-					formName="<%= formName %>"
-					monthParam='<%= fieldParam + "Month" %>'
-					monthValue="<%= month %>"
-					name="<%= fieldParam %>"
-					yearParam='<%= fieldParam + "Year" %>'
-					yearValue="<%= year %>"
-				/>
+			<div class="form-group-autofit">
+				<div class="form-group-item">
+					<liferay-ui:input-date
+						autoFocus="<%= autoFocus %>"
+						cssClass="<%= cssClass %>"
+						dayParam='<%= fieldParam + "Day" %>'
+						dayValue="<%= day %>"
+						disabled="<%= disabled %>"
+						firstDayOfWeek="<%= firstDayOfWeek %>"
+						formName="<%= formName %>"
+						monthParam='<%= fieldParam + "Month" %>'
+						monthValue="<%= month %>"
+						name="<%= fieldParam %>"
+						yearParam='<%= fieldParam + "Year" %>'
+						yearValue="<%= year %>"
+					/>
+				</div>
 
 				<c:if test="<%= showTime %>">
-					<liferay-ui:input-time
-						amPmParam='<%= fieldParam + "AmPm" %>'
-						amPmValue="<%= amPm %>"
-						cssClass="<%= cssClass %>"
-						disabled="<%= disabled %>"
-						hourParam='<%= fieldParam + "Hour" %>'
-						hourValue="<%= hour %>"
-						minuteParam='<%= fieldParam + "Minute" %>'
-						minuteValue="<%= minute %>"
-						name='<%= fieldParam + "Time" %>'
-						timeFormat="<%= timeFormat %>"
-					/>
+					<div class="form-group-item">
+						<liferay-ui:input-time
+							amPmParam='<%= fieldParam + "AmPm" %>'
+							amPmValue="<%= amPm %>"
+							cssClass="<%= cssClass %>"
+							disabled="<%= disabled %>"
+							hourParam='<%= fieldParam + "Hour" %>'
+							hourValue="<%= hour %>"
+							minuteParam='<%= fieldParam + "Minute" %>'
+							minuteValue="<%= minute %>"
+							name='<%= fieldParam + "Time" %>'
+							timeFormat="<%= timeFormat %>"
+						/>
+					</div>
 				</c:if>
 			</div>
 
