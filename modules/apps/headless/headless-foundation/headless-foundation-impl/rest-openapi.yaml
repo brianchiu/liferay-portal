@@ -736,14 +736,9 @@ paths:
                                 $ref: "#/components/schemas/Vocabulary"
                     description: ""
             tags: ["Vocabulary"]
-    "/emails-by/{class-name-class-pk}":
+    "/emails":
         get:
             parameters:
-                - in: path
-                  name: class-name-class-pk
-                  required: true
-                  schema:
-                      type: string
                 - in: query
                   name: page
                   schema:
