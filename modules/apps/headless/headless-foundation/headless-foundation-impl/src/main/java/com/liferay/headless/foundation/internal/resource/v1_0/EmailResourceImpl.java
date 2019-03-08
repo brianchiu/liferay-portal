@@ -51,7 +51,7 @@ public class EmailResourceImpl extends BaseEmailResourceImpl {
 
 	@Override
 	public Page<Email> getEmailsByClassNameClassPK(
-			ClassNameClassPK classNameClassPK, Pagination pagination)
+			Pagination pagination, ClassNameClassPK classNameClassPK)
 		throws Exception {
 
 		return Page.of(
