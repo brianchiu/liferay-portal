@@ -736,11 +736,11 @@ paths:
                                 $ref: "#/components/schemas/Vocabulary"
                     description: ""
             tags: ["Vocabulary"]
-    "/emails-by/{classNameClassPK}":
+    "/emails-by/{class-name-class-pk}":
         get:
             parameters:
                 - in: path
-                  name: classNameClassPK
+                  name: class-name-class-pk
                   required: true
                   schema:
                       type: string
@@ -752,6 +752,11 @@ paths:
                   name: pageSize
                   schema:
                       type: integer
+                - in: path
+                  name: generic-parent-id
+                  required: true
+                  schema:
+                      type: object
             responses:
                 200:
                     content:
