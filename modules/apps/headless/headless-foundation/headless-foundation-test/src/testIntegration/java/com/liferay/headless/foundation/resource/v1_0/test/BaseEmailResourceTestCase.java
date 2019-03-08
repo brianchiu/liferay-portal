@@ -44,6 +44,7 @@ import java.net.URL;
 import java.text.DateFormat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -95,20 +96,81 @@ public abstract class BaseEmailResourceTestCase {
 	}
 
 	@Test
-	public void testGetEmailsByClassNameClassPK() throws Exception {
-		Assert.assertTrue(true);
+	public void testGetEmailsPage() throws Exception {
+		Object genericParentId = testGetEmailsPage_getGenericParentId();
+
+		Email email1 = testGetEmailsPage_addEmail(
+			genericParentId, randomEmail());
+		Email email2 = testGetEmailsPage_addEmail(
+			genericParentId, randomEmail());
+
+		Page<Email> page = invokeGetEmailsPage(
+			genericParentId, Pagination.of(1, 2));
+
+		Assert.assertEquals(2, page.getTotalCount());
+
+		assertEqualsIgnoringOrder(
+			Arrays.asList(email1, email2), (List<Email>)page.getItems());
+		assertValid(page);
 	}
 
-	protected Page<Email> invokeGetEmailsByClassNameClassPK(
-			Pagination pagination,
-			com.liferay.portal.vulcan.provider.ClassNameClassPK
-				classNameClassPK)
+	@Test
+	public void testGetEmailsPageWithPagination() throws Exception {
+		Object genericParentId = testGetEmailsPage_getGenericParentId();
+
+		Email email1 = testGetEmailsPage_addEmail(
+			genericParentId, randomEmail());
+		Email email2 = testGetEmailsPage_addEmail(
+			genericParentId, randomEmail());
+		Email email3 = testGetEmailsPage_addEmail(
+			genericParentId, randomEmail());
+
+		Page<Email> page1 = invokeGetEmailsPage(
+			genericParentId, Pagination.of(1, 2));
+
+		List<Email> emails1 = (List<Email>)page1.getItems();
+
+		Assert.assertEquals(emails1.toString(), 2, emails1.size());
+
+		Page<Email> page2 = invokeGetEmailsPage(
+			genericParentId, Pagination.of(2, 2));
+
+		Assert.assertEquals(3, page2.getTotalCount());
+
+		List<Email> emails2 = (List<Email>)page2.getItems();
+
+		Assert.assertEquals(emails2.toString(), 1, emails2.size());
+
+		assertEqualsIgnoringOrder(
+			Arrays.asList(email1, email2, email3),
+			new ArrayList<Email>() {
+				{
+					addAll(emails1);
+					addAll(emails2);
+				}
+			});
+	}
+
+	protected Email testGetEmailsPage_addEmail(
+			Object genericParentId, Email email)
+		throws Exception {
+
+		throw new UnsupportedOperationException(
+			"This method needs to be implemented");
+	}
+
+	protected Object testGetEmailsPage_getGenericParentId() throws Exception {
+		throw new UnsupportedOperationException(
+			"This method needs to be implemented");
+	}
+
+	protected Page<Email> invokeGetEmailsPage(
+			Object genericParentId, Pagination pagination)
 		throws Exception {
 
 		Http.Options options = _createHttpOptions();
 
-		String location =
-			_resourceURL + _toPath("/emails-by/{classNameClassPK}", pagination);
+		String location = _resourceURL + _toPath("/emails", genericParentId);
 
 		location = HttpUtil.addParameter(
 			location, "page", pagination.getPage());
@@ -123,16 +185,13 @@ public abstract class BaseEmailResourceTestCase {
 			});
 	}
 
-	protected Http.Response invokeGetEmailsByClassNameClassPKResponse(
-			Pagination pagination,
-			com.liferay.portal.vulcan.provider.ClassNameClassPK
-				classNameClassPK)
+	protected Http.Response invokeGetEmailsPageResponse(
+			Object genericParentId, Pagination pagination)
 		throws Exception {
 
 		Http.Options options = _createHttpOptions();
 
-		String location =
-			_resourceURL + _toPath("/emails-by/{classNameClassPK}", pagination);
+		String location = _resourceURL + _toPath("/emails", genericParentId);
 
 		location = HttpUtil.addParameter(
 			location, "page", pagination.getPage());

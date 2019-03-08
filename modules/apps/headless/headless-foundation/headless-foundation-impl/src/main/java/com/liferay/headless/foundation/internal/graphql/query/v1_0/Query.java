@@ -110,18 +110,16 @@ public class Query {
 
 	@GraphQLField
 	@GraphQLInvokeDetached
-	public Collection<Email> getEmailsByClassNameClassPK(
+	public Collection<Email> getEmailsPage(
+			@GraphQLName("generic-parent-id") Object genericParentId,
 			@GraphQLName("pageSize") int pageSize,
-			@GraphQLName("page") int page,
-			@GraphQLName("classNameClassPK")
-				com.liferay.portal.vulcan.provider.ClassNameClassPK
-					classNameClassPK)
+			@GraphQLName("page") int page)
 		throws Exception {
 
 		EmailResource emailResource = _createEmailResource();
 
-		Page paginationPage = emailResource.getEmailsByClassNameClassPK(
-			Pagination.of(pageSize, page), classNameClassPK);
+		Page paginationPage = emailResource.getEmailsPage(
+			genericParentId, Pagination.of(pageSize, page));
 
 		return paginationPage.getItems();
 	}
