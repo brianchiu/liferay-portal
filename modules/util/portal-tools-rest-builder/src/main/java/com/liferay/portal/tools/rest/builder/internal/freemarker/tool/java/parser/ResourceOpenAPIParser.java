@@ -245,13 +245,6 @@ public class ResourceOpenAPIParser {
 						javaDataTypeMap, parameter.getSchema())));
 		}
 
-		if (parameterNames.contains("classNameClassPK")) {
-			JavaMethodParameter javaMethodParameter = new JavaMethodParameter(
-				"classNameClassPK", ClassNameClassPK.class.getName());
-
-			javaMethodParameters.add(javaMethodParameter);
-		}
-
 		if (parameterNames.contains("filter")) {
 			JavaMethodParameter javaMethodParameter = new JavaMethodParameter(
 				"filter", Filter.class.getName());
@@ -271,6 +264,13 @@ public class ResourceOpenAPIParser {
 		if (parameterNames.contains("sort")) {
 			JavaMethodParameter javaMethodParameter = new JavaMethodParameter(
 				"sorts", Sort[].class.getName());
+
+			javaMethodParameters.add(javaMethodParameter);
+		}
+
+		if (parameterNames.contains("classNameClassPK")) {
+			JavaMethodParameter javaMethodParameter = new JavaMethodParameter(
+				"classNameClassPK", ClassNameClassPK.class.getName());
 
 			javaMethodParameters.add(javaMethodParameter);
 		}
@@ -475,12 +475,6 @@ public class ResourceOpenAPIParser {
 
 		String parameterType = javaMethodParameter.getParameterType();
 
-		if (Objects.equals(parameterType, ClassNameClassPK.class.getName()) &&
-			parameterNames.contains("classNameClassPK")) {
-
-			return "@Context";
-		}
-
 		if (Objects.equals(parameterType, Filter.class.getName()) &&
 			parameterNames.contains("filter")) {
 
@@ -496,6 +490,12 @@ public class ResourceOpenAPIParser {
 
 		if (Objects.equals(parameterType, Sort[].class.getName()) &&
 			parameterNames.contains("sort")) {
+
+			return "@Context";
+		}
+
+		if (Objects.equals(parameterType, ClassNameClassPK.class.getName()) &&
+			parameterNames.contains("classNameClassPK")) {
 
 			return "@Context";
 		}
