@@ -16,7 +16,7 @@ package com.liferay.portal.vulcan.internal.jaxrs.context.provider;
 
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.StringUtil;
-import com.liferay.portal.vulcan.identifier.ClassNameClassPK;
+import com.liferay.portal.vulcan.provider.ClassNameClassPK;
 
 import javax.servlet.http.HttpServletRequest;
 

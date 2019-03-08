@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.portal.vulcan.identifier;
+package com.liferay.portal.vulcan.provider;
 
 import com.liferay.portal.kernel.model.ClassedModel;
 

@@ -25,9 +25,9 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.service.EmailAddressService;
 import com.liferay.portal.kernel.service.OrganizationService;
 import com.liferay.portal.kernel.service.UserService;
-import com.liferay.portal.vulcan.identifier.ClassNameClassPK;
 import com.liferay.portal.vulcan.pagination.Page;
 import com.liferay.portal.vulcan.pagination.Pagination;
+import com.liferay.portal.vulcan.provider.ClassNameClassPK;
 
 import java.util.List;
 
