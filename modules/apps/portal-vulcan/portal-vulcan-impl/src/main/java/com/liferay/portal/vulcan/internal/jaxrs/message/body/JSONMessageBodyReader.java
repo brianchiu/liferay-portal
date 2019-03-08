@@ -29,13 +29,11 @@ import java.lang.reflect.Type;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.validation.Configuration;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.ValidationException;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import javax.validation.bootstrap.ProviderSpecificBootstrap;
 
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.Produces;
@@ -96,21 +94,8 @@ public class JSONMessageBodyReader implements MessageBodyReader {
 		);
 	}
 
-	private synchronized ValidatorFactory _getValidatorFactory() {
-		if (_validatorFactory == null) {
-			ProviderSpecificBootstrap providerSpecificBootstrap =
-				Validation.byProvider(ApacheValidationProvider.class);
-
-			Configuration configure = providerSpecificBootstrap.configure();
-
-			_validatorFactory = configure.buildValidatorFactory();
-		}
-
-		return _validatorFactory;
-	}
-
 	private void _validate(Object value) {
-		Validator validator = _getValidatorFactory().getValidator();
+		Validator validator = _validatorFactory.getValidator();
 
 		Set<ConstraintViolation<Object>> constraintViolations =
 			validator.validate(value);
@@ -132,7 +117,14 @@ public class JSONMessageBodyReader implements MessageBodyReader {
 		throw new ValidationException(sb.toString());
 	}
 
-	private static ValidatorFactory _validatorFactory;
+	private static final ValidatorFactory _validatorFactory;
+
+	static {
+		_validatorFactory = Validation.byProvider(
+			ApacheValidationProvider.class
+		).configure(
+		).buildValidatorFactory();
+	}
 
 	@Context
 	private Providers _providers;
