@@ -595,7 +595,7 @@ const INITIAL_STATE = {
 		.string()
 		.value(''),
 
-		/**
+	/**
 	 * Editable type of the field that is being mapped
 	 * @default ''
 	 * @review
