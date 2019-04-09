@@ -65,7 +65,7 @@ definition {
 
 		AssertElementPresent(locator1 = "UserBar#USER_AVATAR_IMAGE");
 
-		User.viewLoggedInPG(userFirstName = "TestSetupWizardFN");
+		User.viewLoggedInPG();
 
 		Navigator.openURL();
 
