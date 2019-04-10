@@ -25,7 +25,7 @@
 </tr>
 <tr>
 	<td>USER_AVATAR_DROPDOWN_SIGNOUT</td>
-	<td>//div[@id='clay_dropdown_portal']//div[contains(@class,'show')]//a[contains(.,'Sign Out')]</td>
+	<td>//div[@id='clay_dropdown_portal']//div[contains(@class,'show')]//a[contains(.,'Sign Out') or contains(.,'Salir')]</td>
 	<td></td>
 </tr>
 <tr>
