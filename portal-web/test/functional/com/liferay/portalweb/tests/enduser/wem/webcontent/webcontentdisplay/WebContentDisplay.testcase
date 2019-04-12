@@ -254,8 +254,6 @@ definition {
 
 		Content.addNewPG(assetType = "Basic Web Content");
 
-		IFrame.selectEditAssetFrame();
-
 		WebContent.addCP(
 			webContentContent = "WC WebContent Content",
 			webContentTitle = "WC WebContent Title"
@@ -666,8 +664,6 @@ definition {
 		);
 
 		Content.addNewPG(assetType = "Basic Web Content");
-
-		IFrame.selectEditAssetFrame();
 
 		WebContent.addCP(
 			webContentContent = "WC WebContent Content",
