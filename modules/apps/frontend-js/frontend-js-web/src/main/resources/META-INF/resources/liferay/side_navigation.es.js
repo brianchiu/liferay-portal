@@ -58,8 +58,7 @@
 				className.split(/\s+/).forEach(name => {
 					if (present) {
 						element.classList.add(name);
-					}
-					else {
+					} else {
 						element.classList.remove(name);
 					}
 				});
@@ -92,11 +91,9 @@
 	function px(dimension) {
 		if (typeof dimension === 'number') {
 			return dimension + 'px';
-		}
-		else if (typeof dimension === 'string' && dimension.match(/^\s*\d+\s*$/)) {
+		} else if (typeof dimension === 'string' && dimension.match(/^\s*\d+\s*$/)) {
 			return dimension.trim() + 'px';
-		}
-		else {
+		} else {
 			return dimension;
 		}
 	}
@@ -559,8 +556,7 @@
 
 			if (closed) {
 				instance.showSidenav();
-			}
-			else {
+			} else {
 				instance.hideSidenav();
 			}
 
