@@ -933,4 +933,7 @@ else {
 	});
 }
 
-export default SideNavigation;
+/**
+ * Make SideNavigation globally available as a transitional aid.
+ */
+window.SideNavigation = SideNavigation;

@@ -51,12 +51,12 @@ String productMenuState = SessionClicks.get(request, ProductNavigationProductMen
 <aui:script use="liferay-store,io-request,parse-content">
 	var sidenavToggle = document.getElementById('<portlet:namespace />sidenavToggleId');
 
-	Liferay.SideNavigation.initialize(sidenavToggle);
+	SideNavigation.initialize(sidenavToggle);
 
 	Liferay.once(
 		'screenLoad',
 		function() {
-			Liferay.SideNavigation.destroy(sidenavToggle);
+			SideNavigation.destroy(sidenavToggle);
 		}
 	);
 
@@ -77,6 +77,6 @@ String productMenuState = SessionClicks.get(request, ProductNavigationProductMen
 	);
 
 	if (Liferay.Util.isPhone() && ($('body').hasClass('open'))) {
-		Liferay.SideNavigation.hide(sidenavToggle);
+		SideNavigation.hide(sidenavToggle);
 	}
 </aui:script>

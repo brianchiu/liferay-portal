@@ -31,8 +31,8 @@
 <aui:script use="liferay-store">
 	var sidenavToggle = document.querySelector('[href="#<%= sidenavId %>"]');
 
-	if (!Liferay.SideNavigation.instance(sidenavToggle)) {
-		Liferay.SideNavigation.initialize(
+	if (!SideNavigation.instance(sidenavToggle)) {
+		SideNavigation.initialize(
 			sidenavToggle,
 			{
 				position: '<%= position %>',

@@ -1,6 +1,6 @@
 var simulationToggle = document.getElementById('${portletNamespace}simulationToggleId');
 
-Liferay.SideNavigation.initialize(simulationToggle);
+SideNavigation.initialize(simulationToggle);
 
 var simulationPanel = $('#${portletNamespace}simulationPanelId');
 
@@ -21,6 +21,6 @@ simulationPanel.on(
 Liferay.once(
 	'screenLoad',
 	function() {
-		Liferay.SideNavigation.destroy(simulationToggle);
+		SideNavigation.destroy(simulationToggle);
 	}
 );

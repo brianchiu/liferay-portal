@@ -38,7 +38,7 @@ class FragmentsEditorSidebar extends Component {
 	 */
 	rendered() {
 		if (this.selectedSidebarPanelId) {
-			Liferay.SideNavigation.hide(this._productMenuToggle);
+			SideNavigation.hide(this._productMenuToggle);
 		}
 	}
 

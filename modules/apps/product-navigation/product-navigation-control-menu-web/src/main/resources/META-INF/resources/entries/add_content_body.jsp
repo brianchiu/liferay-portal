@@ -43,12 +43,12 @@
 	<aui:script use="liferay-store,io-request,parse-content">
 		var addToggle = document.getElementById('<%= portletNamespace %>addToggleId');
 
-		Liferay.SideNavigation.initialize(addToggle);
+		SideNavigation.initialize(addToggle);
 
 		Liferay.once(
 			'screenLoad',
 			function() {
-				Liferay.SideNavigation.destroy(addToggle);
+				SideNavigation.destroy(addToggle);
 			}
 		);
 	</aui:script>

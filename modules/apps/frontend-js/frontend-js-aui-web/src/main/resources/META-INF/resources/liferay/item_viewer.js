@@ -469,9 +469,7 @@ AUI.add(
 							'[data-toggle="sidenav"]'
 						);
 
-						Array.from(togglers).forEach(
-							Liferay.SideNavigation.initialize
-						);
+						Array.from(togglers).forEach(SideNavigation.initialize);
 					}
 				},
 
