@@ -46,6 +46,7 @@ Liferay-JS-Resources-Top-Head:\
 	/liferay/aui_sandbox.js,\
 	\
 	/clay/collapsible-search.js,\
+	/clay/side-navigation.js,\
 	\
 	/misc/svg4everybody.js,\
 	\
@@ -146,8 +147,7 @@ Liferay-JS-Resources-Top-Head:\
 	/liferay/icon.js,\
 	/liferay/menu.js,\
 	/liferay/notice.js,\
-	/liferay/poller.js,\
-	/liferay/side_navigation.es.js
+	/liferay/poller.js
 Liferay-JS-Submodules-Bridge: frontend-js-web
 Provide-Capability:\
 	osgi.extender;\
