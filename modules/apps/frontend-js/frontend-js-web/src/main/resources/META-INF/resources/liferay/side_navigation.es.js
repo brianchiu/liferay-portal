@@ -70,29 +70,6 @@
 		});
 	}
 
-	function setStyles(element, styles) {
-		element = getElement(element);
-
-		if (element) {
-			Object.entries(styles).forEach(([property, value]) => {
-				element.style[property] = value;
-			});
-		}
-	}
-
-	/**
-	 * For compatibility with jQuery, which will treat "100" as "100px".
-	 */
-	function px(dimension) {
-		if (typeof dimension === 'number') {
-			return dimension + 'px';
-		} else if (typeof dimension === 'string' && dimension.match(/^\s*\d+\s*$/)) {
-			return dimension.trim() + 'px';
-		} else {
-			return dimension;
-		}
-	}
-
 	var $doc = $(document);
 
 	var listenerAdded = false;
@@ -227,23 +204,22 @@
 			instance._renderUI();
 		},
 
-		clearHeight: function() {
+		clearStyle: function(attribute) {
 			var instance = this;
 
 			var options = instance.options;
 
 			var $container = $(options.container);
-
 			var $content = $container.find(options.content).first();
 			var $navigation = $container.find(options.navigation).first();
+
 			var $menu = $container.find('.sidenav-menu').first();
 
-			[$content, $navigation, $menu].forEach($element => {
-				setStyles($element, {
-					height: '',
-					'min-height': '',
-				});
-			});
+			var els = $content.add($navigation).add($menu);
+
+			for (var i = 0; i < attribute.length; i++) {
+				els.css(attribute[i], '');
+			}
 		},
 
 		destroy: function() {
@@ -298,19 +274,12 @@
 
 			var paddingDirection = 'padding-' + positionDirection;
 
-			setStyles($content, {
-				[paddingDirection]: '',
-				[positionDirection]: '',
-			});
+			$content.css(paddingDirection, '').css(positionDirection, '');
 
-			setStyles($navigation, {
-				width: '',
-			});
+			$navigation.css('width', '');
 
 			if (sidenavRight) {
-				setStyles($menu, {
-					[positionDirection]: px(instance._getSidenavWidth()),
-				});
+				$menu.css(positionDirection, instance._getSidenavWidth());
 			}
 		},
 
@@ -390,20 +359,18 @@
 				var $navNode = $container.find(navigation).first();
 				var $sideNavMenuNode = $container.find('.sidenav-menu').first();
 
-				var tallest = px(Math.max($contentNode.outerHeight(), $navNode.outerHeight()));
+				var tallest = Math.max($contentNode.outerHeight(), $navNode.outerHeight());
 
-				setStyles($contentNode, {
+				$contentNode.css('min-height', tallest);
+
+				$navNode.css({
 					'min-height': tallest,
+					'height': '100%'
 				});
 
-				setStyles($navNode, {
-					height: '100%',
+				$sideNavMenuNode.css({
 					'min-height': tallest,
-				});
-
-				setStyles($sideNavMenuNode, {
-					height: '100%',
-					'min-height': tallest,
+					'height': '100%'
 				});
 			}
 		},
@@ -440,12 +407,8 @@
 				instance._loadUrl($menu, url);
 			}
 
-			setStyles($navigation, {
-				width: px(width),
-			});
-			setStyles($menu, {
-				width: px(width),
-			});
+			$navigation.css('width', width);
+			$menu.css('width', width);
 
 			var positionDirection = options.rtl ? 'right' : 'left';
 
@@ -483,9 +446,7 @@
 					}
 				}
 
-				setStyles($content, {
-					[pushContentCssProperty]: px(padding),
-				});
+				$content.css(pushContentCssProperty, padding);
 			}
 		},
 
@@ -585,7 +546,7 @@
 				var $menu = $container.find('.sidenav-menu').first();
 
 				if (hasClass($container, 'closed')) {
-					instance.clearHeight();
+					instance.clearStyle(['min-height', 'height']);
 
 					setClasses($toggler, {
 						open: false,
@@ -618,16 +579,12 @@
 			if (closed) {
 				instance.setHeight();
 
-				setStyles($menu, {
-					width: px(width),
-				});
+				$menu.css('width', width);
 
 				var positionDirection = options.rtl ? 'left' : 'right';
 
 				if (sidenavRight) {
-					setStyles($menu, {
-						[positionDirection]: '',
-					});
+					$menu.css(positionDirection, '');
 				}
 			}
 
@@ -865,7 +822,7 @@
 				if ((!desktop && screenStartDesktop) || (desktop && !screenStartDesktop)) {
 					instance.hideSidenav();
 
-					instance.clearHeight();
+					instance.clearStyle([ 'min-height', 'height' ]);
 
 					setClasses($container, {
 						closed: true,
@@ -880,10 +837,7 @@
 
 					if (desktop) {
 						if (sidenavRight) {
-							setStyles($menu, {
-								[positionDirection]: px(originalMenuWidth),
-								width: px(originalMenuWidth),
-							});
+							$menu.css(positionDirection, originalMenuWidth).css('width', originalMenuWidth);
 						}
 
 						screenStartDesktop = true;
@@ -901,21 +855,17 @@
 
 					if (sidenavRight) {
 						if (closed) {
-							setStyles($menu, {
-								[positionDirection]: px(menuWidth),
-							});
+							$menu.css(positionDirection, menuWidth);
 						}
 
-						setStyles($menu, {
-							width: px(menuWidth),
-						});
+						$menu.css('width', menuWidth);
 					}
 
 					screenStartDesktop = false;
 				}
 
 				if (!closed) {
-					instance.clearHeight();
+					instance.clearStyle([ 'min-height', 'height' ]);
 
 					instance.showSidenav();
 					instance.setHeight();
@@ -960,16 +910,12 @@
 			var width = instance._getSidenavWidth();
 
 			if (closed) {
-				setStyles($menu, {
-					width: px(width),
-				});
+				$menu.css('width', width);
 
 				if (sidenavRight) {
 					var positionDirection = options.rtl ? 'left' : 'right';
 
-					setStyles($menu, {
-						[positionDirection]: px(width),
-					});
+					$menu.css(positionDirection, width);
 				}
 			}
 			else {
@@ -1011,10 +957,7 @@
 				instance._renderNav();
 			}
 
-			// Force Reflow for IE11 Browser Bug
-			setStyles($container, {
-				display: '',
-			});
+			$container.css('display', ''); // Force Reflow for IE11 Browser Bug
 		},
 
 		_setScreenSize: function() {
