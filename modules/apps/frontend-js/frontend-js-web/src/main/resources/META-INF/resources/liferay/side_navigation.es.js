@@ -287,7 +287,7 @@
 
 				var $toggler = instance.$toggler;
 
-				var target = $toggler.attr('data-target') || $toggler.attr('href');
+				var target = $toggler.attr('href') || $toggler.attr('data-target');
 
 				$sidenav.trigger({
 					toggler: $(instance.togglerSelector),
