@@ -139,8 +139,6 @@
 		this.init(toggler, options);
 	};
 
-	SideNavigation.TRANSITION_DURATION = 500;
-
 	SideNavigation.prototype = {
 		init: function(toggler, options) {
 			const instance = this;
@@ -779,11 +777,13 @@
 		},
 
 		_subscribeSidenavTransitionEnd: function(element, fn) {
-			setTimeout(() => {
+			const subscription = subscribe(element, 'transitionend', () => {
+				subscription.dispose();
+
 				removeClass(element, 'sidenav-transition');
 
 				fn();
-			}, SideNavigation.TRANSITION_DURATION);
+			});
 		},
 
 		_renderNav: function() {
