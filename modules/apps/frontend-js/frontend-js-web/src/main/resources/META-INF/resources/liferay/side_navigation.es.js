@@ -954,13 +954,15 @@
 		}
 	};
 
-	var initialize = function(toggler, options) {
+	var initialize = function(toggler, options, selector) {
 		var data = toggler.data('lexicon.sidenav');
 
 		if (!data) {
 			if (!options) {
 				options = {};
 			}
+
+			options.selector = selector;
 
 			data = new SideNavigation(toggler, options);
 
@@ -972,6 +974,8 @@
 
 	var Plugin = function(options) {
 		var instance = this;
+
+		var selector = instance.selector;
 
 		var retVal = instance;
 		var methodCall = typeof options === 'string';
@@ -1020,7 +1024,7 @@
 		else {
 			this.each(
 				function() {
-					initialize($(this), options);
+					initialize($(this), options, selector);
 				}
 			);
 		}
