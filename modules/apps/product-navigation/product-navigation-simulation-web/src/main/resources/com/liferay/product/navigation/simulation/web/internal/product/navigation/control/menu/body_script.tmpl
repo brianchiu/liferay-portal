@@ -1,15 +1,17 @@
 var simulationToggle = document.getElementById('${portletNamespace}simulationToggleId');
 
-var sidenavInstance = Liferay.SideNavigation.initialize(simulationToggle);
+Liferay.SideNavigation.initialize(simulationToggle);
 
-sidenavInstance.on(
+var simulationPanel = $('#${portletNamespace}simulationPanelId');
+
+simulationPanel.on(
 	'open.lexicon.sidenav',
 	function(event) {
 		Liferay.fire('SimulationMenu:openSimulationPanel');
 	}
 );
 
-sidenavInstance.on(
+simulationPanel.on(
 	'closed.lexicon.sidenav',
 	function(event) {
 		Liferay.fire('SimulationMenu:closeSimulationPanel');

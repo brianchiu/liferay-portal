@@ -20,12 +20,11 @@ class ContextualSidebar extends Component {
 		document.body.classList.add('has-contextual-sidebar');
 
 		this._productMenuToggle = $('.product-menu-toggle');
+		this._productMenu = $(this._productMenuToggle.data('target'));
 
 		this._handleOpenProductMenu = this._handleOpenProductMenu.bind(this);
 
-		const sidenav = Liferay.SideNavigation.instance(this._productMenuToggle);
-
-		this._toggleHandle = sidenav.on(
+		this._productMenu.on(
 			'openStart.lexicon.sidenav',
 			this._handleOpenProductMenu
 		);
@@ -39,7 +38,7 @@ class ContextualSidebar extends Component {
 	disposed() {
 		document.body.classList.remove('has-contextual-sidebar');
 
-		this._toggleHandle.removeListener(
+		this._productMenu.off(
 			'openStart.lexicon.sidenav',
 			this._handleOpenProductMenu
 		);
@@ -191,15 +190,15 @@ ContextualSidebar.STATE = {
 	visible: Config.bool().required(),
 
 	/**
-	 * Internal property for subscribing to sidenav events.
+	 * Internal property that keeps an existing ProductMenu sidebar synced.
 	 * @default undefined
 	 * @instance
 	 * @memberOf ContextualSidebar
 	 * @review
-	 * @type {EventHandle}
+	 * @type {object}
 	 */
 
-	_toggleHandle: Config.internal()
+	_productMenu: Config.internal()
 };
 
 Soy.register(ContextualSidebar, templates);

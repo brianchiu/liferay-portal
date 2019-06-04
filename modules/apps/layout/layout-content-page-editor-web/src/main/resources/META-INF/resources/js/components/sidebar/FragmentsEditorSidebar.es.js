@@ -18,9 +18,10 @@ class FragmentsEditorSidebar extends Component {
 	 */
 	created() {
 		this._productMenuToggle = $('.product-menu-toggle');
+		this._productMenu = $(this._productMenuToggle.data('target'));
 		this._handleHide = this._handleHide.bind(this);
-		const sidenav = Liferay.SideNavigation.instance(this._productMenuToggle);
-		this._toggleHandle = sidenav.on('openStart.lexicon.sidenav', this._handleHide);
+
+		this._productMenu.on('openStart.lexicon.sidenav', this._handleHide);
 	}
 
 	/**
@@ -28,7 +29,7 @@ class FragmentsEditorSidebar extends Component {
 	 * @review
 	 */
 	disposed() {
-		this._toggleHandle.removeListener('openStart.lexicon.sidenav', this._handleHide);
+		this._productMenu.off('openStart.lexicon.sidenav', this._handleHide);
 	}
 
 	/**
@@ -61,14 +62,14 @@ class FragmentsEditorSidebar extends Component {
  */
 FragmentsEditorSidebar.STATE = {
 	/**
-	 * Internal property for subscribing to sidenav events.
+	 * Synced ProductMenu sidebar.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditorSidebar
 	 * @review
-	 * @type {EventHandle}
+	 * @type {object}
 	 */
-	_toggleHandle: Config.internal(),
+	_productMenu: Config.internal(),
 
 	/**
 	 * Synced ProductMenu toggle button.

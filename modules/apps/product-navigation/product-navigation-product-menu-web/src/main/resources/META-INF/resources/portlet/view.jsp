@@ -51,7 +51,7 @@ String productMenuState = SessionClicks.get(request, ProductNavigationProductMen
 <aui:script use="liferay-store,io-request,parse-content">
 	var sidenavToggle = document.getElementById('<portlet:namespace />sidenavToggleId');
 
-	var sidenavInstance = Liferay.SideNavigation.initialize(sidenavToggle);
+	Liferay.SideNavigation.initialize(sidenavToggle);
 
 	Liferay.once(
 		'screenLoad',
@@ -60,14 +60,16 @@ String productMenuState = SessionClicks.get(request, ProductNavigationProductMen
 		}
 	);
 
-	sidenavInstance.on(
+	var sidenavSlider = $('#<portlet:namespace />sidenavSliderId');
+
+	sidenavSlider.on(
 		'closed.lexicon.sidenav',
 		function(event) {
 			Liferay.Store('<%= ProductNavigationProductMenuWebKeys.PRODUCT_NAVIGATION_PRODUCT_MENU_STATE %>', 'closed');
 		}
 	);
 
-	sidenavInstance.on(
+	sidenavSlider.on(
 		'open.lexicon.sidenav',
 		function(event) {
 			Liferay.Store('<%= ProductNavigationProductMenuWebKeys.PRODUCT_NAVIGATION_PRODUCT_MENU_STATE %>', 'open');

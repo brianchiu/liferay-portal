@@ -106,23 +106,32 @@ for (ProductNavigationControlMenuCategory productNavigationControlMenuCategory :
 	<aui:script use="liferay-product-navigation-control-menu">
 		Liferay.ControlMenu.init('#<portlet:namespace />controlMenu');
 
-		var sidenavToggles = document.querySelectorAll('#<portlet:namespace />ControlMenu [data-toggle="sidenav"]');
+		var panelEntryBodies = $('#<portlet:namespace />ControlMenu [data-toggle="sidenav"]').toArray().map(
+			function(item) {
+				return $(item.getAttribute('data-target').split(',')[0]);
+			}
+		);
 
-		var sidenavInstances = Array.from(sidenavToggles).map(function(toggle) {
-			return Liferay.SideNavigation.instance(toggle);
-		});
+		panelEntryBodies.forEach(
+			function(item) {
+				item.on(
+					'openStart.lexicon.sidenav',
+					function(event) {
+						var itemId = event.target.getAttribute('id');
 
-		sidenavInstances.forEach(function(instance) {
-			instance.on(
-				'openStart.lexicon.sidenav',
-				function(event, source) {
-					sidenavInstances.forEach(function (sidenav) {
-						if (sidenav !== source) {
-							sidenav.hide();
-						}
-					});
-				}
-			);
-		});
+						panelEntryBodies.forEach(
+							function(item) {
+								var panelId = item.attr('id');
+
+								if (panelId !== itemId) {
+									var toggle = document.querySelector('#<portlet:namespace />ControlMenu [data-toggle="sidenav"][data-target*="' + panelId + '"]');
+									Liferay.SideNavigation.hide(toggle);
+								}
+							}
+						);
+					}
+				);
+			}
+		);
 	</aui:script>
 </c:if>
