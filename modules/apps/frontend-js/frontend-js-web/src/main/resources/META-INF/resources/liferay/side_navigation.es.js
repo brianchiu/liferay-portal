@@ -131,7 +131,12 @@
 				options.type = toggler.data('type');
 				options.typeMobile = toggler.data('type-mobile');
 				options.url = toggler.data('url');
+				options.useDelegate = toggler.data('use-delegate');
 				options.width = '';
+
+				if (options.useDelegate === undefined) {
+					options.useDelegate = true;
+				}
 			}
 
 			instance.toggler = toggler;
@@ -174,8 +179,13 @@
 
 			// Detach toggler
 
-			doc.off('click.lexicon.sidenav', instance.togglerSelector);
-			doc.data(instance.dataTogglerSelector, null);
+			if (options.useDelegate) {
+				doc.off('click.lexicon.sidenav', instance.togglerSelector);
+				doc.data(instance.dataTogglerSelector, null);
+			}
+			else {
+				container.off('click.lexicon.sidenav');
+			}
 
 			// Remove Side Navigation
 
@@ -591,7 +601,12 @@
 				instance._onScreenChange();
 			}
 
-			instance._onClickTrigger();
+			if (instance.options.useDelegate) {
+				instance._onDelegateClickTrigger();
+			}
+			else {
+				instance._onClickTrigger();
+			}
 
 			instance._onClickSidenavClose();
 		},
@@ -721,6 +736,19 @@
 		},
 
 		_onClickTrigger: function() {
+			var instance = this;
+
+			var el = instance.toggler;
+
+			el.on(
+				'click.lexicon.sidenav',
+				function(event) {
+					instance.toggle();
+				}
+			);
+		},
+
+		_onDelegateClickTrigger: function() {
 			var instance = this;
 
 			var toggler = instance.toggler;
@@ -1005,6 +1033,7 @@
 	 * @property {String}         position     The position of the sidenav-slider. Possible values: left, right
 	 * @property {String}         type         The type of sidenav in desktop. Possible values: relative, fixed, fixed-push
 	 * @property {String}         typeMobile   The type of sidenav in mobile. Possible values: relative, fixed, fixed-push
+	 * @property {String|Boolean} useDelegate  The type of reference to use on the toggler event handler. Value false, directly binds click to the toggler.
 	 * @property {String|Object}  url          The URL or $.ajax config object to fetch the content to inject into .sidebar-body
 	 * @property {String|Number}  width        The width of the side navigation.
 	 */
@@ -1020,6 +1049,7 @@
 		type: 'relative',
 		typeMobile: 'relative',
 		url: null,
+		useDelegate: true,
 		width: '225px'
 	};
 
