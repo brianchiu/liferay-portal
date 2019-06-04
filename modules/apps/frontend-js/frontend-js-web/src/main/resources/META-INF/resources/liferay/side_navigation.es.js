@@ -384,6 +384,13 @@
 			var url = options.url;
 
 			if (url) {
+				container.one(
+					'urlLoaded.lexicon.sidenav',
+					function(event) {
+						instance.setHeight();
+					}
+				);
+
 				instance._loadUrl(menu, url, container);
 			}
 
@@ -697,9 +704,9 @@
 					function(response) {
 						sidebarBody.append(response);
 
-						sidebarBody.find('.sidenav-loading').remove();
+						eventTarget.trigger('urlLoaded.lexicon.sidenav');
 
-						instance.setHeight();
+						sidebarBody.find('.sidenav-loading').remove();
 					}
 				);
 
