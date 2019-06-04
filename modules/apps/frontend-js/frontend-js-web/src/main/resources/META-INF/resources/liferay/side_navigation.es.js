@@ -14,9 +14,7 @@ function getElement(element) {
 	if (element && element.jquery) {
 		if (element.length > 1) {
 			throw new Error(
-				`getElement(): Expected at most one element, got ${
-					element.length
-				}`
+				`getElement(): Expected at most one element, got ${element.length}`
 			);
 		}
 		element = element.get(0);
@@ -40,13 +38,13 @@ function getInstance(element) {
 
 function addClass(element, className) {
 	setClasses(element, {
-		[className]: true
+		[className]: true,
 	});
 }
 
 function removeClass(element, className) {
 	setClasses(element, {
-		[className]: false
+		[className]: false,
 	});
 }
 
@@ -62,7 +60,8 @@ function setClasses(element, classes) {
 			className.split(/\s+/).forEach(name => {
 				if (present) {
 					element.classList.add(name);
-				} else {
+				}
+				else {
 					element.classList.remove(name);
 				}
 			});
@@ -95,12 +94,11 @@ function setStyles(element, styles) {
 function px(dimension) {
 	if (typeof dimension === 'number') {
 		return dimension + 'px';
-	} else if (
-		typeof dimension === 'string' &&
-		dimension.match(/^\s*\d+\s*$/)
-	) {
+	}
+	else if (typeof dimension === 'string' && dimension.match(/^\s*\d+\s*$/)) {
 		return dimension.trim() + 'px';
-	} else {
+	}
+	else {
 		return dimension;
 	}
 }
@@ -139,7 +137,7 @@ function toInt(str) {
 function SideNavigation(toggler, options) {
 	toggler = getElement(toggler);
 	this.init(toggler, options);
-}
+};
 
 SideNavigation.TRANSITION_DURATION = 500;
 
@@ -152,10 +150,7 @@ SideNavigation.prototype = {
 		options = Object.assign({}, defaults, options);
 
 		options.breakpoint = toInt(options.breakpoint);
-		options.container =
-			options.container ||
-			toggler.dataset.target ||
-			toggler.getAttribute('href');
+		options.container = options.container || toggler.dataset.target || toggler.getAttribute('href');
 		options.gutter = toInt(options.gutter);
 		options.rtl = document.dir === 'rtl';
 		options.width = toInt(options.width);
@@ -166,9 +161,7 @@ SideNavigation.prototype = {
 		if (useDataAttribute) {
 			options.closedClass = toggler.dataset.closedClass || 'closed';
 			options.content = toggler.dataset.content;
-			options.loadingIndicatorTPL =
-				toggler.dataset.loadingIndicatorTpl ||
-				options.loadingIndicatorTPL;
+			options.loadingIndicatorTPL = toggler.dataset.loadingIndicatorTpl || options.loadingIndicatorTPL;
 			options.openClass = toggler.dataset.openClass || 'open';
 			options.type = toggler.dataset.type;
 			options.typeMobile = toggler.dataset.typeMobile;
@@ -208,7 +201,7 @@ SideNavigation.prototype = {
 			[content, navigation, menu].forEach(element => {
 				setStyles(element, {
 					height: '',
-					'min-height': ''
+					'min-height': '',
 				});
 			});
 		}
@@ -237,7 +230,8 @@ SideNavigation.prototype = {
 
 		if (instance.useDataAttribute) {
 			instance.hideSimpleSidenav();
-		} else {
+		}
+		else {
 			instance.toggleNavigation(false);
 		}
 	},
@@ -265,16 +259,16 @@ SideNavigation.prototype = {
 
 			setStyles(content, {
 				[paddingDirection]: '',
-				[positionDirection]: ''
+				[positionDirection]: '',
 			});
 
 			setStyles(navigation, {
-				width: ''
+				width: '',
 			});
 
 			if (sidenavRight) {
 				setStyles(menu, {
-					[positionDirection]: px(instance._getSidenavWidth())
+					[positionDirection]: px(instance._getSidenavWidth()),
 				});
 			}
 		}
@@ -296,8 +290,7 @@ SideNavigation.prototype = {
 
 			const toggler = instance.toggler;
 
-			const target =
-				toggler.dataset.target || toggler.getAttribute('href');
+			const target = toggler.dataset.target || toggler.getAttribute('href');
 
 			instance._emit('closedStart.lexicon.sidenav');
 
@@ -312,7 +305,7 @@ SideNavigation.prototype = {
 				setClasses(content, {
 					'sidenav-transition': true,
 					[closedClass]: true,
-					[openClass]: false
+					[openClass]: false,
 				});
 			}
 
@@ -321,21 +314,19 @@ SideNavigation.prototype = {
 
 			setClasses(container, {
 				[closedClass]: true,
-				[openClass]: false
+				[openClass]: false,
 			});
 
-			const nodes = document.querySelectorAll(
-				`[data-target="${target}"], [href="${target}"]`
-			);
+			const nodes = document.querySelectorAll(`[data-target="${target}"], [href="${target}"]`);
 
 			Array.from(nodes).forEach(node => {
 				setClasses(node, {
 					[openClass]: false,
-					active: false
+					active: false,
 				});
 				setClasses(node, {
 					[openClass]: false,
-					active: false
+					active: false,
 				});
 			});
 		}
@@ -361,17 +352,17 @@ SideNavigation.prototype = {
 			const tallest = px(Math.max(contentHeight, navigationHeight));
 
 			setStyles(content, {
-				'min-height': tallest
+				'min-height': tallest,
 			});
 
 			setStyles(navigation, {
 				height: '100%',
-				'min-height': tallest
+				'min-height': tallest,
 			});
 
 			setStyles(menu, {
 				height: '100%',
-				'min-height': tallest
+				'min-height': tallest,
 			});
 		}
 	},
@@ -381,7 +372,8 @@ SideNavigation.prototype = {
 
 		if (instance.useDataAttribute) {
 			instance.showSimpleSidenav();
-		} else {
+		}
+		else {
 			instance.toggleNavigation(true);
 		}
 	},
@@ -408,11 +400,11 @@ SideNavigation.prototype = {
 		}
 
 		setStyles(navigation, {
-			width: px(width)
+			width: px(width),
 		});
 
 		setStyles(menu, {
-			width: px(width)
+			width: px(width),
 		});
 
 		let positionDirection = options.rtl ? 'right' : 'left';
@@ -423,36 +415,27 @@ SideNavigation.prototype = {
 
 		const paddingDirection = 'padding-' + positionDirection;
 
-		const pushContentCssProperty = mobile
-			? positionDirection
-			: paddingDirection;
+		const pushContentCssProperty = mobile ? positionDirection : paddingDirection;
 		const type = mobile ? options.typeMobile : options.type;
 
 		if (type !== 'fixed') {
-			const navigationStartX = hasClass(container, 'open')
-				? offsetLeft(navigation) - options.gutter
-				: offsetLeft(navigation) - offset;
+			const navigationStartX = hasClass(container, 'open') ? offsetLeft(navigation) - options.gutter : offsetLeft(navigation) - offset;
 
 			const contentStartX = offsetLeft(content);
 			const contentWidth = toInt(getComputedStyle(content).width);
 
 			let padding = '';
 
-			if (
-				(options.rtl && sidenavRight) ||
-				(!options.rtl && options.position === 'left')
-			) {
+			if ((options.rtl && sidenavRight) || (!options.rtl && options.position === 'left')) {
 				navigationStartX = offsetLeft(navigation) + offset;
 
 				if (navigationStartX > contentStartX) {
 					padding = navigationStartX - contentStartX;
 				}
-			} else if (
-				(options.rtl && options.position === 'left') ||
-				(!options.rtl && sidenavRight)
-			) {
+			}
+			else if ((options.rtl && options.position === 'left') || (!options.rtl && sidenavRight)) {
 				if (navigationStartX < contentStartX + contentWidth) {
-					padding = contentStartX + contentWidth - navigationStartX;
+					padding = (contentStartX + contentWidth) - navigationStartX;
 
 					if (padding >= offset) {
 						padding = offset;
@@ -461,7 +444,7 @@ SideNavigation.prototype = {
 			}
 
 			setStyles(content, {
-				[pushContentCssProperty]: px(padding)
+				[pushContentCssProperty]: px(padding),
 			});
 		}
 	},
@@ -500,17 +483,17 @@ SideNavigation.prototype = {
 			setClasses(content, {
 				'sidenav-transition': true,
 				[openClass]: true,
-				[closedClass]: false
+				[closedClass]: false,
 			});
 			setClasses(container, {
 				'sidenav-transition': true,
 				[openClass]: true,
-				[closedClass]: false
+				[closedClass]: false,
 			});
 			setClasses(toggler, {
 				'sidenav-transition': true,
 				active: true,
-				[openClass]: true
+				[openClass]: true,
 			});
 		}
 	},
@@ -520,7 +503,8 @@ SideNavigation.prototype = {
 
 		if (instance.useDataAttribute) {
 			instance.toggleSimpleSidenav();
-		} else {
+		}
+		else {
 			instance.toggleNavigation();
 		}
 	},
@@ -535,13 +519,13 @@ SideNavigation.prototype = {
 
 		const width = options.width;
 
-		const closed =
-			typeof force === 'boolean' ? force : hasClass(container, 'closed');
+		const closed = typeof force === 'boolean' ? force : hasClass(container, 'closed');
 		const sidenavRight = instance._isSidenavRight();
 
 		if (closed) {
 			instance._emit('openStart.lexicon.sidenav');
-		} else {
+		}
+		else {
 			instance._emit('closedStart.lexicon.sidenav');
 		}
 
@@ -553,14 +537,15 @@ SideNavigation.prototype = {
 
 				setClasses(toggler, {
 					open: false,
-					'sidenav-transition': false
+					'sidenav-transition': false,
 				});
 
 				instance._emit('closed.lexicon.sidenav');
-			} else {
+			}
+			else {
 				setClasses(toggler, {
 					open: true,
-					'sidenav-transition': false
+					'sidenav-transition': false,
 				});
 
 				instance._emit('open.lexicon.sidenav');
@@ -576,14 +561,14 @@ SideNavigation.prototype = {
 			instance.setHeight();
 
 			setStyles(menu, {
-				width: px(width)
+				width: px(width),
 			});
 
 			const positionDirection = options.rtl ? 'left' : 'right';
 
 			if (sidenavRight) {
 				setStyles(menu, {
-					[positionDirection]: ''
+					[positionDirection]: '',
 				});
 			}
 		}
@@ -593,18 +578,19 @@ SideNavigation.prototype = {
 
 		if (closed) {
 			instance.showSidenav();
-		} else {
+		}
+		else {
 			instance.hideSidenav();
 		}
 
 		setClasses(container, {
 			closed: !closed,
-			open: closed
+			open: closed,
 		});
 
 		setClasses(toggler, {
 			active: closed,
-			open: closed
+			open: closed,
 		});
 	},
 
@@ -615,7 +601,8 @@ SideNavigation.prototype = {
 
 		if (simpleSidenavClosed) {
 			instance.showSimpleSidenav();
-		} else {
+		}
+		else {
 			instance.hideSimpleSidenav();
 		}
 	},
@@ -627,14 +614,11 @@ SideNavigation.prototype = {
 
 		if (instance.useDataAttribute) {
 			closed = instance._isSimpleSidenavClosed();
-		} else {
-			const container = document.querySelector(
-				instance.options.container
-			);
+		}
+		else {
+			const container = document.querySelector(instance.options.container);
 
-			closed = hasClass(container, 'sidenav-transition')
-				? !hasClass(container, 'closed')
-				: hasClass(container, 'closed');
+			closed = hasClass(container, 'sidenav-transition') ? !hasClass(container, 'closed') : hasClass(container, 'closed');
 		}
 
 		return !closed;
@@ -674,9 +658,10 @@ SideNavigation.prototype = {
 		const type = options.type;
 		const typeMobile = options.typeMobile;
 
-		if (desktop && type === 'fixed-push') {
+		if (desktop && (type === 'fixed-push')) {
 			return 'desktop-fixed-push';
-		} else if (!desktop && typeMobile === 'fixed-push') {
+		}
+		else if (!desktop && (typeMobile === 'fixed-push')) {
 			return 'mobile-fixed-push';
 		}
 
@@ -756,9 +741,7 @@ SideNavigation.prototype = {
 		const containerSelector = options.container;
 
 		if (!instance._sidenavCloseSubscription) {
-			const closeButton = document.querySelector(
-				`${containerSelector} .sidenav-close`
-			);
+			const closeButton = document.querySelector(`${containerSelector} .sidenav-close`);
 
 			instance._sidenavCloseSubscription = subscribe(
 				closeButton,
@@ -811,17 +794,18 @@ SideNavigation.prototype = {
 
 		if (closed) {
 			setStyles(menu, {
-				width: px(width)
+				width: px(width),
 			});
 
 			if (sidenavRight) {
 				const positionDirection = options.rtl ? 'left' : 'right';
 
 				setStyles(menu, {
-					[positionDirection]: px(width)
+					[positionDirection]: px(width),
 				});
 			}
-		} else {
+		}
+		else {
 			instance.showSidenav();
 			instance.setHeight();
 		}
@@ -841,12 +825,12 @@ SideNavigation.prototype = {
 			if (mobile) {
 				setClasses(container, {
 					closed: true,
-					open: false
+					open: false,
 				});
 
 				setClasses(toggler, {
 					active: false,
-					open: false
+					open: false,
 				});
 			}
 
@@ -863,7 +847,7 @@ SideNavigation.prototype = {
 
 		// Force Reflow for IE11 Browser Bug
 		setStyles(container, {
-			display: ''
+			display: '',
 		});
 	}
 };
@@ -918,8 +902,7 @@ const defaults = {
 	breakpoint: 768,
 	content: '.sidenav-content',
 	gutter: '15px',
-	loadingIndicatorTPL:
-		'<div class="loading-animation loading-animation-md"></div>',
+	loadingIndicatorTPL: '<div class="loading-animation loading-animation-md"></div>',
 	navigation: '.sidenav-menu-slider',
 	position: 'left',
 	type: 'relative',
@@ -937,7 +920,8 @@ function onReady() {
 if (document.readyState !== 'loading') {
 	// readyState is "interactive" or "complete".
 	onReady();
-} else {
+}
+else {
 	document.addEventListener('DOMContentLoaded', () => {
 		onReady();
 	});

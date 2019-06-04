@@ -132,8 +132,7 @@ function startListeningWidgetConfigurationChange(store) {
 		}
 
 		const configurationForm = event.win.document.querySelector(
-			'.portlet-configuration-setup'
-		);
+			'.portlet-configuration-setup');
 
 		if (configurationForm) {
 			submitFormHandler = event.win.Liferay.on('submitForm', () => {
