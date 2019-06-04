@@ -160,8 +160,13 @@
 
 			var els = content.add(navigation).add(menu);
 
-			for (var i = 0; i < attribute.length; i++) {
-				els.css(attribute[i], '');
+			if (Array.isArray(attribute)) {
+				for (var i = 0; i < attribute.length; i++) {
+					els.css(attribute[i], '');
+				}
+			}
+			else {
+				els.css(attribute, '');
 			}
 		},
 
