@@ -19,7 +19,7 @@
 				'resize',
 				debounce(
 					function(event) {
-						Liferay.fire('screenChange.lexicon.sidenav');
+						doc.trigger('screenChange.lexicon.sidenav');
 					},
 					150
 				)
@@ -791,7 +791,7 @@
 
 			var screenStartDesktop = instance._setScreenSize();
 
-			Liferay.on('screenChange.lexicon.sidenav', function(event) {
+			doc.on('screenChange.lexicon.sidenav', function(event) {
 				var desktop = instance._setScreenSize();
 				var sidenavRight = instance._isSidenavRight();
 				var type = desktop ? options.type : options.typeMobile;

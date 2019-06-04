@@ -474,7 +474,7 @@ renderResponse.setTitle((workflowDefinition == null) ? LanguageUtil.get(request,
 	sidenavSlider.on(
 		'open.lexicon.sidenav',
 		function(event) {
-			Liferay.fire('screenChange.lexicon.sidenav');
+			$(document).trigger('screenChange.lexicon.sidenav');
 		}
 	);
 </aui:script>
