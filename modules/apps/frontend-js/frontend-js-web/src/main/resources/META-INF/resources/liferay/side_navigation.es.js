@@ -851,7 +851,7 @@
 
 			var screenStartDesktop = instance._setScreenSize();
 
-			var screenChangeSubscription = Liferay.on('screenChange.lexicon.sidenav', function(event) {
+			Liferay.on('screenChange.lexicon.sidenav', function(event) {
 				var desktop = instance._setScreenSize();
 				var sidenavRight = instance._isSidenavRight();
 				var type = desktop ? options.type : options.typeMobile;
@@ -928,10 +928,6 @@
 					instance.showSidenav();
 					instance.setHeight();
 				}
-			});
-
-			Liferay.once('beforeScreenFlip', () => {
-				screenChangeSubscription.detach();
 			});
 		},
 
