@@ -778,6 +778,8 @@
 
 				$sidenav.data('url-loaded', urlLoaded);
 			}
+
+			return urlLoaded;
 		},
 
 		_onClickSidenavClose: function() {
