@@ -170,7 +170,7 @@
 
 			var options = instance.options;
 
-			var container = $(options.container);
+			var container = $(instance.options.container);
 
 			// Detach sidenav close
 
