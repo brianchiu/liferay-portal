@@ -392,7 +392,7 @@
 			var url = options.url;
 
 			if (url) {
-				instance._loadUrl($menu, url);
+				instance._loadUrl($menu, url, $container);
 			}
 
 			$navigation.css('width', width);
@@ -703,13 +703,14 @@
 			return !$container.hasClass(openClass);
 		},
 
-		_loadUrl: function($sidenav, url) {
+		_loadUrl: function($sidenav, url, $eventTarget) {
 			var instance = this;
 
 			var urlLoaded = $sidenav.data('url-loaded');
 
 			var readyState = urlLoaded ? urlLoaded.readyState : 0;
 
+			$eventTarget = $eventTarget || sidenav;
 			var $sidebarBody = $sidenav.find('.sidebar-body').first();
 
 			if (!readyState && $sidebarBody.length && (typeof url === 'string' || $.isPlainObject(url))) {
