@@ -168,6 +168,21 @@ class ManagementToolbar extends ClayComponent {
 	}
 
 	/**
+	 * Toggles the info panel
+	 * @param {!Event} event
+	 * @private
+	 */
+
+	_handleInfoButtonClicked(event) {
+		event.preventDefault();
+		event.stopPropagation();
+
+		if (this._sidenavInstance) {
+			this._sidenavInstance.toggle();
+		}
+	}
+
+	/**
 	 * Toggles all searchContainer rows
 	 * @param {!Event} event
 	 * @private

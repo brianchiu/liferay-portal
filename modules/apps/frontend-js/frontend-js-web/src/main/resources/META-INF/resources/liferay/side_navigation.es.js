@@ -98,20 +98,6 @@
 		}
 	}
 
-	function subscribe(element, eventName, handler) {
-		if (element) {
-			element.addEventListener(eventName, handler);
-
-			return {
-				dispose() {
-					element.removeEventListener(eventName, handler);
-				}
-			};
-		}
-
-		return null;
-	}
-
 	var $doc = $(document);
 
 	var listenerAdded = false;
@@ -276,15 +262,15 @@
 
 			var $container = $(options.container);
 
-			if (instance._sidenavCloseSubscription) {
-				instance._sidenavCloseSubscription.dispose();
-				instance._sidenavCloseSubscription = null;
-			}
+			// Detach sidenav close
 
-			if (instance._togglerSubscription) {
-				instance._togglerSubscription.dispose();
-				instance._togglerSubscription = null;
-			}
+			$doc.off('click.close.lexicon.sidenav', instance.closeButtonSelector);
+			$doc.data(instance.dataCloseButtonSelector, null);
+
+			// Detach toggler
+
+			$doc.off('click.lexicon.sidenav', instance.togglerSelector);
+			$doc.data(instance.dataTogglerSelector, null);
 
 			// Remove Side Navigation
 
@@ -814,18 +800,22 @@
 
 			var containerSelector = options.container;
 
-			if (!instance._sidenavCloseSubscription) {
-				const closeButton = document.querySelector(`${containerSelector} .sidenav-close`);
+			var $closeButton = $(containerSelector).find('.sidenav-close').first();
+			var closeButtonSelector = getUniqueSelector($closeButton);
+			var dataCloseButtonSelector = 'lexicon.' + closeButtonSelector;
 
-				instance._sidenavCloseSubscription = subscribe(
-					closeButton,
-					'click',
-					function handleSidenavClose(event) {
-						event.preventDefault();
-						instance.toggle();
-					}
-				);
+			if (!$doc.data(dataCloseButtonSelector)) {
+				$doc.data(dataCloseButtonSelector, 'true');
+
+				$doc.on('click.close.lexicon.sidenav', closeButtonSelector, function(event) {
+					event.preventDefault();
+
+					instance.toggle();
+				});
 			}
+
+			instance.closeButtonSelector = closeButtonSelector;
+			instance.dataCloseButtonSelector = dataCloseButtonSelector;
 		},
 
 		_onClickTrigger: function() {
@@ -835,13 +825,15 @@
 
 			var togglerSelector = getUniqueSelector($toggler);
 
-			if (!instance._togglerSubscription) {
-				const toggler = document.querySelector(togglerSelector);
+			var dataTogglerSelector = 'lexicon.' + togglerSelector;
 
-				instance._togglerSubscription = subscribe(
-					toggler,
-					'click',
-					function handleTogglerClick(event) {
+			if (!$doc.data(dataTogglerSelector)) {
+				$doc.data(dataTogglerSelector, 'true');
+
+				$doc.on(
+					'click.lexicon.sidenav',
+					togglerSelector,
+					function(event) {
 						instance.toggle();
 
 						event.preventDefault();
@@ -850,6 +842,7 @@
 			}
 
 			instance.togglerSelector = togglerSelector;
+			instance.dataTogglerSelector = dataTogglerSelector;
 		},
 
 		_onScreenChange: function() {
