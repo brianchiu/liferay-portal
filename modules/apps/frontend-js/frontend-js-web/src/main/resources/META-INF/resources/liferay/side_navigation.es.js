@@ -47,9 +47,6 @@
 		if (element) {
 			// One at a time because IE 11: https://caniuse.com/#feat=classlist
 			Object.entries(classes).forEach(([className, present]) => {
-				// Some callers use multiple space-separated classNames for
-				// `openClass`/`data-open-class`. (Looking at you,
-				// product-navigation-simulation-web...)
 				className.split(/\s+/).forEach(name => {
 					if (present) {
 						element.classList.add(name);
@@ -59,15 +56,6 @@
 				});
 			});
 		}
-	}
-
-	function hasClass(element, className) {
-		element = getElement(element);
-
-		// Again, product-navigation-simulation-web passes multiple classNames.
-		return className.split(/\s+/).every(name => {
-			return element.classList.contains(name);
-		});
 	}
 
 	var $doc = $(document);
@@ -316,7 +304,7 @@
 					});
 				});
 
-				if (hasClass($content, openClass)) {
+				if ($content.hasClass(openClass)) {
 					setClasses($content, {
 						'sidenav-transition': true,
 						[closedClass]: true,
@@ -422,7 +410,7 @@
 			var type = mobile ? options.typeMobile : options.type;
 
 			if (type !== 'fixed') {
-				var navigationStartX = hasClass($container, 'open') ? $navigation.offset().left - options.gutter : $navigation.offset().left - offset;
+				var navigationStartX = $container.hasClass('open') ? $navigation.offset().left - options.gutter : $navigation.offset().left - offset;
 
 				var contentStartX = $content.offset().left;
 				var contentWidth = $content.innerWidth();
@@ -526,7 +514,7 @@
 
 			var width = options.width;
 
-			var closed = $.type(force) === 'boolean' ? force : hasClass($container, 'closed');
+			var closed = $.type(force) === 'boolean' ? force : $container.hasClass('closed');
 			var sidenavRight = instance._isSidenavRight();
 
 			if (closed) {
@@ -545,7 +533,7 @@
 			instance._onSidenavTransitionEnd($container, function() {
 				var $menu = $container.find('.sidenav-menu').first();
 
-				if (hasClass($container, 'closed')) {
+				if ($container.hasClass('closed')) {
 					instance.clearStyle(['min-height', 'height']);
 
 					setClasses($toggler, {
@@ -631,7 +619,7 @@
 			else {
 				var $container = $(instance.options.container);
 
-				closed = hasClass($container, 'sidenav-transition') ? !hasClass($container, 'closed') : hasClass($container, 'closed');
+				closed = $container.hasClass('sidenav-transition') ? !$container.hasClass('closed') : $container.hasClass('closed');
 			}
 
 			return !closed;
@@ -695,7 +683,7 @@
 			var options = instance.options;
 
 			var $container = $(options.container);
-			var isSidenavRight = hasClass($container, 'sidenav-right');
+			var isSidenavRight = $container.hasClass('sidenav-right');
 
 			return isSidenavRight;
 		},
@@ -708,7 +696,7 @@
 
 			var $container = $(options.container);
 
-			return !hasClass($container, openClass);
+			return !$container.hasClass(openClass);
 		},
 
 		_loadUrl: function($sidenav, url) {
@@ -844,7 +832,7 @@
 					}
 				}
 
-				var closed = hasClass($container, 'closed');
+				var closed = $container.hasClass('closed');
 
 				if (!desktop) {
 					menuWidth = originalMenuWidth;
@@ -905,7 +893,7 @@
 			var $slider = $container.find(options.navigation).first();
 			var $menu = $slider.find('.sidenav-menu').first();
 
-			var closed = hasClass($container, 'closed');
+			var closed = $container.hasClass('closed');
 			var sidenavRight = instance._isSidenavRight();
 			var width = instance._getSidenavWidth();
 
