@@ -896,8 +896,6 @@
 		return instance;
 	};
 
-	SideNavigation.instance = getInstance;
-
 	function Plugin(options) {
 		const instance = this;
 

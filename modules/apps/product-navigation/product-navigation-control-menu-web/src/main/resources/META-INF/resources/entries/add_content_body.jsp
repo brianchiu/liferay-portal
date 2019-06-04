@@ -41,9 +41,9 @@
 	</div>
 
 	<aui:script use="liferay-store,io-request,parse-content">
-		var addToggle = document.getElementById('<%= portletNamespace %>addToggleId');
+		var addToggle = $('#<%= portletNamespace %>addToggleId');
 
-		SideNavigation.initialize(addToggle);
+		addToggle.sideNavigation();
 
 		Liferay.once(
 			'screenLoad',

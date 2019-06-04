@@ -49,9 +49,9 @@ String productMenuState = SessionClicks.get(request, ProductNavigationProductMen
 </div>
 
 <aui:script use="liferay-store,io-request,parse-content">
-	var sidenavToggle = document.getElementById('<portlet:namespace />sidenavToggleId');
+	var sidenavToggle = $('#<portlet:namespace />sidenavToggleId');
 
-	SideNavigation.initialize(sidenavToggle);
+	sidenavToggle.sideNavigation();
 
 	Liferay.once(
 		'screenLoad',
@@ -77,6 +77,6 @@ String productMenuState = SessionClicks.get(request, ProductNavigationProductMen
 	);
 
 	if (Liferay.Util.isPhone() && ($('body').hasClass('open'))) {
-		SideNavigation.hide(sidenavToggle);
+		sidenavToggle.sideNavigation('hide');
 	}
 </aui:script>

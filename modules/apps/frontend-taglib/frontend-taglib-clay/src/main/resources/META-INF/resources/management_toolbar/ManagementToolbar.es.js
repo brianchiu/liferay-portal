@@ -67,16 +67,20 @@ class ManagementToolbar extends ClayComponent {
 		}
 
 		if (this.infoPanelId) {
-			const sidenavToggle = this.refs.managementToolbar.refs.infoButton;
+			let sidenavToggle = AUI.$(
+				this.refs.managementToolbar.refs.infoButton
+			);
 
-			if (sidenavToggle) {
-				SideNavigation.initialize(sidenavToggle, {
+			if (!sidenavToggle.sideNavigation('instance')) {
+				sidenavToggle.sideNavigation({
 					container: '#' + this.infoPanelId,
 					position: 'right',
 					type: 'relative',
 					typeMobile: 'fixed',
 					width: '320px'
 				});
+
+				sidenavToggle.sideNavigation('instance');
 			}
 		}
 	}
