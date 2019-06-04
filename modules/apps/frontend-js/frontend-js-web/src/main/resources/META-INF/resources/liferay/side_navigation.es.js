@@ -763,7 +763,7 @@
 
 			var $sidebarBody = $sidenav.find('.sidebar-body').first();
 
-			if (!readyState && $sidebarBody.length) {
+			if (!readyState && $sidebarBody.length && (typeof url === 'string' || $.isPlainObject(url))) {
 				$sidebarBody.append('<div class="sidenav-loading">' + instance.options.loadingIndicatorTPL + '</div>');
 
 				urlLoaded = $.ajax(url).done(
