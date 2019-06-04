@@ -114,6 +114,24 @@
 
 	let selectorCounter = 0;
 
+	/**
+	 * Returns a unique ID-based selector for the supplied element,
+	 * creating one and assigning it to the element if necessary.
+	 */
+	function getUniqueSelector(element) {
+		element = getElement(element);
+
+		let id = element.id
+
+		if (!id) {
+			id = 'generatedSideNavId__' + selectorCounter++;
+
+			element.id = id;
+		}
+
+		return `#${id}`;
+	}
+
 	function toInt(str) {
 		return parseInt(str, 10) || 0;
 	}
@@ -154,7 +172,6 @@
 			}
 
 			instance.$toggler = $toggler;
-			instance.toggler = getElement($toggler);
 			instance.options = options;
 			instance.useDataAttribute = useDataAttribute;
 
@@ -268,6 +285,7 @@
 				const target = $toggler.attr('data-target') || $toggler.attr('href');
 
 				$sidenav.trigger({
+					toggler: $(instance.togglerSelector),
 					type: 'closedStart.lexicon.sidenav'
 				});
 
@@ -276,6 +294,7 @@
 					removeClass($toggler, 'sidenav-transition');
 
 					$sidenav.trigger({
+						toggler: $(instance.togglerSelector),
 						type: 'closed.lexicon.sidenav'
 					});
 				});
@@ -445,6 +464,7 @@
 				}
 
 				$sidenav.trigger({
+					toggler: $(instance.togglerSelector),
 					type: 'openStart.lexicon.sidenav'
 				});
 
@@ -453,6 +473,7 @@
 					removeClass($toggler, 'sidenav-transition');
 
 					$sidenav.trigger({
+						toggler: $(instance.togglerSelector),
 						type: 'open.lexicon.sidenav'
 					});
 				});
@@ -501,11 +522,13 @@
 
 			if (closed) {
 				$container.trigger({
+					toggler: $toggler,
 					type: 'openStart.lexicon.sidenav'
 				});
 			}
 			else {
 				$container.trigger({
+					toggler: $toggler,
 					type: 'closedStart.lexicon.sidenav'
 				});
 			}
@@ -522,6 +545,7 @@
 					});
 
 					$container.trigger({
+						toggler: $toggler,
 						type: 'closed.lexicon.sidenav'
 					});
 				}
@@ -532,6 +556,7 @@
 					});
 
 					$container.trigger({
+						toggler: $toggler,
 						type: 'open.lexicon.sidenav'
 					});
 				}
@@ -730,8 +755,12 @@
 		_subscribeClickTrigger: function() {
 			const instance = this;
 
+			const $toggler = instance.$toggler;
+
+			const togglerSelector = getUniqueSelector($toggler);
+
 			if (!instance._togglerSubscription) {
-				const toggler = instance.toggler;
+				const toggler = document.querySelector(togglerSelector);
 
 				instance._togglerSubscription = subscribe(
 					toggler,
@@ -743,6 +772,8 @@
 					}
 				);
 			}
+
+			instance.togglerSelector = togglerSelector;
 		},
 
 		_subscribeSidenavTransitionEnd: function($el, fn) {
