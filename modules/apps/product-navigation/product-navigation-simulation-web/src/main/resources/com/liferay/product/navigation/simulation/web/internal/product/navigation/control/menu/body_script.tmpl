@@ -21,6 +21,10 @@ simulationPanel.on(
 Liferay.once(
 	'screenLoad',
 	function() {
-		SideNavigation.destroy(simulationToggle);
+		var sideNavigation = simulationToggle.data('lexicon.sidenav');
+
+		if (sideNavigation) {
+			sideNavigation.destroy();
+		}
 	}
 );

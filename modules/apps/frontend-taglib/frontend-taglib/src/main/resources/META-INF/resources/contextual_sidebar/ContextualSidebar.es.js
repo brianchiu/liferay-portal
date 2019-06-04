@@ -73,7 +73,7 @@ class ContextualSidebar extends Component {
 		if (this.visible) {
 			document.body.classList.add('contextual-sidebar-visible');
 
-			SideNavigation.hide(this._productMenuToggle);
+			this._productMenuToggle.sideNavigation('hide');
 		} else {
 			document.body.classList.remove('contextual-sidebar-visible');
 		}

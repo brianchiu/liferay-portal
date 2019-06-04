@@ -38,7 +38,7 @@ class FragmentsEditorSidebar extends Component {
 	 */
 	rendered() {
 		if (this.selectedSidebarPanelId) {
-			SideNavigation.hide(this._productMenuToggle);
+			this._productMenuToggle.sideNavigation('hide');
 		}
 	}
 

@@ -34,14 +34,6 @@
 		return element;
 	}
 
-	function getInstance(element) {
-		element = getElement(element);
-
-		const instance = INSTANCE_MAP.get(element);
-
-		return instance;
-	}
-
 	function addClass(element, className) {
 		setClasses(element, {
 			[className]: true,
@@ -866,21 +858,8 @@
 		}
 	};
 
-	SideNavigation.destroy = function destroy(element) {
-		const instance = getInstance(element);
 
-		if (instance) {
-			instance.destroy();
-		}
-	};
 
-	SideNavigation.hide = function hide(element) {
-		const instance = getInstance(element);
-
-		if (instance) {
-			instance.hide();
-		}
-	};
 
 	function initialize(toggler, options = {}) {
 		let instance = INSTANCE_MAP.get(toggler);
@@ -990,9 +969,4 @@
 			initialize(element);
 		});
 	});
-
-	/**
-	 * Make SideNavigation globally available as a transitional aid.
-	 */
-	window.SideNavigation = SideNavigation;
 }(jQuery);

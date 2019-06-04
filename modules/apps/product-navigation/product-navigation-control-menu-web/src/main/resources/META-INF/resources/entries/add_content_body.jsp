@@ -48,7 +48,11 @@
 		Liferay.once(
 			'screenLoad',
 			function() {
-				SideNavigation.destroy(addToggle);
+				var sideNavigation = addToggle.data('lexicon.sidenav');
+
+				if (sideNavigation) {
+					sideNavigation.destroy();
+				}
 			}
 		);
 	</aui:script>
