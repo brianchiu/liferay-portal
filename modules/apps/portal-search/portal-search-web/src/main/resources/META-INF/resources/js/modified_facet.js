@@ -1,6 +1,8 @@
 AUI.add(
 	'liferay-search-modified-facet',
 	function(A) {
+		var FacetUtil = Liferay.Search.FacetUtil;
+
 		var ModifiedFacetFilter = function(
 			form,
 			fromInputDatePicker,
@@ -27,11 +29,15 @@ AUI.add(
 
 				var toDate = instance.toInputDatePicker.getDate();
 
-				var modifiedFromParameter = fromDate.toISOString().slice(0, 10);
+				var modifiedFromParameter = ModifiedFacetFilterUtil.toLocaleDateStringFormatted(
+					fromDate
+				);
 
-				var modifiedToParameter = toDate.toISOString().slice(0, 10);
+				var modifiedToParameter = ModifiedFacetFilterUtil.toLocaleDateStringFormatted(
+					toDate
+				);
 
-				var param = Liferay.Search.ModifiedFacetFilterUtil.getParameterName();
+				var param = ModifiedFacetFilterUtil.getParameterName();
 				var paramFrom = param + 'From';
 				var paramTo = param + 'To';
 
@@ -39,34 +45,34 @@ AUI.add(
 					.substr(1)
 					.split('&');
 
-				parameterArray = Liferay.Search.FacetUtil.removeURLParameters(
+				parameterArray = FacetUtil.removeURLParameters(
 					param,
 					parameterArray
 				);
 
-				parameterArray = Liferay.Search.FacetUtil.removeURLParameters(
+				parameterArray = FacetUtil.removeURLParameters(
 					paramFrom,
 					parameterArray
 				);
 
-				parameterArray = Liferay.Search.FacetUtil.removeURLParameters(
+				parameterArray = FacetUtil.removeURLParameters(
 					paramTo,
 					parameterArray
 				);
 
-				parameterArray = Liferay.Search.FacetUtil.addURLParameter(
+				parameterArray = FacetUtil.addURLParameter(
 					paramFrom,
 					modifiedFromParameter,
 					parameterArray
 				);
 
-				parameterArray = Liferay.Search.FacetUtil.addURLParameter(
+				parameterArray = FacetUtil.addURLParameter(
 					paramTo,
 					modifiedToParameter,
 					parameterArray
 				);
 
-				document.location.search = parameterArray.join('&');
+				ModifiedFacetFilterUtil.submitSearch(parameterArray.join('&'));
 			}
 		});
 
@@ -74,7 +80,7 @@ AUI.add(
 
 		var ModifiedFacetFilterUtil = {
 			clearSelections: function(event) {
-				var param = Liferay.Search.ModifiedFacetFilterUtil.getParameterName();
+				var param = this.getParameterName();
 				var paramFrom = param + 'From';
 				var paramTo = param + 'To';
 
@@ -82,26 +88,45 @@ AUI.add(
 					.substr(1)
 					.split('&');
 
-				parameterArray = Liferay.Search.FacetUtil.removeURLParameters(
+				parameterArray = FacetUtil.removeURLParameters(
 					param,
 					parameterArray
 				);
 
-				parameterArray = Liferay.Search.FacetUtil.removeURLParameters(
+				parameterArray = FacetUtil.removeURLParameters(
 					paramFrom,
 					parameterArray
 				);
 
-				parameterArray = Liferay.Search.FacetUtil.removeURLParameters(
+				parameterArray = FacetUtil.removeURLParameters(
 					paramTo,
 					parameterArray
 				);
 
-				document.location.search = parameterArray.join('&');
+				this.submitSearch(parameterArray.join('&'));
 			},
 
 			getParameterName: function() {
 				return 'modified';
+			},
+
+			submitSearch: function(parameterString) {
+				document.location.search = parameterString;
+			},
+
+			/**
+			 * Formats a date to 'YYYY-MM-DD' format.
+			 * @param {Date} date The date to format.
+			 * @returns {String} The date string.
+			 */
+			toLocaleDateStringFormatted: function(date) {
+				var localDate = new Date(date);
+
+				localDate.setMinutes(
+					date.getMinutes() - date.getTimezoneOffset()
+				);
+
+				return localDate.toISOString().split('T')[0];
 			}
 		};
 

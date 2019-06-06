@@ -14,6 +14,8 @@
 
 package com.liferay.portal.vulcan.internal.jaxrs.validation;
 
+import com.liferay.portal.kernel.util.ListUtil;
+
 import java.io.IOException;
 
 import java.lang.reflect.Method;
@@ -118,7 +120,7 @@ public class BeanValidationInterceptor
 		Message message, Object resourceInstance, Method method,
 		List<Object> arguments) {
 
-		if (arguments.isEmpty()) {
+		if (ListUtil.isEmpty(arguments)) {
 			return;
 		}
 
