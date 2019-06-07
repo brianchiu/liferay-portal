@@ -1,1 +1,8 @@
-{"jsPath":"index.js","htmlPath":"index.html","cssPath":"index.css","name":"Tags Cloud","thumbnailPath":"thumbnail.png","type":"section"}
+{
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"jsPath": "index.js",
+	"name": "Tags Cloud",
+	"thumbnailPath": "thumbnail.png",
+	"type": "section"
+}

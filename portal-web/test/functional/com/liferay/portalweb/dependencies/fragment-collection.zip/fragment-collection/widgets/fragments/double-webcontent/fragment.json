@@ -1,1 +1,8 @@
-{"jsPath":"index.js","htmlPath":"index.html","cssPath":"index.css","name":"Double Webcontent","thumbnailPath":"thumbnail.png","type":"section"}
+{
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"jsPath": "index.js",
+	"name": "Double Webcontent",
+	"thumbnailPath": "thumbnail.png",
+	"type": "section"
+}

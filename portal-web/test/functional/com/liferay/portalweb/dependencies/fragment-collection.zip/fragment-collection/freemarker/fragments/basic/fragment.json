@@ -1,1 +1,8 @@
-{"jsPath":"index.js","htmlPath":"index.html","cssPath":"index.css","name":"Basic","thumbnailPath":"thumbnail.png","type":"component"}
+{
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"jsPath": "index.js",
+	"name": "Basic",
+	"thumbnailPath": "thumbnail.png",
+	"type": "component"
+}
