@@ -59,6 +59,7 @@ import java.util.ResourceBundle;
 
 import javax.portlet.PortletPreferences;
 
+import com.liferay.portlet.PortletPreferencesImpl;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -446,13 +447,10 @@ public class PortletFragmentEntryProcessor implements FragmentEntryProcessor {
 
 		long plid = 0L;
 
-		if (jxPortletPreferences instanceof
-				com.liferay.portal.kernel.model.PortletPreferences) {
+		if (jxPortletPreferences instanceof PortletPreferencesImpl) {
 
-			com.liferay.portal.kernel.model.PortletPreferences
-				portletPreferences =
-					(com.liferay.portal.kernel.model.PortletPreferences)
-						jxPortletPreferences;
+			PortletPreferencesImpl portletPreferences =
+				(PortletPreferencesImpl) jxPortletPreferences;
 
 			plid = portletPreferences.getPlid();
 		}
