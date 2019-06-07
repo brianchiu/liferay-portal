@@ -175,6 +175,10 @@ definition {
 			Button.click(button = "Import");
 		}
 
+		task ("Assert the zip imported properly") {
+			AssertElementNotPresent(locator1 = "Message#ERROR");
+		}
+
 		task ("Assert that all fragments validated") {
 			AssertElementNotPresent(
 				key_infoMessage = "The following fragments have validation issues",
