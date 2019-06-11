@@ -62,6 +62,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -359,6 +360,10 @@ public class FjordSiteInitializer implements SiteInitializer {
 		if (draftLayout != null) {
 			_layoutCopyHelper.copyLayout(draftLayout, layout);
 		}
+
+		_layoutLocalService.updateLayout(
+			layout.getGroupId(), layout.isPrivateLayout(), layout.getLayoutId(),
+			new Date());
 	}
 
 	private ServiceContext _createServiceContext(long groupId)
