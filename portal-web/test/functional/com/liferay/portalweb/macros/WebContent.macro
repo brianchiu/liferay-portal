@@ -218,12 +218,6 @@ definition {
 			webContentContent = "${webContentContent}",
 			webContentTitle = "${webContentTitle}");
 
-		if (isSet(templateName)) {
-			WebContent.selectTemplateCP(
-				structureName = "Basic Web Content",
-				templateName = "${templateName}");
-		}
-
 		Button.clickPublish();
 	}
 
@@ -368,12 +362,6 @@ definition {
 			key_fieldName = "${fieldName}",
 			locator1 = "TextInput#DDM",
 			value1 = "${webContentContent}");
-
-		if (isSet(templateName)) {
-			WebContent.selectTemplateCP(
-				structureName = "${structureName}",
-				templateName = "${templateName}");
-		}
 
 		Click(locator1 = "Button#PUBLISH");
 
@@ -589,12 +577,6 @@ definition {
 
 		if (isSet(description)) {
 			AlloyEditor.addDescription(description = "${description}");
-		}
-
-		if (isSet(templateName)) {
-			WebContent.selectTemplateCP(
-				structureName = "${structureName}",
-				templateName = "${templateName}");
 		}
 
 		if ("${saveAsDraft}" == "true") {
