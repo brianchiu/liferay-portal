@@ -17,7 +17,7 @@
 <%@ include file="/init.jsp" %>
 
 <%
-long fragmentEntryId = ParamUtil.getLong(renderRequest, "fragmentEntryId");
+long fragmentEntryId = ParamUtil.getLong(request, "fragmentEntryId");
 
 FragmentEntry fragmentEntry = FragmentEntryLocalServiceUtil.fetchFragmentEntry(fragmentEntryId);
 
