@@ -40,6 +40,9 @@ import com.liferay.taglib.servlet.PipingServletResponse;
 
 import java.net.URL;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -129,9 +132,12 @@ public class RenderFragmentEntryStrutsActionTest {
 		URL renderedUrl = _bundle.getEntry(
 			_RESOURCES_PATH + "render/simple.html");
 
-		Assert.assertEquals(
-			StringUtil.read(renderedUrl.openStream()),
-			unsyncStringWriter.toString());
+		String actualHTML = _getHTML(unsyncStringWriter.toString());
+
+		String expectedHTML = _getHTML(
+			StringUtil.read(renderedUrl.openStream()));
+
+		Assert.assertEquals(expectedHTML, actualHTML);
 	}
 
 	@Test(expected = PrincipalException.class)
@@ -151,6 +157,18 @@ public class RenderFragmentEntryStrutsActionTest {
 
 		_renderFragmentEntryStrutsAction.execute(
 			mockHttpServletRequest, mockHttpServletResponse);
+	}
+
+	private String _getHTML(String html) {
+		Document document = Jsoup.parseBodyFragment(html);
+
+		Document.OutputSettings outputSettings = new Document.OutputSettings();
+
+		outputSettings.prettyPrint(true);
+
+		document.outputSettings(outputSettings);
+
+		return document.html();
 	}
 
 	private void _setUpEnvironment(
