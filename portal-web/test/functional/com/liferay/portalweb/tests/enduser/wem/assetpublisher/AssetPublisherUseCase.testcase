@@ -422,7 +422,7 @@ definition {
 	test AssetPublisherFilterAndOrderByFieldType {
 		property testray.component.names = "Training";
 
-		WebContent.openWebContentAdmin(siteURLKey = "site-name");
+		WebContent.openWebContentAdmin(siteURLKey = "test-site-name");
 
 		NavItem.gotoStructures();
 
