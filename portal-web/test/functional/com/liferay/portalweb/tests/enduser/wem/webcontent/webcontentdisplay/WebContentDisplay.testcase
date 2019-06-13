@@ -227,6 +227,10 @@ definition {
 	test AddNewWebContentViaAddContentPanel {
 		property testray.component.names = "Web Content Display";
 
+		Navigator.gotoSitePage(
+			pageName = "Web Content Display Page",
+			siteName = "Test Site Name");
+
 		ProductMenu.gotoPortlet(
 			category = "Site Builder",
 			panel = "Site Administration",
@@ -342,6 +346,10 @@ definition {
 	test AddWebContentPortalScopeCurrentPage {
 		property testray.component.names = "Web Content Display";
 
+		Navigator.gotoSitePage(
+			pageName = "Web Content Display Page",
+			siteName = "Test Site Name");
+
 		for (var i : list "1,2") {
 			ProductMenu.gotoPortlet(
 				category = "Site Builder",
@@ -423,10 +431,7 @@ definition {
 	test AddWebContentViaAddContentPanel {
 		property testray.component.names = "Web Content Display,Training";
 
-		ProductMenu.gotoPortlet(
-			category = "Content &amp; Data",
-			panel = "Site Administration",
-			portlet = "Web Content");
+		WebContent.openWebContentAdmin(siteURLKey = "test-site-name");
 
 		WebContentNavigator.gotoAddCP();
 
@@ -1151,10 +1156,7 @@ definition {
 	test ViewWebContentDisplayPortletMessages {
 		property testray.component.names = "Web Content Display";
 
-		ProductMenu.gotoPortlet(
-			category = "Content &amp; Data",
-			panel = "Site Administration",
-			portlet = "Web Content");
+		WebContent.openWebContentAdmin(siteURLKey = "test-site-name");
 
 		WebContentNavigator.gotoAddCP();
 
