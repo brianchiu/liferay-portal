@@ -105,15 +105,17 @@ String redirect = PortalUtil.getLayoutFullURL(layout, themeDisplay);
 
 <aui:script>
 	function <portlet:namespace />addAssetEntry() {
-		const visibleItem = document.querySelector('.asset-entry-type:not(.hide)');
+		var A = AUI();
 
-		const assetEntryTypeSelector = visibleItem.querySelector('.asset-entry-type-select');
+		var visibleItem = A.one('.asset-entry-type:not(.hide)');
 
-		const selectedOption = assetEntryTypeSelector.options[
-			assetEntryTypeSelector.selectedIndex
-		];
+		var assetEntryTypeSelector = visibleItem.one('.asset-entry-type-select');
 
-		const url = selectedOption.getAttribute('data-url');
+		var index = assetEntryTypeSelector.get('selectedIndex');
+
+		var selectedOption = assetEntryTypeSelector.get('options').item(index);
+
+		var url = selectedOption.attr('data-url');
 
 		Liferay.Util.navigate(url);
 	}
