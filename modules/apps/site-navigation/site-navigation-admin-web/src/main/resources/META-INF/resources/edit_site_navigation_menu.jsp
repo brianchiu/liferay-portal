@@ -291,10 +291,11 @@ sb.append("/js/SiteNavigationMenuItemDOMHandler.es as siteNavigationMenuItemDOMH
 			}
 		);
 
-		Liferay.Util.fetch(
+		fetch(
 			url,
 			{
 				body: formData,
+				credentials: 'include',
 				method: 'POST'
 			}
 		).then(
