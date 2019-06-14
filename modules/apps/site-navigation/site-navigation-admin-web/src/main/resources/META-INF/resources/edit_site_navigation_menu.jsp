@@ -173,11 +173,16 @@ sb.append("/js/SiteNavigationMenuItemDOMHandler.es as siteNavigationMenuItemDOMH
 		}
 
 		if (saveChanges) {
-			const sidebarForm = document.querySelector('#<portlet:namespace />sidebarBody form');
+			AUI().use(
+				['aui-base'],
+				function(A) {
+					var form = A.one('#<portlet:namespace />sidebarBody form');
 
-			if (sidebarForm) {
-				sidebarForm.submit();
-			}
+					if (form) {
+						form.submit();
+					}
+				}
+			);
 		}
 		else {
 			if (sidebarHeaderButtonClickEventListener) {
