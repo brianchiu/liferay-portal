@@ -209,12 +209,32 @@ sb.append("/js/SiteNavigationMenuItemDOMHandler.es as siteNavigationMenuItemDOMH
 			return;
 		}
 
-		openSidebar(
-			siteNavigationMenuItem.dataset.title,
-			'<portlet:renderURL windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>"><portlet:param name="mvcPath" value="/edit_site_navigation_menu_item.jsp" /></portlet:renderURL>',
+		var data = Liferay.Util.ns(
+			'<portlet:namespace />',
 			{
 				redirect: '<%= currentURL %>',
 				siteNavigationMenuItemId: siteNavigationMenuItem.dataset.siteNavigationMenuItemId
+			}
+		);
+
+		openSidebar(siteNavigationMenuItem.dataset.title);
+
+		AUI().use(
+			['aui-base'],
+			function(A) {
+				A.io.request(
+					'<portlet:renderURL windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>"><portlet:param name="mvcPath" value="/edit_site_navigation_menu_item.jsp" /></portlet:renderURL>',
+					{
+						data: data,
+						on: {
+							success: function(event, id, obj) {
+								var responseData = this.get('responseData');
+
+								setSidebarBody(responseData);
+							}
+						}
+					}
+				);
 			}
 		);
 	};
@@ -243,14 +263,34 @@ sb.append("/js/SiteNavigationMenuItemDOMHandler.es as siteNavigationMenuItemDOMH
 			return;
 		}
 
-		siteNavigationMenuItemDOMHandlerModule.unselectAll();
-
-		openSidebar(
-			'<%= HtmlUtil.escape(siteNavigationAdminDisplayContext.getSiteNavigationMenuName()) %>',
-			'<portlet:renderURL windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>"><portlet:param name="mvcPath" value="/site_navigation_menu_settings.jsp" /></portlet:renderURL>',
+		var data = Liferay.Util.ns(
+			'<portlet:namespace />',
 			{
 				redirect: '<%= currentURL %>',
-				siteNavigationMenuId: '<%= siteNavigationAdminDisplayContext.getSiteNavigationMenuId() %>'
+				siteNavigationMenuId: <%= siteNavigationAdminDisplayContext.getSiteNavigationMenuId() %>
+			}
+		);
+
+		siteNavigationMenuItemDOMHandlerModule.unselectAll();
+
+		openSidebar('<%= HtmlUtil.escape(siteNavigationAdminDisplayContext.getSiteNavigationMenuName()) %>');
+
+		AUI().use(
+			['aui-base'],
+			function(A) {
+				A.io.request(
+					'<portlet:renderURL windowState="<%= LiferayWindowState.EXCLUSIVE.toString() %>"><portlet:param name="mvcPath" value="/site_navigation_menu_settings.jsp" /></portlet:renderURL>',
+					{
+						data: data,
+						on: {
+							success: function(event, id, obj) {
+								var responseData = this.get('responseData');
+
+								setSidebarBody(responseData);
+							}
+						}
+					}
+				);
 			}
 		);
 	};
@@ -276,50 +316,29 @@ sb.append("/js/SiteNavigationMenuItemDOMHandler.es as siteNavigationMenuItemDOMH
 		}
 	};
 
-	var openSidebar = function(title, url, data) {
+	var openSidebar = function(title) {
 		sidebar.body = '<div id="<portlet:namespace />sidebarBody"><div class="loading-animation"></div></div>';
 		sidebar.header = '<div class="autofit-row sidebar-section"><div class="autofit-col autofit-col-expand"><h4 class="component-title"><span class="text-truncate-inline"><span class="text-truncate">' + title + '</span></span></h4></div><div class="autofit-col"><button class="btn btn-monospaced btn-unstyled" id="<portlet:namespace />sidebarHeaderButton" type="button"><span class="icon-monospaced"><aui:icon image="times" markupView="lexicon" /></span></button></div></div>';
 		sidebar.visible = true;
+	};
 
-		const formData = new FormData();
+	var setSidebarBody = function(content) {
+		AUI().use(
+			['aui-base', 'aui-parse-content'],
+			function(A) {
+				var sidebarBody = A.one('#<portlet:namespace />sidebarBody');
+				var sidebarHeaderButton = A.one('#<portlet:namespace />sidebarHeaderButton');
 
-		Object.keys(data).forEach(
-			function(key) {
-				formData.append('<portlet:namespace />' + key, data[key]);
-			}
-		);
+				if (sidebarBody) {
+					sidebarBody.plug(A.Plugin.ParseContent);
 
-		fetch(
-			url,
-			{
-				body: formData,
-				credentials: 'include',
-				method: 'POST'
-			}
-		).then(
-			function(response) {
-				return response.text();
-			}
-		).then(
-			function(responseContent) {
-				AUI().use(
-					['aui-base', 'aui-parse-content'],
-					function(A) {
-						var sidebarBody = A.one('#<portlet:namespace />sidebarBody');
-						var sidebarHeaderButton = A.one('#<portlet:namespace />sidebarHeaderButton');
+					sidebarBody.setContent(content);
+					sidebarBodyChangeHandler = sidebarBody.on('change', handleSidebarBodyChange);
+				}
 
-						if (sidebarBody) {
-							sidebarBody.plug(A.Plugin.ParseContent);
-
-							sidebarBody.setContent(responseContent);
-							sidebarBodyChangeHandler = sidebarBody.on('change', handleSidebarBodyChange);
-						}
-
-						if (sidebarHeaderButton) {
-							sidebarHeaderButtonClickEventListener = sidebarHeaderButton.on('click', handleSidebarCloseButtonClick);
-						}
-					}
-				);
+				if (sidebarHeaderButton) {
+					sidebarHeaderButtonClickEventListener = sidebarHeaderButton.on('click', handleSidebarCloseButtonClick);
+				}
 			}
 		);
 	};
