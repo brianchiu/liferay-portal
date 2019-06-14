@@ -118,15 +118,15 @@
 	</liferay-ui:search-container>
 </aui:form>
 
-<aui:script>
-	const Util = Liferay.Util;
+<aui:script use="aui-base">
+	var Util = Liferay.Util;
 
-	const openingLiferay = Util.getOpener().Liferay;
+	var openingLiferay = Util.getOpener().Liferay;
 
 	openingLiferay.fire(
 		'<portlet:namespace />enableRemovedSites',
 		{
-			selectors: document.querySelectorAll('.selector-button:disabled')
+			selectors: A.all('.selector-button:disabled')
 		}
 	);
 
