@@ -56,12 +56,12 @@ if (Validator.isNotNull(assetPublisherViewContentDisplayContext.getReturnToFullP
 	</c:otherwise>
 </c:choose>
 
-<aui:script>
+<aui:script use="aui-base">
 	Liferay.once(
 		'allPortletsReady',
 		function() {
 			if (!Liferay.Browser.isIe()) {
-				document.getElementById('p_p_id_<%= portletDisplay.getId() %>_').scrollIntoView();
+				A.one('#p_p_id_<%= portletDisplay.getId() %>_').scrollIntoView();
 			}
 		}
 	);
