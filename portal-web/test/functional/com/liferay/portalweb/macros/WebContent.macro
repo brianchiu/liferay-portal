@@ -921,7 +921,7 @@ definition {
 		else {
 			AssertTextEquals(
 				locator1 = "WCD#WEB_CONTENT_CONTENT",
-				value1 = "Content ${webContentContentEdit}");
+				value1 = "${webContentContentEdit}");
 		}
 	}
 
