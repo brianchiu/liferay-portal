@@ -339,18 +339,14 @@ definition {
 			PageEditor.addLayoutSection(columnCount = "2");
 		}
 
-		task ("Assert the layout has exacty 2 columns") {
+		task ("Assert the layout has exactly 2 columns") {
 			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'col-6')][1]");
 			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'col-6')][2]");
 			AssertElementNotPresent(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'col-6')][3]");
 		}
 
-		task ("Assert the layout by default has vertical padding x1") {
-			AssertVisible(locator1 = "//section[contains(@class,'py-3')]");
-		}
-
-		task ("Assert the layout by default has horizontal padding x1") {
-			AssertVisible(locator1 = "//section[contains(@class,'px-3')]");
+		task ("Assert the layout by default has padding x1") {
+			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'container py-3')]");
 		}
 
 		task ("Assert the layout by default has space between columns") {
@@ -365,7 +361,7 @@ definition {
 				spaceBetweenColumns = "false");
 		}
 
-		task ("Assert the layout now has exacty 2 columns") {
+		task ("Assert the layout now has exactly 2 columns") {
 			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'col-4')][1]");
 			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'col-4')][2]");
 			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'col-4')][3]");
@@ -373,11 +369,11 @@ definition {
 		}
 
 		task ("Assert the layout now has vertical padding x4") {
-			AssertVisible(locator1 = "//section[contains(@class,'py-5')]");
+			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'py-5')]");
 		}
 
 		task ("Assert the layout now has horizontal padding x10") {
-			AssertVisible(locator1 = "//section[contains(@class,'px-8')]");
+			AssertVisible(locator1 = "//section[contains(@class,'fragment-entry-link')]//div[contains(@class,'px-8')]");
 		}
 
 		task ("Assert the layout now has no space between columns") {
