@@ -15,6 +15,7 @@
 	{@param? discardDraftURL: string}
 	{@param? draft: bool}
 	{@param? lastSaveDate: string}
+	{@param? online: bool}
 	{@param? portletNamespace: string}
 	{@param? publishURL: string}
 	{@param? redirectURL: string}
@@ -66,9 +67,15 @@
 
 			<ul class="navbar-nav">
 				<li class="d-inline nav-item truncate-text">
-					<span class="navbar-text {$spanClasses}" data-title="{$_lastSaveText ?: ''}">
-						{$_lastSaveText ?: ''}
-					</span>
+					{if $online}
+						<span class="navbar-text {$spanClasses}" data-title="{$_lastSaveText ?: ''}">
+							{$_lastSaveText ?: ''}
+						</span>
+					{else}
+						<span class="navbar-text">
+							{msg desc=""}trying-to-reconnect{/msg}...
+						</span>
+					{/if}
 				</li>
 
 				{if $discardDraftURL}
@@ -86,7 +93,7 @@
 								value="{$discardDraftRedirectURL}"
 							/>
 
-							<button class="btn btn-secondary nav-btn" type="submit" {if not $lastSaveDate and not $draft}disabled{/if}>
+							<button class="btn btn-secondary nav-btn" type="submit" {if (not $lastSaveDate and not $draft) or not $online}disabled{/if}>
 								{msg desc=""}discard-draft{/msg}
 							</button>
 						</form>
@@ -108,7 +115,7 @@
 								value="{$redirectURL}"
 							/>
 
-							<button class="btn btn-primary nav-btn" type="submit" {if not $lastSaveDate and not $draft}disabled{/if}>
+							<button class="btn btn-primary nav-btn" type="submit" {if (not $lastSaveDate and not $draft) or not $online}disabled{/if}>
 								{msg desc=""}publish{/msg}
 							</button>
 						</form>
