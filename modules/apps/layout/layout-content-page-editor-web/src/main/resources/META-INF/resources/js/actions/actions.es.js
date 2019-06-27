@@ -70,3 +70,6 @@ export const UPDATE_HOVERED_ITEM = 'updateHoveredItem';
 export const CLEAR_FRAGMENT_EDITOR = 'clearFragmentEditor';
 export const DISABLE_FRAGMENT_EDITOR = 'disableFragmentEditor';
 export const ENABLE_FRAGMENT_EDITOR = 'enableFragmentEditor';
+
+export const SET_WINDOW_OFFLINE = 'setWindowOffline';
+export const SET_WINDOW_ONLINE = 'setWindowOnline';

@@ -14,6 +14,8 @@
 
 import {setIn} from '../utils/FragmentsEditorUpdateUtils.es';
 import {
+	SET_WINDOW_OFFLINE,
+	SET_WINDOW_ONLINE,
 	UPDATE_LAST_SAVE_DATE,
 	UPDATE_SAVING_CHANGES_STATUS
 } from '../actions/actions.es';
@@ -47,4 +49,22 @@ function saveChangesReducer(state, action) {
 	return nextState;
 }
 
-export {saveChangesReducer};
+/**
+ * @param {!object} state
+ * @param {object} action
+ * @return {object}
+ * @review
+ */
+function setOnlineStatusReducer(state, action) {
+	let nextState = state;
+
+	if (action.type === SET_WINDOW_OFFLINE) {
+		nextState = setIn(nextState, ['online'], false);
+	} else if (action.type === SET_WINDOW_ONLINE) {
+		nextState = setIn(nextState, ['online'], true);
+	}
+
+	return nextState;
+}
+
+export {saveChangesReducer, setOnlineStatusReducer};
