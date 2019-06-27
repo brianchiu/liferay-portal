@@ -233,6 +233,8 @@ public class ContentPageEditorDisplayContext {
 		).put(
 			"mappedAssetEntries", _getMappedAssetEntriesSoyContexts()
 		).put(
+			"online", true
+		).put(
 			"portletNamespace", _renderResponse.getNamespace()
 		);
 
@@ -300,6 +302,8 @@ public class ContentPageEditorDisplayContext {
 			"draft", draft
 		).put(
 			"lastSaveDate", StringPool.BLANK
+		).put(
+			"online", true
 		).put(
 			"portletNamespace", _renderResponse.getNamespace()
 		).put(
