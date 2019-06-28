@@ -22,7 +22,7 @@
 <!--PROCESSES-->
 <tr>
 	<td>PROCESS_SUCCESSFUL</td>
-	<td>//h6[contains(.,'Successful')]</td>
+	<td>//span[contains(@class,'label-success')]</td>
 	<td></td>
 </tr>
 <tr>
