@@ -23,7 +23,6 @@
 	{@param? selectedSidebarPanelId: string}
 	{@param? spritemap: string}
 	{@param? store: ?}
-	{@param? _lastSaveText: string}
 
 	{let $toolbarClasses kind="text"}
 		fragments-editor-toolbar
@@ -59,28 +58,32 @@
 				</li>
 			</ul>
 
-			{let $spanClasses kind="text"}
-				{if $savingChanges or $lastSaveDate}
-					lfr-portal-tooltip
-				{/if}
-			{/let}
-
 			<ul class="navbar-nav">
 				<li class="d-inline nav-item truncate-text">
-					{if $online}
-						<span class="navbar-text {$spanClasses}" data-title="{$_lastSaveText ?: ''}">
-							{$_lastSaveText ?: ''}
-						</span>
-					{else}
-						<span class="navbar-text">
+					{let $lastSaveText kind="text"}
+						{if not $online}
 							{msg desc=""}trying-to-reconnect{/msg}...
+						{elseif $savingChanges}
+							{msg desc=""}saving-changes{/msg}
+						{elseif $lastSaveDate}
+							{msg desc=""}draft-saved-at-{$lastSaveDate}{/msg}
+						{/if}
+					{/let}
+
+					{if $lastSaveText}
+						<span class="lfr-portal-tooltip navbar-text" data-title="{$lastSaveText}">
+							{$lastSaveText}
 						</span>
 					{/if}
 				</li>
 
 				{if $discardDraftURL}
 					<li class="nav-item">
-						<form action="{$discardDraftURL}" data-onsubmit="{$_handleDiscardDraft}" method="POST">
+						<form
+							action="{$discardDraftURL}"
+							data-onsubmit="{$_handleDiscardDraft}"
+							method="POST"
+						>
 							<input
 								name="{$portletNamespace ?: ''}classPK"
 								type="hidden"
@@ -93,7 +96,16 @@
 								value="{$discardDraftRedirectURL}"
 							/>
 
-							<button class="btn btn-secondary nav-btn" type="submit" {if (not $lastSaveDate and not $draft) or not $online}disabled{/if}>
+							{let $discardButtonAttributes kind="attributes"}
+								class="btn btn-secondary nav-btn"
+								type="submit"
+
+								{if (not $draft) or (not $online)}
+									disabled
+								{/if}
+							{/let}
+
+							<button {$discardButtonAttributes}>
 								{msg desc=""}discard-draft{/msg}
 							</button>
 						</form>
@@ -115,7 +127,16 @@
 								value="{$redirectURL}"
 							/>
 
-							<button class="btn btn-primary nav-btn" type="submit" {if (not $lastSaveDate and not $draft) or not $online}disabled{/if}>
+							{let $publishButtonAttributes kind="attributes"}
+								class="btn btn-primary nav-btn"
+								type="submit"
+
+								{if (not $draft) or (not $online)}
+									disabled
+								{/if}
+							{/let}
+
+							<button {$publishButtonAttributes}>
 								{msg desc=""}publish{/msg}
 							</button>
 						</form>
