@@ -48,7 +48,7 @@ import {
 	selectMappeableTypeReducer
 } from './dialogs.es';
 import {languageIdReducer} from './translations.es';
-import {saveChangesReducer, setOnlineStatusReducer} from './changes.es';
+import {saveChangesReducer} from './changes.es';
 import {
 	updateActiveItemReducer,
 	updateDropTargetReducer,
@@ -79,7 +79,6 @@ const reducers = [
 	saveChangesReducer,
 	selectMappeableTypeReducer,
 	selectSegmentsExperienceReducer,
-	setOnlineStatusReducer,
 	createSegmentsExperienceReducer,
 	deleteSegmentsExperienceReducer,
 	editSegmentsExperienceReducer,
