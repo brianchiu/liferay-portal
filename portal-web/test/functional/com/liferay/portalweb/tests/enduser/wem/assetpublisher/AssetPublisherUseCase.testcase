@@ -998,12 +998,6 @@ definition {
 
             AssetPublisherPortlet.viewManualAssetSelectionConfigurationPG(portletName = "Asset Publisher");
 		}
-
-		User.logoutPG();
-
-		User.loginPG(
-			password = "test",
-			userEmailAddress = "test@liferay.com");
 	}
 
 	@priority = "5"
