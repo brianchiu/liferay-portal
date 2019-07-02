@@ -950,46 +950,54 @@ definition {
 
 	@priority = "4"
 	test ViewAPPortletAsNewUserSiteAdministratorViaUserSite {
-		JSONUser.addUser(
-			userEmailAddress = "userea@liferay.com",
-			userFirstName = "userfn",
-			userLastName = "userln",
-			userScreenName = "usersn");
+		task("Add a new user with Site Administrator role"){
+            JSONUser.addUser(
+                userEmailAddress = "userea@liferay.com",
+                userFirstName = "userfn",
+                userLastName = "userln",
+                userScreenName = "usersn");
 
-		JSONUser.setFirstPassword(
-			agreeToTermsAndAnswerReminderQuery = "true",
-			requireReset = "false",
-			userEmailAddress = "userea@liferay.com");
+            JSONUser.setFirstPassword(
+                agreeToTermsAndAnswerReminderQuery = "true",
+                requireReset = "false",
+                userEmailAddress = "userea@liferay.com");
 
-		JSONUser.addUserToSite(
-			groupName = "Test Site Name",
-			userEmailAddress = "userea@liferay.com");
+            JSONUser.addUserToSite(
+                groupName = "Test Site Name",
+                userEmailAddress = "userea@liferay.com");
 
-		JSONRole.assignRoleToUser(
-			roleTitle = "Site Administrator",
-			userEmailAddress = "userea@liferay.com");
+            JSONRole.assignRoleToUser(
+                roleTitle = "Site Administrator",
+                userEmailAddress = "userea@liferay.com");
+		}
 
-		User.logoutPG();
+		task("Sign in as new user and assert user can configure the asset publisher to be dynamic"){
+            User.logoutPG();
 
-		User.loginUserPG(userEmailAddress = "userea@liferay.com");
+            User.loginUserPG(userEmailAddress = "userea@liferay.com");
 
-		Navigator.gotoSitePage(
-			pageName = "Asset Publisher Page",
-			siteName = "Test Site Name");
+            Navigator.gotoSitePage(
+                pageName = "Asset Publisher Page",
+                siteName = "Test Site Name");
 
-		AssetPublisherPortlet.viewDynamicAssetSelectionConfigurationPG();
+            AssetPublisherPortlet.viewDynamicAssetSelectionConfigurationPG();
+		}
 
-		Navigator.gotoSitePage(
-			pageName = "Asset Publisher Page",
-			siteName = "Test Site Name");
+		task ("Assert user can configure the asset publisher to be manual"){
+            Navigator.gotoSitePage(
+                pageName = "Asset Publisher Page",
+                siteName = "Test Site Name");
 
-		AssetPublisherPortlet.configureManualAssetSelectionPG();
+            AssetPublisherPortlet.configureManualAssetSelectionPG();
+		}
 
-		Navigator.gotoSitePage(
-			pageName = "Asset Publisher Page",
-			siteName = "Test Site Name");
+		task ("Assert manual asset publisher has Asset Entry option"){
+            Navigator.gotoSitePage(
+                pageName = "Asset Publisher Page",
+                siteName = "Test Site Name");
 
-		AssetPublisherPortlet.viewManualAssetSelectionConfigurationPG(portletName = "Asset Publisher");
+            AssetPublisherPortlet.viewManualAssetSelectionConfigurationPG(portletName = "Asset Publisher");
+		}
 
 		User.logoutPG();
 
