@@ -451,14 +451,6 @@ const INITIAL_STATE = {
 	mappingFieldsURL: Config.string().value(''),
 
 	/**
-	 * If fragments editor is online
-	 * @default true
-	 * @review
-	 * @type {boolean}
-	 */
-	online: Config.bool().value(true),
-
-	/**
 	 * Portlet namespace needed for prefixing form inputs
 	 * @default ''
 	 * @review

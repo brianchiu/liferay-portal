@@ -13,6 +13,7 @@
  */
 
 import Component from 'metal-component';
+import {Config} from 'metal-state';
 import Soy from 'metal-soy';
 
 import './TranslationStatus.es';
@@ -26,6 +27,27 @@ import {TOGGLE_SIDEBAR} from '../../actions/actions.es';
  * @review
  */
 class FragmentsEditorToolbar extends Component {
+	/**
+	 * @inheritdoc
+	 * @review
+	 */
+	created() {
+		this._handleWindowOnline = this._handleWindowOnline.bind(this);
+		this._handleWindowOffline = this._handleWindowOffline.bind(this);
+
+		window.addEventListener('online', this._handleWindowOnline);
+		window.addEventListener('offline', this._handleWindowOffline);
+	}
+
+	/**
+	 * @inheritdoc
+	 * @review
+	 */
+	disposed() {
+		window.removeEventListener('online', this._handleWindowOnline);
+		window.removeEventListener('offline', this._handleWindowOffline);
+	}
+
 	/**
 	 * Handles discard draft form submit action.
 	 * @private
@@ -52,7 +74,36 @@ class FragmentsEditorToolbar extends Component {
 			type: TOGGLE_SIDEBAR
 		});
 	}
+
+	/**
+	 * Sets online status to true
+	 */
+	_handleWindowOnline() {
+		this._online = true;
+	}
+
+	/**
+	 * Sets online status to false
+	 */
+	_handleWindowOffline() {
+		this._online = false;
+	}
 }
+
+FragmentsEditorToolbar.STATE = {
+	/**
+	 * If fragments editor is online
+	 * @default true
+	 * @instance
+	 * @memberof FragmentsEditorToolbar
+	 * @private
+	 * @review
+	 * @type {boolean}
+	 */
+	_online: Config.bool()
+		.internal()
+		.value(true)
+};
 
 const ConnectedFragmentsEditorToolbar = getConnectedComponent(
 	FragmentsEditorToolbar,
@@ -61,7 +112,6 @@ const ConnectedFragmentsEditorToolbar = getConnectedComponent(
 		'discardDraftRedirectURL',
 		'discardDraftURL',
 		'lastSaveDate',
-		'online',
 		'portletNamespace',
 		'publishURL',
 		'redirectURL',

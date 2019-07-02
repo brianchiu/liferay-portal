@@ -25,8 +25,6 @@ import './components/toolbar/FragmentsEditorToolbar.es';
 import {
 	CLEAR_ACTIVE_ITEM,
 	CLEAR_HOVERED_ITEM,
-	SET_WINDOW_OFFLINE,
-	SET_WINDOW_ONLINE,
 	UPDATE_ACTIVE_ITEM,
 	UPDATE_HOVERED_ITEM
 } from './actions/actions.es';
@@ -86,12 +84,6 @@ class FragmentsEditor extends Component {
 		document.addEventListener('click', this._handleDocumentClick, true);
 		document.addEventListener('keyup', this._handleDocumentKeyUp);
 		document.addEventListener('mouseover', this._handleDocumentMouseOver);
-
-		window.addEventListener('online', this._handleWindowOnline.bind(this));
-		window.addEventListener(
-			'offline',
-			this._handleWindowOffline.bind(this)
-		);
 	}
 
 	/**
@@ -105,9 +97,6 @@ class FragmentsEditor extends Component {
 			'mouseover',
 			this._handleDocumentMouseOver
 		);
-
-		window.removeEventListener('online', this._handleWindowOnline);
-		window.removeEventListener('offline', this._handleWindowOffline);
 
 		stopListeningWidgetConfigurationChange();
 	}
@@ -162,28 +151,6 @@ class FragmentsEditor extends Component {
 				type: CLEAR_HOVERED_ITEM
 			});
 		}
-	}
-
-	/**
-	 * Disable fragments editor when window goes offline
-	 * @private
-	 * @review
-	 */
-	_handleWindowOffline() {
-		this.store.dispatch({
-			type: SET_WINDOW_OFFLINE
-		});
-	}
-
-	/**
-	 * Disable fragments editor when window goes offline
-	 * @private
-	 * @review
-	 */
-	_handleWindowOnline() {
-		this.store.dispatch({
-			type: SET_WINDOW_ONLINE
-		});
 	}
 
 	/**
