@@ -32,11 +32,11 @@ class FragmentsEditorToolbar extends Component {
 	 * @review
 	 */
 	created() {
-		this._handleWindowOnline = this._handleWindowOnline.bind(this);
 		this._handleWindowOffline = this._handleWindowOffline.bind(this);
+		this._handleWindowOnline = this._handleWindowOnline.bind(this);
 
-		window.addEventListener('online', this._handleWindowOnline);
 		window.addEventListener('offline', this._handleWindowOffline);
+		window.addEventListener('online', this._updateOnlineStatus);
 	}
 
 	/**
@@ -44,8 +44,8 @@ class FragmentsEditorToolbar extends Component {
 	 * @review
 	 */
 	disposed() {
-		window.removeEventListener('online', this._handleWindowOnline);
 		window.removeEventListener('offline', this._handleWindowOffline);
+		window.removeEventListener('online', this._updateOnlineStatus);
 	}
 
 	/**
@@ -76,17 +76,40 @@ class FragmentsEditorToolbar extends Component {
 	}
 
 	/**
-	 * Sets online status to true
-	 */
-	_handleWindowOnline() {
-		this._online = true;
-	}
-
-	/**
-	 * Sets online status to false
+	 * Starts checking if there is connection with Liferay Server
+	 * @private
+	 * @review
 	 */
 	_handleWindowOffline() {
 		this._online = false;
+
+		this._updateOnlineStatus();
+	}
+
+	/**
+	 * Pings Liferay Server and set's online status.
+	 * Instead of relying on window 'online' event, we use it to check our
+	 * connection with Liferay server.
+	 * @private
+	 * @review
+	 */
+	_updateOnlineStatus() {
+		const queryPing = () =>
+			setTimeout(() => {
+				this._updateOnlineStatus();
+			}, 1000);
+
+		if (!this._online) {
+			Liferay.Util.fetch('/image/user_portrait')
+				.then(response => {
+					if (response.status < 400) {
+						this._online = true;
+					} else {
+						queryPing();
+					}
+				})
+				.catch(queryPing);
+		}
 	}
 }
 
