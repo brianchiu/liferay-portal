@@ -14,8 +14,6 @@
 
 import {setIn} from '../utils/FragmentsEditorUpdateUtils.es';
 import {
-	SET_WINDOW_OFFLINE,
-	SET_WINDOW_ONLINE,
 	UPDATE_LAST_SAVE_DATE,
 	UPDATE_SAVING_CHANGES_STATUS
 } from '../actions/actions.es';

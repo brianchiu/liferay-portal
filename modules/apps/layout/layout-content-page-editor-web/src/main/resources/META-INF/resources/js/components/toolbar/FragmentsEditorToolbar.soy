@@ -15,7 +15,7 @@
 	{@param? discardDraftURL: string}
 	{@param? draft: bool}
 	{@param? lastSaveDate: string}
-	{@param? online: bool}
+	{@param? _online: bool}
 	{@param? portletNamespace: string}
 	{@param? publishURL: string}
 	{@param? redirectURL: string}
@@ -61,7 +61,7 @@
 			<ul class="navbar-nav">
 				<li class="d-inline nav-item truncate-text">
 					{let $lastSaveText kind="text"}
-						{if not $online}
+						{if not $_online}
 							{msg desc=""}trying-to-reconnect{/msg}...
 						{elseif $savingChanges}
 							{msg desc=""}saving-changes{/msg}
@@ -100,7 +100,7 @@
 								class="btn btn-secondary nav-btn"
 								type="submit"
 
-								{if (not $draft) or (not $online)}
+								{if (not $draft) or (not $_online)}
 									disabled
 								{/if}
 							{/let}
@@ -131,7 +131,7 @@
 								class="btn btn-primary nav-btn"
 								type="submit"
 
-								{if (not $draft) or (not $online)}
+								{if (not $draft) or (not $_online)}
 									disabled
 								{/if}
 							{/let}
