@@ -966,9 +966,11 @@ definition {
 				groupName = "Test Site Name",
 				userEmailAddress = "userea@liferay.com");
 
-			JSONRole.assignRoleToUser(
-				roleTitle = "Site Administrator",
-				userEmailAddress = "userea@liferay.com");
+			User.openUsersAdmin();
+
+			User.assignSiteRoleCP(
+				siteRoleName = "Site Administrator",
+				userScreenName = "usersn");
 		}
 
 		task ("Sign in as new user and assert user can configure the asset publisher to be dynamic"){
