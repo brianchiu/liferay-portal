@@ -266,9 +266,16 @@ definition {
 	}
 
 	macro selectWebContent {
-		Portlet.gotoPortletOptions(
-			portletName = "Web Content Display",
-			portletOption = "Configuration");
+		if ("${contentPage}" == "true") {
+			Click.clickNoWaitForVisible(
+				key_portletName = "Web Content Display",
+				locator1 = "PageEditor#WIDGETS_OPTIONS_ICON");
+		}
+		else {
+			Portlet.gotoPortletOptions(
+				portletName = "Web Content Display",
+				portletOption = "Configuration");
+		}
 
 		SelectFrame(locator1 = "IFrame#DIALOG");
 
@@ -300,6 +307,10 @@ definition {
 		PortletEntry.save();
 
 		SelectFrame(value1 = "relative=top");
+
+		if ("${contentPage}" == "true") {
+			Click(locator1 = "Icon#CLOSE");
+		}
 	}
 
 	macro undoMoveToRecycleBin {
