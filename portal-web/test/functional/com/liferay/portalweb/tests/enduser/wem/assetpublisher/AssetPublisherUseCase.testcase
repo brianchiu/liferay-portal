@@ -950,7 +950,7 @@ definition {
 
 	@priority = "4"
 	test ViewAPPortletAsNewUserSiteAdministratorViaUserSite {
-		task ("Add a new user with Site Administrator role"){
+		task ("Add a new user with Site Administrator role") {
 			JSONUser.addUser(
 				userEmailAddress = "userea@liferay.com",
 				userFirstName = "userfn",
@@ -973,7 +973,7 @@ definition {
 				userScreenName = "usersn");
 		}
 
-		task ("Sign in as new user and assert user can configure the asset publisher to be dynamic"){
+		task ("Sign in as new user and assert user can configure the asset publisher to be dynamic") {
 			User.logoutPG();
 
 			User.loginUserPG(userEmailAddress = "userea@liferay.com");
@@ -983,7 +983,7 @@ definition {
 				siteName = "Test Site Name");
 		}
 
-		task ("Assert user can configure the asset publisher to be manual"){
+		task ("Assert user can configure the asset publisher to be manual") {
 			AssetPublisherPortlet.viewDynamicAssetSelectionConfigurationPG();
 
 			Navigator.gotoSitePage(
@@ -993,7 +993,7 @@ definition {
 			AssetPublisherPortlet.configureManualAssetSelectionPG();
 		}
 
-		task ("Assert manual asset publisher has Asset Entry option"){
+		task ("Assert manual asset publisher has Asset Entry option") {
 			Navigator.gotoSitePage(
 				pageName = "Asset Publisher Page",
 				siteName = "Test Site Name");
