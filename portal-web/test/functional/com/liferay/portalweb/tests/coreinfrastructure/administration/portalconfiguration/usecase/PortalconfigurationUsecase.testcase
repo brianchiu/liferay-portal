@@ -129,7 +129,7 @@ definition {
 			configurationName = "Inactive Request Handler",
 			configurationScope = "System Scope");
 
-		FormFields.enableCheckbox(fieldName = "show.inactive.request.message");
+		FormFields.enableCheckbox(fieldName = "Show Inactive Request Message");
 
 		SystemSettings.saveConfiguration();
 
