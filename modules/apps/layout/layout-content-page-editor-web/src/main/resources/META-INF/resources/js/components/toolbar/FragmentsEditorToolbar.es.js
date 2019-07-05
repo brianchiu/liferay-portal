@@ -19,6 +19,7 @@ import Soy from 'metal-soy';
 import './TranslationStatus.es';
 import './SegmentsExperienceSelector.es';
 import getConnectedComponent from '../../store/ConnectedComponent.es';
+import {setIn} from '../../utils/FragmentsEditorUpdateUtils.es';
 import templates from './FragmentsEditorToolbar.soy';
 import {TOGGLE_SIDEBAR} from '../../actions/actions.es';
 
@@ -27,6 +28,27 @@ import {TOGGLE_SIDEBAR} from '../../actions/actions.es';
  * @review
  */
 class FragmentsEditorToolbar extends Component {
+	/**
+	 * @inheritdoc
+	 * @param {object} state
+	 * @review
+	 */
+	prepareStateForRender(state) {
+		let nextState = state;
+
+		if (state.lastSaveDate) {
+			const lastSaveDate = Liferay.Language.get('draft-saved-at-x');
+
+			nextState = setIn(
+				nextState,
+				['lastSaveDate'],
+				lastSaveDate.replace('{0}', state.lastSaveDate)
+			);
+		}
+
+		return nextState;
+	}
+
 	/**
 	 * @inheritdoc
 	 * @review
