@@ -1,7 +1,7 @@
 @component-name = "portal-xsl"
 definition {
 
-	property osgi.module.configuration.file.names = "com.liferay.xsl.content.web.configuration.XSLContentConfiguration.config";
+	property osgi.module.configuration.file.names = "com.liferay.xsl.content.web.internal.configuration.XSLContentConfiguration.config";
 	property osgi.module.configurations = "com.liferay.portlet.include=&quot;true&quot;\ncom.liferay.portlet.display-category=&quot;category.cms&quot;";
 	property osgi.modules.includes = "xsl-content";
 	property portal.release = "true";
