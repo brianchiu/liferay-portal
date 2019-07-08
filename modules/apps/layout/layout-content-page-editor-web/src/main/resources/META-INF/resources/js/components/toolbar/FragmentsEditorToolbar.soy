@@ -100,7 +100,7 @@
 								class="btn btn-secondary nav-btn"
 								type="submit"
 
-								{if (not $draft) or (not $_online)}
+								{if ((not $lastSaveDate) and (not $draft)) or (not $_online)}
 									disabled
 								{/if}
 							{/let}
@@ -131,7 +131,7 @@
 								class="btn btn-primary nav-btn"
 								type="submit"
 
-								{if (not $draft) or (not $_online)}
+								{if ((not $lastSaveDate) and (not $draft)) or (not $_online)}
 									disabled
 								{/if}
 							{/let}
