@@ -361,7 +361,7 @@ definition {
 			site = "Global");
 
 		ProductMenu.gotoPortlet(
-			category = "Generador de sitios",
+			category = "Constructor del sitio",
 			panel = "Site Administration",
 			portlet = "Páginas del sitio web");
 
