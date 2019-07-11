@@ -620,7 +620,7 @@ definition {
 		Pause(locator1 = "5000");
 
 		Type(
-			locator1 = "TextInput#FRIENDLY_URL",
+			locator1 = "TextInput#FRIENDLY_URL_SITE_SETTINGS",
 			value1 = "${siteFriendlyURLEdit}");
 
 		Button.clickSave();
@@ -633,7 +633,7 @@ definition {
 				value1 = "The friendly URL has too many slashes.");
 
 			AssertTextEquals(
-				locator1 = "TextInput#FRIENDLY_URL",
+				locator1 = "TextInput#FRIENDLY_URL_SITE_SETTINGS",
 				value1 = "${siteFriendlyURLEdit}");
 		}
 		else {

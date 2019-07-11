@@ -169,6 +169,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>FRIENDLY_URL_SITE_SETTINGS</td>
+	<td>//input[contains(@id,'FriendlyURL')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>GENERIC_TEXT_INPUT</td>
 	<td>//div[label[contains(.,'${key_fieldLabel}')]]//input[@type='text']</td>
 	<td></td>
