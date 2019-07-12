@@ -103,6 +103,10 @@ definition {
 			var sitePageType = "Widget Page";
 		}
 
+		LexiconCard.viewCardPresent(card = "${sitePageType}");
+
+		Pause(locator1 = "3000");
+
 		LexiconCard.clickCard(card = "${sitePageType}");
 	}
 
